@@ -21,4 +21,4 @@ $ nvim
 [Lazy](https://github.com/folke/lazy.nvim) should automatically install all plugins and dependencies. If it doesn't, you can install them manually by running `:Lazy` inside Neovim.
 
 # Troubleshooting
-As long this is for personal use, I will not provide any support but helping to debug any problem. However, feel free to open an issue if you want to suggest something or report a bug.
+As long this is for personal use, I will not provide any support, but maybe helping to debug some problem. However, feel free to open an issue if you want to suggest something or report a bug.
