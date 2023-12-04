@@ -2,6 +2,52 @@
 
 This repository contains my new [Neovim](https://neovim.io/) - from scratch - configuration. It has no purpose of distribution, but feel free to copy-paste anything you would like 💪
 
+![plot](./assets/nvim.png)
+
+## Key Remappings
+
+Below are some of the key remappings included in my `remap.lua` file for Neovim. These customizations enhance productivity and ease of use.
+
+### General Navigation and Commands
+
+- **Leader Key**: Spacebar
+- **Open command-line window**: `<C-e>` (Normal mode)
+- **Clear highlights**: `<leader>h` (Normal mode)
+- **Save file**: `<C-s>` (Normal mode)
+- **Open terminal**: `<M-f>` (Normal mode)
+- **Exit terminal mode**: `<M-q>` (Terminal mode)
+- **Force quit current window**: `Q` (Normal mode)
+
+### Window Splitting and Navigation
+
+- **Split window horizontally**: `<M-s>` (Normal mode)
+- **Split window vertically**: `<M-d>` (Normal mode)
+- **Navigate split windows**: `<M-j>`, `<M-k>`, `<M-l>`, `<M-h>` (Normal mode)
+
+### Window Resizing
+
+- **Interactive resize mode**: `<M-a>r` (Normal mode)
+  - Inside interactive mode: `j`, `k`, `h`, `l` to resize
+  - Exit interactive resize: `<C-c>` or `q`
+- **Maximize current window**: `<M-z>` (Normal mode)
+- **Equalize window sizes**: `<M-=>` (Normal mode)
+
+### Text Editing
+
+- **Move text up/down in visual mode**: `J` (Move down), `K` (Move up) (Visual mode)
+- **Indent/unindent text**: `>` (Indent), `<` (Unindent) (Visual mode)
+
+### LSP Shortcuts
+
+- **Open diagnostic float**: `gl` (Normal mode)
+- **Navigate diagnostics**: `[d` (Previous), `]d` (Next) (Normal mode)
+- **Diagnostic list**: `<space>q` (Normal mode)
+
+### Tab Management
+
+- **Open new tab with terminal**: `<M-a>c` (Normal mode)
+- **Switch between tabs**: `<M-1>` to `<M-9>` (Normal mode)
+
 ## Installation
 In order to install this configuration, you will need to follow the steps below:
 
