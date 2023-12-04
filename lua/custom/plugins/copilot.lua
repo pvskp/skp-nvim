@@ -1,6 +1,7 @@
 return {
     "zbirenbaum/copilot-cmp",
     dependencies = {"zbirenbaum/copilot.lua"},
+    cmd = {"Copilot"}, -- Disables copilot on start
     config = function ()
         local copilot_lua = require("copilot")
         local copilot_cmp = require("copilot_cmp")
