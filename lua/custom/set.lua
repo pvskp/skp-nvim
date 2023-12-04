@@ -8,4 +8,5 @@ vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme everforest]])
+-- vim.cmd([[colorscheme flexoki-dark]])
