@@ -86,7 +86,7 @@ vim.keymap.set("n", "<M-8>", "8gt")
 vim.keymap.set("n", "<M-9>", "9gt")
 
 -- Terminal mode
-vim.keymap.set("t", "<M-q>", "<C-\\><C-n>")
+vim.keymap.set("t", "<M-a>", "<C-\\><C-n>")
 vim.keymap.set("t", "<M-j>", "<C-\\><C-n><C-w>j", { silent = true })
 vim.keymap.set("t", "<M-k>", "<C-\\><C-n><C-w>k", { silent = true })
 vim.keymap.set("t", "<M-l>", "<C-\\><C-n><C-w>l", { silent = true })
@@ -121,3 +121,26 @@ vim.keymap.set('t', '<M-z>', function()
         vim.cmd('startinsert')
     end, 10)
 end, { silent = true })
+
+-- Open file under cursor on terminal
+local terminal_cwd = vim.fn.getcwd()
+function Open_file_under_cursor()
+    local filename = vim.fn.expand('<cfile>')
+    if filename ~= '' then
+        if not filename:match('^/') then
+            filename = terminal_cwd .. '/' .. filename
+        end
+        vim.cmd('vsplit ' .. vim.fn.fnameescape(filename))
+        vim.cmd('stopinsert')
+    end
+end
+
+vim.api.nvim_set_keymap(
+    'n',
+    '<C-x>',
+    '<cmd>lua Open_file_under_cursor()<CR>',
+    {
+        noremap = true,
+        silent = true 
+    }
+)
