@@ -36,10 +36,10 @@ function Interactive_resize()
     local keymap = vim.api.nvim_set_keymap
     local opts = { noremap = true }
 
-    keymap("n", "j", ":resize -2<CR>", opts)
-    keymap("n", "k", ":resize +2<CR>", opts)
-    keymap("n", "h", ":vertical resize -2<CR>", opts)
-    keymap("n", "l", ":vertical resize +2<CR>", opts)
+    keymap("n", "k", ":resize -2<CR>", opts)
+    keymap("n", "j", ":resize +2<CR>", opts)
+    keymap("n", "l", ":vertical resize -2<CR>", opts)
+    keymap("n", "h", ":vertical resize +2<CR>", opts)
 
     keymap("n", "<C-c>", "<cmd>lua Exit_interactive_resize()<CR>", opts)
     keymap("n", "q", "<cmd>lua Exit_interactive_resize()<CR>", opts)
@@ -47,22 +47,10 @@ end
 
 vim.api.nvim_set_keymap(
     "n",
-    "<M-a>r",
+    "<M-r>",
     "<cmd>lua Interactive_resize()<CR>",
     { noremap = true, silent = true }
 )
-
-
--- TODO: does not work yet
--- vim.keymap.set('t', '<M-a>r', function()
---     vim.cmd('stopinsert')
---     vim.defer_fn(function()
---         Interactive_resize()
---         vim.cmd('startinsert')
---     end, 10)
--- end, { silent = true })
-
--- vim.keymap.set("n", "<M-z>", "<c-w>_ | <c-w>|")
 
 vim.keymap.set("n", "<M-=>", "<C-w>=")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
