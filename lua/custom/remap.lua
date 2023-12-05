@@ -36,10 +36,10 @@ function Interactive_resize()
     local keymap = vim.api.nvim_set_keymap
     local opts = { noremap = true }
 
-    keymap("n", "j", ":resize -2<CR>", opts)
-    keymap("n", "k", ":resize +2<CR>", opts)
-    keymap("n", "h", ":vertical resize -2<CR>", opts)
-    keymap("n", "l", ":vertical resize +2<CR>", opts)
+    keymap("n", "k", ":resize -2<CR>", opts)
+    keymap("n", "j", ":resize +2<CR>", opts)
+    keymap("n", "l", ":vertical resize -2<CR>", opts)
+    keymap("n", "h", ":vertical resize +2<CR>", opts)
 
     keymap("n", "<C-c>", "<cmd>lua Exit_interactive_resize()<CR>", opts)
     keymap("n", "q", "<cmd>lua Exit_interactive_resize()<CR>", opts)
@@ -47,17 +47,14 @@ end
 
 vim.api.nvim_set_keymap(
     "n",
-    "<M-a>r",
+    "<M-r>",
     "<cmd>lua Interactive_resize()<CR>",
     { noremap = true, silent = true }
 )
 
-
-vim.keymap.set("n", "<M-z>", "<c-w>_ | <c-w>|")
 vim.keymap.set("n", "<M-=>", "<C-w>=")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 vim.keymap.set("n", "<M-f>", ":term<CR>")
-vim.keymap.set("t", "<M-q>", "<C-\\><C-n>")
 vim.keymap.set("n", "Q", ":q!<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -87,3 +84,40 @@ vim.keymap.set("n", "<M-6>", "6gt")
 vim.keymap.set("n", "<M-7>", "7gt")
 vim.keymap.set("n", "<M-8>", "8gt")
 vim.keymap.set("n", "<M-9>", "9gt")
+
+-- Terminal mode
+vim.keymap.set("t", "<M-q>", "<C-\\><C-n>")
+vim.keymap.set("t", "<M-j>", "<C-\\><C-n><C-w>j", { silent = true })
+vim.keymap.set("t", "<M-k>", "<C-\\><C-n><C-w>k", { silent = true })
+vim.keymap.set("t", "<M-l>", "<C-\\><C-n><C-w>l", { silent = true })
+vim.keymap.set("t", "<M-h>", "<C-\\><C-n><C-w>h", { silent = true })
+
+-- Window zoom
+local window_zoomed = false
+local window_zoom_restore = {}
+
+local function toggle_zoom()
+    if window_zoomed then
+        -- Restaurar a janela
+        vim.cmd(window_zoom_restore.cmd)
+        window_zoomed = false
+    else
+        -- Armazenar o estado da janela atual
+        window_zoom_restore = {
+            cmd = "resize " .. vim.api.nvim_win_get_height(0) .. "|vertical resize " .. vim.api.nvim_win_get_width(0),
+            win = vim.api.nvim_get_current_win(),
+        }
+        -- Maximizar a janela
+        vim.cmd("resize | vertical resize")
+        window_zoomed = true
+    end
+end
+
+vim.keymap.set('n', '<M-z>', toggle_zoom, { silent = true })
+vim.keymap.set('t', '<M-z>', function()
+    vim.cmd('stopinsert')
+    vim.defer_fn(function()
+        toggle_zoom()
+        vim.cmd('startinsert')
+    end, 10)
+end, { silent = true })

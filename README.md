@@ -11,7 +11,7 @@ Below are some of the key remappings included in my `remap.lua` file for Neovim.
 ### General Navigation and Commands
 
 - **Leader Key**: Spacebar
-- **Open command-line window**: `<C-e>` (Normal mode)
+- **Open netrw (native Neovim file explorer)**: `<C-e>` (Normal mode)
 - **Clear highlights**: `<leader>h` (Normal mode)
 - **Save file**: `<C-s>` (Normal mode)
 - **Open terminal**: `<M-f>` (Normal mode)
