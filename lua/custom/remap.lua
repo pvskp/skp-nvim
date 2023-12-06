@@ -20,6 +20,21 @@ vim.keymap.set("n", "<M-d>", function()
     vim.cmd("term")
 end)
 
+vim.keymap.set("t", "<M-s>", function()
+    vim.cmd('stopinsert')
+    vim.cmd("split")
+    vim.cmd("wincmd j")
+    vim.cmd("term")
+end)
+
+vim.keymap.set("t", "<M-d>", function()
+    vim.cmd('stopinsert')
+    vim.cmd("vsplit")
+    vim.cmd("wincmd l")
+    vim.cmd("term")
+end)
+
+
 function Exit_interactive_resize()
     local keymap = vim.api.nvim_del_keymap
 
@@ -122,25 +137,25 @@ vim.keymap.set('t', '<M-z>', function()
     end, 10)
 end, { silent = true })
 
--- Open file under cursor on terminal
-local terminal_cwd = vim.fn.getcwd()
-function Open_file_under_cursor()
-    local filename = vim.fn.expand('<cfile>')
-    if filename ~= '' then
-        if not filename:match('^/') then
-            filename = terminal_cwd .. '/' .. filename
-        end
-        vim.cmd('vsplit ' .. vim.fn.fnameescape(filename))
-        vim.cmd('stopinsert')
-    end
-end
+-- -- Open file under cursor on terminal
+-- local terminal_cwd = vim.fn.getcwd()
+-- function Open_file_under_cursor()
+--     local filename = vim.fn.expand('<cfile>')
+--     if filename ~= '' then
+--         if not filename:match('^/') then
+--             filename = terminal_cwd .. '/' .. filename
+--         end
+--         vim.cmd('vsplit ' .. vim.fn.fnameescape(filename))
+--         vim.cmd('stopinsert')
+--     end
+-- end
 
-vim.api.nvim_set_keymap(
-    'n',
-    '<C-x>',
-    '<cmd>lua Open_file_under_cursor()<CR>',
-    {
-        noremap = true,
-        silent = true 
-    }
-)
+-- vim.api.nvim_set_keymap(
+--     'n',
+--     '<C-x>',
+--     '<cmd>lua Open_file_under_cursor()<CR>',
+--     {
+--         noremap = true,
+--         silent = true 
+--     }
+-- )
