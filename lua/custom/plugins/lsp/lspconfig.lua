@@ -49,6 +49,16 @@ return {
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts) -- smart rename
 
+      opts.desc = "Open symbols window"
+      keymap.set("n", "<leader>ds", vim.lsp.buf.document_symbol, opts)
+
+      -- keymap.set("n", "<leader>ds", function()
+      --     vim.lsp.buf.document_symbol()
+      --     vim.defer_fn(function()
+      --         vim.cmd("wincmd L")
+      --     end, 500)
+      -- end, opts)
+
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
