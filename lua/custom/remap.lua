@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-e>", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>h", ":noh<CR>")
+vim.keymap.set("n", "Y", "v$y")
 
 -- Split
 vim.keymap.set("n", "<M-j>", "<C-w>j")
