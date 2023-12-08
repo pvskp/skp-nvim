@@ -1,4 +1,6 @@
-vim.g.mapleader = " "
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 vim.keymap.set("n", "<C-e>", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>h", ":noh<CR>")
 vim.keymap.set("n", "Y", "v$y")
@@ -107,6 +109,10 @@ vim.keymap.set("t", "<M-j>", "<C-\\><C-n><C-w>j", { silent = true })
 vim.keymap.set("t", "<M-k>", "<C-\\><C-n><C-w>k", { silent = true })
 vim.keymap.set("t", "<M-l>", "<C-\\><C-n><C-w>l", { silent = true })
 vim.keymap.set("t", "<M-h>", "<C-\\><C-n><C-w>h", { silent = true })
+
+-- Copy all file
+vim.keymap.set("n", "<C-y>", ":%y+<CR>", { silent = true })
+
 
 -- Window zoom
 local window_zoomed = false

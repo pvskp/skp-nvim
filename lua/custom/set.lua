@@ -4,7 +4,8 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 99999
 
 -- For some reason, this works better than `vim.opt.formatoptions:remove({ 'c', 'r', 'o' })`
-vim.cmd [[set formatoptions-=cro]]
+-- vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
+vim.cmd[[set formatoptions-=cro]]
 
 -- Configure tabs
 vim.opt.expandtab = true
@@ -20,6 +21,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
+
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
 
 -- Save undo history
 vim.o.undofile = true
