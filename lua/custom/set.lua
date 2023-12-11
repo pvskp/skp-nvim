@@ -7,6 +7,7 @@ vim.opt.shiftwidth = 4
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
+vim.opt.autochdir = true
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme everforest]])
