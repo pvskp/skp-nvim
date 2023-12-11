@@ -9,9 +9,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Find mode
 vim.keymap.set("n", "<leader>f", ":find ")
 function Search_in_directory()
-    local pattern = vim.fn.input("Enter search pattern: ")
-    if pattern ~= "" then
-        vim.cmd("grep! " .. pattern .. " *")
+    local ok, pattern = pcall(vim.fn.input, "Enter search pattern: ")
+    if ok and pattern ~= "" then
+        vim.cmd("silent! grep! " .. pattern .. " * 2> /dev/null")
         vim.cmd("copen")
     end
 end
