@@ -76,7 +76,7 @@ return {
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
@@ -86,6 +86,18 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- configure haskell server
+    lspconfig["hls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+    })
+
+    -- configure bashls server
+    lspconfig["bashls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach
+    })
+
     -- configure gopls server
     lspconfig["gopls"].setup({
       capabilities = capabilities,
@@ -93,7 +105,7 @@ return {
     })
 
     -- configure python server
-    lspconfig["pyright"].setup({
+    lspconfig["jedi_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

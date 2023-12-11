@@ -16,15 +16,16 @@ return {
 
         -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
         require("luasnip.loaders.from_vscode").lazy_load()
-
-
         cmp.setup({
+            experimental = {
+                ghost_text = true
+            },
             completion = {
-                completeopt = "menu,menuone,preview,noselect",
+                completeopt = "menu,preview,noinsert",
             },
             window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered({border = "double"}),
+                documentation = cmp.config.window.bordered({border = "double"}),
             },
             snippet = { -- configure how nvim-cmp interacts with snippet engine
             expand = function(args)
@@ -42,7 +43,7 @@ return {
         }),
         -- sources for autocompletion
         sources = cmp.config.sources({
-            { name = "copilot", group_index = 2 },
+            { name = "copilot" },
             { name = "nvim_lsp" },
             { name = "luasnip" }, -- snippets
             { name = "buffer" }, -- text within current buffer
