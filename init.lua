@@ -1,5 +1,5 @@
-require("custom")
 require("custom.remap")
+require("custom")
 require("custom.lazy")
 require("custom.set")
 require("custom.autocommands")

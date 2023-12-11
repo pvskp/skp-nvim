@@ -49,6 +49,16 @@ return {
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts) -- smart rename
 
+      opts.desc = "Open symbols window"
+      keymap.set("n", "<leader>ds", vim.lsp.buf.document_symbol, opts)
+
+      -- keymap.set("n", "<leader>ds", function()
+      --     vim.lsp.buf.document_symbol()
+      --     vim.defer_fn(function()
+      --         vim.cmd("wincmd L")
+      --     end, 500)
+      -- end, opts)
+
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
@@ -66,7 +76,7 @@ return {
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
@@ -76,6 +86,18 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- configure haskell server
+    lspconfig["hls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+    })
+
+    -- configure bashls server
+    lspconfig["bashls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach
+    })
+
     -- configure gopls server
     lspconfig["gopls"].setup({
       capabilities = capabilities,
@@ -83,7 +105,7 @@ return {
     })
 
     -- configure python server
-    lspconfig["pyright"].setup({
+    lspconfig["jedi_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
