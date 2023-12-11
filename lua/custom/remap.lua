@@ -7,7 +7,16 @@ vim.keymap.set("n", "Y", "v$y")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Find mode
-vim.keymap.set("n", "<leader>f", ":find *")
+vim.keymap.set("n", "<leader>f", ":find ")
+function Search_in_directory()
+    local pattern = vim.fn.input("Enter search pattern: ")
+    if pattern ~= "" then
+        vim.cmd("grep! " .. pattern .. " *")
+        vim.cmd("copen")
+    end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>g', ':lua Search_in_directory()<CR>', { noremap = true, silent = true })
 
 -- Split
 vim.keymap.set("n", "<M-j>", "<C-w>j")
