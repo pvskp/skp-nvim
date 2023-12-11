@@ -18,3 +18,5 @@ require("lazy").setup(
         { import = "custom.plugins.colorscheme" },
     }
 )
+
+vim.cmd([[colorscheme everforest]])
