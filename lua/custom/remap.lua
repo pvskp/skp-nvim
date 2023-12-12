@@ -86,7 +86,8 @@ vim.api.nvim_set_keymap(
 vim.keymap.set("n", "<M-=>", "<C-w>=")
 vim.keymap.set("n", "<C-s>", ":w<CR>")
 vim.keymap.set("n", "<M-f>", ":term<CR>")
-vim.keymap.set("n", "Q", ":q!<CR>")
+vim.keymap.set("n", "Q", ":bd!<CR>", { silent = true })
+vim.keymap.set("n", "<C-q>", ":q!<CR>", { silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
