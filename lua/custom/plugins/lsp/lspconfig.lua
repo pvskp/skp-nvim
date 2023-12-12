@@ -116,6 +116,20 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure yamlls server
+    lspconfig["yamlls"].setup({
+      capabilities = nil,
+      on_attach = on_attach,
+      handlers = {
+          ["textDocument/publishDiagnostics"] = function() end,}
+    })
+
+    -- configure helm_ls server
+    lspconfig["helm_ls"].setup({
+      capabilities = capabilities,
+      filetypes = {"helm", "yaml"},
+      on_attach = on_attach,
+    })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
