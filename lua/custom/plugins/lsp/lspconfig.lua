@@ -11,14 +11,14 @@ return {
     -- rounded border on floating windows
     local _border = "rounded"
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-      vim.lsp.handlers.hover, {
-        border = _border
-      }
+    vim.lsp.handlers.hover, {
+      border = _border
+    }
     )
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-      vim.lsp.handlers.signature_help, {
-        border = _border
-      }
+    vim.lsp.handlers.signature_help, {
+      border = _border
+    }
     )
     vim.diagnostic.config{
       float={border=_border}
@@ -49,8 +49,8 @@ return {
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts) -- smart rename
 
-      opts.desc = "Open symbols window"
-      keymap.set("n", "<leader>ds", vim.lsp.buf.document_symbol, opts)
+      -- opts.desc = "Open symbols window"
+      -- keymap.set("n", "<leader>ds", vim.lsp.buf.document_symbol, opts)
 
       -- keymap.set("n", "<leader>ds", function()
       --     vim.lsp.buf.document_symbol()
@@ -88,14 +88,14 @@ return {
 
     -- configure haskell server
     lspconfig["hls"].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
 
     -- configure bashls server
     lspconfig["bashls"].setup({
-        capabilities = capabilities,
-        on_attach = on_attach
+      capabilities = capabilities,
+      on_attach = on_attach
     })
 
     -- configure gopls server
@@ -121,21 +121,21 @@ return {
       capabilities = nil,
       on_attach = on_attach,
       handlers = {
-          ["textDocument/publishDiagnostics"] = function() end,}
-    })
+        ["textDocument/publishDiagnostics"] = function() end,}
+      })
 
-    -- configure helm_ls server
-    lspconfig["helm_ls"].setup({
-      capabilities = capabilities,
-      filetypes = {"helm", "yaml"},
-      on_attach = on_attach,
-    })
+      -- configure helm_ls server
+      lspconfig["helm_ls"].setup({
+        capabilities = capabilities,
+        filetypes = {"helm", "yaml"},
+        on_attach = on_attach,
+      })
 
-    -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = { -- custom settings for lua
+      -- configure lua server (with special settings)
+      lspconfig["lua_ls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = { -- custom settings for lua
         Lua = {
           -- make the language server recognize "vim" global
           diagnostics = {
