@@ -7,7 +7,7 @@ vim.keymap.set("n", "Y", "v$y")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Find mode
-vim.keymap.set("n", "<leader>f", ":find ")
+vim.keymap.set("n", "<leader>f", ":find *")
 function Search_in_directory()
     local ok, pattern = pcall(vim.fn.input, "Enter search pattern: ")
     if ok and pattern ~= "" then
