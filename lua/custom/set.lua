@@ -4,6 +4,8 @@ vim.opt.relativenumber = true
 vim.opt.path = ".,,**"
 vim.opt.wildmenu = true
 -- vim.opt.autochdir = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.opt.scrolloff = 99999
 
