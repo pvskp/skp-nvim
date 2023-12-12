@@ -6,8 +6,9 @@ vim.opt.wildmenu = true
 -- vim.opt.autochdir = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
 vim.opt.scrolloff = 99999
+
+vim.opt.compatible = false
 
 -- For some reason, this works better than `vim.opt.formatoptions:remove({ 'c', 'r', 'o' })`
 -- vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
