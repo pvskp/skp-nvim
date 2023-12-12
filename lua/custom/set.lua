@@ -1,7 +1,7 @@
 local options = {
   background = "dark",
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 0,                           -- more space in the neovim command line for displaying messages
+  cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   compatible = false,
   cursorline = true,                       -- highlight the current line
   expandtab = true,                        -- convert tabs to spaces
