@@ -4,7 +4,7 @@ key("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- key("n", "<C-e>", vim.cmd.Ex)
-key("n", "<C-e>", ":Lex 30<CR>", {silent = true, noremap = true})
+key("n", "<C-e>", ":Explore! 15<CR>", {silent = true, noremap = true})
 key("n", "<leader>h", ":noh<CR>")
 key("n", "Y", "v$y")
 key("i", "<C-c>", "<Esc>")
