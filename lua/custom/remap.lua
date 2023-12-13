@@ -1,5 +1,7 @@
 local key = vim.keymap.set
 
+local opts = { silent = true, noremap = false }
+
 key("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -10,6 +12,10 @@ key("n", "Y", "v$y")
 key("i", "<C-c>", "<Esc>")
 
 key("v", "p", '"_dP') -- this one is a life saver (avoid nvim messing with your registers)
+
+
+key("n", "<S-l>", ":bnext<CR>", opts)
+key("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Find mode
 key("n", "<leader>f", ":find *")
@@ -167,22 +173,22 @@ end, { silent = true })
 -- -- Open file under cursor on terminal
 -- local terminal_cwd = vim.fn.getcwd()
 -- function Open_file_under_cursor()
---     local filename = vim.fn.expand('<cfile>')
---     if filename ~= '' then
---         if not filename:match('^/') then
---             filename = terminal_cwd .. '/' .. filename
---         end
---         vim.cmd('vsplit ' .. vim.fn.fnameescape(filename))
---         vim.cmd('stopinsert')
---     end
--- end
+  --     local filename = vim.fn.expand('<cfile>')
+  --     if filename ~= '' then
+  --         if not filename:match('^/') then
+  --             filename = terminal_cwd .. '/' .. filename
+  --         end
+  --         vim.cmd('vsplit ' .. vim.fn.fnameescape(filename))
+  --         vim.cmd('stopinsert')
+  --     end
+  -- end
 
--- vim.api.nvim_set_keymap(
---     'n',
---     '<C-x>',
---     '<cmd>lua Open_file_under_cursor()<CR>',
---     {
---         noremap = true,
---         silent = true 
---     }
--- )
+  -- vim.api.nvim_set_keymap(
+  --     'n',
+  --     '<C-x>',
+  --     '<cmd>lua Open_file_under_cursor()<CR>',
+  --     {
+    --         noremap = true,
+    --         silent = true 
+    --     }
+    -- )

@@ -26,6 +26,7 @@ local options = {
   updatetime = 250,
   wildmenu = true,
   autochdir = false,
+  showmode = false,
 }
 
 for k, v in pairs(options) do
