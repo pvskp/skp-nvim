@@ -17,7 +17,7 @@ return {
       -- OR
       vim.g.lazygit_config_file_path = {} -- table of custom config file paths
 
-      vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>")
+      vim.keymap.set("n", "<leader>l", ":LazyGit<CR>")
     end
   },
 }

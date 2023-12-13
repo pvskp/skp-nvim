@@ -25,12 +25,16 @@ local options = {
   undofile = true,
   updatetime = 250,
   wildmenu = true,
+  autochdir = false,
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- For some reason, this works better than `vim.opt.formatoptions:remove({ 'c', 'r', 'o' })`
+-- vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
+-- It removes the auto comment when you press enter
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 vim.g.netrw_banner = 0
 
@@ -44,5 +48,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- For some reason, this works better than `vim.opt.formatoptions:remove({ 'c', 'r', 'o' })`
--- vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
