@@ -1,6 +1,6 @@
 require("custom.remap")
 require("custom")
-require("custom.lazy")
 require("custom.set")
+require("custom.lazy")
 require("custom.colorscheme")
 require("custom.autocommands")
