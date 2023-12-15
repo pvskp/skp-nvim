@@ -6,13 +6,19 @@ key("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 -- key("n", "<C-e>", vim.cmd.Ex)
+
 key("n", "<C-e>", ":Explore! 15<CR>", { silent = true, noremap = true })
+
 key("n", "<leader>h", ":noh<CR>")
+
+-- Copy line starting on cursor position
 key("n", "Y", "v$y")
 key("i", "<C-c>", "<Esc>")
 
-key("v", "p", '"_dP') -- this one is a life saver (avoid nvim messing with your registers)
+-- this one is a life saver (avoid nvim messing with your registers)
+key("v", "p", '"_dP')
 
+-- Move between buffers
 key("n", "<S-l>", ":bnext<CR>", opts)
 key("n", "<S-h>", ":bprevious<CR>", opts)
 
@@ -75,15 +81,15 @@ end
 
 function Interactive_resize()
   local keymap = vim.api.nvim_set_keymap
-  local opts = { noremap = true }
+  local interactive_resize_opts = { noremap = true }
 
-  keymap("n", "k", ":resize -2<CR>", opts)
-  keymap("n", "j", ":resize +2<CR>", opts)
-  keymap("n", "l", ":vertical resize -2<CR>", opts)
-  keymap("n", "h", ":vertical resize +2<CR>", opts)
+  keymap("n", "k", ":resize -2<CR>", interactive_resize_opts)
+  keymap("n", "j", ":resize +2<CR>", interactive_resize_opts)
+  keymap("n", "l", ":vertical resize -2<CR>", interactive_resize_opts)
+  keymap("n", "h", ":vertical resize +2<CR>", interactive_resize_opts)
 
-  keymap("n", "<C-c>", "<cmd>lua Exit_interactive_resize()<CR>", opts)
-  keymap("n", "q", "<cmd>lua Exit_interactive_resize()<CR>", opts)
+  keymap("n", "<C-c>", "<cmd>lua Exit_interactive_resize()<CR>", interactive_resize_opts)
+  keymap("n", "q", "<cmd>lua Exit_interactive_resize()<CR>", interactive_resize_opts)
 end
 
 vim.api.nvim_set_keymap("n", "<M-r>", "<cmd>lua Interactive_resize()<CR>", { noremap = true, silent = true })
