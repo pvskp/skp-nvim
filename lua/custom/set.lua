@@ -28,6 +28,7 @@ local options = {
 	autochdir = false,
 	showmode = false,
 	equalalways = false, -- I don't like my windows changing all the time
+	pumblend = 0,
 }
 
 for k, v in pairs(options) do
@@ -49,3 +50,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+
+vim.cmd("highlight! NormalFloat guibg=NONE")
+vim.cmd("highlight! FloatBorder guibg=NONE")
