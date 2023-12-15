@@ -95,7 +95,7 @@ end
 vim.api.nvim_set_keymap("n", "<M-r>", "<cmd>lua Interactive_resize()<CR>", { noremap = true, silent = true })
 
 key("n", "<M-=>", "<C-w>=")
-key("n", "<C-s>", ":w<CR>")
+key("n", "<C-s>", ":w<CR>", opts)
 key("n", "<M-f>", ":term<CR>")
 key("n", "Q", ":bd!<CR>", { silent = true })
 key("n", "<C-q>", ":q!<CR>", { silent = true })
