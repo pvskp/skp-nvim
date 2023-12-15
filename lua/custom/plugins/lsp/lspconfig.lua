@@ -5,25 +5,27 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     "nvim-lua/plenary.nvim",
+    {
+      "SmiteshP/nvim-navbuddy",
+      dependencies = {
+        "SmiteshP/nvim-navic",
+        "MunifTanjim/nui.nvim",
+      },
+      opts = { lsp = { auto_attach = true } },
+    },
   },
   config = function()
-
     -- rounded border on floating windows
     local _border = "rounded"
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, {
-      border = _border
-    }
-    )
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, {
-      border = _border
-    }
-    )
-    vim.diagnostic.config{
-      float={border=_border}
-    }
-
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = _border,
+    })
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      border = _border,
+    })
+    vim.diagnostic.config({
+      float = { border = _border },
+    })
 
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
@@ -36,6 +38,9 @@ return {
     local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
+
+      opts.desc = "Uses Navbuddy"
+      keymap.set("n", "<leader>n", ":Navbuddy<CR>", opts)
 
       opts.desc = "Go to declaration"
       keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -95,7 +100,7 @@ return {
     -- configure bashls server
     lspconfig["bashls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
     })
 
     -- configure gopls server
@@ -121,21 +126,22 @@ return {
       capabilities = nil,
       on_attach = on_attach,
       handlers = {
-        ["textDocument/publishDiagnostics"] = function() end,}
-      })
+        ["textDocument/publishDiagnostics"] = function() end,
+      },
+    })
 
-      -- configure helm_ls server
-      lspconfig["helm_ls"].setup({
-        capabilities = capabilities,
-        filetypes = {"helm", "yaml"},
-        on_attach = on_attach,
-      })
+    -- configure helm_ls server
+    lspconfig["helm_ls"].setup({
+      capabilities = capabilities,
+      filetypes = { "helm", "yaml" },
+      on_attach = on_attach,
+    })
 
-      -- configure lua server (with special settings)
-      lspconfig["lua_ls"].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = { -- custom settings for lua
+    -- configure lua server (with special settings)
+    lspconfig["lua_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = { -- custom settings for lua
         Lua = {
           -- make the language server recognize "vim" global
           diagnostics = {
