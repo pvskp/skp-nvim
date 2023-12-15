@@ -9,11 +9,19 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
+		{
+			"windwp/nvim-autopairs",
+			event = "InsertEnter",
+			opts = {}, -- this is equalent to setup({}) function
+		},
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
+		local cmd_autopairs = require("nvim-autopairs.completion.cmp")
+
+		cmp.event:on("confirm_done", cmd_autopairs.on_confirm_done())
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
@@ -33,7 +41,8 @@ return {
 				completion = cmp.config.window.bordered({ border = "double" }),
 				documentation = cmp.config.window.bordered({ border = "double" }),
 			},
-			snippet = { -- configure how nvim-cmp interacts with snippet engine
+			snippet = {
+				-- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
@@ -56,7 +65,6 @@ return {
 				{ name = "path" }, -- file system paths
 				-- { name = "fonts", option = { space_filter = "-" } }, -- file system paths
 			}),
-
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
 				format = lspkind.cmp_format({
