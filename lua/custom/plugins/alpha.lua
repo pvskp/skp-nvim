@@ -1,17 +1,19 @@
 return {
   "goolord/alpha-nvim",
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function ()
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
     local dashboard = require("alpha.themes.dashboard")
 
     dashboard.section.header.val = {
-      [[                               __                ]],
-      [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-      [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-      [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-      [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-      [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+      [[ ooooo      ooo               .                        ]],
+      [[ `888b.     `8'             .o8                        ]],
+      [[  8 `88b.    8   .oooo.   .o888oo oooo  oooo  oooo d8b ]],
+      [[  8   `88b.  8  `P  )88b    888   `888  `888  `888""8P ]],
+      [[  8     `88b.8   .oP"888    888    888   888   888     ]],
+      [[  8       `888  d8(  888    888 .  888   888   888     ]],
+      [[ o8o        `8  `Y888""8o   "888"  `V88V"V8P' d888b    ]],
     }
+
     dashboard.section.buttons.val = {
       dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
       dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
@@ -34,5 +36,5 @@ return {
     dashboard.opts.opts.noautocmd = true
     -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
     require("alpha").setup(dashboard.opts)
-  end
+  end,
 }

@@ -7,7 +7,7 @@ return {
     "SmiteshP/nvim-navic",
     "nvim-tree/nvim-web-devicons", -- optional dependency
   },
-  config = function ()
+  config = function()
     require("barbecue").setup({
       {
         ---Whether to attach navic to language servers automatically.
@@ -67,7 +67,9 @@ return {
         ---NOTE: This can be used to get file modified status from SCM (e.g. git)
         ---
         ---@type fun(bufnr: number): boolean
-        modified = function(bufnr) return vim.bo[bufnr].modified end,
+        modified = function(bufnr)
+          return vim.bo[bufnr].modified
+        end,
 
         ---Whether to show/use navic in the winbar.
         ---
@@ -80,7 +82,9 @@ return {
         ---render.
         ---
         ---@type fun(bufnr: number, winnr: number): barbecue.Config.custom_section
-        lead_custom_section = function() return " " end,
+        lead_custom_section = function()
+          return " "
+        end,
 
         ---@alias barbecue.Config.custom_section
         ---|string # Literal string.
@@ -92,7 +96,9 @@ return {
         ---render.
         ---
         ---@type fun(bufnr: number, winnr: number): barbecue.Config.custom_section
-        custom_section = function() return " " end,
+        custom_section = function()
+          return " "
+        end,
 
         ---@alias barbecue.Config.theme
         ---|'"auto"' # Use your current colorscheme's theme or generate a theme based on it.
@@ -161,7 +167,7 @@ return {
           Operator = "",
           TypeParameter = "",
         },
-      }
+      },
     })
   end,
   opts = {
