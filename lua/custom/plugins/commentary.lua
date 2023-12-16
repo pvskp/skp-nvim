@@ -1,4 +1,4 @@
 return {
-    "tpope/vim-commentary",
+  "tpope/vim-commentary",
+  lazy = false,
 }
-
