@@ -1,6 +1,7 @@
+-- return {}
 -- Alpha (dashboard) for neovim
 
-local options
+--local options
 
 -- Only runs this script if Alpha Screen loads -- only if there isn't files to read
 if vim.api.nvim_exec("echo argc()", true) == "0" then
@@ -248,12 +249,12 @@ if vim.api.nvim_exec("echo argc()", true) == "0" then
   -- Centering handler of ALPHA
   --
 
-  local ol = {                           -- occupied lines
-    icon = #header.val,                  -- CONST: number of lines that your header will occupy
-    message = #footer.val,               -- CONST: because of padding at the bottom
+  local ol = {                             -- occupied lines
+    icon = #header.val,                    -- CONST: number of lines that your header will occupy
+    message = #footer.val,                 -- CONST: because of padding at the bottom
     length_buttons = #buttons.val * 2 - 1, -- CONST: it calculate the number that buttons will occupy
-    neovim_lines = 2,                    -- CONST: 2 of command line, 1 of the top bar
-    padding_between = 3,                 -- STATIC: can be set to anything, padding between keybinds and header
+    neovim_lines = 2,                      -- CONST: 2 of command line, 1 of the top bar
+    padding_between = 3,                   -- STATIC: can be set to anything, padding between keybinds and header
   }
 
   local left_terminal_value = vim.api.nvim_get_option("lines")
@@ -289,6 +290,7 @@ end
 
 return {
   "goolord/alpha-nvim",
+  lazy = false,
   dependencies = "kyazdani42/nvim-web-devicons",
   config = function()
     if options ~= nil then
@@ -296,52 +298,3 @@ return {
     end
   end,
 }
-
--- return {
--- 	"goolord/alpha-nvim",
--- 	dependencies = { "nvim-tree/nvim-web-devicons" },
--- 	opts = {
--- 		text = {
--- 			opts = {
--- 				hl = "#a7c080",
--- 			},
--- 		},
--- 	},
--- 	config = function()
--- 		local dashboard = require("alpha.themes.dashboard")
-
--- 		dashboard.section.header.val = {
--- 			[[ ooooo      ooo               .                        ]],
--- 			[[ `888b.     `8'             .o8                        ]],
--- 			[[  8 `88b.    8   .oooo.   .o888oo oooo  oooo  oooo d8b ]],
--- 			[[  8   `88b.  8  `P  )88b    888   `888  `888  `888""8P ]],
--- 			[[  8     `88b.8   .oP"888    888    888   888   888     ]],
--- 			[[  8       `888  d8(  888    888 .  888   888   888     ]],
--- 			[[ o8o        `8  `Y888""8o   "888"  `V88V"V8P' d888b    ]],
--- 		}
-
--- 		dashboard.section.buttons.val = {
--- 			dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
--- 			dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
--- 			dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
--- 			dashboard.button("t", "󱎸  Find text", ":Telescope live_grep <CR>"),
--- 			dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
--- 			dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
--- 		}
-
--- 		local function footer()
--- 			return ""
--- 		end
-
--- 		dashboard.section.footer.val = footer()
-
--- 		-- dashboard.section.text.opts.hl = "#a7c080"
--- 		dashboard.section.footer.opts.hl = "Type"
--- 		dashboard.section.header.opts.hl = "Include"
--- 		dashboard.section.buttons.opts.hl = "Keyword"
-
--- 		dashboard.opts.opts.noautocmd = true
--- 		-- vim.cmd([[autocmd User AlphaReady echo 'ready']])
--- 		-- require("alpha").setup(dashboard.opts)
--- 	end,
--- }

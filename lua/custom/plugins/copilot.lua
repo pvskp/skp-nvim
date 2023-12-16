@@ -14,6 +14,7 @@
 
 return {
   "zbirenbaum/copilot-cmp",
+  lazy = false,
   dependencies = { "zbirenbaum/copilot.lua" },
   -- cmd = { "Copilot" }, -- Disables copilot on start
   config = function()

@@ -1,7 +1,9 @@
 -- return {}
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-  config = function ()
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.5',
+  lazy = false,
+  config = function()
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>f', builtin.find_files, {})
     vim.keymap.set('n', '<leader>s', builtin.live_grep, {})
