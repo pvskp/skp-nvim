@@ -1,7 +1,7 @@
 -- Provides hierarchi bar.
 return {
 	"utilyre/barbecue.nvim",
-	evenet = "LspAttach",
+	event = "LspAttach",
 	tag = "v1.2.0",
 	name = "barbecue",
 	version = "*",
