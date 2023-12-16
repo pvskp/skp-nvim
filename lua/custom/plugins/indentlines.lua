@@ -1,27 +1,27 @@
 return {
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {
-      indent = {
-        char = "│",
-        tab_char = "│",
-      },
-    },
-    config = function()
-      require("ibl").setup({
-        scope = { enabled = false },
-      })
-    end,
-  },
-  {
-    "echasnovski/mini.indentscope",
-    config = function()
-      require("mini.indentscope").setup({
-        -- symbol = "▏",
-        symbol = "│",
-        options = { try_as_border = false },
-      })
-    end,
-  },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		event = "VimEnter",
+		dependencies = {
+			{
+				"echasnovski/mini.indentscope",
+				opts = {
+					-- symbol = "▏",
+					symbol = "│",
+					options = { try_as_border = false },
+				},
+			},
+		},
+		opts = {
+			indent = {
+				char = "│",
+				tab_char = "│",
+			},
+			scope = { enabled = false },
+		},
+		config = function()
+			require("mini.indentscope")
+		end,
+	},
 }
