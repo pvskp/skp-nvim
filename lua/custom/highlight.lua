@@ -1,2 +1,2 @@
 vim.cmd("highlight! NormalFloat guibg=NONE")
-vim.cmd("highlight! FloatBorder guibg=NONE guifg=white")
+vim.cmd("highlight! FloatBorder guibg=NONE")
