@@ -28,7 +28,7 @@ return {
 				lualine_a = {
 					{
 						"mode",
-						padding = 1,
+						padding = 0,
 						color = function()
 							-- Get current mode
 							-- get corresponding highlight group based on mode
@@ -98,7 +98,7 @@ return {
 							}
 
 							-- return "▊ " .. str .. " " .. mode_icon[vim.fn.mode()]
-							return "▊ " .. "󰌽"
+							return "█ " .. "󰌽"
 						end,
 					},
 				},
@@ -112,9 +112,9 @@ return {
 					"diff",
 					{
 						"diagnostics",
-						padding = 1,
+						padding = 0,
 						fmt = function(str)
-							return str .. " ▊"
+							return str .. " █"
 						end,
 					},
 				},

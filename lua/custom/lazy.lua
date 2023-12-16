@@ -19,4 +19,7 @@ require("lazy").setup({
   defaults = {
     lazy = true,
   },
+  ui = {
+    border = "double",
+  },
 })
