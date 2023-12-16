@@ -1,6 +1,7 @@
 -- return {}
 return {
 	"mawkler/modicator.nvim",
+	event = "VeryLazy", -- This fix a bug when neovim it's started
 	init = function()
 		-- These are required for Modicator to work
 		vim.o.cursorline = true
@@ -9,7 +10,7 @@ return {
 	end,
 	opts = {
 		-- Show warning if any required option is missing
-		show_warnings = true,
+		show_warnings = false,
 		highlights = {
 			-- Default options for bold/italic
 			defaults = {
