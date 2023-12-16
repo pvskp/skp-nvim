@@ -4,6 +4,7 @@ This repository contains my new [Neovim](https://neovim.io/) - from scratch - co
 
 ![image](https://github.com/pvskp/nvim-dotfiles/assets/77075070/5d1bc2bc-015f-45ae-a4c3-4ed88dda7682)
 ![image](https://github.com/pvskp/nvim-dotfiles/assets/77075070/f5719978-36bf-4d30-b721-8a24a98722f4)
+![image](https://github.com/pvskp/nvim-dotfiles/assets/77075070/47bed0ad-8da1-427a-8b4c-03e894531bbb)
 
 ## Key Remappings
 
