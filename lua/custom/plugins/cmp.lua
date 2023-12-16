@@ -30,7 +30,7 @@ return {
       { sources = { { name = "fonts", option = { space_filter = "-" } } } }
     )
     cmp.setup({
-      -- preselect = cmp.PreselectMode.None,
+      preselect = cmp.PreselectMode.Item,
       experimental = {
         ghost_text = true,
       },
@@ -61,11 +61,11 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        { name = "copilot" },
-        { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets
-        { name = "buffer" }, -- text within current buffer
+        { name = "nvim_lsp" },
+        { name = "copilot" },
         { name = "path" }, -- file system paths
+        { name = "buffer" }, -- text within current buffer
         -- { name = "fonts", option = { space_filter = "-" } }, -- file system paths
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
