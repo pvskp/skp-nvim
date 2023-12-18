@@ -98,7 +98,7 @@ return {
 							}
 
 							-- return "▊ " .. str .. " " .. mode_icon[vim.fn.mode()]
-							return "█ " .. "󰌽"
+							return "█ " .. "󰻀"
 						end,
 					},
 				},

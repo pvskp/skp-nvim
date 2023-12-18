@@ -22,4 +22,7 @@ require("lazy").setup({
   ui = {
     border = "double",
   },
+  dev = {
+    path = "~/Documents/repos/nvim-plugins/"
+  }
 })
