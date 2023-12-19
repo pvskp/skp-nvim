@@ -18,6 +18,9 @@ key({ "n", "v" }, ",", "_")
 key("n", "Y", "v$y")
 key("i", "<C-c>", "<Esc>")
 
+-- Go to the end of line
+key({ "n", "v" }, "<leader><leader>", "g_")
+
 -- this one is a life saver (avoid nvim messing with your registers)
 key("v", "p", '"_dP')
 
