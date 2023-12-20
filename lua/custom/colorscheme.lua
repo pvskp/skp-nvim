@@ -1,6 +1,6 @@
 -- local colorscheme = "everforest"
-local colorscheme = "citruszest"
+local colorscheme = "vscode"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
-	print("colorscheme " .. colorscheme .. "not found.")
+	print("colorscheme " .. colorscheme .. " not found.")
 end
