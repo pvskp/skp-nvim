@@ -1,7 +1,6 @@
 return {
 	"smoka7/hop.nvim",
 	lazy = false,
-	branch = "v2",
 	version = "*",
 	opts = {},
 	init = function()

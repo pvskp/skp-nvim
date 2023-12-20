@@ -2,7 +2,7 @@
 return {
 	"pvskp/btterm.nvim",
 	-- dir = "~/Documents/repos/btterm",
-	dir = "~/Documents/repos/btterm",
+	-- dir = "~/Documents/repos/btterm",
 	lazy = false,
 	config = function()
 		require("flatten")
