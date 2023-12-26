@@ -167,6 +167,9 @@ keymap("n", "<leader>x", "@:", opts)
 -- Source current file
 keymap("n", "<leader>s", ":w<CR>:source %<CR>", opts)
 
+-- Command mode
+vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
+
 -- -- Open file under cursor on terminal
 -- local terminal_cwd = vim.fn.getcwd()
 -- function Open_file_under_cursor()

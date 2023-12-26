@@ -1,6 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.5",
+	lazy = false,
 	init = function()
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>f", builtin.find_files, {})
@@ -10,4 +11,13 @@ return {
 		vim.keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { silent = true })
 	end,
 	dependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
+		require("telescope").setup({
+			pickers = {
+				colorscheme = {
+					enable_preview = true,
+				},
+			},
+		})
+	end,
 }
