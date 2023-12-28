@@ -7,6 +7,7 @@ return {
 			bash = { "beautysh" },
 			python = { "isort", "black" },
 			javascript = { { "prettierd", "prettier" } },
+			json = { { "prettierd", "prettier" } },
 		},
 	},
 }
