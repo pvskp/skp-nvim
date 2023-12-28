@@ -10,7 +10,7 @@ return {
 
 			highlight = {
 				enable = true,
-				disable = { "markdown" },
+				disable = { "markdown", "vimdoc" },
 				additional_vim_regex_highlighting = false,
 				indent = {
 					enable = false,
