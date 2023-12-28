@@ -107,7 +107,7 @@ return {
 		})
 
 		-- configure python server
-		lspconfig["jedi_language_server"].setup({
+		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
