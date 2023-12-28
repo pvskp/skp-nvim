@@ -3,7 +3,12 @@ return {
 	version = "*",
 	lazy = false,
 	config = function()
-		require("focus").setup({
+		local focus = require("focus")
+		vim.keymap.set({ "n", "i" }, "<leader>m", function()
+			print("[Focus] toggled.")
+			focus.focus_toggle()
+		end, {})
+		focus.setup({
 			enable = true, -- Enable module
 			commands = true, -- Create Focus commands
 			autoresize = {
