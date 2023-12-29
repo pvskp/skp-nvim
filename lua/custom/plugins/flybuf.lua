@@ -1,5 +1,6 @@
 return {
-	"glepnir/flybuf.nvim",
+	"pvskp/flybuf.nvim",
+	dir = "~/Documents/repos/flybuf.nvim/",
 	lazy = false,
 	config = function()
 		local flybuf = require("flybuf")
