@@ -10,12 +10,19 @@ return {
 		vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { silent = true })
 	end,
-	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
 	config = function()
 		require("telescope").setup({
 			pickers = {
 				colorscheme = {
 					enable_preview = true,
+				},
+				buffers = {
+					theme = "dropdown",
+					ignore_current_buffer = true,
 				},
 			},
 			extensions = {
