@@ -11,24 +11,6 @@ keymap("n", "<C-e>", ":Explore! 15<CR>", { silent = true, noremap = true })
 
 keymap("n", "<leader>h", ":noh<CR>")
 
--- -- Auto brackets
--- keymap({ "n", "i" }, "<leader><leader>", function()
--- 	if vim.api.nvim_get_mode().mode == "i" then
--- 		vim.cmd("stopinsert")
--- 	end
-
--- 	local keys_to_send = { "A", "" }
-
--- 	for i, v in ipairs(keys_to_send) do
--- 		vim.api.nvim_feedkeys(v, "n", true)
--- 		local key = vim.api.nvim_replace_termcodes("<C-o>", true, false, true)
--- 		vim.api.nvim_feedkeys()
--- 	end
--- end)
-
-keymap({ "n", "v" }, "<leader><leader>", "g_")
--- key({ "n", "v" }, ",", "_")
-
 -- Copy line starting on cursor position
 keymap("n", "Y", "v$y")
 keymap("i", "<C-c>", "<Esc>")
