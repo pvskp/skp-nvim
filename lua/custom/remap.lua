@@ -169,11 +169,11 @@ keymap("n", "<leader>s", ":w<CR>:source %<CR>", opts)
 -- Command mode
 vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
 
-fold_close = function()
+local fold_close = function()
 	pcall(vim.cmd.foldclose)
 end
 
-fold_open = function()
+local fold_open = function()
 	pcall(vim.cmd.foldopen)
 end
 
