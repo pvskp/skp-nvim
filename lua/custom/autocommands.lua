@@ -22,3 +22,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
+
+-- local signcolumn_group = vim.api.nvim_create_augroup("ReactivateSignColumn", { clear = true })
+-- vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+-- 	group = signcolumn_group,
+-- 	command = "set signcolumn=yes",
+-- 	pattern = "*",
+-- })
