@@ -169,25 +169,14 @@ keymap("n", "<leader>s", ":w<CR>:source %<CR>", opts)
 -- Command mode
 vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
 
--- -- Open file under cursor on terminal
--- local terminal_cwd = vim.fn.getcwd()
--- function Open_file_under_cursor()
---     local filename = vim.fn.expand('<cfile>')
---     if filename ~= '' then
---         if not filename:match('^/') then
---             filename = terminal_cwd .. '/' .. filename
---         end
---         vim.cmd('vsplit ' .. vim.fn.fnameescape(filename))
---         vim.cmd('stopinsert')
---     end
--- end
+fold_close = function()
+	pcall(vim.cmd.foldclose)
+end
 
--- vim.api.nvim_set_keymap(
---     'n',
---     '<C-x>',
---     '<cmd>lua Open_file_under_cursor()<CR>',
---     {
---         noremap = true,
---         silent = true
---     }
--- )
+fold_open = function()
+	pcall(vim.cmd.foldopen)
+end
+
+-- fold
+keymap("n", "-", fold_close, {})
+keymap("n", "=", fold_open, {})

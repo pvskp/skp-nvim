@@ -29,7 +29,7 @@ local options = {
 	showmode = false,
 	equalalways = false, -- I don't like my windows changing all the time
 	pumblend = 0,
-	signcolumn = "auto",
+	signcolumn = "yes",
 	-- winblend = 0,
 }
 
