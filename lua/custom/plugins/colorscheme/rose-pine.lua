@@ -42,5 +42,7 @@ return {
 				-- headings = 'subtle'
 			},
 		})
+
+    vim.cmd([[colorscheme rose-pine]])
 	end,
 }

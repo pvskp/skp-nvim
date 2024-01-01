@@ -40,10 +40,10 @@ return {
 			},
 			window = {
 				completion = cmp.config.window.bordered({
-					border = "double",
+					border = "rounded",
 					winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
 				}),
-				documentation = cmp.config.window.bordered({ border = "double" }),
+				documentation = cmp.config.window.bordered({ border = "rounded" }),
 			},
 			snippet = {
 				-- configure how nvim-cmp interacts with snippet engine
@@ -59,6 +59,7 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				["<Tab>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
