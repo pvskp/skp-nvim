@@ -19,7 +19,7 @@ Spec(plugins .. "lsp.nvim-lint")
 Spec(plugins .. "lsp.treesiter")
 
 -- General
-Spec("custom.plugins.alpha")
+Spec(plugins .. "alpha")
 Spec(plugins .. "autopairs")
 Spec(plugins .. "barbecue")
 Spec(plugins .. "btterm")
@@ -40,7 +40,7 @@ Spec(plugins .. "lazygit")
 Spec(plugins .. "lualine")
 Spec(plugins .. "luasnip")
 Spec(plugins .. "mini")
-Spec(plugins .. "netrw")
+-- Spec(plugins .. "netrw")
 Spec(plugins .. "rainbow-delimiters")
 Spec(plugins .. "surround")
 Spec(plugins .. "telescope")
@@ -51,5 +51,5 @@ Spec(plugins .. "vim-go")
 Spec(plugins .. "vim-kitty")
 Spec(plugins .. "vim-kubectl")
 
--- Loads all with lazy
+-- Loads all with alpha
 require("custom.lazy")
