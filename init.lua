@@ -9,6 +9,7 @@ local plugins = "custom.plugins."
 
 -- colorschemes
 Spec(plugins .. "colorscheme.rose-pine")
+-- Spec(plugins .. "colorscheme.vscode")
 
 -- LSP related
 Spec(plugins .. "lsp.conform")
@@ -30,11 +31,11 @@ Spec(plugins .. "commentary")
 Spec(plugins .. "copilot")
 Spec(plugins .. "discord")
 Spec(plugins .. "dressing")
-Spec(plugins .. "flybuf")
+-- Spec(plugins .. "flybuf")
 Spec(plugins .. "focus")
 Spec(plugins .. "hawtkeys")
 Spec(plugins .. "hop")
-Spec(plugins .. "illuminate")
+-- Spec(plugins .. "illuminate")
 Spec(plugins .. "indentlines")
 Spec(plugins .. "lazygit")
 Spec(plugins .. "lualine")
@@ -51,5 +52,5 @@ Spec(plugins .. "vim-go")
 Spec(plugins .. "vim-kitty")
 Spec(plugins .. "vim-kubectl")
 
--- Loads all with alpha
+-- Loads all with lazy
 require("custom.lazy")
