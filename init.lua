@@ -4,6 +4,7 @@ require("custom.globals")
 require("custom.highlight")
 require("custom.remap")
 require("custom.set")
+require("custom.utils")
 
 ---loads a plugin to lazy
 ---@param plugin_path string the relative path to "custom.plugins" where the plugin config is located
@@ -33,6 +34,7 @@ spec("lsp.treesiter")
 -- spec("lab")
 -- spec("neoscroll")
 -- spec("netrw")
+
 spec("alpha")
 spec("autopairs")
 spec("barbecue")
@@ -62,6 +64,7 @@ spec("ufo")
 spec("vim-go")
 spec("vim-kitty")
 spec("vim-kubectl")
+spec("fidget")
 
 -- Loads all with lazy
 require("custom.lazy")

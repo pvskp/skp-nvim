@@ -7,9 +7,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 -- key("n", "<C-e>", vim.cmd.Ex)
 
+-- Opens netwr
 keymap("n", "<C-e>", ":Explore! 15<CR>", { silent = true, noremap = true })
-
-keymap("n", "<leader>h", ":noh<CR>")
 
 -- Copy line starting on cursor position
 keymap("n", "Y", "v$y")
@@ -28,14 +27,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Find mode
 keymap("n", "<leader>f", ":find *")
 
-function Search_in_directory()
-	local ok, pattern = pcall(vim.fn.input, "Enter search pattern: ")
-	if ok and pattern ~= "" then
-		vim.cmd("silent! grep! " .. pattern .. " * 2> /dev/null")
-		vim.cmd("copen")
-	end
-end
-
 vim.api.nvim_set_keymap("n", "<leader>g", ":lua Search_in_directory()<CR>", { noremap = true, silent = true })
 
 -- Split
@@ -43,29 +34,6 @@ keymap("n", "<M-j>", "<C-w>j")
 keymap("n", "<M-k>", "<C-w>k")
 keymap("n", "<M-l>", "<C-w>l")
 keymap("n", "<M-h>", "<C-w>h")
-
-function Exit_interactive_resize()
-	local keymap_del = vim.api.nvim_del_keymap
-	-- Remover mapeamentos temporários
-	keymap_del("n", "k")
-	keymap_del("n", "j")
-	keymap_del("n", "h")
-	keymap_del("n", "l")
-	keymap_del("n", "<C-c>")
-	keymap_del("n", "q")
-end
-
-function Interactive_resize()
-	local keymap_set = vim.api.nvim_set_keymap
-	local interactive_resize_opts = { noremap = true }
-
-	keymap_set("n", "k", ":resize -2<CR>", interactive_resize_opts)
-	keymap_set("n", "j", ":resize +2<CR>", interactive_resize_opts)
-	keymap_set("n", "l", ":vertical resize -2<CR>", interactive_resize_opts)
-	keymap_set("n", "h", ":vertical resize +2<CR>", interactive_resize_opts)
-	keymap_set("n", "<C-c>", "<cmd>lua Exit_interactive_resize()<CR>", interactive_resize_opts)
-	keymap_set("n", "q", "<cmd>lua Exit_interactive_resize()<CR>", interactive_resize_opts)
-end
 
 vim.api.nvim_set_keymap("n", "<M-r>", "<cmd>lua Interactive_resize()<CR>", { noremap = true, silent = true })
 

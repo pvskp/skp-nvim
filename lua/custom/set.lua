@@ -30,6 +30,7 @@ local options = {
 	equalalways = false, -- I don't like my windows changing all the time
 	pumblend = 0,
 	signcolumn = "yes",
+	virtualedit = "all",
 	-- winblend = 0,
 }
 
