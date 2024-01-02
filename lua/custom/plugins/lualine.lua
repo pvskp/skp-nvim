@@ -81,16 +81,6 @@ return {
 									unknown = "#FF5555",
 								},
 							},
-							spinners = function()
-								local ok, spinners = pcall(require, "copilot-lualine.spinners") --require("copilot-lualine.spinners").dots
-								if ok then
-									return spinners.dots
-								else
-									return {}
-								end
-							end,
-
-							spinner_color = "#6272A4",
 						},
 						show_colors = false,
 						show_loading = true,

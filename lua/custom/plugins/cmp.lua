@@ -59,14 +59,14 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
-				["<Tab>"] = cmp.mapping.confirm({ select = false }),
+				-- ["<Tab>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "nvim_lsp" },
-				{ name = "copilot" },
+				-- { name = "copilot" },
 				{ name = "path" }, -- file system paths
 				{ name = "buffer" }, -- text within current buffer
 				-- { name = "fonts", option = { space_filter = "-" } }, -- file system paths
