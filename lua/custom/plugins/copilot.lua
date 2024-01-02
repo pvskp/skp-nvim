@@ -23,10 +23,22 @@ return {
 
 	config = function()
 		local copilot_lua = require("copilot")
-		local copilot_cmp = require("copilot_cmp")
+		-- local copilot_cmp = require("copilot_cmp")
 
 		copilot_lua.setup({
-			suggestion = { enabled = true },
+			suggestion = {
+				enabled = true,
+				auto_trigger = true,
+				keymap = {
+					-- accept = "<M-l>",
+					accept = "<Tab>",
+					accept_word = false,
+					accept_line = false,
+					next = "<M-]>",
+					prev = "<M-[>",
+					dismiss = "<C-l>",
+				},
+			},
 			panel = { enabled = false },
 			filetypes = {
 				yaml = true,
@@ -40,6 +52,6 @@ return {
 				["."] = false,
 			},
 		})
-		copilot_cmp.setup()
+		-- copilot_cmp.setup()
 	end,
 }
