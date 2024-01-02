@@ -37,10 +37,6 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
--- For some reason, this works better than `vim.opt.formatoptions:remove({ 'c', 'r', 'o' })`
--- vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
--- It removes the auto comment when you press enter
-vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 vim.g.netrw_banner = 0
 
 local shape_group = vim.api.nvim_create_augroup("Shape", { clear = true })
