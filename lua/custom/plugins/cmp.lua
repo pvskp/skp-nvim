@@ -78,6 +78,7 @@ return {
 					symbol_map = { Copilot = "" },
 					menu = {
 						copilot = "[Copilot]",
+						path = "[Path]",
 						buffer = "[Buffer]",
 						nvim_lsp = "[LSP]",
 						luasnip = "[LuaSnip]",

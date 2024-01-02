@@ -5,16 +5,19 @@ require("custom.globals")
 require("custom.autocommands")
 require("custom.highlight")
 
+---loads a plugin to lazy
+---@param plugin_path string the relative path to "custom.plugins" where the plugin config is located
 local spec = function(plugin_path)
 	local plugins = "custom.plugins."
 	Spec(plugins .. plugin_path)
 end
 
 --<< colorschemes >>--
-spec("colorscheme.rose-pine")
--- spec("colorscheme.vscode")
+-- spec("colorscheme.rose-pine")
+spec("colorscheme.vscode")
 
 --<< LSP related >>--
+
 spec("lsp.conform")
 spec("lsp.lspconfig")
 spec("lsp.mason")
@@ -23,6 +26,13 @@ spec("lsp.nvim-lint")
 spec("lsp.treesiter")
 
 --<< General >>--
+
+-- spec("flybuf")
+-- spec("hawtkeys")
+-- spec("illuminate")
+-- spec("lab")
+-- spec("neoscroll")
+-- spec("netrw")
 spec("alpha")
 spec("autopairs")
 spec("barbecue")
@@ -34,17 +44,14 @@ spec("commentary")
 spec("copilot")
 spec("discord")
 spec("dressing")
--- spec("flybuf")
+spec("eyeliner")
 spec("focus")
-spec("hawtkeys")
 spec("hop")
--- spec("illuminate")
 spec("indentlines")
 spec("lazygit")
 spec("lualine")
 spec("luasnip")
 spec("mini")
--- spec("netrw")
 spec("rainbow-delimiters")
 spec("surround")
 spec("telescope")
@@ -54,7 +61,6 @@ spec("ufo")
 spec("vim-go")
 spec("vim-kitty")
 spec("vim-kubectl")
--- spec("neoscroll")
 
 -- Loads all with lazy
 require("custom.lazy")

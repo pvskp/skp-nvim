@@ -16,7 +16,7 @@ return {
 	"zbirenbaum/copilot-cmp",
 	cmd = "Copilot",
 	dependencies = {
-		"zbirenbaum/copilot.lua", -- Disables copilot on start
+		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 	},
 
