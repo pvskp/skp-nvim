@@ -13,7 +13,7 @@ keymap("n", "<leader>h", ":noh<CR>")
 
 -- Copy line starting on cursor position
 keymap("n", "Y", "v$y")
-keymap("i", "<C-c>", "<Esc>")
+keymap({ "c", "i", "n" }, "<C-c>", "<Esc>")
 
 -- Go to the end of line
 keymap({ "n", "v" }, "<leader><leader>", "g_")
