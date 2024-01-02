@@ -3,6 +3,24 @@ return {
 	lazy = false,
 	requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	config = function()
+		-- local ok, copilot_status = pcall(require, "copilot_status")
+
+		-- if not ok then
+		-- 	copilot_status = {}
+		-- 	copilot_status.status_string = ""
+		-- 	copilot_status.enabled = false
+		-- else
+		-- 	require("copilot_status").setup({
+		-- 		icons = {
+		-- 			idle = " ",
+		-- 			error = " ",
+		-- 			offline = " ",
+		-- 			warning = " ",
+		-- 			loading = " ",
+		-- 		},
+		-- 	})
+		-- end
+
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -44,7 +62,33 @@ return {
 				},
 				lualine_c = { "%=", { "filetype", icon_only = true }, { "filename" } },
 				lualine_x = {},
-				lualine_y = { "progress" },
+				lualine_y = {
+					{
+						"copilot",
+						-- Default values
+						symbols = {
+							status = {
+								icons = {
+									enabled = "",
+									disabled = "",
+									warning = "",
+									unknown = "",
+								},
+								hl = {
+									enabled = "#50FA7B",
+									disabled = "#6272A4",
+									warning = "#FFB86C",
+									unknown = "#FF5555",
+								},
+							},
+							spinners = require("copilot-lualine.spinners").dots,
+							spinner_color = "#6272A4",
+						},
+						show_colors = false,
+						show_loading = true,
+					},
+					"progress",
+				},
 				lualine_z = { "location" },
 			},
 			inactive_sections = {

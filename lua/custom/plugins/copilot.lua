@@ -1,4 +1,4 @@
-Copilot_started = 0
+Copilot_started = 1
 local copilot_toggle = function()
 	if Copilot_started == 1 then
 		Copilot_started = 0
@@ -13,11 +13,12 @@ end
 vim.keymap.set("n", "<leader>c", copilot_toggle)
 
 return {
-	"zbirenbaum/copilot-cmp",
-	cmd = "Copilot",
+	"zbirenbaum/copilot.lua",
+	-- cmd = "Copilot",
+	lazy = false,
 	dependencies = {
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
+		"zbirenbaum/copilot-cmp",
+		-- cmd = "Copilot",
 	},
 
 	config = function()
@@ -40,6 +41,5 @@ return {
 			},
 		})
 		copilot_cmp.setup()
-		-- vim.cmd([[Copilot disable]])
 	end,
 }

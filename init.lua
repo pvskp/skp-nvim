@@ -1,9 +1,9 @@
-require("custom.remap")
 require("custom")
-require("custom.set")
-require("custom.globals")
 require("custom.autocommands")
+require("custom.globals")
 require("custom.highlight")
+require("custom.remap")
+require("custom.set")
 
 ---loads a plugin to lazy
 ---@param plugin_path string the relative path to "custom.plugins" where the plugin config is located
@@ -42,6 +42,7 @@ spec("cmp")
 spec("colorizer")
 spec("commentary")
 spec("copilot")
+spec("copilot-lualine")
 spec("discord")
 spec("dressing")
 spec("eyeliner")
