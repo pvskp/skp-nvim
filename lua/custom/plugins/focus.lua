@@ -39,5 +39,6 @@ return {
 				winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
 			},
 		})
+		focus.focus_disable()
 	end,
 }
