@@ -31,7 +31,7 @@ return {
 				auto_trigger = true,
 				keymap = {
 					-- accept = "<M-l>",
-					accept = "<Tab>",
+					accept = "<C-CR>",
 					accept_word = false,
 					accept_line = false,
 					next = "<M-]>",
