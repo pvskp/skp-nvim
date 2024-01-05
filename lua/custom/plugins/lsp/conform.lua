@@ -8,6 +8,7 @@ return {
 			python = { "isort", "black" },
 			javascript = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
+			yaml = { "yamlfmt" },
 		},
 
 		format_on_save = {

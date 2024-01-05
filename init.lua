@@ -7,15 +7,20 @@ require("custom.set")
 require("custom.utils")
 
 ---loads a plugin to lazy
----@param plugin_path string the relative path to "custom.plugins" where the plugin config is located
-local spec = function(plugin_path)
+---@param plugin_relative_path string the relative path to "custom.plugins" where the plugin config is located
+local spec = function(plugin_relative_path)
 	local plugins = "custom.plugins."
-	Spec(plugins .. plugin_path)
+	Spec(plugins .. plugin_relative_path)
 end
 
 --<< colorschemes >>--
--- spec("colorscheme.rose-pine")
-spec("colorscheme.vscode")
+spec("colorscheme.rose-pine")
+-- spec("colorscheme.vscode")
+-- spec("colorscheme.catppuccin")
+-- spec("colorscheme.onedark")
+-- spec("colorscheme.everforest")
+-- spec("colorscheme.moonlight")
+-- spec("colorscheme.gruvbox-material")
 
 --<< LSP related >>--
 
@@ -28,14 +33,15 @@ spec("lsp.treesiter")
 
 --<< General >>--
 
+-- spec("oil")
 -- spec("flybuf")
--- spec("hawtkeys")
 -- spec("illuminate")
 -- spec("lab")
 -- spec("neo-tree")
 -- spec("neoscroll")
 -- spec("netrw")
 -- spec("nvim-tree")
+-- spec("oil")
 
 spec("alpha")
 spec("autopairs")
@@ -52,6 +58,7 @@ spec("dressing")
 spec("eyeliner")
 spec("fidget")
 spec("focus")
+spec("hawtkeys")
 spec("hop")
 spec("indentlines")
 spec("lazygit")

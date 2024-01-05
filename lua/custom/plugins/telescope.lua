@@ -6,7 +6,7 @@ return {
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>f", builtin.find_files, {})
 		vim.keymap.set("n", "<leader>g", builtin.live_grep, {})
-		vim.keymap.set("n", "<leader>b", builtin.buffers, {})
+		vim.keymap.set("n", "<leader>e", builtin.buffers, {})
 		vim.keymap.set("n", "<leader>h", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>/", ":Telescope current_buffer_fuzzy_find<CR>", { silent = true })
 	end,
@@ -22,7 +22,18 @@ return {
 				},
 				buffers = {
 					theme = "dropdown",
-					ignore_current_buffer = true,
+					previewer = false,
+					show_all_buffers = true,
+					mappings = {
+						i = {
+							["<c-d>"] = require("telescope.actions").delete_buffer,
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
+							["<Esc>"] = require("telescope.actions").close,
+							["<leader>e"] = require("telescope.actions").close,
+						},
+					},
+					-- ignore_current_buffer = true,
 				},
 			},
 			extensions = {
