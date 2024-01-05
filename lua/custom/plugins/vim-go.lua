@@ -1,6 +1,6 @@
 return {
 	"fatih/vim-go",
-	event = "LspAttach",
+	lazy = false,
 	dependencies = {
 		"olexsmir/gopher.nvim",
 		dependencies = {
@@ -18,6 +18,15 @@ return {
 		},
 	},
 	config = function()
+		--create autocommand that disables numbers on filetype "godoc"
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "godoc" },
+			callback = function()
+				vim.cmd("setlocal nonumber")
+				vim.cmd("setlocal norelativenumber")
+			end,
+		})
+
 		require("gopher")
 	end,
 }

@@ -44,3 +44,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- 	group = shape_group,
 -- 	command = "set guicursor=a:ver90,a:blinkon100",
 -- })
+
+-- Initiates the LSP for ansible, if available
+local ansible_filetype_group = vim.api.nvim_create_augroup("FiletypeAnsible", { clear = true })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	group = ansible_filetype_group,
+	pattern = "*.ansible.yaml",
+	callback = function()
+		pcall(vim.lsp.start, { name = "ansiblels", cmd = { "ansible-language-server", "--stdio" } })
+	end,
+})

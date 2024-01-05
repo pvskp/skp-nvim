@@ -8,6 +8,7 @@ local options = {
 	hlsearch = false, -- highlight all matches on previous search pattern
 	ignorecase = true, -- ignore case in search patterns
 	linebreak = true, -- companion to wrap, don't split words
+	wrap = false,
 	number = true, -- the number of spaces inserted for each indentation
 	numberwidth = 4, -- set number column width to 2 {default 4}
 	path = ".,,**",

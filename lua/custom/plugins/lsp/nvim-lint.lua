@@ -14,6 +14,7 @@ return {
 			-- lua = { "luacheck" },
 			python = { "pylint" },
 			go = { "golangcilint" },
+			-- yaml = { "yamllint" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
