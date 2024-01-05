@@ -43,8 +43,8 @@ keymap("n", "<M-f>", ":term<CR>")
 keymap("n", "Q", ":bd!<CR>", { silent = true })
 keymap("n", "<C-q>", ":qa!<CR>", { silent = true })
 
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
+keymap("v", "<M-j>", ":m '>+1<CR>gv=gv")
+keymap("v", "<M-k>", ":m '<-2<CR>gv=gv")
 
 keymap("v", ">", ">gv")
 keymap("v", "<", "<gv")
