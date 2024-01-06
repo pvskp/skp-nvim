@@ -74,6 +74,8 @@ spec("ufo")
 spec("vim-go")
 spec("vim-kitty")
 spec("vim-kubectl")
+spec("fugitive")
+spec("undotree")
 
 -- Loads all with lazy
 require("custom.lazy")

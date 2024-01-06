@@ -1,11 +1,23 @@
 -- Highlight on yank
+-- local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+-- 	callback = function()
+-- 		vim.highlight.on_yank()
+-- 	end,
+-- 	group = highlight_group,
+-- 	pattern = "*",
+-- })
+
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
 	group = highlight_group,
 	pattern = "*",
+	callback = function()
+		local event = vim.v.event
+		if event.operator == "y" and event.regtype ~= "" then
+			vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300, on_visual = false })
+		end
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {

@@ -32,6 +32,7 @@ local options = {
 	pumblend = 0,
 	signcolumn = "yes",
 	virtualedit = "all",
+	colorcolumn = "80",
 	-- winblend = 0,
 }
 
