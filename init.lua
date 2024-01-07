@@ -25,12 +25,12 @@ spec("colorscheme.tokyonight")
 
 --<< LSP related >>--
 
-spec("lsp.conform")
+spec("lsp.conform") -- formatter
 spec("lsp.lspconfig")
-spec("lsp.mason")
-spec("lsp.navbuddy")
-spec("lsp.nvim-lint")
-spec("lsp.treesiter")
+spec("lsp.mason") -- download lsp servers, fomratters, etc
+spec("lsp.navbuddy") -- allow to navigate between symbols in a easir way
+spec("lsp.nvim-lint") -- linting
+spec("lsp.treesiter") -- love and hate relationship with this one
 
 --<< General >>--
 
@@ -43,44 +43,44 @@ spec("lsp.treesiter")
 -- spec("netrw")
 -- spec("nvim-tree")
 -- spec("oil")
+-- spec("twilight")
 
-spec("alpha")
+spec("alpha") -- start dashboard
 spec("autopairs")
 spec("barbecue")
-spec("btterm")
+spec("btterm") -- this one is mine!!!!
 spec("chatgpt")
-spec("cmp")
-spec("colorizer")
+spec("cmp") -- completion
+spec("colorizer") -- color preview
 spec("commentary")
 spec("copilot")
 spec("copilot-lualine")
-spec("discord")
-spec("dressing")
-spec("eyeliner")
-spec("fidget")
-spec("focus")
-spec("hawtkeys")
-spec("hop")
-spec("indentlines")
-spec("lazygit")
-spec("lualine")
-spec("luasnip")
-spec("mini")
-spec("rainbow-delimiters")
-spec("surround")
-spec("telescope")
-spec("tmux")
-spec("trouble")
-spec("ufo")
-spec("vim-go")
-spec("vim-kitty")
-spec("vim-kubectl")
-spec("fugitive")
-spec("undotree")
-spec("gitsigns")
-spec("neodev")
-spec("battery")
--- spec("twilight")
+spec("discord") -- rich presence
+spec("dressing") -- offers better ui for some neovim commands
+spec("eyeliner") -- quick jump with f, F, t, T
+spec("fidget") -- cool LSP notification
+spec("focus") -- auto-resize windows when switching buffers
+spec("hawtkeys") -- show best keybindings to be mapped
+spec("hop") -- jump to any word in the screen
+spec("indentlines") -- show indent lines
+spec("lazygit") -- lazygit inside neovim
+spec("lualine") -- statusline
+spec("luasnip") -- snippets
+spec("mini") -- minitree (best tree plugin)
+spec("rainbow-delimiters") -- show matching delimiters
+spec("surround") -- surround text with quotes, brackets, etc
+spec("telescope") -- fuzzy finder
+spec("tmux") -- tmux integration
+spec("trouble") -- cool quickfix list for LSP
+spec("ufo") -- deal with folding in a better way
+spec("vim-go") -- go integration
+spec("vim-kitty") -- kitty integration
+spec("vim-kubectl") -- kubectl integration
+spec("fugitive") -- git integration
+spec("undotree") -- show undo tree
+spec("gitsigns") -- show git signs on columnsign
+spec("neodev") -- offers completion to neovim functions
+spec("battery") -- show battery status
 
 -- Loads all with lazy
 require("custom.lazy")
