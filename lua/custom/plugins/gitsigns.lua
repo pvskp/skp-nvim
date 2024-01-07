@@ -4,11 +4,11 @@ return {
 	config = function()
 		require("gitsigns").setup({
 			signs = {
-				add = { text = "│" },
-				change = { text = "│" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
+				add = { text = "" },
+				change = { text = "" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "" },
 				untracked = { text = "┆" },
 			},
 			signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
@@ -45,5 +45,11 @@ return {
 				enable = false,
 			},
 		})
+
+		-- vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#ffc777" })
+		-- vim.api.nvim_set_hl(0, "GitSignsChangeNr", { fg = "#ffc777" })
+
+		CopyHighlight("WarningMsg", "GitSignsChange")
+		CopyHighlight("WarningMsg", "GitSignsChangeNr")
 	end,
 }
