@@ -1,21 +1,27 @@
 local options = {
+	-- colorcolumn = "80",
+	-- showtabline = 2,                          -- always show tabs
+	-- winblend = 0,
+	autochdir = false,
 	background = "dark",
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 	cmdheight = 1, -- space in the neovim command line for displaying messages
 	compatible = false,
 	cursorline = false, -- highlight the current line
+	equalalways = false, -- I don't like my windows changing all the time
 	expandtab = true, -- convert tabs to spaces
 	hlsearch = false, -- highlight all matches on previous search pattern
 	ignorecase = true, -- ignore case in search patterns
 	linebreak = true, -- companion to wrap, don't split words
-	wrap = false,
 	number = true, -- the number of spaces inserted for each indentation
 	numberwidth = 4, -- set number column width to 2 {default 4}
 	path = ".,,**",
+	pumblend = 0,
 	relativenumber = true, -- set relative numbered lines
 	scrolloff = 99999,
 	shiftwidth = 2, -- the number of spaces inserted for each indentation
-	-- showtabline = 2,                          -- always show tabs
+	showmode = false,
+	signcolumn = "yes",
 	smartcase = true,
 	smartindent = true, -- make indenting smarter again
 	splitbelow = true,
@@ -25,15 +31,9 @@ local options = {
 	timeoutlen = 300,
 	undofile = true,
 	updatetime = 250,
-	wildmenu = true,
-	autochdir = false,
-	showmode = false,
-	equalalways = false, -- I don't like my windows changing all the time
-	pumblend = 0,
-	signcolumn = "yes",
 	virtualedit = "all",
-	colorcolumn = "80",
-	-- winblend = 0,
+	wildmenu = true,
+	wrap = false,
 }
 
 for k, v in pairs(options) do
