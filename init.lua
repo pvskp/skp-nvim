@@ -80,6 +80,7 @@ spec("fugitive") -- git integration
 spec("undotree") -- show undo tree
 spec("gitsigns") -- show git signs on columnsign
 spec("neodev") -- offers completion to neovim functions
+spec("neogit")
 spec("battery") -- show battery status
 
 -- Loads all with lazy
