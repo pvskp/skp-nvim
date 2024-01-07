@@ -25,7 +25,6 @@ end
 spec("colorscheme.adwaita")
 
 --<< LSP related >>--
-
 spec("lsp.conform") -- formatter
 spec("lsp.lspconfig")
 spec("lsp.mason") -- download lsp servers, fomratters, etc
@@ -42,8 +41,13 @@ spec("languages.golang") -- go integration
 spec("mini.files") -- minitree (best tree plugin)
 spec("mini.splitjoin") -- minitree (best tree plugin)
 
---<< General >>--
+--<< Git integrations >>--
+spec("git.neogit")
+spec("git.lazygit") -- lazygit inside neovim
+-- spec("fugitive") -- git integration
+spec("git.gitsigns") -- show git signs on columnsign
 
+--<< General >>--
 -- spec("oil")
 -- spec("flybuf")
 -- spec("illuminate")
@@ -72,7 +76,6 @@ spec("focus") -- auto-resize windows when switching buffers
 spec("hawtkeys") -- show best keybindings to be mapped
 spec("hop") -- jump to any word in the screen
 spec("indentlines") -- show indent lines
-spec("lazygit") -- lazygit inside neovim
 spec("lualine") -- statusline
 spec("rainbow-delimiters") -- show matching delimiters
 spec("surround") -- surround text with quotes, brackets, etc
@@ -82,11 +85,8 @@ spec("trouble") -- cool quickfix list for LSP
 spec("ufo") -- deal with folding in a better way
 spec("kitty") -- kitty integration
 spec("kubectl") -- kubectl integration
-spec("fugitive") -- git integration
 spec("undotree") -- show undo tree
-spec("gitsigns") -- show git signs on columnsign
 spec("neodev") -- offers completion to neovim functions
--- spec("neogit")
 spec("battery") -- show battery status
 
 -- Loads all with lazy
