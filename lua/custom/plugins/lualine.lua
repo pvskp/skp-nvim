@@ -1,25 +1,22 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	lazy = false,
-	requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	requires = {
+		"nvim-tree/nvim-web-devicons",
+		opt = true,
+	},
 	config = function()
-		-- local ok, copilot_status = pcall(require, "copilot_status")
-
-		-- if not ok then
-		-- 	copilot_status = {}
-		-- 	copilot_status.status_string = ""
-		-- 	copilot_status.enabled = false
-		-- else
-		-- 	require("copilot_status").setup({
-		-- 		icons = {
-		-- 			idle = " ",
-		-- 			error = " ",
-		-- 			offline = " ",
-		-- 			warning = " ",
-		-- 			loading = " ",
-		-- 		},
-		-- 	})
-		-- end
+		local nvimbattery = {
+			function()
+				local ok, result = pcall(require("battery").get_status_line)
+				if ok then
+					return result
+				else
+					return ""
+				end
+			end,
+			color = {},
+		}
 
 		require("lualine").setup({
 			options = {
@@ -69,10 +66,10 @@ return {
 						symbols = {
 							status = {
 								icons = {
-									enabled = "",
-									disabled = "",
-									warning = "",
-									unknown = "",
+									enabled = " ",
+									disabled = " ",
+									warning = " ",
+									unknown = " ",
 								},
 								hl = {
 									enabled = "#50FA7B",
@@ -85,9 +82,9 @@ return {
 						show_colors = false,
 						show_loading = true,
 					},
-					"progress",
+					-- "progress",
 				},
-				lualine_z = { "location" },
+				lualine_z = { nvimbattery },
 			},
 			inactive_sections = {
 				lualine_a = {},
