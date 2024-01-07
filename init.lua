@@ -46,7 +46,7 @@ spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
 --<< Git integrations >>--
 spec(pon, "git.neogit")
 spec(pon, "git.lazygit") -- lazygit inside neovim
-spec(poff, "fugitive") -- git integration
+spec(poff, "git.fugitive") -- git integration
 spec(pon, "git.gitsigns") -- show git signs on columnsign
 
 --<< General >>--
