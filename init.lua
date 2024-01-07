@@ -79,6 +79,7 @@ spec("fugitive")
 spec("undotree")
 spec("gitsigns")
 spec("neodev")
+spec("twilight")
 
 -- Loads all with lazy
 require("custom.lazy")
