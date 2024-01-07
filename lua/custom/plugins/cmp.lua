@@ -25,6 +25,7 @@ return {
 		cmp.event:on("confirm_done", cmd_autopairs.on_confirm_done())
 		vim.cmd("highlight! BorderBG guibg=NONE")
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+		require("luasnip.loaders.from_snipmate").lazy_load()
 		require("luasnip.loaders.from_vscode").lazy_load()
 		cmp.setup.filetype(
 			{ "conf", "config", "kitty" },
