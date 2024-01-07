@@ -1,8 +1,6 @@
 -- return {}
 return {
 	"pvskp/btterm.nvim",
-	-- dir = "~/Documents/repos/btterm",
-	-- dir = "~/Documents/repos/btterm",
 	lazy = false,
 	config = function()
 		require("flatten")
@@ -11,8 +9,6 @@ return {
 	dependencies = {
 		{
 			"willothy/flatten.nvim",
-			config = true,
-			-- or pass configuration with
 			opts = {
 				block_for = {
 					gitcommit = true,

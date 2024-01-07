@@ -20,7 +20,8 @@ return {
 			},
 			scope = { enabled = false },
 		},
-		config = function()
+		config = function(_, opts)
+			require("ibl").setup(opts)
 			require("mini.indentscope")
 		end,
 	},

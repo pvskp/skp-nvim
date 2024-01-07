@@ -31,7 +31,9 @@ spec("lsp.lspconfig")
 spec("lsp.mason") -- download lsp servers, fomratters, etc
 spec("lsp.navbuddy") -- allow to navigate between symbols in a easir way
 spec("lsp.nvim-lint") -- linting
--- spec("lsp.treesiter") -- love and hate relationship with this one
+spec("lsp.cmp") -- completion
+spec("lsp.treesiter") -- love and hate relationship with this one
+spec("lsp.luasnip") -- snippets
 
 --<< Language specific >>--
 spec("languages.golang") -- go integration
@@ -58,7 +60,6 @@ spec("autopairs")
 spec("barbecue") -- cool bar on top that shows the current symbol and its parents
 spec("btterm") -- this one is mine!!!!
 spec("chatgpt")
-spec("cmp") -- completion
 spec("colorizer") -- color preview
 spec("commentary")
 spec("copilot")
@@ -73,7 +74,6 @@ spec("hop") -- jump to any word in the screen
 spec("indentlines") -- show indent lines
 spec("lazygit") -- lazygit inside neovim
 spec("lualine") -- statusline
-spec("luasnip") -- snippets
 spec("rainbow-delimiters") -- show matching delimiters
 spec("surround") -- surround text with quotes, brackets, etc
 spec("telescope") -- fuzzy finder
@@ -82,11 +82,11 @@ spec("trouble") -- cool quickfix list for LSP
 spec("ufo") -- deal with folding in a better way
 spec("kitty") -- kitty integration
 spec("kubectl") -- kubectl integration
--- spec("fugitive") -- git integration
+spec("fugitive") -- git integration
 spec("undotree") -- show undo tree
 spec("gitsigns") -- show git signs on columnsign
 spec("neodev") -- offers completion to neovim functions
-spec("neogit")
+-- spec("neogit")
 spec("battery") -- show battery status
 
 -- Loads all with lazy
