@@ -51,5 +51,11 @@ return {
 
 		CopyHighlight("WarningMsg", "GitSignsChange")
 		CopyHighlight("WarningMsg", "GitSignsChangeNr")
+
+		CopyHighlight("TSRainbowGreen", "GitSignsAdd")
+		CopyHighlight("TSRainbowGreen", "GitSignsAddNr")
+
+		CopyHighlight("Error", "GitSignsDelete")
+		CopyHighlight("Error", "GitSignsDeleteNr")
 	end,
 }
