@@ -21,7 +21,8 @@ end
 -- spec("colorscheme.everforest")
 -- spec("colorscheme.moonlight")
 -- spec("colorscheme.gruvbox-material")
-spec("colorscheme.tokyonight")
+-- spec("colorscheme.tokyonight")
+spec("colorscheme.adwaita")
 
 --<< LSP related >>--
 
@@ -30,7 +31,14 @@ spec("lsp.lspconfig")
 spec("lsp.mason") -- download lsp servers, fomratters, etc
 spec("lsp.navbuddy") -- allow to navigate between symbols in a easir way
 spec("lsp.nvim-lint") -- linting
-spec("lsp.treesiter") -- love and hate relationship with this one
+-- spec("lsp.treesiter") -- love and hate relationship with this one
+
+--<< Language specific >>--
+spec("languages.golang") -- go integration
+
+--<< Mini library >>--
+spec("mini.files") -- minitree (best tree plugin)
+spec("mini.splitjoin") -- minitree (best tree plugin)
 
 --<< General >>--
 
@@ -66,16 +74,14 @@ spec("indentlines") -- show indent lines
 spec("lazygit") -- lazygit inside neovim
 spec("lualine") -- statusline
 spec("luasnip") -- snippets
-spec("mini") -- minitree (best tree plugin)
 spec("rainbow-delimiters") -- show matching delimiters
 spec("surround") -- surround text with quotes, brackets, etc
 spec("telescope") -- fuzzy finder
 spec("tmux") -- tmux integration
 spec("trouble") -- cool quickfix list for LSP
 spec("ufo") -- deal with folding in a better way
-spec("vim-go") -- go integration
-spec("vim-kitty") -- kitty integration
-spec("vim-kubectl") -- kubectl integration
+spec("kitty") -- kitty integration
+spec("kubectl") -- kubectl integration
 -- spec("fugitive") -- git integration
 spec("undotree") -- show undo tree
 spec("gitsigns") -- show git signs on columnsign
