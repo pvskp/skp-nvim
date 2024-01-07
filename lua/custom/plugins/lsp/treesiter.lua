@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		{
 			"nvim-treesitter/playground",
-			"nvim-treesitter/nvim-treesitter-textobjects",
+			"nvim-treesitter/nvim-treesitter-textobjects", -- <- this is amazing
 		},
 	},
 	lazy = false,
