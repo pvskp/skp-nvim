@@ -2,6 +2,8 @@ return {
 	"tpope/vim-fugitive",
 	lazy = false,
 	config = function()
-		vim.keymap.set("n", "<leader>gs", ":Git<CR>", { silent = true })
+		local opts = { silent = true }
+		vim.keymap.set("n", "<leader>gs", ":Git<CR>", opts)
+		vim.keymap.set("n", "<leader>p", ":Git push<CR>", opts)
 	end,
 }
