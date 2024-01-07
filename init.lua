@@ -47,7 +47,7 @@ spec("lsp.treesiter") -- love and hate relationship with this one
 
 spec("alpha") -- start dashboard
 spec("autopairs")
-spec("barbecue")
+spec("barbecue") -- cool bar on top that shows the current symbol and its parents
 spec("btterm") -- this one is mine!!!!
 spec("chatgpt")
 spec("cmp") -- completion
