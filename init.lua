@@ -76,7 +76,7 @@ spec("ufo") -- deal with folding in a better way
 spec("vim-go") -- go integration
 spec("vim-kitty") -- kitty integration
 spec("vim-kubectl") -- kubectl integration
-spec("fugitive") -- git integration
+-- spec("fugitive") -- git integration
 spec("undotree") -- show undo tree
 spec("gitsigns") -- show git signs on columnsign
 spec("neodev") -- offers completion to neovim functions
