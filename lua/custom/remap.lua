@@ -114,7 +114,7 @@ end, { silent = true })
 keymap("n", "<leader>x", "@:", opts)
 
 -- Source current file
-keymap("n", "<leader>s", ":w<CR>:source %<CR>", opts)
+-- keymap("n", "<leader>s", ":w<CR>:source %<CR>", opts)
 
 -- Command mode
 vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
