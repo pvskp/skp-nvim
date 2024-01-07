@@ -7,7 +7,6 @@ return {
 		"amarakon/nvim-cmp-fonts", -- source for font completion
 		"L3MON4D3/LuaSnip", -- snippet engine
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
-		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 		{
@@ -24,9 +23,7 @@ return {
 
 		cmp.event:on("confirm_done", cmd_autopairs.on_confirm_done())
 		vim.cmd("highlight! BorderBG guibg=NONE")
-		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-		require("luasnip.loaders.from_snipmate").lazy_load()
-		require("luasnip.loaders.from_vscode").lazy_load()
+
 		cmp.setup.filetype(
 			{ "conf", "config", "kitty" },
 			{ sources = { { name = "fonts", option = { space_filter = "-" } } } }

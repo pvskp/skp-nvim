@@ -3,47 +3,48 @@ return {
 	name = "rose-pine",
 	priority = 1000,
 	lazy = false,
-	config = function()
-		require("rose-pine").setup({
-			--- @usage 'auto'|'main'|'moon'|'dawn'
-			variant = "auto",
-			--- @usage 'main'|'moon'|'dawn'
-			dark_variant = "main",
-			bold_vert_split = false,
-			dim_nc_background = false,
-			disable_background = true,
-			disable_float_background = false,
-			disable_italics = false,
+	opts = {
 
-			--- @usage string hex value or named color from rosepinetheme.com/palette
-			groups = {
-				background = "base",
-				background_nc = "_experimental_nc",
-				panel = "surface",
-				panel_nc = "base",
-				border = "highlight_med",
-				comment = "muted",
-				link = "iris",
-				punctuation = "subtle",
+		--- @usage 'auto'|'main'|'moon'|'dawn'
+		variant = "auto",
+		--- @usage 'main'|'moon'|'dawn'
+		dark_variant = "main",
+		bold_vert_split = false,
+		dim_nc_background = false,
+		disable_background = true,
+		disable_float_background = false,
+		disable_italics = false,
 
-				error = "love",
-				hint = "iris",
-				info = "foam",
-				warn = "gold",
+		--- @usage string hex value or named color from rosepinetheme.com/palette
+		groups = {
+			background = "base",
+			background_nc = "_experimental_nc",
+			panel = "surface",
+			panel_nc = "base",
+			border = "highlight_med",
+			comment = "muted",
+			link = "iris",
+			punctuation = "subtle",
 
-				headings = {
-					h1 = "iris",
-					h2 = "foam",
-					h3 = "rose",
-					h4 = "gold",
-					h5 = "pine",
-					h6 = "foam",
-				},
-				-- or set all headings at once
-				-- headings = 'subtle'
+			error = "love",
+			hint = "iris",
+			info = "foam",
+			warn = "gold",
+
+			headings = {
+				h1 = "iris",
+				h2 = "foam",
+				h3 = "rose",
+				h4 = "gold",
+				h5 = "pine",
+				h6 = "foam",
 			},
-		})
-
+			-- or set all headings at once
+			-- headings = 'subtle'
+		},
+	},
+	config = function(_, opts)
+		require("rose-pine").setup(opts)
 		vim.cmd([[colorscheme rose-pine]])
 	end,
 }
