@@ -78,6 +78,7 @@ spec("vim-kubectl")
 spec("fugitive")
 spec("undotree")
 spec("gitsigns")
+spec("neodev")
 
 -- Loads all with lazy
 require("custom.lazy")
