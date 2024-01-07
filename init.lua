@@ -14,15 +14,15 @@ local spec = function(plugin_relative_path)
 end
 
 --<< colorschemes >>--
--- spec("colorscheme.rose-pine")
--- spec("colorscheme.vscode")
--- spec("colorscheme.catppuccin")
--- spec("colorscheme.onedark")
--- spec("colorscheme.everforest")
--- spec("colorscheme.moonlight")
--- spec("colorscheme.gruvbox-material")
--- spec("colorscheme.tokyonight")
 spec("colorscheme.adwaita")
+-- spec("colorscheme.catppuccin")
+-- spec("colorscheme.everforest")
+-- spec("colorscheme.gruvbox-material")
+-- spec("colorscheme.moonlight")
+-- spec("colorscheme.onedark")
+-- spec("colorscheme.rose-pine")
+-- spec("colorscheme.tokyonight")
+-- spec("colorscheme.vscode")
 
 --<< LSP related >>--
 spec("lsp.conform") -- formatter
