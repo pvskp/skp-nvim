@@ -4,6 +4,8 @@ P = function(v)
 end
 
 LAZY_PLUGIN_SPEC = {}
+pon = true
+poff = false
 
 function Spec(item)
 	table.insert(LAZY_PLUGIN_SPEC, { import = item })
@@ -26,3 +28,12 @@ function CopyHighlight(src, dest)
 		italic = string_hl.italic,
 	})
 end
+
+function Highlight_word(word, color)
+	local group_name = "Highlight" .. word
+	vim.cmd(string.format("highlight %s guifg=%s", group_name, color))
+	vim.cmd(string.format("syntax match %s /\\<%s\\>/", group_name, word))
+end
+
+-- Highlight_word("offl", "#F54534")
+-- Highlight_word("on", "#9FF592")
