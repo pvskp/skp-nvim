@@ -1,93 +1,97 @@
 require("custom")
 require("custom.autocommands")
 require("custom.globals")
-require("custom.highlight")
 require("custom.remap")
 require("custom.set")
 require("custom.utils")
 
 ---loads a plugin to lazy
 ---@param plugin_relative_path string the relative path to "custom.plugins" where the plugin config is located
-local spec = function(plugin_relative_path)
+local spec = function(active, plugin_relative_path)
+	if active == false then
+		return
+	end
 	local plugins = "custom.plugins."
 	Spec(plugins .. plugin_relative_path)
 end
 
 --<< colorschemes >>--
-spec("colorscheme.adwaita")
--- spec("colorscheme.catppuccin")
--- spec("colorscheme.everforest")
--- spec("colorscheme.gruvbox-material")
--- spec("colorscheme.moonlight")
--- spec("colorscheme.onedark")
--- spec("colorscheme.rose-pine")
--- spec("colorscheme.tokyonight")
--- spec("colorscheme.vscode")
+spec(pon, "colorscheme.adwaita")
+spec(poff, "colorscheme.catppuccin")
+spec(poff, "colorscheme.everforest")
+spec(poff, "colorscheme.gruvbox-material")
+spec(poff, "colorscheme.moonlight")
+spec(poff, "colorscheme.onedark")
+spec(poff, "colorscheme.rose-pine")
+spec(poff, "colorscheme.tokyonight")
+spec(poff, "colorscheme.vscode")
 
 --<< LSP related >>--
-spec("lsp.conform") -- formatter
-spec("lsp.lspconfig")
-spec("lsp.mason") -- download lsp servers, fomratters, etc
-spec("lsp.navbuddy") -- allow to navigate between symbols in a easir way
-spec("lsp.nvim-lint") -- linting
-spec("lsp.cmp") -- completion
-spec("lsp.treesiter") -- love and hate relationship with this one
-spec("lsp.luasnip") -- snippets
+spec(pon, "lsp.conform") -- formatter
+spec(pon, "lsp.lspconfig")
+spec(pon, "lsp.mason") -- download lsp servers, fomratters, etc
+spec(pon, "lsp.navbuddy") -- allow to navigate between symbols in a easir way
+spec(pon, "lsp.nvim-lint") -- linting
+spec(pon, "lsp.cmp") -- completion
+spec(pon, "lsp.treesiter") -- love and hate relationship with this one
+spec(pon, "lsp.luasnip") -- snippets
 
 --<< Language specific >>--
-spec("languages.golang") -- go integration
+spec(pon, "languages.golang") -- go integration
 
 --<< Mini library >>--
-spec("mini.files") -- minitree (best tree plugin)
-spec("mini.splitjoin") -- minitree (best tree plugin)
+spec(pon, "mini.files") -- minitree (best tree plugin)
+spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
 
 --<< Git integrations >>--
-spec("git.neogit")
-spec("git.lazygit") -- lazygit inside neovim
--- spec("fugitive") -- git integration
-spec("git.gitsigns") -- show git signs on columnsign
+spec(pon, "git.neogit")
+spec(pon, "git.lazygit") -- lazygit inside neovim
+spec(poff, "fugitive") -- git integration
+spec(pon, "git.gitsigns") -- show git signs on columnsign
 
 --<< General >>--
--- spec("oil")
--- spec("flybuf")
--- spec("illuminate")
--- spec("lab")
--- spec("neo-tree")
--- spec("neoscroll")
--- spec("netrw")
--- spec("nvim-tree")
--- spec("oil")
--- spec("twilight")
+spec(pon, "autopairs")
+spec(pon, "btterm") -- this one is mine!!!!
+spec(pon, "chatgpt")
+spec(pon, "commentary")
+spec(pon, "copilot")
+spec(pon, "discord") -- rich presence
+spec(pon, "eyeliner") -- quick jump with f, F, t, T
+spec(pon, "focus") -- auto-resize windows when switching buffers
+spec(pon, "hawtkeys") -- show best keybindings to be mapped
+spec(pon, "hop") -- jump to any word in the screen
+spec(pon, "rainbow-delimiters") -- show matching delimiters
+spec(pon, "surround") -- surround text with quotes, brackets, etc
+spec(pon, "telescope") -- fuzzy finder
+spec(pon, "tmux") -- tmux integration
+spec(pon, "trouble") -- cool quickfix list for LSP
+spec(pon, "ufo") -- deal with folding in a better way
+spec(pon, "kitty") -- kitty integration
+spec(pon, "kubectl") -- kubectl integration
+spec(pon, "undotree") -- show undo tree
+spec(pon, "neodev") -- offers completion to neovim functions
+spec(pon, "battery") -- show battery status
+spec(poff, "flybuf")
+spec(poff, "illuminate")
+spec(poff, "lab")
+spec(poff, "neo-tree")
+spec(poff, "neoscroll")
+spec(poff, "nvim-tree")
+spec(poff, "oil")
 
-spec("alpha") -- start dashboard
-spec("autopairs")
-spec("barbecue") -- cool bar on top that shows the current symbol and its parents
-spec("btterm") -- this one is mine!!!!
-spec("chatgpt")
-spec("colorizer") -- color preview
-spec("commentary")
-spec("copilot")
-spec("copilot-lualine")
-spec("discord") -- rich presence
-spec("dressing") -- offers better ui for some neovim commands
-spec("eyeliner") -- quick jump with f, F, t, T
-spec("fidget") -- cool LSP notification
-spec("focus") -- auto-resize windows when switching buffers
-spec("hawtkeys") -- show best keybindings to be mapped
-spec("hop") -- jump to any word in the screen
-spec("indentlines") -- show indent lines
-spec("lualine") -- statusline
-spec("rainbow-delimiters") -- show matching delimiters
-spec("surround") -- surround text with quotes, brackets, etc
-spec("telescope") -- fuzzy finder
-spec("tmux") -- tmux integration
-spec("trouble") -- cool quickfix list for LSP
-spec("ufo") -- deal with folding in a better way
-spec("kitty") -- kitty integration
-spec("kubectl") -- kubectl integration
-spec("undotree") -- show undo tree
-spec("neodev") -- offers completion to neovim functions
-spec("battery") -- show battery status
+--<< UI >>--
+spec(poff, "ui.netrw")
+spec(poff, "ui.twilight")
+spec(pon, "ui.alpha") -- start dashboard
+spec(pon, "ui.barbecue") -- cool bar on top that shows the current symbol and its parents
+spec(pon, "ui.colorizer") -- color preview
+spec(pon, "ui.copilot-lualine")
+spec(pon, "ui.dressing") -- offers better ui for some neovim commands
+spec(pon, "ui.fidget") -- cool LSP notification
+spec(pon, "ui.indentlines") -- show indent lines
+spec(pon, "ui.lualine") -- statusline
+spec(pon, "ui.virt-column")
 
 -- Loads all with lazy
 require("custom.lazy")
+require("custom.highlight") -- required to be loaded after lazy
