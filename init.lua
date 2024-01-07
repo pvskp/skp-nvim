@@ -14,13 +14,14 @@ local spec = function(plugin_relative_path)
 end
 
 --<< colorschemes >>--
-spec("colorscheme.rose-pine")
+-- spec("colorscheme.rose-pine")
 -- spec("colorscheme.vscode")
 -- spec("colorscheme.catppuccin")
 -- spec("colorscheme.onedark")
 -- spec("colorscheme.everforest")
 -- spec("colorscheme.moonlight")
 -- spec("colorscheme.gruvbox-material")
+spec("colorscheme.tokyonight")
 
 --<< LSP related >>--
 
@@ -76,6 +77,7 @@ spec("vim-kitty")
 spec("vim-kubectl")
 spec("fugitive")
 spec("undotree")
+spec("gitsigns")
 
 -- Loads all with lazy
 require("custom.lazy")
