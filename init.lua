@@ -70,7 +70,6 @@ spec(pon, "kitty") -- kitty integration
 spec(pon, "kubectl") -- kubectl integration
 spec(pon, "undotree") -- show undo tree
 spec(pon, "neodev") -- offers completion to neovim functions
-spec(pon, "battery") -- show battery status
 spec(poff, "flybuf")
 spec(poff, "illuminate")
 spec(poff, "lab")
@@ -85,12 +84,16 @@ spec(poff, "ui.twilight")
 spec(pon, "ui.alpha") -- start dashboard
 spec(pon, "ui.barbecue") -- cool bar on top that shows the current symbol and its parents
 spec(pon, "ui.colorizer") -- color preview
-spec(pon, "ui.copilot-lualine")
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.virt-column")
+
+--<< Lualine integrations >>--
+spec(pon, "ui.lualine.battery")
+spec(pon, "ui.lualine.copilot")
+spec(pon, "ui.lualine.clock")
 
 -- Loads all with lazy
 require("custom.lazy")
