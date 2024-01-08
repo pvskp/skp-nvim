@@ -35,6 +35,9 @@ spec(pon, "lsp.nvim-lint") -- linting
 spec(pon, "lsp.cmp") -- completion
 spec(pon, "lsp.treesiter") -- love and hate relationship with this one
 spec(pon, "lsp.luasnip") -- snippets
+spec(pon, "lsp.commentary")
+spec(pon, "lsp.rainbow-delimiters") -- show matching delimiters
+spec(pon, "lsp.neodev") -- offers completion to neovim functions
 
 --<< Language specific >>--
 spec(pon, "languages.golang") -- go integration
@@ -53,14 +56,12 @@ spec(pon, "git.gitsigns") -- show git signs on columnsign
 spec(pon, "autopairs")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "chatgpt")
-spec(pon, "commentary")
 spec(pon, "copilot")
 spec(pon, "discord") -- rich presence
 spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "hawtkeys") -- show best keybindings to be mapped
 spec(pon, "hop") -- jump to any word in the screen
-spec(pon, "rainbow-delimiters") -- show matching delimiters
 spec(pon, "surround") -- surround text with quotes, brackets, etc
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "tmux") -- tmux integration
@@ -69,7 +70,6 @@ spec(pon, "ufo") -- deal with folding in a better way
 spec(pon, "kitty") -- kitty integration
 spec(pon, "kubectl") -- kubectl integration
 spec(pon, "undotree") -- show undo tree
-spec(pon, "neodev") -- offers completion to neovim functions
 spec(poff, "flybuf")
 spec(poff, "illuminate")
 spec(poff, "lab")
@@ -89,6 +89,7 @@ spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.virt-column")
+spec(pon, "ui.headlines")
 
 --<< Lualine integrations >>--
 spec(pon, "ui.lualine.battery")
