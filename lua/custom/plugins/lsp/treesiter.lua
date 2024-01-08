@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	pin = true,
 	dependencies = {
 		{
 			"nvim-treesitter/playground",

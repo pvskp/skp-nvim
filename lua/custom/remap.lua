@@ -119,14 +119,10 @@ keymap("n", "<leader>x", "@:", opts)
 -- Command mode
 vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
 
-local fold_close = function()
+-- Folding
+keymap("n", "-", function()
 	pcall(vim.cmd.foldclose)
-end
-
-local fold_open = function()
+end, {})
+keymap("n", "=", function()
 	pcall(vim.cmd.foldopen)
-end
-
--- fold
-keymap("n", "-", fold_close, {})
-keymap("n", "=", fold_open, {})
+end, {})
