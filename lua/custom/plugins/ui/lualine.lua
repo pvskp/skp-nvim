@@ -1,19 +1,14 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	lazy = false,
-	requires = {
+	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-		opt = true,
 	},
 	config = function()
 		local nvimbattery = {
 			function()
-				local ok, result = pcall(require("battery").get_status_line)
-				if ok then
-					return result
-				else
-					return ""
-				end
+				local _, result = pcall(require("battery").get_status_line)
+				return result
 			end,
 			color = {},
 		}
@@ -84,7 +79,7 @@ return {
 					},
 					-- "progress",
 				},
-				lualine_z = { nvimbattery },
+				lualine_z = { nvimbattery, "ctime" },
 			},
 			inactive_sections = {
 				lualine_a = {},

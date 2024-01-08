@@ -291,7 +291,9 @@ end
 return {
 	"goolord/alpha-nvim",
 	lazy = false,
-	dependencies = "kyazdani42/nvim-web-devicons",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
 	config = function()
 		if options ~= nil then
 			require("alpha").setup(options)
