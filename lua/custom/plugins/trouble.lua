@@ -4,9 +4,9 @@ return {
 	event = "LspAttach",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	init = function()
-		vim.keymap.set("n", "<leader>t", function()
+		vim.keymap.set("n", "<leader>tt", function()
 			require("trouble").toggle()
-		end)
+		end, { desc = "[T]oggle [T]rouble" })
 	end,
 	opts = {
 		position = "bottom", -- position of the list can be: bottom, top, left, right

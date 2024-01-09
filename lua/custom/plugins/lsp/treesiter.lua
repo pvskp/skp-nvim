@@ -92,12 +92,6 @@ return {
 						["[M"] = "@function.outer",
 						["[]"] = "@class.outer",
 					},
-					goto_next = {
-						["]d"] = "@conditional.outer",
-					},
-					goto_previous = {
-						["[d"] = "@conditional.outer",
-					},
 				},
 			},
 		})

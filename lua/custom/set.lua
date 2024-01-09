@@ -33,6 +33,7 @@ local options = {
 	updatetime = 250,
 	virtualedit = "all",
 	wildmenu = true,
+	wildmode = "list:longest,full",
 	wrap = false,
 }
 
