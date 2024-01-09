@@ -10,7 +10,8 @@ local copilot_toggle = function()
 	vim.cmd([[Copilot enable]])
 	print("[Copilot] enabled")
 end
-vim.keymap.set("n", "<leader>c", copilot_toggle)
+
+vim.keymap.set("n", "<leader>tc", copilot_toggle, { desc = "[T]oggle [C]opilot  " })
 
 return {
 	"zbirenbaum/copilot.lua",

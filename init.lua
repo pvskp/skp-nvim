@@ -45,11 +45,12 @@ spec(pon, "languages.golang") -- go integration
 --<< Mini library >>--
 spec(pon, "mini.files") -- minitree (best tree plugin)
 spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
+spec(pon, "mini.notify") -- minitree (best tree plugin)
 
 --<< Git integrations >>--
-spec(pon, "git.neogit")
+spec(poff, "git.neogit")
 spec(pon, "git.lazygit") -- lazygit inside neovim
-spec(poff, "git.fugitive") -- git integration
+spec(pon, "git.fugitive") -- git integration
 spec(pon, "git.gitsigns") -- show git signs on columnsign
 
 --<< General >>--
@@ -77,6 +78,7 @@ spec(poff, "neo-tree")
 spec(poff, "neoscroll")
 spec(poff, "nvim-tree")
 spec(poff, "oil")
+spec(pon, "which-key")
 
 --<< UI >>--
 spec(poff, "ui.netrw")
@@ -85,7 +87,7 @@ spec(pon, "ui.alpha") -- start dashboard
 spec(pon, "ui.barbecue") -- cool bar on top that shows the current symbol and its parents
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
-spec(pon, "ui.fidget") -- cool LSP notification
+spec(poff, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.virt-column")
