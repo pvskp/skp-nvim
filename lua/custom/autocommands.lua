@@ -50,6 +50,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = "~/.config/kitty/custom_kitty.conf",
+	command = "silent !pkill -USR1 kitty",
+})
+
+-- vim.cmd("autocmd bufwritepost ~/.config/kitty/custom_kitty.conf :silent !pkill -USR1 kitty")
+
 -- Reset my cursor
 -- local shape_group = vim.api.nvim_create_augroup("Shape", { clear = true })
 -- vim.api.nvim_create_autocmd("VimLeave", {

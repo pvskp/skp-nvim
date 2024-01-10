@@ -16,7 +16,7 @@ local spec = function(active, plugin_relative_path)
 end
 
 --<< colorschemes >>--
-spec(pon, "colorscheme.adwaita")
+spec(poff, "colorscheme.adwaita")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.gruvbox-material")
@@ -25,6 +25,8 @@ spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.vscode")
+spec(poff, "colorscheme.nord")
+spec(pon, "colorscheme.ayu")
 
 --<< LSP related >>--
 spec(pon, "lsp.conform") -- formatter
@@ -59,7 +61,7 @@ spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "chatgpt")
 spec(pon, "copilot")
 spec(pon, "discord") -- rich presence
-spec(pon, "eyeliner") -- quick jump with f, F, t, T
+spec(poff, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "hawtkeys") -- show best keybindings to be mapped
 spec(pon, "hop") -- jump to any word in the screen
@@ -79,19 +81,21 @@ spec(poff, "neoscroll")
 spec(poff, "nvim-tree")
 spec(poff, "oil")
 spec(pon, "which-key")
+spec(poff, "color-picker")
 
 --<< UI >>--
 spec(poff, "ui.netrw")
 spec(poff, "ui.twilight")
 spec(pon, "ui.alpha") -- start dashboard
-spec(pon, "ui.barbecue") -- cool bar on top that shows the current symbol and its parents
+spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(poff, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.virt-column")
-spec(pon, "ui.headlines")
+spec(poff, "ui.headlines")
+spec(poff, "ui.sunglasses")
 
 --<< Lualine integrations >>--
 spec(pon, "ui.lualine.battery")

@@ -1,13 +1,24 @@
 return {
-	"sainnhe/everforest",
-	priority = 1000,
+	"neanias/everforest-nvim",
 	lazy = false,
-	config = function()
-		vim.g.everforest_background = "hard" -- 'hard', 'medium', 'soft'
-		vim.g.everforest_enable_italic = 1 -- 1 or 0(default)
-		vim.g.everforest_transparent_background = 0 -- If you want more ui components to be transparent set this option to `2` [0,1,2].
-		vim.g.everforest_dim_inactive_windows = 1 -- 1 or 0(default)
-		vim.g.everforest_ui_contrast = "high" -- 'low', 'high'
+	priority = 1000,
+	opts = {
+		background = "medium",
+		transparent_background_level = 0,
+		italics = true,
+		disable_italic_comments = false,
+		sign_column_background = "none",
+		ui_contrast = "low",
+		dim_inactive_windows = false,
+		diagnostic_text_highlight = false,
+		diagnostic_virtual_text = "coloured",
+		diagnostic_line_highlight = false,
+		spell_foreground = false,
+		show_eob = true,
+		float_style = "bright",
+	},
+	config = function(_, opts)
 		vim.cmd([[colorscheme everforest]])
+		require("everforest").setup(opts)
 	end,
 }
