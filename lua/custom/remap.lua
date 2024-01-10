@@ -127,8 +127,8 @@ km("n", "=", function()
 	pcall(vim.cmd.foldopen)
 end, {})
 
-km("n", ";", ":")
-km("n", ":", ";")
+km({ "n", "v" }, ";", ":")
+km({ "n", "v" }, ":", ";")
 
 vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
 	desc = "[S]ubstitute [W]ord under cursor",

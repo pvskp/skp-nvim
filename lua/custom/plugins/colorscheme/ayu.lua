@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		mirage = true,
+		-- mirage = true,
 		options = {
 			theme = "ayu",
 		},
