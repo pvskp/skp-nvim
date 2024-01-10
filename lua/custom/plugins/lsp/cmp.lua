@@ -25,7 +25,7 @@ return {
 		vim.cmd("highlight! BorderBG guibg=NONE")
 
 		cmp.setup.filetype(
-			{ "conf", "config", "kitty" },
+			{ "conf", "config", "kitty", "yaml" },
 			{ sources = { { name = "fonts", option = { space_filter = "-" } } } }
 		)
 		cmp.setup({

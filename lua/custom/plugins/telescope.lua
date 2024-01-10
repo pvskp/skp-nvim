@@ -4,10 +4,10 @@ return {
 	lazy = false,
 	init = function()
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+		vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "[F]ind [F]iles" })
 		vim.keymap.set("n", "<leader>gf", builtin.live_grep, { desc = "[G]rep [F]iles" })
 		vim.keymap.set("n", "<leader>lb", builtin.buffers, { desc = "[L]ist [B]uffers" })
-		vim.keymap.set("n", "<leader>ht", builtin.help_tags, { desc = "[H]elp [T]ags" })
+		vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "[H]elp Tags" })
 		vim.keymap.set("n", "<leader>mp", builtin.man_pages, { desc = "[M]an [P]ages" })
 		vim.keymap.set(
 			"n",

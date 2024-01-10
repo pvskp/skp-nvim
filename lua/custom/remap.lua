@@ -25,7 +25,7 @@ km("n", "<S-l>", ":bnext<CR>", opts)
 km("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Find mode
-km("n", "<leader>ff", ":find *")
+km("n", "<leader>f", ":find *")
 
 vim.api.nvim_set_keymap("n", "<leader>gf", ":lua Search_in_directory()<CR>", { noremap = true, silent = true })
 
@@ -129,3 +129,10 @@ end, {})
 
 km("n", ";", ":")
 km("n", ":", ";")
+
+vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
+	desc = "[S]ubstitute [W]ord under cursor",
+})
+
+vim.api.nvim_set_keymap("n", "t", ":lua TogglePonPoff()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "t", ":lua TogglePonPoffSelection()<CR>", { noremap = true, silent = true })
