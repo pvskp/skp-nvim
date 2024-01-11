@@ -8,7 +8,7 @@ return {
 		-- ["icons"] = { "", "" },
 		-- ["icons"] = { "", "" },
 		["icons"] = { "ﱢ", "" },
-		["border"] = "rounded", -- none | single | double | rounded | solid | shadow
+		["border"] = "single",
 		["keymap"] = { -- mapping example:
 			["U"] = "<Plug>ColorPickerSlider5Decrease",
 			["O"] = "<Plug>ColorPickerSlider5Increase",

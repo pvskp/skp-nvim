@@ -6,7 +6,8 @@ require("custom.set")
 require("custom.utils")
 
 ---loads a plugin to lazy
----@param plugin_relative_path string the relative path to "custom.plugins" where the plugin config is located
+---@param plugin_relative_path string the relative path to
+--- "custom.plugins" where the plugin config is located
 local spec = function(active, plugin_relative_path)
 	if active == false then
 		return
@@ -24,9 +25,9 @@ spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.tokyonight")
-spec(poff, "colorscheme.vscode")
+spec(pon, "colorscheme.vscode")
 spec(poff, "colorscheme.nord")
-spec(pon, "colorscheme.ayu")
+spec(poff, "colorscheme.ayu")
 
 --<< LSP related >>--
 spec(pon, "lsp.conform") -- formatter
@@ -80,7 +81,7 @@ spec(poff, "neo-tree")
 spec(poff, "neoscroll")
 spec(poff, "nvim-tree")
 spec(poff, "oil")
-spec(pon, "which-key")
+spec(poff, "which-key")
 spec(poff, "color-picker")
 
 --<< UI >>--

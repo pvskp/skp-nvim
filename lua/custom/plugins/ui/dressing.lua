@@ -8,7 +8,7 @@ return {
 			title_pos = "left",
 			insert_only = true,
 			start_in_insert = true,
-			border = "rounded",
+			border = "single",
 			relative = "cursor",
 			prefer_width = 40,
 			width = nil,
@@ -57,7 +57,7 @@ return {
 				size = nil,
 				relative = "editor",
 				border = {
-					style = "rounded",
+					style = "single",
 				},
 				buf_options = {
 					swapfile = false,
@@ -73,7 +73,7 @@ return {
 			},
 			builtin = {
 				show_numbers = true,
-				border = "rounded",
+				border = "single",
 				relative = "editor",
 				buf_options = {},
 				win_options = {

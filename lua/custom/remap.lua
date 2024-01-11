@@ -16,6 +16,7 @@ km({ "c", "i", "n" }, "<C-c>", "<Esc>")
 
 -- Go to the end of line
 km({ "n", "v" }, "<leader><leader>", "g_")
+km({ "n", "v" }, "<C-j>", "%")
 
 -- this one is a life saver (avoid nvim messing with your registers)
 km("v", "p", '"_dP')
@@ -27,7 +28,7 @@ km("n", "<S-h>", ":bprevious<CR>", opts)
 -- Find mode
 km("n", "<leader>f", ":find *")
 
-vim.api.nvim_set_keymap("n", "<leader>gf", ":lua Search_in_directory()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>g", ":lua Search_in_directory()<CR>", { noremap = true, silent = true })
 
 -- Split
 km("n", "<M-j>", "<C-w>j")
@@ -127,8 +128,8 @@ km("n", "=", function()
 	pcall(vim.cmd.foldopen)
 end, {})
 
-km({ "n", "v" }, ";", ":")
-km({ "n", "v" }, ":", ";")
+-- km({ "n", "v" }, ";", ":")
+km({ "n", "v" }, ".", ":")
 
 vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
 	desc = "[S]ubstitute [W]ord under cursor",

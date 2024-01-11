@@ -37,7 +37,7 @@ return {
 				inactive_sign = "  ",
 				current_line_sign = "",
 				border = {
-					style = "rounded",
+					style = "single",
 					text = {
 						top = " Sessions ",
 					},
@@ -85,7 +85,7 @@ return {
 		popup_window = {
 			border = {
 				highlight = "FloatBorder",
-				style = "rounded",
+				style = "single",
 				text = {
 					top = " ChatGPT ",
 				},
@@ -103,7 +103,7 @@ return {
 		system_window = {
 			border = {
 				highlight = "FloatBorder",
-				style = "rounded",
+				style = "single",
 				text = {
 					top = " SYSTEM ",
 				},
@@ -119,7 +119,7 @@ return {
 			prompt = "  ",
 			border = {
 				highlight = "FloatBorder",
-				style = "rounded",
+				style = "single",
 				text = {
 					top_align = "center",
 					top = " Prompt ",
@@ -135,7 +135,7 @@ return {
 		settings_window = {
 			setting_sign = "  ",
 			border = {
-				style = "rounded",
+				style = "single",
 				text = {
 					top = " Settings ",
 				},
@@ -147,7 +147,7 @@ return {
 		help_window = {
 			setting_sign = "  ",
 			border = {
-				style = "rounded",
+				style = "single",
 				text = {
 					top = " Help ",
 				},
