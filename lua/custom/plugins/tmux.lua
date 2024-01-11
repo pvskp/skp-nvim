@@ -2,10 +2,16 @@ return {
 	"aserowy/tmux.nvim",
 	lazy = false,
 	init = function()
-		vim.keymap.set("n", "<M-h>", [[<cmd>lua require("tmux").move_left()<cr>]], { silent = true })
-		vim.keymap.set("n", "<M-j>", [[<cmd>lua require("tmux").move_bottom()<cr>]], { silent = true })
-		vim.keymap.set("n", "<M-k>", [[<cmd>lua require("tmux").move_top()<cr>]], { silent = true })
-		vim.keymap.set("n", "<M-l>", [[<cmd>lua require("tmux").move_right()<cr>]], { silent = true })
+		local opts = { silent = true }
+		vim.keymap.set("n", "<M-h>", [[<cmd>lua require("tmux").move_left()<cr>]], opts)
+		vim.keymap.set("n", "<M-j>", [[<cmd>lua require("tmux").move_bottom()<cr>]], opts)
+		vim.keymap.set("n", "<M-k>", [[<cmd>lua require("tmux").move_top()<cr>]], opts)
+		vim.keymap.set("n", "<M-l>", [[<cmd>lua require("tmux").move_right()<cr>]], opts)
+
+		vim.keymap.set("n", "<C-Left>", [[<cmd>lua require("tmux").resize_left()<cr>]], opts)
+		vim.keymap.set("n", "<C-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], opts)
+		vim.keymap.set("n", "<C-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], opts)
+		vim.keymap.set("n", "<C-Right>", [[<cmd>lua require("tmux").resize_right()<cr>]], opts)
 	end,
 	opts = {
 		copy_sync = {
