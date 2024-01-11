@@ -101,7 +101,7 @@ return {
 			padding = 2,
 			max_width = 0,
 			max_height = 0,
-			border = "rounded",
+			border = "single",
 			win_options = {
 				winblend = 0,
 			},
@@ -129,7 +129,7 @@ return {
 			min_height = { 5, 0.1 },
 			-- optionally define an integer/float for the exact height of the preview window
 			height = nil,
-			border = "rounded",
+			border = "single",
 			win_options = {
 				winblend = 0,
 			},
@@ -144,7 +144,7 @@ return {
 			max_height = { 10, 0.9 },
 			min_height = { 5, 0.1 },
 			height = nil,
-			border = "rounded",
+			border = "single",
 			minimized_border = "none",
 			win_options = {
 				winblend = 0,

@@ -35,7 +35,7 @@ return {
 	lazy = false,
 	config = function(_, opts)
 		local focus = require("focus")
-		vim.keymap.set({ "n" }, "<leader>tf", function()
+		vim.keymap.set({ "n" }, "<leader>m", function()
 			print("[Focus] toggled.")
 			focus.focus_toggle()
 		end, { desc = "[T]oggle [F]ocus" })

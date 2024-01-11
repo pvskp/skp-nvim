@@ -24,10 +24,12 @@ return {
 		cmp.event:on("confirm_done", cmd_autopairs.on_confirm_done())
 		vim.cmd("highlight! BorderBG guibg=NONE")
 
-		cmp.setup.filetype(
-			{ "conf", "config", "kitty", "yaml" },
-			{ sources = { { name = "fonts", option = { space_filter = "-" } } } }
-		)
+		cmp.setup.filetype({ "conf", "config", "kitty", "yaml" }, {
+			sources = {
+				{ name = "fonts", option = { space_filter = "-" } },
+				{ name = "path" },
+			},
+		})
 		cmp.setup({
 			preselect = cmp.PreselectMode.Item,
 			experimental = {
@@ -38,10 +40,10 @@ return {
 			},
 			window = {
 				completion = cmp.config.window.bordered({
-					border = "rounded",
+					border = "single",
 					winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
 				}),
-				documentation = cmp.config.window.bordered({ border = "rounded" }),
+				documentation = cmp.config.window.bordered({ border = "single" }),
 			},
 			snippet = {
 				-- configure how nvim-cmp interacts with snippet engine
