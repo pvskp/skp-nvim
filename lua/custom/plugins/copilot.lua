@@ -15,8 +15,8 @@ vim.keymap.set("n", "<leader>tc", copilot_toggle, { desc = "[T]oggle [C]opilot ï
 
 return {
 	"zbirenbaum/copilot.lua",
-	-- cmd = "Copilot",
-	lazy = false,
+	cmd = "Copilot",
+	-- lazy = false,
 	dependencies = {
 		"zbirenbaum/copilot-cmp",
 		-- cmd = "Copilot",
