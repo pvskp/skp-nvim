@@ -75,9 +75,9 @@ return {
 			formatting = {
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
-					symbol_map = { Copilot = "" },
+					-- symbol_map = { Copilot = "" },
 					menu = {
-						copilot = "[Copilot]",
+						-- copilot = "[Copilot]",
 						path = "[Path]",
 						buffer = "[Buffer]",
 						nvim_lsp = "[LSP]",
