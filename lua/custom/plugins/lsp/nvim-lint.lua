@@ -12,7 +12,7 @@ return {
 			typescript = { "eslint_d" },
 			json = { "jsonlint" },
 			-- lua = { "luacheck" },
-			python = { "pylint" },
+			-- python = { "pylint" },
 			go = { "golangcilint" },
 			-- yaml = { "yamllint" },
 		}

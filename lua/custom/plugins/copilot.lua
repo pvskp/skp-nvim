@@ -32,7 +32,7 @@ return {
 				auto_trigger = true,
 				keymap = {
 					-- accept = "<M-l>",
-					accept = "<Tab>",
+					accept = "<C-a>",
 					accept_word = false,
 					accept_line = false,
 					next = "<M-]>",

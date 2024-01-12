@@ -18,14 +18,14 @@ end
 
 --<< colorschemes >>--
 spec(poff, "colorscheme.adwaita")
-spec(poff, "colorscheme.catppuccin")
+spec(pon, "colorscheme.catppuccin")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.tokyonight")
-spec(pon, "colorscheme.vscode")
+spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.ayu")
 

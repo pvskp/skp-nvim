@@ -135,5 +135,5 @@ vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
 	desc = "[S]ubstitute [W]ord under cursor",
 })
 
-vim.api.nvim_set_keymap("n", "t", ":lua TogglePonPoff()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "t", ":lua TogglePonPoffSelection()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "t", ":lua TogglePonPoff()<CR>", opts)
+vim.api.nvim_set_keymap("v", "t", ":lua TogglePonPoffSelection()<CR>", opts)
