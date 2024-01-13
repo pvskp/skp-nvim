@@ -18,11 +18,11 @@ end
 
 --<< colorschemes >>--
 spec(poff, "colorscheme.adwaita")
-spec(pon, "colorscheme.catppuccin")
+spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.moonlight")
-spec(poff, "colorscheme.onedark")
+spec(pon, "colorscheme.onedark")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.vscode")
@@ -74,6 +74,7 @@ spec(pon, "ufo") -- deal with folding in a better way
 spec(pon, "kitty") -- kitty integration
 spec(pon, "kubectl") -- kubectl integration
 spec(pon, "undotree") -- show undo tree
+spec(pon, "spider") -- show undo tree
 spec(poff, "flybuf")
 spec(poff, "illuminate")
 spec(poff, "lab")
@@ -83,6 +84,7 @@ spec(poff, "nvim-tree")
 spec(poff, "oil")
 spec(poff, "which-key")
 spec(poff, "color-picker")
+spec(poff, "harpoon")
 
 --<< UI >>--
 spec(poff, "ui.netrw")
