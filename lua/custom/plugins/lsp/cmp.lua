@@ -76,16 +76,16 @@ return {
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
 					-- symbol_map = { Copilot = "" },
-					menu = {
-						-- copilot = "[Copilot]",
-						path = "[Path]",
-						buffer = "[Buffer]",
-						nvim_lsp = "[LSP]",
-						luasnip = "[LuaSnip]",
-						nvim_lua = "[Lua]",
-						fonts = "[Fonts]",
-						latex_symbols = "[Latex]",
-					},
+					-- menu = {
+					-- 	-- copilot = "[Copilot]",
+					-- 	path = "[Path]",
+					-- 	buffer = "[Buffer]",
+					-- 	nvim_lsp = "[LSP]",
+					-- 	luasnip = "[LuaSnip]",
+					-- 	nvim_lua = "[Lua]",
+					-- 	fonts = "[Fonts]",
+					-- 	latex_symbols = "[Latex]",
+					-- },
 				}),
 			},
 		})
