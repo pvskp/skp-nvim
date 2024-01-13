@@ -9,6 +9,11 @@ return {
 	opts = {
 		defaults = {
 			borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+			mappings = {
+				i = {
+					["<Esc>"] = require("telescope.actions").close,
+				},
+			},
 		},
 		pickers = {
 			colorscheme = {
@@ -38,32 +43,50 @@ return {
 	},
 	config = function(_, opts)
 		local builtin = require("telescope.builtin")
+		local themes = require("telescope.themes")
 
-		local no_preview = function()
-			return require("telescope.themes").get_dropdown({
-				borderchars = {
-					{ "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-					prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
-					results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
-					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				},
-				width = 0.8,
-				previewer = false,
-				prompt_title = false,
-			})
+		local dropdown_opts = {
+			borderchars = {
+				{ "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+				results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+				preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+			},
+			width = 0.8,
+			previewer = false,
+			prompt_title = false,
+		}
+
+		local no_preview = function(prompt)
+			if prompt ~= nil then
+				dropdown_opts["prompt_title"] = prompt
+			else
+				dropdown_opts["prompt_title"] = false
+			end
+
+			return themes.get_dropdown(dropdown_opts)
 		end
 
-		-- then use it on whatever picker you want
-		-- ex:
+		vim.keymap.set("n", "<leader>f", function()
+			builtin.find_files(no_preview("Find Files"))
+		end, { desc = "Find [F]iles" })
 
-		vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Find [F]iles" })
-		vim.keymap.set("n", "<leader>g", builtin.live_grep, { desc = "[G]rep Files" })
+		vim.keymap.set("n", "<leader>g", builtin.live_grep, {
+			desc = "[G]rep Files",
+		})
+
 		vim.keymap.set("n", "<leader>b", function()
 			builtin.buffers(no_preview())
 		end, { desc = "List [B]uffers" })
 
-		vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "[H]elp Tags" })
-		vim.keymap.set("n", "<leader>mp", builtin.man_pages, { desc = "[M]an [P]ages" })
+		vim.keymap.set("n", "<leader>h", builtin.help_tags, {
+			desc = "[H]elp Tags",
+		})
+
+		vim.keymap.set("n", "<leader>mp", builtin.man_pages, {
+			desc = "[M]an [P]ages",
+		})
+
 		vim.keymap.set(
 			"n",
 			"<leader>bf",
