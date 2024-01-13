@@ -19,7 +19,7 @@ km({ "n", "v" }, "<leader><leader>", "g_")
 km({ "n", "v" }, "<C-j>", "%")
 
 -- this one is a life saver (avoid nvim messing with your registers)
-km("v", "p", '"_dP')
+km("v", "<leader>p", '"_dP')
 
 -- Move between buffers
 km("n", "<S-l>", ":bnext<CR>", opts)
@@ -135,5 +135,5 @@ vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
 	desc = "[S]ubstitute [W]ord under cursor",
 })
 
-vim.api.nvim_set_keymap("n", "t", ":lua TogglePonPoff()<CR>", opts)
-vim.api.nvim_set_keymap("v", "t", ":lua TogglePonPoffSelection()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-t>", ":lua TogglePonPoff()<CR>", opts)
+vim.api.nvim_set_keymap("v", "<C-t>", ":lua TogglePonPoffSelection()<CR>", opts)

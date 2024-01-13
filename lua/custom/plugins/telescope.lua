@@ -76,7 +76,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>b", function()
-			builtin.buffers(no_preview())
+			builtin.buffers(no_preview("Buffers"))
 		end, { desc = "List [B]uffers" })
 
 		vim.keymap.set("n", "<leader>h", builtin.help_tags, {

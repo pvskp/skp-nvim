@@ -35,12 +35,14 @@ local options = {
 	wildmenu = true,
 	wildmode = "list:longest,full",
 	wrap = false,
+	-- list = true,
 }
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
+-- vim.opt.listchars:append("eol:↲")
 vim.g.netrw_banner = 0
 
 local shape_group = vim.api.nvim_create_augroup("Shape", { clear = true })
