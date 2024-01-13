@@ -8,10 +8,10 @@ return {
 		vim.keymap.set("n", "<M-k>", [[<cmd>lua require("tmux").move_top()<cr>]], opts)
 		vim.keymap.set("n", "<M-l>", [[<cmd>lua require("tmux").move_right()<cr>]], opts)
 
-		vim.keymap.set("n", "<C-Left>", [[<cmd>lua require("tmux").resize_left()<cr>]], opts)
-		vim.keymap.set("n", "<C-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], opts)
-		vim.keymap.set("n", "<C-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], opts)
-		vim.keymap.set("n", "<C-Right>", [[<cmd>lua require("tmux").resize_right()<cr>]], opts)
+		vim.keymap.set("n", "<M-Left>", [[<cmd>lua require("tmux").resize_left()<cr>]], opts)
+		vim.keymap.set("n", "<M-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], opts)
+		vim.keymap.set("n", "<M-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], opts)
+		vim.keymap.set("n", "<M-Right>", [[<cmd>lua require("tmux").resize_right()<cr>]], opts)
 	end,
 	opts = {
 		copy_sync = {

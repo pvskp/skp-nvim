@@ -61,10 +61,10 @@ spec(pon, "autopairs")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "chatgpt")
 spec(pon, "copilot")
-spec(pon, "discord") -- rich presence
+spec(poff, "discord") -- rich presence
 spec(poff, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "focus") -- auto-resize windows when switching buffers
-spec(pon, "hawtkeys") -- show best keybindings to be mapped
+spec(poff, "hawtkeys") -- show best keybindings to be mapped
 spec(pon, "hop") -- jump to any word in the screen
 spec(pon, "surround") -- surround text with quotes, brackets, etc
 spec(pon, "telescope") -- fuzzy finder
@@ -74,9 +74,8 @@ spec(pon, "ufo") -- deal with folding in a better way
 spec(pon, "kitty") -- kitty integration
 spec(pon, "kubectl") -- kubectl integration
 spec(pon, "undotree") -- show undo tree
-spec(pon, "spider") -- show undo tree
+spec(poff, "spider") -- show undo tree
 spec(poff, "flybuf")
-spec(poff, "illuminate")
 spec(poff, "lab")
 spec(poff, "neo-tree")
 spec(poff, "neoscroll")
@@ -85,9 +84,11 @@ spec(poff, "oil")
 spec(poff, "which-key")
 spec(poff, "color-picker")
 spec(poff, "harpoon")
+spec(pon, "vim-be-good")
 
 --<< UI >>--
 spec(poff, "ui.netrw")
+spec(pon, "ui.illuminate")
 spec(poff, "ui.twilight")
 spec(pon, "ui.alpha") -- start dashboard
 spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
