@@ -29,14 +29,14 @@ return {
 		copilot_lua.setup({
 			suggestion = {
 				enabled = true,
-				auto_trigger = true,
+				auto_trigger = false,
 				keymap = {
 					-- accept = "<M-l>",
 					accept = "<C-a>",
 					accept_word = false,
 					accept_line = false,
-					next = "<M-]>",
-					prev = "<M-[>",
+					next = "<C-]>",
+					prev = "<C-[>",
 					dismiss = "<C-c>",
 				},
 			},

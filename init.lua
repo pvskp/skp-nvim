@@ -60,7 +60,7 @@ spec(pon, "git.gitsigns") -- show git signs on columnsign
 spec(pon, "autopairs")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "chatgpt")
-spec(poff, "copilot")
+spec(pon, "copilot")
 spec(pon, "discord") -- rich presence
 spec(poff, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "focus") -- auto-resize windows when switching buffers
@@ -100,7 +100,7 @@ spec(poff, "ui.sunglasses")
 
 --<< Lualine integrations >>--
 spec(pon, "ui.lualine.battery")
-spec(poff, "ui.lualine.copilot")
+spec(pon, "ui.lualine.copilot")
 spec(pon, "ui.lualine.clock")
 
 -- Loads all with lazy
