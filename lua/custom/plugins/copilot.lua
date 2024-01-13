@@ -11,7 +11,9 @@ local copilot_toggle = function()
 	print("[Copilot] enabled")
 end
 
-vim.keymap.set("n", "<leader>tc", copilot_toggle, { desc = "[T]oggle [C]opilot  " })
+vim.keymap.set("n", "<leader>tc", copilot_toggle, {
+	desc = "[T]oggle [C]opilot  ",
+})
 
 return {
 	"zbirenbaum/copilot.lua",
