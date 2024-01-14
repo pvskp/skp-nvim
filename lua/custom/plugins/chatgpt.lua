@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",
-		"nvim-telescope/telescope.nvim",
+		-- "nvim-telescope/telescope.nvim",
 	},
 	init = function()
 		vim.keymap.set("n", "<leader>ch", ":ChatGPT<CR>", { silent = true })

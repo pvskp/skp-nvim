@@ -1,47 +1,48 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.5",
+	-- tag = "0.1.5",
 	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
-	opts = {
-		defaults = {
-			borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-			mappings = {
-				i = {
-					["<Esc>"] = require("telescope.actions").close,
-				},
-			},
-		},
-		pickers = {
-			colorscheme = {
-				enable_preview = true,
-			},
-			buffers = {
-				-- theme = "dropdown",
-				previewer = false,
-				show_all_buffers = true,
+	config = function()
+		require("telescope").setup({
+			defaults = {
+				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 				mappings = {
 					i = {
-						["<c-d>"] = require("telescope.actions").delete_buffer,
-						["<C-j>"] = require("telescope.actions").move_selection_next,
-						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<Esc>"] = require("telescope.actions").close,
-						["<leader>e"] = require("telescope.actions").close,
 					},
 				},
-				-- ignore_current_buffer = true,
 			},
-		},
-		extensions = {
-			["ui-select"] = {
-				require("telescope.themes").get_dropdown({}),
+			pickers = {
+				colorscheme = {
+					enable_preview = true,
+				},
+				buffers = {
+					-- theme = "dropdown",
+					previewer = false,
+					show_all_buffers = true,
+					mappings = {
+						i = {
+							["<c-d>"] = require("telescope.actions").delete_buffer,
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
+							["<Esc>"] = require("telescope.actions").close,
+							["<leader>e"] = require("telescope.actions").close,
+						},
+					},
+					-- ignore_current_buffer = true,
+				},
 			},
-		},
-	},
-	config = function(_, opts)
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({}),
+				},
+			},
+		})
+
 		local builtin = require("telescope.builtin")
 		local themes = require("telescope.themes")
 
@@ -94,7 +95,6 @@ return {
 			{ silent = true, desc = "[B]uffer [F]uzzy" }
 		)
 
-		require("telescope").setup(opts)
 		require("telescope").load_extension("ui-select")
 	end,
 }
