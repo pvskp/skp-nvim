@@ -100,6 +100,7 @@ spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
 spec(pon, "ui.alpha") -- start dashboard
+spec(pon, "ui.transparent") -- start dashboard
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
