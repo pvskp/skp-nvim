@@ -1,6 +1,17 @@
 return {
 	"robitx/gp.nvim",
 	event = "BufEnter",
+	keys = {
+		{
+			"<leader>ch",
+			"<cmd>GpChatToggle<CR>",
+			{
+				desc = "Toggle ChatGPT chat window",
+				silent = true,
+			},
+			mode = "n",
+		},
+	},
 	opts = {
 		openai_api_key = os.getenv("OPENAI_API_KEY"),
 		openai_api_endpoint = "https://api.openai.com/v1/chat/completions",
@@ -101,10 +112,5 @@ return {
 	},
 	config = function(_, opts)
 		require("gp").setup(opts)
-
-		-- or setup with your own config (see Install > Configuration in Readme)
-		-- require("gp").setup(config)
-
-		-- shortcuts might be setup here (see Usage > Shortcuts in Readme)
 	end,
 }
