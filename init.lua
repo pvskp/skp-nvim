@@ -57,6 +57,7 @@ spec(poff, "mini.notify") -- minitree (best tree plugin)
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
 spec(pon, "git.gitsigns") -- show git signs on columnsign
+spec(pon, "git.blame")
 spec(pon, "git.fugitive") -- git integration
 spec(poff, "git.neogit")
 
@@ -103,11 +104,11 @@ spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
 spec(pon, "ui.alpha") -- start dashboard
 spec(pon, "ui.transparent") -- start dashboard
+spec(pon, "ui.fidget") -- cool LSP notification
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.headlines")
-spec(pon, "ui.fidget") -- cool LSP notification
 
 --<< Lualine integrations >>--
 

@@ -36,7 +36,7 @@ return {
 		symbols = {
 			modified = "●",
 			ellipsis = "…",
-			separator = "",
+			separator = "»",
 			-- separator = "",
 		},
 		kinds = {
