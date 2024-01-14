@@ -25,17 +25,16 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
 			},
-			-- auto-install configured servers (with lspconfig)
+
 			automatic_installation = true, -- not the same as ensure_installed
 		})
 
 		local keymap = vim.keymap -- for conciseness
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(client, bufnr)
+		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 
 			opts.desc = "Uses Navbuddy"
