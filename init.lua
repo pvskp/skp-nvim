@@ -42,6 +42,7 @@ spec(pon, "lsp.luasnip") -- snippets
 spec(pon, "lsp.commentary")
 spec(pon, "lsp.rainbow-delimiters") -- show matching delimiters
 spec(pon, "lsp.neodev") -- offers completion to neovim functions
+spec(pon, "lsp.outline")
 spec(poff, "lsp.lsp-saga") -- offers completion to neovim functions
 
 --<< Language specific >>--
@@ -50,7 +51,7 @@ spec(pon, "languages.golang") -- go integration
 --<< Mini library >>--
 spec(pon, "mini.files") -- minitree (best tree plugin)
 spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
-spec(pon, "mini.notify") -- minitree (best tree plugin)
+spec(poff, "mini.notify") -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
@@ -75,6 +76,7 @@ spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
 spec(pon, "tmux") -- tmux integration
+spec(pon, "gp")
 spec(poff, "which-key")
 spec(poff, "spider") -- show undo tree
 spec(poff, "oil")
@@ -105,7 +107,7 @@ spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.headlines")
-spec(poff, "ui.fidget") -- cool LSP notification
+spec(pon, "ui.fidget") -- cool LSP notification
 
 --<< Lualine integrations >>--
 
