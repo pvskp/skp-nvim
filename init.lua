@@ -92,11 +92,14 @@ spec(poff, "eyeliner") -- quick jump with f, F, t, T
 spec(poff, "discord") -- rich presence
 spec(poff, "color-picker")
 spec(poff, "chatgpt")
+spec(poff, "hardmode")
+spec(pon, "hardtime")
 
 --<< UI >>--
 
 spec(pon, "ui.virt-column")
 spec(pon, "ui.lualine") -- statusline
+spec(pon, "ui.bufferline")
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.illuminate")
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
