@@ -4,11 +4,12 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
-			bash = { "beautysh" },
+			bash = { "beautysh", "shellcheck" },
 			python = { "isort", "black" },
 			javascript = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
 			yaml = { "yamlfmt" },
+			cpp = { "clang-format" },
 		},
 
 		format_on_save = {

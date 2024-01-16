@@ -14,6 +14,7 @@ return {
 			-- lua = { "luacheck" },
 			-- python = { "pylint" },
 			go = { "golangcilint" },
+			-- cpp = { "cpplint" },
 			-- yaml = { "yamllint" },
 		}
 
