@@ -94,12 +94,14 @@ spec(poff, "color-picker")
 spec(poff, "chatgpt")
 spec(poff, "hardmode")
 spec(pon, "hardtime")
+spec(poff, "cmdbuf")
+spec(poff, "wilder")
 
 --<< UI >>--
 
 spec(pon, "ui.virt-column")
 spec(pon, "ui.lualine") -- statusline
-spec(pon, "ui.bufferline")
+spec(poff, "ui.bufferline")
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.illuminate")
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands

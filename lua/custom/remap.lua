@@ -14,7 +14,8 @@ km("n", "<C-e>", ":Explore! 15<CR>", { silent = true, noremap = true })
 
 -- Copy line from cursor position
 km("n", "Y", "v$y")
-km({ "c", "i", "n" }, "<C-c>", "<Esc>")
+
+km({ "i", "n" }, "<C-c>", "<Esc>")
 
 -- Movement key mappings
 km({ "n", "v" }, "<leader><leader>", "g_")
