@@ -33,7 +33,8 @@ local options = {
 	updatetime = 250,
 	virtualedit = "all",
 	wildmenu = true,
-	wildmode = "list:longest,full",
+	wildignorecase = true,
+	-- wildmode = "list:longest,full",
 	wrap = false,
 	-- list = true,
 }

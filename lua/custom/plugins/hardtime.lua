@@ -12,6 +12,7 @@ return {
 			"oil",
 			"minifiles",
 			"help",
+			"vim",
 			"Outline",
 		},
 	},

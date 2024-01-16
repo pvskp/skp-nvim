@@ -1,13 +1,3 @@
--- Highlight on yank
--- local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
--- vim.api.nvim_create_autocmd("TextYankPost", {
--- 	callback = function()
--- 		vim.highlight.on_yank()
--- 	end,
--- 	group = highlight_group,
--- 	pattern = "*",
--- })
-
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
@@ -51,7 +41,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = "~/.config/kitty/custom_kitty.conf",
+	pattern = "kitty.conf",
 	command = "silent !pkill -USR1 kitty",
 })
 
