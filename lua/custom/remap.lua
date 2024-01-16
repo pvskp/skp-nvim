@@ -32,7 +32,13 @@ km("n", "<S-h>", ":bprevious<CR>", opts)
 km("n", "<leader>f", ":find *")
 
 -- Search in directory
-vim.api.nvim_set_keymap("n", "<leader>g", ":lua Search_in_directory()<CR>", { noremap = true, silent = true })
+km("n", "<leader>g", function()
+	local ok, pattern = pcall(vim.fn.input, "Enter search pattern: ")
+	if ok and pattern ~= "" then
+		vim.cmd("silent! grep! " .. pattern .. " * 2> /dev/null")
+		vim.cmd("copen")
+	end
+end, opts)
 
 -- Window splitting
 km("n", "<M-j>", "<C-w>j")
@@ -41,7 +47,27 @@ km("n", "<M-l>", "<C-w>l")
 km("n", "<M-h>", "<C-w>h")
 
 -- Resize window
-vim.api.nvim_set_keymap("n", "<M-r>", "<cmd>lua Interactive_resize()<CR>", { noremap = true, silent = true })
+km("n", "<M-r>", function()
+	local keymap_set = vim.api.nvim_set_keymap
+	local interactive_resize_opts = { noremap = true }
+
+	keymap_set("n", "k", ":resize -2<CR>", interactive_resize_opts)
+	keymap_set("n", "j", ":resize +2<CR>", interactive_resize_opts)
+	keymap_set("n", "l", ":vertical resize -2<CR>", interactive_resize_opts)
+	keymap_set("n", "h", ":vertical resize +2<CR>", interactive_resize_opts)
+	keymap_set("n", "<C-c>", "<cmd>lua Exit_interactive_resize()<CR>", interactive_resize_opts)
+
+	-- exit resize mode
+	keymap_set("n", "q", function()
+		local keymap_del = vim.api.nvim_del_keymap
+		keymap_del("n", "k")
+		keymap_del("n", "j")
+		keymap_del("n", "h")
+		keymap_del("n", "l")
+		keymap_del("n", "<C-c>")
+		keymap_del("n", "q")
+	end, interactive_resize_opts)
+end, { noremap = true, silent = true })
 
 km("n", "<M-=>", "<C-w>=")
 km("n", "<C-s>", ":w<CR>", opts)
