@@ -65,7 +65,7 @@ return {
 		},
 		keymaps = {
 			show_help = "?",
-			close = { "<Esc>", "q" },
+			close = { "q" },
 			goto_location = "<Cr>",
 			peek_location = "o",
 			goto_and_close = "<S-Cr>",
