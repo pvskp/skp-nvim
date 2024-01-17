@@ -18,7 +18,7 @@ end
 
 --<< colorschemes >>--
 
-spec(pon, "colorscheme.onedark")
+spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
@@ -28,7 +28,7 @@ spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.ayu")
-spec(poff, "colorscheme.adwaita")
+spec(pon, "colorscheme.adwaita")
 
 --<< LSP related >>--
 spec(pon, "lsp.conform") -- formatter
@@ -77,7 +77,7 @@ spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
 spec(pon, "tmux") -- tmux integration
-spec(pon, "gp")
+spec(poff, "gp")
 spec(poff, "which-key")
 spec(poff, "spider") -- show undo tree
 spec(poff, "oil")
@@ -93,7 +93,7 @@ spec(poff, "discord") -- rich presence
 spec(poff, "color-picker")
 spec(poff, "chatgpt")
 spec(poff, "hardmode")
-spec(pon, "hardtime")
+spec(poff, "hardtime")
 spec(poff, "cmdbuf")
 spec(poff, "wilder")
 
