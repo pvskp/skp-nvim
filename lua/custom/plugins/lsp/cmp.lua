@@ -32,44 +32,6 @@ return {
 			},
 		})
 
-		-- `/` cmdline setup.
-		cmp.setup.cmdline("/", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" },
-			},
-		})
-
-		-- `:` cmdline setup.
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
-			}, {
-				{
-					name = "cmdline",
-					option = {
-						ignore_cmds = { "Man", "!" },
-					},
-				},
-			}),
-		})
-
-		-- `q:` cmdline setup.
-		cmp.setup.cmdline("q:", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = "path" },
-			}, {
-				{
-					name = "cmdline",
-					option = {
-						ignore_cmds = { "Man", "!" },
-					},
-				},
-			}),
-		})
-
 		cmp.setup({
 			preselect = cmp.PreselectMode.Item,
 			experimental = {
@@ -128,6 +90,33 @@ return {
 					-- },
 				}),
 			},
+		})
+
+		local cmdline_mappings = cmp.mapping.preset.cmdline({
+			["<Tab>"] = cmp.mapping.confirm({ select = true }),
+		})
+
+		-- `/` cmdline setup.
+		cmp.setup.cmdline("/", {
+			mapping = cmdline_mappings,
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+
+		-- `:` cmdline setup.
+		cmp.setup.cmdline(":", {
+			mapping = cmdline_mappings,
+			sources = cmp.config.sources({
+				{ name = "path" },
+			}, {
+				{
+					name = "cmdline",
+					option = {
+						ignore_cmds = { "Man", "!" },
+					},
+				},
+			}),
 		})
 	end,
 }
