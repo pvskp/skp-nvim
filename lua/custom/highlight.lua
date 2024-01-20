@@ -4,7 +4,7 @@ vim.cmd("highlight! FloatBorder guibg=NONE")
 -- Adiciona o padrão de realce para "on"
 vim.api.nvim_exec(
 	[[
-hi onPattern guifg=#9FF592
+hi onPattern guifg=green
 call matchadd('onPattern', '\<pon\>')
 ]],
 	false
@@ -13,7 +13,7 @@ call matchadd('onPattern', '\<pon\>')
 -- Adiciona o padrão de realce para "off"
 vim.api.nvim_exec(
 	[[
-hi offPattern guifg=#F54534
+hi offPattern guifg=red
 call matchadd('offPattern', '\<poff\>')
 ]],
 	false
