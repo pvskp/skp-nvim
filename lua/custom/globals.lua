@@ -15,7 +15,6 @@ function FormatColor(color)
 	if not color then
 		return nil
 	end
-
 	return string.format("#%06x", color)
 end
 
