@@ -46,19 +46,5 @@ return {
 	},
 	config = function(_, opts)
 		require("gitsigns").setup(opts)
-		vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#ffc777" })
-		vim.api.nvim_set_hl(0, "GitSignsChangeNr", { fg = "#ffc777" })
-
-		-- 		CopyHighlight("WarningMsg", "GitSignsChange")
-		-- 		CopyHighlight("WarningMsg", "GitSignsChangeNr")
-
-		-- 		CopyHighlight("TSRainbowGreen", "GitSignsAdd")
-		-- 		CopyHighlight("TSRainbowGreen", "GitSignsAddNr")
-
-		vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#a9ff9d", bg = "None" })
-		vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = "#a9ff9d", bg = "None" })
-
-		vim.api.nvim_set_hl(0, "GitsignsDelete", { fg = "#ff9da9", bg = "None" })
-		vim.api.nvim_set_hl(0, "GitsignsDeleteNr", { fg = "#ff9da9", bg = "None" })
 	end,
 }

@@ -45,19 +45,3 @@ end
 
 -- vim.opt.listchars:append("eol:↲")
 vim.g.netrw_banner = 0
-
-local shape_group = vim.api.nvim_create_augroup("Shape", { clear = true })
-vim.api.nvim_create_autocmd("VimLeave", {
-	group = shape_group,
-	command = "set guicursor=a:ver90,a:blinkon100",
-})
-
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
-})

@@ -19,9 +19,7 @@ return {
 			setopt = true,
 			relculright = true,
 			segments = {
-
 				{ text = { builtin.foldfunc, " " }, click = "v:lua.ScFa", hl = "Comment" },
-
 				{ text = { "%s" }, click = "v:lua.ScSa" },
 				{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 			},
@@ -61,6 +59,7 @@ return {
 		end
 
 		require("ufo").setup({
+			---@diagnostic disable-next-line: unused-local
 			provider_selector = function(bufnr, filetype, buftype)
 				return { "lsp", "indent" }
 			end,

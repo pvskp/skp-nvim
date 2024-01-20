@@ -27,8 +27,9 @@ spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
+spec(pon, "colorscheme.github")
 spec(poff, "colorscheme.ayu")
-spec(pon, "colorscheme.adwaita")
+spec(poff, "colorscheme.adwaita")
 
 --<< LSP related >>--
 spec(pon, "lsp.conform") -- formatter
@@ -57,16 +58,16 @@ spec(poff, "mini.notify") -- minitree (best tree plugin)
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
 spec(pon, "git.gitsigns") -- show git signs on columnsign
-spec(pon, "git.blame")
+spec(poff, "git.blame")
 spec(pon, "git.fugitive") -- git integration
 spec(poff, "git.neogit")
 
 --<< General >>--
 
-spec(pon, "vim-be-good")
 spec(pon, "undotree") -- show undo tree
 spec(pon, "ufo") -- deal with folding in a better way
 spec(pon, "trouble") -- cool quickfix list for LSP
+spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
 spec(pon, "kubectl") -- kubectl integration
@@ -76,9 +77,9 @@ spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
-spec(pon, "tmux") -- tmux integration
-spec(poff, "gp")
+spec(poff, "wilder")
 spec(poff, "which-key")
+spec(poff, "vim-be-good")
 spec(poff, "spider") -- show undo tree
 spec(poff, "oil")
 spec(poff, "nvim-tree")
@@ -87,33 +88,33 @@ spec(poff, "neo-tree")
 spec(poff, "lab")
 spec(poff, "hawtkeys") -- show best keybindings to be mapped
 spec(poff, "harpoon")
+spec(poff, "hardtime")
+spec(poff, "hardmode")
+spec(pon, "gp")
 spec(poff, "flybuf")
 spec(poff, "eyeliner") -- quick jump with f, F, t, T
-spec(poff, "discord") -- rich presence
+spec(pon, "discord") -- rich presence
 spec(poff, "color-picker")
-spec(poff, "chatgpt")
-spec(poff, "hardmode")
-spec(poff, "hardtime")
 spec(poff, "cmdbuf")
-spec(poff, "wilder")
+spec(poff, "chatgpt")
 
 --<< UI >>--
 
 spec(pon, "ui.virt-column")
+spec(pon, "ui.transparent") -- start dashboard
 spec(pon, "ui.lualine") -- statusline
-spec(poff, "ui.bufferline")
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.illuminate")
+spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
 spec(pon, "ui.alpha") -- start dashboard
-spec(pon, "ui.transparent") -- start dashboard
-spec(pon, "ui.fidget") -- cool LSP notification
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.headlines")
+spec(pon, "ui.bufferline")
 
 --<< Lualine integrations >>--
 
