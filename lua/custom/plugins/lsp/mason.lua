@@ -27,6 +27,8 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"lua_ls",
+				"gopls",
+				"pyright",
 			},
 
 			automatic_installation = true, -- not the same as ensure_installed
