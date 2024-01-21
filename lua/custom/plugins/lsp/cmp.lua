@@ -53,63 +53,102 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
+
 			mapping = cmp.mapping.preset.insert({
 				["<C-l>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 				["<C-h>"] = cmp.mapping.select_next_item(), -- next suggestion
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
-				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+				["<C-Space>"] = cmp.mapping.complete(),
+				["<C-f>"] = cmp.mapping.scroll_docs(4), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
-				-- ["<Tab>"] = cmp.mapping.confirm({ select = false }),
+				-- ["<CR>"] = cmp.mapping.confirm({ select = false }),
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
 			}),
+
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "nvim_lsp" },
-				-- { name = "copilot" },
 				{ name = "path" }, -- file system paths
 				{ name = "buffer" }, -- text within current buffer
-				-- { name = "fonts", option = { space_filter = "-" } }, -- file system paths
 			}),
+
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
-					-- symbol_map = { Copilot = "" },
-					-- menu = {
-					-- 	-- copilot = "[Copilot]",
-					-- 	path = "[Path]",
-					-- 	buffer = "[Buffer]",
-					-- 	nvim_lsp = "[LSP]",
-					-- 	luasnip = "[LuaSnip]",
-					-- 	nvim_lua = "[Lua]",
-					-- 	fonts = "[Fonts]",
-					-- 	latex_symbols = "[Latex]",
-					-- },
 				}),
 			},
 		})
 
-		local cmdline_mappings = cmp.mapping.preset.cmdline({
-			["<Tab>"] = cmp.mapping.confirm({ select = true }),
-		})
+		local cmd_mappings = {
+			["<C-z>"] = {
+				c = function()
+					if cmp.visible() then
+						cmp.select_next_item()
+					else
+						cmp.complete()
+					end
+				end,
+			},
+			["<Tab>"] = {
+				c = function()
+					if cmp.visible() then
+						cmp.select_next_item()
+					else
+						cmp.complete()
+					end
+				end,
+			},
+			["<S-Tab>"] = {
+				c = function()
+					if cmp.visible() then
+						cmp.select_prev_item()
+					else
+						cmp.complete()
+					end
+				end,
+			},
+			["<C-n>"] = {
+				c = function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					else
+						fallback()
+					end
+				end,
+			},
+			["<C-p>"] = {
+				c = function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					else
+						fallback()
+					end
+				end,
+			},
+			["<C-e>"] = {
+				c = cmp.mapping.abort(),
+			},
+			["<CR>"] = {
+				c = cmp.mapping.confirm({ select = false }),
+			},
+		}
 
 		-- `/` cmdline setup.
 		cmp.setup.cmdline("/", {
-			mapping = cmdline_mappings,
-			sources = {
+			mapping = cmd_mappings,
+			sources = cmp.config.sources({
 				{ name = "buffer" },
-			},
+			}),
 		})
 
 		-- `:` cmdline setup.
 		cmp.setup.cmdline(":", {
-			mapping = cmdline_mappings,
+			mapping = cmd_mappings,
 			sources = cmp.config.sources({
 				{ name = "path" },
-			}, {
 				{
 					name = "cmdline",
 					option = {

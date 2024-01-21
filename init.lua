@@ -47,7 +47,7 @@ spec(pon, "lsp.outline")
 spec(poff, "lsp.lsp-saga") -- offers completion to neovim functions
 
 --<< Language specific >>--
-spec(pon, "languages.golang") -- go integration
+spec(poff, "languages.golang") -- go integration
 
 --<< Mini library >>--
 spec(pon, "mini.files") -- minitree (best tree plugin)
