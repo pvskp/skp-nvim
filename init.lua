@@ -66,6 +66,7 @@ spec(pon, "kubectl") -- kubectl integration
 spec(pon, "kitty") -- kitty integration
 spec(pon, "hop") -- jump to any word in the screen
 spec(pon, "focus") -- auto-resize windows when switching buffers
+spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
 spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
@@ -84,7 +85,6 @@ spec(poff, "harpoon")
 spec(poff, "hardtime")
 spec(poff, "hardmode")
 spec(poff, "flybuf")
-spec(poff, "eyeliner") -- quick jump with f, F, t, T
 spec(poff, "color-picker")
 spec(poff, "cmdbuf")
 spec(poff, "chatgpt")
