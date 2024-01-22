@@ -131,7 +131,7 @@ return {
 			["<C-e>"] = {
 				c = cmp.mapping.abort(),
 			},
-			["<CR>"] = {
+			["<C-x>"] = {
 				c = cmp.mapping.confirm({ select = false }),
 			},
 		}

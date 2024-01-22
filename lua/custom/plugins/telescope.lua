@@ -76,9 +76,9 @@ return {
 			desc = "[G]rep Files",
 		})
 
-		vim.keymap.set("n", "<leader>b", function()
-			builtin.buffers(no_preview("Buffers"))
-		end, { desc = "List [B]uffers" })
+		-- vim.keymap.set("n", "<leader>b", function()
+		-- 	builtin.buffers(no_preview("Buffers"))
+		-- end, { desc = "List [B]uffers" })
 
 		vim.keymap.set("n", "<leader>h", builtin.help_tags, {
 			desc = "[H]elp Tags",
@@ -88,12 +88,12 @@ return {
 			desc = "[M]an [P]ages",
 		})
 
-		vim.keymap.set(
-			"n",
-			"<leader>bf",
-			":Telescope current_buffer_fuzzy_find<CR>",
-			{ silent = true, desc = "[B]uffer [F]uzzy" }
-		)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<leader>bf",
+		-- 	":Telescope current_buffer_fuzzy_find<CR>",
+		-- 	{ silent = true, desc = "[B]uffer [F]uzzy" }
+		-- )
 
 		require("telescope").load_extension("ui-select")
 	end,

@@ -6,6 +6,7 @@ return {
 			mode = "buffers", -- set to "tabs" to only show tabpages instead
 			-- themable = true | false, -- allows highlight groups to be overriden i.e. sets highlights as default
 			-- numbers = "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+			numbers = "none",
 			close_command = "bdelete! %d", -- can be a string | function, | false see "Mouse actions"
 			right_mouse_command = "bdelete! %d", -- can be a string | function | false, see "Mouse actions"
 			left_mouse_command = "buffer %d", -- can be a string | function, | false see "Mouse actions"
@@ -40,4 +41,8 @@ return {
 			always_show_bufferline = false,
 		},
 	},
+	config = function(_, opts)
+		require("bufferline").setup(opts)
+		vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLinePick<CR>", { silent = true })
+	end,
 }
