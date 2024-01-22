@@ -5,33 +5,23 @@ require("custom.remap")
 require("custom.set")
 require("custom.utils")
 
----loads a plugin to lazy
----@param plugin_relative_path string the relative path to
---- "custom.plugins" where the plugin config is located
-local spec = function(active, plugin_relative_path)
-	if active == false then
-		return
-	end
-	local plugins = "custom.plugins."
-	Spec(plugins .. plugin_relative_path)
-end
-
 --<< colorschemes >>--
 
-spec(poff, "colorscheme.onedark")
+spec(pon, "colorscheme.github")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
+spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
-spec(pon, "colorscheme.github")
 spec(poff, "colorscheme.ayu")
 spec(poff, "colorscheme.adwaita")
 
 --<< LSP related >>--
+
 spec(pon, "lsp.conform") -- formatter
 spec(pon, "lsp.lspconfig")
 spec(pon, "lsp.mason") -- download lsp servers, fomratters, etc
@@ -47,9 +37,11 @@ spec(pon, "lsp.outline")
 spec(poff, "lsp.lsp-saga") -- offers completion to neovim functions
 
 --<< Language specific >>--
-spec(poff, "languages.golang") -- go integration
+
+spec(pon, "languages.golang") -- go integration
 
 --<< Mini library >>--
+
 spec(pon, "mini.files") -- minitree (best tree plugin)
 spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
 spec(poff, "mini.notify") -- minitree (best tree plugin)
@@ -58,9 +50,9 @@ spec(poff, "mini.notify") -- minitree (best tree plugin)
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
 spec(pon, "git.gitsigns") -- show git signs on columnsign
-spec(poff, "git.blame")
 spec(pon, "git.fugitive") -- git integration
 spec(poff, "git.neogit")
+spec(poff, "git.blame")
 
 --<< General >>--
 
@@ -74,6 +66,7 @@ spec(pon, "kubectl") -- kubectl integration
 spec(pon, "kitty") -- kitty integration
 spec(pon, "hop") -- jump to any word in the screen
 spec(pon, "focus") -- auto-resize windows when switching buffers
+spec(pon, "discord") -- rich presence
 spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
@@ -90,10 +83,8 @@ spec(poff, "hawtkeys") -- show best keybindings to be mapped
 spec(poff, "harpoon")
 spec(poff, "hardtime")
 spec(poff, "hardmode")
-spec(pon, "gp")
 spec(poff, "flybuf")
 spec(poff, "eyeliner") -- quick jump with f, F, t, T
-spec(pon, "discord") -- rich presence
 spec(poff, "color-picker")
 spec(poff, "cmdbuf")
 spec(poff, "chatgpt")
@@ -108,13 +99,13 @@ spec(pon, "ui.illuminate")
 spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
+spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
 spec(pon, "ui.alpha") -- start dashboard
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.headlines")
-spec(pon, "ui.bufferline")
 
 --<< Lualine integrations >>--
 

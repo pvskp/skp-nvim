@@ -27,6 +27,7 @@ km("v", "<leader>p", '"_dP')
 -- Buffer navigation
 km("n", "<S-l>", ":bnext<CR>", opts)
 km("n", "<S-h>", ":bprevious<CR>", opts)
+km("n", "<Tab>", "<C-6>", opts)
 
 -- Find mode
 km("n", "<leader>f", ":find *")

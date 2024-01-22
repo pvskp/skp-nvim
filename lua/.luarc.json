@@ -2,6 +2,7 @@
     "diagnostics.globals": [
         "vim",
         "pon",
-        "poff"
+        "poff",
+        "spec"
     ]
 }

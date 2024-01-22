@@ -7,6 +7,17 @@ LAZY_PLUGIN_SPEC = {}
 pon = true
 poff = false
 
+---loads a plugin to lazy
+---@param plugin_relative_path string the relative path to
+--- "custom.plugins" where the plugin config is located
+spec = function(active, plugin_relative_path)
+	if active == false then
+		return
+	end
+	local plugins = "custom.plugins."
+	Spec(plugins .. plugin_relative_path)
+end
+
 function Spec(item)
 	table.insert(LAZY_PLUGIN_SPEC, { import = item })
 end
