@@ -71,10 +71,11 @@ spec(pon, "discord") -- rich presence
 spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
+spec(pon, "tetris")
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
-spec(poff, "spider") -- show undo tree
+spec(poff, "spider")
 spec(poff, "oil")
 spec(poff, "nvim-tree")
 spec(poff, "neoscroll")
@@ -100,7 +101,7 @@ spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.bufferline")
-spec(pon, "ui.barbecue") -- bar on top that shows the current symbol and its parents
+spec(pon, "ui.barbecue") -- shows the current symbol and its parents
 spec(pon, "ui.alpha") -- start dashboard
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
