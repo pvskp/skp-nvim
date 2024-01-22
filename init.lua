@@ -71,7 +71,7 @@ spec(pon, "discord") -- rich presence
 spec(pon, "copilot")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
-spec(pon, "tetris")
+spec(poff, "tetris")
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
