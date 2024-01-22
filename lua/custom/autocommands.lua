@@ -10,6 +10,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Fix cursor
+local cursor_reset = vim.api.nvim_create_augroup("CursorReset", { clear = true })
+vim.api.nvim_create_autocmd("VimLeave", {
+	group = cursor_reset,
+	pattern = "*",
+	command = "set guicursor=a:ver90",
+})
+
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
@@ -44,15 +52,6 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	pattern = "kitty.conf",
 	command = "silent !pkill -USR1 kitty",
 })
-
--- vim.cmd("autocmd bufwritepost ~/.config/kitty/custom_kitty.conf :silent !pkill -USR1 kitty")
-
--- Reset my cursor
--- local shape_group = vim.api.nvim_create_augroup("Shape", { clear = true })
--- vim.api.nvim_create_autocmd("VimLeave", {
--- 	group = shape_group,
--- 	command = "set guicursor=a:ver90,a:blinkon100",
--- })
 
 -- Initiates the LSP for ansible, if available
 local ansible_filetype_group = vim.api.nvim_create_augroup("FiletypeAnsible", { clear = true })
