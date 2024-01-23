@@ -58,6 +58,8 @@ return {
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp_signature_help" },
+				{ name = "codeium" },
+				{ name = "copilot" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "nvim_lsp" },
 				{ name = "path" }, -- file system paths
@@ -68,6 +70,12 @@ return {
 			formatting = {
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
+					maxwidth = 50,
+					ellipsis_char = "...",
+					symbol_map = {
+						Codeium = "",
+						Copilot = "",
+					},
 				}),
 			},
 		})

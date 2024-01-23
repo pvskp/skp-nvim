@@ -6,8 +6,9 @@ return {
 		"zbirenbaum/copilot-cmp",
 	},
 	opts = {
+
 		suggestion = {
-			enabled = true,
+			enabled = false,
 			auto_trigger = true,
 			keymap = {
 				-- accept = "<M-l>",
@@ -19,7 +20,11 @@ return {
 				dismiss = "<C-c>",
 			},
 		},
-		panel = { enabled = false },
+
+		panel = {
+			enabled = false,
+		},
+
 		filetypes = {
 			yaml = true,
 			markdown = true,
@@ -35,5 +40,6 @@ return {
 	config = function(_, opts)
 		local copilot_lua = require("copilot")
 		copilot_lua.setup(opts)
+		require("copilot_cmp").setup()
 	end,
 }
