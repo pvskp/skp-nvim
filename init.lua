@@ -68,7 +68,8 @@ spec(pon, "hop") -- jump to any word in the screen
 spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
-spec(pon, "copilot")
+spec(poff, "copilot")
+spec(pon, "codeium")
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
 spec(pon, "gp")
