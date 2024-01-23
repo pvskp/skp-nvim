@@ -4,7 +4,6 @@ local options = {
 	-- winblend = 0,
 	autochdir = false,
 	background = "dark",
-	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 	cmdheight = 1, -- space in the neovim command line for displaying messages
 	compatible = false,
 	cursorline = false, -- highlight the current line
@@ -42,6 +41,8 @@ local options = {
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
+
+vim.cmd("set clipboard+=unnamedplus")
 
 -- vim.opt.listchars:append("eol:↲")
 vim.g.netrw_banner = 0

@@ -10,6 +10,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+local tfvars_hi = vim.api.nvim_create_augroup("TFVarsHighlight", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	group = tfvars_hi,
+	pattern = "*.tfvars",
+	command = "set filetype=terraform",
+})
+
 -- Fix cursor
 local cursor_reset = vim.api.nvim_create_augroup("CursorReset", { clear = true })
 vim.api.nvim_create_autocmd("VimLeave", {
