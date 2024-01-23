@@ -56,6 +56,7 @@ spec(poff, "git.blame")
 
 --<< General >>--
 
+spec(poff, "fakeclip")
 spec(pon, "undotree") -- show undo tree
 spec(pon, "ufo") -- deal with folding in a better way
 spec(pon, "trouble") -- cool quickfix list for LSP
@@ -90,10 +91,10 @@ spec(poff, "cmdbuf")
 
 --<< AI >>--
 
-spec(pon, "ai.codeium")
+spec(poff, "ai.codeium")
 spec(pon, "ai.gp")
 spec(poff, "ai.chatgpt")
-spec(poff, "ai.copilot")
+spec(pon, "ai.copilot")
 
 --<< UI >>--
 
