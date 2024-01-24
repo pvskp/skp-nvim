@@ -39,6 +39,7 @@ spec(poff, "lsp.lsp-saga") -- offers completion to neovim functions
 --<< Language specific >>--
 
 spec(pon, "languages.golang") -- go integration
+spec(pon, "languages.helm")
 
 --<< Mini library >>--
 
@@ -98,7 +99,7 @@ spec(pon, "ai.copilot")
 
 --<< UI >>--
 
-spec(pon, "ui.virt-column")
+spec(poff, "ui.virt-column")
 spec(pon, "ui.transparent") -- start dashboard
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.indentlines") -- show indent lines

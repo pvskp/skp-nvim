@@ -6,6 +6,9 @@ local opts = { silent = true, noremap = false }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- sends :make sync
+km("n", "<C-Space>", ":make sync<CR>", opts)
+
 -- Disable space key
 km("n", "<Space>", "<Nop>", { silent = true, remap = false })
 
