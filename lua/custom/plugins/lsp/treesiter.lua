@@ -15,7 +15,7 @@ return {
 
 		highlight = {
 			enable = true,
-			disable = { "markdown", "vimdoc", "help" },
+			disable = { "markdown", "vimdoc", "help", "helm" },
 			additional_vim_regex_highlighting = false,
 			indent = {
 				enable = false,
@@ -75,6 +75,7 @@ return {
 			},
 		},
 	},
+
 	config = function(_, opts)
 		require("nvim-treesitter.configs").setup(opts)
 	end,

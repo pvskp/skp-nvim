@@ -36,7 +36,7 @@ return {
 
 		local keymap = vim.keymap -- for conciseness
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(_, bufnr)
+		local set_keymaps = function(bufnr)
 			opts.buffer = bufnr
 
 			opts.desc = "Uses Navbuddy"
@@ -73,7 +73,12 @@ return {
 			keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Restart LSP"
-			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+		end
+
+		local on_attach = function(_, bufnr)
+			-- mapping to restart lsp if necessary
+			set_keymaps(bufnr)
 
 			-- vim.highlight.priorities.semantic_tokens = 95
 			-- vim.highlight.priorities.treesitter = 201
@@ -127,5 +132,12 @@ return {
 				"goimports",
 			},
 		})
+
+		-- ["yamlls"] = function ()
+		-- local check = vim.fs.find("Chart.yaml", { path = vim.fs.dirname(path), upward = true })
+		-- return not vim.tbl_isempty(check)
+		-- end,
+
+		-- identifies if a "Chart.yaml" is present in the current directory. If it's, stops yamlls and starts helm_ls
 	end,
 }
