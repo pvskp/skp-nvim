@@ -57,9 +57,7 @@ spec(poff, "git.blame")
 
 --<< General >>--
 
-spec(poff, "fakeclip")
 spec(pon, "undotree") -- show undo tree
-spec(pon, "ufo") -- deal with folding in a better way
 spec(pon, "trouble") -- cool quickfix list for LSP
 spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
@@ -72,10 +70,11 @@ spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
-spec(poff, "tetris")
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
+spec(poff, "ufo") -- deal with folding in a better way
+spec(poff, "tetris")
 spec(poff, "spider")
 spec(poff, "oil")
 spec(poff, "nvim-tree")
@@ -87,6 +86,7 @@ spec(poff, "harpoon")
 spec(poff, "hardtime")
 spec(poff, "hardmode")
 spec(poff, "flybuf")
+spec(poff, "fakeclip")
 spec(poff, "color-picker")
 spec(poff, "cmdbuf")
 
