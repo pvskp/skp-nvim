@@ -1,5 +1,5 @@
 -- Key mappings for general functionality
-local km = vim.keymap.set
+local map = vim.keymap.set
 local opts = { silent = true, noremap = false }
 
 -- Leader key settings
@@ -7,36 +7,36 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- sends :make sync
-km("n", "<C-Space>", ":make sync<CR>", opts)
+map("n", "<C-Space>", ":make sync<CR>", opts)
 
 -- Disable space key
-km("n", "<Space>", "<Nop>", { silent = true, remap = false })
+map("n", "<Space>", "<Nop>", { silent = true, remap = false })
 
 -- File explorer
-km("n", "<C-e>", ":Explore! 15<CR>", { silent = true, noremap = true })
+map("n", "<C-e>", ":Explore! 15<CR>", { silent = true, noremap = true })
 
 -- Copy line from cursor position
-km("n", "Y", "v$y")
+map("n", "Y", "v$y")
 
-km({ "i", "n" }, "<C-c>", "<Esc>")
+map({ "i", "n" }, "<C-c>", "<Esc>")
 
 -- Movement key mappings
-km({ "n", "v" }, "<leader><leader>", "g_")
-km({ "n", "v" }, "<C-j>", "%")
+map({ "n", "v" }, "<leader><leader>", "g_")
+map({ "n", "v" }, "<C-j>", "%")
 
 -- Avoid messing with registers
-km("v", "<leader>p", '"_dP')
+map("v", "<leader>p", '"_dP')
 
 -- Buffer navigation
-km("n", "<S-l>", ":bnext<CR>", opts)
-km("n", "<S-h>", ":bprevious<CR>", opts)
-km("n", "<Tab>", "<C-6>", opts)
+map("n", "<S-l>", ":bnext<CR>", opts)
+map("n", "<S-h>", ":bprevious<CR>", opts)
+map("n", "<Tab>", "<C-6>", opts)
 
 -- Find mode
-km("n", "<leader>f", ":find *")
+map("n", "<leader>f", ":find *")
 
 -- Search in directory
-km("n", "<leader>g", function()
+map("n", "<leader>g", function()
 	local ok, pattern = pcall(vim.fn.input, "Enter search pattern: ")
 	if ok and pattern ~= "" then
 		vim.cmd("silent! grep! " .. pattern .. " * 2> /dev/null")
@@ -45,13 +45,13 @@ km("n", "<leader>g", function()
 end, opts)
 
 -- Window splitting
-km("n", "<M-j>", "<C-w>j")
-km("n", "<M-k>", "<C-w>k")
-km("n", "<M-l>", "<C-w>l")
-km("n", "<M-h>", "<C-w>h")
+map("n", "<M-j>", "<C-w>j")
+map("n", "<M-k>", "<C-w>k")
+map("n", "<M-l>", "<C-w>l")
+map("n", "<M-h>", "<C-w>h")
 
 -- Resize window
-km("n", "<M-r>", function()
+map("n", "<M-r>", function()
 	local keymap_set = vim.api.nvim_set_keymap
 	local interactive_resize_opts = { noremap = true }
 
@@ -73,48 +73,42 @@ km("n", "<M-r>", function()
 	end, interactive_resize_opts)
 end, { noremap = true, silent = true })
 
-km("n", "<M-=>", "<C-w>=")
-km("n", "<C-s>", ":w<CR>", opts)
-km("n", "<M-f>", ":term<CR>")
-km("n", "Q", ":bd!<CR>", { silent = true })
-km("n", "<C-q>", ":qa!<CR>", { silent = true })
+map("n", "<M-=>", "<C-w>=")
+map("n", "<C-s>", ":w<CR>", opts)
+map("n", "<M-f>", ":term<CR>")
+map("n", "Q", ":bd!<CR>", { silent = true })
+map("n", "<C-q>", ":qa!<CR>", { silent = true })
 
 -- Visual mode mappings
-km("v", "<M-j>", ":m '>+1<CR>gv=gv")
-km("v", "<M-k>", ":m '<-2<CR>gv=gv")
-km("v", ">", ">gv")
-km("v", "<", "<gv")
-
--- LSP (Language Server Protocol) mappings
-km("n", "gl", vim.diagnostic.open_float)
-km("n", "[d", vim.diagnostic.goto_prev)
-km("n", "]d", vim.diagnostic.goto_next)
-km("n", "<space>q", vim.diagnostic.setloclist)
+map("v", "<M-j>", ":m '>+1<CR>gv=gv")
+map("v", "<M-k>", ":m '<-2<CR>gv=gv")
+map("v", ">", ">gv")
+map("v", "<", "<gv")
 
 -- Tab key mappings
-km("n", "<M-a>c", function()
+map("n", "<M-a>c", function()
 	vim.cmd("tabnew")
 	vim.cmd("term")
 end)
-km("n", "<M-1>", "1gt")
-km("n", "<M-2>", "2gt")
-km("n", "<M-3>", "3gt")
-km("n", "<M-4>", "4gt")
-km("n", "<M-5>", "5gt")
-km("n", "<M-6>", "6gt")
-km("n", "<M-7>", "7gt")
-km("n", "<M-8>", "8gt")
-km("n", "<M-9>", "9gt")
+map("n", "<M-1>", "1gt")
+map("n", "<M-2>", "2gt")
+map("n", "<M-3>", "3gt")
+map("n", "<M-4>", "4gt")
+map("n", "<M-5>", "5gt")
+map("n", "<M-6>", "6gt")
+map("n", "<M-7>", "7gt")
+map("n", "<M-8>", "8gt")
+map("n", "<M-9>", "9gt")
 
 -- Terminal mode mappings
-km("t", "<M-a>", "<C-\\><C-n>")
-km("t", "<M-j>", "<C-\\><C-n><C-w>j", { silent = true })
-km("t", "<M-k>", "<C-\\><C-n><C-w>k", { silent = true })
-km("t", "<M-l>", "<C-\\><C-n><C-w>l", { silent = true })
-km("t", "<M-h>", "<C-\\><C-n><C-w>h", { silent = true })
+map("t", "<M-a>", "<C-\\><C-n>")
+map("t", "<M-j>", "<C-\\><C-n><C-w>j", { silent = true })
+map("t", "<M-k>", "<C-\\><C-n><C-w>k", { silent = true })
+map("t", "<M-l>", "<C-\\><C-n><C-w>l", { silent = true })
+map("t", "<M-h>", "<C-\\><C-n><C-w>h", { silent = true })
 
 -- Copy entire file
-km("n", "<C-y>", ":%y+<CR>", { silent = true })
+map("n", "<C-y>", ":%y+<CR>", { silent = true })
 
 -- Window zoom
 local window_zoomed = false
@@ -137,8 +131,8 @@ local function toggle_zoom()
 	end
 end
 
-km("n", "<M-z>", toggle_zoom, { silent = true })
-km("t", "<M-z>", function()
+map("n", "<M-z>", toggle_zoom, { silent = true })
+map("t", "<M-z>", function()
 	vim.cmd("stopinsert")
 	vim.defer_fn(function()
 		toggle_zoom()
@@ -147,21 +141,28 @@ km("t", "<M-z>", function()
 end, { silent = true })
 
 -- Execute last command
-km("n", "<leader>x", "@:", opts)
+map("n", "<leader>x", "@:", opts)
 
 -- Command mode mappings
 vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
 
 -- Folding
-km("n", "-", function()
+map("n", "-", function()
 	pcall(vim.cmd.foldclose)
 end, {})
-km("n", "=", function()
+map("n", "=", function()
 	pcall(vim.cmd.foldopen)
 end, {})
 
 -- Other remaps
-km({ "n", "v" }, ".", ":")
+map("n", ".", function()
+	if vim.fn.bufexists("[Command Line]") == 1 then
+		vim.cmd("quit")
+		return
+	end
+
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("q:", true, false, true), "n", false)
+end)
 
 -- Substitute word under cursor
 vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
