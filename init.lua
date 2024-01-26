@@ -81,7 +81,7 @@ spec(poff, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
 spec(poff, "lab")
-spec(poff, "hawtkeys") -- show best keybindings to be mapped
+spec(pon, "hawtkeys") -- show best keybindings to be mapped
 spec(poff, "harpoon")
 spec(poff, "hardtime")
 spec(poff, "hardmode")

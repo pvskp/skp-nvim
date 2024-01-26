@@ -45,11 +45,9 @@ return {
 			},
 
 			mapping = cmp.mapping.preset.insert({
-				["<C-l>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-				["<C-h>"] = cmp.mapping.select_next_item(), -- next suggestion
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
-				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-f>"] = cmp.mapping.scroll_docs(4), -- show completion suggestions
+				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				-- ["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
@@ -101,24 +99,7 @@ return {
 		})
 
 		local cmd_mappings = {
-			["<C-z>"] = {
-				c = function()
-					if cmp.visible() then
-						cmp.select_next_item()
-					else
-						cmp.complete()
-					end
-				end,
-			},
-			-- ["<S-Tab>"] = {
-			-- 	c = function()
-			-- 		if cmp.visible() then
-			-- 			cmp.select_prev_item()
-			-- 		else
-			-- 			cmp.complete()
-			-- 		end
-			-- 	end,
-			-- },
+
 			["<C-n>"] = {
 				c = function(fallback)
 					if cmp.visible() then
@@ -128,6 +109,7 @@ return {
 					end
 				end,
 			},
+
 			["<C-p>"] = {
 				c = function(fallback)
 					if cmp.visible() then
@@ -137,12 +119,15 @@ return {
 					end
 				end,
 			},
+
 			["<C-e>"] = {
 				c = cmp.mapping.abort(),
 			},
+
 			["<C-x>"] = {
 				c = cmp.mapping.confirm({ select = false }),
 			},
+
 			["<Tab>"] = {
 				c = cmp.mapping.confirm({ select = false }),
 			},
