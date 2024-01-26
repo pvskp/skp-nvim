@@ -3,7 +3,7 @@ return {
 	event = "BufEnter",
 	keys = {
 		{
-			"<leader>ch",
+			"<leader>gp",
 			"<cmd>GpChatToggle<CR>",
 			{
 				desc = "Toggle ChatGPT chat window",

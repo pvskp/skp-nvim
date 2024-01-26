@@ -53,6 +53,7 @@ return {
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				-- ["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<Tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
 
 			-- sources for autocompletion
@@ -109,24 +110,15 @@ return {
 					end
 				end,
 			},
-			["<Tab>"] = {
-				c = function()
-					if cmp.visible() then
-						cmp.select_next_item()
-					else
-						cmp.complete()
-					end
-				end,
-			},
-			["<S-Tab>"] = {
-				c = function()
-					if cmp.visible() then
-						cmp.select_prev_item()
-					else
-						cmp.complete()
-					end
-				end,
-			},
+			-- ["<S-Tab>"] = {
+			-- 	c = function()
+			-- 		if cmp.visible() then
+			-- 			cmp.select_prev_item()
+			-- 		else
+			-- 			cmp.complete()
+			-- 		end
+			-- 	end,
+			-- },
 			["<C-n>"] = {
 				c = function(fallback)
 					if cmp.visible() then
@@ -149,6 +141,9 @@ return {
 				c = cmp.mapping.abort(),
 			},
 			["<C-x>"] = {
+				c = cmp.mapping.confirm({ select = false }),
+			},
+			["<Tab>"] = {
 				c = cmp.mapping.confirm({ select = false }),
 			},
 		}

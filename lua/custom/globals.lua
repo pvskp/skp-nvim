@@ -15,11 +15,7 @@ spec = function(active, plugin_relative_path)
 		return
 	end
 	local plugins = "custom.plugins."
-	Spec(plugins .. plugin_relative_path)
-end
-
-function Spec(item)
-	table.insert(LAZY_PLUGIN_SPEC, { import = item })
+	table.insert(LAZY_PLUGIN_SPEC, { import = plugins .. plugin_relative_path })
 end
 
 function FormatColor(color)
