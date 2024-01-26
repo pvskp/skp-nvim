@@ -6,8 +6,8 @@ local opts = { silent = true, noremap = false }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- sends :make sync
-map("n", "<C-Space>", ":make sync<CR>", opts)
+-- sends :make
+map("n", "<C-Space>", ":make<CR>", opts)
 
 -- Disable space key
 map("n", "<Space>", "<Nop>", { silent = true, remap = false })
@@ -155,14 +155,16 @@ map("n", "=", function()
 end, {})
 
 -- Other remaps
-map("n", ".", function()
-	if vim.fn.bufexists("[Command Line]") == 1 then
-		vim.cmd("quit")
-		return
-	end
 
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("q:", true, false, true), "n", false)
-end)
+map({ "n", "v" }, ".", ":")
+
+-- map("n", ".", function()
+-- 	if vim.fn.bufexists("[Command Line]") == 1 then
+-- 		vim.cmd("quit")
+-- 		return
+-- 	end
+-- 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("q:", true, false, true), "n", false)
+-- end)
 
 -- Substitute word under cursor
 vim.keymap.set("n", "<Leader>sw", ":%s/\\<<C-r><C-w>\\>/", {
