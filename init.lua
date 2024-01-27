@@ -43,7 +43,7 @@ spec(pon, "languages.helm")
 
 --<< Mini library >>--
 
-spec(pon, "mini.files") -- minitree (best tree plugin)
+spec(poff, "mini.files") -- minitree (best tree plugin)
 spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
 spec(poff, "mini.notify") -- minitree (best tree plugin)
 
@@ -70,13 +70,14 @@ spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
+spec(pon, "auto-session")
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
 spec(poff, "ufo") -- deal with folding in a better way
 spec(poff, "tetris")
 spec(poff, "spider")
-spec(poff, "oil")
+spec(pon, "oil")
 spec(poff, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
@@ -92,10 +93,10 @@ spec(poff, "cmdbuf")
 
 --<< AI >>--
 
-spec(poff, "ai.codeium")
+spec(pon, "ai.codeium")
 spec(pon, "ai.gp")
 spec(poff, "ai.chatgpt")
-spec(pon, "ai.copilot")
+spec(poff, "ai.copilot")
 
 --<< UI >>--
 
