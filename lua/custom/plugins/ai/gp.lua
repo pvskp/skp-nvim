@@ -2,15 +2,7 @@ return {
 	"robitx/gp.nvim",
 	event = "BufEnter",
 	keys = {
-		{
-			"<leader>hg",
-			"<cmd>GpChatToggle<CR>",
-			{
-				desc = "Toggle ChatGPT chat window",
-				silent = true,
-			},
-			mode = "n",
-		},
+		{ "<leader>ch", "<cmd>GpChatToggle<CR>", { desc = "Toggle ChatGPT chat window", silent = true }, mode = "n" },
 	},
 	opts = {
 		openai_api_key = os.getenv("OPENAI_API_KEY"),

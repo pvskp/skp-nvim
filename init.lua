@@ -43,9 +43,9 @@ spec(pon, "languages.helm")
 
 --<< Mini library >>--
 
-spec(poff, "mini.files") -- minitree (best tree plugin)
 spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
 spec(poff, "mini.notify") -- minitree (best tree plugin)
+spec(poff, "mini.files") -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
@@ -62,9 +62,11 @@ spec(pon, "trouble") -- cool quickfix list for LSP
 spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
+spec(pon, "oil")
 spec(pon, "kubectl") -- kubectl integration
 spec(pon, "kitty") -- kitty integration
 spec(pon, "hop") -- jump to any word in the screen
+spec(pon, "hawtkeys") -- show best keybindings to be mapped
 spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
@@ -77,12 +79,10 @@ spec(poff, "vim-be-good")
 spec(poff, "ufo") -- deal with folding in a better way
 spec(poff, "tetris")
 spec(poff, "spider")
-spec(pon, "oil")
 spec(poff, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
 spec(poff, "lab")
-spec(pon, "hawtkeys") -- show best keybindings to be mapped
 spec(poff, "harpoon")
 spec(poff, "hardtime")
 spec(poff, "hardmode")
@@ -100,7 +100,6 @@ spec(poff, "ai.copilot")
 
 --<< UI >>--
 
-spec(poff, "ui.virt-column")
 spec(pon, "ui.transparent") -- start dashboard
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.indentlines") -- show indent lines
@@ -110,11 +109,12 @@ spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
-spec(pon, "ui.alpha") -- start dashboard
+spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.headlines")
+spec(poff, "ui.alpha") -- start dashboard
 
 --<< Lualine integrations >>--
 
