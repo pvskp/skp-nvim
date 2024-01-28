@@ -100,7 +100,7 @@ spec(poff, "ai.copilot")
 
 --<< UI >>--
 
-spec(pon, "ui.transparent") -- start dashboard
+spec(poff, "ui.transparent")
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.illuminate")

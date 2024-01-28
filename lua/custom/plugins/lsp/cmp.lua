@@ -2,19 +2,26 @@ return {
 	"hrsh7th/nvim-cmp",
 	event = { "InsertEnter", "CmdlineEnter" },
 	dependencies = {
+
+		--< nvim-cmp plugins >--
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"hrsh7th/cmp-cmdline",
-		"amarakon/nvim-cmp-fonts", -- source for font completion
-		"L3MON4D3/LuaSnip", -- snippet engine
-		"saadparwaiz1/cmp_luasnip", -- for autocompletion
-		"onsails/lspkind.nvim", -- vs-code like pictograms
 		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"amarakon/nvim-cmp-fonts", -- source for font completion
 		{
 			"windwp/nvim-autopairs",
 			event = "InsertEnter",
-			opts = {}, -- this is equalent to setup({}) function
+			opts = {},
 		},
+
+		--< snippet engine >--
+		{
+			"L3MON4D3/LuaSnip",
+			event = { "InsertEnter", "CmdlineEnter" },
+		},
+		"saadparwaiz1/cmp_luasnip",
+		"onsails/lspkind.nvim", -- vs-code like pictograms
 	},
 	config = function()
 		local cmp = require("cmp")

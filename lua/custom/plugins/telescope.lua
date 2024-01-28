@@ -1,18 +1,23 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	-- tag = "0.1.5",
-	lazy = false,
+  cmd = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
-		require("telescope").setup({
+    local telescope = require("telescope")
+    local actions = require("telescope.actions")
+    local themes = require("telescope.themes")
+    local builtin = require("telescope.builtin")
+
+		telescope.setup({
 			defaults = {
 				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 				mappings = {
 					i = {
-						["<Esc>"] = require("telescope.actions").close,
+						["<Esc>"] = actions.close,
 					},
 				},
 			},
@@ -26,11 +31,11 @@ return {
 					show_all_buffers = true,
 					mappings = {
 						i = {
-							["<c-d>"] = require("telescope.actions").delete_buffer,
-							["<C-j>"] = require("telescope.actions").move_selection_next,
-							["<C-k>"] = require("telescope.actions").move_selection_previous,
-							["<Esc>"] = require("telescope.actions").close,
-							["<leader>e"] = require("telescope.actions").close,
+							["<c-d>"] =     actions.delete_buffer,
+							["<C-j>"] =     actions.move_selection_next,
+							["<C-k>"] =     actions.move_selection_previous,
+							["<Esc>"] =     actions.close,
+							["<leader>e"] = actions.close,
 						},
 					},
 					-- ignore_current_buffer = true,
@@ -42,9 +47,6 @@ return {
 				},
 			},
 		})
-
-		local builtin = require("telescope.builtin")
-		local themes = require("telescope.themes")
 
 		local dropdown_opts = {
 			borderchars = {
@@ -76,10 +78,6 @@ return {
 			desc = "[G]rep Files",
 		})
 
-		-- vim.keymap.set("n", "<leader>b", function()
-		-- 	builtin.buffers(no_preview("Buffers"))
-		-- end, { desc = "List [B]uffers" })
-
 		vim.keymap.set("n", "<leader>h", builtin.help_tags, {
 			desc = "[H]elp Tags",
 		})
@@ -87,13 +85,6 @@ return {
 		vim.keymap.set("n", "<leader>mp", builtin.man_pages, {
 			desc = "[M]an [P]ages",
 		})
-
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<leader>bf",
-		-- 	":Telescope current_buffer_fuzzy_find<CR>",
-		-- 	{ silent = true, desc = "[B]uffer [F]uzzy" }
-		-- )
 
 		require("telescope").load_extension("ui-select")
 	end,

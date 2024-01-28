@@ -1,6 +1,6 @@
 return {
 	"williamboman/mason.nvim",
-	lazy = false,
+	cmd = "Mason",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -102,6 +102,7 @@ return {
 					settings = { -- custom settings for lua
 						Lua = {
 							-- make the language server recognize "vim" global
+							hint = { enable = true },
 							diagnostics = {
 								globals = { "vim" },
 							},

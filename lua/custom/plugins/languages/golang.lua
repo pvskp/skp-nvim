@@ -1,6 +1,6 @@
 return {
 	"fatih/vim-go",
-	lazy = false,
+	ft = "go",
 	dependencies = {
 		"olexsmir/gopher.nvim",
 		dependencies = {
