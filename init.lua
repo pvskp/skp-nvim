@@ -22,24 +22,24 @@ spec(poff, "colorscheme.adwaita")
 
 --<< LSP related >>--
 
-spec(pon, "lsp.conform") -- formatter
-spec(pon, "lsp.lspconfig")
-spec(pon, "lsp.mason") -- download lsp servers, fomratters, etc
-spec(pon, "lsp.navbuddy") -- allow to navigate between symbols in a easir way
-spec(pon, "lsp.nvim-lint") -- linting
-spec(pon, "lsp.cmp") -- completion
 spec(pon, "lsp.treesiter") -- love and hate relationship with this one
-spec(pon, "lsp.luasnip") -- snippets
-spec(pon, "lsp.commentary")
 spec(pon, "lsp.rainbow-delimiters") -- show matching delimiters
 spec(pon, "lsp.neodev") -- offers completion to neovim functions
-spec(pon, "lsp.outline")
+spec(pon, "lsp.navbuddy") -- allow to navigate between symbols in a easir way
+spec(pon, "lsp.mason") -- download lsp servers, fomratters, etc
+spec(pon, "lsp.luasnip") -- snippets
+spec(pon, "lsp.lspconfig")
+spec(pon, "lsp.conform") -- formatter
+spec(pon, "lsp.commentary")
+spec(pon, "lsp.cmp") -- completion
+spec(poff, "lsp.outline")
+spec(poff, "lsp.nvim-lint") -- linting
 spec(poff, "lsp.lsp-saga") -- offers completion to neovim functions
 
 --<< Language specific >>--
 
 spec(pon, "languages.golang") -- go integration
-spec(pon, "languages.helm")
+spec(poff, "languages.helm")
 
 --<< Mini library >>--
 
@@ -51,22 +51,19 @@ spec(poff, "mini.files") -- minitree (best tree plugin)
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
 spec(pon, "git.gitsigns") -- show git signs on columnsign
-spec(pon, "git.fugitive") -- git integration
+spec(poff, "git.fugitive") -- git integration
 spec(poff, "git.neogit")
 spec(poff, "git.blame")
 
 --<< General >>--
 
 spec(pon, "undotree") -- show undo tree
-spec(pon, "trouble") -- cool quickfix list for LSP
 spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
 spec(pon, "oil")
-spec(pon, "kubectl") -- kubectl integration
 spec(pon, "kitty") -- kitty integration
 spec(pon, "hop") -- jump to any word in the screen
-spec(pon, "hawtkeys") -- show best keybindings to be mapped
 spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
@@ -77,12 +74,15 @@ spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
 spec(poff, "ufo") -- deal with folding in a better way
+spec(poff, "trouble") -- cool quickfix list for LSP
 spec(poff, "tetris")
 spec(poff, "spider")
 spec(poff, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
 spec(poff, "lab")
+spec(poff, "kubectl") -- kubectl integration
+spec(poff, "hawtkeys") -- show best keybindings to be mapped
 spec(poff, "harpoon")
 spec(poff, "hardtime")
 spec(poff, "hardmode")
@@ -100,10 +100,8 @@ spec(poff, "ai.copilot")
 
 --<< UI >>--
 
-spec(poff, "ui.transparent")
 spec(pon, "ui.lualine") -- statusline
 spec(pon, "ui.indentlines") -- show indent lines
-spec(pon, "ui.illuminate")
 spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
@@ -111,8 +109,10 @@ spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
+spec(poff, "ui.transparent")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
+spec(poff, "ui.illuminate")
 spec(poff, "ui.headlines")
 spec(poff, "ui.alpha") -- start dashboard
 
