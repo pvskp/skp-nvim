@@ -18,14 +18,28 @@ return {
 
 		local select = "<CMD>lua require('oil.actions').select.callback()<CR>"
 		local parent = "<CMD>lua require('oil.actions').parent.callback()<CR>"
+		local toggle = "<CMD>lua require('oil').toggle_float()<CR>"
 
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "oil",
 			callback = function()
 				vim.cmd("setlocal norelativenumber")
 				vim.cmd("setlocal nonumber")
+
+				-- select
+				opts.desc = "Select item/enter directory"
 				vim.api.nvim_buf_set_keymap(0, "n", "<S-l>", select, opts)
+				vim.api.nvim_buf_set_keymap(0, "n", "<CR>", select, opts)
+
+				-- parent
+				opts.desc = "Go to parent directory"
 				vim.api.nvim_buf_set_keymap(0, "n", "<S-h>", parent, opts)
+				vim.api.nvim_buf_set_keymap(0, "n", "-", parent, opts)
+				vim.api.nvim_buf_set_keymap(0, "n", "<BS>", parent, opts)
+
+				-- Close
+				opts.desc = "Toggle oil"
+				vim.api.nvim_buf_set_keymap(0, "n", "q", toggle, opts)
 			end,
 		})
 	end,
