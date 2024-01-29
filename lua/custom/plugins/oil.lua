@@ -19,6 +19,7 @@ return {
 		local select = "<CMD>lua require('oil.actions').select.callback()<CR>"
 		local parent = "<CMD>lua require('oil.actions').parent.callback()<CR>"
 		local toggle = "<CMD>lua require('oil').toggle_float()<CR>"
+		local toggle_hidden = "<CMD>lua require('oil').toggle_hidden()<CR>"
 
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "oil",
@@ -40,6 +41,10 @@ return {
 				-- Close
 				opts.desc = "Toggle oil"
 				vim.api.nvim_buf_set_keymap(0, "n", "q", toggle, opts)
+
+				-- toggle hidden
+				opts.desc = "Toggle hidden"
+				vim.api.nvim_buf_set_keymap(0, "n", "<C-h>", toggle_hidden, opts)
 			end,
 		})
 	end,
