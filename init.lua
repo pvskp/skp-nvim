@@ -94,7 +94,7 @@ spec(poff, "cmdbuf")
 --<< AI >>--
 
 spec(pon, "ai.codeium")
-spec(pon, "ai.gp")
+spec(poff, "ai.gp")
 spec(poff, "ai.chatgpt")
 spec(poff, "ai.copilot")
 
