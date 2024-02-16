@@ -5,7 +5,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			bash = { "beautysh", "shellcheck" },
-			python = { "isort", "black" },
+			python = { "autoflake", "isort", "black" },
 			javascript = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
 			yaml = { "yamlfmt" },
