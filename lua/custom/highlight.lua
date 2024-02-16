@@ -18,3 +18,5 @@ call matchadd('offPattern', '\<poff\>')
 ]],
 	false
 )
+
+-- vim.cmd([[highlight Whitespace guifg=Blue ctermfg=blue]])

@@ -18,7 +18,7 @@ local options = {
 	cursorline = false, -- highlight the current line
 	signcolumn = "no",
 	numberwidth = 2, -- set number column width to 2 {default 4}
-	wrap = false,
+	wrap = true,
 	linebreak = true, -- companion to wrap, don't split words
 	relativenumber = true, -- set relative numbered lines
 	showmode = false,
@@ -58,7 +58,10 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
--- vim.cmd([[set list]])
+-- vim.cmd([[set listchars=tab:█\ ,trail:█]])
+-- vim.cmd("set list")
+
 -- vim.cmd([[set listchars=tab:▸\ ,eol:↲]])
+-- vim.cmd([[set list]])
 
 vim.g.netrw_banner = 0

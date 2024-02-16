@@ -150,9 +150,9 @@ vim.api.nvim_set_keymap("c", "<C-x>", "<C-y>", { noremap = true })
 map("n", "-", function()
 	pcall(vim.cmd.foldclose)
 end, {})
-map("n", "=", function()
-	pcall(vim.cmd.foldopen)
-end, {})
+-- map("n", "=", function()
+-- 	pcall(vim.cmd.foldopen)
+-- end, {})
 
 -- Other remaps
 
