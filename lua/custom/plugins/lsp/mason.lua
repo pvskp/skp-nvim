@@ -28,7 +28,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"gopls",
-				"pyright",
+				-- "pyright",
 			},
 
 			automatic_installation = true, -- not the same as ensure_installed
@@ -60,8 +60,13 @@ return {
 			opts.desc = "Show line diagnostics"
 			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
+
 			opts.desc = "Formats code"
 			keymap.set("n", "<leader>p", vim.lsp.buf.format, opts)
+
+			opts.desc = "Show line diagnostics"
+			keymap.set("n", "gl", vim.diagnostic.open_float, opts) -- show diagnostics for line
+
 
 			opts.desc = "Go to previous diagnostic"
 			keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer

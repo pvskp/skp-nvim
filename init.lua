@@ -7,7 +7,8 @@ require("custom.utils")
 
 --<< colorschemes >>--
 
-spec(pon, "colorscheme.github")
+spec(poff, "colorscheme.github")
+spec(pon, "colorscheme.minimal")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
@@ -34,12 +35,12 @@ spec(pon, "lsp.commentary")
 spec(pon, "lsp.cmp") -- completion
 spec(poff, "lsp.outline")
 spec(poff, "lsp.nvim-lint") -- linting
-spec(poff, "lsp.lsp-saga") -- offers completion to neovim functions
+spec(poff, "lsp.lsp-saga")
 
 --<< Language specific >>--
 
 spec(pon, "languages.golang") -- go integration
-spec(poff, "languages.helm")
+spec(pon, "languages.helm")
 
 --<< Mini library >>--
 
@@ -70,6 +71,8 @@ spec(pon, "discord") -- rich presence
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
 spec(pon, "auto-session")
+spec(pon, "neogen")
+
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
@@ -109,7 +112,7 @@ spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
-spec(poff, "ui.transparent")
+spec(pon, "ui.transparent")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.illuminate")
