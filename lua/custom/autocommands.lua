@@ -10,9 +10,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-local tfvars_hi = vim.api.nvim_create_augroup("TFVarsHighlight", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-	group = tfvars_hi,
+	group = vim.api.nvim_create_augroup("TFVarsHighlight", { clear = true }),
 	pattern = "*.tfvars",
 	command = "set filetype=terraform",
 })
@@ -74,3 +73,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		pcall(vim.lsp.start, { name = "ansiblels", cmd = { "ansible-language-server", "--stdio" } })
 	end,
 })
+
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- 	pattern = "*.py",
+-- 	callback = function()
+-- 		vim.fn.system("autoimport " .. vim.fn.expand("%"))
+-- 		-- and then reload the buffer
+-- 		vim.cmd("edit")
+-- 	end,
+-- })

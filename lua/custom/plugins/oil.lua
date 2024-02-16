@@ -30,7 +30,7 @@ return {
 				-- select
 				opts.desc = "Select item/enter directory"
 				vim.api.nvim_buf_set_keymap(0, "n", "<S-l>", select, opts)
-				vim.api.nvim_buf_set_keymap(0, "n", "<CR>", select, opts)
+				-- vim.api.nvim_buf_set_keymap(0, "n", "<CR>", select, opts)
 
 				-- parent
 				opts.desc = "Go to parent directory"
@@ -50,6 +50,7 @@ return {
 	end,
 
 	opts = {
+		skip_confirm_for_simple_edits = true,
 		use_default_keymaps = false,
 		float = {
 			padding = 8,
