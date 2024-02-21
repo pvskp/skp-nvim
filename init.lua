@@ -7,8 +7,8 @@ require("custom.utils")
 
 --<< colorschemes >>--
 
-spec(poff, "colorscheme.github")
-spec(pon, "colorscheme.minimal")
+spec(pon, "colorscheme.github")
+spec(poff, "colorscheme.minimal")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
@@ -51,8 +51,9 @@ spec(poff, "mini.files") -- minitree (best tree plugin)
 --<< Git integrations >>--
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
-spec(poff, "git.gitsigns") -- show git signs on columnsign
-spec(poff, "git.fugitive") -- git integration
+spec(pon, "git.gitsigns") -- show git signs on columnsign
+spec(pon, "git.fugitive") -- git integration
+spec(pon, "git.diffview")
 spec(poff, "git.neogit")
 spec(poff, "git.blame")
 
@@ -72,6 +73,7 @@ spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
 spec(pon, "auto-session")
 spec(pon, "neogen")
+spec(pon, "remote-containers")
 
 spec(poff, "wilder")
 spec(poff, "which-key")
