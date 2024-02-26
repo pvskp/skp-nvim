@@ -7,7 +7,8 @@ require("custom.utils")
 
 --<< colorschemes >>--
 
-spec(pon, "colorscheme.github")
+spec(poff, "colorscheme.github")
+spec(pon, "colorscheme.base16")
 spec(poff, "colorscheme.minimal")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
