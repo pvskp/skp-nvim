@@ -51,9 +51,9 @@ spec(poff, "mini.files") -- minitree (best tree plugin)
 --<< Git integrations >>--
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
-spec(pon, "git.gitsigns") -- show git signs on columnsign
+spec(poff, "git.gitsigns") -- show git signs on columnsign
 spec(pon, "git.fugitive") -- git integration
-spec(pon, "git.diffview")
+spec(poff, "git.diffview")
 spec(poff, "git.neogit")
 spec(poff, "git.blame")
 
@@ -74,12 +74,11 @@ spec(pon, "autopairs")
 spec(pon, "auto-session")
 spec(pon, "neogen")
 spec(pon, "remote-containers")
-
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
 spec(poff, "ufo") -- deal with folding in a better way
-spec(poff, "trouble") -- cool quickfix list for LSP
+spec(pon, "trouble") -- cool quickfix list for LSP
 spec(poff, "tetris")
 spec(poff, "spider")
 spec(poff, "nvim-tree")
@@ -112,9 +111,9 @@ spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
+spec(pon, "ui.transparent")
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
-spec(pon, "ui.transparent")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
 spec(poff, "ui.illuminate")
