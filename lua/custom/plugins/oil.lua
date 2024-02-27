@@ -1,10 +1,6 @@
 return {
 	"stevearc/oil.nvim",
 	lazy = false,
-	dependencies = {
-		"nvim-tree/nvim-web-devicons", -- Optional dependencies
-	},
-
 	keys = {
 		{ "<C-e>", "<CMD>lua require('oil').toggle_float()<CR>", desc = "Open parent directory" },
 	},
