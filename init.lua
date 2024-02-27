@@ -8,7 +8,8 @@ require("custom.utils")
 --<< colorschemes >>--
 
 spec(poff, "colorscheme.github")
-spec(pon, "colorscheme.minimal")
+spec(pon, "colorscheme.gruvbox")
+spec(poff, "colorscheme.minimal")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
@@ -97,13 +98,14 @@ spec(poff, "cmdbuf")
 --<< AI >>--
 
 spec(pon, "ai.codeium")
-spec(poff, "ai.gp")
+spec(pon, "ai.gp")
 spec(poff, "ai.chatgpt")
 spec(poff, "ai.copilot")
 
 --<< UI >>--
 
 spec(pon, "ui.lualine") -- statusline
+spec(pon, "ui.devicons")
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands

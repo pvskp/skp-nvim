@@ -1,9 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	lazy = false,
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-	},
 	config = function()
 		local nvimbattery = {
 			function()
@@ -34,14 +31,14 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{
-						"fileformat",
-						symbols = {
-							unix = "󰻀",
-							dos = "", -- e70f
-							mac = "", -- e711
-						},
-					},
+					-- {
+					-- 	"fileformat",
+					-- 	symbols = {
+					-- 		unix = "󰻀",
+					-- 		dos = "", -- e70f
+					-- 		mac = "", -- e711
+					-- 	},
+					-- },
 					"mode",
 				},
 				lualine_b = {
