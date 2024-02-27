@@ -45,6 +45,7 @@ return {
 		},
 	},
 	config = function(_, opts)
+		vim.opt.signcolumn = "yes"
 		require("gitsigns").setup(opts)
 	end,
 }
