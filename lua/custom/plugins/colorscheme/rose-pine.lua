@@ -4,18 +4,22 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
+		variant = "main", -- auto, main, moon, or dawn
+		dark_variant = "main", -- main, moon, or dawn
+		dim_inactive_windows = false,
+		extend_background_behind_borders = true,
 
-		--- @usage 'auto'|'main'|'moon'|'dawn'
-		variant = "main",
-		--- @usage 'main'|'moon'|'dawn'
-		dark_variant = "main",
-		bold_vert_split = false,
-		dim_nc_background = false,
-		-- disable_background = true,
-		disable_float_background = false,
-		disable_italics = false,
+		enable = {
+			terminal = true,
+			legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+			migrations = true, -- Handle deprecated options automatically
+		},
 
-		--- @usage string hex value or named color from rosepinetheme.com/palette
+		styles = {
+			bold = true,
+			italic = true,
+			transparency = false,
+		},
 	},
 	config = function(_, opts)
 		require("rose-pine").setup(opts)

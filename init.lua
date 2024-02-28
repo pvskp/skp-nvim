@@ -8,12 +8,15 @@ require("custom.utils")
 --<< colorschemes >>--
 
 spec(poff, "colorscheme.github")
-spec(pon, "colorscheme.gruvbox")
-spec(pon, "colorscheme.base16")
+spec(poff, "colorscheme.gruvbox")
+spec(poff, "colorscheme.base16")
+spec(poff, "colorscheme.midnight")
+spec(poff, "colorscheme.zenbones")
 spec(poff, "colorscheme.minimal")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
+spec(pon, "colorscheme.kanagawa")
 spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
@@ -114,7 +117,7 @@ spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
-spec(pon, "ui.transparent")
+spec(poff, "ui.transparent")
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
