@@ -62,5 +62,6 @@ end
 
 -- vim.cmd([[set listchars=tab:▸\ ,eol:↲]])
 -- vim.cmd([[set list]])
-
 vim.g.netrw_banner = 0
+
+USE_DEVICONS = false
