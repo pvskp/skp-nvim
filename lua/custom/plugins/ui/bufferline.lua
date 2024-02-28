@@ -1,6 +1,9 @@
 return {
 	"akinsho/bufferline.nvim",
 	lazy = false,
+	keys = {
+		{ "<leader><Tab>", "<cmd>BufferLinePick<CR>", desc = "BufferLinePick" },
+	},
 	config = function()
 		local bufferline = require("bufferline")
 		bufferline.setup({
@@ -29,7 +32,7 @@ return {
 				tab_size = 16,
 				diagnostics = "none",
 				color_icons = true, -- whether or not to add the filetype icon highlights
-				show_buffer_icons = true, -- disable filetype icons for buffers
+				show_buffer_icons = USE_DEVICONS, -- disable filetype icons for buffers
 				show_buffer_close_icons = false,
 				show_close_icon = true,
 				show_tab_indicators = true,
@@ -39,7 +42,5 @@ return {
 				always_show_bufferline = false,
 			},
 		})
-
-		vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLinePick<CR>", { silent = true })
 	end,
 }
