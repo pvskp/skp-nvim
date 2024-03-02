@@ -76,15 +76,18 @@ end, { noremap = true, silent = true })
 map("n", "<M-=>", "<C-w>=")
 map("n", "<C-s>", ":w<CR>", opts)
 map("n", "<M-f>", ":term<CR>")
-map("n", "Q", function()
-	local num_wins = #vim.api.nvim_list_wins()
 
-	if num_wins > 1 then
-		vim.api.nvim_command("q!")
-	else
-		vim.api.nvim_command("bd!")
-	end
-end, { silent = true })
+map("n", "Q", ":bd!<CR>", { silent = true })
+
+-- map("n", "Q", function()
+-- 	local num_wins = #vim.api.nvim_list_wins()
+-- 	if num_wins > 1 then
+-- 		vim.api.nvim_command("q!")
+-- 	else
+-- 		vim.api.nvim_command("bd!")
+-- 	end
+-- end, { silent = true })
+
 map("n", "<C-q>", ":qa!<CR>", { silent = true })
 
 -- Visual mode mappings

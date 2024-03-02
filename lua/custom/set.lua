@@ -64,4 +64,4 @@ end
 -- vim.cmd([[set list]])
 vim.g.netrw_banner = 0
 
-USE_DEVICONS = false
+USE_DEVICONS = true
