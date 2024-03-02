@@ -3,13 +3,13 @@ return {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		background = "medium",
+		background = "hard",
 		transparent_background_level = 0,
-		italics = true,
+		italics = false,
 		disable_italic_comments = false,
 		sign_column_background = "none",
 		ui_contrast = "low",
-		dim_inactive_windows = false,
+		dim_inactive_windows = true,
 		diagnostic_text_highlight = false,
 		diagnostic_virtual_text = "coloured",
 		diagnostic_line_highlight = false,
@@ -18,7 +18,7 @@ return {
 		float_style = "bright",
 	},
 	config = function(_, opts)
-		vim.cmd([[colorscheme everforest]])
 		require("everforest").setup(opts)
+		vim.cmd([[colorscheme everforest]])
 	end,
 }

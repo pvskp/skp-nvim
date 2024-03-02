@@ -11,7 +11,7 @@ spec(poff, "colorscheme.github")
 spec(poff, "colorscheme.gruvbox")
 spec(poff, "colorscheme.base16")
 spec(poff, "colorscheme.neosolarized")
-spec(pon, "colorscheme.mellifluous")
+spec(poff, "colorscheme.mellifluous")
 spec(poff, "colorscheme.midnight")
 spec(poff, "colorscheme.zenbones")
 spec(poff, "colorscheme.minimal")
@@ -23,15 +23,16 @@ spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
-spec(poff, "colorscheme.everforest")
+spec(pon, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.ayu")
 spec(poff, "colorscheme.adwaita")
+-- vim.cmd([[colorscheme habamax]])
 
 --<< LSP related >>--
 
 spec(pon, "lsp.treesiter") -- love and hate relationship with this one
-spec(pon, "lsp.rainbow-delimiters") -- show matching delimiters
+spec(poff, "lsp.rainbow-delimiters") -- show matching delimiters
 spec(pon, "lsp.neodev") -- offers completion to neovim functions
 spec(pon, "lsp.navbuddy") -- allow to navigate between symbols in a easir way
 spec(pon, "lsp.mason") -- download lsp servers, fomratters, etc
@@ -112,14 +113,14 @@ spec(poff, "ai.copilot")
 --<< UI >>--
 
 spec(pon, "ui.lualine") -- statusline
-spec(poff, "ui.devicons")
+spec(pon, "ui.devicons")
 spec(pon, "ui.indentlines") -- show indent lines
 spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
-spec(pon, "ui.bufferline")
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
 spec(poff, "ui.transparent")
+spec(pon, "ui.bufferline")
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
