@@ -5,9 +5,12 @@ vim.opt.termguicolors = true
 return {
 	"nvim-tree/nvim-tree.lua",
 	lazy = false,
+	keys = {
+		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle File Explorer" },
+	},
 	opts = {
 		view = {
-			side = "right",
+			side = "left",
 		},
 	},
 }

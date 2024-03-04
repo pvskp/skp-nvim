@@ -19,11 +19,11 @@ spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.kanagawa")
-spec(poff, "colorscheme.onedark")
+spec(pon, "colorscheme.onedark")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
-spec(pon, "colorscheme.everforest")
+spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.ayu")
 spec(poff, "colorscheme.adwaita")
@@ -52,8 +52,8 @@ spec(pon, "languages.helm")
 
 --<< Mini library >>--
 
-spec(pon, "mini.splitjoin") -- minitree (best tree plugin)
-spec(poff, "mini.notify") -- minitree (best tree plugin)
+spec(pon, "mini.splitjoin")
+spec(poff, "mini.notify")
 spec(poff, "mini.files") -- minitree (best tree plugin)
 
 --<< Git integrations >>--
@@ -89,7 +89,7 @@ spec(poff, "ufo") -- deal with folding in a better way
 spec(pon, "trouble") -- cool quickfix list for LSP
 spec(poff, "tetris")
 spec(poff, "spider")
-spec(poff, "nvim-tree")
+spec(pon, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
 spec(poff, "lab")
@@ -136,6 +136,5 @@ spec(pon, "ui.lualine.copilot")
 spec(pon, "ui.lualine.clock")
 
 -- Loads all with lazy
-
 require("custom.lazy")
 require("custom.highlight") -- required to be loaded after lazy
