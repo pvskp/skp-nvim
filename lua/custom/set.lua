@@ -15,7 +15,7 @@ local options = {
 	--< UI >--
 	cursorcolumn = false,
 	cursorline = false, -- highlight the current line
-	signcolumn = "yes",
+	signcolumn = "no",
 	numberwidth = 2, -- set number column width to 2 {default 4}
 	wrap = true,
 	linebreak = true, -- companion to wrap, don't split words
@@ -47,10 +47,10 @@ local options = {
 	clipboard = "unnamedplus",
 	smartindent = true, -- make indenting smarter again
 	autochdir = false,
-	background = "dark",
+	-- background = "dark",
 	cmdheight = 1, -- space in the neovim command line for displaying messages
 	compatible = false,
-	equalalways = false, -- I don't like my windows changing all the time
+	equalalways = false,
 }
 
 for k, v in pairs(options) do
