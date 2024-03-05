@@ -92,6 +92,7 @@ spec(poff, "spider")
 spec(pon, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
+spec(pon, "obsidian")
 spec(poff, "lab")
 spec(poff, "kubectl") -- kubectl integration
 spec(poff, "hawtkeys") -- show best keybindings to be mapped
