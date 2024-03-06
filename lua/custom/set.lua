@@ -14,8 +14,8 @@ local options = {
 
 	--< UI >--
 	cursorcolumn = false,
-	cursorline = false, -- highlight the current line
-	signcolumn = "no",
+	cursorline = true, -- highlight the current line
+	signcolumn = "yes",
 	numberwidth = 2, -- set number column width to 2 {default 4}
 	wrap = true,
 	linebreak = true, -- companion to wrap, don't split words

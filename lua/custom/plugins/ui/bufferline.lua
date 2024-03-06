@@ -27,10 +27,10 @@ return {
 				close_icon = "",
 				left_trunc_marker = "",
 				right_trunc_marker = "",
-				max_name_length = 10,
-				max_prefix_length = 10, -- prefix used when a buffer is de-duplicated
+				max_name_length = 12,
+				max_prefix_length = 12, -- prefix used when a buffer is de-duplicated
 				truncate_names = true, -- whether or not tab names should be truncated
-				tab_size = 10,
+				tab_size = 12,
 				diagnostics = "nvim_lsp",
 				color_icons = true, -- whether or not to add the filetype icon highlights
 				show_buffer_icons = USE_DEVICONS, -- disable filetype icons for buffers
@@ -40,7 +40,7 @@ return {
 				show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
 				persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 				move_wraps_at_ends = false, -- whether or not the move command "wraps" at the first or last position
-				separator_style = "slope", --| "slope" | "thick" | "thin" | { 'any', 'any' },
+				separator_style = "thin", --| "slope" | "thick" | "thin" | { 'any', 'any' },
 				always_show_bufferline = false,
 			},
 		})

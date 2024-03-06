@@ -17,9 +17,9 @@ spec(poff, "colorscheme.zenbones")
 spec(poff, "colorscheme.minimal")
 spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
-spec(poff, "colorscheme.rose-pine")
+spec(pon, "colorscheme.rose-pine")
 spec(poff, "colorscheme.kanagawa")
-spec(pon, "colorscheme.onedark")
+spec(poff, "colorscheme.onedark")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
@@ -59,7 +59,7 @@ spec(poff, "mini.files") -- minitree (best tree plugin)
 --<< Git integrations >>--
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
-spec(poff, "git.gitsigns") -- show git signs on columnsign
+spec(pon, "git.gitsigns") -- show git signs on columnsign
 spec(pon, "git.fugitive") -- git integration
 spec(poff, "git.diffview")
 spec(poff, "git.neogit")
