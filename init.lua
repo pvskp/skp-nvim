@@ -82,6 +82,7 @@ spec(pon, "autopairs")
 spec(pon, "auto-session")
 spec(pon, "neogen")
 spec(pon, "remote-containers")
+spec(pon, "markdown-preview")
 spec(poff, "modes")
 spec(poff, "wilder")
 spec(poff, "which-key")
@@ -121,7 +122,7 @@ spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
-spec(pon, "ui.transparent")
+spec(poff, "ui.transparent")
 spec(pon, "ui.bufferline")
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
