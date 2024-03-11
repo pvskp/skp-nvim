@@ -20,15 +20,17 @@ return {
 				path = "~/personal-sync/Obsidian Vault/",
 			},
 
-			-- {
-			-- 	name = "work",
-			-- 	path = "~/vaults/work",
-			-- },
+			{
+				name = "work",
+				path = "~/syncthing/obsidian-work/",
+			},
 		},
 	},
-	config = function(_, opts)
+	init = function()
 		vim.opt.wrap = false
 		vim.opt.conceallevel = 2
+	end,
+	config = function(_, opts)
 		require("obsidian").setup(opts)
 	end,
 }
