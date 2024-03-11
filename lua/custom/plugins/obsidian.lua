@@ -9,26 +9,29 @@ return {
 	--   "BufReadPre path/to/my-vault/**.md",
 	--   "BufNewFile path/to/my-vault/**.md",
 	-- },
+
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	opts = {
 
+	opts = {
 		workspaces = {
 			{
 				name = "personal",
-				path = "~/personal-sync/Obsidian Vault/",
+				path = "~/personal-sync/personal-vault-obsidian/",
 			},
 
-			-- {
-			-- 	name = "work",
-			-- 	path = "~/vaults/work",
-			-- },
+			{
+				name = "work",
+				path = "~/personal-sync/work-vault-obsidian/",
+			},
 		},
 	},
-	config = function(_, opts)
+
+	init = function()
+		vim.opt.spell = true
+		vim.opt.spelllang = "pt_br"
 		vim.opt.wrap = false
 		vim.opt.conceallevel = 2
-		require("obsidian").setup(opts)
 	end,
 }

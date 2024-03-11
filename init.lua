@@ -120,7 +120,7 @@ spec(pon, "ui.fidget") -- cool LSP notification
 spec(pon, "ui.dressing") -- offers better ui for some neovim commands
 spec(pon, "ui.colorizer") -- color preview
 spec(pon, "ui.barbecue") -- shows the current symbol and its parents
-spec(poff, "ui.transparent")
+spec(pon, "ui.transparent")
 spec(pon, "ui.bufferline")
 spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
