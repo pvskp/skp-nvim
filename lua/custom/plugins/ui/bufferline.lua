@@ -40,7 +40,7 @@ return {
 				show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
 				persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
 				move_wraps_at_ends = false, -- whether or not the move command "wraps" at the first or last position
-				separator_style = "thin", --| "slope" | "thick" | "thin" | { 'any', 'any' },
+				separator_style = "slope", --| "slope" | "thick" | "thin" | { 'any', 'any' },
 				always_show_bufferline = false,
 			},
 		})
