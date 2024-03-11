@@ -68,10 +68,17 @@ spec(poff, "git.blame")
 --<< General >>--
 
 spec(pon, "undotree") -- show undo tree
+spec(pon, "trouble") -- cool quickfix list for LSP
+spec(pon, "toggle-checkbox")
 spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
+spec(pon, "remote-containers")
 spec(pon, "oil")
+spec(pon, "obsidian")
+spec(pon, "nvim-tree")
+spec(pon, "neogen")
+spec(pon, "markdown-preview")
 spec(pon, "kitty") -- kitty integration
 spec(pon, "hop") -- jump to any word in the screen
 spec(pon, "focus") -- auto-resize windows when switching buffers
@@ -80,21 +87,15 @@ spec(pon, "discord") -- rich presence
 spec(pon, "btterm") -- this one is mine!!!!
 spec(pon, "autopairs")
 spec(pon, "auto-session")
-spec(pon, "neogen")
-spec(pon, "remote-containers")
-spec(pon, "markdown-preview")
-spec(poff, "modes")
 spec(poff, "wilder")
 spec(poff, "which-key")
 spec(poff, "vim-be-good")
 spec(poff, "ufo") -- deal with folding in a better way
-spec(pon, "trouble") -- cool quickfix list for LSP
 spec(poff, "tetris")
 spec(poff, "spider")
-spec(pon, "nvim-tree")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
-spec(pon, "obsidian")
+spec(poff, "modes")
 spec(poff, "lab")
 spec(poff, "kubectl") -- kubectl integration
 spec(poff, "hawtkeys") -- show best keybindings to be mapped
