@@ -29,10 +29,6 @@ return {
 	},
 
 	config = function(_, opts)
-		vim.opt.spell = true
-		vim.opt.spelllang = "pt_br"
-		vim.opt.wrap = false
-		vim.opt.conceallevel = 2
 		require("obsidian").setup(opts)
 	end,
 }
