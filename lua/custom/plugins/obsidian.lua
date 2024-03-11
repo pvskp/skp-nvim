@@ -27,13 +27,12 @@ return {
 			},
 		},
 	},
-	init = function()
+
+	config = function(_, opts)
 		vim.opt.spell = true
 		vim.opt.spelllang = "pt_br"
 		vim.opt.wrap = false
 		vim.opt.conceallevel = 2
-	end,
-	config = function(_, opts)
 		require("obsidian").setup(opts)
 	end,
 }
