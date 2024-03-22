@@ -27,7 +27,6 @@ spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.ayu")
 spec(pon, "colorscheme.adwaita")
-
 -- vim.cmd([[colorscheme habamax]])
 -- vim.cmd([[colorscheme murphy]])
 
@@ -75,6 +74,7 @@ spec(pon, "toggle-checkbox")
 spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
+spec(poff, "remote-containers")
 spec(pon, "oil")
 spec(pon, "obsidian")
 spec(pon, "nvim-tree")
