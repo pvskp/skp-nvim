@@ -187,5 +187,9 @@ vim.api.nvim_set_keymap("n", "<C-t>", ":lua TogglePonPoff()<CR>", opts)
 
 vim.api.nvim_set_keymap("v", "<C-t>", ":lua TogglePonPoffSelection()<CR>", opts)
 
+-- Spell
+
+map("n", "<leader>q", "1z=")
+
 -- map("n", "o", 'o<Esc>0"_D', opts)
 -- map("n", "O", 'O<Esc>0"_D', opts)
