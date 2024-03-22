@@ -20,14 +20,16 @@ spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.kanagawa")
 spec(poff, "colorscheme.onedark")
-spec(pon, "colorscheme.nord")
+spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.ayu")
-spec(poff, "colorscheme.adwaita")
+spec(pon, "colorscheme.adwaita")
+
 -- vim.cmd([[colorscheme habamax]])
+-- vim.cmd([[colorscheme murphy]])
 
 --<< LSP related >>--
 
@@ -59,7 +61,7 @@ spec(poff, "mini.files") -- minitree (best tree plugin)
 --<< Git integrations >>--
 
 spec(pon, "git.lazygit") -- lazygit inside neovim
-spec(pon, "git.gitsigns") -- show git signs on columnsign
+spec(poff, "git.gitsigns") -- show git signs on columnsign
 spec(pon, "git.fugitive") -- git integration
 spec(poff, "git.diffview")
 spec(poff, "git.neogit")
@@ -73,7 +75,6 @@ spec(pon, "toggle-checkbox")
 spec(pon, "tmux") -- tmux integration
 spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
-spec(pon, "remote-containers")
 spec(pon, "oil")
 spec(pon, "obsidian")
 spec(pon, "nvim-tree")
@@ -93,6 +94,7 @@ spec(poff, "vim-be-good")
 spec(poff, "ufo") -- deal with folding in a better way
 spec(poff, "tetris")
 spec(poff, "spider")
+spec(poff, "remote-containers")
 spec(poff, "neoscroll")
 spec(poff, "neo-tree")
 spec(poff, "modes")
