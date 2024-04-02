@@ -31,10 +31,10 @@ return {
 				max_prefix_length = 12, -- prefix used when a buffer is de-duplicated
 				truncate_names = true, -- whether or not tab names should be truncated
 				tab_size = 12,
-				diagnostics = "nvim_lsp",
+				-- diagnostics = "nvim_lsp",
 				color_icons = true, -- whether or not to add the filetype icon highlights
 				show_buffer_icons = USE_DEVICONS, -- disable filetype icons for buffers
-				show_buffer_close_icons = false,
+				show_buffer_close_icons = true,
 				show_close_icon = true,
 				show_tab_indicators = true,
 				show_duplicate_prefix = true, -- whether to show duplicate buffer prefix

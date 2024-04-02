@@ -43,7 +43,7 @@ spec(pon, "lsp.conform") -- formatter
 spec(pon, "lsp.commentary")
 spec(pon, "lsp.cmp") -- completion
 spec(poff, "lsp.outline")
-spec(poff, "lsp.nvim-lint") -- linting
+spec(pon, "lsp.nvim-lint") -- linting
 spec(poff, "lsp.lsp-saga")
 
 --<< Language specific >>--
