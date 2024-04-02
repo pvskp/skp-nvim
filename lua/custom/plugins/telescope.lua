@@ -1,16 +1,16 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	-- tag = "0.1.5",
-  cmd = "Telescope",
+	tag = "0.1.5",
+	cmd = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
-    local telescope = require("telescope")
-    local actions = require("telescope.actions")
-    local themes = require("telescope.themes")
-    local builtin = require("telescope.builtin")
+		local telescope = require("telescope")
+		local actions = require("telescope.actions")
+		local themes = require("telescope.themes")
+		local builtin = require("telescope.builtin")
 
 		telescope.setup({
 			defaults = {
@@ -31,10 +31,10 @@ return {
 					show_all_buffers = true,
 					mappings = {
 						i = {
-							["<c-d>"] =     actions.delete_buffer,
-							["<C-j>"] =     actions.move_selection_next,
-							["<C-k>"] =     actions.move_selection_previous,
-							["<Esc>"] =     actions.close,
+							["<c-d>"] = actions.delete_buffer,
+							["<C-j>"] = actions.move_selection_next,
+							["<C-k>"] = actions.move_selection_previous,
+							["<Esc>"] = actions.close,
 							["<leader>e"] = actions.close,
 						},
 					},

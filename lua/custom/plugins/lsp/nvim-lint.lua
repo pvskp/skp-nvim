@@ -12,7 +12,7 @@ return {
 			typescript = { "eslint_d" },
 			json = { "jsonlint" },
 			-- lua = { "luacheck" },
-			-- python = { "pylint" },
+			python = { "ruff" },
 			go = { "golangcilint" },
 			-- cpp = { "cpplint" },
 			-- yaml = { "yamllint" },
@@ -23,6 +23,9 @@ return {
 			group = lint_augroup,
 			callback = function()
 				lint.try_lint()
+
+				-- local linters = lint.get_running()
+				-- P(linters)
 			end,
 		})
 	end,
