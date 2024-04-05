@@ -10,7 +10,7 @@ return {
 	},
 	opts = {
 		view = {
-			side = "left",
+			side = "right",
 		},
 	},
 }
