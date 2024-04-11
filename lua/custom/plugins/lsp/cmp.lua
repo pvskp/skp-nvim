@@ -9,11 +9,11 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"amarakon/nvim-cmp-fonts", -- source for font completion
-		{
-			"windwp/nvim-autopairs",
-			event = "InsertEnter",
-			opts = {},
-		},
+		-- {
+		-- 	"windwp/nvim-autopairs",
+		-- 	event = "InsertEnter",
+		-- 	opts = {},
+		-- },
 
 		--< snippet engine >--
 		{
@@ -27,7 +27,8 @@ return {
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
-		local cmd_autopairs = require("nvim-autopairs.completion.cmp")
+
+		local success, cmd_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 
 		cmp.setup({
 			preselect = cmp.PreselectMode.Item,
@@ -95,8 +96,10 @@ return {
 			vim.b.copilot_suggestion_hidden = false
 		end)
 
-		cmp.event:on("confirm_done", cmd_autopairs.on_confirm_done())
-		vim.cmd("highlight! BorderBG guibg=NONE")
+		if success then
+			cmp.event:on("confirm_done", cmd_autopairs.on_confirm_done())
+			vim.cmd("highlight! BorderBG guibg=NONE")
+		end
 
 		cmp.setup.filetype({ "conf", "config", "kitty", "yaml" }, {
 			sources = {

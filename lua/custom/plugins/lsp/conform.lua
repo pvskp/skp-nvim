@@ -26,10 +26,10 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(ctx)
-				-- if vim.fs.basename(ctx.filename) ~= "rc.lua"
-				if vim.fn.expand("%:t") ~= "rc.lua" then
-					require("conform").format({ bufnr = ctx.buf })
-				end
+				require("conform").format({ bufnr = ctx.buf })
+				-- if vim.fn.expand("%:t") ~= "rc.lua" then
+				-- 	require("conform").format({ bufnr = ctx.buf })
+				-- end
 			end,
 		})
 	end,
