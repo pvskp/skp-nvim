@@ -19,14 +19,14 @@ spec(poff, "colorscheme.vscode")
 spec(poff, "colorscheme.tokyonight")
 spec(poff, "colorscheme.rose-pine")
 spec(poff, "colorscheme.kanagawa")
-spec(poff, "colorscheme.onedark")
+spec(pon, "colorscheme.onedark")
 spec(poff, "colorscheme.nord")
 spec(poff, "colorscheme.moonlight")
 spec(poff, "colorscheme.gruvbox-material")
 spec(poff, "colorscheme.everforest")
 spec(poff, "colorscheme.catppuccin")
 spec(poff, "colorscheme.ayu")
-spec(pon, "colorscheme.adwaita")
+spec(poff, "colorscheme.adwaita")
 -- vim.cmd([[colorscheme habamax]])
 -- vim.cmd([[colorscheme murphy]])
 
@@ -86,7 +86,7 @@ spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
 spec(pon, "btterm") -- this one is mine!!!!
-spec(pon, "autopairs")
+spec(poff, "autopairs")
 spec(pon, "auto-session")
 spec(poff, "wilder")
 spec(poff, "which-key")
