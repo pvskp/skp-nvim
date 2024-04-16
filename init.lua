@@ -76,7 +76,7 @@ spec(pon, "telescope") -- fuzzy finder
 spec(pon, "surround") -- surround text with quotes, brackets, etc
 spec(poff, "remote-containers")
 spec(pon, "oil")
-spec(pon, "obsidian")
+spec(poff, "obsidian")
 spec(pon, "nvim-tree")
 spec(pon, "neogen")
 spec(pon, "markdown-preview")
@@ -111,8 +111,8 @@ spec(poff, "cmdbuf")
 
 --<< AI >>--
 
-spec(pon, "ai.codeium")
-spec(pon, "ai.gp")
+spec(poff, "ai.codeium")
+spec(poff, "ai.gp")
 spec(poff, "ai.chatgpt")
 spec(poff, "ai.copilot")
 
