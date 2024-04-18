@@ -1,6 +1,7 @@
 return {
 	"stevearc/oil.nvim",
 	lazy = false,
+	-- dir = "~/Documents/repos/gp.nvim/",
 	keys = {
 		{ "<C-e>", "<CMD>lua require('oil').toggle_float()<CR>", desc = "Open parent directory" },
 	},
@@ -22,6 +23,8 @@ return {
 			callback = function()
 				vim.cmd("setlocal norelativenumber")
 				vim.cmd("setlocal nonumber")
+				vim.cmd("setlocal nonumber")
+				vim.cmd('setlocal colorcolumn=""')
 
 				-- select
 				opts.desc = "Select item/enter directory"

@@ -69,6 +69,7 @@ spec(poff, "git.blame")
 --<< General >>--
 
 spec(pon, "undotree") -- show undo tree
+spec(pon, "neo-zoom") -- toggle zoom mode with a popup window
 spec(pon, "trouble") -- cool quickfix list for LSP
 spec(pon, "toggle-checkbox")
 spec(pon, "tmux") -- tmux integration
@@ -86,7 +87,7 @@ spec(pon, "focus") -- auto-resize windows when switching buffers
 spec(pon, "eyeliner") -- quick jump with f, F, t, T
 spec(pon, "discord") -- rich presence
 spec(pon, "btterm") -- this one is mine!!!!
-spec(poff, "autopairs")
+spec(pon, "autopairs")
 spec(pon, "auto-session")
 spec(poff, "wilder")
 spec(poff, "which-key")
@@ -131,7 +132,7 @@ spec(poff, "ui.virt-column")
 spec(poff, "ui.twilight")
 spec(poff, "ui.sunglasses")
 spec(poff, "ui.netrw")
-spec(poff, "ui.illuminate")
+spec(pon, "ui.illuminate")
 spec(poff, "ui.headlines")
 spec(poff, "ui.alpha") -- start dashboard
 

@@ -74,6 +74,17 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 })
 
+local function strip_trailing_whitespace()
+	local save = vim.fn.winsaveview() -- Salva a posição atual do cursor
+	vim.cmd([[ %s/\s\+$//e ]]) -- Remove espaços em branco no final de todas as linhas
+	vim.fn.winrestview(save) -- Restaura a posição do cursor
+end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*", -- Para todos os arquivos
+	callback = strip_trailing_whitespace,
+})
+
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- 	pattern = "*.py",
 -- 	callback = function()

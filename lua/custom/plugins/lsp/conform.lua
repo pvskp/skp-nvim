@@ -6,7 +6,7 @@ return {
 			lua = { "stylua" },
 			bash = { "beautysh", "shellcheck" },
 			-- python = { "autoflake", "isort", "black" },
-			python = { "isort", "black" },
+			-- python = { "ruff_format" },
 			javascript = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
 			yaml = { "yamlfmt" },

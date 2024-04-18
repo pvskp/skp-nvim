@@ -14,6 +14,7 @@ local options = {
 
 	--< UI >--
 	cursorcolumn = false,
+	colorcolumn = "100",
 	cursorline = false, -- highlight the current line
 	signcolumn = "no",
 	numberwidth = 2, -- set number column width to 2 {default 4}
@@ -60,8 +61,9 @@ end
 -- vim.cmd([[set listchars=tab:█\ ,trail:█]])
 -- vim.cmd("set list")
 
--- vim.cmd([[set listchars=tab:▸\ ,eol:↲]])
--- vim.cmd([[set list]])
+vim.cmd([[set listchars=tab:▸\ ,eol:↲]])
+vim.cmd([[set list]])
+
 vim.g.netrw_banner = 0
 
 USE_DEVICONS = true

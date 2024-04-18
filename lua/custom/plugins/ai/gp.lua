@@ -1,6 +1,7 @@
 return {
 	"robitx/gp.nvim",
 	event = "BufEnter",
+	-- dir = "~/Documents/repos/gp.nvim/",
 	keys = {
 		{ "\\", "<cmd>GpChatToggle<CR>", { desc = "Toggle ChatGPT chat window", silent = true }, mode = "n" },
 	},
