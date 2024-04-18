@@ -11,6 +11,7 @@ return {
 			json = { { "prettierd", "prettier" } },
 			yaml = { "yamlfmt" },
 			cpp = { "clang-format" },
+			terraform = { "terraform_fmt" },
 		},
 
 		-- format_on_save = {

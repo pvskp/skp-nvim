@@ -67,3 +67,9 @@ vim.cmd([[set list]])
 vim.g.netrw_banner = 0
 
 USE_DEVICONS = true
+
+vim.filetype.add({
+	extension = {
+		tf = "terraform",
+	},
+})

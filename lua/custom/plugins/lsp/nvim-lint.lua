@@ -15,6 +15,7 @@ return {
 			-- python = { "ruff" },
 			python = { "flake8" },
 			go = { "golangcilint" },
+			terraform = { "tflint", "tfsec" },
 			-- cpp = { "cpplint" },
 			-- yaml = { "yamllint" },
 		}
