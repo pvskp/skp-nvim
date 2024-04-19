@@ -12,6 +12,7 @@ return {
 			yaml = { "yamlfmt" },
 			cpp = { "clang-format" },
 			terraform = { "terraform_fmt" },
+			zsh = { "beautysh" },
 		},
 
 		-- format_on_save = {

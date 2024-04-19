@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	opts = {
 		-- Main options --
-		style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+		style = "light", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 		transparent = false, -- Show/hide background
 		term_colors = true, -- Change terminal color as per the selected theme style
 		ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -19,8 +19,8 @@ return {
 		-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
 		code_style = {
 			comments = "italic",
-			keywords = "none",
-			functions = "none",
+			keywords = "bold",
+			functions = "bold",
 			strings = "none",
 			variables = "none",
 		},

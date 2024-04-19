@@ -25,12 +25,6 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			ensure_installed = {
-				"lua_ls",
-				"gopls",
-				-- "pyright",
-			},
-
 			automatic_installation = true, -- not the same as ensure_installed
 		})
 
@@ -59,7 +53,6 @@ return {
 
 			opts.desc = "Show line diagnostics"
 			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
 
 			opts.desc = "Formats code"
 			keymap.set("n", "<leader>p", vim.lsp.buf.format, opts)
@@ -128,13 +121,24 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
-				"eslint_d", -- js linter
+				"beautysh",
+				"black",
+				"eslint_d",
+				"flake8",
 				"goimports",
+				"golangci-lint",
+				"gopls",
+				"isort",
+				"jsonlint",
+				"lua_ls",
+				"prettier",
+				"pylint",
+				"pyright",
+				"stylua",
+				"terraformls",
+				"tflint",
+				"tfsec",
+				"yamlls",
 			},
 		})
 
