@@ -20,6 +20,11 @@ return {
 			lsp_fallback = true,
 			timeout_ms = 1000,
 			quiet = true,
+			callback = function(err, did_edit)
+				if err ~= nil then
+					vim.notify("Failed to format file. See :ConformInfo for more information.")
+				end
+			end,
 		},
 	},
 	config = function(_, opts)

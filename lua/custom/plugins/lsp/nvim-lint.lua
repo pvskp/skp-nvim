@@ -11,13 +11,13 @@ return {
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
 			json = { "jsonlint" },
-			-- lua = { "luacheck" },
 			python = { "ruff", "flake8" },
-			-- python = { "flake8" },
 			go = { "golangcilint" },
 			terraform = { "tflint", "tfsec" },
 			-- cpp = { "cpplint" },
 			-- yaml = { "yamllint" },
+			-- lua = { "luacheck" },
+			-- python = { "flake8" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

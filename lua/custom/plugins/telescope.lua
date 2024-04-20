@@ -74,6 +74,10 @@ return {
 			builtin.find_files(no_preview("Find Files"))
 		end, { desc = "Find [F]iles" })
 
+		vim.keymap.set("n", "<leader><space>", builtin.buffers, {
+			desc = "[G]rep Buffers",
+		})
+
 		vim.keymap.set("n", "<leader>g", builtin.live_grep, {
 			desc = "[G]rep Files",
 		})
