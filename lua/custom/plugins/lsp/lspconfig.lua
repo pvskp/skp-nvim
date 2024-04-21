@@ -51,9 +51,7 @@ return {
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
 
-      local ok, _ = pcall(require, 'telescope')
-      print(ok)
-      if ok then
+      if pcall(require, 'telescope') then
         keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, { desc = '[G]oto [D]efinition' })
         keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[G]oto [R]eferences' })
         keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, { desc = '[G]oto [I]mplementation' })
