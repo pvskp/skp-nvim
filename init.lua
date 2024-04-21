@@ -87,7 +87,7 @@ spec(pon, 'focus') -- auto-resize windows when switching buffers
 spec(pon, 'eyeliner') -- quick jump with f, F, t, T
 spec(pon, 'discord') -- rich presence
 spec(pon, 'btterm') -- this one is mine!!!!
-spec(pon, 'autopairs')
+spec(poff, 'autopairs')
 spec(pon, 'auto-session')
 spec(poff, 'wilder')
 spec(poff, 'which-key')
@@ -126,6 +126,7 @@ spec(pon, 'ui.fidget') -- cool LSP notification
 spec(pon, 'ui.dressing') -- offers better ui for some neovim commands
 spec(pon, 'ui.colorizer') -- color preview
 spec(pon, 'ui.barbecue') -- shows the current symbol and its parents
+spec(pon, 'ui.nvim-bqf')
 spec(poff, 'ui.transparent')
 spec(poff, 'ui.bufferline')
 spec(poff, 'ui.virt-column')
