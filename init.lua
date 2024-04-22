@@ -111,10 +111,10 @@ spec(poff, 'autopairs')
 
 --<< AI >>--
 
-spec(pon, 'ai.codeium')
-spec(pon, 'ai.gp')
+spec(poff, 'ai.codeium')
+spec(poff, 'ai.gp')
 spec(poff, 'ai.chatgpt')
-spec(poff, 'ai.copilot')
+spec(pon, 'ai.copilot')
 
 --<< UI >>--
 
