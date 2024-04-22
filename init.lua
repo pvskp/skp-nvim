@@ -67,6 +67,7 @@ spec(poff, 'git.blame')
 
 --<< General >>--
 
+spec(pon, 'bigfile')
 spec(pon, 'undotree') -- show undo tree
 spec(pon, 'trouble') -- cool quickfix list for LSP
 spec(pon, 'toggle-checkbox')
