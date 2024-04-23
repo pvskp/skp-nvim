@@ -43,7 +43,7 @@ return {
     }
 
     mason_lspconfig.setup {
-      automatic_installation = true, -- not the same as ensure_installed
+      automatic_installation = false, -- not the same as ensure_installed
     }
 
     local keymap = vim.keymap -- for conciseness
@@ -112,6 +112,28 @@ return {
       lineFoldingOnly = true,
     }
 
+    -- Setup lua language server separately so it works on arm
+    lspconfig.lua_ls.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = { -- custom settings for lua
+        Lua = {
+          -- make the language server recognize "vim" global
+          hint = { enable = true },
+          diagnostics = {
+            globals = { 'vim' },
+          },
+          workspace = {
+            -- make language server aware of runtime files
+            library = {
+              [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+              [vim.fn.stdpath 'config' .. '/lua'] = true,
+            },
+          },
+        },
+      },
+    }
+
     mason_lspconfig.setup_handlers {
       function(server_name) -- default handler (optional)
         lspconfig[server_name].setup {
@@ -119,28 +141,28 @@ return {
           on_attach = on_attach,
         }
       end,
-      ['lua_ls'] = function()
-        lspconfig['lua_ls'].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = { -- custom settings for lua
-            Lua = {
-              -- make the language server recognize "vim" global
-              hint = { enable = true },
-              diagnostics = {
-                globals = { 'vim' },
-              },
-              workspace = {
-                -- make language server aware of runtime files
-                library = {
-                  [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-                  [vim.fn.stdpath 'config' .. '/lua'] = true,
-                },
-              },
-            },
-          },
-        }
-      end,
+      -- ['lua_ls'] = function()
+      --   lspconfig.lua_ls.setup {
+      --     capabilities = capabilities,
+      --     on_attach = on_attach,
+      --     settings = { -- custom settings for lua
+      --       Lua = {
+      --         -- make the language server recognize "vim" global
+      --         hint = { enable = true },
+      --         diagnostics = {
+      --           globals = { 'vim' },
+      --         },
+      --         workspace = {
+      --           -- make language server aware of runtime files
+      --           library = {
+      --             [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+      --             [vim.fn.stdpath 'config' .. '/lua'] = true,
+      --           },
+      --         },
+      --       },
+      --     },
+      --   }
+      -- end,
     }
 
     mason_tool_installer.setup {
@@ -154,7 +176,7 @@ return {
         'gopls',
         'isort',
         'jsonlint',
-        'lua_ls',
+        -- 'lua_ls',
         'prettier',
         'pylint',
         'pyright',
