@@ -37,7 +37,11 @@ return {
     -- enable mason and configure icons
     mason.setup {
       ui = {
-        icons = { package_installed = '✓', package_pending = '➜', package_uninstalled = '✗' },
+        icons = {
+          package_installed = '✓',
+          package_pending = '➜',
+          package_uninstalled = '✗',
+        },
         border = 'single',
       },
     }
@@ -134,6 +138,11 @@ return {
       },
     }
 
+    lspconfig.pyright.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+
     mason_lspconfig.setup_handlers {
       function(server_name) -- default handler (optional)
         lspconfig[server_name].setup {
@@ -141,32 +150,12 @@ return {
           on_attach = on_attach,
         }
       end,
-      -- ['lua_ls'] = function()
-      --   lspconfig.lua_ls.setup {
-      --     capabilities = capabilities,
-      --     on_attach = on_attach,
-      --     settings = { -- custom settings for lua
-      --       Lua = {
-      --         -- make the language server recognize "vim" global
-      --         hint = { enable = true },
-      --         diagnostics = {
-      --           globals = { 'vim' },
-      --         },
-      --         workspace = {
-      --           -- make language server aware of runtime files
-      --           library = {
-      --             [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-      --             [vim.fn.stdpath 'config' .. '/lua'] = true,
-      --           },
-      --         },
-      --       },
-      --     },
-      --   }
-      -- end,
     }
 
     mason_tool_installer.setup {
       ensure_installed = {
+        -- Only ensure_installed packages that are supported on arm
+        'autoflake',
         'beautysh',
         'black',
         'eslint_d',
@@ -176,18 +165,12 @@ return {
         'gopls',
         'isort',
         'jsonlint',
-        -- 'lua_ls',
         'prettier',
-        'pylint',
-        'pyright',
-        'stylua',
         'terraformls',
         'tflint',
         'tfsec',
         'yamlls',
       },
     }
-
-    -- Serves are currently configured by mason ("./mason.lua")
   end,
 }
