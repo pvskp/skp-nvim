@@ -4,5 +4,8 @@
         "pon",
         "poff",
         "spec"
+    ],
+    "diagnostics.disable": [
+        "unused-local"
     ]
 }

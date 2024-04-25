@@ -52,6 +52,7 @@ local options = {
   cmdheight = 1, -- space in the neovim command line for displaying messages
   compatible = false,
   equalalways = false,
+  conceallevel = 3,
 }
 
 for k, v in pairs(options) do

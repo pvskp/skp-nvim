@@ -9,7 +9,7 @@ return {
       -- python = { "ruff_format" },
       javascript = { { 'prettierd', 'prettier' } },
       json = { { 'prettierd', 'prettier' } },
-      yaml = { 'yamlfmt' },
+      yaml = { 'prettierd' },
       cpp = { 'clang-format' },
       terraform = { 'terraform_fmt' },
       zsh = { 'beautysh' },
