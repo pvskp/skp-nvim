@@ -5,8 +5,8 @@ return {
     formatters_by_ft = {
       lua = { 'stylua' },
       bash = { 'beautysh', 'shellcheck' },
-      python = { 'autoflake', 'isort', 'black' },
-      -- python = { "ruff_format" },
+      -- python = { 'autoflake', 'isort', 'black' },
+      python = { 'ruff_format' },
       javascript = { { 'prettierd', 'prettier' } },
       json = { { 'prettierd', 'prettier' } },
       yaml = { 'prettierd' },
