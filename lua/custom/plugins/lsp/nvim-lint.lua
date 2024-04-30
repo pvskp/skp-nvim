@@ -14,7 +14,7 @@ return {
       lua = { 'luacheck' },
       go = { 'golangcilint' },
       terraform = { 'tflint', 'tfsec' },
-      -- python = { 'ruff' },
+      python = { 'ruff' },
       -- cpp = { "cpplint" },
       -- yaml = { "yamllint" },
       -- python = { "flake8" },
