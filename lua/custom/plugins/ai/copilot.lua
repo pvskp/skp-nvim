@@ -20,7 +20,7 @@ return {
         allow_insecure = false, -- Allow insecure server connections
 
         -- system_prompt = prompts.COPILOT_INSTRUCTIONS, -- System prompt to use
-        model = 'gpt-4', -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
+        model = 'gpt-3.5-turbo', -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
         temperature = 0.1, -- GPT temperature
 
         question_header = '## User ', -- Header to use for user questions
@@ -34,7 +34,7 @@ return {
         auto_insert_mode = false, -- Automatically enter insert mode when opening window and if auto follow cursor is enabled on new prompt
         clear_chat_on_new_prompt = false, -- Clears chat on every new prompt
 
-        context = nil, -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
+        context = 'buffer', -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
         history_path = vim.fn.stdpath 'data' .. '/copilotchat_history', -- Default path to stored history
         callback = nil, -- Callback to use when ask response is received
 
