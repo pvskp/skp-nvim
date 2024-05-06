@@ -15,9 +15,9 @@ spec(poff, 'colorscheme.mellifluous')
 spec(poff, 'colorscheme.midnight')
 spec(poff, 'colorscheme.zenbones')
 spec(poff, 'colorscheme.minimal')
-spec(pon, 'colorscheme.vscode')
+spec(poff, 'colorscheme.vscode')
 spec(poff, 'colorscheme.tokyonight')
-spec(poff, 'colorscheme.rose-pine')
+spec(pon, 'colorscheme.rose-pine')
 spec(poff, 'colorscheme.kanagawa')
 spec(poff, 'colorscheme.onedark')
 spec(poff, 'colorscheme.nord')
@@ -54,7 +54,7 @@ spec(pon, 'languages.helm')
 
 spec(pon, 'mini.splitjoin')
 spec(poff, 'mini.notify')
-spec(poff, 'mini.files') -- minitree (best tree plugin)
+spec(pon, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
