@@ -76,7 +76,7 @@ spec(pon, 'telescope') -- fuzzy finder
 spec(pon, 'surround') -- surround text with quotes, brackets, etc
 spec(pon, 'oil')
 spec(pon, 'obsidian')
-spec(pon, 'nvim-tree')
+spec(poff, 'nvim-tree')
 spec(pon, 'neogen')
 spec(pon, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(pon, 'markdown-preview')
@@ -114,7 +114,7 @@ spec(poff, 'autopairs')
 
 spec(poff, 'ai.codeium')
 spec(poff, 'ai.gp')
-spec(poff, 'ai.chatgpt')
+spec(pon, 'ai.chatgpt')
 spec(pon, 'ai.copilot')
 
 --<< UI >>--
