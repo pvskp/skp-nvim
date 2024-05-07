@@ -27,8 +27,6 @@ spec(poff, 'colorscheme.everforest')
 spec(poff, 'colorscheme.catppuccin')
 spec(poff, 'colorscheme.ayu')
 spec(poff, 'colorscheme.adwaita')
--- vim.cmd([[colorscheme habamax]])
--- vim.cmd([[colorscheme murphy]])
 
 --<< LSP related >>--
 
