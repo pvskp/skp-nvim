@@ -14,9 +14,12 @@ return {
     }
 
     local select = "<CMD>lua require('oil.actions').select.callback()<CR>"
+    local open_external = "<CMD>lua require('oil.actions').open_external()<CR>"
     local parent = "<CMD>lua require('oil.actions').parent.callback()<CR>"
     local toggle = "<CMD>lua require('oil').toggle_float()<CR>"
     local toggle_hidden = "<CMD>lua require('oil').toggle_hidden()<CR>"
+
+    vim.api.nvim_set_keymap('n', 'gx', open_external, opts)
 
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'oil',
@@ -49,7 +52,7 @@ return {
   end,
 
   opts = {
-    default_file_explorer = false,
+    -- default_file_explorer = false,
     skip_confirm_for_simple_edits = true,
     use_default_keymaps = false,
     float = {
