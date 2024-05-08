@@ -7,7 +7,6 @@ return {
     -- "nvim-telescope/telescope.nvim",
   },
   init = function()
-    vim.keymap.set('n', '<leader>ch', ':ChatGPT<CR>', { silent = true })
     vim.keymap.set('n', '\\', ':ChatGPT<CR>', { silent = true })
   end,
   opts = {
