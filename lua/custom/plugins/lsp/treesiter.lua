@@ -15,7 +15,7 @@ return {
 
     highlight = {
       enable = true,
-      disable = { 'markdown', 'vimdoc', 'help', 'helm' },
+      disable = { 'markdown', 'vimdoc', 'help', 'helm', 'gitcommit' },
       additional_vim_regex_highlighting = false,
       indent = {
         enable = false,
@@ -36,8 +36,8 @@ return {
         },
         selection_modes = {
           ['@parameter.outer'] = 'v', -- charwise
-          ['@function.outer'] = 'V', -- linewise
-          ['@class.outer'] = 'V', -- blockwise
+          ['@function.outer'] = 'V',  -- linewise
+          ['@class.outer'] = 'V',     -- blockwise
         },
         include_surrounding_whitespace = true,
       },
