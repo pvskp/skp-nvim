@@ -1,12 +1,15 @@
 return {
   'hrsh7th/nvim-cmp',
-  event = { 'InsertEnter', 'CmdlineEnter' },
+  event = {
+    'InsertEnter',
+    -- 'CmdlineEnter'
+  },
   dependencies = {
 
     --< nvim-cmp plugins >--
     'hrsh7th/cmp-buffer', -- source for text in buffer
-    'hrsh7th/cmp-path',   -- source for file system paths
-    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-path', -- source for file system paths
+    -- 'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'amarakon/nvim-cmp-fonts', -- source for font completion
     -- {
@@ -18,7 +21,10 @@ return {
     --< snippet engine >--
     {
       'L3MON4D3/LuaSnip',
-      event = { 'InsertEnter', 'CmdlineEnter' },
+      event = {
+        'InsertEnter',
+        -- 'CmdlineEnter'
+      },
     },
     'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind.nvim', -- vs-code like pictograms
@@ -56,7 +62,7 @@ return {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- show completion suggestions
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),        -- close completion window
+        ['<C-e>'] = cmp.mapping.abort(), -- close completion window
         -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ['<CR>'] = cmp.mapping.confirm { select = true },
         ['<Tab>'] = cmp.mapping.confirm { select = true },
@@ -69,8 +75,8 @@ return {
         { name = 'codeium' },
         { name = 'copilot' },
         { name = 'luasnip' }, -- snippets
-        { name = 'path' },    -- file system paths
-        { name = 'buffer' },  -- text within current buffer
+        { name = 'path' }, -- file system paths
+        { name = 'buffer' }, -- text within current buffer
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -143,13 +149,13 @@ return {
       },
     }
 
-    -- `/` cmdline setup.
-    cmp.setup.cmdline('/', {
-      mapping = cmd_mappings,
-      sources = cmp.config.sources {
-        { name = 'buffer' },
-      },
-    })
+    -- -- `/` cmdline setup.
+    -- cmp.setup.cmdline('/', {
+    --   mapping = cmd_mappings,
+    --   sources = cmp.config.sources {
+    --     { name = 'buffer' },
+    --   },
+    -- })
 
     -- `:` cmdline setup.
     cmp.setup.cmdline(':', {
