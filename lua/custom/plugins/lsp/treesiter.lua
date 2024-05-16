@@ -6,7 +6,7 @@ return {
       'nvim-treesitter/nvim-treesitter-textobjects', -- <- this is amazing
     },
   },
-  lazy = false,
+  event = { 'BufReadPost' },
   opts = {
     ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'python', 'go' },
     sync_install = false,
