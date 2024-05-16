@@ -32,7 +32,8 @@ local options = {
   --< Wildmenu >--
   wildmenu = true,
   wildignorecase = true,
-  -- wildmode = "list:longest,full",
+  wildoptions = 'pum,tagfile',
+  wildmode = 'list:longest,full',
 
   --< Fold >--
   foldmethod = 'indent',
