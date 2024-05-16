@@ -1,5 +1,6 @@
 require 'custom'
 require 'custom.autocommands'
+require 'custom.commands'
 require 'custom.globals'
 require 'custom.remap'
 require 'custom.set'
