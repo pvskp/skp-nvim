@@ -80,7 +80,7 @@ spec(poff, 'nvim-tree')
 spec(pon, 'neogen')
 spec(pon, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(pon, 'markdown-preview')
-spec(pon, 'kitty') -- kitty integration
+spec(poff, 'kitty') -- kitty integration
 spec(pon, 'hop') -- jump to any word in the screen
 spec(pon, 'focus') -- auto-resize windows when switching buffers
 spec(pon, 'eyeliner') -- quick jump with f, F, t, T
