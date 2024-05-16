@@ -1,14 +1,7 @@
 return {
-	"tpope/vim-fugitive",
-	lazy = false,
-	config = function()
-		vim.keymap.set("n", "<leader>s", ":Git<CR>", {
-			silent = true,
-			desc = "[G]it [S]tatus",
-		})
-		-- vim.keymap.set("n", "<leader>gp", ":Git push<CR>", {
-		-- 	silent = true,
-		-- 	desc = "[G]it [P]ush",
-		-- })
-	end,
+  'tpope/vim-fugitive',
+  cmd = 'Git',
+  keys = {
+    { '<leader>x', '<cmd>vert Git<CR>' },
+  },
 }
