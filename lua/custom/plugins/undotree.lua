@@ -1,5 +1,7 @@
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 return {
-	"mbbill/undotree",
-	lazy = false,
+  'mbbill/undotree',
+  -- lazy = false,
+  keys = {
+    { '<leader>u', vim.cmd.UndotreeToggle, desc = 'Toggle [u]ndotree' },
+  },
 }
