@@ -55,8 +55,6 @@ return {
     },
   },
   config = function(_, opts)
-    -- vim.opt.signcolumn = 'yes'
-
     require('gitsigns').setup(opts)
     vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', {
       fg = '#909090',
