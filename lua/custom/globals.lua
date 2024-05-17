@@ -48,13 +48,17 @@ Symbols = {
   diagnostics = {
     Error = '󱎶 ',
     Warn = ' ',
-    Hint = ' ',
+    Hint = '',
     Info = '󰓹 ',
   },
   changes = {
     Added = ' ',
     Removed = ' ',
     Modified = '󰜥 ',
+  },
+  telescope = {
+    prompt_prefix = '󰁔 ',
+    selection_caret = '󰃚 ',
   },
 }
 

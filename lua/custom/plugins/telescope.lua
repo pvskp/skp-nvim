@@ -21,6 +21,8 @@ return {
             ['<Esc>'] = actions.close,
           },
         },
+        prompt_prefix = Symbols.telescope.prompt_prefix,
+        selection_caret = Symbols.telescope.selection_caret,
       },
       pickers = {
         colorscheme = {
@@ -79,7 +81,12 @@ return {
     vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = '[G]rep Files' })
     vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = '[H]elp Tags' })
     -- vim.keymap.set('n', '<leader>mp', builtin.man_pages, { desc = '[M]an [P]ages' })
-    vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+    vim.keymap.set(
+      { 'n', 'v' },
+      '<leader>sw',
+      builtin.grep_string,
+      { desc = '[S]earch current [W]ord' }
+    )
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
