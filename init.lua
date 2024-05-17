@@ -67,7 +67,6 @@ spec(poff, 'git.blame')
 
 --<< General >>--
 
-spec(pon, 'bigfile')
 spec(pon, 'undotree') -- show undo tree
 spec(pon, 'trouble') -- cool quickfix list for LSP
 spec(pon, 'toggle-checkbox')
@@ -75,17 +74,16 @@ spec(pon, 'tmux') -- tmux integration
 spec(pon, 'telescope') -- fuzzy finder
 spec(pon, 'surround') -- surround text with quotes, brackets, etc
 spec(pon, 'oil')
-spec(poff, 'obsidian')
-spec(poff, 'nvim-tree')
 spec(pon, 'neogen')
 spec(pon, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(pon, 'markdown-preview')
-spec(poff, 'kitty') -- kitty integration
 spec(pon, 'hop') -- jump to any word in the screen
 spec(pon, 'focus') -- auto-resize windows when switching buffers
 spec(pon, 'eyeliner') -- quick jump with f, F, t, T
 spec(pon, 'discord') -- rich presence
 spec(pon, 'btterm') -- this one is mine!!!!
+spec(pon, 'bigfile')
+spec(pon, 'autopairs')
 spec(pon, 'auto-session')
 spec(poff, 'wilder')
 spec(poff, 'which-key')
@@ -95,11 +93,14 @@ spec(poff, 'tetris')
 spec(poff, 'spider')
 spec(poff, 'remote-containers')
 spec(poff, 'remote-containers')
+spec(poff, 'obsidian')
+spec(poff, 'nvim-tree')
 spec(poff, 'neoscroll')
 spec(poff, 'neo-tree')
 spec(poff, 'modes')
 spec(poff, 'lab')
 spec(poff, 'kubectl') -- kubectl integration
+spec(poff, 'kitty') -- kitty integration
 spec(poff, 'hawtkeys') -- show best keybindings to be mapped
 spec(poff, 'harpoon')
 spec(poff, 'hardtime')
@@ -108,7 +109,6 @@ spec(poff, 'flybuf')
 spec(poff, 'fakeclip')
 spec(poff, 'color-picker')
 spec(poff, 'cmdbuf')
-spec(poff, 'autopairs')
 
 --<< AI >>--
 

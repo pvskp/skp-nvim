@@ -14,7 +14,7 @@ local options = {
 
   --< UI >--
   cursorcolumn = false,
-  colorcolumn = '100',
+  colorcolumn = '101',
   cursorline = false, -- highlight the current line
   signcolumn = 'no',
   numberwidth = 2, -- set number column width to 2 {default 4}
@@ -33,7 +33,8 @@ local options = {
   wildmenu = true,
   wildignorecase = true,
   wildoptions = 'pum,tagfile',
-  wildmode = 'list:longest,full',
+  wildmode = 'full',
+  -- wildmode = 'list:longest,full',
 
   --< Fold >--
   foldmethod = 'indent',

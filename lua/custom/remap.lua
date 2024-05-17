@@ -52,7 +52,7 @@ map('n', '<M-h>', '<C-w>h')
 
 -- Resize window
 map('n', '<M-r>', function()
-  local keymap_set = vim.api.nvim_set_keymap
+  local keymap_set = vim.keymap.set
   local interactive_resize_opts = { noremap = true }
 
   keymap_set('n', 'k', ':resize -2<CR>', interactive_resize_opts)
@@ -78,15 +78,6 @@ map('n', '<C-s>', ':w<CR>', opts)
 map('n', '<M-f>', ':term<CR>')
 
 map('n', 'Q', ':bd!<CR>', { silent = true })
-
--- map("n", "Q", function()
--- 	local num_wins = #vim.api.nvim_list_wins()
--- 	if num_wins > 1 then
--- 		vim.api.nvim_command("q!")
--- 	else
--- 		vim.api.nvim_command("bd!")
--- 	end
--- end, { silent = true })
 
 map('n', '<C-q>', ':qa!<CR>', { silent = true })
 
@@ -164,21 +155,6 @@ vim.api.nvim_set_keymap('c', '<C-x>', '<C-y>', { noremap = true })
 map('n', '-', function()
   pcall(vim.cmd.foldclose)
 end, {})
--- map("n", "=", function()
--- 	pcall(vim.cmd.foldopen)
--- end, {})
-
--- Other remaps
-
--- map({ "n", "v" }, ".", ":")
-
--- map("n", ".", function()
--- 	if vim.fn.bufexists("[Command Line]") == 1 then
--- 		vim.cmd("quit")
--- 		return
--- 	end
--- 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("q:", true, false, true), "n", false)
--- end)
 
 -- Substitute word under cursor
 vim.keymap.set('n', '<Leader>sw', ':%s/\\<<C-r><C-w>\\>/', {
@@ -195,8 +171,4 @@ vim.api.nvim_set_keymap('n', '<C-t>', ':lua TogglePonPoff()<CR>', opts)
 vim.api.nvim_set_keymap('v', '<C-t>', ':lua TogglePonPoffSelection()<CR>', opts)
 
 -- Spell
-
 map('n', '<leader>q', '1z=')
-
--- map("n", "o", 'o<Esc>0"_D', opts)
--- map("n", "O", 'O<Esc>0"_D', opts)

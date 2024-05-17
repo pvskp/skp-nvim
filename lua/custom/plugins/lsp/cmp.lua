@@ -158,17 +158,17 @@ return {
     -- })
 
     -- `:` cmdline setup.
-    cmp.setup.cmdline(':', {
-      mapping = cmd_mappings,
-      sources = cmp.config.sources {
-        { name = 'path' },
-        {
-          name = 'cmdline',
-          option = {
-            ignore_cmds = { 'Man', '!' },
-          },
-        },
-      },
-    })
+    -- cmp.setup.cmdline(':', {
+    --   mapping = cmd_mappings,
+    --   sources = cmp.config.sources {
+    --     { name = 'path' },
+    --     {
+    --       name = 'cmdline',
+    --       option = {
+    --         ignore_cmds = { 'Man', '!' },
+    --       },
+    --     },
+    --   },
+    -- })
   end,
 }
