@@ -17,10 +17,10 @@ spec(poff, 'colorscheme.midnight')
 spec(poff, 'colorscheme.zenbones')
 spec(poff, 'colorscheme.minimal')
 spec(poff, 'colorscheme.vscode')
-spec(pon, 'colorscheme.tokyonight')
+spec(poff, 'colorscheme.tokyonight')
 spec(poff, 'colorscheme.aura')
 spec(poff, 'colorscheme.rose-pine')
-spec(poff, 'colorscheme.kanagawa')
+spec(pon, 'colorscheme.kanagawa')
 spec(poff, 'colorscheme.onedark')
 spec(poff, 'colorscheme.nord')
 spec(poff, 'colorscheme.moonlight')
@@ -39,7 +39,7 @@ spec(pon, 'lsp.navbuddy') -- allow to navigate between symbols in a easir way
 spec(pon, 'lsp.luasnip') -- snippets
 spec(pon, 'lsp.lspconfig')
 spec(pon, 'lsp.conform') -- formatter
-spec(pon, 'lsp.commentary')
+spec(poff, 'lsp.commentary')
 spec(pon, 'lsp.cmp') -- completion
 spec(poff, 'lsp.rainbow-delimiters') -- show matching delimiters
 spec(poff, 'lsp.outline')
