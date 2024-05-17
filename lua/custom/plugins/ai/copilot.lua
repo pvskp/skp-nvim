@@ -8,7 +8,11 @@ return {
       'CopilotC-Nvim/CopilotChat.nvim',
       branch = 'canary',
       keys = {
-        { '\\', ':CopilotChatToggle<CR>', { desc = 'Toggle Copilot Chat window', silent = true } },
+        {
+          '\\',
+          ':CopilotChatToggle<CR>',
+          { desc = 'Toggle Copilot Chat window', silent = true },
+        },
       },
       dependencies = {
         { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper

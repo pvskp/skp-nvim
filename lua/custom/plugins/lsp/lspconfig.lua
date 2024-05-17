@@ -12,8 +12,10 @@ return {
   config = function()
     local _border = 'single'
 
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = _border })
-    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = _border })
+    vim.lsp.handlers['textDocument/hover'] =
+      vim.lsp.with(vim.lsp.handlers.hover, { border = _border })
+    vim.lsp.handlers['textDocument/signatureHelp'] =
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = _border })
 
     vim.diagnostic.config { float = { border = _border } }
 
@@ -55,13 +57,50 @@ return {
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
 
+      keymap.set(
+        'n',
+        '<leader>.',
+        '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
+        { desc = '[T]oggle inlay_hint', silent = true }
+      )
+
       if pcall(require, 'telescope') then
-        keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, { desc = '[G]oto [D]efinition' })
-        keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[G]oto [R]eferences' })
-        keymap.set('n', 'gI', require('telescope.builtin').lsp_implementations, { desc = '[G]oto [I]mplementation' })
-        keymap.set('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, { desc = 'Type [D]efinition' })
-        keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, { desc = '[D]ocument [S]ymbols' })
-        keymap.set('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = '[W]orkspace [S]ymbols' })
+        keymap.set(
+          'n',
+          'gd',
+          require('telescope.builtin').lsp_definitions,
+          { desc = '[G]oto [D]efinition' }
+        )
+        keymap.set(
+          'n',
+          'gr',
+          require('telescope.builtin').lsp_references,
+          { desc = '[G]oto [R]eferences' }
+        )
+        keymap.set(
+          'n',
+          'gI',
+          require('telescope.builtin').lsp_implementations,
+          { desc = '[G]oto [I]mplementation' }
+        )
+        keymap.set(
+          'n',
+          '<leader>D',
+          require('telescope.builtin').lsp_type_definitions,
+          { desc = 'Type [D]efinition' }
+        )
+        keymap.set(
+          'n',
+          '<leader>ds',
+          require('telescope.builtin').lsp_document_symbols,
+          { desc = '[D]ocument [S]ymbols' }
+        )
+        keymap.set(
+          'n',
+          '<leader>ws',
+          require('telescope.builtin').lsp_dynamic_workspace_symbols,
+          { desc = '[W]orkspace [S]ymbols' }
+        )
       else
         keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efinition' }) -- show lsp definitions
         keymap.set('n', 'gr', vim.lsp.buf.references, { desc = '[G]o to [R]eferences' })
@@ -94,8 +133,8 @@ return {
       opts.desc = 'Go to next diagnostic'
       keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
-      opts.desc = 'Show documentation for what is under cursor'
-      keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+      -- opts.desc = 'Show documentation for what is under cursor'
+      -- keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
       opts.desc = 'Restart LSP'
       keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts)

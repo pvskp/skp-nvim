@@ -129,4 +129,9 @@ function _G.qftf(info)
   return ret
 end
 
+-- vim.api.nvim_set_hl(0, 'ColorColumn', {
+--   fg = 'None',
+--   bg = 'NvimDarkGrey3',
+-- })
+
 vim.o.qftf = '{info -> v:lua._G.qftf(info)}'
