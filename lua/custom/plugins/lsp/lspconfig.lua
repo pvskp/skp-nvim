@@ -19,14 +19,6 @@ return {
 
     vim.diagnostic.config { float = { border = _border } }
 
-    -- -- Change the Diagnostic symbols in the sign column (gutter)
-    -- local signs = {
-    --   Error = ' ',
-    --   Warn = ' ',
-    --   Hint = '󰠠 ',
-    --   Info = ' ',
-    -- }
-
     local signs = Symbols.diagnostics
 
     for type, icon in pairs(signs) do

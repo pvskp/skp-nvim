@@ -1,11 +1,12 @@
 local M = {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.5',
+  tag = '0.1.6',
   -- cmd = 'Telescope',
   lazy = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
+    'BurntSushi/ripgrep',
   },
 }
 
@@ -89,9 +90,18 @@ function M.config()
   -- }
 
   local git_files = function()
-    builtin.git_files(themes.get_dropdown {
+    builtin.git_files {
+      borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       previewer = false,
-    })
+      -- sorting_strategy = 'ascending', -- this is buggy for some reason
+      -- prompt_title = false,
+      results_title = false,
+      layout_config = {
+        width = 0.5,
+        height = 0.5,
+        prompt_position = 'bottom',
+      },
+    }
   end
 
   local fuzzy_in_file = function()
@@ -102,11 +112,18 @@ function M.config()
   end
 
   local search_buffers = function()
-    builtin.buffers(themes.get_dropdown {
+    builtin.buffers {
       ignore_current_buffer = true,
+      -- sorting_strategy = 'ascending',
       sort_lastused = true,
-      layout_config = {},
-    })
+      -- prompt_title = false,
+      results_title = false,
+      layout_config = {
+        width = 0.5,
+        height = 0.5,
+        prompt_position = 'bottom',
+      },
+    }
   end
 
   vim.keymap.set('n', '<leader>f', git_files, { desc = 'Find [F]iles' })
