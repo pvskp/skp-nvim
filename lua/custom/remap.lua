@@ -168,6 +168,8 @@ vim.api.nvim_set_keymap('v', '<leader>c', 'gc', opts)
 -- Toggle plugin on and off
 vim.api.nvim_set_keymap('n', '<C-t>', ':lua TogglePonPoff()<CR>', opts)
 
+vim.api.nvim_set_keymap('n', '<C-t>', ':lua ToggleTrueFalse()<CR>', opts)
+
 vim.api.nvim_set_keymap('v', '<C-t>', ':lua TogglePonPoffSelection()<CR>', opts)
 
 -- Spell

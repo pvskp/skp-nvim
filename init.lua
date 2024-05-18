@@ -8,140 +8,142 @@ require 'custom.utils'
 
 --<< colorschemes >>--
 
-spec(poff, 'colorscheme.github')
-spec(poff, 'colorscheme.gruvbox')
-spec(poff, 'colorscheme.base16')
-spec(poff, 'colorscheme.neosolarized')
-spec(poff, 'colorscheme.mellifluous')
-spec(poff, 'colorscheme.midnight')
-spec(poff, 'colorscheme.zenbones')
-spec(poff, 'colorscheme.minimal')
-spec(poff, 'colorscheme.vscode')
-spec(poff, 'colorscheme.tokyonight')
-spec(poff, 'colorscheme.aura')
-spec(poff, 'colorscheme.rose-pine')
-spec(pon, 'colorscheme.kanagawa')
-spec(poff, 'colorscheme.onedark')
-spec(poff, 'colorscheme.nord')
-spec(poff, 'colorscheme.moonlight')
-spec(poff, 'colorscheme.gruvbox-material')
-spec(poff, 'colorscheme.everforest')
-spec(poff, 'colorscheme.catppuccin')
-spec(poff, 'colorscheme.ayu')
-spec(poff, 'colorscheme.adwaita')
+spec(false, 'colorscheme.github')
+spec(false, 'colorscheme.gruvbox')
+spec(false, 'colorscheme.base16')
+spec(false, 'colorscheme.neosolarized')
+spec(false, 'colorscheme.mellifluous')
+spec(false, 'colorscheme.midnight')
+spec(false, 'colorscheme.zenbones')
+spec(false, 'colorscheme.minimal')
+spec(false, 'colorscheme.vscode')
+spec(true, 'colorscheme.tokyonight')
+spec(false, 'colorscheme.aura')
+spec(false, 'colorscheme.rose-pine')
+spec(false, 'colorscheme.kanagawa')
+spec(false, 'colorscheme.onedark')
+spec(false, 'colorscheme.nord')
+spec(false, 'colorscheme.moonlight')
+spec(false, 'colorscheme.gruvbox-material')
+spec(false, 'colorscheme.everforest')
+spec(false, 'colorscheme.catppuccin')
+spec(false, 'colorscheme.ayu')
+spec(false, 'colorscheme.adwaita')
+-- vim.cmd [[colorscheme default]]
 
 --<< LSP related >>--
 
-spec(pon, 'lsp.treesiter') -- love and hate relationship with this one
-spec(pon, 'lsp.nvim-lint') -- linting
-spec(pon, 'lsp.neodev') -- offers completion to neovim functions
-spec(pon, 'lsp.navbuddy') -- allow to navigate between symbols in a easir way
-spec(pon, 'lsp.luasnip') -- snippets
-spec(pon, 'lsp.lspconfig')
-spec(pon, 'lsp.conform') -- formatter
-spec(poff, 'lsp.commentary')
-spec(pon, 'lsp.cmp') -- completion
-spec(poff, 'lsp.rainbow-delimiters') -- show matching delimiters
-spec(poff, 'lsp.outline')
-spec(poff, 'lsp.lsp-saga')
+spec(true, 'lsp.treesiter') -- love and hate relationship with this one
+spec(true, 'lsp.nvim-lint') -- linting
+spec(true, 'lsp.neodev') -- offers completion to neovim functions
+spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easir way
+spec(true, 'lsp.luasnip') -- snippets
+spec(true, 'lsp.lspconfig')
+spec(true, 'lsp.conform') -- formatter
+spec(false, 'lsp.commentary')
+spec(true, 'lsp.cmp') -- completion
+spec(false, 'lsp.rainbow-delimiters') -- show matching delimiters
+spec(false, 'lsp.outline')
+spec(false, 'lsp.lsp-saga')
 
 --<< Language specific >>--
 
-spec(pon, 'languages.golang') -- go integration
-spec(pon, 'languages.helm')
+spec(true, 'languages.golang') -- go integration
+spec(true, 'languages.helm')
 
 --<< Mini library >>--
 
-spec(pon, 'mini.splitjoin')
-spec(poff, 'mini.notify')
-spec(pon, 'mini.files') -- minitree (best tree plugin)
+spec(true, 'mini.splitjoin')
+spec(false, 'mini.notify')
+spec(true, 'mini.hipatterns')
+spec(true, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
-spec(pon, 'git.lazygit') -- lazygit inside neovim
-spec(pon, 'git.fugitive') -- git integration
-spec(poff, 'git.neogit')
-spec(pon, 'git.gitsigns') -- show git signs on columnsign
-spec(poff, 'git.diffview')
-spec(poff, 'git.blame')
+spec(true, 'git.lazygit') -- lazygit inside neovim
+spec(true, 'git.fugitive') -- git integration
+spec(false, 'git.neogit')
+spec(true, 'git.gitsigns') -- show git signs on columnsign
+spec(false, 'git.diffview')
+spec(false, 'git.blame')
 
 --<< General >>--
 
-spec(pon, 'undotree') -- show undo tree
-spec(pon, 'trouble') -- cool quickfix list for LSP
-spec(pon, 'toggle-checkbox')
-spec(pon, 'tmux') -- tmux integration
-spec(pon, 'telescope') -- fuzzy finder
-spec(pon, 'surround') -- surround text with quotes, brackets, etc
-spec(pon, 'oil')
-spec(pon, 'neogen')
-spec(pon, 'neo-zoom') -- toggle zoom mode with a popup window
-spec(pon, 'markdown-preview')
-spec(pon, 'hop') -- jump to any word in the screen
-spec(pon, 'focus') -- auto-resize windows when switching buffers
-spec(pon, 'eyeliner') -- quick jump with f, F, t, T
-spec(pon, 'discord') -- rich presence
-spec(pon, 'btterm') -- this one is mine!!!!
-spec(pon, 'bigfile')
-spec(pon, 'autopairs')
-spec(pon, 'auto-session')
-spec(poff, 'wilder')
-spec(poff, 'which-key')
-spec(poff, 'vim-be-good')
-spec(poff, 'ufo') -- deal with folding in a better way
-spec(poff, 'tetris')
-spec(poff, 'spider')
-spec(poff, 'remote-containers')
-spec(poff, 'remote-containers')
-spec(poff, 'obsidian')
-spec(poff, 'nvim-tree')
-spec(poff, 'neoscroll')
-spec(poff, 'neo-tree')
-spec(poff, 'modes')
-spec(poff, 'lab')
-spec(poff, 'kubectl') -- kubectl integration
-spec(poff, 'kitty') -- kitty integration
-spec(poff, 'hawtkeys') -- show best keybindings to be mapped
-spec(poff, 'harpoon')
-spec(poff, 'hardtime')
-spec(poff, 'hardmode')
-spec(poff, 'flybuf')
-spec(poff, 'fakeclip')
-spec(poff, 'color-picker')
-spec(poff, 'cmdbuf')
+spec(true, 'undotree') -- show undo tree
+spec(true, 'trouble') -- cool quickfix list for LSP
+spec(true, 'toggle-checkbox')
+spec(true, 'tmux') -- tmux integration
+spec(true, 'telescope') -- fuzzy finder
+spec(true, 'surround') -- surround text with quotes, brackets, etc
+spec(true, 'oil')
+spec(true, 'neogen')
+spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
+spec(true, 'markdown-preview')
+spec(true, 'hop') -- jump to any word in the screen
+spec(true, 'focus') -- auto-resize windows when switching buffers
+spec(true, 'eyeliner') -- quick jump with f, F, t, T
+spec(true, 'discord') -- rich presence
+spec(true, 'btterm') -- this one is mine!!!!
+spec(true, 'bigfile')
+spec(true, 'autopairs')
+spec(true, 'auto-session')
+spec(false, 'wilder')
+spec(false, 'which-key')
+spec(false, 'vim-be-good')
+spec(false, 'ufo') -- deal with folding in a better way
+spec(false, 'tetris')
+spec(false, 'spider')
+spec(false, 'remote-containers')
+spec(false, 'remote-containers')
+spec(false, 'obsidian')
+spec(false, 'nvim-tree')
+spec(false, 'neoscroll')
+spec(false, 'neo-tree')
+spec(false, 'modes')
+spec(false, 'lab')
+spec(false, 'kubectl') -- kubectl integration
+spec(false, 'kitty') -- kitty integration
+spec(false, 'hawtkeys') -- show best keybindings to be mapped
+spec(false, 'harpoon')
+spec(false, 'hardtime')
+spec(false, 'hardmode')
+spec(false, 'flybuf')
+spec(false, 'fakeclip')
+spec(false, 'color-picker')
+spec(false, 'cmdbuf')
 
 --<< AI >>--
 
-spec(poff, 'ai.codeium')
-spec(poff, 'ai.gp')
-spec(poff, 'ai.chatgpt')
-spec(poff, 'ai.copilot')
+spec(true, 'ai.codeium')
+spec(false, 'ai.gp')
+spec(false, 'ai.chatgpt')
+spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(pon, 'ui.nvim-bqf')
-spec(pon, 'ui.lualine') -- statusline
-spec(pon, 'ui.indentlines') -- show indent lines
-spec(pon, 'ui.illuminate')
-spec(pon, 'ui.fidget') -- cool LSP notification
-spec(pon, 'ui.dressing') -- offers better ui for some neovim commands
-spec(pon, 'ui.devicons')
-spec(pon, 'ui.colorizer') -- color preview
-spec(pon, 'ui.barbecue') -- shows the current symbol and its parents
-spec(poff, 'ui.virt-column')
-spec(poff, 'ui.twilight')
-spec(poff, 'ui.transparent')
-spec(poff, 'ui.sunglasses')
-spec(poff, 'ui.netrw')
-spec(poff, 'ui.headlines')
-spec(poff, 'ui.bufferline')
-spec(poff, 'ui.alpha') -- start dashboard
+spec(true, 'ui.nvim-bqf')
+spec(true, 'ui.lualine') -- statusline
+spec(true, 'ui.indentlines') -- show indent lines
+spec(true, 'ui.illuminate')
+spec(true, 'ui.fidget') -- cool LSP notification
+spec(true, 'ui.dressing') -- offers better ui for some neovim commands
+spec(true, 'ui.devicons')
+spec(true, 'ui.colorizer') -- color preview
+spec(true, 'ui.barbecue') -- shows the current symbol and its parents
+spec(false, 'ui.virt-column')
+spec(false, 'ui.twilight')
+spec(false, 'ui.transparent')
+spec(false, 'ui.sunglasses')
+spec(false, 'ui.netrw')
+spec(false, 'ui.headlines')
+spec(false, 'ui.bufferline')
+spec(false, 'ui.alpha') -- start dashboard
 
 --<< Lualine integrations >>--
 
-spec(pon, 'ui.lualine.battery')
-spec(pon, 'ui.lualine.copilot')
-spec(pon, 'ui.lualine.clock')
+spec(true, 'ui.lualine.battery')
+spec(true, 'ui.lualine.copilot')
+spec(true, 'ui.lualine.clock')
 
 -- Loads all with lazy
 require 'custom.lazy'
