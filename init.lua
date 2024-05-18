@@ -7,8 +7,7 @@ require 'custom.set'
 require 'custom.utils'
 
 --<< colorschemes >>--
-
-spec(false, 'colorscheme.github')
+spec(true, 'colorscheme.github')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.neosolarized')
@@ -17,7 +16,7 @@ spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.zenbones')
 spec(false, 'colorscheme.minimal')
 spec(false, 'colorscheme.vscode')
-spec(true, 'colorscheme.tokyonight')
+spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.kanagawa')
