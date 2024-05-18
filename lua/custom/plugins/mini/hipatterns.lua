@@ -1,6 +1,7 @@
 return {
   'echasnovski/mini.hipatterns',
-  lazy = false,
+  event = 'VeryLazy',
+  -- lazy = false,
   version = false,
   config = function()
     local hipatterns = require 'mini.hipatterns'
@@ -14,7 +15,7 @@ return {
     vim.api.nvim_set_hl(
       0,
       'FalseHighlighGroup',
-      { fg = 'gray', bg = 'None', bold = true, italic = false }
+      { fg = 'red', bg = 'None', bold = true, italic = false }
     )
 
     hipatterns.setup {
