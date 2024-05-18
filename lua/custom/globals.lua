@@ -47,18 +47,18 @@ end
 Symbols = {
   diagnostics = {
     Error = '󱎶 ',
-    Warn = ' ',
-    Hint = '',
+    Warn = '󰂚 ',
+    Hint = ' ',
     Info = '󰓹 ',
   },
   changes = {
-    Added = ' ',
-    Removed = ' ',
+    Added = ' ',
+    Removed = ' ',
     Modified = '󰜥 ',
   },
   telescope = {
-    prompt_prefix = '󰁔 ',
-    selection_caret = '󰃚 ',
+    prompt_prefix = ' ',
+    selection_caret = '󰜴 ',
   },
 }
 
