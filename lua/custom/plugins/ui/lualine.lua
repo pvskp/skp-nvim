@@ -10,6 +10,31 @@ return {
       color = {},
     }
 
+    local copilot_section = {}
+    if pcall(require, 'copilot') then
+      copilot_section = {
+        'copilot',
+        -- Default values
+        symbols = {
+          status = {
+            icons = {
+              enabled = ' ',
+              disabled = ' ',
+              warning = ' ',
+              unknown = ' ',
+            },
+            hl = {
+              enabled = '#50FA7B',
+              disabled = '#6272A4',
+              warning = '#FFB86C',
+              unknown = '#FF5555',
+            },
+          },
+        },
+        show_colors = true,
+        show_loading = true,
+      }
+    end
     require('lualine').setup {
       options = {
         icons_enabled = USE_DEVICONS,
@@ -83,31 +108,7 @@ return {
           },
         },
         lualine_x = {},
-        lualine_y = {
-          {
-            'copilot',
-            -- Default values
-            symbols = {
-              status = {
-                icons = {
-                  enabled = ' ',
-                  disabled = ' ',
-                  warning = ' ',
-                  unknown = ' ',
-                },
-                hl = {
-                  enabled = '#50FA7B',
-                  disabled = '#6272A4',
-                  warning = '#FFB86C',
-                  unknown = '#FF5555',
-                },
-              },
-            },
-            show_colors = true,
-            show_loading = true,
-          },
-          -- "progress",
-        },
+        lualine_y = { copilot_section },
         lualine_z = { nvimbattery, 'ctime' },
       },
       inactive_sections = {

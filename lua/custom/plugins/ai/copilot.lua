@@ -4,6 +4,7 @@ return {
   cmd = 'Copilot',
   dependencies = {
     'zbirenbaum/copilot-cmp',
+    'AndreM222/copilot-lualine',
     {
       'CopilotC-Nvim/CopilotChat.nvim',
       branch = 'canary',

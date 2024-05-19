@@ -141,7 +141,6 @@ spec(false, 'ui.alpha') -- start dashboard
 --<< Lualine integrations >>--
 
 spec(true, 'ui.lualine.battery')
-spec(true, 'ui.lualine.copilot')
 spec(true, 'ui.lualine.clock')
 
 -- Loads all with lazy
