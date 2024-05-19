@@ -7,6 +7,7 @@ local M = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
     'BurntSushi/ripgrep',
+    'ThePrimeagen/git-worktree.nvim',
   },
 }
 
@@ -134,6 +135,10 @@ function M.config()
   vim.keymap.set('n', '<leader>/', fuzzy_in_file, { desc = 'Fuzzy in file' })
 
   require('telescope').load_extension 'ui-select'
+  require('telescope').load_extension 'git_worktree'
+  local ext = require('telescope').extensions
+  vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
+  vim.keymap.set('n', '<leader>,', ext.git_worktree.create_git_worktree, {})
 end
 
 return M

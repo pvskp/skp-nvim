@@ -90,12 +90,13 @@ return {
           require('telescope.builtin').lsp_document_symbols,
           { desc = '[D]ocument [S]ymbols' }
         )
-        keymap.set(
-          'n',
-          '<leader>ws',
-          require('telescope.builtin').lsp_dynamic_workspace_symbols,
-          { desc = '[W]orkspace [S]ymbols' }
-        )
+
+        -- keymap.set(
+        --   'n',
+        --   '<leader>ws',
+        --   require('telescope.builtin').lsp_dynamic_workspace_symbols,
+        --   { desc = '[W]orkspace [S]ymbols' }
+        -- )
       else
         keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efinition' }) -- show lsp definitions
         keymap.set('n', 'gr', vim.lsp.buf.references, { desc = '[G]o to [R]eferences' })
