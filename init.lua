@@ -7,7 +7,7 @@ require 'custom.set'
 require 'custom.utils'
 
 --<< colorschemes >>--
-spec(true, 'colorscheme.github')
+spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.neosolarized')
@@ -26,7 +26,7 @@ spec(false, 'colorscheme.moonlight')
 spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
-spec(false, 'colorscheme.ayu')
+spec(true, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
 -- vim.cmd [[colorscheme default]]
 
@@ -120,6 +120,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
+spec(true, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
@@ -131,7 +132,6 @@ spec(true, 'ui.colorizer') -- color preview
 spec(true, 'ui.barbecue') -- shows the current symbol and its parents
 spec(false, 'ui.virt-column')
 spec(false, 'ui.twilight')
-spec(false, 'ui.transparent')
 spec(false, 'ui.sunglasses')
 spec(false, 'ui.netrw')
 spec(false, 'ui.headlines')
