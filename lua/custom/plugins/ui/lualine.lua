@@ -4,7 +4,10 @@ return {
   config = function()
     local nvimbattery = {
       function()
-        local _, result = pcall(require('battery').get_status_line)
+        local ok, result = pcall(require('battery').get_status_line)
+        if not ok then
+          return {}
+        end
         return result
       end,
       color = {},
