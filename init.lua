@@ -7,7 +7,7 @@ require 'custom.set'
 require 'custom.utils'
 
 --<< colorschemes >>--
-spec(true, 'colorscheme.ayu')
+spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.zenbones')
 spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyonight')
@@ -25,7 +25,7 @@ spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
-spec(false, 'colorscheme.base16')
+spec(true, 'colorscheme.base16')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.adwaita')
 -- vim.cmd [[colorscheme default]]
@@ -38,6 +38,7 @@ spec(true, 'lsp.neodev') -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easir way
 spec(true, 'lsp.luasnip') -- snippets
 spec(true, 'lsp.lspconfig')
+spec(true, 'lsp.lsp_signature')
 spec(true, 'lsp.conform') -- formatter
 spec(false, 'lsp.commentary')
 spec(true, 'lsp.cmp') -- completion
@@ -49,6 +50,7 @@ spec(false, 'lsp.lsp-saga')
 
 spec(true, 'languages.golang') -- go integration
 spec(true, 'languages.helm')
+spec(true, 'languages.markdown')
 
 --<< Mini library >>--
 
@@ -99,6 +101,7 @@ spec(false, 'nvim-tree')
 spec(false, 'neoscroll')
 spec(false, 'neo-tree')
 spec(false, 'modes')
+spec(true, 'modicator')
 spec(false, 'lab')
 spec(false, 'kubectl') -- kubectl integration
 spec(false, 'kitty') -- kitty integration
@@ -120,7 +123,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(true, 'ui.transparent')
+spec(false, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
@@ -140,7 +143,7 @@ spec(false, 'ui.alpha') -- start dashboard
 
 --<< Lualine integrations >>--
 
-spec(true, 'ui.lualine.battery')
+spec(false, 'ui.lualine.battery')
 spec(true, 'ui.lualine.clock')
 
 -- Loads all with lazy
