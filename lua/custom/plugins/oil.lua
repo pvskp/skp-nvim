@@ -62,7 +62,7 @@ return {
       padding = 8,
       max_width = 0,
       max_height = 0,
-      border = 'single',
+      border = Borders.simple,
       win_options = {
         winblend = 0,
       },

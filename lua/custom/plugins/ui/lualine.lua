@@ -72,7 +72,7 @@ return {
         lualine_b = {
           {
             'branch',
-            icon = ' ',
+            icon = { Symbols.lualine.branch, color = { fg = 'orange' } },
           },
           {
             'diff',

@@ -4,19 +4,13 @@ P = function(v)
 end
 
 LAZY_PLUGIN_SPEC = {}
-pon = true
-poff = false
 
--- Função para alternar "true" para "false" e vice-versa
 function ToggleTrueFalse()
-  -- Pega a linha atual
   local line = vim.api.nvim_get_current_line()
-  -- Alterna "true" para "false" e vice-versa
   local new_line = line
-    :gsub('true', 'TOGGLE_PLACEHOLDER')
-    :gsub('false', 'true')
-    :gsub('TOGGLE_PLACEHOLDER', 'false')
-  -- Define a linha atual com o novo valor
+      :gsub('true', 'TOGGLE_PLACEHOLDER')
+      :gsub('false', 'true')
+      :gsub('TOGGLE_PLACEHOLDER', 'false')
   vim.api.nvim_set_current_line(new_line)
 end
 
@@ -70,13 +64,30 @@ Symbols = {
     Modified = '󰜥 ',
   },
   telescope = {
-    prompt_prefix = ' ',
-    selection_caret = '󰜴 ',
+    prompt_prefix = '  ',
+    selection_caret = { icon = ' 󱈛 ', color = '#ff9e3b' },
   },
+  lualine = {
+    branch = ''
+  }
 }
 
-function Highlight_word(word, color)
-  local group_name = 'Highlight' .. word
-  vim.cmd(string.format('highlight %s guifg=%s', group_name, color))
-  vim.cmd(string.format('syntax match %s /\\<%s\\>/', group_name, word))
+local function define_borders(border)
+  local r = { simple = border }
+  if border == 'single' then
+    r.borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
+    r.borderchars_alt = { '┌', '─', '┐', '│', '┘', '─', '└', '│' }
+  elseif border == "double" then
+    r.borderchars = { '═', '║', '═', '║', '╔', '╗', '╝', '╚' }
+    r.borderchars_alt = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
+  elseif border == "rounded" then
+    r.borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+    r.borderchars_alt = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' }
+  else
+    r.borderchars = {}
+    r.borderchars_alt = {}
+  end
+  return r
 end
+
+Borders = define_borders('single')

@@ -42,7 +42,7 @@ function M.config()
 
   telescope.setup {
     defaults = {
-      borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+      borderchars = Borders.borderchars,
       mappings = {
         i = {
           ['<Esc>'] = actions.close,
@@ -50,7 +50,7 @@ function M.config()
       },
       buffer_previewer_maker = new_maker,
       prompt_prefix = Symbols.telescope.prompt_prefix,
-      selection_caret = Symbols.telescope.selection_caret,
+      selection_caret = Symbols.telescope.selection_caret.icon,
     },
     pickers = {
       colorscheme = {
@@ -79,7 +79,7 @@ function M.config()
     },
   }
 
-  vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = '#ff9e3b' })
+  vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
   vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
 
   -- local ivy_opts = {
@@ -92,7 +92,7 @@ function M.config()
 
   local git_files = function()
     builtin.git_files {
-      borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+      borderchars = Borders.borderchars,
       previewer = false,
       -- sorting_strategy = 'ascending', -- this is buggy for some reason
       -- prompt_title = false,

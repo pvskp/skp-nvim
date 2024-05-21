@@ -28,19 +28,17 @@ return {
 
     -- General options
     options = {
-      -- Whether to delete permanently or move into module-specific trash
       permanent_delete = true,
-      -- Whether to use for editing directories
       use_as_default_explorer = true,
     },
 
     windows = {
-      max_number = 4,
+      max_number = 5,
       preview = false,
       width_focus = 50,
-      width_nofocus = 15,
+      width_nofocus = 30,
       width_preview = 25,
     },
   },
-  config = true, -- do require("mini.files").setup()
+  config = true,
 }
