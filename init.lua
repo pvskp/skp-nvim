@@ -48,7 +48,7 @@ spec(false, 'lsp.lsp-saga')
 
 --<< Language specific >>--
 
-spec(true, 'languages.golang') -- go integration
+spec(false, 'languages.golang') -- go integration
 spec(true, 'languages.helm')
 spec(true, 'languages.markdown')
 
