@@ -1,6 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  pin = true,
+  lazy = false,
+  pin = false,
   dependencies = {
     {
       'nvim-treesitter/nvim-treesitter-textobjects', -- <- this is amazing
@@ -36,8 +37,8 @@ return {
         },
         selection_modes = {
           ['@parameter.outer'] = 'v', -- charwise
-          ['@function.outer'] = 'V', -- linewise
-          ['@class.outer'] = 'V', -- blockwise
+          ['@function.outer'] = 'V',  -- linewise
+          ['@class.outer'] = 'V',     -- blockwise
         },
         include_surrounding_whitespace = true,
       },
