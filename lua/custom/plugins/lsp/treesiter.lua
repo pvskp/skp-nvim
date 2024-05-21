@@ -16,7 +16,7 @@ return {
     highlight = {
       enable = true,
       disable = { 'markdown', 'vimdoc', 'help', 'helm', 'gitcommit', 'diff' },
-      additional_vim_regex_highlighting = false,
+      additional_vim_regex_highlighting = true,
       indent = {
         enable = false,
         -- disable = {},
