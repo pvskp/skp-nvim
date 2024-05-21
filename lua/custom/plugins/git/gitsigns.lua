@@ -1,6 +1,9 @@
 return {
   'lewis6991/gitsigns.nvim',
   event = 'VeryLazy',
+  keys = {
+    { '-', '<cmd>Gitsigns preview_hunk<CR>', desc = 'Preview hunk' },
+  },
   opts = {
     signs = {
       add = { text = '│' },
