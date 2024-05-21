@@ -55,6 +55,9 @@ return {
     -- default_file_explorer = false,
     skip_confirm_for_simple_edits = true,
     use_default_keymaps = false,
+    columns = {
+      "icon",
+    },
     float = {
       padding = 8,
       max_width = 0,
