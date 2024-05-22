@@ -43,7 +43,7 @@ return {
     -- vim.cmd([[colorscheme base16-black-metal-venom]])
     -- vim.cmd([[colorscheme base16-black-metal]])
     -- vim.cmd([[colorscheme base16-brewer]])
-    vim.cmd [[colorscheme base16-bright]]
+    -- vim.cmd [[colorscheme base16-bright]]
     -- vim.cmd([[colorscheme base16-brogrammer]])
     -- vim.cmd([[colorscheme base16-brushtrees-dark]])
     -- vim.cmd([[colorscheme base16-brushtrees]])
@@ -55,7 +55,7 @@ return {
     -- vim.cmd([[colorscheme base16-cupcake]])
     -- vim.cmd([[colorscheme base16-cupertino]])
     -- vim.cmd([[colorscheme base16-darktooth]])
-    -- vim.cmd([[colorscheme base16-default-dark]])
+    vim.cmd [[colorscheme base16-default-dark]]
     -- vim.cmd([[colorscheme base16-default-light]])
     -- vim.cmd([[colorscheme base16-darcula]])
     -- vim.cmd([[colorscheme base16-dracula]])

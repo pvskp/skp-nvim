@@ -1,15 +1,15 @@
 return {
-  "stevearc/dressing.nvim",
+  'stevearc/dressing.nvim',
   lazy = false,
   opts = {
     input = {
       enabled = true,
-      default_prompt = "Input:",
-      title_pos = "left",
+      default_prompt = 'Input:',
+      title_pos = 'left',
       insert_only = true,
       start_in_insert = true,
       border = Borders.simple,
-      relative = "cursor",
+      relative = 'cursor',
       prefer_width = 40,
       width = nil,
       max_width = { 140, 0.9 },
@@ -18,20 +18,20 @@ return {
       win_options = {
         wrap = false,
         list = true,
-        listchars = "precedes:…,extends:…",
+        listchars = 'precedes:…,extends:…',
         sidescrolloff = 0,
       },
 
       mappings = {
         n = {
-          ["<Esc>"] = "Close",
-          ["<CR>"] = "Confirm",
+          ['<Esc>'] = 'Close',
+          ['<CR>'] = 'Confirm',
         },
         i = {
-          ["<C-c>"] = "Close",
-          ["<CR>"] = "Confirm",
-          ["<Up>"] = "HistoryPrev",
-          ["<Down>"] = "HistoryNext",
+          ['<C-c>'] = 'Close',
+          ['<CR>'] = 'Confirm',
+          ['<Up>'] = 'HistoryPrev',
+          ['<Down>'] = 'HistoryNext',
         },
       },
       override = function(conf)
@@ -42,7 +42,7 @@ return {
     },
     select = {
       enabled = false,
-      backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
+      backend = { 'telescope', 'fzf_lua', 'fzf', 'builtin', 'nui' },
       trim_prompt = true,
       telescope = nil,
       fzf = {
@@ -53,15 +53,15 @@ return {
       },
       fzf_lua = {},
       nui = {
-        position = "50%",
+        position = '50%',
         size = nil,
-        relative = "editor",
+        relative = 'editor',
         border = {
-          style = "single",
+          style = Borders.simple,
         },
         buf_options = {
           swapfile = false,
-          filetype = "DressingSelect",
+          filetype = 'DressingSelect',
         },
         win_options = {
           winblend = 0,
@@ -74,11 +74,11 @@ return {
       builtin = {
         show_numbers = true,
         border = Borders.simple,
-        relative = "editor",
+        relative = 'editor',
         buf_options = {},
         win_options = {
           cursorline = false,
-          cursorlineopt = "both",
+          cursorlineopt = 'both',
         },
         width = nil,
         max_width = { 140, 0.8 },
@@ -87,9 +87,9 @@ return {
         max_height = 0.9,
         min_height = { 10, 0.2 },
         mappings = {
-          ["<Esc>"] = "Close",
-          ["<C-c>"] = "Close",
-          ["<CR>"] = "Confirm",
+          ['<Esc>'] = 'Close',
+          ['<C-c>'] = 'Close',
+          ['<CR>'] = 'Confirm',
         },
         override = function(conf)
           return conf
