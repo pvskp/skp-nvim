@@ -11,9 +11,9 @@ return {
   },
   config = function()
     vim.lsp.handlers['textDocument/hover'] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
+      vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
     vim.lsp.handlers['textDocument/signatureHelp'] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
 
     vim.diagnostic.config { float = { border = Borders.simple } }
 
@@ -206,7 +206,7 @@ return {
         'golangci-lint',
         'gopls',
         'isort',
-        'json-lsp jsonls',
+        'jsonls',
         'jsonlint',
         'luacheck',
         'prettier',
@@ -214,7 +214,7 @@ return {
         'pylint',
         'pyright',
         'ruff',
-        'ruff-lsp ruff_lsp',
+        'ruff_lsp',
         'stylua',
         'terraformls', -- terraformls
         'tflint',
