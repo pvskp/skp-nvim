@@ -1,4 +1,4 @@
 return {
-	"alec-gibson/nvim-tetris",
-	lazy = false,
+  'alec-gibson/nvim-tetris',
+  lazy = false,
 }

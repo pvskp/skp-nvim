@@ -1,3 +1,3 @@
 return {
-	"archibate/lualine-time",
+  'archibate/lualine-time',
 }

@@ -1,4 +1,4 @@
 return {
-	"rottencandy/vimkubectl",
-	lazy = false,
+  'rottencandy/vimkubectl',
+  lazy = false,
 }

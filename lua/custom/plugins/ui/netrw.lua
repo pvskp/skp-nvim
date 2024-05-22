@@ -1,15 +1,15 @@
 return {
-	"prichrd/netrw.nvim",
-	lazy = "Explore",
-	opts = {
-		-- Put your configuration here, or leave the object empty to take the default
-		-- configuration.
-		icons = {
-			symlink = "", -- Symlink icon (directory and file)
-			directory = "", -- Directory icon
-			file = "", -- File icon
-		},
-		use_devicons = false, -- Uses nvim-web-devicons if true, otherwise use the file icon specified above
-		mappings = {}, -- Custom key mappings
-	},
+  'prichrd/netrw.nvim',
+  lazy = 'Explore',
+  opts = {
+    -- Put your configuration here, or leave the object empty to take the default
+    -- configuration.
+    icons = {
+      symlink = '', -- Symlink icon (directory and file)
+      directory = '', -- Directory icon
+      file = '', -- File icon
+    },
+    use_devicons = false, -- Uses nvim-web-devicons if true, otherwise use the file icon specified above
+    mappings = {}, -- Custom key mappings
+  },
 }

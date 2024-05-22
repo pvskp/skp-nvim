@@ -1,4 +1,4 @@
 return {
-  "fladson/vim-kitty",
+  'fladson/vim-kitty',
   lazy = false,
 }

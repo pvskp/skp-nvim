@@ -1,4 +1,4 @@
 return {
-	"sindrets/diffview.nvim",
-	lazy = false,
+  'sindrets/diffview.nvim',
+  lazy = false,
 }

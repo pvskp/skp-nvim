@@ -1,5 +1,5 @@
 return {
-	"lukas-reineke/headlines.nvim",
-	lazy = false,
-	opts = {},
+  'lukas-reineke/headlines.nvim',
+  lazy = false,
+  opts = {},
 }

@@ -79,7 +79,11 @@ function M.config()
     },
   }
 
-  vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
+  vim.api.nvim_set_hl(
+    0,
+    'TelescopeSelectionCaret',
+    { fg = Symbols.telescope.selection_caret.color }
+  )
   vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
 
   -- local ivy_opts = {

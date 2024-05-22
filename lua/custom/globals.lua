@@ -72,6 +72,8 @@ Symbols = {
   },
 }
 
+USE_DEVICONS = true
+
 local function define_borders(border)
   local r = { simple = border }
   if border == 'single' then

@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.notify",
+  'echasnovski/mini.notify',
   version = false,
   lazy = false,
   opts = {
@@ -27,7 +27,7 @@ return {
     window = {
       -- Floating window config
       config = {
-        anchor = "NE",
+        anchor = 'NE',
         -- row = 31,
         border = Borders.simple,
       },

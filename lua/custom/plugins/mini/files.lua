@@ -3,7 +3,7 @@ return {
   version = '*',
   keys = {
     { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
-    { '<c-e>',     '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' }
+    { '<c-e>', '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
   },
   opts = {
     content = {
