@@ -8,9 +8,9 @@ LAZY_PLUGIN_SPEC = {}
 function ToggleTrueFalse()
   local line = vim.api.nvim_get_current_line()
   local new_line = line
-      :gsub('true', 'TOGGLE_PLACEHOLDER')
-      :gsub('false', 'true')
-      :gsub('TOGGLE_PLACEHOLDER', 'false')
+    :gsub('true', 'TOGGLE_PLACEHOLDER')
+    :gsub('false', 'true')
+    :gsub('TOGGLE_PLACEHOLDER', 'false')
   vim.api.nvim_set_current_line(new_line)
 end
 
@@ -68,8 +68,8 @@ Symbols = {
     selection_caret = { icon = ' 󱈛 ', color = '#ff9e3b' },
   },
   lualine = {
-    branch = ''
-  }
+    branch = '',
+  },
 }
 
 local function define_borders(border)
@@ -77,11 +77,11 @@ local function define_borders(border)
   if border == 'single' then
     r.borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
     r.borderchars_alt = { '┌', '─', '┐', '│', '┘', '─', '└', '│' }
-  elseif border == "double" then
+  elseif border == 'double' then
     r.borderchars = { '═', '║', '═', '║', '╔', '╗', '╝', '╚' }
-    r.borderchars_alt = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
-  elseif border == "rounded" then
-    r.borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+    r.borderchars_alt = { '╔', '═', '╗', '║', '╝', '═', '╚', '║' }
+  elseif border == 'rounded' then
+    r.borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' }
     r.borderchars_alt = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' }
   else
     r.borderchars = {}
@@ -90,4 +90,4 @@ local function define_borders(border)
   return r
 end
 
-Borders = define_borders('single')
+Borders = define_borders 'rounded'
