@@ -25,9 +25,10 @@ spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
-spec(true, 'colorscheme.base16')
+spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.adwaita')
+spec(true, 'colorscheme.hybrid')
 -- vim.cmd [[colorscheme default]]
 
 --<< LSP related >>--
