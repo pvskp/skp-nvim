@@ -9,7 +9,17 @@ return {
   },
   event = { 'BufReadPost' },
   opts = {
-    ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'python', 'go' },
+    ensure_installed = {
+      'c',
+      'lua',
+      'vim',
+      'vimdoc',
+      'query',
+      'python',
+      'go',
+      'markdown',
+      'markdown_inline',
+    },
     sync_install = false,
     auto_install = true,
     ignore_install = {},

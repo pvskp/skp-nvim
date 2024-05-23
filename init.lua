@@ -22,14 +22,14 @@ spec(false, 'colorscheme.mellifluous')
 spec(false, 'colorscheme.kanagawa')
 spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.gruvbox')
-spec(false, 'colorscheme.github')
+spec(true, 'colorscheme.github')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.adwaita')
 spec(false, 'colorscheme.hybrid')
-spec(true, 'colorscheme.cyberdream')
+spec(false, 'colorscheme.cyberdream')
 
 -- vim.cmd [[colorscheme default]]
 
@@ -128,7 +128,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(true, 'ui.transparent')
+spec(false, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines

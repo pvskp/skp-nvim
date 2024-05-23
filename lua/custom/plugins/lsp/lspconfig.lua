@@ -15,7 +15,10 @@ return {
     vim.lsp.handlers['textDocument/signatureHelp'] =
       vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
 
-    vim.diagnostic.config { float = { border = Borders.simple } }
+    vim.diagnostic.config {
+      virtual_text = false,
+      float = { border = Borders.simple },
+    }
 
     local signs = Symbols.diagnostics
 
