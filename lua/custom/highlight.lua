@@ -8,3 +8,7 @@ vim.cmd 'highlight TelescopeNormal guibg=NONE'
 vim.cmd 'highlight TelescopeBorder guibg=NONE'
 vim.cmd 'highlight TelescopeTitle guibg=NONE'
 -- vim.cmd 'highlight! link LazyGitFloat TelescopeResultsBorder'
+
+vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
+vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
+vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'

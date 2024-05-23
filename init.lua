@@ -9,7 +9,7 @@ require 'custom.utils'
 --<< colorschemes >>--
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.zenbones')
-spec(false, 'colorscheme.vscode')
+spec(true, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
@@ -27,7 +27,7 @@ spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.aura')
-spec(true, 'colorscheme.adwaita')
+spec(false, 'colorscheme.adwaita')
 spec(false, 'colorscheme.hybrid')
 -- vim.cmd [[colorscheme default]]
 
@@ -36,36 +36,36 @@ spec(false, 'colorscheme.hybrid')
 spec(true, 'lsp.treesiter') -- love and hate relationship with this one
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.neodev') -- offers completion to neovim functions
-spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easir way
+spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.luasnip') -- snippets
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.lsp_signature')
 spec(true, 'lsp.conform') -- formatter
-spec(false, 'lsp.commentary')
 spec(true, 'lsp.cmp') -- completion
 spec(false, 'lsp.rainbow-delimiters') -- show matching delimiters
 spec(false, 'lsp.outline')
 spec(false, 'lsp.lsp-saga')
+spec(false, 'lsp.commentary')
 
 --<< Language specific >>--
 
-spec(false, 'languages.golang') -- go integration
-spec(true, 'languages.helm')
 spec(true, 'languages.markdown')
+spec(true, 'languages.helm')
+spec(false, 'languages.golang') -- go integration
 
 --<< Mini library >>--
 
 spec(true, 'mini.splitjoin')
-spec(false, 'mini.notify')
 spec(true, 'mini.hipatterns')
 spec(true, 'mini.files') -- minitree (best tree plugin)
+spec(false, 'mini.notify')
 
 --<< Git integrations >>--
 
 spec(true, 'git.lazygit') -- lazygit inside neovim
+spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(false, 'git.neogit')
-spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(false, 'git.diffview')
 spec(false, 'git.blame')
 
@@ -73,13 +73,12 @@ spec(false, 'git.blame')
 
 spec(true, 'undotree') -- show undo tree
 spec(true, 'trouble') -- cool quickfix list for LSP
-spec(true, 'toggle-checkbox')
 spec(true, 'tmux') -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround') -- surround text with quotes, brackets, etc
-spec(false, 'oil')
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
+spec(true, 'modicator')
 spec(true, 'markdown-preview')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'focus') -- auto-resize windows when switching buffers
@@ -93,16 +92,17 @@ spec(false, 'wilder')
 spec(false, 'which-key')
 spec(false, 'vim-be-good')
 spec(false, 'ufo') -- deal with folding in a better way
+spec(false, 'toggle-checkbox')
 spec(false, 'tetris')
 spec(false, 'spider')
 spec(false, 'remote-containers')
 spec(false, 'remote-containers')
+spec(false, 'oil')
 spec(false, 'obsidian')
 spec(false, 'nvim-tree')
 spec(false, 'neoscroll')
 spec(false, 'neo-tree')
 spec(false, 'modes')
-spec(true, 'modicator')
 spec(false, 'lab')
 spec(false, 'kubectl') -- kubectl integration
 spec(false, 'kitty') -- kitty integration
@@ -144,8 +144,8 @@ spec(false, 'ui.alpha') -- start dashboard
 
 --<< Lualine integrations >>--
 
-spec(false, 'ui.lualine.battery')
 spec(true, 'ui.lualine.clock')
+spec(false, 'ui.lualine.battery')
 
 -- Loads all with lazy
 require 'custom.lazy'

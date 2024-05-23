@@ -49,5 +49,8 @@ return {
         vim.api.nvim_win_set_config(win_id, { border = Borders.simple })
       end,
     })
+    vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
+    vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
+    vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
   end,
 }

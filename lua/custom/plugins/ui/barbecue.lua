@@ -1,4 +1,3 @@
--- Provides hierarchi bar.
 return {
   'utilyre/barbecue.nvim',
   -- ft = { "yaml", "json" },
