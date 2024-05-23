@@ -9,7 +9,7 @@ require 'custom.utils'
 --<< colorschemes >>--
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.zenbones')
-spec(true, 'colorscheme.vscode')
+spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
@@ -29,6 +29,8 @@ spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.adwaita')
 spec(false, 'colorscheme.hybrid')
+spec(true, 'colorscheme.cyberdream')
+
 -- vim.cmd [[colorscheme default]]
 
 --<< LSP related >>--
@@ -57,6 +59,7 @@ spec(false, 'languages.golang') -- go integration
 
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.hipatterns')
+spec(true, 'mini.animate')
 spec(true, 'mini.files') -- minitree (best tree plugin)
 spec(false, 'mini.notify')
 
@@ -88,6 +91,7 @@ spec(true, 'btterm') -- this one is mine!!!!
 spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
+spec(true, 'ccc')
 spec(false, 'wilder')
 spec(false, 'which-key')
 spec(false, 'vim-be-good')
