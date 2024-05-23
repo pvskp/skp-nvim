@@ -92,4 +92,4 @@ local function define_borders(border)
   return r
 end
 
-Borders = define_borders 'rounded'
+Borders = define_borders 'single' -- single / double / rounded

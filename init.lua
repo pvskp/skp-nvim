@@ -12,7 +12,7 @@ spec(false, 'colorscheme.zenbones')
 spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
-spec(false, 'colorscheme.onedark')
+spec(true, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.neosolarized')
 spec(false, 'colorscheme.moonlight')
@@ -28,7 +28,7 @@ spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.adwaita')
-spec(true, 'colorscheme.hybrid')
+spec(false, 'colorscheme.hybrid')
 -- vim.cmd [[colorscheme default]]
 
 --<< LSP related >>--
@@ -124,7 +124,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(false, 'ui.transparent')
+spec(true, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines

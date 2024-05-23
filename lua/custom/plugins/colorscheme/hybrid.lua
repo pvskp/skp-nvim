@@ -21,5 +21,8 @@ return {
   config = function(_, opts)
     require('hybrid').setup(opts)
     vim.cmd.colorscheme 'hybrid'
+    vim.cmd 'highlight TelescopeNormal guibg=NONE'
+    vim.cmd 'highlight TelescopeBorder guibg=NONE'
+    vim.cmd 'highlight TelescopeTitle guibg=NONE'
   end,
 }
