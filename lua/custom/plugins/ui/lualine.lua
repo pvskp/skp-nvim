@@ -10,6 +10,8 @@ return {
         end
         return result
       end,
+
+      separator = { left = '' },
       color = {},
     }
 
@@ -34,6 +36,8 @@ return {
             },
           },
         },
+
+        separator = { right = '' },
         show_colors = true,
         show_loading = true,
       }
@@ -67,12 +71,27 @@ return {
           -- 		mac = "", -- e711
           -- 	},
           -- },
-          'mode',
+
+          {
+            'mode',
+            fmt = function(str)
+              return ' ' .. str
+            end,
+
+            color = { gui = 'bold' },
+            separator = { right = '' },
+          },
         },
         lualine_b = {
           {
             'branch',
             icon = { Symbols.lualine.branch, color = { fg = 'orange' } },
+            color = {
+              gui = 'bold',
+              fg = 'orange',
+              bg = 'NvimDarkGray2',
+            },
+            separator = { right = '' },
           },
           {
             'diff',
@@ -81,6 +100,8 @@ return {
               modified = Symbols.changes.Modified,
               removed = Symbols.changes.Removed,
             }, -- Changes the symbols used by the diff.
+            separator = { right = '' },
+            color = { bg = 'NvimDarkGray3' },
           },
           {
             'diagnostics',
@@ -90,14 +111,24 @@ return {
               warn = Symbols.diagnostics.Warn,
               error = Symbols.diagnostics.Error,
             },
+            separator = { right = '' },
           },
         },
         lualine_c = {
           '%=',
-          { 'filetype', icon_only = true },
+          {
+            'filetype',
+            icon_only = true,
+            separator = { left = '' },
+            color = {
+              gui = 'bold',
+              bg = 'NvimDarkGray3',
+            },
+          },
           {
             'filename',
             path = 1,
+            separator = { right = '' },
             symbols = {
               -- modified = '[+]', -- Text to show when the file is modified.
               -- readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
@@ -108,11 +139,21 @@ return {
               unnamed = '[No Name]', -- Text to show for unnamed buffers.
               newfile = ' ', -- Text to show for newly created file before first write
             },
+            color = {
+              gui = 'bold',
+              bg = 'NvimDarkGray3',
+              fg = 'white',
+            },
           },
         },
         lualine_x = {},
-        lualine_y = { copilot_section },
-        lualine_z = { nvimbattery, 'ctime' },
+        lualine_y = {
+          copilot_section,
+        },
+        lualine_z = {
+          nvimbattery,
+          'ctime',
+        },
       },
       inactive_sections = {
         lualine_a = {},
