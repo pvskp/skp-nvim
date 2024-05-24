@@ -87,7 +87,7 @@ spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'focus') -- auto-resize windows when switching buffers
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'discord') -- rich presence
-spec(true, 'btterm') -- this one is mine!!!!
+spec(false, 'btterm') -- this one is mine!!!!
 spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')

@@ -16,6 +16,18 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
   command = 'set filetype=terraform',
 })
 
+vim.api.nvim_create_autocmd({ 'TermOpen' }, {
+  group = vim.api.nvim_create_augroup('TermAutoCMD', { clear = true }),
+  pattern = '*',
+  command = 'startinsert',
+})
+
+vim.api.nvim_create_autocmd({ 'TermClose' }, {
+  group = vim.api.nvim_create_augroup('TermAutoCMD', { clear = true }),
+  pattern = '*',
+  command = '',
+})
+
 -- vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 --   group = vim.api.nvim_create_augroup('AnsibleFiletype', { clear = true }),
 --   pattern = '*.yaml.ansible',

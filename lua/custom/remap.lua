@@ -103,7 +103,10 @@ map('n', '<M-8>', '8gt')
 map('n', '<M-9>', '9gt')
 
 -- Terminal mode mappings
-map('t', '<M-a>', '<C-\\><C-n>')
+-- map('t', '<M-a>', '<C-\\><C-n>')
+map('t', '<C-x>', '<C-\\><C-n>')
+map('t', '<Esc>', '<C-\\><C-n>')
+
 map('t', '<M-j>', '<C-\\><C-n><C-w>j', { silent = true })
 map('t', '<M-k>', '<C-\\><C-n><C-w>k', { silent = true })
 map('t', '<M-l>', '<C-\\><C-n><C-w>l', { silent = true })
@@ -115,35 +118,6 @@ map('n', '<C-y>', ':%y+<CR>', { silent = true })
 -- Window zoom
 local window_zoomed = false
 local window_zoom_restore = {}
-
-local function toggle_zoom()
-  if window_zoomed then
-    -- Restore window
-    vim.cmd(window_zoom_restore.cmd)
-    window_zoomed = false
-  else
-    -- Store current window state
-    window_zoom_restore = {
-      cmd = 'resize '
-        .. vim.api.nvim_win_get_height(0)
-        .. '|vertical resize '
-        .. vim.api.nvim_win_get_width(0),
-      win = vim.api.nvim_get_current_win(),
-    }
-    -- Maximize window
-    vim.cmd 'resize | vertical resize'
-    window_zoomed = true
-  end
-end
-
-map('n', '<M-z>', toggle_zoom, { silent = true })
-map('t', '<M-z>', function()
-  vim.cmd 'stopinsert'
-  vim.defer_fn(function()
-    toggle_zoom()
-    vim.cmd 'startinsert'
-  end, 10)
-end, { silent = true })
 
 -- Execute last command
 map('n', '<leader>x', '@:', opts)
