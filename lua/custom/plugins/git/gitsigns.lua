@@ -14,15 +14,6 @@ return {
       untracked = { text = '┆' },
     },
 
-    -- signs = {
-    -- 	add = { text = " " },
-    -- 	change = { text = " " },
-    -- 	delete = { text = " " },
-    -- 	topdelete = { text = " " },
-    -- 	changedelete = { text = " " },
-    -- 	untracked = { text = "┆" },
-    -- },
-
     signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
@@ -60,7 +51,7 @@ return {
   config = function(_, opts)
     require('gitsigns').setup(opts)
     vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', {
-      fg = '#909090',
+      fg = '#4d4d4c',
       bg = 'NONE',
     })
   end,

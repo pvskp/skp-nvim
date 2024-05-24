@@ -4,6 +4,7 @@ local options = {
   smartcase = true,
   ignorecase = true, -- ignore case in search patterns
   number = true, -- the number of spaces inserted for each indentation
+  list = true,
 
   path = '.,,**',
 
@@ -18,7 +19,7 @@ local options = {
   cursorlineopt = 'number', -- highlight the current line
   colorcolumn = '101',
   signcolumn = 'yes',
-  numberwidth = 2, -- set number column width to 2 {default 4}
+  numberwidth = 3, -- set number column width to 2 {default 4}
   wrap = false,
   linebreak = true, -- companion to wrap, don't split words
   relativenumber = true, -- set relative numbered lines

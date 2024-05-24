@@ -12,7 +12,7 @@ return {
     attach_navic = true,
     create_autocmd = true,
     include_buftypes = { '' },
-    exclude_filetypes = { 'netrw', 'toggleterm' },
+    exclude_filetypes = { 'netrw', 'toggleterm', '' },
     modifiers = {
       dirname = ':~:.',
       basename = '',
