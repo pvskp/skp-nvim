@@ -15,6 +15,7 @@ local options = {
   --< UI >--
   cursorcolumn = false,
   cursorline = false, -- highlight the current line
+  cursorlineopt = 'number', -- highlight the current line
   colorcolumn = '101',
   signcolumn = 'yes',
   numberwidth = 2, -- set number column width to 2 {default 4}
