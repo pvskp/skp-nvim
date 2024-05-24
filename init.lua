@@ -128,7 +128,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(false, 'ui.transparent')
+spec(true, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
