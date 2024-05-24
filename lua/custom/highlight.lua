@@ -12,3 +12,11 @@ vim.cmd 'highlight TelescopeTitle guibg=NONE'
 vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
 vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
 vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
+
+vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', {
+  fg = Symbols.telescope.selection_caret.color,
+})
+
+vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', {
+  fg = Symbols.telescope.prompt_prefix.color,
+})

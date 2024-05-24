@@ -64,8 +64,14 @@ Symbols = {
     Modified = '󰜥 ',
   },
   telescope = {
-    prompt_prefix = '  ',
-    selection_caret = { icon = ' 󱈛 ', color = '#ff9e3b' },
+    prompt_prefix = {
+      icon = '  ',
+      color = '#ff1a3f',
+    },
+    selection_caret = {
+      icon = ' 󱈛 ',
+      color = '#3366e7',
+    },
   },
   lualine = {
     branch = '',
