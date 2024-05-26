@@ -103,7 +103,10 @@ return {
 
     cmp.setup.filetype({ 'conf', 'config', 'kitty', 'toml' }, {
       sources = {
-        { name = 'fonts', option = { space_filter = '-' } },
+        -- {
+        --   name = 'fonts',
+        --   option = { space_filter = '-' },
+        -- },
         { name = 'path' },
       },
     })
