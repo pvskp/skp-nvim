@@ -42,6 +42,7 @@ return {
         show_loading = true,
       }
     end
+
     require('lualine').setup {
       options = {
         icons_enabled = USE_DEVICONS,
@@ -63,15 +64,6 @@ return {
       },
       sections = {
         lualine_a = {
-          -- {
-          -- 	"fileformat",
-          -- 	symbols = {
-          -- 		unix = "󰻀",
-          -- 		dos = "", -- e70f
-          -- 		mac = "", -- e711
-          -- 	},
-          -- },
-
           {
             'mode',
             fmt = function(str)
@@ -85,10 +77,10 @@ return {
         lualine_b = {
           {
             'branch',
-            icon = { Symbols.lualine.branch, color = { fg = 'orange' } },
+            icon = { Symbols.lualine.branch, color = { fg = '#ba33c2' } },
             color = {
               gui = 'bold',
-              fg = 'orange',
+              fg = '#ba33c2',
               bg = 'NvimDarkGray2',
             },
             separator = { right = '' },
@@ -101,7 +93,10 @@ return {
               removed = Symbols.changes.Removed,
             }, -- Changes the symbols used by the diff.
             separator = { right = '' },
-            color = { bg = 'NvimDarkGray3' },
+            color = {
+              gui = 'bold',
+              bg = 'NvimDarkGray3',
+            },
           },
           {
             'diagnostics',
@@ -110,6 +105,9 @@ return {
               info = Symbols.diagnostics.info,
               warn = Symbols.diagnostics.Warn,
               error = Symbols.diagnostics.Error,
+            },
+            color = {
+              gui = 'bold',
             },
             separator = { right = '' },
           },
@@ -130,14 +128,14 @@ return {
             path = 1,
             separator = { right = '' },
             symbols = {
-              -- modified = '[+]', -- Text to show when the file is modified.
-              -- readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
-              -- unnamed = '[No Name]', -- Text to show for unnamed buffers.
-              -- newfile = '[New]', -- Text to show for newly created file before first write
-              modified = ' ', -- Text to show when the file is modified.
+              modified = '[+]', -- Text to show when the file is modified.
               readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
               unnamed = '[No Name]', -- Text to show for unnamed buffers.
-              newfile = ' ', -- Text to show for newly created file before first write
+              newfile = '[New]', -- Text to show for newly created file before first write
+              -- modified = ' ', -- Text to show when the file is modified.
+              -- readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
+              -- unnamed = '[No Name]', -- Text to show for unnamed buffers.
+              -- newfile = ' ', -- Text to show for newly created file before first write
             },
             color = {
               gui = 'bold',
