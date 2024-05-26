@@ -75,6 +75,7 @@ spec(false, 'git.blame')
 --<< General >>--
 
 spec(true, 'undotree') -- show undo tree
+spec(false, 'kube-utils')
 spec(true, 'trouble') -- cool quickfix list for LSP
 spec(true, 'tmux') -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
