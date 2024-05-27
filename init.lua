@@ -20,7 +20,7 @@ spec(false, 'colorscheme.minimal')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.mellifluous')
 spec(false, 'colorscheme.kanagawa')
-spec(true, 'colorscheme.monokai')
+spec(false, 'colorscheme.monokai')
 spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.material')
@@ -131,7 +131,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(false, 'ui.transparent')
+spec(true, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines

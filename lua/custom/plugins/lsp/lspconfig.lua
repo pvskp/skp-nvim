@@ -17,6 +17,7 @@ return {
 
     vim.diagnostic.config {
       virtual_text = false,
+      underline = true,
       float = { border = Borders.simple },
     }
 
