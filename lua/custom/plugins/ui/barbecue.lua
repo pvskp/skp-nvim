@@ -67,4 +67,10 @@ return {
       TypeParameter = '',
     },
   },
+  config = function(_, opts)
+    local barbecue = require 'barbecue'
+    barbecue.setup(opts)
+
+    require('barbecue.ui').toggle()
+  end,
 }

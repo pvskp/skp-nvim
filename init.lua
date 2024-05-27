@@ -20,9 +20,10 @@ spec(false, 'colorscheme.minimal')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.mellifluous')
 spec(false, 'colorscheme.kanagawa')
+spec(true, 'colorscheme.monokai')
 spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.gruvbox')
-spec(true, 'colorscheme.material')
+spec(false, 'colorscheme.material')
 spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
@@ -83,7 +84,7 @@ spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
-spec(true, 'modicator')
+spec(false, 'modicator')
 spec(true, 'markdown-preview')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'focus') -- auto-resize windows when switching buffers

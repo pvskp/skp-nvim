@@ -82,10 +82,10 @@ return {
         lualine_b = {
           {
             'branch',
-            icon = { Symbols.lualine.branch, color = { fg = '#ba33c2' } },
+            icon = { Symbols.lualine.branch, color = { fg = 'orange' } },
             color = {
               gui = 'bold',
-              fg = '#ba33c2',
+              fg = 'orange',
               bg = 'NvimDarkGray2',
             },
             separator = { right = '' },
