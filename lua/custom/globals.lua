@@ -53,10 +53,10 @@ end
 
 Symbols = {
   diagnostics = {
-    Error = '󱎶 ',
-    Warn = '󰂚 ',
-    Hint = ' ',
-    Info = '󰓹 ',
+    Error = ' ',
+    Warn = ' ',
+    Hint = ' ',
+    Info = ' ',
   },
   changes = {
     Added = ' ',

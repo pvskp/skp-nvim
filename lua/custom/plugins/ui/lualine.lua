@@ -12,7 +12,9 @@ return {
       end,
 
       separator = { left = '' },
-      color = {},
+      color = {
+        fg = 'black',
+      },
     }
 
     local copilot_section = {}
@@ -78,7 +80,10 @@ return {
               return ' ' .. str
             end,
 
-            color = { gui = 'bold' },
+            color = {
+              gui = 'bold',
+              fg = 'black',
+            },
             separator = { right = '' },
           },
         },
@@ -112,6 +117,7 @@ return {
               error = Symbols.diagnostics.Error,
             },
             separator = { right = '' },
+            color = { bg = 'NvimDarkGray3' },
           },
         },
         lualine_c = {
@@ -152,7 +158,12 @@ return {
         },
         lualine_z = {
           nvimbattery,
-          'ctime',
+          {
+            'ctime',
+            color = {
+              fg = 'black',
+            },
+          },
         },
       },
       inactive_sections = {

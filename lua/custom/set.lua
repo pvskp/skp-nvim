@@ -5,6 +5,7 @@ local options = {
   ignorecase = true, -- ignore case in search patterns
   number = true, -- the number of spaces inserted for each indentation
   list = true,
+  termguicolors = true,
 
   path = '.,,**',
 
