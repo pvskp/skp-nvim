@@ -5,10 +5,10 @@ return {
   priority = 1000,
   opts = {
     flavour = 'macchiato', -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-      light = 'latte',
-      dark = 'macchiato',
-    },
+    -- background = { -- :h background
+    --   light = 'latte',
+    --   dark = 'macchiato',
+    -- },
     transparent_background = false, -- disables setting the background color.
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
     term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
@@ -19,7 +19,7 @@ return {
     },
     no_italic = false, -- Force no italic
     no_bold = false, -- Force no bold
-    no_underline = true, -- Force no underline
+    no_underline = false, -- Force no underline
     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
       comments = { 'italic' }, -- Change the style of comments
       conditionals = { 'italic' },
@@ -42,6 +42,26 @@ return {
       nvimtree = true,
       treesitter = true,
       notify = false,
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = { 'italic' },
+          hints = { 'italic' },
+          warnings = { 'italic' },
+          information = { 'italic' },
+          ok = { 'italic' },
+        },
+        underlines = {
+          errors = { 'undercurl' },
+          hints = { 'undercurl' },
+          warnings = { 'undercurl' },
+          information = { 'undercurl' },
+          ok = { 'undercurl' },
+        },
+        inlay_hints = {
+          background = true,
+        },
+      },
       mini = {
         enabled = true,
         indentscope_color = '',
@@ -51,7 +71,6 @@ return {
   },
   config = function(_, opts)
     require('catppuccin').setup(opts)
-
     vim.cmd.colorscheme 'catppuccin'
   end,
 }

@@ -105,7 +105,7 @@ return {
             separator = { right = '' },
             color = {
               gui = 'bold',
-              bg = 'NvimDarkGray3',
+              -- bg = 'NvimDarkGray3',
             },
           },
           {
@@ -120,7 +120,9 @@ return {
               gui = 'bold',
             },
             separator = { right = '' },
-            color = { bg = 'NvimDarkGray3' },
+            color = {
+              -- bg = 'NvimDarkGray3'
+            },
           },
         },
         lualine_c = {
@@ -131,7 +133,7 @@ return {
             separator = { left = '' },
             color = {
               gui = 'bold',
-              bg = 'NvimDarkGray3',
+              -- bg = 'NvimDarkGray3',
             },
           },
           {
@@ -150,7 +152,7 @@ return {
             },
             color = {
               gui = 'bold',
-              bg = 'NvimDarkGray3',
+              -- bg = 'NvimDarkGray3',
               fg = 'white',
             },
           },
