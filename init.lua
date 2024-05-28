@@ -84,7 +84,7 @@ spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
-spec(false, 'modicator')
+spec(true, 'modicator')
 spec(true, 'markdown-preview')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'focus') -- auto-resize windows when switching buffers

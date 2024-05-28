@@ -105,6 +105,9 @@ return {
       on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
     }
 
+    -- vim.cmd 'hi TreesitterContextBottom gui=underdashed guisp=Grey'
+    -- vim.cmd 'hi TreesitterContextLineNumberBottom gui=underdashed guisp=Grey'
+
     vim.treesitter.language.register('yaml', 'ansible')
   end,
 }
