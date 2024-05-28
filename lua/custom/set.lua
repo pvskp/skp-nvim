@@ -131,6 +131,9 @@ function _G.qftf(info)
   return ret
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
+vim.deprecate = function() end
+
 -- vim.api.nvim_set_hl(0, 'ColorColumn', {
 --   fg = 'None',
 --   bg = 'NvimDarkGrey3',
