@@ -9,7 +9,7 @@ require 'custom.utils'
 --<< colorschemes >>--
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.zenbones')
-spec(false, 'colorscheme.vscode')
+spec(true, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
@@ -23,7 +23,7 @@ spec(false, 'colorscheme.kanagawa')
 spec(false, 'colorscheme.monokai')
 spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.gruvbox')
-spec(true, 'colorscheme.material')
+spec(false, 'colorscheme.material')
 spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
@@ -84,7 +84,7 @@ spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
-spec(false, 'modicator')
+spec(true, 'modicator')
 spec(true, 'markdown-preview')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'focus') -- auto-resize windows when switching buffers

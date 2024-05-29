@@ -16,11 +16,11 @@ local options = {
 
   --< UI >--
   cursorcolumn = false,
-  cursorline = false, -- highlight the current line
+  cursorline = true, -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
   colorcolumn = '101',
   signcolumn = 'yes:1',
-  numberwidth = 3, -- set number column width to 2 {default 4}
+  numberwidth = 2, -- set number column width {default 4}
   wrap = false,
   linebreak = true, -- companion to wrap, don't split words
   relativenumber = true, -- set relative numbered lines
