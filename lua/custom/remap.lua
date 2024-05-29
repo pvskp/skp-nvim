@@ -50,6 +50,15 @@ map('n', '<M-k>', '<C-w>k')
 map('n', '<M-l>', '<C-w>l')
 map('n', '<M-h>', '<C-w>h')
 
+map('n', '<leader>;', function()
+  local old_word = vim.fn.expand '<cword>'
+  local new_word = vim.fn.input('Replace ' .. old_word .. ' by? ', old_word)
+
+  if new_word ~= old_word and new_word ~= '' then
+    vim.cmd(':%s/\\<' .. old_word .. '\\>/' .. new_word .. '/g')
+  end
+end, {})
+
 -- Resize window
 map('n', '<M-r>', function()
   local keymap_set = vim.keymap.set
