@@ -7,7 +7,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- sends :make
-map('n', '<C-Space>', ':make<CR>', opts)
+-- map('n', '<C-Space>', ':make<CR>', opts)
 
 -- Disable space key
 map('n', '<Space>', '<Nop>', { silent = true, remap = false })
