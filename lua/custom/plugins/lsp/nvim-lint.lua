@@ -11,7 +11,7 @@ return {
       javascript = { 'eslint_d' },
       typescript = { 'eslint_d' },
       json = { 'jsonlint' },
-      lua = { 'luacheck' },
+      -- lua = { 'luacheck' },
       go = { 'golangcilint' },
       terraform = { 'tflint', 'tfsec' },
       python = { 'ruff' },
