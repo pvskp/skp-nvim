@@ -11,6 +11,7 @@ return {
       python = { 'ruff_format' },
       javascript = { { 'prettierd', 'prettier' } },
       json = { { 'prettierd', 'prettier' } },
+      css = { { 'prettierd', 'prettier' } },
       -- yaml = { 'prettierd' },
       cpp = { 'clang-format' },
       terraform = { 'terraform_fmt' },

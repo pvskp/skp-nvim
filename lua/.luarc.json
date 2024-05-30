@@ -3,7 +3,8 @@
         "vim",
         "pon",
         "poff",
-        "spec"
+        "spec",
+        "_execute_shell_script"
     ],
     "diagnostics.disable": [
         "unused-local"

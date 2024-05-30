@@ -5,6 +5,7 @@ return {
     vim.cmd [[set termguicolors]]
   end,
   config = function()
-    require('colorizer').setup()
+    local colorizer = require('colorizer')
+    colorizer.setup()
   end,
 }
