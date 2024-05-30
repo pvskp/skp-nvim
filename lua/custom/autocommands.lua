@@ -102,13 +102,37 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
 
 local function strip_trailing_whitespace()
   local save = vim.fn.winsaveview() -- Salva a posição atual do cursor
-  vim.cmd [[ %s/\s\+$//e ]] -- Remove espaços em branco no final de todas as linhas
-  vim.fn.winrestview(save) -- Restaura a posição do cursor
+  vim.cmd [[ %s/\s\+$//e ]]         -- Remove espaços em branco no final de todas as linhas
+  vim.fn.winrestview(save)          -- Restaura a posição do cursor
 end
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*', -- Para todos os arquivos
   callback = strip_trailing_whitespace,
+})
+
+
+
+-- Cria o autocomando
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sh',
+  callback = function()
+    local function is_executable(filename)
+      local perms = vim.fn.getfperm(filename)
+      return perms:sub(3, 3) == 'x' or perms:sub(6, 6) == 'x' or perms:sub(9, 9) == 'x'
+    end
+
+    function _execute_shell_script()
+      local filename = vim.fn.expand('%')
+      if not is_executable(filename) then
+        vim.cmd('!chmod +x ' .. filename)
+      end
+      vim.cmd('!./' .. filename)
+    end
+
+    vim.api.nvim_buf_set_keymap(0, 'n', '<C-Space>', ':lua _execute_shell_script()<CR>',
+      { noremap = true, silent = true })
+  end
 })
 
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
