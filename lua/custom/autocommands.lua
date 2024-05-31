@@ -130,7 +130,7 @@ vim.api.nvim_create_autocmd('FileType', {
       vim.cmd('!./' .. filename)
     end
 
-    vim.api.nvim_buf_set_keymap(0, 'n', '<C-Space>', ':lua _execute_shell_script()<CR>',
+    vim.api.nvim_buf_set_keymap(0, 'n', '<C-Space>', '<cmd>lua _execute_shell_script()<CR>',
       { noremap = true, silent = true })
   end
 })

@@ -11,9 +11,9 @@ return {
   },
   config = function()
     vim.lsp.handlers['textDocument/hover'] =
-      vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
+        vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
     vim.lsp.handlers['textDocument/signatureHelp'] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
 
     vim.diagnostic.config {
       virtual_text = false,
@@ -130,10 +130,17 @@ return {
       keymap.set('n', 'gl', vim.diagnostic.open_float, opts) -- show diagnostics for line
 
       opts.desc = 'Go to previous diagnostic'
-      keymap.set('n', '[d', vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+      keymap.set('n', '[d', function()
+        vim.diagnostic.jump({ count = -1 })
+      end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = 'Go to next diagnostic'
-      keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+      keymap.set('n', ']d', function()
+        vim.diagnostic.jump({ count = 1 })
+      end, opts) -- jump to next diagnostic in buffer
+
+      opts.desc = 'Opens quickfix list with diagnostics'
+      vim.keymap.set('n', '<leader>oq', vim.diagnostic.setloclist, opts)
 
       opts.desc = 'Show documentation for what is under cursor'
       keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor

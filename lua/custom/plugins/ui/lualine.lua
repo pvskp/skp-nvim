@@ -117,12 +117,10 @@ return {
               error = Symbols.diagnostics.Error,
             },
             color = {
+              -- bg = 'NvimDarkGray3'
               gui = 'bold',
             },
             separator = { right = '' },
-            color = {
-              -- bg = 'NvimDarkGray3'
-            },
           },
         },
         lualine_c = {

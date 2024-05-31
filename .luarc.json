@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "vim",
-        "spec"
+        "spec",
+        "_execute_shell_script"
     ]
 }
