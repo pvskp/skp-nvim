@@ -1,4 +1,3 @@
--- return {}
 return {
   "folke/trouble.nvim",
   keys = {
@@ -6,31 +5,6 @@ return {
       "<leader>t",
       "<cmd>Trouble diagnostics toggle<cr>",
       desc = "Diagnostics (Trouble)",
-    },
-    {
-      "<leader>xX",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "Buffer Diagnostics (Trouble)",
-    },
-    {
-      "<leader>cs",
-      "<cmd>Trouble symbols toggle focus=false<cr>",
-      desc = "Symbols (Trouble)",
-    },
-    {
-      "<leader>cl",
-      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-      desc = "LSP Definitions / references / ... (Trouble)",
-    },
-    {
-      "<leader>xL",
-      "<cmd>Trouble loclist toggle<cr>",
-      desc = "Location List (Trouble)",
-    },
-    {
-      "<leader>xQ",
-      "<cmd>Trouble qflist toggle<cr>",
-      desc = "Quickfix List (Trouble)",
     },
   },
 
@@ -52,13 +26,8 @@ return {
     win = {},                -- window options for the results window. Can be a split or a floating window.
     preview = {
       type = "main",
-      -- when a buffer is not yet loaded, the preview window will be created
-      -- in a scratch buffer with only syntax highlighting enabled.
-      -- Set to false, if you want the preview to always be a real loaded buffer.
       scratch = true,
     },
-    -- Throttle/Debounce settings. Should usually not be changed.
-    ---@type table<string, number|{ms:number, debounce?:boolean}>
     throttle = {
       refresh = 20,                            -- fetches new data when needed
       update = 10,                             -- updates the window
