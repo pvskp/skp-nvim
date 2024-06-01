@@ -100,7 +100,6 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   end,
 })
 
-
 -- Removes trailing spaces
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
@@ -108,29 +107,5 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     local save = vim.fn.winsaveview()
     vim.cmd [[ %s/\s\+$//e ]]
     vim.fn.winrestview(save)
-  end
-})
-
-
-
--- Cria o autocomando
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'sh',
-  callback = function()
-    local function is_executable(filename)
-      local perms = vim.fn.getfperm(filename)
-      return perms:sub(3, 3) == 'x' or perms:sub(6, 6) == 'x' or perms:sub(9, 9) == 'x'
-    end
-
-    function _execute_shell_script()
-      local filename = vim.fn.expand('%')
-      if not is_executable(filename) then
-        vim.cmd('!chmod +x ' .. filename)
-      end
-      vim.cmd('!./' .. filename)
-    end
-
-    vim.api.nvim_buf_set_keymap(0, 'n', '<C-Space>', '<cmd>lua _execute_shell_script()<CR>',
-      { noremap = true, silent = true })
-  end
+  end,
 })
