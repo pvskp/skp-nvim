@@ -125,7 +125,7 @@ spec(false, 'cmdbuf')
 
 --<< AI >>--
 
-spec(false, 'ai.codeium')
+spec(true, 'ai.codeium')
 spec(false, 'ai.gp')
 spec(false, 'ai.chatgpt')
 spec(false, 'ai.copilot')
