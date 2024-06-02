@@ -6,7 +6,7 @@ return {
   },
   dependencies = {
     'hrsh7th/cmp-buffer', -- source for text in buffer
-    'hrsh7th/cmp-path',   -- source for file system paths
+    'hrsh7th/cmp-path', -- source for file system paths
     -- 'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'amarakon/nvim-cmp-fonts', -- source for font completion
@@ -59,7 +59,7 @@ return {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- show completion suggestions
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),        -- close completion window
+        ['<C-e>'] = cmp.mapping.abort(), -- close completion window
         -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ['<CR>'] = cmp.mapping.confirm { select = true },
         ['<Tab>'] = cmp.mapping.confirm { select = true },
@@ -70,16 +70,26 @@ return {
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'codeium' },
+        { name = 'fonts' },
         { name = 'copilot' },
         { name = 'luasnip' }, -- snippets
-        { name = 'path' },    -- file system paths
-        { name = 'buffer' },  -- text within current buffer
+        { name = 'path' }, -- file system paths
+        { name = 'buffer' }, -- text within current buffer
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format {
-          mode = 'symbol_text',
+          mode = 'symbol',
+          menu = {
+            buffer = '(Buffer)',
+            nvim_lsp = '(LSP)',
+            luasnip = '(LuaSnip)',
+            nvim_lua = '(Lua)',
+            latex_symbols = '(Latex)',
+            codeium = '(AI)',
+            fonts = '(Fonts)',
+          },
           maxwidth = 50,
           ellipsis_char = '...',
           symbol_map = {
