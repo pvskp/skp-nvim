@@ -1,13 +1,13 @@
---- Splits a string into lines and append it to a table
----@param input string The string to split
----@return table
-local function split_string(input)
-  local result = {}
-  for line in string.gmatch(input, '([^\n]+)') do
-    table.insert(result, line)
-  end
-  return result
-end
+-- --- Splits a string into lines and append it to a table
+-- ---@param input string The string to split
+-- ---@return table
+-- local function split_string(input)
+--   local result = {}
+--   for line in string.gmatch(input, '([^\n]+)') do
+--     table.insert(result, line)
+--   end
+--   return result
+-- end
 
 --- Get the window number of a buffer
 ---@param bufnr number Buffer number
@@ -41,10 +41,6 @@ local function run_python_script()
   vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, {
     'Running script...',
   })
-
-  -- vim.system({ 'python3', vim.fn.expand '%', '2>&1' }, { text = true }, function(obj)
-  --   vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, split_string(obj.stdout))
-  -- end)
 
   vim.fn.jobstart({ 'python3', vim.fn.expand '%', '2>&1' }, {
     stdout_buffered = true,
