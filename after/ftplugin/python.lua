@@ -27,7 +27,6 @@ local output_buffer = nil
 
 --- Runs the current python script and throw the output in a new buffer
 local function run_python_script()
-  local obj = vim.system({ 'python3', vim.fn.expand '%', '2>&1' }, { text = true }):wait()
   local curr_window = get_buf_window(vim.api.nvim_get_current_buf())
   if output_buffer == nil then
     output_buffer = vim.api.nvim_create_buf(false, true)
@@ -38,8 +37,21 @@ local function run_python_script()
 
   vim.cmd 'vsplit'
   vim.api.nvim_set_current_buf(output_buffer)
-  vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, split_string(obj.stdout))
   vim.api.nvim_set_current_win(curr_window)
+  vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, {
+    'Running script...',
+  })
+
+  -- vim.system({ 'python3', vim.fn.expand '%', '2>&1' }, { text = true }, function(obj)
+  --   vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, split_string(obj.stdout))
+  -- end)
+
+  vim.fn.jobstart({ 'python3', vim.fn.expand '%', '2>&1' }, {
+    stdout_buffered = true,
+    on_stdout = function(_, data)
+      vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, data)
+    end,
+  })
 end
 
 vim.api.nvim_create_user_command('RunPythonScript', run_python_script, {})
