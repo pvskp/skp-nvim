@@ -88,7 +88,7 @@ spec(true, 'neo-zoom')  -- toggle zoom mode with a popup window
 spec(true, 'modicator')
 spec(true, 'markdown-preview')
 spec(true, 'hop')      -- jump to any word in the screen
-spec(true, 'focus')    -- auto-resize windows when switching buffers
+spec(false, 'focus')   -- auto-resize windows when switching buffers
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'discord')  -- rich presence
 spec(false, 'btterm')  -- this one is mine!!!!
