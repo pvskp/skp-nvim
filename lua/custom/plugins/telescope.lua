@@ -135,7 +135,7 @@ function M.config()
   require('telescope').load_extension 'ui-select'
   require('telescope').load_extension 'git_worktree'
   local ext = require('telescope').extensions
-  vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
+  -- vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
   vim.keymap.set('n', '<leader>,', ext.git_worktree.create_git_worktree, {})
 end
 

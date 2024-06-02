@@ -39,13 +39,13 @@ spec(false, 'colorscheme.cyberdream')
 
 spec(true, 'lsp.treesiter') -- love and hate relationship with this one
 spec(true, 'lsp.nvim-lint') -- linting
-spec(true, 'lsp.neodev') -- offers completion to neovim functions
-spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
-spec(true, 'lsp.luasnip') -- snippets
+spec(true, 'lsp.neodev')    -- offers completion to neovim functions
+spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
+spec(true, 'lsp.luasnip')   -- snippets
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.lsp_signature')
-spec(true, 'lsp.conform') -- formatter
-spec(true, 'lsp.cmp') -- completion
+spec(true, 'lsp.conform')             -- formatter
+spec(true, 'lsp.cmp')                 -- completion
 spec(false, 'lsp.rainbow-delimiters') -- show matching delimiters
 spec(false, 'lsp.outline')
 spec(false, 'lsp.lsp-saga')
@@ -67,7 +67,7 @@ spec(false, 'mini.notify')
 
 --<< Git integrations >>--
 
-spec(true, 'git.lazygit') -- lazygit inside neovim
+spec(true, 'git.lazygit')  -- lazygit inside neovim
 spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
@@ -77,21 +77,21 @@ spec(false, 'git.blame')
 
 --<< General >>--
 
-spec(true, 'undotree') -- show undo tree
+spec(true, 'undotree')  -- show undo tree
 spec(false, 'kube-utils')
-spec(true, 'trouble') -- cool quickfix list for LSP
-spec(true, 'tmux') -- tmux integration
+spec(true, 'trouble')   -- cool quickfix list for LSP
+spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
-spec(true, 'surround') -- surround text with quotes, brackets, etc
+spec(true, 'surround')  -- surround text with quotes, brackets, etc
 spec(true, 'neogen')
-spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
+spec(true, 'neo-zoom')  -- toggle zoom mode with a popup window
 spec(true, 'modicator')
 spec(true, 'markdown-preview')
-spec(true, 'hop') -- jump to any word in the screen
-spec(true, 'focus') -- auto-resize windows when switching buffers
+spec(true, 'hop')      -- jump to any word in the screen
+spec(true, 'focus')    -- auto-resize windows when switching buffers
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
-spec(true, 'discord') -- rich presence
-spec(false, 'btterm') -- this one is mine!!!!
+spec(true, 'discord')  -- rich presence
+spec(false, 'btterm')  -- this one is mine!!!!
 spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
@@ -112,8 +112,8 @@ spec(false, 'neoscroll')
 spec(false, 'neo-tree')
 spec(false, 'modes')
 spec(false, 'lab')
-spec(false, 'kubectl') -- kubectl integration
-spec(false, 'kitty') -- kitty integration
+spec(false, 'kubectl')  -- kubectl integration
+spec(false, 'kitty')    -- kitty integration
 spec(false, 'hawtkeys') -- show best keybindings to be mapped
 spec(false, 'harpoon')
 spec(false, 'hardtime')
@@ -134,21 +134,21 @@ spec(false, 'ai.copilot')
 
 spec(false, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
-spec(true, 'ui.lualine') -- statusline
+spec(true, 'ui.lualine')     -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
 spec(true, 'ui.illuminate')
-spec(true, 'ui.fidget') -- cool LSP notification
-spec(true, 'ui.dressing') -- offers better ui for some neovim commands
+spec(true, 'ui.fidget')      -- cool LSP notification
+spec(true, 'ui.dressing')    -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
-spec(true, 'ui.colorizer') -- color preview
-spec(true, 'ui.barbecue') -- shows the current symbol and its parents
+spec(true, 'ui.colorizer')   -- color preview
+spec(true, 'ui.barbecue')    -- shows the current symbol and its parents
 spec(false, 'ui.virt-column')
 spec(false, 'ui.twilight')
 spec(false, 'ui.sunglasses')
 spec(false, 'ui.netrw')
 spec(false, 'ui.headlines')
 spec(false, 'ui.bufferline')
-spec(false, 'ui.alpha') -- start dashboard
+spec(true, 'ui.alpha') -- start dashboard
 
 --<< Lualine integrations >>--
 

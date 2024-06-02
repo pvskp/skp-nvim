@@ -17,6 +17,8 @@ return {
       },
     }
 
+    local lazy_status = require('lazy.status')
+
     local copilot_section = {}
     if pcall(require, 'copilot') then
       copilot_section = {
@@ -160,6 +162,13 @@ return {
           copilot_section,
         },
         lualine_z = {
+          {
+            lazy_status.updates,
+            cond = lazy_status.has_updates,
+            color = {
+              fg = '#ff9e64',
+            },
+          },
           nvimbattery,
           {
             'ctime',
