@@ -19,6 +19,7 @@ return {
       'python',
       'go',
       'markdown',
+      'helm',
       'markdown_inline',
     },
     sync_install = false,
@@ -103,6 +104,16 @@ return {
       separator = nil,
       zindex = 20, -- The Z-index of the context window
       on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+    }
+
+    local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+    parser_config.gotmpl = {
+      install_info = {
+        url = 'https://github.com/ngalaiko/tree-sitter-go-template',
+        files = { 'src/parser.c' },
+      },
+      filetype = 'gotmpl',
+      used_by = { 'gohtmltmpl', 'gotexttmpl', 'gotmpl', 'yaml' },
     }
 
     -- vim.cmd 'hi TreesitterContextBottom gui=underdashed guisp=Grey'
