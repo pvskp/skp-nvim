@@ -11,9 +11,9 @@ return {
   },
   config = function()
     vim.lsp.handlers['textDocument/hover'] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
+      vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
     vim.lsp.handlers['textDocument/signatureHelp'] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
 
     vim.diagnostic.config {
       virtual_text = false,
@@ -131,12 +131,12 @@ return {
 
       opts.desc = 'Go to previous diagnostic'
       keymap.set('n', '[d', function()
-        vim.diagnostic.jump({ count = -1 })
+        vim.diagnostic.jump { count = -1 }
       end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = 'Go to next diagnostic'
       keymap.set('n', ']d', function()
-        vim.diagnostic.jump({ count = 1 })
+        vim.diagnostic.jump { count = 1 }
       end, opts) -- jump to next diagnostic in buffer
 
       opts.desc = 'Opens quickfix list with diagnostics'
