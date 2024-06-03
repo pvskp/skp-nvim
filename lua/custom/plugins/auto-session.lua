@@ -1,6 +1,7 @@
 return {
   'rmagatti/auto-session',
   lazy = true,
+  cmd = { "SessionSave", "SessionRestore" },
   keys = {
     { "<leader>sr", "<cmd>SessionRestore<cr>", desc = "Restore Session" },
     { "<leader>ss", "<cmd>SessionSave<cr>",    desc = "Save Session" }

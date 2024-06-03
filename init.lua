@@ -71,6 +71,7 @@ spec(true, 'git.lazygit')  -- lazygit inside neovim
 spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
+spec(true, 'git.gitmoji')
 spec(false, 'git.neogit')
 spec(false, 'git.diffview')
 spec(false, 'git.blame')
@@ -89,6 +90,7 @@ spec(true, 'modicator')
 spec(true, 'markdown-preview')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(false, 'focus')   -- auto-resize windows when switching buffers
+spec(true, 'maximizer')
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'discord')  -- rich presence
 spec(false, 'btterm')  -- this one is mine!!!!
