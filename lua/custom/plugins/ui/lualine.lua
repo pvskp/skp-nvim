@@ -168,6 +168,8 @@ return {
             color = {
               fg = '#ff9e64',
             },
+
+            separator = { left = '' },
           },
           nvimbattery,
           {
@@ -189,7 +191,13 @@ return {
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = {},
+      extensions = {
+        "fugitive",
+        "lazy",
+        "mason",
+        "quickfix",
+        "trouble",
+      },
     }
   end,
 }
