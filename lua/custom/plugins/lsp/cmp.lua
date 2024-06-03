@@ -6,7 +6,7 @@ return {
   },
   dependencies = {
     'hrsh7th/cmp-buffer', -- source for text in buffer
-    'hrsh7th/cmp-path',   -- source for file system paths
+    'hrsh7th/cmp-path', -- source for file system paths
     -- 'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'amarakon/nvim-cmp-fonts', -- source for font completion
@@ -59,7 +59,7 @@ return {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- show completion suggestions
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),        -- close completion window
+        ['<C-e>'] = cmp.mapping.abort(), -- close completion window
         -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ['<CR>'] = cmp.mapping.confirm { select = true },
         ['<Tab>'] = cmp.mapping.confirm { select = true },
@@ -68,14 +68,14 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources {
         { name = 'nvim_lsp_signature_help' },
+        { name = 'fonts' },
         { name = 'gitmoji' },
         { name = 'nvim_lsp' },
         { name = 'codeium' },
-        { name = 'fonts' },
         { name = 'copilot' },
         { name = 'luasnip' }, -- snippets
-        { name = 'path' },    -- file system paths
-        { name = 'buffer' },  -- text within current buffer
+        { name = 'path' }, -- file system paths
+        { name = 'buffer' }, -- text within current buffer
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -115,15 +115,15 @@ return {
       vim.cmd 'highlight! BorderBG guibg=NONE'
     end
 
-    cmp.setup.filetype({ 'conf', 'config', 'kitty', 'toml' }, {
-      sources = {
-        -- {
-        --   name = 'fonts',
-        --   option = { space_filter = '-' },
-        -- },
-        { name = 'path' },
-      },
-    })
+    -- cmp.setup.filetype({ 'conf', 'config', 'kitty', 'toml' }, {
+    --   sources = {
+    --     -- {
+    --     --   name = 'fonts',
+    --     --   option = { space_filter = '-' },
+    --     -- },
+    --     { name = 'path' },
+    --   },
+    -- })
 
     local cmd_mappings = {
 

@@ -110,11 +110,11 @@
 
 return {
   'goolord/alpha-nvim',
-  event = "VimEnter",
+  event = 'VimEnter',
   -- lazy = false,
   config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
+    local alpha = require 'alpha'
+    local dashboard = require 'alpha.themes.dashboard'
     dashboard.section.header.val = {
       '          ▀████▀▄▄              ▄█ ',
       '            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
@@ -128,12 +128,12 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button("SPC f", "  Find file", ":Telescope find_files <CR>"),
-      dashboard.button("SPC g", "  Find text", ":Telescope live_grep <CR>"),
-      dashboard.button("u", "  Recently used files", ":Telescope oldfiles <CR>"),
-      dashboard.button("r", "󰌑  Restore last session", ":SessionRestore <CR>"),
-      dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
-      dashboard.button("s", "  Update plugins", ":Lazy sync<CR>"),
+      dashboard.button('SPC f', '󰈞  Find file', ':Telescope find_files <CR>'),
+      dashboard.button('SPC g', '󱎸  Find text', ':Telescope live_grep <CR>'),
+      dashboard.button('u', '  Recently used files', ':Telescope oldfiles <CR>'),
+      dashboard.button('r', '󰌑  Restore last session', ':SessionRestore <CR>'),
+      dashboard.button('c', '  Configuration', ':e $MYVIMRC <CR>'),
+      dashboard.button('s', '  Update plugins', ':Lazy sync<CR>'),
     }
 
     alpha.setup(dashboard.opts)
