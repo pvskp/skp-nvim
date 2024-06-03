@@ -44,9 +44,14 @@ local function run_python_script()
 
   vim.fn.jobstart({ 'python3', vim.fn.expand '%', '2>&1' }, {
     stdout_buffered = true,
+    stderr_buffered = true,
     on_stdout = function(_, data)
       vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, data)
     end,
+    -- on_stderr = function(_, data, _)
+    --   table.insert(data, 1, "**Error running script**")
+    --   vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, data)
+    -- end,
   })
 end
 
