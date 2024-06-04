@@ -66,11 +66,11 @@ Symbols = {
   telescope = {
     prompt_prefix = {
       icon = '  ',
-      color = '#ff1a3f',
+      color = '#e6cc80',
     },
     selection_caret = {
       icon = ' 󱈛 ',
-      color = '#3366e7',
+      color = '#3399e7',
     },
   },
   lualine = {

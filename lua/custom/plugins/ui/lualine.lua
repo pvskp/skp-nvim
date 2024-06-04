@@ -54,6 +54,7 @@ return {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
+          'alpha',
           statusline = {},
           winbar = {},
         },
@@ -143,7 +144,7 @@ return {
             symbols = {
               modified = '[+]', -- Text to show when the file is modified.
               readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
-              unnamed = '', -- Text to show for unnamed buffers.
+              unnamed = '[?]', -- Text to show for unnamed buffers.
               newfile = '[New]', -- Text to show for newly created file before first write
               -- modified = ' ', -- Text to show when the file is modified.
               -- readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
@@ -166,7 +167,7 @@ return {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = {
-              fg = 'orange',
+              fg = '#661cff',
             },
 
             separator = { left = '' },

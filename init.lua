@@ -9,8 +9,8 @@ require 'custom.utils'
 --<< colorschemes >>--
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.zenbones')
-spec(true, 'colorscheme.vscode')
-spec(false, 'colorscheme.tokyonight')
+spec(false, 'colorscheme.vscode')
+spec(true, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
@@ -134,7 +134,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(false, 'ui.transparent')
+spec(true, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine')     -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
