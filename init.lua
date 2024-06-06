@@ -53,7 +53,7 @@ spec(false, 'lsp.commentary')
 
 --<< Language specific >>--
 
-spec(false, 'languages.markdown')
+spec(true, 'languages.markdown')
 spec(true, 'languages.helm')
 spec(false, 'languages.golang') -- go integration
 
