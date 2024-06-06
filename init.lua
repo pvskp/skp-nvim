@@ -53,7 +53,7 @@ spec(false, 'lsp.commentary')
 
 --<< Language specific >>--
 
-spec(false, 'languages.markdown')
+spec(true, 'languages.markdown')
 spec(true, 'languages.helm')
 spec(false, 'languages.golang') -- go integration
 
@@ -78,8 +78,9 @@ spec(false, 'git.blame')
 
 --<< General >>--
 
-spec(true, 'undotree')  -- show undo tree
+spec(true, 'undotree') -- show undo tree
 spec(false, 'kube-utils')
+spec(true, 'emoji')
 spec(true, 'trouble')   -- cool quickfix list for LSP
 spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
