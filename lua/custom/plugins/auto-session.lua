@@ -1,15 +1,29 @@
 return {
   'rmagatti/auto-session',
   lazy = true,
-  cmd = { "SessionSave", "SessionRestore" },
+  cmd = { 'SessionSave', 'SessionRestore' },
   keys = {
-    { "<leader>sr", "<cmd>SessionRestore<cr>", desc = "Restore Session" },
-    { "<leader>ss", "<cmd>SessionSave<cr>",    desc = "Save Session" }
+    {
+      '<leader>sr',
+      function()
+        vim.cmd 'SessionRestore'
+        vim.notify '[auto-session] Session restored.'
+      end,
+      desc = 'Restore Session',
+    },
+    {
+      '<leader>ss',
+      function()
+        vim.cmd 'SessionSave'
+        vim.notify '[auto-session] Session saved.'
+      end,
+      desc = 'Save Session',
+    },
   },
   opts = {
     log_level = 'error',
     auto_restore_enabled = false,
     auto_save_enabled = true,
-    auto_session_suppress_dirs = { "~/" },
+    auto_session_suppress_dirs = { '~/' },
   },
 }
