@@ -1,9 +1,10 @@
 return {
   'echasnovski/mini.files',
   version = '*',
+  ft = 'alpha',
   keys = {
     { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
-    { '<c-e>',     '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
+    { '<c-e>', '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
   },
   opts = {
     content = {
@@ -41,7 +42,7 @@ return {
     },
   },
   config = function(_, opts)
-    local MiniFiles = require('mini.files')
+    local MiniFiles = require 'mini.files'
     MiniFiles.setup(opts)
     vim.api.nvim_create_autocmd('User', {
       pattern = 'MiniFilesWindowOpen',
@@ -53,7 +54,6 @@ return {
     vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
     vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
     vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
-
 
     local map_split = function(buf_id, lhs, direction)
       local rhs = function()
