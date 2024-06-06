@@ -67,15 +67,16 @@ return {
 
       -- sources for autocompletion
       sources = cmp.config.sources {
+        { name = 'gitmoji' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'fonts' },
-        { name = 'gitmoji' },
+        { name = 'emoji' },
         { name = 'nvim_lsp' },
         { name = 'codeium' },
         { name = 'copilot' },
         { name = 'luasnip' }, -- snippets
-        { name = 'path' }, -- file system paths
-        { name = 'buffer' }, -- text within current buffer
+        { name = 'path' },    -- file system paths
+        { name = 'buffer' },  -- text within current buffer
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
