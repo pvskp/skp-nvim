@@ -11,6 +11,7 @@ return {
       python = { 'ruff_format' },
       javascript = { { 'prettierd', 'prettier' } },
       json = { { 'prettierd', 'prettier' } },
+      html = { { 'prettierd', 'prettier' } },
       css = { { 'prettierd', 'prettier' } },
       -- yaml = { 'prettierd' },
       cpp = { 'clang-format' },
