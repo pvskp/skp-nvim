@@ -167,7 +167,7 @@ return {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = {
-              fg = '#661cff',
+              fg = '#1B2136',
             },
 
             separator = { left = '' },
