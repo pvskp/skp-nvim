@@ -6,9 +6,6 @@ local opts = { silent = true, noremap = false }
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- sends :make
--- map('n', '<C-Space>', ':make<CR>', opts)
-
 -- Disable space key
 map('n', '<Space>', '<Nop>', { silent = true, remap = false })
 
@@ -23,9 +20,6 @@ map({ 'i', 'n' }, '<C-c>', '<Esc>')
 -- Movement key mappings
 map({ 'n', 'v' }, '<leader><leader>', 'g_')
 map({ 'n', 'v' }, '<C-j>', '%')
-
--- Avoid messing with registers
-map('v', '<leader>p', '"_dP')
 
 -- Buffer navigation
 map('n', '<S-l>', ':bnext<CR>', opts)
@@ -131,9 +125,6 @@ map('n', '<C-y>', ':%y+<CR>', { silent = true })
 local window_zoomed = false
 local window_zoom_restore = {}
 
--- Execute last command
-map('n', '<leader>x', '@:', opts)
-
 -- Command mode mappings
 vim.api.nvim_set_keymap('c', '<C-x>', '<C-y>', { noremap = true })
 
@@ -142,21 +133,11 @@ map('n', '-', function()
   pcall(vim.cmd.foldclose)
 end, {})
 
--- Substitute word under cursor
-vim.keymap.set('n', '<Leader>sw', ':%s/\\<<C-r><C-w>\\>/', {
-  desc = '[S]ubstitute [W]ord under cursor',
-})
-
 -- Comment line
 vim.api.nvim_set_keymap('n', '<leader>c', 'gcc', opts)
 vim.api.nvim_set_keymap('v', '<leader>c', 'gc', opts)
 
--- Toggle plugin on and off
--- vim.api.nvim_set_keymap('n', '<C-t>', ':lua TogglePonPoff()<CR>', opts)
-
 map({ 'n', 'v' }, '<C-t>', ':lua ToggleTrueFalse()<CR>', opts)
-
--- vim.api.nvim_set_keymap('v', '<C-t>', ':lua TogglePonPoffSelection()<CR>', opts)
 
 -- Spell
 map('n', '<leader>q', '1z=')
