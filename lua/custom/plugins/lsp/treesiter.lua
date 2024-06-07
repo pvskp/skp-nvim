@@ -4,7 +4,7 @@ return {
   pin = false,
   dependencies = {
     {
-      'nvim-treesitter/nvim-treesitter-textobjects', -- <- this is amazing
+      -- 'nvim-treesitter/nvim-treesitter-textobjects', -- Disable to tets mini.ai
       'nvim-treesitter/nvim-treesitter-context',
     },
   },
