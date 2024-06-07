@@ -1,6 +1,6 @@
 return {
   'aserowy/tmux.nvim',
-  lazy = false,
+  event = 'VeryLazy',
   init = function()
     local opts = { silent = true }
     vim.keymap.set('n', '<M-h>', [[<cmd>lua require("tmux").move_left()<cr>]], opts)

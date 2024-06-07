@@ -1,6 +1,7 @@
 return {
   'andweeb/presence.nvim',
-  lazy = false,
+  event = 'VeryLazy',
+  -- lazy = false,
   config = true,
   opts = {
     auto_update = true,

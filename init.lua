@@ -33,7 +33,7 @@ spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.aura')
 spec(false, 'colorscheme.adwaita')
 
--- vim.cmd [[colorscheme default]]
+-- vim.cmd [[colorscheme habamax]]
 
 --<< LSP related >>--
 
@@ -94,7 +94,7 @@ spec(true, 'markdown-preview')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
-spec(true, 'discord') -- rich presence
+spec(false, 'discord') -- rich presence
 spec(true, 'ccc')
 spec(true, 'bigfile')
 spec(true, 'auto-session')
@@ -137,7 +137,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(true, 'ui.transparent')
+spec(false, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.lualine') -- statusline
 spec(true, 'ui.indentlines') -- show indent lines

@@ -1,6 +1,7 @@
 return {
   'nvim-lualine/lualine.nvim',
-  lazy = false,
+  event = 'VimEnter',
+  -- lazy = false,
   config = function()
     local nvimbattery = {
       function()
@@ -102,6 +103,13 @@ return {
           },
           {
             'diff',
+            colored = true,
+            -- diff_color = {
+            --   -- Same color values as the general color option can be used here.
+            --   added = 'LuaLineDiffAdd', -- Changes the diff's added color
+            --   modified = 'LuaLineDiffChange', -- Changes the diff's modified color
+            --   removed = 'LuaLineDiffDelete', -- Changes the diff's removed color you
+            -- },
             symbols = {
               added = Symbols.changes.Added,
               modified = Symbols.changes.Modified,

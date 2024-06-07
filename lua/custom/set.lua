@@ -18,7 +18,7 @@ local options = {
   cursorcolumn = false,
   cursorline = true, -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
-  colorcolumn = '101',
+  -- colorcolumn = '101',
   signcolumn = 'yes',
   numberwidth = 2, -- set number column width {default 4}
   wrap = false,
@@ -38,6 +38,8 @@ local options = {
   wildoptions = 'pum,tagfile',
   wildmode = 'full',
   -- wildmode = 'list:longest,full',
+
+  fillchars = { vert = ' ', eob = ' ' },
 
   --< Fold >--
   foldmethod = 'indent',

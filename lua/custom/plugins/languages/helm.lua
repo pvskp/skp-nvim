@@ -1,7 +1,7 @@
 return {
   'towolf/vim-helm',
   ft = 'helm',
-  lazy = false,
+  -- lazy = false,
   config = function()
     -- Disabls treesitter for helm files
     vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {

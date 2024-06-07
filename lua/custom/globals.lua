@@ -8,9 +8,9 @@ LAZY_PLUGIN_SPEC = {}
 function ToggleTrueFalse()
   local line = vim.api.nvim_get_current_line()
   local new_line = line
-      :gsub('true', 'TOGGLE_PLACEHOLDER')
-      :gsub('false', 'true')
-      :gsub('TOGGLE_PLACEHOLDER', 'false')
+    :gsub('true', 'TOGGLE_PLACEHOLDER')
+    :gsub('false', 'true')
+    :gsub('TOGGLE_PLACEHOLDER', 'false')
   vim.api.nvim_set_current_line(new_line)
 end
 

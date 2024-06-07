@@ -1,7 +1,8 @@
 return {
   'akinsho/git-conflict.nvim',
   version = '*',
-  lazy = false,
+  event = 'VeryLazy',
+  -- lazy = false,
   opts = {
     default_mappings = true, -- disable buffer local mapping created by this plugin
     default_commands = true, -- disable commands created by this plugin

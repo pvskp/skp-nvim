@@ -1,7 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  lazy = false,
-  pin = false,
+  -- lazy = false,
+  -- pin = false,
   dependencies = {
     {
       'nvim-treesitter/nvim-treesitter-textobjects', -- Disable to tets mini.ai

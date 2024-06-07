@@ -188,7 +188,6 @@
 return {
   'goolord/alpha-nvim',
   event = 'VimEnter',
-  -- lazy = false,
   config = function()
     local alpha = require 'alpha'
     local dashboard = require 'alpha.themes.dashboard'
@@ -242,7 +241,11 @@ return {
 
     vim.api.nvim_create_autocmd({ 'FileType' }, {
       pattern = 'alpha',
-      command = 'setlocal nofoldenable',
+      callback = function()
+        vim.cmd 'setlocal nofoldenable'
+        vim.cmd 'setlocal nonumber'
+        vim.cmd 'setlocal norelativenumber'
+      end,
     })
   end,
 }
