@@ -1,5 +1,6 @@
 return {
   'xiyaowong/transparent.nvim',
+  -- event = "VimEnter",
   lazy = false,
   opts = { -- Optional, you don't have to run setup.
     extra_groups = {}, -- table: additional groups that should be cleared

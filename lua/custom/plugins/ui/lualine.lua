@@ -77,10 +77,10 @@ return {
               return ' ' .. str
             end,
 
-            -- color = {
-            --   gui = 'bold',
-            --   fg = 'black',
-            -- },
+            color = {
+              gui = 'bold',
+              fg = 'black',
+            },
             -- separator = { right = '' },
           },
         },
@@ -149,11 +149,11 @@ return {
               unnamed = '[?]', -- Text to show for unnamed buffers.
               newfile = '[New]', -- Text to show for newly created file before first write
             },
-            color = {
-              gui = 'bold',
-              bg = 'NvimDarkGray3',
-              fg = 'white',
-            },
+            -- color = {
+            --   gui = 'bold',
+            --   bg = 'NvimDarkGray3',
+            --   fg = 'white',
+            -- },
           },
         },
         lualine_x = {},
