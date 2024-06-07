@@ -50,6 +50,9 @@ map('n', '<M-k>', '<C-w>k')
 map('n', '<M-l>', '<C-w>l')
 map('n', '<M-h>', '<C-w>h')
 
+map({ 'n', 'v' }, ';', ':')
+map({ 'n', 'v' }, ':', ';')
+
 map('n', '<leader>;', function()
   local old_word = vim.fn.expand '<cword>'
   local new_word = vim.fn.input('Replace ' .. old_word .. ' by? ', old_word)
@@ -84,9 +87,9 @@ end, { noremap = true, silent = true })
 
 map('n', '<M-=>', '<C-w>=')
 map('n', '<C-s>', ':w<CR>', opts)
-map('n', '<M-f>', ':term<CR>')
+map('n', '<M-t>', ':term<CR>')
 
-map('n', 'Q', ':q!<CR>', { silent = true })
+map('n', 'Q', ':bd!<CR>', { silent = true })
 
 map('n', '<C-q>', ':qa!<CR>', { silent = true })
 
