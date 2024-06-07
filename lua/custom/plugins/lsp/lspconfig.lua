@@ -11,9 +11,9 @@ return {
   },
   config = function()
     vim.lsp.handlers['textDocument/hover'] =
-      vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
+        vim.lsp.with(vim.lsp.handlers.hover, { border = Borders.simple })
     vim.lsp.handlers['textDocument/signatureHelp'] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = Borders.simple })
 
     vim.diagnostic.config {
       virtual_text = false,
@@ -65,48 +65,6 @@ return {
         { desc = '[T]oggle inlay_hint', silent = true }
       )
 
-      -- if pcall(require, 'telescope') then
-      --   keymap.set(
-      --     'n',
-      --     'gd',
-      --     require('telescope.builtin').lsp_definitions,
-      --     { desc = '[G]oto [D]efinition' }
-      --   )
-      --   keymap.set(
-      --     'n',
-      --     'gr',
-      --     require('telescope.builtin').lsp_references,
-      --     { desc = '[G]oto [R]eferences' }
-      --   )
-      --   keymap.set(
-      --     'n',
-      --     'gI',
-      --     require('telescope.builtin').lsp_implementations,
-      --     { desc = '[G]oto [I]mplementation' }
-      --   )
-      --   keymap.set(
-      --     'n',
-      --     '<leader>D',
-      --     require('telescope.builtin').lsp_type_definitions,
-      --     { desc = 'Type [D]efinition' }
-      --   )
-      --   keymap.set(
-      --     'n',
-      --     '<leader>ds',
-      --     require('telescope.builtin').lsp_document_symbols,
-      --     { desc = '[D]ocument [S]ymbols' }
-      --   )
-
-        -- keymap.set(
-        --   'n',
-        --   '<leader>ws',
-        --   require('telescope.builtin').lsp_dynamic_workspace_symbols,
-        --   { desc = '[W]orkspace [S]ymbols' }
-        -- )
-      -- else
-      --   keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efinition' }) -- show lsp definitions
-      --   keymap.set('n', 'gr', vim.lsp.buf.references, { desc = '[G]o to [R]eferences' })
-      -- end
 
       opts.desc = 'Uses Navbuddy'
       keymap.set('n', '<leader>n', ':Navbuddy<CR>', opts)
