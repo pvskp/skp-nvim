@@ -10,7 +10,7 @@ require 'custom.utils'
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.zenbones')
 spec(false, 'colorscheme.vscode')
-spec(true, 'colorscheme.tokyonight')
+spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
@@ -24,7 +24,7 @@ spec(false, 'colorscheme.monokai')
 spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.material')
-spec(false, 'colorscheme.github')
+spec(true, 'colorscheme.github')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
@@ -37,7 +37,7 @@ spec(false, 'colorscheme.cyberdream')
 
 --<< LSP related >>--
 
-spec(true, 'lsp.treesiter') -- love and hate relationship with this one
+spec(true, 'lsp.treesiter')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.neodev') -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
@@ -61,7 +61,7 @@ spec(false, 'languages.golang') -- go integration
 
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.hipatterns')
-spec(true, 'mini.ai')
+spec(false, 'mini.ai')
 spec(false, 'mini.animate')
 spec(true, 'mini.files') -- minitree (best tree plugin)
 spec(false, 'mini.notify')
@@ -102,7 +102,7 @@ spec(true, 'autopairs')
 spec(true, 'auto-session')
 spec(true, 'ccc')
 spec(false, 'wilder')
-spec(false, 'which-key')
+spec(true, 'which-key')
 spec(false, 'vim-be-good')
 spec(false, 'ufo') -- deal with folding in a better way
 spec(false, 'toggle-checkbox')

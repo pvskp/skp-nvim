@@ -73,14 +73,15 @@ return {
           {
             'mode',
             fmt = function(str)
+              -- return ' ' .. str
               return ' ' .. str
             end,
 
-            color = {
-              gui = 'bold',
-              fg = 'black',
-            },
-            separator = { right = '' },
+            -- color = {
+            --   gui = 'bold',
+            --   fg = 'black',
+            -- },
+            -- separator = { right = '' },
           },
         },
         lualine_b = {
@@ -141,20 +142,16 @@ return {
           {
             'filename',
             path = 1,
-            separator = { right = '' },
+            -- separator = { right = '' },
             symbols = {
               modified = '[+]', -- Text to show when the file is modified.
               readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
               unnamed = '[?]', -- Text to show for unnamed buffers.
               newfile = '[New]', -- Text to show for newly created file before first write
-              -- modified = ' ', -- Text to show when the file is modified.
-              -- readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
-              -- unnamed = '[No Name]', -- Text to show for unnamed buffers.
-              -- newfile = ' ', -- Text to show for newly created file before first write
             },
             color = {
               gui = 'bold',
-              -- bg = 'NvimDarkGray3',
+              bg = 'NvimDarkGray3',
               fg = 'white',
             },
           },
@@ -193,13 +190,7 @@ return {
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = {
-        'fugitive',
-        'lazy',
-        'mason',
-        'quickfix',
-        'trouble',
-      },
+      extensions = { 'fugitive', 'lazy', 'mason', 'quickfix', 'trouble' },
     }
   end,
 }

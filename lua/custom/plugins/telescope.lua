@@ -125,11 +125,11 @@ function M.config()
     }
   end
 
-  vim.keymap.set('n', '<leader>f', git_files, { desc = 'Find [F]iles' })
+  vim.keymap.set('n', '<leader>f', git_files, { desc = 'Find Files' })
   vim.keymap.set('n', '<leader><space>', search_buffers, {})
-  vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = '[G]rep Files' })
-  vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = '[H]elp Tags' })
-  vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = '[S]earch [W]ord' })
+  vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = 'Grep Files' })
+  vim.keymap.set('n', '<leader>h', builtin.help_tags, { desc = 'Help Tags' })
+  vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = 'Search Word' })
   vim.keymap.set('n', '<leader>/', fuzzy_in_file, { desc = 'Fuzzy in file' })
 
   require('telescope').load_extension 'ui-select'

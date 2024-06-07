@@ -35,10 +35,10 @@ return {
 
     windows = {
       max_number = 5,
-      preview = false,
+      preview = true,
       width_focus = 50,
       width_nofocus = 30,
-      width_preview = 25,
+      width_preview = 70,
     },
   },
   config = function(_, opts)
