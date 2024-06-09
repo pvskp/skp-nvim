@@ -12,7 +12,7 @@ return {
         return result
       end,
 
-      separator = { left = '' },
+      -- separator = { left = '' },
       color = {
         fg = 'black',
       },
@@ -48,6 +48,28 @@ return {
       }
     end
 
+    local colors = {
+      bg = '#202328',
+      fg = '#bbc2cf',
+      yellow = '#ECBE7B',
+      cyan = '#008080',
+      darkblue = '#081633',
+      green = '#98be65',
+      orange = '#FF8800',
+      violet = '#a9a1e1',
+      magenta = '#c678dd',
+      blue = '#51afef',
+      red = '#ec5f67',
+
+      insert = Get_highlight_bg 'lualine_a_insert',
+      normal = Get_highlight_bg 'lualine_a_normal',
+      visual = Get_highlight_bg 'lualine_a_visual',
+      command = Get_highlight_bg 'lualine_a_command',
+      replace = Get_highlight_bg 'lualine_a_replace',
+      inactive = Get_highlight_bg 'lualine_a_inactive',
+      terminal = Get_highlight_bg 'lualine_a_terminal',
+    }
+
     require('lualine').setup {
       options = {
         icons_enabled = USE_DEVICONS,
@@ -70,22 +92,49 @@ return {
         },
       },
       sections = {
-        lualine_a = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
           {
-            'mode',
-            fmt = function(str)
+            function()
+              return '▊'
+            end,
+            color = { fg = colors.blue }, -- Sets highlighting of component
+            padding = { left = 0, right = 0 }, -- We don't need space before this
+          },
+          {
+            function(str)
               -- return ' ' .. str
-              return ' ' .. str
+              return ' '
             end,
 
-            color = {
-              gui = 'bold',
-              fg = 'black',
-            },
-            -- separator = { right = '' },
+            color = function()
+              -- auto change color according to neovims mode
+              local mode_color = {
+                n = colors.normal,
+                i = colors.insert,
+                v = colors.visual,
+                [''] = colors.visual,
+                V = colors.visual,
+                c = colors.command,
+                no = colors.normal,
+                s = colors.replace,
+                S = colors.replace,
+                [''] = colors.replace,
+                ic = colors.insert,
+                R = colors.replace,
+                Rv = colors.replace,
+                cv = colors.command,
+                ce = colors.command,
+                r = colors.replace,
+                rm = colors.replace,
+                ['r?'] = colors.replace,
+                ['!'] = colors.command,
+                t = colors.terminal,
+              }
+              return { fg = mode_color[vim.fn.mode()] }
+            end,
           },
-        },
-        lualine_b = {
           {
             'branch',
             icon = {
@@ -135,8 +184,7 @@ return {
             },
             separator = { right = '' },
           },
-        },
-        lualine_c = {
+
           '%=',
           {
             'filetype',
@@ -176,7 +224,7 @@ return {
               fg = '#1B2136',
             },
 
-            separator = { left = '' },
+            -- separator = { left = '' },
           },
           nvimbattery,
           {

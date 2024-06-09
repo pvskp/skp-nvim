@@ -80,6 +80,15 @@ Symbols = {
 
 USE_DEVICONS = true
 
+function Get_highlight_bg(name)
+  local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+  if hl and hl.bg then
+    return string.format('#%06x', hl.bg)
+  else
+    return nil
+  end
+end
+
 local function define_borders(border)
   local r = { simple = border }
   if border == 'single' then

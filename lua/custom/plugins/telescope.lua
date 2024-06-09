@@ -47,7 +47,7 @@ return {
       function()
         require('telescope.builtin').live_grep()
       end,
-      { desc = 'Grep Files' },
+      desc = 'Grep Files',
     },
 
     {
@@ -55,7 +55,7 @@ return {
       function()
         require('telescope.builtin').help_tags()
       end,
-      { desc = 'Help Tags' },
+      desc = 'Help Tags',
     },
 
     {
@@ -63,7 +63,7 @@ return {
       function()
         require('telescope.builtin').grep_string()
       end,
-      { desc = 'Search Word' },
+      desc = 'Search Word',
     },
 
     {
