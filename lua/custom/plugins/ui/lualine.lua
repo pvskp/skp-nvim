@@ -13,9 +13,9 @@ return {
       end,
 
       -- separator = { left = '' },
-      color = {
-        fg = 'black',
-      },
+      -- color = {
+      --   fg = 'black',
+      -- },
     }
 
     local lazy_status = require 'lazy.status'
@@ -61,19 +61,59 @@ return {
       blue = '#51afef',
       red = '#ec5f67',
 
-      insert = Get_highlight_bg 'lualine_a_insert',
-      normal = Get_highlight_bg 'lualine_a_normal',
-      visual = Get_highlight_bg 'lualine_a_visual',
-      command = Get_highlight_bg 'lualine_a_command',
-      replace = Get_highlight_bg 'lualine_a_replace',
-      inactive = Get_highlight_bg 'lualine_a_inactive',
-      terminal = Get_highlight_bg 'lualine_a_terminal',
+      -- insert = Lighten_color(Get_highlight_bg 'lualine_a_insert', 1.2),
+      -- normal = Lighten_color(Get_highlight_bg 'lualine_a_normal', 1.2),
+      -- visual = Lighten_color(Get_highlight_bg 'lualine_a_visual', 1.2),
+      -- command = Lighten_color(Get_highlight_bg 'lualine_a_command', 1.2),
+      -- replace = Lighten_color(Get_highlight_bg 'lualine_a_replace', 1.2),
+      -- inactive = Lighten_color(Get_highlight_bg 'lualine_a_inactive', 1.2),
+      -- terminal = Lighten_color(Get_highlight_bg 'lualine_a_terminal', 1.2),
     }
+
+    if vim.o.background == 'light' then
+      colors.bg = '#E1E0C3'
+
+      colors.fg = '#202328'
+    end
+
+    local function color_as_mode()
+      -- auto change color according to neovims mode
+      local mode_color = {
+        n = colors.blue,
+        i = colors.green,
+        v = colors.orange,
+        [''] = colors.orange,
+        V = colors.orange,
+        c = colors.magenta,
+        no = colors.blue,
+        s = colors.orange,
+        S = colors.orange,
+        [''] = colors.orange,
+        ic = colors.yellow,
+        R = colors.violet,
+        Rv = colors.violet,
+        cv = colors.blue,
+        ce = colors.blue,
+        r = colors.cyan,
+        rm = colors.cyan,
+        ['r?'] = colors.cyan,
+        ['!'] = colors.blue,
+        t = colors.blue,
+      }
+      return { fg = mode_color[vim.fn.mode()] }
+    end
 
     require('lualine').setup {
       options = {
         icons_enabled = USE_DEVICONS,
-        theme = 'auto',
+        -- theme = 'auto',
+        theme = {
+          -- We are going to use lualine_c an lualine_x as left and
+          -- right section. Both are highlighted by c theme .  So we
+          -- are just setting default looks o statusline
+          normal = { c = { fg = colors.fg, bg = colors.bg } },
+          inactive = { c = { fg = colors.fg, bg = colors.bg } },
+        },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -99,48 +139,26 @@ return {
             function()
               return '▊'
             end,
-            color = { fg = colors.blue }, -- Sets highlighting of component
+            color = color_as_mode,
+            -- color = {
+            --   fg = colors.blue
+            -- }, -- Sets highlighting of component
             padding = { left = 0, right = 0 }, -- We don't need space before this
           },
           {
             function(str)
               -- return ' ' .. str
-              return ' '
+              return ''
             end,
 
-            color = function()
-              -- auto change color according to neovims mode
-              local mode_color = {
-                n = colors.normal,
-                i = colors.insert,
-                v = colors.visual,
-                [''] = colors.visual,
-                V = colors.visual,
-                c = colors.command,
-                no = colors.normal,
-                s = colors.replace,
-                S = colors.replace,
-                [''] = colors.replace,
-                ic = colors.insert,
-                R = colors.replace,
-                Rv = colors.replace,
-                cv = colors.command,
-                ce = colors.command,
-                r = colors.replace,
-                rm = colors.replace,
-                ['r?'] = colors.replace,
-                ['!'] = colors.command,
-                t = colors.terminal,
-              }
-              return { fg = mode_color[vim.fn.mode()] }
-            end,
+            color = color_as_mode,
           },
           {
             'branch',
             icon = {
               Symbols.lualine.branch,
               color = {
-                -- fg = 'orange'
+                fg = 'orange',
               },
             },
             color = {
@@ -212,16 +230,12 @@ return {
             -- },
           },
         },
-        lualine_x = {},
-        lualine_y = {
-          copilot_section,
-        },
-        lualine_z = {
+        lualine_x = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = {
-              fg = '#1B2136',
+              fg = 'orange',
             },
 
             -- separator = { left = '' },
@@ -230,10 +244,21 @@ return {
           {
             'ctime',
             color = {
-              fg = 'black',
+              -- fg = 'blue',
             },
           },
+          {
+            function()
+              return '▊'
+            end,
+            color = color_as_mode,
+            padding = { left = 1, right = 0 }, -- We don't need space before this
+          },
         },
+        lualine_y = {
+          copilot_section,
+        },
+        lualine_z = {},
       },
       inactive_sections = {
         lualine_a = {},

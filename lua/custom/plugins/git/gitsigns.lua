@@ -58,10 +58,10 @@ return {
   config = function(_, opts)
     require('gitsigns').setup(opts)
 
-    vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', {
-      fg = '#4d4d4c',
-      bg = 'NONE',
-    })
+    -- vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', {
+    --   fg = '#4d4d4c',
+    --   bg = 'NONE',
+    -- })
 
     -- local M = {}
     -- _G.Status = M

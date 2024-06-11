@@ -42,7 +42,7 @@ return {
   },
   config = function(_, opts)
     require('github-theme').setup(opts)
-    vim.cmd 'colorscheme github_dark_default'
+    vim.cmd 'colorscheme github_light_default'
     vim.cmd 'highlight! Todo guibg=None'
   end,
 }

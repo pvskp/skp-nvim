@@ -1,9 +1,9 @@
 local options = {
   --< Search >--
-  hlsearch = false,  -- highlight all matches on previous search pattern
+  hlsearch = false, -- highlight all matches on previous search pattern
   smartcase = true,
   ignorecase = true, -- ignore case in search patterns
-  number = true,     -- the number of spaces inserted for each indentation
+  number = true, -- the number of spaces inserted for each indentation
   list = true,
   termguicolors = true,
 
@@ -12,17 +12,17 @@ local options = {
   --< Tabulation >--
   expandtab = true, -- convert tabs to spaces
   tabstop = 2,
-  shiftwidth = 2,   -- the number of spaces inserted for each indentation
+  shiftwidth = 2, -- the number of spaces inserted for each indentation
 
   --< UI >--
   cursorcolumn = false,
-  cursorline = true,        -- highlight the current line
+  cursorline = true, -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
   -- colorcolumn = '101',
   signcolumn = 'yes',
-  numberwidth = 2,       -- set number column width {default 4}
+  numberwidth = 2, -- set number column width {default 4}
   wrap = false,
-  linebreak = true,      -- companion to wrap, don't split words
+  linebreak = true, -- companion to wrap, don't split words
   relativenumber = true, -- set relative numbered lines
   showmode = false,
   scrolloff = 99999,
@@ -55,7 +55,7 @@ local options = {
   clipboard = 'unnamedplus',
   smartindent = true, -- make indenting smarter again
   autochdir = false,
-  -- background = "dark",
+  background = 'dark',
   cmdheight = 1, -- space in the neovim command line for displaying messages
   compatible = false,
   equalalways = false,

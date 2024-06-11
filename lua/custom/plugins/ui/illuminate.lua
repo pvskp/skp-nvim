@@ -27,8 +27,8 @@ return {
       case_insensitive_regex = false,
     }
 
-    vim.cmd 'highlight! IlluminatedWordText guibg=#3b4261 gui=None'
-    vim.cmd 'highlight! IlluminatedWordRead guibg=#3b4261 gui=None'
-    vim.cmd 'highlight! IlluminatedWordWrite guibg=#3b4261 gui=None'
+    -- vim.cmd 'highlight! IlluminatedWordText guibg=#3b4261 gui=None'
+    -- vim.cmd 'highlight! IlluminatedWordRead guibg=#3b4261 gui=None'
+    -- vim.cmd 'highlight! IlluminatedWordWrite guibg=#3b4261 gui=None'
   end,
 }

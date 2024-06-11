@@ -49,13 +49,13 @@ return {
     -- vim.cmd([[colorscheme base16-brushtrees]])
     -- vim.cmd([[colorscheme base16-chalk]])
     -- vim.cmd([[colorscheme base16-circus]])
-    -- vim.cmd([[colorscheme base16-classic-dark]])
-    -- vim.cmd([[colorscheme base16-classic-light]])
+    vim.cmd [[colorscheme base16-classic-dark]]
+    -- vim.cmd [[colorscheme base16-classic-light]]
     -- vim.cmd([[colorscheme base16-codeschool]])
     -- vim.cmd([[colorscheme base16-cupcake]])
     -- vim.cmd([[colorscheme base16-cupertino]])
     -- vim.cmd([[colorscheme base16-darktooth]])
-    vim.cmd [[colorscheme base16-default-dark]]
+    -- vim.cmd [[colorscheme base16-default-dark]]
     -- vim.cmd([[colorscheme base16-default-light]])
     -- vim.cmd([[colorscheme base16-darcula]])
     -- vim.cmd([[colorscheme base16-dracula]])
@@ -122,7 +122,7 @@ return {
     -- vim.cmd([[colorscheme base16-snazzy]])
     -- vim.cmd([[colorscheme base16-solarflare]])
     -- vim.cmd [[colorscheme base16-solarized-dark]]
-    -- vim.cmd([[colorscheme base16-solarized-light]])
+    -- vim.cmd [[colorscheme base16-solarized-light]]
     -- vim.cmd [[colorscheme base16-spacemacs]]
     -- vim.cmd [[colorscheme base16-windows-95]]
     -- vim.cmd([[colorscheme base16-summerfruit-dark]])

@@ -80,6 +80,35 @@ Symbols = {
 
 USE_DEVICONS = true
 
+-- Função para converter um valor hexadecimal para RGB
+local function hex_to_rgb(hex)
+  hex = hex:gsub('#', '')
+  return tonumber('0x' .. hex:sub(1, 2)),
+    tonumber('0x' .. hex:sub(3, 4)),
+    tonumber('0x' .. hex:sub(5, 6))
+end
+
+-- Função para converter um valor RGB para hexadecimal
+local function rgb_to_hex(r, g, b)
+  return string.format('#%02x%02x%02x', r, g, b)
+end
+
+-- Função para clarear uma cor
+function Lighten_color(hex, factor)
+  if hex == nil then
+    vim.notify 'Hex is nil'
+    return hex
+  end
+  factor = factor or 1.2 -- Define o fator padrão como 1.2 se não for especificado
+  local r, g, b = hex_to_rgb(hex)
+  r = math.min(255, math.floor(r * factor))
+  g = math.min(255, math.floor(g * factor))
+  b = math.min(255, math.floor(b * factor))
+  vim.notify('Original hex: ' .. hex)
+  vim.notify('Lightened hex: ' .. rgb_to_hex(r, g, b))
+  return rgb_to_hex(r, g, b)
+end
+
 function Get_highlight_bg(name)
   local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
   if hl and hl.bg then
