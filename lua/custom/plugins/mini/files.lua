@@ -1,10 +1,11 @@
+local open_desc = '  Toggle File Explorer'
 return {
   'echasnovski/mini.files',
   version = '*',
   ft = 'alpha',
   keys = {
-    { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
-    { '<c-e>', '<cmd>lua MiniFiles.open()<cr>', desc = 'Toggle File Explorer' },
+    { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
+    { '<c-e>', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
   },
   opts = {
     content = {

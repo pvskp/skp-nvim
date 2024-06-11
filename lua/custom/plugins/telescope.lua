@@ -1,3 +1,19 @@
+local ivy_options = {
+  previewer = false,
+  prompt_title = false,
+  results_title = false,
+
+  borderchars = {
+    prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+    results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+    preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+  },
+  layout_config = {
+    -- width = 0.5,
+    height = 0.3,
+  },
+}
+
 return {
   'nvim-telescope/telescope.nvim',
   -- tag = '0.1.6',
@@ -6,36 +22,14 @@ return {
     {
       '<leader>fg',
       function()
-        require('telescope.builtin').find_files(require('telescope.themes').get_ivy {
-          previewer = false,
-          prompt_title = false,
-          results_title = false,
-          layout_config = {
-            -- width = 0.5,
-            height = 0.3,
-          },
-        })
+        require('telescope.builtin').find_files(require('telescope.themes').get_ivy(ivy_options))
       end,
       desc = 'Find [all] files',
     },
     {
       '<leader>ff',
       function()
-        require('telescope.builtin').git_files(require('telescope.themes').get_ivy {
-          previewer = false,
-          prompt_title = false,
-          results_title = false,
-
-          borderchars = {
-            prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-            results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-            preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-          },
-          layout_config = {
-            -- width = 0.5,
-            height = 0.3,
-          },
-        })
+        require('telescope.builtin').git_files(require('telescope.themes').get_ivy(ivy_options))
       end,
       desc = 'Git files',
     },
@@ -64,7 +58,7 @@ return {
       function()
         require('telescope.builtin').live_grep()
       end,
-      desc = 'Grep Files',
+      desc = '  Grep Files',
     },
 
     {

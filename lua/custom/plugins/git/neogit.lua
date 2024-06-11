@@ -10,7 +10,7 @@ return {
     vim.keymap.set('n', '<leader>x', ':Neogit<CR>', {
       noremap = true,
       silent = true,
-      desc = '[G]it [S]tatus',
+      desc = ' Neogit',
     })
   end,
   config = true,

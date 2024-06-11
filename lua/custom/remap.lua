@@ -27,7 +27,7 @@ map('n', '<S-h>', ':bprevious<CR>', opts)
 map('n', '<Tab>', '<C-6>', opts)
 
 -- Find mode
-map('n', '<leader>f', ':find *')
+map('n', '<leader>ff', ':find *')
 
 -- Search in directory
 map('n', '<leader>g', function()
