@@ -12,9 +12,9 @@ vim.cmd 'highlight! link LazyGitBorder TelescopeResultsBorder'
 
 -- vim.cmd 'highlight! link LazyGitFloat TelescopeResultsBorder'
 
-vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
-vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
-vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
+-- vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
+-- vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
+-- vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
 
 vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', {
   fg = Symbols.telescope.selection_caret.color,

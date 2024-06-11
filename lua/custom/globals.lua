@@ -65,12 +65,14 @@ Symbols = {
   },
   telescope = {
     prompt_prefix = {
-      icon = '  ',
-      color = '#e6cc80',
+      -- icon = '  ',
+      icon = '$ ',
+      -- color = '#e6cc80',
     },
     selection_caret = {
-      icon = ' 󱈛 ',
-      color = '#3399e7',
+      -- icon = ' 󱈛 ',
+      icon = '  ',
+      color = '#e6cc80',
     },
   },
   lualine = {

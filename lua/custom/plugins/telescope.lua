@@ -1,24 +1,41 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.6',
+  -- tag = '0.1.6',
   cmd = 'Telescope',
   keys = {
-
     {
-      '<leader>f',
+      '<leader>fg',
       function()
-        require('telescope.builtin').git_files {
-          borderchars = Borders.borderchars,
+        require('telescope.builtin').find_files(require('telescope.themes').get_ivy {
           previewer = false,
-          -- sorting_strategy = 'ascending', -- this is buggy for some reason
-          -- prompt_title = false,
+          prompt_title = false,
           results_title = false,
           layout_config = {
-            width = 0.5,
-            height = 0.5,
-            prompt_position = 'bottom',
+            -- width = 0.5,
+            height = 0.3,
           },
-        }
+        })
+      end,
+      desc = 'Find [all] files',
+    },
+    {
+      '<leader>ff',
+      function()
+        require('telescope.builtin').git_files(require('telescope.themes').get_ivy {
+          previewer = false,
+          prompt_title = false,
+          results_title = false,
+
+          borderchars = {
+            prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+            results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+            preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+          },
+          layout_config = {
+            -- width = 0.5,
+            height = 0.3,
+          },
+        })
       end,
       desc = 'Git files',
     },

@@ -12,7 +12,7 @@ return {
     attach_navic = true,
     create_autocmd = true,
     include_buftypes = { '' },
-    exclude_filetypes = { 'netrw', 'toggleterm', '' },
+    exclude_filetypes = { 'netrw', 'toggleterm', 'alpha' },
     modifiers = {
       dirname = ':~:.',
       basename = '',
@@ -67,10 +67,11 @@ return {
       TypeParameter = '',
     },
   },
+
   config = function(_, opts)
     local barbecue = require 'barbecue'
     barbecue.setup(opts)
 
-    require('barbecue.ui').toggle()
+    -- require('barbecue.ui').toggle()
   end,
 }
