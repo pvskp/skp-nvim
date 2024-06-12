@@ -10,20 +10,18 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    vim.lsp.handlers['textDocument/hover'] =
-        vim.lsp.with(vim.lsp.handlers.hover, {
-          border = "none"
-        })
-    vim.lsp.handlers['textDocument/signatureHelp'] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, {
-          border = "none"
-        })
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = 'none',
+    })
+    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      border = 'none',
+    })
 
     vim.diagnostic.config {
       virtual_text = false,
       underline = true,
       float = {
-        border = "none"
+        border = 'none',
       },
     }
 
@@ -51,7 +49,7 @@ return {
           package_pending = '➜',
           package_uninstalled = '✗',
         },
-        border = "none",
+        border = 'none',
       },
     }
 
@@ -71,15 +69,14 @@ return {
         { desc = '[T]oggle inlay_hint', silent = true }
       )
 
-
       opts.desc = 'Uses Navbuddy'
       keymap.set('n', '<leader>n', ':Navbuddy<CR>', opts)
 
       opts.desc = 'Go to declaration'
       keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
 
-      opts.desc = 'See available code actions'
-      keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+      -- opts.desc = 'See available code actions'
+      -- keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
       opts.desc = 'Smart rename'
       keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts) -- smart rename
