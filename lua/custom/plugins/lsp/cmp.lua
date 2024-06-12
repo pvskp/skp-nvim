@@ -6,7 +6,7 @@ return {
   },
   dependencies = {
     'hrsh7th/cmp-buffer', -- source for text in buffer
-    'hrsh7th/cmp-path', -- source for file system paths
+    'hrsh7th/cmp-path',   -- source for file system paths
     -- 'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'amarakon/nvim-cmp-fonts', -- source for font completion
@@ -39,12 +39,14 @@ return {
       },
       window = {
         completion = cmp.config.window.bordered {
-          border = Borders.simple,
+          border = "none",
+          -- border = Borders.simple,
           scrollbar = false,
           winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
         },
         documentation = cmp.config.window.bordered {
-          border = Borders.simple,
+          -- border = Borders.simple,
+          border = "none",
           winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
         },
       },
@@ -59,7 +61,7 @@ return {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- show completion suggestions
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(), -- close completion window
+        ['<C-e>'] = cmp.mapping.abort(),        -- close completion window
         -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ['<CR>'] = cmp.mapping.confirm { select = true },
         ['<Tab>'] = cmp.mapping.confirm { select = true },

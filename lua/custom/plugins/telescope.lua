@@ -3,11 +3,12 @@ local ivy_options = {
   prompt_title = false,
   results_title = false,
 
-  borderchars = {
-    prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-    results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-    preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-  },
+  -- borderchars = {
+  --   prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+  --   results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+  --   preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+  -- },
+
   layout_config = {
     -- width = 0.5,
     height = 0.3,

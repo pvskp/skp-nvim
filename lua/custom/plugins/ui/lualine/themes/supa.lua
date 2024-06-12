@@ -8,8 +8,8 @@ local opts = {
     disabled_filetypes = {
       'alpha',
       'neogit',
-      statusline = {},
-      winbar = {},
+      -- statusline = {},
+      -- winbar = {},
     },
     ignore_focus = {},
     always_divide_middle = true,
@@ -22,6 +22,7 @@ local opts = {
   },
   sections = {
     lualine_a = {
+      -- { 'windows' },
       {
         'mode',
         fmt = function(str)
@@ -39,15 +40,15 @@ local opts = {
         'branch',
         icon = {
           Symbols.lualine.branch,
-          color = {
-            fg = 'orange',
-          },
+          -- color = {
+          --   fg = 'orange',
+          -- },
         },
-        color = {
-          gui = 'bold',
-          fg = 'orange',
-          -- bg = 'vimDarkGray2',
-        },
+        -- color = {
+        --   gui = 'bold',
+        --   fg = 'orange',
+        --   -- bg = 'vimDarkGray2',
+        -- },
       },
       {
         'diagnostics',

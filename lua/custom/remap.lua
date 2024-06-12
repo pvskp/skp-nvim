@@ -26,6 +26,13 @@ map('n', '<S-l>', ':bnext<CR>', opts)
 map('n', '<S-h>', ':bprevious<CR>', opts)
 map('n', '<Tab>', '<C-6>', opts)
 
+if vim.g.neovide then
+  vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+  vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+  vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
+
+
 -- Find mode
 map('n', '<leader>ff', ':find *')
 
@@ -44,10 +51,10 @@ map('n', '<M-k>', '<C-w>k')
 map('n', '<M-l>', '<C-w>l')
 map('n', '<M-h>', '<C-w>h')
 
-map({ 'n', 'v' }, ';', ':')
-map({ 'n', 'v' }, ':', ';')
+-- map({ 'n', 'v' }, ';', ':')
+-- map({ 'n', 'v' }, ':', ';')
 
-map('n', '<leader>;', function()
+map({ 'n', 'v' }, '<leader>;', function()
   local old_word = vim.fn.expand '<cword>'
   local new_word = vim.fn.input('Replace ' .. old_word .. ' by? ', old_word)
 

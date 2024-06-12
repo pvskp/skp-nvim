@@ -1,13 +1,11 @@
 return {
   'luukvbaal/statuscol.nvim',
   event = 'VimEnter',
-  init = function() end,
   config = function()
     local builtin = require 'statuscol.builtin'
     require('statuscol').setup {
-      relculright = true,
+      -- relculright = true,
       segments = {
-
         {
           sign = {
             namespace = { 'diagnostic' },

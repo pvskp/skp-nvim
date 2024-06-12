@@ -223,19 +223,35 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button('f', '󰈞  Find file', ':Telescope find_files <CR>'),
-      dashboard.button('g', '󱎸  Find text', ':Telescope live_grep <CR>'),
-      dashboard.button('e', '  Explorer', ':lua MiniFiles.open() <CR>'),
-      dashboard.button(
-        '3',
-        '  Open i3 config',
-        ': e ~/.config/i3/config | lcd ~/.config/i3 <CR>'
-      ),
-      dashboard.button('u', '  Recently used files', ':Telescope oldfiles <CR>'),
-      dashboard.button('r', '󰌑  Restore last session', ':SessionRestore <CR>'),
+      dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
+      dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button('g', '  Find text', ':Telescope live_grep <CR>'),
+      dashboard.button('u', '  Recently used files', ':Telescope oldfiles <CR>'),
       dashboard.button('c', '  Configuration', ':e $MYVIMRC | lcd ~/.config/nvim <CR>'),
-      dashboard.button('s', '  Update plugins', ':Lazy sync<CR>'),
+      dashboard.button('e', '  Explorer', ':lua MiniFiles.open() <CR>'),
+      dashboard.button('3', '  Open i3 config', ': e ~/.config/i3/config | lcd ~/.config/i3 <CR>'),
+      dashboard.button('r', '  Restore last session', ':SessionRestore <CR>'),
+      dashboard.button('s', '  Sync plugins', ':Lazy sync<CR>'),
+      dashboard.button('q', '  Quit', ':qa<CR>'),
     }
+
+    dashboard.section.footer.val = "  github.com/pvskp |   pvskp.com"
+
+
+    vim.api.nvim_set_hl(0, 'AlphaHeader', {
+      fg = "#f38ba8"
+    })
+
+    vim.api.nvim_set_hl(0, 'AlphaButtons', {
+      fg = "#94e2d5"
+    })
+
+    for _, button in ipairs(dashboard.section.buttons.val) do
+      button.opts.hl = "AlphaButtons"
+      button.opts.hl_shortcut = "AlphaShortcut"
+    end
+
+    dashboard.section.header.opts.hl = "AlphaHeader"
 
     alpha.setup(dashboard.opts)
 

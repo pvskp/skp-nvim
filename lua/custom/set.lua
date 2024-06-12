@@ -1,28 +1,28 @@
 local options = {
   --< Search >--
-  hlsearch = false, -- highlight all matches on previous search pattern
+  hlsearch = false,  -- highlight all matches on previous search pattern
   smartcase = true,
   ignorecase = true, -- ignore case in search patterns
-  number = true, -- the number of spaces inserted for each indentation
+  number = true,     -- the number of spaces inserted for each indentation
   list = true,
   termguicolors = true,
-
+  guifont = "FiraCode Nerd Font:h12",
   path = '.,,**',
 
   --< Tabulation >--
   expandtab = true, -- convert tabs to spaces
   tabstop = 2,
-  shiftwidth = 2, -- the number of spaces inserted for each indentation
+  shiftwidth = 2,   -- the number of spaces inserted for each indentation
 
   --< UI >--
   cursorcolumn = false,
-  cursorline = true, -- highlight the current line
+  cursorline = true,        -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
   -- colorcolumn = '101',
   signcolumn = 'yes',
-  numberwidth = 2, -- set number column width {default 4}
+  numberwidth = 2,       -- set number column width {default 4}
   wrap = false,
-  linebreak = true, -- companion to wrap, don't split words
+  linebreak = true,      -- companion to wrap, don't split words
   relativenumber = true, -- set relative numbered lines
   showmode = false,
   scrolloff = 99999,
@@ -39,7 +39,7 @@ local options = {
   wildmode = 'full',
   -- wildmode = 'list:longest,full',
 
-  fillchars = { vert = ' ', eob = ' ' },
+  fillchars = { vert = '│', eob = ' ' },
 
   --< Fold >--
   foldmethod = 'indent',
@@ -131,6 +131,12 @@ function _G.qftf(info)
     table.insert(ret, str)
   end
   return ret
+end
+
+if vim.g.neovide then
+  vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+  vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+  vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
 end
 
 ---@diagnostic disable-next-line: duplicate-set-field
