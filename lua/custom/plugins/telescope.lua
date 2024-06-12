@@ -132,6 +132,8 @@ return {
         mappings = {
           i = {
             ['<Esc>'] = actions.close,
+            ['<C-s>'] = actions.select_horizontal,
+            ['<C-v>'] = actions.select_vertical,
           },
         },
         buffer_previewer_maker = new_maker,
