@@ -39,14 +39,15 @@ return {
       },
       window = {
         completion = cmp.config.window.bordered {
-          border = "none",
-          -- border = Borders.simple,
+          -- border = "none",
+          border = Borders.simple,
           scrollbar = false,
-          winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
+          -- winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
+          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
         },
         documentation = cmp.config.window.bordered {
-          -- border = Borders.simple,
-          border = "none",
+          border = Borders.simple,
+          -- border = "none",
           winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
         },
       },

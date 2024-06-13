@@ -71,7 +71,7 @@ Symbols = {
     },
     selection_caret = {
       -- icon = ' 󱈛 ',
-      icon = '  ',
+      icon = '  ',
       -- color = '#e6cc80',
     },
   },

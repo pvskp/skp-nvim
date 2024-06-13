@@ -11,17 +11,17 @@ return {
   },
   config = function()
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = 'none',
+      border = Borders.simple,
     })
     vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      border = 'none',
+      border = Borders.simple,
     })
 
     vim.diagnostic.config {
       virtual_text = false,
       underline = true,
       float = {
-        border = 'none',
+        border = Borders.simple,
       },
     }
 
@@ -49,7 +49,7 @@ return {
           package_pending = '➜',
           package_uninstalled = '✗',
         },
-        border = 'none',
+        border = Borders.simple,
       },
     }
 

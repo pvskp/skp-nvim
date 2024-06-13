@@ -1,5 +1,5 @@
--- vim.cmd 'highlight! NormalFloat guibg=NONE'
--- vim.cmd 'highlight! FloatBorder guibg=NONE'
+vim.cmd 'highlight! NormalFloat guibg=NONE'
+vim.cmd 'highlight! FloatBorder guibg=NONE'
 
 -- vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
 -- vim.cmd 'highlight! link LazyGitBorder TelescopeResultsBorder'
@@ -17,6 +17,7 @@
 -- vim.cmd 'highlight TelescopeNormal guibg=NONE'
 -- vim.cmd 'highlight TelescopeTitle guibg=NONE'
 -- vim.cmd 'highlight TelescopePromptBorder guibg=NONE'
+vim.cmd 'highlight TelescopeSelection guibg=NONE'
 -- vim.cmd 'highlight TelescopePromptTitle guibg=NONE'
 
 -- vim.cmd 'highlight! link LazyGitFloat TelescopeResultsBorder'
