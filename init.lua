@@ -145,7 +145,7 @@ spec(true, 'ui.fidget')      -- cool LSP notification
 spec(true, 'ui.dressing')    -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
 spec(true, 'ui.colorizer')   -- color preview
-spec(true, 'ui.barbecue')    -- shows the current symbol and its parents
+spec(false, 'ui.barbecue')   -- shows the current symbol and its parents
 spec(true, 'ui.alpha')       -- start dashboard
 spec(false, 'ui.virt-column')
 spec(false, 'ui.twilight')
