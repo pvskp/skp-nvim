@@ -1,4 +1,4 @@
-local ivy_options = {
+Telescope_ivy_options = {
   previewer = false,
   prompt_title = false,
   results_title = false,
@@ -11,9 +11,21 @@ local ivy_options = {
 
   layout_config = {
     -- width = 0.5,
-    height = 0.3,
+    height = 0.25,
   },
 }
+
+function Telescope_find_files()
+  require('telescope.builtin').find_files(require('telescope.themes').get_ivy(Telescope_ivy_options))
+end
+
+function Telescope_git_files()
+  require('telescope.builtin').git_files(require('telescope.themes').get_ivy(Telescope_ivy_options))
+end
+
+function Telescope_projects()
+  require('telescope').extensions.projects.projects(require('telescope.themes').get_ivy(Telescope_ivy_options))
+end
 
 return {
   'nvim-telescope/telescope.nvim',
@@ -22,16 +34,12 @@ return {
   keys = {
     {
       '<leader>fg',
-      function()
-        require('telescope.builtin').find_files(require('telescope.themes').get_ivy(ivy_options))
-      end,
+      Telescope_find_files,
       desc = 'Find [all] files',
     },
     {
       '<leader>ff',
-      function()
-        require('telescope.builtin').git_files(require('telescope.themes').get_ivy(ivy_options))
-      end,
+      Telescope_git_files,
       desc = 'Git files',
     },
 
@@ -97,6 +105,7 @@ return {
     'nvim-telescope/telescope-ui-select.nvim',
     'BurntSushi/ripgrep',
     'ThePrimeagen/git-worktree.nvim',
+    'pvskp/telescope-projects',
   },
 
   config = function()
@@ -164,6 +173,7 @@ return {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown {},
         },
+        ['projects'] = { require('telescope.themes').get_ivy {} }
       },
     }
 
