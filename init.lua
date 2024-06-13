@@ -67,7 +67,7 @@ spec(false, 'mini.notify')
 
 --<< Git integrations >>--
 
-spec(true, 'git.lazygit')   -- lazygit inside neovim
+spec(false, 'git.lazygit')  -- lazygit inside neovim
 spec(true, 'git.gitsigns')  -- show git signs on columnsign
 spec(false, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
