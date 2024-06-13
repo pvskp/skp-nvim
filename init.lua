@@ -63,7 +63,7 @@ spec(true, 'mini.splitjoin')
 spec(true, 'mini.hipatterns')
 spec(false, 'mini.ai')
 spec(false, 'mini.animate')
-spec(true, 'mini.files') -- minitree (best tree plugin)
+spec(false, 'mini.files') -- minitree (best tree plugin)
 spec(false, 'mini.notify')
 
 --<< Git integrations >>--
@@ -85,44 +85,44 @@ spec(true, 'trouble')   -- cool quickfix list for LSP
 spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
-spec(false, 'statuscol')
-spec(true, 'neo-zoom')  -- toggle zoom mode with a popup window
+spec(true, 'oil')
 spec(true, 'neogen')
-spec(false, 'modicator')
+spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(true, 'maximizer')
 spec(true, 'markdown-preview')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
-spec(false, 'discord') -- rich presence
 spec(true, 'ccc')
 spec(true, 'bigfile')
-spec(true, 'auto-session')
 spec(true, 'autopairs')
-spec(false, 'dired') -- emacs like file manager
+spec(true, 'auto-session')
 spec(false, 'wilder')
 spec(false, 'vim-be-good')
 spec(false, 'ufo') -- deal with folding in a better way
 spec(false, 'toggle-checkbox')
 spec(false, 'tetris')
+spec(false, 'statuscol')
 spec(false, 'spider')
 spec(false, 'remote-containers')
 spec(false, 'remote-containers')
-spec(false, 'oil')
 spec(false, 'obsidian')
 spec(false, 'nvim-tree')
-spec(false, 'neo-tree')
 spec(false, 'neoscroll')
+spec(false, 'neo-tree')
+spec(false, 'modicator')
 spec(false, 'modes')
 spec(false, 'lab')
-spec(false, 'kube-utils')
 spec(false, 'kubectl')  -- kubectl integration
+spec(false, 'kube-utils')
 spec(false, 'kitty')    -- kitty integration
 spec(false, 'hawtkeys') -- show best keybindings to be mapped
 spec(false, 'harpoon')
 spec(false, 'focus')    -- auto-resize windows when switching buffers
 spec(false, 'flybuf')
 spec(false, 'fakeclip')
+spec(false, 'discord') -- rich presence
+spec(false, 'dired')   -- emacs like file manager
 spec(false, 'color-picker')
 spec(false, 'cmdbuf')
 spec(false, 'btterm') -- this one is mine!!!!

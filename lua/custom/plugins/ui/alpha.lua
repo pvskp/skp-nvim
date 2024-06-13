@@ -231,12 +231,12 @@ return {
 
     dashboard.section.buttons.val = {
       dashboard.button('f', '  Find file', '<cmd>lua Telescope_find_files() <CR>'),
-      dashboard.button('e', '  New file', ':ene <BAR> startinsert <CR>'),
+      dashboard.button('n', '  New file', ':ene <BAR> startinsert <CR>'),
       dashboard.button('g', '  Find text', ':Telescope live_grep <CR>'),
       dashboard.button('p', '  Projects', '<cmd>lua Telescope_projects() <CR>'),
       -- dashboard.button('u', '  Recently used files', ':Telescope oldfiles <CR>'),
       dashboard.button('c', '  Configuration', ':e $MYVIMRC | lcd ~/.config/nvim <CR>'),
-      dashboard.button('e', '  Explorer', ':lua MiniFiles.open() <CR>'),
+      dashboard.button('e', '  Explorer', '<cmd>OpenFileManager <CR>'),
       -- dashboard.button('3', '  Open i3 config', ': e ~/.config/i3/config | lcd ~/.config/i3 <CR>'),
       dashboard.button('r', '  Restore last session', ':SessionRestore <CR>'),
       dashboard.button('s', '  Sync plugins', ':Lazy sync<CR>'),

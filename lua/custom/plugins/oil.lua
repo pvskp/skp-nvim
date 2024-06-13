@@ -1,26 +1,8 @@
 return {
   'stevearc/oil.nvim',
-  lazy = false,
+  cmd = { 'OpenFileManager', 'Oil' },
   -- dir = "~/Documents/repos/gp.nvim/",
-  keys = {
-    { '<C-e>', "<CMD>lua require('oil').toggle_float()<CR>", desc = 'Open parent directory' },
-  },
-
   init = function()
-    -- disables numbers to filetype "oil"
-    local opts = {
-      silent = true,
-      noremap = true,
-    }
-
-    local select = "<CMD>lua require('oil.actions').select.callback()<CR>"
-    local open_external = "<CMD>lua require('oil.actions').open_external()<CR>"
-    local parent = "<CMD>lua require('oil.actions').parent.callback()<CR>"
-    local toggle = "<CMD>lua require('oil').toggle_float()<CR>"
-    local toggle_hidden = "<CMD>lua require('oil').toggle_hidden()<CR>"
-
-    vim.api.nvim_set_keymap('n', 'gx', open_external, opts)
-
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'oil',
       callback = function()
@@ -28,44 +10,70 @@ return {
         vim.cmd 'setlocal nonumber'
         vim.cmd 'setlocal nonumber'
         vim.cmd 'setlocal colorcolumn=""'
-
-        -- select
-        opts.desc = 'Select item/enter directory'
-        vim.api.nvim_buf_set_keymap(0, 'n', '<S-l>', select, opts)
-        -- vim.api.nvim_buf_set_keymap(0, "n", "<CR>", select, opts)
-
-        -- parent
-        opts.desc = 'Go to parent directory'
-        vim.api.nvim_buf_set_keymap(0, 'n', '<S-h>', parent, opts)
-        vim.api.nvim_buf_set_keymap(0, 'n', '-', parent, opts)
-        vim.api.nvim_buf_set_keymap(0, 'n', '<BS>', parent, opts)
-
-        -- Close
-        opts.desc = 'Toggle oil'
-        vim.api.nvim_buf_set_keymap(0, 'n', 'q', toggle, opts)
-
-        -- toggle hidden
-        opts.desc = 'Toggle hidden'
-        vim.api.nvim_buf_set_keymap(0, 'n', '<C-h>', toggle_hidden, opts)
       end,
     })
+    vim.api.nvim_create_user_command('OpenFileManager', function()
+      vim.cmd 'Oil'
+    end, {})
   end,
+
+  keys = {
+    -- { '<C-e>',     "<CMD>Oil<CR>", desc = 'Open parent directory' },
+    -- { '<leader>e', "<CMD>Oil<CR>", desc = 'Open parent directory' },
+
+    {
+      '<C-e>',
+      function()
+        require("oil").toggle_float()
+      end,
+      desc = 'Open parent directory'
+    },
+    {
+      '<leader>e',
+      function()
+        require("oil").toggle_float()
+      end,
+      desc = 'Open parent directory'
+    },
+  },
 
   opts = {
     -- default_file_explorer = false,
     skip_confirm_for_simple_edits = true,
-    use_default_keymaps = false,
+    use_default_keymaps = true,
     columns = {
       'icon',
     },
     float = {
-      padding = 8,
+      padding = 10,
       max_width = 0,
       max_height = 0,
       border = Borders.simple,
       win_options = {
         winblend = 0,
       },
+    },
+    keymaps = {
+      ["g?"] = "actions.show_help",
+      ["<CR>"] = "actions.select",
+      ["L"] = "actions.select",
+      -- ["<C-s>"] = { "actions.select", opts = { vertical = true } },
+      ["<C-s>"] = "<cmd>w<CR>",
+      ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+      ["<C-t>"] = { "actions.select", opts = { tab = true } },
+      ["<C-p>"] = "actions.preview",
+      ["<C-c>"] = "<Esc>",
+      ["q"] = "actions.close",
+      ["<C-l>"] = "actions.refresh",
+      ["-"] = "actions.parent",
+      ["H"] = "actions.parent",
+      ["_"] = "actions.open_cwd",
+      ["`"] = "actions.cd",
+      ["~"] = { "actions.cd", opts = { scope = "tab" } },
+      ["gs"] = "actions.change_sort",
+      ["gx"] = "actions.open_external",
+      ["g."] = "actions.toggle_hidden",
+      ["g\\"] = "actions.toggle_trash",
     },
   },
 }
