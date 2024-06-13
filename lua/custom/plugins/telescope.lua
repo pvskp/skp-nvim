@@ -1,19 +1,21 @@
-Telescope_ivy_options = {
-  previewer = false,
-  prompt_title = false,
-  results_title = false,
+Telescope_ivy_options = {}
 
-  -- borderchars = {
-  --   prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-  --   results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-  --   preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-  -- },
-
-  layout_config = {
-    -- width = 0.5,
-    height = 0.25,
-  },
-}
+-- Telescope_ivy_options = {
+--   previewer = false,
+--   prompt_title = false,
+--   results_title = false,
+--
+--   borderchars = {
+--     prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+--     results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+--     preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+--   },
+--
+--   layout_config = {
+--     -- width = 0.5,
+--     height = 0.5,
+--   },
+-- }
 
 function Telescope_find_files()
   require('telescope.builtin').find_files(
@@ -35,7 +37,6 @@ end
 
 return {
   'nvim-telescope/telescope.nvim',
-  -- tag = '0.1.6',
   cmd = 'Telescope',
   keys = {
     {
@@ -143,7 +144,7 @@ return {
 
     telescope.setup {
       defaults = {
-        borderchars = Borders.borderchars,
+        -- borderchars = Borders.borderchars,
         mappings = {
           i = {
             ['<Esc>'] = actions.close,
@@ -183,7 +184,7 @@ return {
       },
     }
 
-    vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
+    -- vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
 
     require('telescope').load_extension 'ui-select'
     require('telescope').load_extension 'git_worktree'

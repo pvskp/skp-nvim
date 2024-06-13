@@ -16,6 +16,12 @@ require('lazy').setup {
   defaults = {
     lazy = true,
   },
+  install = {
+    colorscheme = {
+      "catppuccin",
+      "habamax"
+    }
+  },
   ui = {
     border = Borders.simple,
   },

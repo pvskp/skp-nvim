@@ -8,6 +8,7 @@ local opts = {
     disabled_filetypes = {
       'alpha',
       'neogit',
+      'oil',
       -- statusline = {},
       -- winbar = {},
     },
