@@ -16,7 +16,9 @@ Telescope_ivy_options = {
 }
 
 function Telescope_find_files()
-  require('telescope.builtin').find_files(require('telescope.themes').get_ivy(Telescope_ivy_options))
+  require('telescope.builtin').find_files(
+    require('telescope.themes').get_ivy(Telescope_ivy_options)
+  )
 end
 
 function Telescope_git_files()
@@ -24,7 +26,11 @@ function Telescope_git_files()
 end
 
 function Telescope_projects()
-  require('telescope').extensions.projects.projects(require('telescope.themes').get_ivy(Telescope_ivy_options))
+  require('telescope').load_extension 'projects'
+
+  require('telescope').extensions.projects.projects(
+    require('telescope.themes').get_ivy(Telescope_ivy_options)
+  )
 end
 
 return {
@@ -173,7 +179,7 @@ return {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown {},
         },
-        ['projects'] = { require('telescope.themes').get_ivy {} }
+        ['projects'] = { require('telescope.themes').get_ivy {} },
       },
     }
 
