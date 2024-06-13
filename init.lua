@@ -85,7 +85,7 @@ spec(true, 'trouble')   -- cool quickfix list for LSP
 spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
-spec(true, 'statuscol')
+spec(false, 'statuscol')
 spec(true, 'neo-zoom')  -- toggle zoom mode with a popup window
 spec(true, 'neogen')
 spec(false, 'modicator')

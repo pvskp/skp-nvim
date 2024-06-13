@@ -18,6 +18,7 @@ local options = {
   cursorcolumn = false,
   cursorline = true,        -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
+  statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]],
   -- colorcolumn = '101',
   signcolumn = 'yes',
   numberwidth = 2,       -- set number column width {default 4}
