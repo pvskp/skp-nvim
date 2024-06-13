@@ -4,6 +4,11 @@ return {
   'echasnovski/mini.files',
   version = '*',
   ft = 'alpha',
+  init = function()
+    vim.api.nvim_create_user_command('OpenFileManager', function()
+      vim.cmd '<cmd>lua MiniFiles.open()<cr>'
+    end, {})
+  end,
   keys = {
     { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
     { '<c-e>',     '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
@@ -84,5 +89,6 @@ return {
         map_split(buf_id, '<C-v>', 'belowright vertical')
       end,
     })
+    vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
   end,
 }
