@@ -41,7 +41,7 @@ return {
       gitsigns = true,
       telescope = {
         enabled = true,
-        style = "nvchad"
+        -- style = "nvchad"
       },
       nvimtree = true,
       treesitter = true,

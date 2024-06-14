@@ -16,7 +16,7 @@ local options = {
 
   --< UI >--
   cursorcolumn = false,
-  cursorline = true,        -- highlight the current line
+  cursorline = false,       -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
   statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]],
   -- colorcolumn = '101',

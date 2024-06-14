@@ -5,7 +5,6 @@ require 'custom.globals'
 require 'custom.remap'
 require 'custom.set'
 
---<< colorschemes >>--
 
 spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.zenbones')

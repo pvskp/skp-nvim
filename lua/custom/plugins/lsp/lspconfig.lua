@@ -85,13 +85,13 @@ return {
       end, opts)
 
       opts.desc = 'Go to declaration in horizontal split'
-      keymap.set('n', 'gs', function()
+      keymap.set('n', 'gh', function()
         vim.cmd('split')
         vim.lsp.buf.declaration()
       end, opts)
 
       opts.desc = 'See available code actions'
-      keymap.set({ 'n', 'v' }, '<leader>lc', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+      keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
       opts.desc = 'Smart rename'
       keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts) -- smart rename

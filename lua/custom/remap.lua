@@ -90,7 +90,7 @@ map('n', '<M-=>', '<C-w>=')
 map('n', '<C-s>', ':w<CR>', opts)
 map('n', '<M-t>', ':term<CR>')
 
-map('n', 'Q', ':bd!<CR>', { silent = true })
+map('n', 'Q', '<c-w>q', { silent = true })
 
 map('n', '<C-q>', ':qa!<CR>', { silent = true })
 

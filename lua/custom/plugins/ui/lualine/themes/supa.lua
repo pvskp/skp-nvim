@@ -51,6 +51,8 @@ local opts = {
         --   -- bg = 'vimDarkGray2',
         -- },
       },
+    },
+    lualine_c = {
       {
         'diagnostics',
         symbols = {
@@ -63,8 +65,6 @@ local opts = {
           gui = 'bold',
         },
       },
-    },
-    lualine_c = {
       {
         'diff',
         symbols = {

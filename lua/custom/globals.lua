@@ -72,7 +72,7 @@ Symbols = {
     selection_caret = {
       -- icon = ' 󱈛 ',
       icon = '  ',
-      -- color = '#e6cc80',
+      color = '#f38ba8',
     },
   },
   lualine = {

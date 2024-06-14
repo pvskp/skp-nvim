@@ -17,22 +17,40 @@ Telescope_ivy_options = {}
 --   },
 -- }
 
+local function theme()
+  -- return require('telescope.themes').get_ivy(Telescope_ivy_options)
+  return {
+    sorting_strategy = 'ascending',
+
+    -- prompt_title = false,
+    results_title = false,
+    preview_title = false,
+    layout_strategy = "vertical",
+    layout_config = {
+      height = vim.o.lines,  -- maximally available lines
+      width = vim.o.columns, -- maximally available columns
+      prompt_position = "top",
+      preview_height = 0.6,  -- 60% of available lines
+    },
+  }
+end
+
 function Telescope_find_files()
-  require('telescope.builtin').find_files(
-    require('telescope.themes').get_ivy(Telescope_ivy_options)
-  )
+  require('telescope.builtin').find_files(theme())
 end
 
 function Telescope_git_files()
-  require('telescope.builtin').git_files(require('telescope.themes').get_ivy(Telescope_ivy_options))
+  require('telescope.builtin').git_files(theme())
+end
+
+function Telescope_live_grep()
+  require('telescope.builtin').live_grep(theme())
 end
 
 function Telescope_projects()
   require('telescope').load_extension 'projects'
 
-  require('telescope').extensions.projects.projects(
-    require('telescope.themes').get_ivy(Telescope_ivy_options)
-  )
+  require('telescope').extensions.projects.projects(theme())
 end
 
 return {
@@ -48,6 +66,11 @@ return {
       '<leader>ff',
       Telescope_git_files,
       desc = 'Git files',
+    },
+    {
+      '<leader>p',
+      Telescope_projects,
+      desc = 'Go to project',
     },
 
     {
@@ -71,9 +94,7 @@ return {
 
     {
       '<leader>g',
-      function()
-        require('telescope.builtin').live_grep()
-      end,
+      Telescope_live_grep,
       desc = '  Grep Files',
     },
 
