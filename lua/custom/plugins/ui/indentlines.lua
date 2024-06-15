@@ -23,6 +23,14 @@ return {
     config = function(_, opts)
       require('ibl').setup(opts)
       require 'mini.indentscope'
+
+      -- Disables indent-blankline in alpha
+      vim.api.nvim_create_autocmd("Filetype", {
+        pattern = "alpha",
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end
+      })
     end,
   },
 }
