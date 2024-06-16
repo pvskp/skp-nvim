@@ -91,7 +91,18 @@ map('n', '<M-=>', '<C-w>=')
 map('n', '<C-s>', ':w<CR>', opts)
 map('n', '<M-t>', ':term<CR>')
 
-map('n', 'Q', '<c-w>q', { silent = true })
+-- Window and buffer close
+-- map('n', 'Q', '<c-w>q', { silent = true })
+map('n', 'Q', function()
+  local buff_info = vim.fn.getbufinfo({ buflisted = 1 })
+  if #buff_info > 1 then
+    vim.api.nvim_buf_delete(0, { force = true, unload = false })
+    return
+  end
+
+  vim.notify("Quiting window")
+  vim.cmd('quit')
+end, { silent = true })
 
 map('n', '<C-q>', ':qa!<CR>', { silent = true })
 
