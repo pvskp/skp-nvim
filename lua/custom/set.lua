@@ -1,7 +1,9 @@
 local options = {
   --< Search >--
-  hlsearch = false,  -- highlight all matches on previous search pattern
+  hlsearch = false, -- highlight all matches on previous search pattern
   smartcase = true,
+  title = false,
+  titlestring = "%<%F%=%l/%L - nvim",
   ignorecase = true, -- ignore case in search patterns
   number = true,     -- the number of spaces inserted for each indentation
   list = true,
@@ -16,16 +18,16 @@ local options = {
 
   --< UI >--
   cursorcolumn = false,
-  cursorline = false,       -- highlight the current line
+  cursorline = true,        -- highlight the current line
   cursorlineopt = 'number', -- highlight the current line
   statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]],
   -- colorcolumn = '101',
   signcolumn = 'yes',
-  numberwidth = 2,       -- set number column width {default 4}
+  numberwidth = 2,        -- set number column width {default 4}
   wrap = false,
-  linebreak = true,      -- companion to wrap, don't split words
-  relativenumber = true, -- set relative numbered lines
-  showmode = false,
+  linebreak = true,       -- companion to wrap, don't split words
+  relativenumber = false, -- set relative numbered lines
+  showmode = true,
   scrolloff = 99999,
   pumblend = 0,
 
