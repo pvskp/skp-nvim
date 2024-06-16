@@ -20,6 +20,7 @@ map({ 'i', 'n' }, '<C-c>', '<Esc>')
 -- Movement key mappings
 map({ 'n', 'v' }, '<leader><leader>', 'g_')
 map({ 'n', 'v' }, '<C-j>', '%')
+map('i', '<C-j>', '<Esc>]}a')
 
 -- Buffer navigation
 map('n', '<S-l>', ':bnext<CR>', opts)
@@ -148,3 +149,5 @@ map({ 'n', 'v' }, '<C-t>', ':lua ToggleTrueFalse()<CR>', opts)
 
 -- Spell
 map('n', '<leader>q', '1z=')
+map('n', '<leader>]', '1z=')
+map('n', '<leader>[', '1z=')

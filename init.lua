@@ -87,6 +87,7 @@ spec(false, 'oil')
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(true, 'maximizer')
+spec(true, 'obsidian')
 spec(true, 'markdown-preview')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T

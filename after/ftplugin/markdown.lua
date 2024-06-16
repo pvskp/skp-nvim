@@ -1,10 +1,13 @@
 local opts = {
-  -- "setlocal spell",
-  -- "setlocal spelllang=pt_br",
-  'setlocal nowrap',
-  'setlocal conceallevel=2',
+  spell = true,
+  spelllang = "pt_br",
+  shiftwidth = 2,
+  tabstop = 2,
+  expandtab = true,
+  wrap = false,
+  conceallevel = 2,
 }
 
-for _, v in ipairs(opts) do
-  vim.cmd(v)
+for k, v in pairs(opts) do
+  vim.opt_local[k] = v
 end

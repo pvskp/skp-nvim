@@ -1,10 +1,8 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  -- lazy = false,
-  -- pin = false,
   dependencies = {
     {
-      'nvim-treesitter/nvim-treesitter-textobjects', -- Disable to tets mini.ai
+      { 'nvim-treesitter/nvim-treesitter-textobjects' },
       {
         'nvim-treesitter/nvim-treesitter-context',
         opts = {
@@ -21,6 +19,13 @@ return {
           zindex = 20,     -- The Z-index of the context window
           on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
         },
+        config = function(_, opts)
+          require 'treesitter-context'.setup(opts)
+          vim.api.nvim_create_autocmd('Filetype', {
+            pattern = "markdown",
+            command = "TSContextDisable",
+          })
+        end
       },
     },
   },
@@ -86,7 +91,7 @@ return {
           [']m'] = '@function.outer',
           [']]'] = { query = '@class.outer', desc = 'Next class start' },
           [']o'] = '@loop.*',
-          [']s'] = { query = '@scope', query_group = 'locals', desc = 'Next scope' },
+          -- [']s'] = { query = '@scope', query_group = 'locals', desc = 'Next scope' },
           [']z'] = { query = '@fold', query_group = 'folds', desc = 'Next fold' },
         },
         goto_next_end = {
