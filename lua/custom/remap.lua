@@ -17,7 +17,7 @@ map('n', 'Y', 'v$y')
 
 map({ 'i', 'n' }, '<C-c>', '<Esc>')
 
--- Movement key mappings
+-- General movement mappings
 map({ 'n', 'v' }, '<leader><leader>', 'g_')
 map({ 'n', 'v' }, '<C-j>', '%')
 map('i', '<C-j>', '<Esc>]}a')
@@ -27,12 +27,12 @@ map('n', '<S-l>', ':bnext<CR>', opts)
 map('n', '<S-h>', ':bprevious<CR>', opts)
 map('n', '<Tab>', '<C-6>', opts)
 
+-- Neovide specific mappings
 if vim.g.neovide then
   vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
   vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
   vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
 end
-
 
 -- Find mode
 map('n', '<leader>ff', ':find *')
@@ -46,15 +46,13 @@ map('n', '<leader>g', function()
   end
 end, opts)
 
--- Window splitting
+-- Window splitting and navigation
 map('n', '<M-j>', '<C-w>j')
 map('n', '<M-k>', '<C-w>k')
 map('n', '<M-l>', '<C-w>l')
 map('n', '<M-h>', '<C-w>h')
 
--- map({ 'n', 'v' }, ';', ':')
--- map({ 'n', 'v' }, ':', ';')
-
+-- Find and replace current word
 map({ 'n', 'v' }, '<leader>;', function()
   local old_word = vim.fn.expand '<cword>'
   local new_word = vim.fn.input('Replace ' .. old_word .. ' by? ', old_word)
@@ -128,10 +126,8 @@ map('n', '<M-8>', '8gt')
 map('n', '<M-9>', '9gt')
 
 -- Terminal mode mappings
--- map('t', '<M-a>', '<C-\\><C-n>')
 map('t', '<C-x>', '<C-\\><C-n>')
 map('t', '<Esc>', '<C-\\><C-n>')
-
 map('t', '<M-j>', '<C-\\><C-n><C-w>j', { silent = true })
 map('t', '<M-k>', '<C-\\><C-n><C-w>k', { silent = true })
 map('t', '<M-l>', '<C-\\><C-n><C-w>l', { silent = true })
@@ -139,10 +135,6 @@ map('t', '<M-h>', '<C-\\><C-n><C-w>h', { silent = true })
 
 -- Copy entire file
 map('n', '<C-y>', ':%y+<CR>', { silent = true })
-
--- Window zoom
-local window_zoomed = false
-local window_zoom_restore = {}
 
 -- Command mode mappings
 vim.api.nvim_set_keymap('c', '<C-x>', '<C-y>', { noremap = true })
@@ -156,9 +148,10 @@ end, {})
 vim.api.nvim_set_keymap('n', '<leader>c', 'gcc', opts)
 vim.api.nvim_set_keymap('v', '<leader>c', 'gc', opts)
 
+-- Toggle true/false
 map({ 'n', 'v' }, '<C-t>', ':lua ToggleTrueFalse()<CR>', opts)
 
--- Spell
+-- Spell check correction
 map('n', '<leader>q', '1z=')
 map('n', '<leader>]', '1z=')
 map('n', '<leader>[', '1z=')

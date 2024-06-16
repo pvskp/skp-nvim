@@ -2,8 +2,10 @@ local opts = {
   options = {
     icons_enabled = USE_DEVICONS,
     theme = 'auto',
+    -- component_separators = { left = '', right = '' },
+    -- section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
     -- section_separators = { left = '', right = '' },
     disabled_filetypes = {
       'alpha',
@@ -41,9 +43,9 @@ local opts = {
         'branch',
         icon = {
           Symbols.lualine.branch,
-          -- color = {
-          --   fg = 'orange',
-          -- },
+          color = {
+            fg = 'orange',
+          },
         },
         -- color = {
         --   gui = 'bold',
