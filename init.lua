@@ -84,6 +84,7 @@ spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
 spec(false, 'oil')
+spec(true, 'treesj')
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(true, 'maximizer')

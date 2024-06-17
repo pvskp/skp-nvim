@@ -48,7 +48,7 @@ return {
         documentation = cmp.config.window.bordered {
           border = Borders.simple,
           -- border = "none",
-          winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
+          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
         },
       },
       snippet = {

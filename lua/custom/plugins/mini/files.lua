@@ -6,7 +6,7 @@ return {
   ft = 'alpha',
   init = function()
     vim.api.nvim_create_user_command('OpenFileManager', function()
-      vim.cmd '<cmd>lua MiniFiles.open()<cr>'
+      vim.cmd 'lua MiniFiles.open()'
     end, {})
   end,
   keys = {
