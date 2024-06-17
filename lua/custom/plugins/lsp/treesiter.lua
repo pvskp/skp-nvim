@@ -1,5 +1,9 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  init = function()
+    vim.opt.foldmethod = "indent"
+    vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+  end,
   dependencies = {
     {
       { 'nvim-treesitter/nvim-treesitter-textobjects' },
