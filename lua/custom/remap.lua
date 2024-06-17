@@ -62,32 +62,9 @@ map({ 'n', 'v' }, '<leader>;', function()
   end
 end, {})
 
--- Resize window
-map('n', '<M-r>', function()
-  local keymap_set = vim.keymap.set
-  local interactive_resize_opts = { noremap = true }
-
-  keymap_set('n', 'k', ':resize -2<CR>', interactive_resize_opts)
-  keymap_set('n', 'j', ':resize +2<CR>', interactive_resize_opts)
-  keymap_set('n', 'l', ':vertical resize -2<CR>', interactive_resize_opts)
-  keymap_set('n', 'h', ':vertical resize +2<CR>', interactive_resize_opts)
-  keymap_set('n', '<C-c>', '<cmd>lua Exit_interactive_resize()<CR>', interactive_resize_opts)
-
-  -- exit resize mode
-  keymap_set('n', 'q', function()
-    local keymap_del = vim.api.nvim_del_keymap
-    keymap_del('n', 'k')
-    keymap_del('n', 'j')
-    keymap_del('n', 'h')
-    keymap_del('n', 'l')
-    keymap_del('n', '<C-c>')
-    keymap_del('n', 'q')
-  end, interactive_resize_opts)
-end, { noremap = true, silent = true })
 
 map('n', '<M-=>', '<C-w>=')
 map('n', '<C-s>', ':w<CR>', opts)
-map('n', '<M-t>', ':term<CR>')
 
 -- Window and buffer close
 -- map('n', 'Q', '<c-w>q', { silent = true })
@@ -124,14 +101,6 @@ map('n', '<M-6>', '6gt')
 map('n', '<M-7>', '7gt')
 map('n', '<M-8>', '8gt')
 map('n', '<M-9>', '9gt')
-
--- Terminal mode mappings
-map('t', '<C-x>', '<C-\\><C-n>')
-map('t', '<Esc>', '<C-\\><C-n>')
-map('t', '<M-j>', '<C-\\><C-n><C-w>j', { silent = true })
-map('t', '<M-k>', '<C-\\><C-n><C-w>k', { silent = true })
-map('t', '<M-l>', '<C-\\><C-n><C-w>l', { silent = true })
-map('t', '<M-h>', '<C-\\><C-n><C-w>h', { silent = true })
 
 -- Copy entire file
 map('n', '<C-y>', ':%y+<CR>', { silent = true })
