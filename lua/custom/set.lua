@@ -61,7 +61,7 @@ local options = {
   background = 'dark',
   cmdheight = 1, -- space in the neovim command line for displaying messages
   compatible = false,
-  equalalways = false,
+  equalalways = true,
   conceallevel = 3,
 }
 
