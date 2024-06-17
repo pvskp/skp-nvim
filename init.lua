@@ -3,6 +3,7 @@ require 'custom.autocommands'
 require 'custom.commands'
 require 'custom.globals'
 require 'custom.remap'
+require 'custom.terminal'
 require 'custom.set'
 
 
@@ -98,12 +99,7 @@ spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
 spec(false, 'modicator')
-spec(true, 'kitty')    -- kitty integration
-spec(false, 'flybuf')
-spec(false, 'discord') -- rich presence
-spec(false, 'dired')   -- emacs like file manager
-spec(false, 'color-picker')
-spec(false, 'cmdbuf')
+spec(true, 'kitty')   -- kitty integration
 spec(false, 'btterm') -- this one is mine!!!!
 
 --<< AI >>--
@@ -126,12 +122,6 @@ spec(true, 'ui.devicons')
 spec(true, 'ui.colorizer')   -- color preview
 spec(false, 'ui.barbecue')   -- shows the current symbol and its parents
 spec(true, 'ui.alpha')       -- start dashboard
-spec(false, 'ui.virt-column')
-spec(false, 'ui.twilight')
-spec(false, 'ui.sunglasses')
-spec(false, 'ui.netrw')
-spec(false, 'ui.headlines')
-spec(false, 'ui.bufferline')
 
 --<< Lualine integrations >>--
 

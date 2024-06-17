@@ -38,18 +38,18 @@ return {
         completeopt = 'menu,preview,noinsert',
       },
       window = {
-        completion = cmp.config.window.bordered {
-          -- border = "none",
-          border = Borders.simple,
-          scrollbar = false,
-          -- winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
-          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        },
-        documentation = cmp.config.window.bordered {
-          border = Borders.simple,
-          -- border = "none",
-          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        },
+        -- completion = cmp.config.window.bordered {
+        --   border = "none",
+        --   -- border = Borders.simple,
+        --   scrollbar = false,
+        --   -- winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
+        --   winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+        -- },
+        -- documentation = cmp.config.window.bordered {
+        --   border = "none",
+        --   -- border = Borders.simple,
+        --   -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+        -- },
       },
       snippet = {
         -- configure how nvim-cmp interacts with snippet engine
