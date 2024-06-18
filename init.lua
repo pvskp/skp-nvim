@@ -106,9 +106,6 @@ spec(false, 'btterm') -- this one is mine!!!!
 --<< AI >>--
 
 spec(true, 'ai.codeium')
-spec(false, 'ai.gp')
-spec(false, 'ai.chatgpt')
-spec(false, 'ai.copilot')
 
 --<< UI >>--
 
