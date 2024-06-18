@@ -25,7 +25,12 @@ return {
         vim.g.minianimate_disable = false
       end,
     },
-
+    keys = {
+      -- close window
+      ["q"] = function(win)
+        vim.cmd.wincmd "p"
+      end,
+    },
     right = {
       {
         ft = "trouble",
