@@ -81,6 +81,7 @@ spec(false, 'git.blame')
 spec(true, 'which-key')
 spec(true, 'undotree')  -- show undo tree
 spec(true, 'trouble')   -- cool quickfix list for LSP
+spec(true, 'edgy')
 spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
