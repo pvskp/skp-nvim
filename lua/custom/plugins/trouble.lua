@@ -32,5 +32,8 @@ return {
       desc = "Quickfix List (Trouble)",
     },
   },
-  opts = {},
+  opts = {
+    warn_no_results = false,
+    open_no_results = true,
+  },
 }
