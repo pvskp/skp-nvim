@@ -10,8 +10,8 @@ return {
     end, {})
   end,
   keys = {
-    { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
-    { '<c-e>',     '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
+    -- { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
+    { '<c-e>', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
   },
   opts = {
     content = {

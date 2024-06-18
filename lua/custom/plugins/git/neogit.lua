@@ -1,17 +1,12 @@
 return {
   'NeogitOrg/neogit',
   cmd = 'Neogit',
-  keys = {},
+  keys = {
+    { '<leader>xg', "<cmd>Neogit<CR>", desc = ' Neogit', }
+  },
   dependencies = {
-    'nvim-lua/plenary.nvim', -- required
+    'nvim-lua/plenary.nvim',  -- required
     'sindrets/diffview.nvim', -- optional - Diff integration
   },
-  init = function()
-    vim.keymap.set('n', '<leader>x', ':Neogit<CR>', {
-      noremap = true,
-      silent = true,
-      desc = ' Neogit',
-    })
-  end,
   config = true,
 }
