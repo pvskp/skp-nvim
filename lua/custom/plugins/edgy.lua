@@ -6,6 +6,7 @@ return {
     {
       "<leader>e", function()
       require("edgy").toggle("right")
+      require("edgy").toggle("bottom")
     end
     }
   },
@@ -15,7 +16,7 @@ return {
   end,
   opts = {
     animate = {
-      enabled = true,
+      enabled = false,
       fps = 100, -- frames per second
       cps = 120, -- cells per second
       on_begin = function()
@@ -25,11 +26,28 @@ return {
         vim.g.minianimate_disable = false
       end,
     },
-    keys = {
-      -- close window
-      ["q"] = function(win)
-        vim.cmd.wincmd "p"
-      end,
+    -- keys = {
+    --   -- close window
+    --   ["q"] = function(win)
+    --     vim.cmd.wincmd "p"
+    --   end,
+    -- },
+    bottom = {
+      {
+        ft = "trouble",
+        pinned = true,
+        title = "Troubles",
+        filter = function(_buf, win)
+          if vim.w[win].trouble then
+            return vim.w[win].trouble.mode == "diagnostics"
+          end
+          return false
+        end,
+        open = "Trouble diagnostics focus=false filter.severity=vim.diagnostic.severity.ERROR",
+        size = {
+          height = 0.2
+        },
+      },
     },
     right = {
       {
@@ -46,21 +64,6 @@ return {
         size = {
           height = 0.6,
           width = 0.2
-        },
-      },
-      {
-        ft = "trouble",
-        pinned = true,
-        title = "Troubles",
-        filter = function(_buf, win)
-          if vim.w[win].trouble then
-            return vim.w[win].trouble.mode == "diagnostics"
-          end
-          return false
-        end,
-        open = "Trouble diagnostics focus=false filter.severity=vim.diagnostic.severity.ERROR",
-        size = {
-          height = 0.4
         },
       },
     },

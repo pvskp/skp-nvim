@@ -269,6 +269,9 @@ return {
         vim.cmd 'setlocal nofoldenable'
         vim.cmd 'setlocal nonumber'
         vim.cmd 'setlocal norelativenumber'
+
+        -- Disables miniindentscope
+        vim.b.miniindentscope_disable = true
       end,
     })
   end,
