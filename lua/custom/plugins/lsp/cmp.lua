@@ -14,10 +14,15 @@ return {
     --< snippet engine >--
     {
       'L3MON4D3/LuaSnip',
-      event = {
-        'InsertEnter',
-        -- 'CmdlineEnter'
+      version = "v2.*",
+      dependencies = {
+        "rafamadriz/friendly-snippets",
       },
+      config = function()
+        require("luasnip.loaders.from_snipmate").lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end
+
     },
     'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind.nvim', -- vs-code like pictograms
@@ -37,20 +42,23 @@ return {
       completion = {
         completeopt = 'menu,preview,noinsert',
       },
-      window = {
-        -- completion = cmp.config.window.bordered {
-        --   border = "none",
-        --   -- border = Borders.simple,
-        --   scrollbar = false,
-        --   -- winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
-        --   winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        -- },
-        -- documentation = cmp.config.window.bordered {
-        --   border = "none",
-        --   -- border = Borders.simple,
-        --   -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        -- },
-      },
+
+      -- window = {},
+      -- window = {
+      --   completion = cmp.config.window.bordered {
+      --     -- border = "none",
+      --     border = Borders.simple,
+      --     scrollbar = false,
+      --     -- winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
+      --     winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+      --   },
+      --   documentation = cmp.config.window.bordered {
+      --     -- border = "none",
+      --     border = Borders.simple,
+      --     -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+      --   },
+      -- },
+
       snippet = {
         -- configure how nvim-cmp interacts with snippet engine
         expand = function(args)
@@ -80,6 +88,7 @@ return {
 
       -- sources for autocompletion
       sources = cmp.config.sources {
+        { name = 'luasnip' }, -- snippets
         { name = 'gitmoji' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'fonts' },
@@ -87,9 +96,8 @@ return {
         { name = 'nvim_lsp' },
         { name = 'codeium' },
         { name = 'copilot' },
-        { name = 'luasnip' }, -- snippets
-        { name = 'path' },    -- file system paths
-        { name = 'buffer' },  -- text within current buffer
+        { name = 'path' },   -- file system paths
+        { name = 'buffer' }, -- text within current buffer
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu

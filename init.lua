@@ -41,7 +41,6 @@ spec(true, 'lsp.treesiter')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.neodev')    -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
-spec(true, 'lsp.luasnip')   -- snippets
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.lsp_signature')
 spec(true, 'lsp.conform')             -- formatter
@@ -85,6 +84,7 @@ spec(true, 'edgy')
 spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
+spec(true, "table-mode")
 spec(false, 'oil')
 spec(true, 'treesj')
 spec(true, 'neogen')

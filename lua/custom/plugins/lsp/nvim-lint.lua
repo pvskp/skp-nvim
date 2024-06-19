@@ -13,7 +13,7 @@ return {
       json = { 'jsonlint' },
       -- lua = { 'luacheck' },
       go = { 'golangcilint' },
-      terraform = { 'tflint', 'tfsec' },
+      -- terraform = { 'tflint', 'tfsec' },
       python = { 'ruff' },
       -- cpp = { "cpplint" },
       -- yaml = { "yamllint" },

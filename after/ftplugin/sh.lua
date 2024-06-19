@@ -10,5 +10,5 @@ vim.keymap.set('n', '<C-Space>', function()
   if not is_executable(filename) then
     vim.cmd('!chmod +x ' .. filename)
   end
-  vim.cmd('!sh ' .. filename)
+  vim.cmd('!./' .. filename)
 end, { noremap = true, silent = true })
