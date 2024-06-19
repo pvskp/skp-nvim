@@ -87,6 +87,7 @@ spec(true, 'surround')  -- surround text with quotes, brackets, etc
 spec(true, "table-mode")
 spec(false, 'oil')
 spec(true, 'treesj')
+spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(true, 'maximizer')
