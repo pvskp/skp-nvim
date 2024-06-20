@@ -112,6 +112,7 @@ spec(true, 'ai.codeium')
 
 spec(true, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
+spec(true, 'ui.noice')
 spec(true, 'ui.lualine')     -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
 spec(true, 'ui.illuminate')
