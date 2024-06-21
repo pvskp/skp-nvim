@@ -37,6 +37,15 @@ local opts = {
           -- fg = 'black',
         },
       },
+      {
+        require("noice").api.statusline.mode.get,
+        cond = require("noice").api.statusline.mode.has,
+        color = {
+          gui = 'bold',
+          fg = "#000000"
+        },
+      },
+
     },
     lualine_b = {
       {

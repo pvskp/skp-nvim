@@ -2,17 +2,13 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
-    messages = {
-      -- view = 'mini',
-      -- view_error = 'mini',
-      -- view_warn = 'mini',
-      -- view_history = 'mini',
-      -- view_search = 'mini',
-    },
-    -- add any options here
     lsp = {
       progress = {
         enabled = false,
+        format = "lsp_progress",
+        format_done = "lsp_progress_done",
+        throttle = 1000 / 30, -- frequency to update lsp progress message
+        view = "mini",
       },
       hover = {
         enabled = false,
@@ -21,10 +17,8 @@ return {
         enabled = false,
       },
       message = {
-        -- Messages shown by lsp servers
         enabled = true,
       },
-      -- defaults for hover and signature help
       documentation = {
         view = "hover",
         opts = {
@@ -36,20 +30,46 @@ return {
         },
       },
     },
-    routes = {
-      {
-        view = "notify",
-        filter = { event = "msg_showmode" },
-      },
-    },
   },
   dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
+    {
+      "rcarriga/nvim-notify",
+      keys = {
+        {
+          '<Esc>',
+          function()
+            local esc_key = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+            vim.api.nvim_feedkeys(esc_key, "n", false)
+
+            -- this closes the notification
+            for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+              if vim.api.nvim_get_option_value('filetype', {
+                    buf = bufnr
+                  }) == 'notify' and vim.api.nvim_buf_is_loaded(bufnr) then
+                vim.api.nvim_win_close(vim.fn.bufwinid(bufnr), false)
+              end
+            end
+          end,
+          mode = { "n", "v" }
+        }
+      },
+      opts = {
+        fps = 60,
+        icons = {
+          DEBUG = "",
+          ERROR = "",
+          INFO = "",
+          TRACE = "✎",
+          WARN = ""
+        },
+        render = "default",
+        stages = "fade_in_slide_out",
+        minimum_width = 50,
+        max_width = 50,
+        top_down = false,
+      },
+    },
   },
   config = function(_, opts)
     require("notify").setup({
