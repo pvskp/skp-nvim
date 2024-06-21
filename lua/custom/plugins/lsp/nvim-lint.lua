@@ -8,13 +8,13 @@ return {
     local lint = require 'lint'
 
     lint.linters_by_ft = {
-      javascript = { 'eslint_d' },
-      typescript = { 'eslint_d' },
-      json = { 'jsonlint' },
+      -- javascript = { 'eslint_d' },
+      -- typescript = { 'eslint_d' },
+      -- json = { 'jsonlint' },
       -- lua = { 'luacheck' },
       go = { 'golangcilint' },
       -- terraform = { 'tflint', 'tfsec' },
-      python = { 'ruff' },
+      -- python = { 'ruff' },
       -- cpp = { "cpplint" },
       -- yaml = { "yamllint" },
       -- python = { "flake8" },
