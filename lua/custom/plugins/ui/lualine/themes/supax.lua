@@ -1,3 +1,19 @@
+local function recording_warning()
+  if pcall(require, "noice") then
+    local noice = require('noice')
+    return {
+      noice.api.statusline.mode.get,
+      cond = noice.api.statusline.mode.has,
+      color = {
+        gui = 'bold',
+        fg = "#000000"
+      },
+    }
+  end
+  return {}
+end
+
+
 local opts = {
   options = {
     icons_enabled = USE_DEVICONS,
@@ -37,14 +53,8 @@ local opts = {
           -- fg = 'black',
         },
       },
-      {
-        require("noice").api.statusline.mode.get,
-        cond = require("noice").api.statusline.mode.has,
-        color = {
-          gui = 'bold',
-          fg = "#000000"
-        },
-      },
+      recording_warning()
+      ,
 
     },
     lualine_b = {
