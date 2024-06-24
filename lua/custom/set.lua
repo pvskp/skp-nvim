@@ -66,8 +66,16 @@ local options = {
   conceallevel = 3,
 }
 
+local globals = {
+  netrw_banner = 0
+}
+
 for k, v in pairs(options) do
   vim.opt[k] = v
+end
+
+for k, v in pairs(globals) do
+  vim.g[k] = v
 end
 
 -- vim.cmd([[set listchars=tab:█\ ,trail:█]])
@@ -76,7 +84,6 @@ end
 vim.cmd [[set listchars=tab:▸\ ,eol:↲]]
 vim.cmd [[set list]]
 
-vim.g.netrw_banner = 0
 
 vim.filetype.add {
   extension = {
