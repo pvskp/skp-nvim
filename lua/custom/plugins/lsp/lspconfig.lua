@@ -3,7 +3,24 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
-    'williamboman/mason.nvim',
+    {
+      'williamboman/mason.nvim',
+      opts = {
+        ui = {
+          border = Borders.simple,
+          icons = {
+            package_installed = "✅",
+            package_pending = "🔶",
+            package_uninstalled = "❌"
+          },
+          -- icons = {
+          --   package_installed = "✓",
+          --   package_pending = "➜",
+          --   package_uninstalled = "✗"
+          -- }
+        }
+      }
+    },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     'antosha417/nvim-lsp-file-operations',
@@ -40,18 +57,6 @@ return {
     local mason_lspconfig = require 'mason-lspconfig'
     local mason_tool_installer = require 'mason-tool-installer'
     local lspconfig = require 'lspconfig'
-
-    -- enable mason and configure icons
-    mason.setup {
-      ui = {
-        icons = {
-          package_installed = '✓',
-          package_pending = '➜',
-          package_uninstalled = '✗',
-        },
-        border = Borders.simple,
-      },
-    }
 
     mason_lspconfig.setup {
       automatic_installation = false, -- not the same as ensure_installed
@@ -184,29 +189,11 @@ return {
 
     mason_tool_installer.setup {
       ensure_installed = {
-        'autoflake',
-        'beautysh',
-        'black',
-        'eslint_d',
-        'flake8',
         'goimports',
-        'golangci-lint',
         'gopls',
-        'isort',
-        'jsonls',
-        'jsonlint',
-        'luacheck',
-        'prettier',
-        'prettierd',
-        'pylint',
         'pyright',
-        'ruff',
-        'ruff_lsp',
         'stylua',
         'terraformls', -- terraformls
-        'tflint',
-        'tfsec',
-        'yamlls',
       },
     }
   end,
