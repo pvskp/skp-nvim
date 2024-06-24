@@ -115,7 +115,6 @@ spec(true, 'ui.nvim-bqf')
 spec(true, 'ui.noice')
 spec(true, 'ui.lualine')     -- statusline
 spec(true, 'ui.indentlines') -- show indent lines
-spec(true, 'ui.illuminate')
 spec(true, 'ui.fidget')      -- cool LSP notification
 spec(true, 'ui.dressing')    -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
