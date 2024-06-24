@@ -1,73 +1,72 @@
 local options = {
-  --< Search >--
-  hlsearch = false, -- highlight all matches on previous search pattern
-  smartcase = true,
-  title = false,
-  ignorecase = true, -- ignore case in search patterns
-  inccommand = 'split',
-  number = true,     -- the number of spaces inserted for each indentation
-  list = true,
-  termguicolors = true,
-  guifont = "FiraCode Nerd Font:h12",
-  path = '.,,**',
+  --< General Settings >
+  compatible = false,  -- Disable Vi compatibility
+  title = false,       -- Do not show the title of the window
+  background = 'dark', -- Use a dark background
+  cmdheight = 1,       -- Height of the command line
 
-  --< Tabulation >--
-  expandtab = true, -- convert tabs to spaces
-  tabstop = 2,
-  shiftwidth = 2,   -- the number of spaces inserted for each indentation
+  --< Search >
+  ignorecase = true,    -- Ignore case in search patterns
+  smartcase = true,     -- Use smart case for search patterns
+  hlsearch = false,     -- Do not highlight all matches on previous search pattern
+  inccommand = 'split', -- Show incremental command results in a split window
 
-  --< UI >--
-  cursorcolumn = false,
-  cursorline = true,        -- highlight the current line
-  cursorlineopt = 'number', -- highlight the current line
-  statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]],
-  -- colorcolumn = '101',
-  signcolumn = 'yes',
-  numberwidth = 2, -- set number column width {default 4}
-  wrap = false,
-  linebreak = true,
-  showbreak = "-",
-  relativenumber = false, -- set relative numbered lines
-  showmode = true,
-  scrolloff = 99999,
-  pumblend = 0,
+  --< Display >
+  number = true, -- Show line numbers
+  relativenumber = true, -- Show relative line numbers
+  numberwidth = 2, -- Set the width of the number column to 2
+  cursorline = true, -- Highlight the current line
+  cursorlineopt = 'number', -- Highlight the current line number
+  cursorcolumn = false, -- Do not highlight the column of the cursor
+  signcolumn = 'yes', -- Always show the sign column
+  wrap = false, -- Do not wrap lines
+  linebreak = true, -- Wrap lines at convenient points
+  showbreak = '-', -- String to show at the beginning of wrapped lines
+  scrolloff = 99999, -- Keep the cursor vertically centered
+  pumblend = 0, -- Do not blend the popup menu
+  fillchars = { vert = '│', eob = ' ' }, -- Characters used to fill the window
 
-  --< Split >--
-  splitbelow = true,
-  splitright = true,
+  --< Tabulation and Indentation >
+  expandtab = true,   -- Convert tabs to spaces
+  tabstop = 2,        -- Number of spaces that a tab counts for
+  shiftwidth = 2,     -- Number of spaces inserted for each indentation
+  smartindent = true, -- Make indenting smarter again
 
-  --< Wildmenu >--
-  wildmenu = true,
-  wildignorecase = true,
-  wildoptions = 'pum,tagfile',
-  wildmode = 'full',
-  -- wildmode = 'list:longest,full',
+  --< Splits >
+  splitbelow = true,  -- Horizontal splits will be below
+  splitright = true,  -- Vertical splits will be to the right
+  equalalways = true, -- Equalize window sizes when adding/removing windows
 
-  fillchars = { vert = '│', eob = ' ' },
+  --< Wildmenu >
+  wildmenu = true,             -- Enable command-line completion menu
+  wildignorecase = true,       -- Ignore case in command-line completion
+  wildoptions = 'pum,tagfile', -- Use popup menu for command-line completion
+  wildmode = 'full',           -- Command-line completion mode
 
-  --< Fold >--
-  foldmethod = 'indent',
-  foldlevel = 1,
-  foldenable = false,
+  --< Folds >
+  foldmethod = 'indent', -- Fold based on indent levels
+  foldlevelstart = 99,   -- Open all folds by default
+  foldenable = false,    -- Enable folding by default
 
-  --< Misc >--
-  swapfile = false,
-  timeoutlen = 300,
-  undofile = true,
-  updatetime = 250,
-  virtualedit = 'all',
-  clipboard = 'unnamedplus',
-  smartindent = true, -- make indenting smarter again
-  autochdir = false,
-  background = 'dark',
-  cmdheight = 1, -- space in the neovim command line for displaying messages
-  compatible = false,
-  equalalways = true,
-  conceallevel = 3,
+  --< Files and Backups >
+  swapfile = false, -- Do not use swapfile
+  undofile = true,  -- Save undo history to an undo file
+
+  --< Performance >
+  timeoutlen = 300, -- Time to wait for a mapped sequence to complete (milliseconds)
+  updatetime = 250, -- Faster completion (default is 4000ms)
+
+  --< Miscellaneous >
+  virtualedit = 'all',                                                    -- Allow cursor to move anywhere
+  clipboard = 'unnamedplus',                                              -- Use the system clipboard
+  autochdir = false,                                                      -- Do not change the current working directory automatically
+  statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column
+  showmode = true,                                                        -- Show the current mode in the command line
+  conceallevel = 3,                                                       -- Hide concealed text unless it has a replacement character
 }
 
 local globals = {
-  netrw_banner = 0
+  netrw_banner = 0,
 }
 
 for k, v in pairs(options) do
@@ -83,7 +82,6 @@ end
 
 vim.cmd [[set listchars=tab:▸\ ,eol:↲]]
 vim.cmd [[set list]]
-
 
 vim.filetype.add {
   extension = {
@@ -145,13 +143,21 @@ function _G.qftf(info)
 end
 
 if vim.g.neovide then
-  vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-  vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-  vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+  vim.keymap.set(
+    { 'n', 'v' },
+    '<C-+>',
+    ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>'
+  )
+  vim.keymap.set(
+    { 'n', 'v' },
+    '<C-->',
+    ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>'
+  )
+  vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 
----@diagnostic disable-next-line: duplicate-set-field
-vim.deprecate = function() end
+-- ---@diagnostic disable-next-line: duplicate-set-field
+-- vim.deprecate = function() end
 
 -- vim.api.nvim_set_hl(0, 'ColorColumn', {
 --   fg = 'None',
