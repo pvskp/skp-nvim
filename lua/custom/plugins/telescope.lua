@@ -1,21 +1,25 @@
 Telescope_ivy_options = {}
 
--- Telescope_ivy_options = {
---   previewer = false,
---   prompt_title = false,
---   results_title = false,
---
---   borderchars = {
---     prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
---     results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
---     preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
---   },
---
---   layout_config = {
---     -- width = 0.5,
---     height = 0.5,
---   },
--- }
+local function ivy_theme()
+  return require('telescope.themes').get_ivy({
+    previewer = false,
+    prompt_title = false,
+    results_title = false,
+
+    borderchars = {
+      prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+      results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+      preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+    },
+
+    layout_config = {
+      -- width = 0.5,
+      height = 0.5,
+    },
+  })
+end
+
+-- Telescope_ivy_options =
 
 local function theme()
   -- return require('telescope.themes').get_ivy(Telescope_ivy_options)
@@ -168,7 +172,7 @@ return {
         -- borderchars = Borders.borderchars,
         mappings = {
           i = {
-            ['<Esc>'] = actions.close,
+            -- ['<Esc>'] = actions.close,
             ['<C-s>'] = actions.select_horizontal,
             ['<C-v>'] = actions.select_vertical,
           },
@@ -190,7 +194,7 @@ return {
               ['<c-d>'] = actions.delete_buffer,
               ['<C-j>'] = actions.move_selection_next,
               ['<C-k>'] = actions.move_selection_previous,
-              ['<Esc>'] = actions.close,
+              -- ['<Esc>'] = actions.close,
               ['<leader>e'] = actions.close,
             },
           },
