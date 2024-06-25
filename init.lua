@@ -43,12 +43,8 @@ spec(true, 'lsp.neodev')    -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.lsp_signature')
-spec(true, 'lsp.conform')             -- formatter
-spec(true, 'lsp.cmp')                 -- completion
-spec(false, 'lsp.rainbow-delimiters') -- show matching delimiters
-spec(false, 'lsp.outline')
-spec(false, 'lsp.lsp-saga')
-spec(false, 'lsp.commentary')
+spec(true, 'lsp.conform') -- formatter
+spec(true, 'lsp.cmp')     -- completion
 
 --<< Language specific >>--
 
@@ -66,9 +62,9 @@ spec(false, 'mini.notify')
 
 --<< Git integrations >>--
 
-spec(false, 'git.lazygit')  -- lazygit inside neovim
-spec(true, 'git.gitsigns')  -- show git signs on columnsign
-spec(false, 'git.fugitive') -- git integration
+spec(false, 'git.lazygit') -- lazygit inside neovim
+spec(true, 'git.gitsigns') -- show git signs on columnsign
+spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
 spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
@@ -86,11 +82,10 @@ spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
 spec(true, "table-mode")
 spec(false, 'oil')
-spec(true, 'treesj')
+spec(false, 'treesj')
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
-spec(true, 'maximizer')
 spec(true, 'obsidian')
 spec(true, 'markdown-preview')
 spec(true, 'hop')      -- jump to any word in the screen
