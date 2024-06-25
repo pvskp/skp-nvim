@@ -82,6 +82,7 @@ end, { silent = true })
 map('n', '<C-q>', ':qa!<CR>', { silent = true })
 
 -- Visual mode mappings
+map('v', '<leader>y', ':CopyCodeBlock<CR>', opts)
 map('v', '<M-j>', ":m '>+1<CR>gv=gv")
 map('v', '<M-k>', ":m '<-2<CR>gv=gv")
 map('v', '>', '>gv')
