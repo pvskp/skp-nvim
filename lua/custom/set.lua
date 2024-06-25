@@ -46,6 +46,7 @@ local options = {
   --< Folds >
   foldmethod = 'indent', -- Fold based on indent levels
   foldlevelstart = 99,   -- Open all folds by default
+  foldlevel = 0,
   foldenable = false,    -- Enable folding by default
 
   --< Files and Backups >
