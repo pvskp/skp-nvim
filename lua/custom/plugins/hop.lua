@@ -4,11 +4,9 @@ return {
   version = '*',
   keys = {
     { 's', '<cmd>HopChar1<CR>', { silent = true } },
+    -- { 'f', '<cmd>HopChar1CurrentLine<CR>', { silent = true } },
   },
-  opts = {},
-
-  -- init = function()
-  -- 	require("hop")
-  -- 	vim.keymap.set("", "s", ":HopChar1<CR>", { silent = true })
-  -- end,
+  opts = {
+    keys = 'asdfqwer'
+  },
 }

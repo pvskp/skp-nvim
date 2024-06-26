@@ -157,12 +157,4 @@ if vim.g.neovide then
   vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 
--- ---@diagnostic disable-next-line: duplicate-set-field
--- vim.deprecate = function() end
-
--- vim.api.nvim_set_hl(0, 'ColorColumn', {
---   fg = 'None',
---   bg = 'NvimDarkGrey3',
--- })
-
 vim.o.qftf = '{info -> v:lua._G.qftf(info)}'

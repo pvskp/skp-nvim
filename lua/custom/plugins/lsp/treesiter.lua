@@ -47,7 +47,7 @@ return {
       'helm',
       'markdown_inline',
     },
-    sync_install = false,
+    sync_install = true,
     auto_install = true,
     ignore_install = {},
 
