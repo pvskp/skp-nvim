@@ -3,6 +3,7 @@ require 'custom.autocommands'
 require 'custom.commands'
 require 'custom.globals'
 require 'custom.remap'
+require 'custom.window'
 require 'custom.terminal'
 require 'custom.set'
 
@@ -68,8 +69,6 @@ spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
 spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
-spec(false, 'git.diffview')
-spec(false, 'git.blame')
 
 --<< General >>--
 
