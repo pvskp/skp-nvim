@@ -51,6 +51,17 @@ map('n', '<M-j>', '<C-w>j')
 map('n', '<M-k>', '<C-w>k')
 map('n', '<M-l>', '<C-w>l')
 map('n', '<M-h>', '<C-w>h')
+map('n', '<C-w>m', function()
+  local ok, maximized = pcall(vim.api.nvim_buf_get_var, 0, 'maximized')
+  if not ok or not maximized then
+    vim.api.nvim_buf_set_var(0, 'maximized', true)
+    vim.cmd.wincmd '_'
+    vim.cmd.wincmd '|'
+  else
+    vim.cmd.wincmd '='
+    vim.api.nvim_buf_set_var(0, 'maximized', false)
+  end
+end)
 
 -- Find and replace current word
 map({ 'n', 'v' }, '<leader>;', function()
