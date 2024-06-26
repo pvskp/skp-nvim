@@ -1,11 +1,3 @@
---- Resize Neovim split when the system window is resized
-vim.api.nvim_create_autocmd('VimResized', {
-  callback = function()
-    vim.cmd('vertical wincmd =')
-    vim.cmd('horizontal wincmd =')
-  end
-})
-
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
