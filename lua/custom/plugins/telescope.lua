@@ -172,7 +172,7 @@ return {
         -- borderchars = Borders.borderchars,
         mappings = {
           i = {
-            -- ['<Esc>'] = actions.close,
+            ['<Esc>'] = actions.close,
             ['<C-s>'] = actions.select_horizontal,
             ['<C-v>'] = actions.select_vertical,
           },
@@ -194,7 +194,7 @@ return {
               ['<c-d>'] = actions.delete_buffer,
               ['<C-j>'] = actions.move_selection_next,
               ['<C-k>'] = actions.move_selection_previous,
-              -- ['<Esc>'] = actions.close,
+              ['<Esc>'] = actions.close,
               ['<leader>e'] = actions.close,
             },
           },
