@@ -11,7 +11,7 @@ return {
   end,
   keys = {
     -- { '<leader>e', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
-    { '<c-e>', '<cmd>lua MiniFiles.open()<cr>', desc = open_desc },
+    { '<c-e>', '<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>', desc = open_desc },
   },
   opts = {
     content = {
