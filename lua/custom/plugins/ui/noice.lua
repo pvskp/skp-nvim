@@ -63,16 +63,16 @@ return {
       opts = {
         fps = 60,
         icons = {
-          DEBUG = "",
-          ERROR = "",
-          INFO = "",
-          TRACE = "✎",
-          WARN = ""
+          DEBUG = " ",
+          ERROR = " ",
+          INFO = " ",
+          TRACE = "✎ ",
+          WARN = " "
         },
         render = "default",
         stages = "fade_in_slide_out",
-        minimum_width = 50,
-        max_width = 50,
+        minimum_width = 30,
+        max_width = 30,
         top_down = false,
       },
     },
@@ -83,5 +83,8 @@ return {
     })
 
     require("noice").setup(opts)
+    vim.cmd 'highlight NotifyINFOBorder guifg=#334de6'
+    vim.cmd 'highlight NotifyINFOTitle  guifg=#3380e6'
+    vim.cmd 'highlight NotifyINFOIcon   guifg=#3380e6'
   end
 }
