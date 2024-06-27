@@ -51,10 +51,10 @@ local options = {
   equalalways = true, -- Equalize window sizes when adding/removing windows
 
   --< Wildmenu >
-  wildmenu = true,             -- Enable command-line completion menu
-  wildignorecase = true,       -- Ignore case in command-line completion
-  wildoptions = 'pum,tagfile', -- Use popup menu for command-line completion
-  wildmode = 'full',           -- Command-line completion mode
+  wildmenu = true,       -- Enable command-line completion menu
+  wildignorecase = true, -- Ignore case in command-line completion
+  -- wildmode = 'list:longest,list:full', -- Command-line completion mode
+  -- wildoptions = 'pum',                 -- Use popup menu for command-line completion
 
   --< Folds >
   foldmethod = 'indent', -- Fold based on indent levels

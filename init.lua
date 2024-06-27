@@ -5,6 +5,7 @@ require 'custom.globals'
 require 'custom.remap'
 require 'custom.window'
 require 'custom.netrw'
+require 'custom.commandline'
 require 'custom.terminal'
 require 'custom.set'
 
@@ -77,6 +78,7 @@ spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
 spec(true, 'codesnap')
 spec(true, 'neogen')
+spec(true, 'wilder')
 spec(true, 'obsidian')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T

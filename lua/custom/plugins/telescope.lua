@@ -1,8 +1,10 @@
 Telescope_ivy_options = {}
 
-local function ivy_theme()
+---@param preview_title boolean
+---@return table theme
+local function ivy_theme(preview_title)
   return require('telescope.themes').get_ivy({
-    previewer = false,
+    previewer = preview_title,
     prompt_title = false,
     results_title = false,
 
@@ -21,10 +23,13 @@ end
 
 -- Telescope_ivy_options =
 
-local function theme()
+---@param preview_title boolean
+---@return table theme
+local function theme(preview_title)
   -- return require('telescope.themes').get_ivy(Telescope_ivy_options)
   return {
     sorting_strategy = 'ascending',
+    previewer = preview_title,
 
     -- prompt_title = false,
     results_title = false,
@@ -40,21 +45,21 @@ local function theme()
 end
 
 function Telescope_find_files()
-  require('telescope.builtin').find_files(theme())
+  require('telescope.builtin').find_files(ivy_theme(false))
 end
 
 function Telescope_git_files()
-  require('telescope.builtin').git_files(theme())
+  require('telescope.builtin').git_files(ivy_theme(false))
 end
 
 function Telescope_live_grep()
-  require('telescope.builtin').live_grep(theme())
+  require('telescope.builtin').live_grep(ivy_theme(true))
 end
 
 function Telescope_projects()
   require('telescope').load_extension 'projects'
 
-  require('telescope').extensions.projects.projects(theme())
+  require('telescope').extensions.projects.projects(theme(false))
 end
 
 return {
@@ -209,12 +214,15 @@ return {
       },
     }
 
-    -- vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
-
     require('telescope').load_extension 'ui-select'
     require('telescope').load_extension 'git_worktree'
     local ext = require('telescope').extensions
     -- vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
     -- vim.keymap.set('n', '<leader>,', ext.git_worktree.create_git_worktree, {})
+
+    vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = "NormalFloat" })
+    vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = "NormalFloat" })
+    vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
+    vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
   end,
 }

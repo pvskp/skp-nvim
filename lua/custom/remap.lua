@@ -99,9 +99,6 @@ map('n', '<M-9>', '9gt')
 -- Copy entire file
 map('n', '<C-y>', ':%y+<CR>', { silent = true })
 
--- Command mode mappings
-vim.api.nvim_set_keymap('c', '<C-x>', '<C-y>', { noremap = true })
-
 -- Folding
 map('n', '-', function()
   pcall(vim.cmd.foldclose)
