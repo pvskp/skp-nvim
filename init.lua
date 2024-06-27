@@ -4,6 +4,7 @@ require 'custom.commands'
 require 'custom.globals'
 require 'custom.remap'
 require 'custom.window'
+require 'custom.netrw'
 require 'custom.terminal'
 require 'custom.set'
 
@@ -50,20 +51,15 @@ spec(true, 'lsp.cmp')     -- completion
 --<< Language specific >>--
 
 spec(true, 'languages.helm')
-spec(false, 'languages.golang') -- go integration
 
 --<< Mini library >>--
 
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.hipatterns')
-spec(false, 'mini.ai')
-spec(false, 'mini.animate')
 spec(true, 'mini.files') -- minitree (best tree plugin)
-spec(false, 'mini.notify')
 
 --<< Git integrations >>--
 
-spec(false, 'git.lazygit') -- lazygit inside neovim
 spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
@@ -79,14 +75,9 @@ spec(true, 'edgy')
 spec(true, 'tmux')      -- tmux integration
 spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
-spec(true, "table-mode")
-spec(false, 'oil')
-spec(false, 'treesj')
 spec(true, 'codesnap')
 spec(true, 'neogen')
-spec(true, 'neo-zoom') -- toggle zoom mode with a popup window
 spec(true, 'obsidian')
-spec(true, 'markdown-preview')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
@@ -104,17 +95,18 @@ spec(true, 'ai.codeium')
 
 --<< UI >>--
 
-spec(true, 'ui.transparent')
+spec(false, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
-spec(true, 'ui.noice')
-spec(true, 'ui.lualine')     -- statusline
-spec(true, 'ui.indentlines') -- show indent lines
-spec(true, 'ui.fidget')      -- cool LSP notification
-spec(true, 'ui.dressing')    -- offers better ui for some neovim commands
+spec(false, 'ui.noice')
+spec(true, 'ui.lualine')          -- statusline
+spec(false, 'ui.indentlines')     -- show indent lines
+spec(false, 'ui.fidget')          -- cool LSP notification
+spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
-spec(true, 'ui.colorizer')   -- color preview
-spec(false, 'ui.barbecue')   -- shows the current symbol and its parents
-spec(true, 'ui.alpha')       -- start dashboard
+spec(true, 'ui.highlight-colors') -- color preview
+spec(false, 'ui.colorizer')       -- color preview
+spec(false, 'ui.barbecue')        -- shows the current symbol and its parents
+spec(true, 'ui.alpha')            -- start dashboard
 
 --<< Lualine integrations >>--
 
