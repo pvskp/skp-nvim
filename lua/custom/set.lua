@@ -11,6 +11,19 @@ local options = {
   hlsearch = false,     -- Do not highlight all matches on previous search pattern
   inccommand = 'split', -- Show incremental command results in a split window
 
+  --< Listchars >
+  list = true, -- Show some invisible characters (tabs, spaces, eol, etc.)
+  listchars = {
+    tab = '· ',
+    -- space = '·',
+    -- multispace = '·',
+    -- eol = '↲'
+    extends = '▸',
+    trail = '󱁐',
+    -- lead = '·',
+    lead = '·',
+  },
+
   --< Display >
   number = true, -- Show line numbers
   relativenumber = true, -- Show relative line numbers
@@ -77,12 +90,6 @@ end
 for k, v in pairs(globals) do
   vim.g[k] = v
 end
-
--- vim.cmd([[set listchars=tab:█\ ,trail:█]])
--- vim.cmd("set list")
-
-vim.cmd [[set listchars=tab:▸\ ,eol:↲]]
-vim.cmd [[set list]]
 
 vim.filetype.add {
   extension = {
