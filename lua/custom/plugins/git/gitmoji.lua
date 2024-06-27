@@ -10,5 +10,5 @@ return {
       complete_as = "emoji",
     },
   },
-  ft = "gitcommit",
+  ft = { "gitcommit", "NeogitCommitMessage" },
 }

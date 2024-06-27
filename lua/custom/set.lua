@@ -19,7 +19,7 @@ local options = {
     -- multispace = '·',
     -- eol = '↲'
     extends = '▸',
-    trail = '󱁐',
+    -- trail = '󱁐',
     -- lead = '·',
     lead = '·',
   },
