@@ -1,7 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   init = function()
-    vim.opt.foldmethod = "indent"
+    vim.opt.foldmethod = "expr"
     vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
   end,
   dependencies = {
@@ -126,9 +126,6 @@ return {
       filetype = 'gotmpl',
       used_by = { 'gohtmltmpl', 'gotexttmpl', 'gotmpl', 'yaml' },
     }
-
-    -- vim.cmd 'hi TreesitterContextBottom gui=underdashed guisp=Grey'
-    -- vim.cmd 'hi TreesitterContextLineNumberBottom gui=underdashed guisp=Grey'
 
     vim.treesitter.language.register('yaml', 'ansible')
   end,
