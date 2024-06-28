@@ -127,9 +127,6 @@ return {
       used_by = { 'gohtmltmpl', 'gotexttmpl', 'gotmpl', 'yaml' },
     }
 
-    -- vim.cmd 'hi TreesitterContextBottom gui=underdashed guisp=Grey'
-    -- vim.cmd 'hi TreesitterContextLineNumberBottom gui=underdashed guisp=Grey'
-
     vim.treesitter.language.register('yaml', 'ansible')
   end,
 }
