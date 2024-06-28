@@ -53,7 +53,7 @@ local options = {
   --< Wildmenu >
   wildmenu = true,       -- Enable command-line completion menu
   wildignorecase = true, -- Ignore case in command-line completion
-  -- wildmode = 'list:longest,list:full', -- Command-line completion mode
+  -- wildmode = 'list:longest,list:full', -- Command-line completion modeset
   -- wildoptions = 'pum',                 -- Use popup menu for command-line completion
 
   --< Folds >

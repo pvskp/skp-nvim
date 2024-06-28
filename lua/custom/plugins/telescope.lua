@@ -216,13 +216,16 @@ return {
 
     require('telescope').load_extension 'ui-select'
     require('telescope').load_extension 'git_worktree'
-    local ext = require('telescope').extensions
+    -- local ext = require('telescope').extensions
     -- vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
     -- vim.keymap.set('n', '<leader>,', ext.git_worktree.create_git_worktree, {})
 
     vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = "NormalFloat" })
     vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = "NormalFloat" })
-    vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
+    vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = "NormalFloat" })
+    vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { link = "NormalFloat" })
+    vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = "NormalFloat" })
+    -- vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
     vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
   end,
 }

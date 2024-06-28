@@ -30,11 +30,11 @@ spec(false, 'colorscheme.gruvbox-material')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.everforest')
 spec(false, 'colorscheme.cyberdream')
-spec(true, 'colorscheme.catppuccin')
+spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.aura')
-spec(false, 'colorscheme.adwaita')
+spec(true, 'colorscheme.adwaita')
 
 -- vim.cmd [[colorscheme habamax]]
 
@@ -78,7 +78,7 @@ spec(true, 'telescope') -- fuzzy finder
 spec(true, 'surround')  -- surround text with quotes, brackets, etc
 spec(true, 'codesnap')
 spec(true, 'neogen')
-spec(true, 'wilder')
+spec(false, 'wilder')
 spec(true, 'obsidian')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
@@ -97,18 +97,18 @@ spec(true, 'ai.codeium')
 
 --<< UI >>--
 
-spec(false, 'ui.transparent')
 spec(true, 'ui.nvim-bqf')
-spec(false, 'ui.noice')
 spec(true, 'ui.lualine')          -- statusline
-spec(false, 'ui.indentlines')     -- show indent lines
-spec(false, 'ui.fidget')          -- cool LSP notification
+spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
-spec(true, 'ui.highlight-colors') -- color preview
-spec(false, 'ui.colorizer')       -- color preview
-spec(false, 'ui.barbecue')        -- shows the current symbol and its parents
 spec(true, 'ui.alpha')            -- start dashboard
+spec(false, 'ui.transparent')
+spec(false, 'ui.noice')
+spec(false, 'ui.indentlines') -- show indent lines
+spec(false, 'ui.fidget')      -- cool LSP notification
+spec(false, 'ui.colorizer')   -- color preview
+spec(false, 'ui.barbecue')    -- shows the current symbol and its parents
 
 --<< Lualine integrations >>--
 

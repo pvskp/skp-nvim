@@ -17,7 +17,7 @@
 -- vim.cmd 'highlight TelescopeNormal guibg=NONE'
 -- vim.cmd 'highlight TelescopeTitle guibg=NONE'
 -- vim.cmd 'highlight TelescopePromptBorder guibg=NONE'
-vim.cmd 'highlight TelescopeSelection guibg=NONE'
+-- vim.cmd 'highlight TelescopeSelection guibg=NONE'
 -- vim.cmd 'highlight TelescopePromptTitle guibg=NONE'
 
 -- vim.cmd 'highlight! link LazyGitFloat TelescopeResultsBorder'
