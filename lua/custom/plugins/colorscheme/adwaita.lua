@@ -10,8 +10,8 @@ return {
     vim.g.adwaita_transparent = false       -- makes the background transparent
     vim.cmd 'colorscheme adwaita'
 
-    -- local numberline_bg = "#282828"
-    local numberline_bg = ""
+    -- local numberline_bg = ""
+    local numberline_bg = "#1a1a1a"
 
     if vim.g.adwaita_darker then
       for _, v in ipairs { 'MiniFilesDirectory', 'MiniFilesNormal', 'MiniFilesTitle' } do
@@ -27,6 +27,12 @@ return {
 
       vim.api.nvim_set_hl(0, 'CursorlineNr', { fg = "#33b2a4", bg = numberline_bg }) -- Green number on CursorLine
     end
+
+    vim.api.nvim_set_hl(0, 'DiagnosticOk', { fg = "NvimLightGreen", bg = numberline_bg })
+    vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg = "Orange", bg = numberline_bg })
+    vim.api.nvim_set_hl(0, 'DiagnosticInfo', { fg = "Green", bg = numberline_bg })
+    vim.api.nvim_set_hl(0, 'DiagnosticError', { fg = "Red", bg = numberline_bg })
+    vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = "LightBlue", bg = numberline_bg })
 
     vim.api.nvim_set_hl(0, 'LineNr', { fg = '#5e5c64', bg = numberline_bg })
 
