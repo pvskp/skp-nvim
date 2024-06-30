@@ -53,7 +53,6 @@ return {
       })
     end
 
-    local mason = require 'mason'
     local mason_lspconfig = require 'mason-lspconfig'
     local mason_tool_installer = require 'mason-tool-installer'
     local lspconfig = require 'lspconfig'
@@ -80,19 +79,19 @@ return {
       opts.desc = 'Go to declaration'
       keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
 
-      opts.desc = 'Go to declaration'
-      keymap.set('n', 'gd', vim.lsp.buf.declaration, opts) -- go to declaration
+      opts.desc = 'Go to definition'
+      keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- go to declaration
 
       opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gv', function()
         vim.cmd('vsplit')
-        vim.lsp.buf.declaration()
+        vim.lsp.buf.definition()
       end, opts)
 
       opts.desc = 'Go to declaration in horizontal split'
       keymap.set('n', 'gh', function()
         vim.cmd('split')
-        vim.lsp.buf.declaration()
+        vim.lsp.buf.definition()
       end, opts)
 
       opts.desc = 'See available code actions'
@@ -136,6 +135,7 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
