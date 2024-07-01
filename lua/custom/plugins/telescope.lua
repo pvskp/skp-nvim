@@ -5,13 +5,14 @@ Telescope_ivy_options = {}
 local function ivy_theme(preview_title)
   return require('telescope.themes').get_ivy({
     previewer = preview_title,
+    preview_title = false,
     prompt_title = false,
     results_title = false,
 
     borderchars = {
       prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
       results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-      preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+      preview = Borders.borderchars,
     },
 
     layout_config = {
@@ -220,11 +221,12 @@ return {
     -- vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
     -- vim.keymap.set('n', '<leader>,', ext.git_worktree.create_git_worktree, {})
 
-    vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = "NormalFloat" })
-    vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = "NormalFloat" })
-    vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = "NormalFloat" })
-    vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { link = "NormalFloat" })
-    vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = "NormalFloat" })
+    -- vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = "NormalFloat" })
+    -- vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = "NormalFloat" })
+    -- vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = "NormalFloat" })
+    -- vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { link = "NormalFloat" })
+    -- vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = "NormalFloat" })
+
     -- vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
     vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
   end,
