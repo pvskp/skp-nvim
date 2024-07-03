@@ -7,6 +7,6 @@ return {
     -- { 'f', '<cmd>HopChar1CurrentLine<CR>', { silent = true } },
   },
   opts = {
-    keys = 'asdfqwer'
+    -- keys = 'asdfqwer'
   },
 }
