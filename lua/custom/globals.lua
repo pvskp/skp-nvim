@@ -72,7 +72,7 @@ Symbols = {
     selection_caret = {
       -- icon = ' 󱈛 ',
       icon = '  ',
-      color = '#f38ba8',
+      color = 'Orange',
     },
   },
   lualine = {
@@ -109,6 +109,15 @@ function Lighten_color(hex, factor)
   vim.notify('Original hex: ' .. hex)
   vim.notify('Lightened hex: ' .. rgb_to_hex(r, g, b))
   return rgb_to_hex(r, g, b)
+end
+
+function Get_highlight_fg(name)
+  local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+  if hl and hl.fg then
+    return string.format('#%06x', hl.fg)
+  else
+    return nil
+  end
 end
 
 function Get_highlight_bg(name)
