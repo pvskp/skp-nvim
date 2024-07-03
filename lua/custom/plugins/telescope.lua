@@ -12,6 +12,7 @@ local function ivy_theme(preview_title)
     borderchars = {
       prompt = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
       results = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+      -- preview = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
       preview = Borders.borderchars,
     },
 
