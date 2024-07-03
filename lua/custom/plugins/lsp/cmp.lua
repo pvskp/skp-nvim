@@ -32,31 +32,20 @@ return {
     local lspkind = require 'lspkind'
 
     local success, cmd_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
-
     cmp.setup {
-      preselect = cmp.PreselectMode.Item,
+      view = {
+        entries = {
+          selection_order = "top_down"
+        }
+      },
+      preselect = cmp.PreselectMode.None,
       experimental = {
         ghost_text = true,
       },
       completion = {
         completeopt = 'menu,preview,noinsert',
+        keyword_length = 0
       },
-
-      -- window = {},
-      -- window = {
-      --   completion = cmp.config.window.bordered {
-      --     -- border = "none",
-      --     border = Borders.simple,
-      --     scrollbar = false,
-      --     -- winhighlight = 'Normal:NormalFloat,FloatBorder:NormalFloat,CursorLine:PmenuSel,Search:None',
-      --     winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-      --   },
-      --   documentation = cmp.config.window.bordered {
-      --     -- border = "none",
-      --     border = Borders.simple,
-      --     -- winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-      --   },
-      -- },
 
       snippet = {
         -- configure how nvim-cmp interacts with snippet engine
@@ -68,9 +57,38 @@ return {
       mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- show completion suggestions
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),        -- close completion window
-        -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ['<C-Space>'] = cmp.mapping.complete({
+          config = {
+            sources = {
+              { name = "nvim_lsp_signature_help" },
+              { name = "nvim_lsp" }
+            }
+          }
+        }),
+        ['<C-x>'] = cmp.mapping.complete({
+          config = {
+            sources = {
+              { name = 'codeium' },
+              { name = 'copilot' },
+            }
+          }
+        }),
+        ['<C-v>'] = cmp.mapping.complete({
+          config = {
+            sources = {
+              { name = 'path' },
+              { name = 'buffer' },
+            }
+          }
+        }),
+        ['<C-d>'] = cmp.mapping.complete({
+          config = {
+            sources = {
+              { name = 'fonts' },
+            }
+          }
+        }),
+        ['<C-e>'] = cmp.mapping.abort(), -- close completion window
         ['<CR>'] = cmp.mapping.confirm { select = true },
         ['<Tab>'] = cmp.mapping.confirm { select = true },
         ['<C-l>'] = cmp.mapping(function()
@@ -87,16 +105,9 @@ return {
 
       -- sources for autocompletion
       sources = cmp.config.sources {
-        { name = 'luasnip' }, -- snippets
-        { name = 'gitmoji' },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'fonts' },
-        { name = 'emoji' },
+        { name = 'luasnip' }, -- snippets
         { name = 'nvim_lsp' },
-        { name = 'codeium' },
-        { name = 'copilot' },
-        { name = 'path' },   -- file system paths
-        { name = 'buffer' }, -- text within current buffer
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -106,6 +117,7 @@ return {
           menu = {
             buffer = '(Buffer)',
             nvim_lsp = '(LSP)',
+            nvim_lsp_signature_help = '(SigHelp)',
             luasnip = '(LuaSnip)',
             nvim_lua = '(Lua)',
             latex_symbols = '(Latex)',
@@ -122,63 +134,34 @@ return {
       },
     }
 
-    -- Prevents copilot autotrigger when cmp menu is open
-    cmp.event:on('menu_opened', function()
-      vim.b.copilot_suggestion_hidden = true
-    end)
 
-    cmp.event:on('menu_closed', function()
-      vim.b.copilot_suggestion_hidden = false
-    end)
+    cmp.setup.filetype({ "gitcommit", "NeogitCommitMessage" }, {
+      sources = {
+        { name = 'gitmoji' },
+        { name = 'emoji' },
+      }
+    })
+
+    -- cmp.setup.filetype({ 'go', 'python', 'lua' }, {
+    --   sources = {
+    --     {
+    --       { name = 'nvim_lsp' },
+    --       { name = 'nvim_lsp_signature_help' },
+    --     },
+    --     {
+    --       { name = 'codeium' },
+    --       { name = 'luasnip' }, -- snippets
+    --     },
+    --     {
+    --       { name = 'path' },   -- file system paths
+    --       { name = 'buffer' }, -- text within current buffer
+    --     }
+    --   }
+    -- })
 
     if success then
       cmp.event:on('confirm_done', cmd_autopairs.on_confirm_done())
       vim.cmd 'highlight! BorderBG guibg=NONE'
     end
-
-    -- cmp.setup.filetype({ 'conf', 'config', 'kitty', 'toml' }, {
-    --   sources = {
-    --     -- {
-    --     --   name = 'fonts',
-    --     --   option = { space_filter = '-' },
-    --     -- },
-    --     { name = 'path' },
-    --   },
-    -- })
-
-    local cmd_mappings = {
-
-      ['<C-n>'] = {
-        c = function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          else
-            fallback()
-          end
-        end,
-      },
-
-      ['<C-p>'] = {
-        c = function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          else
-            fallback()
-          end
-        end,
-      },
-
-      ['<C-e>'] = {
-        c = cmp.mapping.abort(),
-      },
-
-      ['<C-x>'] = {
-        c = cmp.mapping.confirm { select = false },
-      },
-
-      ['<Tab>'] = {
-        c = cmp.mapping.confirm { select = false },
-      },
-    }
   end,
 }
