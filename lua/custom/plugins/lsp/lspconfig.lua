@@ -175,6 +175,20 @@ return {
           on_attach = on_attach,
         }
       end,
+      ['gopls'] = function()
+        lspconfig.gopls.setup {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          cmd = { 'gopls' },
+          settings = {
+            gopls = {
+              analyses = {
+                fillstruct = true,
+              },
+            },
+          },
+        }
+      end,
       ['clangd'] = function()
         lspconfig.clangd.setup {
           on_attach = on_attach,
