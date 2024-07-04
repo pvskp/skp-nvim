@@ -60,9 +60,10 @@ local function custom_hl()
   vim.api.nvim_set_hl(0, 'DiagnosticUnderlineHint', { undercurl = true, sp = 'Green' })
 
   -- vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { link = "NormalFloat" })
-  vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { bg = "#282828" })
+  vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { link = "LineNr" })
   vim.api.nvim_set_hl(0, 'TreesitterContextBottom', { sp = "NvimDarkGrey4", underline = true }) -- Adds underline to TreesitterContextBottom
-  vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = "#1a1a1a" })                               -- Adds underline to TreesitterContextBottom
+  -- vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = "#1a1a1a" })                               -- Adds underline to TreesitterContextBottom
+  vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = "#0f0f0f" })                               -- Adds underline to TreesitterContextBottom
 
   vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { fg = 'Orange' })
   vim.api.nvim_set_hl(0, 'CmpItemKindField', { fg = 'LightBlue' })

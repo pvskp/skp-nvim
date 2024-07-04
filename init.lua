@@ -4,6 +4,7 @@ require 'custom.commands'
 require 'custom.globals'
 require 'custom.remap'
 require 'custom.window'
+require 'custom.tabs'
 require 'custom.netrw'
 require 'custom.commandline'
 require 'custom.terminal'
@@ -57,6 +58,7 @@ spec(true, 'languages.helm')
 
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.hipatterns')
+spec(true, 'mini.icons')
 spec(true, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--

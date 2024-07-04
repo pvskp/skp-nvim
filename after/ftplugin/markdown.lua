@@ -1,6 +1,6 @@
 local opts = {
   spell = true,
-  spelllang = "pt_br",
+  spelllang = "pt_br,en",
   shiftwidth = 2,
   tabstop = 2,
   expandtab = true,

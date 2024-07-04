@@ -109,7 +109,7 @@ vim.api.nvim_set_keymap('n', '<leader>c', 'gcc', opts)
 vim.api.nvim_set_keymap('v', '<leader>c', 'gc', opts)
 
 -- Toggle true/false
-map({ 'n', 'v' }, '<C-t>', ':lua ToggleTrueFalse()<CR>', opts)
+map({ 'n', 'v' }, ',t', ':lua ToggleTrueFalse()<CR>', opts)
 
 -- Spell check correction
 map('n', '<leader>q', '1z=')
