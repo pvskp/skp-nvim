@@ -106,8 +106,8 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources {
         { name = 'nvim_lsp_signature_help' },
-        { name = 'luasnip' }, -- snippets
         { name = 'nvim_lsp' },
+        { name = 'luasnip' }, -- snippets
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -138,6 +138,14 @@ return {
     cmp.setup.filetype({ "gitcommit", "NeogitCommitMessage" }, {
       sources = {
         { name = 'gitmoji' },
+        { name = 'emoji' },
+      }
+    })
+
+
+    cmp.setup.filetype({ "markdown" }, {
+      sources = {
+        { name = 'luasnip' },
         { name = 'emoji' },
       }
     })

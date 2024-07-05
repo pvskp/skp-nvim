@@ -1,4 +1,4 @@
-local opts = {
+for k, v in pairs({
   spell = true,
   spelllang = "pt_br,en",
   shiftwidth = 2,
@@ -6,8 +6,11 @@ local opts = {
   expandtab = true,
   wrap = false,
   conceallevel = 2,
-}
-
-for k, v in pairs(opts) do
+}) do
   vim.opt_local[k] = v
 end
+
+local opts = { silent = true, noremap = true }
+
+opts.desc = "Align table"
+vim.keymap.set("v", "<leader>f", ":! tr -s ' ' | column -t -s '|' -o '|'<CR>", opts)

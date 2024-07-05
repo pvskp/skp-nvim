@@ -1,6 +1,7 @@
 local function custom_hl()
   -- local numberline_bg = ""
-  local numberline_bg = "#1a1a1a"
+  -- local numberline_bg = "#1a1a1a"
+  local numberline_bg = "#000000"
 
   -- vim.api.nvim_set_hl(0, 'Normal', { bg = "#1a1a1a" })
   vim.api.nvim_set_hl(0, 'NormalFloat', { fg = "White" })
@@ -20,6 +21,8 @@ local function custom_hl()
 
   vim.api.nvim_set_hl(0, 'CursorlineNr', { fg = "#33b2a4", bg = numberline_bg }) -- Green number on CursorLine
   vim.api.nvim_set_hl(0, 'CursorLine', { fg = "#33b2a4" })                       -- Green number on CursorLine
+  vim.api.nvim_set_hl(0, 'LineNr', { fg = '#5e5c64', bg = numberline_bg })
+
 
   vim.api.nvim_set_hl(0, 'MatchParen', { fg = "#282828", bg = "Red" })
 
@@ -46,8 +49,6 @@ local function custom_hl()
   vim.api.nvim_set_hl(0, 'DiagnosticSignInfo', { fg = "Green", bg = numberline_bg })
   vim.api.nvim_set_hl(0, 'DiagnosticSignError', { fg = "Red", bg = numberline_bg })
   vim.api.nvim_set_hl(0, 'DiagnosticSignHint', { fg = "LightBlue", bg = numberline_bg })
-
-  vim.api.nvim_set_hl(0, 'LineNr', { fg = '#5e5c64', bg = numberline_bg })
 
   vim.api.nvim_set_hl(0, 'Added', { fg = 'Green', bg = numberline_bg })
   vim.api.nvim_set_hl(0, 'Removed', { fg = 'Red', bg = numberline_bg })
