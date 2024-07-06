@@ -75,6 +75,13 @@ return {
       desc = 'Find [all] files',
     },
     {
+      '<leader>fh',
+      function()
+        require('telescope.builtin').highlights()
+      end,
+      desc = 'Find [all] files',
+    },
+    {
       '<leader>ff',
       Telescope_git_files,
       desc = 'Git files',
@@ -230,6 +237,6 @@ return {
     -- vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = "NormalFloat" })
 
     -- vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
-    vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
+    -- vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
   end,
 }

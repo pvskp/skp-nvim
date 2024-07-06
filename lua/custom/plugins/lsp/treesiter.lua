@@ -1,5 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  tag = "v0.9.2",
   init = function()
     vim.opt.foldmethod = "expr"
     vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
@@ -26,6 +27,7 @@ return {
         config = function(_, opts)
           require 'treesitter-context'.setup(opts)
           vim.api.nvim_create_autocmd('Filetype', {
+
             pattern = "markdown",
             command = "TSContextDisable",
           })

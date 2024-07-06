@@ -9,18 +9,42 @@ return {
     vim.api.nvim_set_hl(
       0,
       'TrueHighlighGroup',
-      { fg = 'green', bg = 'None', bold = true, italic = false }
+      { fg = 'NvimLightGreen', bg = 'None', bold = true, italic = false }
     )
 
     vim.api.nvim_set_hl(
       0,
       'FalseHighlighGroup',
-      { fg = 'red', bg = 'None', bold = true, italic = false }
+      { fg = 'NvimLightRed', bg = 'None', bold = true, italic = false }
     )
+
+
+    vim.api.nvim_set_hl(0,
+      'MiniHipatternsFixme',
+      { fg = 'Black', bg = 'NvimLightRed', bold = true, italic = false }
+    )
+
+
+    vim.api.nvim_set_hl(0,
+      'MiniHipatternsHack',
+      { fg = 'Black', bg = 'NvimLightYellow', bold = true, italic = false }
+    )
+
+
+    vim.api.nvim_set_hl(0,
+      'MiniHipatternsTodo',
+      { fg = 'Black', bg = 'NvimLightCyan', bold = true, italic = false }
+    )
+
+
+    vim.api.nvim_set_hl(0,
+      'MiniHipatternsNote',
+      { fg = 'Black', bg = 'NvimLightBlue', bold = true, italic = false }
+    )
+
 
     hipatterns.setup {
       highlighters = {
-        -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
         fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
         hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
         todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },

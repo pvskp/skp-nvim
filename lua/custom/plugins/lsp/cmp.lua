@@ -1,3 +1,8 @@
+-- creates a function that sums to integers
+local function sum(a, b)
+  return a + b
+end
+
 return {
   'hrsh7th/nvim-cmp',
   event = {
@@ -5,6 +10,7 @@ return {
     -- 'CmdlineEnter'
   },
   dependencies = {
+    'copilot',
     'hrsh7th/cmp-buffer', -- source for text in buffer
     'hrsh7th/cmp-path',   -- source for file system paths
     -- 'hrsh7th/cmp-cmdline',
@@ -68,8 +74,8 @@ return {
         ['<C-x>'] = cmp.mapping.complete({
           config = {
             sources = {
-              { name = 'codeium' },
               { name = 'copilot' },
+              -- { name = 'codeium' },
             }
           }
         }),
@@ -108,7 +114,15 @@ return {
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- snippets
+        {
+          name = "copilot",
+          keyword_length = 0,
+          entry_filter = function()
+            return false
+          end
+        }
       },
+
 
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {

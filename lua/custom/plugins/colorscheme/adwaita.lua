@@ -1,10 +1,9 @@
 local function custom_hl()
   -- local numberline_bg = ""
-  -- local numberline_bg = "#1a1a1a"
-  local numberline_bg = "#000000"
+  local numberline_bg = "#1a1a1a"
+  -- local numberline_bg = "#000000"
 
   -- vim.api.nvim_set_hl(0, 'Normal', { bg = "#1a1a1a" })
-  vim.api.nvim_set_hl(0, 'NormalFloat', { fg = "White" })
   vim.api.nvim_set_hl(0, 'NormalFloat', { fg = "White" })
   vim.api.nvim_set_hl(0, 'FloatBorder', { fg = "White" })
 

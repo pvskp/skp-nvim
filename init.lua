@@ -7,6 +7,7 @@ require 'custom.window'
 require 'custom.tabs'
 require 'custom.netrw'
 require 'custom.commandline'
+require 'custom.default-colorscheme'
 require 'custom.terminal'
 require 'custom.set'
 
@@ -35,7 +36,7 @@ spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.aura')
-spec(true, 'colorscheme.adwaita')
+spec(false, 'colorscheme.adwaita')
 
 -- vim.cmd [[colorscheme habamax]]
 
@@ -96,7 +97,8 @@ spec(false, 'btterm') -- this one is mine!!!!
 
 --<< AI >>--
 
-spec(true, 'ai.codeium')
+spec(false, 'ai.codeium')
+spec(true, 'ai.copilot')
 
 --<< UI >>--
 
