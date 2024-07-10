@@ -76,7 +76,6 @@ local options = {
   autochdir = false,                                                      -- Do not change the current working directory automatically
   statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column
   showmode = true,                                                        -- Show the current mode in the command line
-  conceallevel = 3,                                                       -- Hide concealed text unless it has a replacement character
 }
 
 local globals = {

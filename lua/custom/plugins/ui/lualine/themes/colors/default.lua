@@ -8,7 +8,7 @@ local colors = {
   gray         = 'DarkGrey',
   darkgray     = 'NvimDarkGray2',
   lightgray    = 'NvimDarkGray3',
-  inactivegray = 'NvimDarkGray1',
+  inactivegray = 'NvimDarkGray4',
 }
 
 if vim.opt.background._value == "dark" then
@@ -39,7 +39,7 @@ if vim.opt.background._value == "dark" then
       c = { bg = colors.inactivegray, fg = colors.black }
     },
     inactive = {
-      a = { bg = colors.inactivegray, fg = colors.gray, gui = 'bold' },
+      a = { bg = colors.inactivegray, fg = colors.gray },
       b = { bg = colors.inactivegray, fg = colors.gray },
       c = { bg = colors.inactivegray, fg = colors.gray }
     }

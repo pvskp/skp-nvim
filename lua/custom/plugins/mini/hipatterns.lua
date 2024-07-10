@@ -9,13 +9,13 @@ return {
     vim.api.nvim_set_hl(
       0,
       'TrueHighlighGroup',
-      { fg = 'NvimLightGreen', bg = 'None', bold = true, italic = false }
+      { fg = 'Green', bg = 'None', bold = true, italic = false }
     )
 
     vim.api.nvim_set_hl(
       0,
       'FalseHighlighGroup',
-      { fg = 'NvimLightRed', bg = 'None', bold = true, italic = false }
+      { fg = 'Red', bg = 'None', bold = true, italic = false }
     )
 
 

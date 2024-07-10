@@ -61,7 +61,7 @@ spec(true, 'languages.markdown.render-markdown')
 
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.hipatterns')
-spec(true, 'mini.icons')
+spec(false, 'mini.icons')
 spec(true, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
@@ -75,12 +75,12 @@ spec(true, 'git.neogit')
 --<< General >>--
 
 spec(true, 'which-key')
-spec(true, 'undotree')  -- show undo tree
-spec(true, 'trouble')   -- cool quickfix list for LSP
+spec(true, 'undotree')            -- show undo tree
+spec(true, 'trouble')             -- cool quickfix list for LSP
 spec(true, 'edgy')
-spec(true, 'tmux')      -- tmux integration
-spec(true, 'telescope') -- fuzzy finder
-spec(true, 'surround')  -- surround text with quotes, brackets, etc
+spec(true, 'tmux')                -- tmux integration
+spec(true, 'telescope.telescope') -- fuzzy finder
+spec(true, 'surround')            -- surround text with quotes, brackets, etc
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'obsidian')

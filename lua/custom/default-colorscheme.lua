@@ -21,22 +21,23 @@ local function telescope_colors(dark)
 
 
     local TelescopePrompt = {
-      TelescopeSelection = { fg = "White", bg = "NvimDarkGrey2", bold = true },
+      TelescopeSelection = { fg = "White", bg = "#3B3E44", bold = true },
       TelescopeSelectionCaret = { fg = "Cyan", bg = "NvimDarkGrey2" },
+
       TelescopeNormal = { link = "NewCustomTelescope" },
       TelescopeBorder = { fg = "NvimDarkGrey3", bg = "NvimDarkGrey3" },
 
-      TelescopeResultsNormal = { bg = "NvimDarkGrey2" },
-      TelescopeResultsBorder = { fg = "NvimDarkGrey2", bg = "NvimDarkGrey2" },
-      TelescopeResultTitle = { fg = "NvimDarkGrey2", bg = "NvimDarkGrey2" },
+      TelescopeResultsNormal = { bg = "NvimDarkGrey3" },
+      TelescopeResultsBorder = { fg = "NvimDarkGrey3", bg = "NvimDarkGrey3" },
+      TelescopeResultTitle = { fg = "NvimDarkGrey3", bg = "NvimDarkGrey3" },
 
       TelescopePreviewNormal = { bg = "#0f1116" },
       TelescopePreviewBorder = { fg = "#0f1116", bg = "#0f1116" },
       TelescopePreviewTitle = { bg = "#0f1116" },
 
-      TelescopePromptNormal = { fg = 'White', bg = 'NvimDarkGrey3', },
-      TelescopePromptBorder = { fg = 'NvimDarkGrey3', bg = 'NvimDarkGrey3', },
-      TelescopePromptTitle = { fg = 'NvimDarkGrey3', bg = 'NvimDarkGrey3', },
+      TelescopePromptNormal = { fg = 'White', bg = 'NvimDarkGrey4', },
+      TelescopePromptBorder = { fg = 'NvimDarkGrey4', bg = 'NvimDarkGrey4', },
+      TelescopePromptTitle = { fg = 'NvimDarkGrey4', bg = 'NvimDarkGrey4', },
     }
 
     for hl, col in pairs(TelescopePrompt) do
@@ -55,6 +56,7 @@ local function treesitter_colors(dark)
     set_hl(0, '@conditional', { italic = true, bold = true, fg = "White" })
     set_hl(0, 'Constant', { bold = true, fg = "LightMagenta" })
     set_hl(0, '@include', { bold = true, fg = "NvimLightRed" })
+    set_hl(0, '@text.diff.add.diff', { bold = true, fg = "NvimLightGreen" })
 
 
     -- set_hl(0, 'TreesitterContextLineNumber', { link = "LineNr" })
