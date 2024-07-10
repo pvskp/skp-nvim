@@ -56,7 +56,8 @@ local function treesitter_colors(dark)
     set_hl(0, '@conditional', { italic = true, bold = true, fg = "White" })
     set_hl(0, 'Constant', { bold = true, fg = "LightMagenta" })
     set_hl(0, '@include', { bold = true, fg = "NvimLightRed" })
-    set_hl(0, '@text.diff.add.diff', { bold = true, fg = "NvimLightGreen" })
+    set_hl(0, '@text.diff.add.diff', { bold = true, bg = "NvimLightGreen", fg = "Black" })
+    set_hl(0, '@text.diff.delete.diff', { bold = true, bg = "NvimLightRed", fg = "Black" })
 
 
     -- set_hl(0, 'TreesitterContextLineNumber', { link = "LineNr" })
