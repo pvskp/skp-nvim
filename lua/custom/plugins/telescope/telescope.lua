@@ -75,7 +75,9 @@ return {
     {
       '<leader>fh',
       function()
-        require('telescope.builtin').highlights()
+        require('telescope.builtin').highlights({
+          prompt_prefix = "hl> "
+        })
       end,
       desc = 'Find [all] files',
     },
