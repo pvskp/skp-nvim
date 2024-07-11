@@ -16,16 +16,21 @@ vim.keymap.set('n', '<M-l>', '<C-w>l')
 vim.keymap.set('n', '<M-h>', '<C-w>h')
 
 vim.keymap.set('n', '<C-w>e', '<C-w>=')
-vim.keymap.set('n', '<C-w>m', function()
+
+local toggle_maximized = function()
   local ok, maximized = pcall(vim.api.nvim_buf_get_var, 0, 'maximized')
   if not ok or not maximized then
     vim.api.nvim_buf_set_var(0, 'maximized', true)
     vim.cmd.wincmd '='
   else
-    vim.cmd.wincmd '='
+    vim.cmd.wincmd '|'
+    vim.cmd.wincmd '_'
     vim.api.nvim_buf_set_var(0, 'maximized', false)
   end
-end)
+end
+
+vim.keymap.set('n', '<C-w>m', toggle_maximized)
+vim.keymap.set('n', '<M-m>', toggle_maximized)
 
 -- Window and buffer close
 -- map('n', 'Q', '<c-w>q', { silent = true })
