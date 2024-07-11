@@ -114,6 +114,7 @@ local function dark_highlight()
   set_hl(0, 'Removed', { fg = 'NvimLightRed', bg = line_nr_bg })
   set_hl(0, 'Changed', { fg = 'NvimLightYellow', bg = line_nr_bg })
 
+  set_hl(0, 'LazyProgressTodo', { fg = "#282828", bg = nil })
 
   diagnostic_colors(true)
   telescope_colors(true)
