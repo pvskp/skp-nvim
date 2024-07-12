@@ -1,8 +1,3 @@
--- creates a function that sums to integers
-local function sum(a, b)
-  return a + b
-end
-
 return {
   'hrsh7th/nvim-cmp',
   event = {
