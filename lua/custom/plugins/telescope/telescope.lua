@@ -43,18 +43,21 @@ local function theme(preview_title)
   }
 end
 
-local better_ivy = require("custom.plugins.telescope.better_ivy").get_better_ivy
+-- local better_ivy = require("custom.plugins.telescope.better_ivy").get_better_ivy
 
 function Telescope_find_files()
-  require('telescope.builtin').find_files(better_ivy({}, "find files> "))
+  -- require('telescope.builtin').find_files(better_ivy({}, "find files> "))
+  require('telescope.builtin').find_files()
 end
 
 function Telescope_git_files()
-  require('telescope.builtin').git_files(better_ivy({}, "git files> "))
+  -- require('telescope.builtin').git_files(better_ivy({}, "git files> "))
+  require('telescope.builtin').git_files()
 end
 
 function Telescope_live_grep()
-  require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
+  -- require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
+  require('telescope.builtin').live_grep()
 end
 
 function Telescope_projects()

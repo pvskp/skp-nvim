@@ -93,8 +93,13 @@ end
 
 local function whichkey_colors(dark)
   if dark then
-    set_hl(0, "WhichKeyFloat", { bg = "#0f1116" })
+    -- set_hl(0, "WhichKeyBorder", { bg = "#0f1116" })
+    -- set_hl(0, "WhichKeyValue", { bg = "#0f1116" })
+    -- set_hl(0, "WhichKeyTitle", { bg = "#0f1116" })
+
     set_hl(0, "WhichKey", { bg = "#0f1116" })
+    -- set_hl(0, "WhichKeyTitle", { bg = "#0f1116" })
+    set_hl(0, "WhichKeyFloat", { bg = "#0f1116" })
     set_hl(0, "WhichKeyDesc", { bg = "#0f1116", fg = "NvimLightMagenta" })
   end
 end
@@ -121,7 +126,6 @@ local function dark_highlight()
   treesitter_colors(true)
   diffs_colors(true)
 
-  -- set_hl(0, 'WhichKeyFloat', { link = "NewCustomTelescope" })
   whichkey_colors(true)
 end
 

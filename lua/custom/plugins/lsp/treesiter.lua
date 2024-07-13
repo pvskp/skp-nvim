@@ -46,7 +46,6 @@ return {
       'python',
       'go',
       'markdown',
-      'helm',
       'markdown_inline',
     },
     sync_install = true,
@@ -55,7 +54,7 @@ return {
 
     highlight = {
       enable = true,
-      -- disable = { 'markdown', 'vimdoc', 'help', 'helm', 'gitcommit', 'diff' },
+      -- disable = { 'markdown', 'vimdoc', 'help', 'gitcommit', 'diff' },
       additional_vim_regex_highlighting = false,
       indent = {
         enable = true,
