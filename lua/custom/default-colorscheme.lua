@@ -99,8 +99,10 @@ local function whichkey_colors(dark)
 
     set_hl(0, "WhichKey", { bg = "#0f1116" })
     -- set_hl(0, "WhichKeyTitle", { bg = "#0f1116" })
-    set_hl(0, "WhichKeyFloat", { bg = "#0f1116" })
+    set_hl(0, "WhichKeyNormal", { bg = "#0f1116" })
     set_hl(0, "WhichKeyDesc", { bg = "#0f1116", fg = "NvimLightMagenta" })
+
+    -- set_hl(0, "NormalFloat", { bg = "#0f1116" })
   end
 end
 
