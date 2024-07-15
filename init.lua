@@ -88,6 +88,7 @@ spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
 spec(true, 'ccc')
+spec(true, 'w3m')
 spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
@@ -97,8 +98,8 @@ spec(false, 'btterm') -- this one is mine!!!!
 
 --<< AI >>--
 
-spec(false, 'ai.codeium')
-spec(true, 'ai.copilot')
+spec(true, 'ai.codeium')
+spec(false, 'ai.copilot')
 
 --<< UI >>--
 
