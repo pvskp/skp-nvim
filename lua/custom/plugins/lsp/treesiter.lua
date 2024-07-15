@@ -38,15 +38,14 @@ return {
   event = { 'BufReadPost' },
   opts = {
     ensure_installed = {
-      'c',
       'lua',
       'vim',
       'vimdoc',
       'query',
-      'python',
-      'go',
       'markdown',
       'markdown_inline',
+      'gitcommit',
+      'diff',
     },
     sync_install = true,
     auto_install = true,

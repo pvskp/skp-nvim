@@ -11,11 +11,11 @@ return {
       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
       desc = "Buffer Diagnostics (Trouble)",
     },
-    {
-      "<leader>cl",
-      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-      desc = "LSP Definitions / references / ... (Trouble)",
-    },
+    -- {
+    --   "<leader>cl",
+    --   "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+    --   desc = "LSP Definitions / references / ... (Trouble)",
+    -- },
     {
       "<leader>xL",
       "<cmd>Trouble loclist toggle<cr>",

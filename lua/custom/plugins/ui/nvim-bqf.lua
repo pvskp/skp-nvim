@@ -1,10 +1,10 @@
 return {
   'kevinhwang91/nvim-bqf',
   ft = 'qf',
-  keys = {
-    { "<leader>cn", ":cnext<cr>" },
-    { "<leader>cp", ":cprevious<cr>" }
-  },
+  -- keys = {
+  --   { "<leader>cn", ":cnext<cr>" },
+  -- { "<leader>cp", ":cprevious<cr>" }
+  -- },
   opts = {
     auto_enable = true,
     magic_window = true,
