@@ -43,6 +43,28 @@ local function theme(preview_title)
   }
 end
 
+
+local _live_grep_in_glob = function(glob_pattern)
+  require('telescope.builtin').live_grep({
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--glob=" .. (glob_pattern or ""),
+    }
+  })
+end
+
+local live_grep_in_glob = function()
+  vim.ui.input({ prompt = "Glob: ", completion = "file", default = "**/*." }, _live_grep_in_glob)
+end
+
+vim.api.nvim_create_user_command('GrepInGlob', live_grep_in_glob, {})
+
 -- local better_ivy = require("custom.plugins.telescope.better_ivy").get_better_ivy
 
 function Telescope_find_files()
