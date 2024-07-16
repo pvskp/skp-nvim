@@ -220,7 +220,7 @@ return {
     --     ]], lazy_stats())
 
     vim.api.nvim_set_hl(0, 'AlphaHeader', {
-      fg = '#f38ba8',
+      fg = 'Yellow',
     })
 
     vim.api.nvim_set_hl(0, 'AlphaButtons', {
@@ -243,7 +243,7 @@ return {
         vim.cmd 'setlocal nonumber'
         vim.cmd 'setlocal norelativenumber'
 
-        -- Disables miniindentscope
+        -- DisablES MIniindentscope
         vim.b.miniindentscope_disable = true
       end,
     })
