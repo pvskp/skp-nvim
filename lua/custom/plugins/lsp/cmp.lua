@@ -70,7 +70,7 @@ return {
           config = {
             sources = {
               { name = 'copilot' },
-              -- { name = 'codeium' },
+              { name = 'codeium' },
             }
           }
         }),

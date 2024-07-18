@@ -82,6 +82,11 @@ function Telescope_live_grep()
   require('telescope.builtin').live_grep()
 end
 
+function Telescope_colorscheme()
+  -- require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
+  require('telescope.builtin').colorscheme()
+end
+
 function Telescope_projects()
   require('telescope').load_extension 'projects'
 
@@ -90,6 +95,7 @@ end
 
 return {
   'nvim-telescope/telescope.nvim',
+  -- version = "*",
   cmd = 'Telescope',
   keys = {
     {
@@ -115,6 +121,11 @@ return {
       '<leader>p',
       Telescope_projects,
       desc = 'Go to project',
+    },
+    {
+      '<leader>fc',
+      Telescope_colorscheme,
+      desc = 'List colorschemes',
     },
 
     {

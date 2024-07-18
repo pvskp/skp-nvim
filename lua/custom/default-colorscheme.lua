@@ -1,4 +1,4 @@
-local line_nr_bg = "NvimDarkGray3"
+local line_nr_bg = ""
 
 local set_hl = vim.api.nvim_set_hl
 
@@ -8,6 +8,13 @@ local function diffs_colors(dark)
     set_hl(0, 'DiffChange', { fg = "NvimLightYellow", bg = line_nr_bg })
     set_hl(0, 'DiffDelete', { fg = "NvimLightRed", bg = line_nr_bg })
     set_hl(0, 'DiffText', { fg = "NvimLightBlue", bg = line_nr_bg })
+  end
+end
+
+
+local function completion_menu_colors(dark)
+  if dark then
+    set_hl(0, 'NormalFloat', { bg = "NvimDarkGrey1" })
   end
 end
 
@@ -22,7 +29,7 @@ local function telescope_colors(dark)
 
     local TelescopePrompt = {
       TelescopeSelection = { fg = "White", bg = "#3B3E44", bold = true },
-      TelescopeSelectionCaret = { fg = "Cyan", bg = "NvimDarkGrey2" },
+      TelescopeSelectionCaret = { fg = "Magenta", bg = "#3B3E44" },
 
       TelescopeNormal = { link = "NewCustomTelescope" },
       TelescopeBorder = { fg = "NvimDarkGrey3", bg = "NvimDarkGrey3" },
@@ -48,16 +55,17 @@ end
 
 local function treesitter_colors(dark)
   if dark then
-    set_hl(0, '@spell', { italic = true })
+    set_hl(0, '@spell', { italic = false })
     set_hl(0, '@function', { bold = true, fg = "NvimLightBlue" })
     set_hl(0, 'Identifier', { bold = false, fg = "NvimLightCyan" })
     set_hl(0, 'Statement', { bold = true, fg = "NvimLightYellow" })
-    set_hl(0, 'Type', { italic = true, fg = "NvimLightCyan" })
-    set_hl(0, '@conditional', { italic = true, bold = true, fg = "White" })
-    set_hl(0, 'Constant', { bold = true, fg = "LightMagenta" })
-    set_hl(0, '@include', { bold = true, fg = "NvimLightRed" })
+    set_hl(0, 'Type', { italic = false, fg = "NvimLightCyan" })
+    set_hl(0, '@conditional', { italic = false, bold = true, fg = "White" })
+    set_hl(0, 'Constant', { bold = true, fg = "Magenta" })
+    set_hl(0, '@include', { bold = true, fg = "Red" })
     set_hl(0, '@text.diff.add.diff', { bold = true, bg = "NvimLightGreen", fg = "Black" })
     set_hl(0, '@text.diff.delete.diff', { bold = true, bg = "NvimLightRed", fg = "Black" })
+    -- set_hl(0, '@field', { bold = true, fg = "Orange" })
 
 
     -- set_hl(0, 'TreesitterContextLineNumber', { link = "LineNr" })
@@ -101,21 +109,18 @@ local function whichkey_colors(dark)
     -- set_hl(0, "WhichKeyTitle", { bg = "#0f1116" })
     set_hl(0, "WhichKeyNormal", { bg = "#0f1116" })
     set_hl(0, "WhichKeyDesc", { bg = "#0f1116", fg = "NvimLightMagenta" })
-
-    -- set_hl(0, "NormalFloat", { bg = "#0f1116" })
   end
 end
 
 local function dark_highlight()
-  -- set_hl(0, 'Normal', { bg = "#1a1a1a" })
+  -- set_hl(0, 'Normal', {})
   set_hl(0, 'Float', { fg = "NvimLightGray2", bg = "NvimDarkGrey2" })
+  -- set_hl(0, 'NormalNC', { bg = "NvimDarkGray1" })
 
-  set_hl(0, 'Normal', { fg = "White" })
-  set_hl(0, 'NormalFloat', { fg = "White" })
   set_hl(0, 'FloatBorder', { fg = "White" })
 
   set_hl(0, 'LineNr', { fg = 'Gray', bg = line_nr_bg })
-  set_hl(0, 'CursorlineNr', { fg = "NvimLightCyan", bg = line_nr_bg, bold = true })
+  set_hl(0, 'CursorlineNr', { fg = "NvimLightGreen", bg = line_nr_bg, bold = true })
 
   set_hl(0, 'Added', { fg = 'NvimLightGreen', bg = line_nr_bg })
   set_hl(0, 'Removed', { fg = 'NvimLightRed', bg = line_nr_bg })
@@ -128,6 +133,7 @@ local function dark_highlight()
   telescope_colors(true)
   treesitter_colors(true)
   diffs_colors(true)
+  completion_menu_colors(true)
 
   whichkey_colors(true)
 end

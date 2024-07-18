@@ -12,6 +12,7 @@ require 'custom.terminal'
 require 'custom.set'
 
 
+spec(false, 'colorscheme.melange')
 spec(false, 'colorscheme.github')
 spec(false, 'colorscheme.zenbones')
 spec(false, 'colorscheme.vscode')

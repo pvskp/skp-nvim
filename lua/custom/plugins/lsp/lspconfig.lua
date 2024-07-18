@@ -1,10 +1,12 @@
 return {
   'neovim/nvim-lspconfig',
+  version = "*",
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     {
       'williamboman/mason.nvim',
+      version = "*",
       opts = {
         ui = {
           border = Borders.simple,

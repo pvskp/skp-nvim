@@ -25,6 +25,7 @@ map('i', '<C-j>', '<Esc>]}a')
 -- Buffer navigation
 map('n', '<S-l>', ':bnext<CR>', opts)
 map('n', '<S-h>', ':bprevious<CR>', opts)
+map('n', '<leader>x', ':bdelete!<CR>', opts)
 map('n', '<Tab>', '<C-6>', opts)
 
 -- Neovide specific mappings
