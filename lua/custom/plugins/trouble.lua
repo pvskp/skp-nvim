@@ -1,5 +1,10 @@
 return {
   "folke/trouble.nvim",
+  version = "*",
+  opts = {
+    warn_no_results = false,
+    open_no_results = true,
+  },
   -- keys = {
   --   {
   --     "<leader>xx",
@@ -27,8 +32,4 @@ return {
   --     desc = "Quickfix List (Trouble)",
   --   },
   -- },
-  opts = {
-    warn_no_results = false,
-    open_no_results = true,
-  },
 }

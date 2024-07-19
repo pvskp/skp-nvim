@@ -19,7 +19,7 @@ spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyonight')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
-spec(false, 'colorscheme.nord')
+spec(true, 'colorscheme.nord')
 spec(false, 'colorscheme.neosolarized')
 spec(false, 'colorscheme.moonlight')
 spec(false, 'colorscheme.monokai')
@@ -70,6 +70,7 @@ spec(true, 'mini.files') -- minitree (best tree plugin)
 spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
+spec(true, 'git.linker')
 spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
 

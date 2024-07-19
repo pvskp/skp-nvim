@@ -1,6 +1,7 @@
 return {
   "folke/edgy.nvim",
   event = "VeryLazy",
+  version = "*",
   dependencies = { "folke/trouble.nvim" },
   keys = {
     {

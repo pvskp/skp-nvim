@@ -219,9 +219,9 @@ return {
     --         %s
     --     ]], lazy_stats())
 
-    vim.api.nvim_set_hl(0, 'AlphaHeader', {
-      fg = 'Yellow',
-    })
+    -- vim.api.nvim_set_hl(0, 'AlphaHeader', {
+    --   fg = 'Yellow',
+    -- })
 
     vim.api.nvim_set_hl(0, 'AlphaButtons', {
       fg = '#94e2d5',

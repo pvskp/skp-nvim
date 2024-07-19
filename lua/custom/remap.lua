@@ -39,7 +39,7 @@ end
 map('n', '<leader>ff', ':find *')
 
 -- Search in directory
-map('n', '<leader>g', function()
+map('n', '<leader>gg', function()
   local ok, pattern = pcall(vim.fn.input, 'Enter search pattern: ')
   if ok and pattern ~= '' then
     vim.cmd('silent! grep! ' .. pattern .. ' * 2> /dev/null')

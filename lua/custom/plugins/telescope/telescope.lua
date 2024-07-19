@@ -69,17 +69,28 @@ vim.api.nvim_create_user_command('GrepInGlob', live_grep_in_glob, {})
 
 function Telescope_find_files()
   -- require('telescope.builtin').find_files(better_ivy({}, "find files> "))
-  require('telescope.builtin').find_files()
+  require('telescope.builtin').find_files({
+    results_title = false,
+    prompt_prefix = "find files> "
+  }
+  )
 end
 
 function Telescope_git_files()
   -- require('telescope.builtin').git_files(better_ivy({}, "git files> "))
-  require('telescope.builtin').git_files()
+  require('telescope.builtin').git_files({
+    results_title = false,
+    prompt_prefix = "git files> "
+  })
 end
 
 function Telescope_live_grep()
   -- require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
-  require('telescope.builtin').live_grep()
+  require('telescope.builtin').live_grep({
+    results_title = false,
+    prompt_prefix = "live grep> "
+  }
+  )
 end
 
 function Telescope_colorscheme()
@@ -99,7 +110,7 @@ return {
   cmd = 'Telescope',
   keys = {
     {
-      '<leader>fg',
+      '<leader>fe',
       Telescope_find_files,
       desc = 'Find [all] files',
     },
@@ -107,6 +118,7 @@ return {
       '<leader>fh',
       function()
         require('telescope.builtin').highlights({
+          results_title = false,
           prompt_prefix = "hl> "
         })
       end,
@@ -148,7 +160,7 @@ return {
     },
 
     {
-      '<leader>g',
+      '<leader>gg',
       Telescope_live_grep,
       desc = '  Grep Files',
     },
@@ -164,7 +176,10 @@ return {
     {
       '<leader>sw',
       function()
-        require('telescope.builtin').grep_string()
+        require('telescope.builtin').grep_string({
+          results_title = false,
+          prompt_prefix = "grep string> "
+        })
       end,
       desc = 'Search Word',
     },

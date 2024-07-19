@@ -86,17 +86,17 @@ local opts = {
           gui = 'bold',
         },
       },
-      {
-        'diff',
-        symbols = {
-          added = Symbols.changes.Added,
-          modified = Symbols.changes.Modified,
-          removed = Symbols.changes.Removed,
-        }, -- Changes the symbols used by the diff.
-        color = {
-          gui = 'bold',
-        },
-      },
+      -- {
+      --   'diff',
+      --   symbols = {
+      --     added = Symbols.changes.Added,
+      --     modified = Symbols.changes.Modified,
+      --     removed = Symbols.changes.Removed,
+      --   }, -- Changes the symbols used by the diff.
+      --   color = {
+      --     gui = 'bold',
+      --   },
+      -- },
       '%=',
       {
         "buffers",
