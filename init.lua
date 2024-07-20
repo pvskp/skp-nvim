@@ -72,6 +72,7 @@ spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
 spec(true, 'git.linker')
+spec(true, 'git.git-dev')
 spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
 
