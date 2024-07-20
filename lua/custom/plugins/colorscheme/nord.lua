@@ -32,6 +32,10 @@ local function set_treesitter_hl()
 end
 
 
+local function set_gitsigns_hl()
+  set_hl('GitSignsCurrentLineBlame', { fg = nord.light_gray_bright })
+end
+
 local function set_telescope_hl()
   local TelescopePrompt = {
     TelescopeNormal = { bg = nord.black },
@@ -71,7 +75,7 @@ end
 -- set_telescope_hl()
 other_color_improvements()
 set_treesitter_hl()
-
+set_gitsigns_hl()
 
 return {
   'shaunsingh/nord.nvim',
@@ -95,5 +99,6 @@ return {
     set_telescope_hl()
     set_treesitter_hl()
     other_color_improvements()
+    set_gitsigns_hl()
   end,
 }
