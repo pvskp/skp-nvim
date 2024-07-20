@@ -61,6 +61,7 @@ spec(true, 'languages.markdown.render-markdown')
 --<< Mini library >>--
 
 spec(true, 'mini.splitjoin')
+spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
 spec(false, 'mini.icons')
 spec(true, 'mini.files') -- minitree (best tree plugin)
