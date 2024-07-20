@@ -4,7 +4,8 @@
         "pon",
         "poff",
         "spec",
-        "_execute_shell_script"
+        "_execute_shell_script",
+        "nord"
     ],
     "diagnostics.disable": [
         "unused-local"
