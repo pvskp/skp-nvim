@@ -7,6 +7,7 @@ local function set_treesitter_hl()
   set_hl('TreesitterContextLineNumber', { bg = nord.dark_gray })
   set_hl('TreesitterContextBottom', { bg = nord.dark_gray, sp = nord.gray, underline = true }) -- Adds underline to TreesitterContextBottom
   set_hl('TreesitterContext', { bg = nord.dark_gray })
+  set_hl('@string', { fg = nord.yellow })
 end
 
 
