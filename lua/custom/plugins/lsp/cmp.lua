@@ -5,11 +5,11 @@ return {
     -- 'CmdlineEnter'
   },
   dependencies = {
-    'copilot',
+    -- 'copilot',
     'hrsh7th/cmp-buffer', -- source for text in buffer
     'hrsh7th/cmp-path',   -- source for file system paths
     -- 'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-nvim-lsp-signature-help',
+    -- 'hrsh7th/cmp-nvim-lsp-signature-help',
     'amarakon/nvim-cmp-fonts', -- source for font completion
 
     --< snippet engine >--
@@ -61,7 +61,7 @@ return {
         ['<C-Space>'] = cmp.mapping.complete({
           config = {
             sources = {
-              { name = "nvim_lsp_signature_help" },
+              -- { name = "nvim_lsp_signature_help" },
               { name = "nvim_lsp" }
             }
           }
@@ -106,7 +106,7 @@ return {
 
       -- sources for autocompletion
       sources = cmp.config.sources {
-        { name = 'nvim_lsp_signature_help' },
+        -- { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- snippets
         {

@@ -48,7 +48,7 @@ spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.neodev')    -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
-spec(true, 'lsp.lsp_signature')
+spec(false, 'lsp.lsp_signature')
 spec(true, 'lsp.conform') -- formatter
 spec(true, 'lsp.cmp')     -- completion
 
