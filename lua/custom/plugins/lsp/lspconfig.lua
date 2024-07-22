@@ -1,3 +1,12 @@
+-- local function setupLspSignature()
+--   vim.api.nvim_create_autocmd('CursorHoldI', {
+--     pattern = "*",
+--     callback = function()
+--       vim.lsp.buf.signature_help()
+--     end
+--   })
+-- end
+
 return {
   'neovim/nvim-lspconfig',
   version = "*",
@@ -29,6 +38,8 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
+    -- setupLspSignature()
+
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
       border = Borders.simple,
     })
@@ -108,6 +119,9 @@ return {
       opts.desc = 'Formats code'
       keymap.set('n', '<leader>lf', vim.lsp.buf.format, opts)
 
+      opts.desc = 'Show LSP signature'
+      vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
+
       opts.desc = 'Show line diagnostics'
       keymap.set('n', 'gl', vim.diagnostic.open_float, opts) -- show diagnostics for line
 
@@ -116,6 +130,7 @@ return {
 
       opts.desc = 'Go to next diagnostic'
       keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+
 
       opts.desc = 'Opens quickfix list with diagnostics'
       vim.keymap.set('n', '<leader>oq', vim.diagnostic.setloclist, opts)
@@ -206,6 +221,7 @@ return {
     mason_tool_installer.setup {
       ensure_installed = {
         'goimports',
+        'golangci-lint',
         'gopls',
         'pyright',
         'stylua',
