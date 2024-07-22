@@ -1,4 +1,5 @@
 require 'custom'
+
 require 'custom.autocommands'
 require 'custom.commands'
 require 'custom.globals'
@@ -10,6 +11,7 @@ require 'custom.commandline'
 require 'custom.default-colorscheme'
 require 'custom.terminal'
 require 'custom.set'
+require 'custom.colors'
 
 
 spec(false, 'colorscheme.melange')
