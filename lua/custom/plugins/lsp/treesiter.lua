@@ -1,13 +1,14 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   tag = "v0.9.2",
+  build = ':TSUpdate',
   init = function()
     vim.opt.foldmethod = "expr"
     vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
   end,
   dependencies = {
     {
-      { 'nvim-treesitter/nvim-treesitter-textobjects' },
+      -- { 'nvim-treesitter/nvim-treesitter-textobjects' },
       {
         'nvim-treesitter/nvim-treesitter-context',
         opts = {
@@ -27,8 +28,7 @@ return {
         config = function(_, opts)
           require 'treesitter-context'.setup(opts)
           vim.api.nvim_create_autocmd('Filetype', {
-
-            pattern = "markdown",
+            pattern = { "markdown" },
             command = "TSContextDisable",
           })
         end
@@ -47,8 +47,8 @@ return {
       'gitcommit',
       'diff',
     },
-    sync_install = true,
-    auto_install = true,
+    sync_install = false,
+    auto_install = false,
     ignore_install = {},
 
     highlight = {
