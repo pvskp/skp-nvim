@@ -8,6 +8,9 @@ local function set_treesitter_hl()
   set_hl('TreesitterContextBottom', { bg = nord.dark_gray, sp = nord.gray, underline = true }) -- Adds underline to TreesitterContextBottom
   set_hl('TreesitterContext', { bg = nord.dark_gray })
   set_hl('@string', { fg = nord.yellow })
+
+  set_hl('@text.diff.add.diff', { bold = true, fg = nord.green })
+  set_hl('@text.diff.delete.diff', { bold = true, fg = nord.red })
 end
 
 
