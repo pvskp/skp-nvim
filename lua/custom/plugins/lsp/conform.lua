@@ -6,7 +6,8 @@ return {
   opts = {
     formatters_by_ft = {
       -- lua = { 'stylua' },
-      bash = { 'beautysh', 'shellcheck' },
+      sh = { 'beautysh' },
+      bash = { 'beautysh' },
       -- python = { 'autoflake', 'isort', 'black' },
       python = { 'ruff_format' },
       javascript = { 'prettier' },
