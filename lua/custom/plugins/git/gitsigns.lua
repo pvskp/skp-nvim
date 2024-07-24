@@ -1,5 +1,6 @@
 return {
   'lewis6991/gitsigns.nvim',
+  version = "*",
   event = 'VeryLazy',
   keys = {
     { '-', '<cmd>Gitsigns preview_hunk<CR>', desc = 'Preview hunk' },
