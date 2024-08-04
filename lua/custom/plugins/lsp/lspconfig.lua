@@ -86,9 +86,6 @@ return {
         { desc = '[T]oggle inlay_hint', silent = true }
       )
 
-      opts.desc = 'Uses Navbuddy'
-      keymap.set('n', '<leader>n', ':Navbuddy<CR>', opts)
-
       opts.desc = 'Go to declaration'
       keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
 
