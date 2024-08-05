@@ -90,5 +90,7 @@ return {
       end,
     })
     -- vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
+    set_hl('MiniFilesNormal', { bg = nil })
+    set_hl('MiniFilesBorder', { bg = nil })
   end,
 }
