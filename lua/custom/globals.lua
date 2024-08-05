@@ -5,6 +5,10 @@ end
 
 LAZY_PLUGIN_SPEC = {}
 
+function set_hl(hl_group_name, colors)
+  vim.api.nvim_set_hl(0, hl_group_name, colors)
+end
+
 function ToggleTrueFalse()
   local line = vim.api.nvim_get_current_line()
   local new_line = line
