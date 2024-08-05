@@ -5,7 +5,8 @@
         "poff",
         "spec",
         "_execute_shell_script",
-        "nord"
+        "nord",
+        "set_hl"
     ],
     "diagnostics.disable": [
         "unused-local"
