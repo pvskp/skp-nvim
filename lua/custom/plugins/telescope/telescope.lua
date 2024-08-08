@@ -106,7 +106,7 @@ end
 
 return {
   'nvim-telescope/telescope.nvim',
-  -- version = "*",
+  version = "*",
   cmd = 'Telescope',
   keys = {
     {
@@ -200,7 +200,10 @@ return {
 
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-ui-select.nvim',
+    {
+      'nvim-telescope/telescope-ui-select.nvim',
+      version = "*"
+    },
     'BurntSushi/ripgrep',
     'ThePrimeagen/git-worktree.nvim',
     'pvskp/telescope-projects',
