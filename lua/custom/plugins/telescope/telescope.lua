@@ -163,7 +163,9 @@ return {
     {
       '<leader>h',
       function()
-        require('telescope.builtin').help_tags(default_theme 'help')
+        require('telescope.builtin').help_tags {
+          prompt_prefix = "help tags> "
+        }
       end,
       desc = 'Help Tags',
     },

@@ -50,6 +50,8 @@ return {
 
     set_hl("MatchParen", { bg = onedark.red, fg = "#ffffff" })
 
+    set_hl("CursorLineNr", { fg = onedark.orange, bold = true })
+
     set_hl("TelescopePromptBorder", { fg = onedark.purple })
     set_hl("TelescopeResultsBorder", { fg = onedark.purple })
     set_hl("TelescopePreviewBorder", { fg = onedark.purple })
