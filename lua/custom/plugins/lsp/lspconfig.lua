@@ -222,6 +222,7 @@ return {
         'gopls',
         'pyright',
         'stylua',
+        'prettier',
         'terraformls', -- terraformls
       },
     }

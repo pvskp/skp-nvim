@@ -14,7 +14,7 @@ return {
       json = { 'prettier' },
       html = { 'prettier' },
       css = { 'prettier' },
-      yaml = { 'prettierd' },
+      yaml = { 'prettier' },
       cpp = { 'clang-format' },
       terraform = { 'terraform_fmt' },
       zsh = { 'beautysh' },
