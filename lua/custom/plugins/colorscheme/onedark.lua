@@ -1,6 +1,9 @@
 return {
   'navarasu/onedark.nvim',
   priority = 1000,
+  dependencies = {
+    "echasnovski/mini.files"
+  },
   lazy = false,
   opts = {
     -- Main options --
@@ -46,9 +49,16 @@ return {
     require('onedark').load()
 
     set_hl("MatchParen", { bg = onedark.red, fg = "#ffffff" })
-    set_hl("TelescopePromptBorder", { fg = onedark.red })
-    set_hl("TelescopeResultsBorder", { fg = onedark.red })
-    set_hl("TelescopePreviewBorder", { fg = onedark.red })
+
+    set_hl("TelescopePromptBorder", { fg = onedark.purple })
+    set_hl("TelescopeResultsBorder", { fg = onedark.purple })
+    set_hl("TelescopePreviewBorder", { fg = onedark.purple })
+
     set_hl("GitSignsCurrentLineBlame", { fg = onedark.bg2 })
+
+    set_hl("MiniFilesBorder", { fg = onedark.purple })
+    set_hl('MiniFilesNormal', { bg = nil })
+    set_hl('MiniFilesTitle', { fg = onedark.green })
+    set_hl('MiniFilesTitleFocused', { fg = onedark.green, bold = true })
   end,
 }

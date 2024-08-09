@@ -46,12 +46,12 @@ spec(false, 'colorscheme.adwaita')
 
 spec(true, 'lsp.treesiter')
 spec(true, 'lsp.nvim-lint') -- linting
-spec(true, 'lsp.neodev') -- offers completion to neovim functions
-spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
+spec(true, 'lsp.neodev')    -- offers completion to neovim functions
+spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(false, 'lsp.lsp_signature')
 spec(true, 'lsp.conform') -- formatter
-spec(true, 'lsp.cmp') -- completion
+spec(true, 'lsp.cmp')     -- completion
 
 --<< Language specific >>--
 
@@ -80,17 +80,18 @@ spec(true, 'git.neogit')
 --<< General >>--
 
 spec(true, 'which-key')
-spec(true, 'undotree') -- show undo tree
-spec(true, 'trouble') -- cool quickfix list for LSP
+spec(true, 'undotree')            -- show undo tree
+spec(true, 'trouble')             -- cool quickfix list for LSP
 spec(true, 'edgy')
-spec(true, 'tmux') -- tmux integration
+spec(true, 'tmux')                -- tmux integration
 spec(true, 'telescope.telescope') -- fuzzy finder
-spec(true, 'surround') -- surround text with quotes, brackets, etc
+spec(true, 'surround')            -- surround text with quotes, brackets, etc
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'quicker')
+spec(true, 'outline')
 spec(false, 'obsidian')
-spec(true, 'hop') -- jump to any word in the screen
+spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
 spec(true, 'ccc')
@@ -99,7 +100,7 @@ spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
 spec(false, 'modicator')
-spec(true, 'kitty') -- kitty integration
+spec(true, 'kitty')   -- kitty integration
 spec(false, 'btterm') -- this one is mine!!!!
 
 --<< AI >>--
@@ -110,17 +111,17 @@ spec(false, 'ai.copilot')
 --<< UI >>--
 
 spec(false, 'ui.nvim-bqf')
-spec(true, 'ui.lualine') -- statusline
+spec(true, 'ui.lualine')          -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
-spec(true, 'ui.dressing') -- offers better ui for some neovim commands
+spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
-spec(true, 'ui.alpha') -- start dashboard
+spec(true, 'ui.alpha')            -- start dashboard
 spec(false, 'ui.transparent')
 spec(false, 'ui.noice')
 spec(false, 'ui.indentlines') -- show indent lines
-spec(false, 'ui.fidget') -- cool LSP notification
-spec(false, 'ui.colorizer') -- color preview
-spec(false, 'ui.barbecue') -- shows the current symbol and its parents
+spec(false, 'ui.fidget')      -- cool LSP notification
+spec(false, 'ui.colorizer')   -- color preview
+spec(false, 'ui.barbecue')    -- shows the current symbol and its parents
 
 --<< Lualine integrations >>--
 

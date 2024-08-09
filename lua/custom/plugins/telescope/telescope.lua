@@ -33,10 +33,10 @@ local function theme(preview_title)
     layout_strategy = 'vertical',
 
     layout_config = {
-      height = vim.o.lines, -- maximally available lines
+      height = vim.o.lines,  -- maximally available lines
       width = vim.o.columns, -- maximally available columns
       prompt_position = 'top',
-      preview_height = 0.6, -- 60% of available lines
+      preview_height = 0.6,  -- 60% of available lines
     },
   }
 end
@@ -233,7 +233,7 @@ return {
 
     telescope.setup {
       defaults = {
-        -- borderchars = Borders.borderchars,
+        borderchars = Borders.borderchars,
         mappings = {
           i = {
             ['<Esc>'] = actions.close,
