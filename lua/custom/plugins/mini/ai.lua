@@ -1,6 +1,6 @@
 return {
   'echasnovski/mini.ai',
-  event = "VimEnter",
+  event = 'VimEnter',
   version = '*',
   opts = {
     -- It still works without disabling these, but good form to indicate an override is taking place
@@ -21,10 +21,11 @@ return {
     require('mini.ai').setup(opts)
 
     local keymap_opts = { noremap = false, silent = true }
-    local tor = require("custom.plugins.mini.textobject.repeat")
+    local tor = require 'custom.plugins.mini.textobject.repeat'
 
-    local movements = { "i", "a" }
-    local characters = { "(", "[", "{", "<", ")", "]", "}", ">", "b", "\"", "'", "q", "?", "t", "f", "a" }
+    local movements = { 'i', 'a' }
+    local characters =
+      { '(', '[', '{', '<', ')', ']', '}', '>', 'b', '"', "'", 'q', '?', 't', 'f', 'a' }
 
     for _, movement in ipairs(movements) do
       for _, char in ipairs(characters) do
@@ -35,8 +36,7 @@ return {
       end
     end
 
-
     vim.keymap.set('v', 'n', tor.next_object, keymap_opts)
     vim.keymap.set('v', 'N', tor.prev_object, keymap_opts)
-  end
+  end,
 }

@@ -9,28 +9,28 @@
 
 return {
   'neovim/nvim-lspconfig',
-  version = "*",
+  version = '*',
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
     {
       'williamboman/mason.nvim',
-      version = "*",
+      version = '*',
       opts = {
         ui = {
           border = Borders.simple,
           icons = {
-            package_installed = "✅",
-            package_pending = "🔶",
-            package_uninstalled = "❌"
+            package_installed = '✅',
+            package_pending = '🔶',
+            package_uninstalled = '❌',
           },
           -- icons = {
           --   package_installed = "✓",
           --   package_pending = "➜",
           --   package_uninstalled = "✗"
           -- }
-        }
-      }
+        },
+      },
     },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -94,13 +94,13 @@ return {
 
       opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gv', function()
-        vim.cmd('vsplit')
+        vim.cmd 'vsplit'
         vim.lsp.buf.definition()
       end, opts)
 
       opts.desc = 'Go to declaration in horizontal split'
       keymap.set('n', 'gh', function()
-        vim.cmd('split')
+        vim.cmd 'split'
         vim.lsp.buf.definition()
       end, opts)
 
@@ -127,7 +127,6 @@ return {
 
       opts.desc = 'Go to next diagnostic'
       keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
 
       opts.desc = 'Opens quickfix list with diagnostics'
       vim.keymap.set('n', '<leader>oq', vim.diagnostic.setloclist, opts)

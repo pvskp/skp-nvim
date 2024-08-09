@@ -4,7 +4,7 @@ return {
   opts = {
     highlight_on_key = true,
     disable_filetypes = {
-      "NeogitStatus"
+      'NeogitStatus',
     },
   },
 }

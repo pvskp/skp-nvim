@@ -1,14 +1,14 @@
 return {
-  "Dynge/gitmoji.nvim",
+  'Dynge/gitmoji.nvim',
   dependencies = {
-    "hrsh7th/nvim-cmp",
+    'hrsh7th/nvim-cmp',
   },
   opts = { -- the values below are the defaults
-    filetypes = { "gitcommit" },
+    filetypes = { 'gitcommit' },
     completion = {
       append_space = false,
-      complete_as = "emoji",
+      complete_as = 'emoji',
     },
   },
-  ft = { "gitcommit", "NeogitCommitMessage" },
+  ft = { 'gitcommit', 'NeogitCommitMessage' },
 }

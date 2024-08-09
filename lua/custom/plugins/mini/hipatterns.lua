@@ -18,30 +18,29 @@ return {
       { fg = nord.red, bg = 'None', bold = true, italic = false }
     )
 
-
-    vim.api.nvim_set_hl(0,
+    vim.api.nvim_set_hl(
+      0,
       'MiniHipatternsFixme',
       { fg = 'Black', bg = 'NvimLightRed', bold = true, italic = false }
     )
 
-
-    vim.api.nvim_set_hl(0,
+    vim.api.nvim_set_hl(
+      0,
       'MiniHipatternsHack',
       { fg = 'Black', bg = 'NvimLightYellow', bold = true, italic = false }
     )
 
-
-    vim.api.nvim_set_hl(0,
+    vim.api.nvim_set_hl(
+      0,
       'MiniHipatternsTodo',
       { fg = 'Black', bg = 'NvimLightCyan', bold = true, italic = false }
     )
 
-
-    vim.api.nvim_set_hl(0,
+    vim.api.nvim_set_hl(
+      0,
       'MiniHipatternsNote',
       { fg = 'Black', bg = 'NvimLightBlue', bold = true, italic = false }
     )
-
 
     hipatterns.setup {
       highlighters = {

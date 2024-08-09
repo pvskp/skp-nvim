@@ -30,9 +30,17 @@ map('n', '<Tab>', '<C-6>', opts)
 
 -- Neovide specific mappings
 if vim.g.neovide then
-  vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-  vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-  vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+  vim.keymap.set(
+    { 'n', 'v' },
+    '<C-+>',
+    ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>'
+  )
+  vim.keymap.set(
+    { 'n', 'v' },
+    '<C-->',
+    ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>'
+  )
+  vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 
 -- Find mode
@@ -47,7 +55,6 @@ map('n', '<leader>gg', function()
   end
 end, opts)
 
-
 -- Find and replace current word
 map({ 'n', 'v' }, '<leader>;', function()
   local old_word = vim.fn.expand '<cword>'
@@ -58,19 +65,18 @@ map({ 'n', 'v' }, '<leader>;', function()
   end
 end, {})
 
-
 map('n', '<M-=>', '<C-w>=')
 map('n', '<C-s>', ':w<CR>', opts)
 
 -- Window and buffer close
 -- map('n', 'Q', '<c-w>q', { silent = true })
 map('n', 'Q', function()
-  local buff_info = vim.fn.getbufinfo({ buflisted = 1 })
+  local buff_info = vim.fn.getbufinfo { buflisted = 1 }
   if #buff_info > 1 then
     vim.api.nvim_buf_delete(0, { force = true, unload = false })
     return
   end
-  vim.cmd('quit')
+  vim.cmd 'quit'
 end, { silent = true })
 
 map('n', '<C-q>', ':qa!<CR>', { silent = true })

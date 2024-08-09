@@ -1,6 +1,6 @@
 return {
-  "moyiz/git-dev.nvim",
+  'moyiz/git-dev.nvim',
   lazy = true,
-  cmd = { "GitDevOpen", "GitDevToggleUI", "GitDevRecents", "GitDevCleanAll" },
+  cmd = { 'GitDevOpen', 'GitDevToggleUI', 'GitDevRecents', 'GitDevCleanAll' },
   opts = {},
 }

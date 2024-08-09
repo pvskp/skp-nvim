@@ -6,16 +6,16 @@ end
 function _execute_shell_script() end
 
 vim.keymap.set('n', '<C-Space>', function()
-  local filename = vim.fn.expand('%')
-  local filedir = vim.fn.expand('%:p:h')
+  local filename = vim.fn.expand '%'
+  local filedir = vim.fn.expand '%:p:h'
 
   if vim.fn.filereadable(filename) == 0 then
-    vim.notify("File not found: " .. filename, vim.log.levels.ERROR)
+    vim.notify('File not found: ' .. filename, vim.log.levels.ERROR)
     return
   end
 
   if vim.fn.isdirectory(filedir) == 0 then
-    vim.notify("Directory not found: " .. filedir, vim.log.levels.ERROR)
+    vim.notify('Directory not found: ' .. filedir, vim.log.levels.ERROR)
     return
   end
 
@@ -23,10 +23,10 @@ vim.keymap.set('n', '<C-Space>', function()
     vim.cmd('!chmod +x ' .. filename)
   end
 
-  local output = vim.fn.system({ './' .. filename })
+  local output = vim.fn.system { './' .. filename }
 
   if vim.v.shell_error ~= 0 then
-    vim.notify("Error executing script: " .. output, vim.log.levels.ERROR)
+    vim.notify('Error executing script: ' .. output, vim.log.levels.ERROR)
   else
     vim.notify(output)
   end

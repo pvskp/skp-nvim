@@ -1,6 +1,6 @@
 return {
-  "folke/trouble.nvim",
-  version = "*",
+  'folke/trouble.nvim',
+  version = '*',
   opts = {
     warn_no_results = false,
     open_no_results = true,

@@ -1,6 +1,6 @@
 return {
-  "lukas-reineke/headlines.nvim",
-  ft = "markdown",
-  dependencies = "nvim-treesitter/nvim-treesitter",
+  'lukas-reineke/headlines.nvim',
+  ft = 'markdown',
+  dependencies = 'nvim-treesitter/nvim-treesitter',
   opts = {},
 }

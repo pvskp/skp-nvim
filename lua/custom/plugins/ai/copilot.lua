@@ -1,15 +1,15 @@
 return {
-  "zbirenbaum/copilot.lua",
-  name = "copilot",
-  cmd = "Copilot",
-  event = "InsertEnter",
+  'zbirenbaum/copilot.lua',
+  name = 'copilot',
+  cmd = 'Copilot',
+  event = 'InsertEnter',
   dependencies = {
     {
-      "zbirenbaum/copilot-cmp",
+      'zbirenbaum/copilot-cmp',
       config = function()
-        require("copilot_cmp").setup()
-      end
-    }
+        require('copilot_cmp').setup()
+      end,
+    },
   },
   opts = {
     suggestion = { enabled = false },
@@ -23,8 +23,7 @@ return {
       hgcommit = true,
       svn = true,
       cvs = true,
-      ["."] = true,
+      ['.'] = true,
     },
-  }
-
+  },
 }

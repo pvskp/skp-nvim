@@ -1,18 +1,17 @@
 local function recording_warning()
-  if pcall(require, "noice") then
-    local noice = require('noice')
+  if pcall(require, 'noice') then
+    local noice = require 'noice'
     return {
       noice.api.statusline.mode.get,
       cond = noice.api.statusline.mode.has,
       color = {
         gui = 'bold',
-        fg = "#000000"
+        fg = '#000000',
       },
     }
   end
   return {}
 end
-
 
 local opts = {
   options = {
@@ -53,9 +52,7 @@ local opts = {
           -- fg = 'black',
         },
       },
-      recording_warning()
-      ,
-
+      recording_warning(),
     },
     lualine_b = {
       {
@@ -99,11 +96,11 @@ local opts = {
       -- },
       '%=',
       {
-        "buffers",
+        'buffers',
         use_mode_colors = false,
         buffers_color = {
           -- Same values as the general color option can be used here.
-          active = 'lualine_a_normal',     -- Color for active buffer.
+          active = 'lualine_a_normal', -- Color for active buffer.
           inactive = 'lualine_a_inactive', -- Color for inactive buffer.
         },
         symbols = {
@@ -112,7 +109,7 @@ local opts = {
           alternate_file = '', -- Text to show to identify the alternate file
           directory = '', -- Text to show when the buffer is a directory
         },
-      }
+      },
     },
     lualine_x = {},
     lualine_y = {

@@ -18,11 +18,11 @@ require('lazy').setup {
   },
   install = {
     colorscheme = {
-      "default",
-      "catppuccin",
-      "adwaita",
-      "habamax"
-    }
+      'default',
+      'catppuccin',
+      'adwaita',
+      'habamax',
+    },
   },
   ui = {
     border = Borders.simple,

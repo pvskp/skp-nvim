@@ -1,10 +1,11 @@
 return {
-  "yuratomo/w3m.vim",
-  event = "VeryLazy",
-  cmd = "W3m",
+  'yuratomo/w3m.vim',
+  event = 'VeryLazy',
+  cmd = 'W3m',
   keys = {
     {
-      "<leader>b", ":W3m "
-    }
-  }
+      '<leader>b',
+      ':W3m ',
+    },
+  },
 }

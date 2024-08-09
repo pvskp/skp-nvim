@@ -1,19 +1,20 @@
 return {
-  "folke/edgy.nvim",
-  event = "VeryLazy",
-  version = "*",
-  dependencies = { "folke/trouble.nvim" },
+  'folke/edgy.nvim',
+  event = 'VeryLazy',
+  version = '*',
+  dependencies = { 'folke/trouble.nvim' },
   keys = {
     {
-      "<leader>e", function()
-      require("edgy").toggle("right")
-      require("edgy").toggle("bottom")
-    end
-    }
+      '<leader>e',
+      function()
+        require('edgy').toggle 'right'
+        require('edgy').toggle 'bottom'
+      end,
+    },
   },
   init = function()
     vim.opt.laststatus = 3
-    vim.opt.splitkeep = "screen"
+    vim.opt.splitkeep = 'screen'
   end,
   opts = {
     animate = {
@@ -35,36 +36,36 @@ return {
     -- },
     bottom = {
       {
-        ft = "trouble",
+        ft = 'trouble',
         pinned = true,
-        title = "Troubles",
+        title = 'Troubles',
         filter = function(_buf, win)
           if vim.w[win].trouble then
-            return vim.w[win].trouble.mode == "diagnostics"
+            return vim.w[win].trouble.mode == 'diagnostics'
           end
           return false
         end,
-        open = "Trouble diagnostics focus=false filter.severity=vim.diagnostic.severity.ERROR",
+        open = 'Trouble diagnostics focus=false filter.severity=vim.diagnostic.severity.ERROR',
         size = {
-          height = 0.2
+          height = 0.2,
         },
       },
     },
     right = {
       {
-        ft = "trouble",
+        ft = 'trouble',
         pinned = true,
-        title = "Sidebar",
+        title = 'Sidebar',
         filter = function(_buf, win)
           if vim.w[win].trouble then
-            return vim.w[win].trouble.mode == "symbols"
+            return vim.w[win].trouble.mode == 'symbols'
           end
           return false
         end,
-        open = "Trouble symbols position=left focus=false filter.buf=0",
+        open = 'Trouble symbols position=left focus=false filter.buf=0',
         size = {
           height = 0.6,
-          width = 0.2
+          width = 0.2,
         },
       },
     },

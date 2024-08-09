@@ -7,7 +7,7 @@ return {
   dependencies = {
     -- 'copilot',
     'hrsh7th/cmp-buffer', -- source for text in buffer
-    'hrsh7th/cmp-path',   -- source for file system paths
+    'hrsh7th/cmp-path', -- source for file system paths
     -- 'hrsh7th/cmp-cmdline',
     -- 'hrsh7th/cmp-nvim-lsp-signature-help',
     'amarakon/nvim-cmp-fonts', -- source for font completion
@@ -16,13 +16,12 @@ return {
     {
       'L3MON4D3/LuaSnip',
       dependencies = {
-        "rafamadriz/friendly-snippets",
+        'rafamadriz/friendly-snippets',
       },
       config = function()
-        require("luasnip.loaders.from_snipmate").lazy_load()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end
-
+        require('luasnip.loaders.from_snipmate').lazy_load()
+        require('luasnip.loaders.from_vscode').lazy_load()
+      end,
     },
     'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind.nvim', -- vs-code like pictograms
@@ -36,8 +35,8 @@ return {
     cmp.setup {
       view = {
         entries = {
-          selection_order = "top_down"
-        }
+          selection_order = 'top_down',
+        },
       },
       preselect = cmp.PreselectMode.None,
       experimental = {
@@ -45,7 +44,7 @@ return {
       },
       completion = {
         completeopt = 'menu,preview,noinsert',
-        keyword_length = 0
+        keyword_length = 0,
       },
 
       snippet = {
@@ -58,37 +57,37 @@ return {
       mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4), -- show completion suggestions
-        ['<C-Space>'] = cmp.mapping.complete({
+        ['<C-Space>'] = cmp.mapping.complete {
           config = {
             sources = {
               -- { name = "nvim_lsp_signature_help" },
-              { name = "nvim_lsp" }
-            }
-          }
-        }),
-        ['<C-x>'] = cmp.mapping.complete({
+              { name = 'nvim_lsp' },
+            },
+          },
+        },
+        ['<C-x>'] = cmp.mapping.complete {
           config = {
             sources = {
               { name = 'copilot' },
               { name = 'codeium' },
-            }
-          }
-        }),
-        ['<C-v>'] = cmp.mapping.complete({
+            },
+          },
+        },
+        ['<C-v>'] = cmp.mapping.complete {
           config = {
             sources = {
               { name = 'path' },
               { name = 'buffer' },
-            }
-          }
-        }),
-        ['<C-d>'] = cmp.mapping.complete({
+            },
+          },
+        },
+        ['<C-d>'] = cmp.mapping.complete {
           config = {
             sources = {
               { name = 'fonts' },
-            }
-          }
-        }),
+            },
+          },
+        },
         ['<C-e>'] = cmp.mapping.abort(), -- close completion window
         ['<CR>'] = cmp.mapping.confirm { select = true },
         ['<Tab>'] = cmp.mapping.confirm { select = true },
@@ -110,14 +109,13 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- snippets
         {
-          name = "copilot",
+          name = 'copilot',
           keyword_length = 0,
           entry_filter = function()
             return false
-          end
-        }
+          end,
+        },
       },
-
 
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
@@ -143,20 +141,18 @@ return {
       },
     }
 
-
-    cmp.setup.filetype({ "gitcommit", "NeogitCommitMessage" }, {
+    cmp.setup.filetype({ 'gitcommit', 'NeogitCommitMessage' }, {
       sources = {
         { name = 'gitmoji' },
         { name = 'emoji' },
-      }
+      },
     })
 
-
-    cmp.setup.filetype({ "markdown" }, {
+    cmp.setup.filetype({ 'markdown' }, {
       sources = {
         { name = 'luasnip' },
         { name = 'emoji' },
-      }
+      },
     })
 
     -- cmp.setup.filetype({ 'go', 'python', 'lua' }, {

@@ -27,7 +27,6 @@
 
 -- vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
 
-
 -- vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', {
 --   fg = Symbols.telescope.prompt_prefix.color,
 -- })

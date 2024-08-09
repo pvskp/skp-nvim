@@ -173,7 +173,6 @@ return {
     }
     --
 
-
     -- dashboard.section.header.val = {
     --   '                                   ',
     --   '                                   ',
@@ -211,7 +210,7 @@ return {
       '',
       '',
       '',
-      lazy_stats()
+      lazy_stats(),
     }
 
     --     dashboard.section.footer.val = string.format([[

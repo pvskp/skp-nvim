@@ -6,7 +6,7 @@ local function default_theme(prompt_title)
     -- winblend = 20,
     width = 0.8,
     show_line = false,
-    prompt_prefix = prompt_title .. "> ",
+    prompt_prefix = prompt_title .. '> ',
     prompt_title = '',
     results_title = '',
     preview_title = '',
@@ -16,10 +16,8 @@ local function default_theme(prompt_title)
       results = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
       preview = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
     },
-
   }
 end
-
 
 ---@param preview_title boolean
 ---@return table theme
@@ -32,35 +30,34 @@ local function theme(preview_title)
     -- prompt_title = false,
     results_title = false,
     preview_title = false,
-    layout_strategy = "vertical",
+    layout_strategy = 'vertical',
 
     layout_config = {
-      height = vim.o.lines,  -- maximally available lines
+      height = vim.o.lines, -- maximally available lines
       width = vim.o.columns, -- maximally available columns
-      prompt_position = "top",
-      preview_height = 0.6,  -- 60% of available lines
+      prompt_position = 'top',
+      preview_height = 0.6, -- 60% of available lines
     },
   }
 end
 
-
 local _live_grep_in_glob = function(glob_pattern)
-  require('telescope.builtin').live_grep({
+  require('telescope.builtin').live_grep {
     vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--glob=" .. (glob_pattern or ""),
-    }
-  })
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--glob=' .. (glob_pattern or ''),
+    },
+  }
 end
 
 local live_grep_in_glob = function()
-  vim.ui.input({ prompt = "Glob: ", completion = "file", default = "**/*." }, _live_grep_in_glob)
+  vim.ui.input({ prompt = 'Glob: ', completion = 'file', default = '**/*.' }, _live_grep_in_glob)
 end
 
 vim.api.nvim_create_user_command('GrepInGlob', live_grep_in_glob, {})
@@ -69,28 +66,26 @@ vim.api.nvim_create_user_command('GrepInGlob', live_grep_in_glob, {})
 
 function Telescope_find_files()
   -- require('telescope.builtin').find_files(better_ivy({}, "find files> "))
-  require('telescope.builtin').find_files({
+  require('telescope.builtin').find_files {
     results_title = false,
-    prompt_prefix = "find files> "
+    prompt_prefix = 'find files> ',
   }
-  )
 end
 
 function Telescope_git_files()
   -- require('telescope.builtin').git_files(better_ivy({}, "git files> "))
-  require('telescope.builtin').git_files({
+  require('telescope.builtin').git_files {
     results_title = false,
-    prompt_prefix = "git files> "
-  })
+    prompt_prefix = 'git files> ',
+  }
 end
 
 function Telescope_live_grep()
   -- require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
-  require('telescope.builtin').live_grep({
+  require('telescope.builtin').live_grep {
     results_title = false,
-    prompt_prefix = "live grep> "
+    prompt_prefix = 'live grep> ',
   }
-  )
 end
 
 function Telescope_colorscheme()
@@ -106,7 +101,7 @@ end
 
 return {
   'nvim-telescope/telescope.nvim',
-  version = "*",
+  version = '*',
   cmd = 'Telescope',
   keys = {
     {
@@ -117,10 +112,10 @@ return {
     {
       '<leader>fh',
       function()
-        require('telescope.builtin').highlights({
+        require('telescope.builtin').highlights {
           results_title = false,
-          prompt_prefix = "hl> "
-        })
+          prompt_prefix = 'hl> ',
+        }
       end,
       desc = 'Find [all] files',
     },
@@ -168,7 +163,7 @@ return {
     {
       '<leader>h',
       function()
-        require('telescope.builtin').help_tags(default_theme('help'))
+        require('telescope.builtin').help_tags(default_theme 'help')
       end,
       desc = 'Help Tags',
     },
@@ -176,10 +171,10 @@ return {
     {
       '<leader>sw',
       function()
-        require('telescope.builtin').grep_string({
+        require('telescope.builtin').grep_string {
           results_title = false,
-          prompt_prefix = "grep string> "
-        })
+          prompt_prefix = 'grep string> ',
+        }
       end,
       desc = 'Search Word',
     },
@@ -202,7 +197,7 @@ return {
     'nvim-lua/plenary.nvim',
     {
       'nvim-telescope/telescope-ui-select.nvim',
-      version = "*"
+      version = '*',
     },
     'BurntSushi/ripgrep',
     'ThePrimeagen/git-worktree.nvim',
