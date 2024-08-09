@@ -163,4 +163,4 @@ if vim.g.neovide then
   vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 
-vim.o.qftf = '{info -> v:lua._G.qftf(info)}'
+-- vim.o.qftf = '{info -> v:lua._G.qftf(info)}'

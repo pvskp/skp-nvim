@@ -89,6 +89,7 @@ spec(true, 'telescope.telescope') -- fuzzy finder
 spec(true, 'surround')            -- surround text with quotes, brackets, etc
 spec(true, 'codesnap')
 spec(true, 'neogen')
+spec(true, 'quicker')
 spec(false, 'obsidian')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
@@ -109,7 +110,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(true, 'ui.nvim-bqf')
+spec(false, 'ui.nvim-bqf')
 spec(true, 'ui.lualine')          -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
