@@ -2,6 +2,7 @@
     "diagnostics.globals": [
         "vim",
         "spec",
-        "_execute_shell_script"
+        "_execute_shell_script",
+        "set_hl"
     ]
 }
