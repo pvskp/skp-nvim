@@ -1,6 +1,6 @@
 for k, v in pairs {
-  spell = true,
-  spelllang = 'pt_br,en',
+  -- spell = true,
+  -- spelllang = 'pt_br,en',
   shiftwidth = 2,
   tabstop = 2,
   expandtab = true,
