@@ -1,7 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "b84eeb3641b08324287587b426ec974b888390d9" },
   "alpha-nvim": { "branch": "main", "commit": "36e4baca9533ec87afa948fe20a0a1c4897a6a6e" },
-  "auto-session": { "branch": "main", "commit": "afa735f5923a4c0e8f519ffaa18885dc03922571" },
+  "auto-session": { "branch": "main", "commit": "322d82fa7cb455bc82a30f4e4907af696afdfb45" },
   "battery.nvim": { "branch": "main", "commit": "7d566f6915e7e31f652a0de4d4b54ad634a2c2cb" },
   "bigfile.nvim": { "branch": "main", "commit": "33eb067e3d7029ac77e081cfe7c45361887a311a" },
   "ccc.nvim": { "branch": "main", "commit": "4fb5abaef2f2e0540fe22d4d74a9841205fff9e4" },
@@ -57,7 +57,7 @@
   "outline.nvim": { "branch": "main", "commit": "2175b6da5b7b5be9de14fd3f54383a17f5e4609c" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "quicker.nvim": { "branch": "master", "commit": "b6a3d2f6aed7882e8bea772f82ba80b5535157a9" },
-  "render-markdown": { "branch": "main", "commit": "9e91c6126d6398760c52f5f5727cb81b997e3b06" },
+  "render-markdown": { "branch": "main", "commit": "aff8d09a199b263f2373c842057c87b76369084f" },
   "ripgrep": { "branch": "master", "commit": "af8c386d5e10eaa4b8cb687c4f5b05893a7ae0ce" },
   "telescope-projects": { "branch": "main", "commit": "ac735bd8e5276c40f54e91d886ef51bc8c153952" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
