@@ -58,8 +58,8 @@ return {
 
     set_hl("GitSignsCurrentLineBlame", { fg = onedark.bg2 })
 
-    set_hl("MiniFilesBorder", { fg = onedark.purple })
-    set_hl('MiniFilesNormal', { bg = nil })
+    set_hl('MiniFilesNormal', { bg = onedark.bg1 })
+    set_hl("MiniFilesBorder", { fg = onedark.bg1 })
     set_hl('MiniFilesTitle', { fg = onedark.green })
     set_hl('MiniFilesTitleFocused', { fg = onedark.green, bold = true })
   end,
