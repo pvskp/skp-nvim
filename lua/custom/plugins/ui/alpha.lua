@@ -219,11 +219,11 @@ return {
     --     ]], lazy_stats())
 
     vim.api.nvim_set_hl(0, 'AlphaHeader', {
-      fg = nord.yellow,
+      fg = Nord.yellow,
     })
 
     vim.api.nvim_set_hl(0, 'AlphaButtons', {
-      fg = nord.glacier,
+      fg = Nord.glacier,
     })
 
     for _, button in ipairs(dashboard.section.buttons.val) do
