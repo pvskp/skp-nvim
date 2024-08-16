@@ -37,7 +37,7 @@ return {
     -- General options
     options = {
       permanent_delete = true,
-      use_as_default_explorer = true,
+      use_as_default_explorer = false,
     },
 
     windows = {
