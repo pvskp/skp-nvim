@@ -41,17 +41,17 @@ return {
     -- setupLspSignature()
 
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = Borders.simple,
+      -- border = Borders.simple,
     })
     vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      border = Borders.simple,
+      -- border = Borders.simple,
     })
 
     vim.diagnostic.config {
       virtual_text = false,
       underline = true,
       float = {
-        border = Borders.simple,
+        -- border = Borders.simple,
       },
     }
 
