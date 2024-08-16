@@ -89,8 +89,6 @@ spec(true, 'surround')            -- surround text with quotes, brackets, etc
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'quicker')
-spec(true, 'outline')
-spec(false, 'obsidian')
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
