@@ -1,3 +1,30 @@
+local set_highlights = function()
+  set_hl("MatchParen", { bg = Onedark.red, fg = "#ffffff" })
+
+  set_hl("CursorLineNr", { fg = Onedark.orange, bold = true })
+
+  set_hl("TelescopePromptBorder", { fg = Onedark.light_grey })
+  set_hl("TelescopeResultsBorder", { fg = Onedark.light_grey })
+  set_hl("TelescopePreviewBorder", { fg = Onedark.light_grey })
+
+  set_hl("GitSignsCurrentLineBlame", { fg = Onedark.bg2 })
+
+  set_hl('MiniFilesNormal', { bg = nil })
+  set_hl("MiniFilesBorder", { fg = Onedark.light_grey })
+  set_hl('MiniFilesTitle', { fg = Onedark.green })
+  set_hl('MiniFilesTitleFocused', { fg = Onedark.green, bold = true })
+
+  set_hl('TreesitterContextLineNumber', { bg = Onedark.bg1 })
+  set_hl('TreesitterContextBottom', {
+    fg = nil,
+    bg = nil,
+    sp = Onedark.grey,
+    -- underline = true
+  })
+end
+
+set_highlights()
+
 return {
   'navarasu/onedark.nvim',
   priority = 1000,
@@ -47,20 +74,6 @@ return {
   config = function(_, opts)
     require('onedark').setup(opts)
     require('onedark').load()
-
-    set_hl("MatchParen", { bg = onedark.red, fg = "#ffffff" })
-
-    set_hl("CursorLineNr", { fg = onedark.orange, bold = true })
-
-    set_hl("TelescopePromptBorder", { fg = onedark.light_grey })
-    set_hl("TelescopeResultsBorder", { fg = onedark.light_grey })
-    set_hl("TelescopePreviewBorder", { fg = onedark.light_grey })
-
-    set_hl("GitSignsCurrentLineBlame", { fg = onedark.bg2 })
-
-    set_hl('MiniFilesNormal', { bg = nil })
-    set_hl("MiniFilesBorder", { fg = onedark.light_grey })
-    set_hl('MiniFilesTitle', { fg = onedark.green })
-    set_hl('MiniFilesTitleFocused', { fg = onedark.green, bold = true })
+    set_highlights()
   end,
 }
