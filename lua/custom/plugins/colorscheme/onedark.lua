@@ -52,14 +52,14 @@ return {
 
     set_hl("CursorLineNr", { fg = onedark.orange, bold = true })
 
-    set_hl("TelescopePromptBorder", { fg = onedark.purple })
-    set_hl("TelescopeResultsBorder", { fg = onedark.purple })
-    set_hl("TelescopePreviewBorder", { fg = onedark.purple })
+    set_hl("TelescopePromptBorder", { fg = onedark.light_grey })
+    set_hl("TelescopeResultsBorder", { fg = onedark.light_grey })
+    set_hl("TelescopePreviewBorder", { fg = onedark.light_grey })
 
     set_hl("GitSignsCurrentLineBlame", { fg = onedark.bg2 })
 
-    set_hl('MiniFilesNormal', { bg = onedark.bg1 })
-    set_hl("MiniFilesBorder", { fg = onedark.bg1 })
+    set_hl('MiniFilesNormal', { bg = nil })
+    set_hl("MiniFilesBorder", { fg = onedark.light_grey })
     set_hl('MiniFilesTitle', { fg = onedark.green })
     set_hl('MiniFilesTitleFocused', { fg = onedark.green, bold = true })
   end,

@@ -76,6 +76,8 @@ function Telescope_git_files()
   -- require('telescope.builtin').git_files(better_ivy({}, "git files> "))
   require('telescope.builtin').git_files {
     results_title = false,
+    preview_title = false,
+    prompt_title = false,
     prompt_prefix = 'git files> ',
   }
 end
