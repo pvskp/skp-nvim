@@ -8,13 +8,13 @@ require 'custom.window'
 require 'custom.tabs'
 require 'custom.netrw'
 require 'custom.commandline'
-require 'custom.default-colorscheme'
 require 'custom.terminal'
 require 'custom.set'
 require 'custom.colors'
+require 'custom.default-colorscheme'
 
 spec(false, 'colorscheme.rose-pine')
-spec(true, 'colorscheme.onedark')
+spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
@@ -79,17 +79,12 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(true, 'ui.lualine')          -- statusline
+spec(false, 'ui.lualine')         -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.alpha')            -- start dashboard
 spec(true, 'ui.devicons')
 spec(false, 'ui.noice')
-
---<< Lualine integrations >>--
-
-spec(true, 'ui.lualine.clock')
-spec(false, 'ui.lualine.battery')
 
 -- Loads all with lazy
 require 'custom.lazy'
