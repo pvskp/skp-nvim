@@ -127,7 +127,7 @@ local function dark_highlight()
   set_hl(0, 'SignColumn', { bg = line_nr_bg })
 
   diagnostic_colors(true)
-  telescope_colors(true)
+  -- telescope_colors(true)
   treesitter_colors(true)
   diffs_colors(true)
   completion_menu_colors(true)
