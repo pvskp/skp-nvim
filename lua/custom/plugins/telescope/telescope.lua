@@ -141,7 +141,7 @@ return {
       '<leader><space>',
       function()
         require('telescope.builtin').buffers {
-          ignore_current_buffer = true,
+          ignore_current_buffer = false,
           -- sorting_strategy = 'ascending',
           sort_lastused = true,
           -- prompt_title = false,
