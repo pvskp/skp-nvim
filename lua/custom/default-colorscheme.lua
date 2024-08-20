@@ -1,25 +1,32 @@
 local line_nr_bg = ''
 
-local set_hl = vim.api.nvim_set_hl
+-- MiniFiles highlights
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MiniFilesWindowOpen',
+  callback = function(args)
+    set_hl("MiniFilesNormal", { bg = nil })
+  end,
+})
+
 
 local function diffs_colors(dark)
   if dark then
-    set_hl(0, 'DiffAdd', { fg = 'NvimLightGreen', bg = line_nr_bg })
-    set_hl(0, 'DiffChange', { fg = 'NvimLightYellow', bg = line_nr_bg })
-    set_hl(0, 'DiffDelete', { fg = 'NvimLightRed', bg = line_nr_bg })
-    set_hl(0, 'DiffText', { fg = 'NvimLightBlue', bg = line_nr_bg })
+    set_hl('DiffAdd', { fg = 'NvimLightGreen', bg = line_nr_bg })
+    set_hl('DiffChange', { fg = 'NvimLightYellow', bg = line_nr_bg })
+    set_hl('DiffDelete', { fg = 'NvimLightRed', bg = line_nr_bg })
+    set_hl('DiffText', { fg = 'NvimLightBlue', bg = line_nr_bg })
   end
 end
 
 local function completion_menu_colors(dark)
   if dark then
-    set_hl(0, 'NormalFloat', { bg = 'NvimDarkGrey1' })
+    set_hl('NormalFloat', { bg = 'NvimDarkGrey1' })
   end
 end
 
 local function telescope_colors(dark)
   if dark then
-    set_hl(0, 'NewCustomTelescope', {
+    set_hl('NewCustomTelescope', {
       bg = '#0f1116',
     })
 
@@ -46,29 +53,29 @@ local function telescope_colors(dark)
     }
 
     for hl, col in pairs(TelescopePrompt) do
-      set_hl(0, hl, col)
+      set_hl(hl, col)
     end
   end
 end
 
 local function treesitter_colors(dark)
   if dark then
-    set_hl(0, '@spell', { italic = false })
-    set_hl(0, '@function', { bold = true, fg = 'NvimLightBlue' })
-    set_hl(0, 'Identifier', { bold = false, fg = 'NvimLightCyan' })
-    set_hl(0, 'Statement', { bold = true, fg = 'NvimLightYellow' })
-    set_hl(0, 'Type', { italic = false, fg = 'NvimLightCyan' })
-    set_hl(0, '@conditional', { italic = false, bold = true, fg = 'White' })
-    -- set_hl(0, 'Constant', { bold = true, fg = "Magenta" })
-    set_hl(0, '@include', { bold = true, fg = 'Red' })
-    set_hl(0, '@text.diff.add.diff', { bold = true, bg = 'NvimLightGreen', fg = 'Black' })
-    set_hl(0, '@text.diff.delete.diff', { bold = true, bg = 'NvimLightRed', fg = 'Black' })
-    -- set_hl(0, '@field', { bold = true, fg = "Orange" })
+    set_hl('@spell', { italic = false })
+    set_hl('@function', { bold = true, fg = 'NvimLightBlue' })
+    set_hl('Identifier', { bold = false, fg = 'NvimLightCyan' })
+    set_hl('Statement', { bold = true, fg = 'NvimLightYellow' })
+    set_hl('Type', { italic = false, fg = 'NvimLightCyan' })
+    set_hl('@conditional', { italic = false, bold = true, fg = 'White' })
+    -- set_hl( 'Constant', { bold = true, fg = "Magenta" })
+    set_hl('@include', { bold = true, fg = 'LightMagenta' })
+    set_hl('@text.diff.add.diff', { bold = true, bg = 'NvimLightGreen', fg = 'Black' })
+    set_hl('@text.diff.delete.diff', { bold = true, bg = 'NvimLightRed', fg = 'Black' })
+    -- set_hl( '@field', { bold = true, fg = "Orange" })
 
-    -- set_hl(0, 'TreesitterContextLineNumber', { link = "LineNr" })
-    set_hl(0, 'TreesitterContextLineNumber', { bg = 'NvimDarkGrey2', fg = 'NvimLightGrey3' })
-    set_hl(0, 'TreesitterContextBottom', { sp = 'NvimDarkGrey3', underline = true }) -- Adds underline to TreesitterContextBottom
-    set_hl(0, 'TreesitterContext', { bg = 'NvimDarkGrey1' })
+    -- set_hl( 'TreesitterContextLineNumber', { link = "LineNr" })
+    set_hl('TreesitterContextLineNumber', { bg = 'NvimDarkGrey2', fg = 'NvimLightGrey3' })
+    set_hl('TreesitterContextBottom', { sp = 'NvimDarkGrey3', underline = true }) -- Adds underline to TreesitterContextBottom
+    set_hl('TreesitterContext', { bg = 'NvimDarkGrey1' })
   end
 end
 
@@ -83,51 +90,47 @@ local function diagnostic_colors(dark)
       error = 'NvimLightRed',
     }
 
-    set_hl(0, 'DiagnosticSignError', { fg = diagnostic_colors_opts.error, bg = line_nr_bg })
-    set_hl(0, 'DiagnosticSignHint', { fg = diagnostic_colors_opts.hint, bg = line_nr_bg })
-    set_hl(0, 'DiagnosticSignInfo', { fg = diagnostic_colors_opts.info, bg = line_nr_bg })
-    set_hl(0, 'DiagnosticSignOk', { fg = diagnostic_colors_opts.info, bg = line_nr_bg })
-    set_hl(0, 'DiagnosticSignWarn', { fg = diagnostic_colors_opts.warn, bg = line_nr_bg })
+    set_hl('DiagnosticSignError', { fg = diagnostic_colors_opts.error, bg = line_nr_bg })
+    set_hl('DiagnosticSignHint', { fg = diagnostic_colors_opts.hint, bg = line_nr_bg })
+    set_hl('DiagnosticSignInfo', { fg = diagnostic_colors_opts.info, bg = line_nr_bg })
+    set_hl('DiagnosticSignOk', { fg = diagnostic_colors_opts.info, bg = line_nr_bg })
+    set_hl('DiagnosticSignWarn', { fg = diagnostic_colors_opts.warn, bg = line_nr_bg })
 
-    set_hl(0, 'DiagnosticUnderlineError', { undercurl = true, sp = diagnostic_colors_opts.error })
-    set_hl(0, 'DiagnosticUnderlineHint', { undercurl = true, sp = diagnostic_colors_opts.hint })
-    set_hl(0, 'DiagnosticUnderlineInfo', { undercurl = true, sp = diagnostic_colors_opts.info })
-    set_hl(0, 'DiagnosticUnderlineWarn', { undercurl = true, sp = diagnostic_colors_opts.warn })
+    set_hl('DiagnosticUnderlineError', { undercurl = true, sp = diagnostic_colors_opts.error })
+    set_hl('DiagnosticUnderlineHint', { undercurl = true, sp = diagnostic_colors_opts.hint })
+    set_hl('DiagnosticUnderlineInfo', { undercurl = true, sp = diagnostic_colors_opts.info })
+    set_hl('DiagnosticUnderlineWarn', { undercurl = true, sp = diagnostic_colors_opts.warn })
   end
 end
 
 local function whichkey_colors(dark)
   if dark then
-    -- set_hl(0, "WhichKeyBorder", { bg = "#0f1116" })
-    -- set_hl(0, "WhichKeyValue", { bg = "#0f1116" })
-    -- set_hl(0, "WhichKeyTitle", { bg = "#0f1116" })
+    -- set_hl( "WhichKeyBorder", { bg = "#0f1116" })
+    -- set_hl( "WhichKeyValue", { bg = "#0f1116" })
+    -- set_hl( "WhichKeyTitle", { bg = "#0f1116" })
 
-    set_hl(0, 'WhichKey', { bg = '#0f1116' })
-    -- set_hl(0, "WhichKeyTitle", { bg = "#0f1116" })
-    set_hl(0, 'WhichKeyNormal', { bg = '#0f1116' })
-    set_hl(0, 'WhichKeyDesc', { bg = '#0f1116', fg = 'NvimLightMagenta' })
+    set_hl('WhichKey', { bg = '#0f1116' })
+    -- set_hl( "WhichKeyTitle", { bg = "#0f1116" })
+    set_hl('WhichKeyNormal', { bg = '#0f1116' })
+    set_hl('WhichKeyDesc', { bg = '#0f1116', fg = 'NvimLightMagenta' })
   end
 end
 
 local function dark_highlight()
-  -- set_hl(0, 'Normal', {})
-  set_hl(0, 'Float', { fg = 'NvimLightGray2', bg = 'NvimDarkGrey2' })
-  -- set_hl(0, 'NormalNC', { bg = "NvimDarkGray1" })
+  -- set_hl( 'Normal', {})
+  -- set_hl( 'NormalNC', { bg = "NvimDarkGray1" })
+  set_hl('Float', { fg = 'NvimLightGray2', bg = 'NvimDarkGrey2' })
+  set_hl('FloatBorder', { fg = 'White' })
+  set_hl('LineNr', { fg = 'Gray', bg = line_nr_bg })
+  set_hl('CursorlineNr', { fg = 'NvimLightGreen', bg = line_nr_bg, bold = true })
+  set_hl('Added', { fg = 'NvimLightGreen', bg = line_nr_bg })
+  set_hl('Removed', { fg = 'NvimLightRed', bg = line_nr_bg })
+  set_hl('Changed', { fg = 'NvimLightYellow', bg = line_nr_bg })
+  set_hl('LazyProgressTodo', { fg = '#282828', bg = nil })
+  set_hl('SignColumn', { bg = line_nr_bg })
 
-  set_hl(0, 'FloatBorder', { fg = 'White' })
-
-  set_hl(0, 'LineNr', { fg = 'Gray', bg = line_nr_bg })
-  set_hl(0, 'CursorlineNr', { fg = 'NvimLightGreen', bg = line_nr_bg, bold = true })
-
-  set_hl(0, 'Added', { fg = 'NvimLightGreen', bg = line_nr_bg })
-  set_hl(0, 'Removed', { fg = 'NvimLightRed', bg = line_nr_bg })
-  set_hl(0, 'Changed', { fg = 'NvimLightYellow', bg = line_nr_bg })
-
-  set_hl(0, 'LazyProgressTodo', { fg = '#282828', bg = nil })
-  set_hl(0, 'SignColumn', { bg = line_nr_bg })
-
-  diagnostic_colors(true)
   -- telescope_colors(true)
+  diagnostic_colors(true)
   treesitter_colors(true)
   diffs_colors(true)
   completion_menu_colors(true)

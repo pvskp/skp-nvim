@@ -12,14 +12,16 @@ require 'custom.terminal'
 require 'custom.set'
 require 'custom.colors'
 require 'custom.default-colorscheme'
+-- require 'custom.habamax'
 
-spec(false, 'colorscheme.rose-pine')
+spec(true, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
+
 
 -- vim.cmd [[colorscheme habamax]]
 
@@ -36,7 +38,7 @@ spec(true, 'lsp.cmp')       -- completion
 --<< Language specific >>--
 
 spec(true, 'languages.helm')
-spec(true, 'languages.markdown.render-markdown')
+spec(false, 'languages.markdown.render-markdown')
 
 --<< Mini library >>--
 

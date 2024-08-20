@@ -89,6 +89,7 @@ return {
         map_split(buf_id, '<C-v>', 'belowright vertical')
       end,
     })
+
     -- vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
     -- set_hl('MiniFilesNormal', { bg = nil })
     -- set_hl('MiniFilesBorder', { bg = nil })
