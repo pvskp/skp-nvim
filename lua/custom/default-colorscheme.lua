@@ -1,12 +1,12 @@
 local line_nr_bg = ''
 
--- MiniFiles highlights
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'MiniFilesWindowOpen',
-  callback = function(args)
-    set_hl("MiniFilesNormal", { bg = nil })
-  end,
-})
+-- -- MiniFiles highlights
+-- vim.api.nvim_create_autocmd('User', {
+--   pattern = 'MiniFilesWindowOpen',
+--   callback = function(args)
+--     set_hl("MiniFilesNormal", { bg = nil })
+--   end,
+-- })
 
 
 local function diffs_colors(dark)
