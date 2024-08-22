@@ -15,6 +15,7 @@ return {
       html = { 'prettier' },
       css = { 'prettier' },
       yaml = { 'prettier' },
+      helm = { 'prettier' },
       cpp = { 'clang-format' },
       terraform = { 'terraform_fmt' },
       zsh = { 'beautysh' },
