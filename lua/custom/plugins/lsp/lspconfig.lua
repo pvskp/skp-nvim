@@ -254,6 +254,8 @@ return {
         'stylua',
         'prettier',
         'terraformls', -- terraformls
+        'helm-ls',
+        'json-lsp',
       },
     }
   end,
