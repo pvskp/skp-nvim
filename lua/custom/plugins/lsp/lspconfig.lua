@@ -212,7 +212,7 @@ return {
           },
         }
       end,
-      ['helm-ls'] = function()
+      ['helm_ls'] = function()
         lspconfig.helm_ls.setup {
           on_attach = on_attach,
           capabilities = capabilities,
