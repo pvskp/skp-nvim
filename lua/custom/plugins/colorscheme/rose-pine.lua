@@ -26,5 +26,8 @@ return {
     vim.cmd [[colorscheme rose-pine]]
 
     set_hl("StatusLine", { fg = "#ffffff", bg = "#907aa9" })
+    set_hl("TreesitterContextBottom", { underline = true, sp = "#907aa9" })
   end,
 }
+
+--- TreesitterContextBottom xxx cterm=underline gui=underline guisp=NvimDarkGrey3

@@ -11,7 +11,7 @@ require 'custom.commandline'
 require 'custom.terminal'
 require 'custom.set'
 require 'custom.colors'
-require 'custom.default-colorscheme'
+-- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
 spec(true, 'colorscheme.rose-pine')
