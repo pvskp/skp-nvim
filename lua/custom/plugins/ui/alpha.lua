@@ -141,7 +141,7 @@
 local function lazy_stats()
   if pcall(require, 'lazy') then
     local stats = require('lazy').stats()
-    return string.format('\t\t\t\t🎉 loaded %d plugins', stats.count)
+    return string.format('\t\t\t\t🎉 loaded %d/%d plugins', stats.loaded, stats.count)
   end
   return ''
 end
