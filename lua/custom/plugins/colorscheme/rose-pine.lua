@@ -15,6 +15,13 @@ return {
       migrations = true,        -- Handle deprecated options automatically
     },
 
+
+    highlight_groups = {
+      Comment = { italic = true },
+      -- VertSplit = { fg = "muted", bg = "muted" },
+    },
+
+
     styles = {
       bold = true,
       italic = false,
@@ -27,6 +34,8 @@ return {
 
     set_hl("StatusLine", { fg = "#ffffff", bg = "#907aa9" })
     set_hl("TreesitterContextBottom", { underline = true, sp = "#907aa9" })
+    set_hl("htmlLink", { underline = false })
+    set_hl("@markup.link.label.tsx", { fg = Rosepine.love, underline = false })
   end,
 }
 
