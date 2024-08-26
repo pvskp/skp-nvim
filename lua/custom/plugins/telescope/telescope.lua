@@ -103,7 +103,7 @@ end
 
 return {
   'nvim-telescope/telescope.nvim',
-  version = '*',
+  version = '0.1.8',
   cmd = 'Telescope',
   keys = {
     {
@@ -198,10 +198,14 @@ return {
   },
 
   dependencies = {
-    'nvim-lua/plenary.nvim',
+    {
+      'nvim-lua/plenary.nvim',
+      commit = "ec289423a1693aeae6cd0d503bac2856af74edaa",
+    },
     {
       'nvim-telescope/telescope-ui-select.nvim',
-      version = '*',
+      -- version = '*',
+      commit = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
     },
     'BurntSushi/ripgrep',
     'ThePrimeagen/git-worktree.nvim',
@@ -215,26 +219,6 @@ return {
     local previewers = require 'telescope.previewers'
     local Job = require 'plenary.job'
 
-    -- `new_maker` avoid binary files preview
-    local new_maker = function(filepath, bufnr, opts)
-      filepath = vim.fn.expand(filepath)
-      Job:new({
-        command = 'file',
-        args = { '--mime-type', '-b', filepath },
-        on_exit = function(j)
-          local mime_type = vim.split(j:result()[1], '/')[1]
-          if mime_type == 'text' then
-            previewers.buffer_previewer_maker(filepath, bufnr, opts)
-          else
-            -- maybe we want to write something to the buffer here
-            vim.schedule(function()
-              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { 'BINARY' })
-            end)
-          end
-        end,
-      }):sync()
-    end
-
     telescope.setup {
       defaults = {
         borderchars = Borders.borderchars,
@@ -245,9 +229,39 @@ return {
             ['<C-v>'] = actions.select_vertical,
           },
         },
-        buffer_previewer_maker = new_maker,
         prompt_prefix = Symbols.telescope.prompt_prefix.icon,
         selection_caret = Symbols.telescope.selection_caret.icon,
+        preview = {
+          mime_hook = function(filepath, bufnr, opts)
+            local get_ext = function(filepath)
+              local split_path = vim.split(filepath:lower(), ".", { plain = true })
+              return split_path[#split_path]
+            end
+            local is_image = function(filepath)
+              local image_extensions = { "png", "jpg" } -- Supported image formats
+              return vim.tbl_contains(image_extensions, get_ext(filepath))
+            end
+            if is_image(filepath) then
+              local term = vim.api.nvim_open_term(bufnr, {})
+              local function send_output(a, data, c)
+                for _, d in ipairs(data) do
+                  vim.api.nvim_chan_send(term, d .. "\r\n")
+                end
+              end
+              vim.fn.jobstart({
+                "catimg",
+                -- "chafa,"
+                filepath, -- Terminal image viewer command
+              }, { on_stdout = send_output, stdout_buffered = true, pty = true })
+            else
+              require("telescope.previewers.utils").set_preview_message(
+                bufnr,
+                opts.winid,
+                "Binary cannot be previewed (" .. get_ext(filepath) .. ")"
+              )
+            end
+          end,
+        },
       },
       pickers = {
         colorscheme = {
