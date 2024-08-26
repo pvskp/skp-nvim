@@ -1,6 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  tag = 'v0.9.2',
+  -- tag = 'v0.9.2',
+  commit = "bef7ec6f", -- better support for nvim-treesitter-textobjects
   build = ':TSUpdate',
   init = function()
     vim.opt.foldmethod = 'expr'
@@ -8,7 +9,10 @@ return {
   end,
   dependencies = {
     {
-      { 'nvim-treesitter/nvim-treesitter-textobjects' },
+      {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        commit = "34867c6",
+      },
       {
         'nvim-treesitter/nvim-treesitter-context',
         opts = {
@@ -53,11 +57,14 @@ return {
     },
     sync_install = false,
     auto_install = true,
-    ignore_install = {},
+    ignore_install = {
+      "html"
+    },
 
     highlight = {
       enable = true,
       -- disable = { 'markdown', 'vimdoc', 'help', 'gitcommit', 'diff' },
+      disable = { 'html' },
       additional_vim_regex_highlighting = false,
       indent = {
         enable = true,
@@ -65,6 +72,7 @@ return {
       },
     },
     textobjects = {
+      -- disable = { "javascript" },
       select = {
         enable = true,
         lookahead = true,
