@@ -48,7 +48,6 @@ Onedark = {
   diff_text = "#2c5372",
 }
 
-
 Rosepine = {
   _nc = "#16141f",
   base = "#191724",

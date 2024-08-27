@@ -1,3 +1,5 @@
+set_hl("TreesitterContextBottom", { underline = true, sp = Rose_pine.iris })
+
 return {
   'rose-pine/neovim',
   name = 'rose-pine',
