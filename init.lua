@@ -29,6 +29,7 @@ spec(false, 'colorscheme.adwaita')
 --<< LSP related >>--
 
 spec(true, 'lsp.treesiter')
+spec(true, 'lsp.barbecue')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.neodev')    -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
