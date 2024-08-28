@@ -6,11 +6,12 @@ return {
   },
   dependencies = {
     -- 'copilot',
-    'hrsh7th/cmp-buffer', -- source for text in buffer
-    'hrsh7th/cmp-path', -- source for file system paths
+    'hrsh7th/cmp-buffer',      -- source for text in buffer
+    'hrsh7th/cmp-path',        -- source for file system paths
+    'hrsh7th/cmp-nvim-lsp',
+    'amarakon/nvim-cmp-fonts', -- source for font completion
     -- 'hrsh7th/cmp-cmdline',
     -- 'hrsh7th/cmp-nvim-lsp-signature-help',
-    'amarakon/nvim-cmp-fonts', -- source for font completion
 
     --< snippet engine >--
     {

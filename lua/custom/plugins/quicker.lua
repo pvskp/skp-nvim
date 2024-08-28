@@ -1,5 +1,5 @@
 return {
   'stevearc/quicker.nvim',
-  lazy = false,
+  event = "VeryLazy",
   opts = {},
 }

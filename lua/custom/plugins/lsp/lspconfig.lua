@@ -10,9 +10,9 @@
 return {
   'neovim/nvim-lspconfig',
   version = '*',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
-    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
     {
       'williamboman/mason.nvim',
       version = '*',
@@ -33,8 +33,6 @@ return {
       },
     },
     'williamboman/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-    'antosha417/nvim-lsp-file-operations',
     'nvim-lua/plenary.nvim',
   },
   config = function()
@@ -67,7 +65,6 @@ return {
     end
 
     local mason_lspconfig = require 'mason-lspconfig'
-    local mason_tool_installer = require 'mason-tool-installer'
     local lspconfig = require 'lspconfig'
 
     mason_lspconfig.setup {
@@ -243,20 +240,6 @@ return {
           }
         }
       end,
-    }
-
-    mason_tool_installer.setup {
-      ensure_installed = {
-        'goimports',
-        'golangci-lint',
-        'gopls',
-        'pyright',
-        'stylua',
-        'prettier',
-        'terraformls', -- terraformls
-        'helm-ls',
-        'json-lsp',
-      },
     }
   end,
 }
