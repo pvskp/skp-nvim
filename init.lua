@@ -23,9 +23,6 @@ spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
 
-
--- vim.cmd [[colorscheme habamax]]
-
 --<< LSP related >>--
 
 spec(true, 'lsp.treesiter')
@@ -34,8 +31,9 @@ spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.neodev')    -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
-spec(true, 'lsp.conform')   -- formatter
-spec(true, 'lsp.cmp')       -- completion
+spec(true, 'lsp.mason-installer')
+spec(true, 'lsp.conform') -- formatter
+spec(true, 'lsp.cmp')     -- completion
 
 --<< Language specific >>--
 
@@ -51,24 +49,24 @@ spec(true, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
-spec(true, 'git.gitsigns') -- show git signs on columnsign
-spec(true, 'git.fugitive') -- git integration
+spec(false, 'git.gitsigns') -- show git signs on columnsign
+spec(true, 'git.fugitive')  -- git integration
 spec(true, 'git.conflict')
 spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
 
 --<< General >>--
 
-spec(true, 'which-key')
 spec(true, 'undotree')            -- show undo tree
 spec(true, 'tmux')                -- tmux integration
 spec(true, 'telescope.telescope') -- fuzzy finder
 spec(true, 'surround')            -- surround text with quotes, brackets, etc
+spec(true, 'hop')                 -- jump to any word in the screen
+spec(true, 'eyeliner')            -- quick jump with f, F, t, T
+spec(true, 'which-key')
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'quicker')
-spec(true, 'hop')      -- jump to any word in the screen
-spec(true, 'eyeliner') -- quick jump with f, F, t, T
 spec(true, 'emoji')
 spec(true, 'ccc')
 spec(true, 'w3m')

@@ -148,7 +148,8 @@ end
 
 return {
   'goolord/alpha-nvim',
-  event = 'VimEnter',
+  -- event = 'VimEnter',
+  lazy = false,
   keys = {
     {
       '<leader>a',

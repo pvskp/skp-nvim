@@ -1,7 +1,7 @@
 return {
   'akinsho/git-conflict.nvim',
   version = '*',
-  event = 'VimEnter',
+  event = 'VeryLazy',
   keys = {
     {
       "gt",

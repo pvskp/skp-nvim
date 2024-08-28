@@ -1,6 +1,6 @@
 return {
   'echasnovski/mini.ai',
-  event = 'VimEnter',
+  event = 'VeryLazy',
   version = '*',
   opts = {
     -- It still works without disabling these, but good form to indicate an override is taking place
@@ -25,7 +25,7 @@ return {
 
     local movements = { 'i', 'a' }
     local characters =
-      { '(', '[', '{', '<', ')', ']', '}', '>', 'b', '"', "'", 'q', '?', 't', 'f', 'a' }
+    { '(', '[', '{', '<', ')', ']', '}', '>', 'b', '"', "'", 'q', '?', 't', 'f', 'a' }
 
     for _, movement in ipairs(movements) do
       for _, char in ipairs(characters) do
