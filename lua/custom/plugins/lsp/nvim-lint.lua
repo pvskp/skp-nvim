@@ -8,8 +8,8 @@ return {
     local lint = require 'lint'
 
     lint.linters_by_ft = {
-      -- javascript = { 'eslint_d' },
-      -- typescript = { 'eslint_d' },
+      javascript = { 'eslint_d' },
+      typescript = { 'eslint_d' },
       -- json = { 'jsonlint' },
       -- lua = { 'luacheck' },
       go = { 'golangcilint' },
