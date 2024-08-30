@@ -81,7 +81,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(false, 'ui.lualine')         -- statusline
+spec(true, 'ui.lualine')          -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.alpha')            -- start dashboard

@@ -1,6 +1,7 @@
 return {
   'rmagatti/auto-session',
-  lazy = true,
+  -- lazy = true,
+  lazy = false,
   cmd = { 'SessionSave', 'SessionRestore' },
   keys = {
     {
