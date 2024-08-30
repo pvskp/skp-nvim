@@ -201,6 +201,26 @@ return {
           },
         }
       end,
+      ['cssls'] = function()
+        lspconfig.cssls.setup {
+          on_attach = on_attach(),
+          capabilities = capabilities,
+          settings = {
+            css = {
+              validate = true,
+              lint = {
+                unknownAtRules = 'ignore'
+              }
+            },
+            scss = {
+              validate = true,
+              lint = {
+                unknownAtRules = 'ignore'
+              }
+            }
+          }
+        }
+      end,
       ['helm_ls'] = function()
         lspconfig.helm_ls.setup {
           on_attach = on_attach,
