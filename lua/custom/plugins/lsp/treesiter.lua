@@ -1,8 +1,9 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  -- tag = 'v0.9.2',
-  commit = "bef7ec6f", -- better support for nvim-treesitter-textobjects
+  tag = 'v0.9.2',
+  event = { 'BufReadPost' },
   build = ':TSUpdate',
+  lazy = vim.fn.argc(-1) == 0,
   init = function()
     vim.opt.foldmethod = 'expr'
     vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
@@ -39,7 +40,6 @@ return {
       },
     },
   },
-  event = { 'BufReadPost' },
   opts = {
     ensure_installed = {
       'lua',

@@ -1,12 +1,3 @@
--- local function setupLspSignature()
---   vim.api.nvim_create_autocmd('CursorHoldI', {
---     pattern = "*",
---     callback = function()
---       vim.lsp.buf.signature_help()
---     end
---   })
--- end
-
 return {
   'neovim/nvim-lspconfig',
   version = '*',
@@ -143,8 +134,9 @@ return {
       -- vim.highlight.priorities.treesitter = 201
     end
 
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
@@ -179,7 +171,7 @@ return {
     }
 
     mason_lspconfig.setup_handlers {
-      function(server_name) -- default handler (optional)
+      function(server_name) -- default handler
         lspconfig[server_name].setup {
           capabilities = capabilities,
           on_attach = on_attach,

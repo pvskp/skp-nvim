@@ -1,7 +1,7 @@
 return {
   'nvim-tree/nvim-web-devicons',
   -- lazy = false,
-  event = 'BufReadPre',
+  event = 'VeryLazy',
   opts = {
     override = {
       zsh = {

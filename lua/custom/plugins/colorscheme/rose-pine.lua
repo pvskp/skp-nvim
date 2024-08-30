@@ -21,13 +21,13 @@ return {
       -- VertSplit = { fg = "muted", bg = "muted" },
     },
 
-
     styles = {
       bold = true,
       italic = false,
       transparency = false,
     },
   },
+
   config = function(_, opts)
     require('rose-pine').setup(opts)
     vim.cmd [[colorscheme rose-pine]]

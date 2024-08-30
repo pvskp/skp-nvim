@@ -16,5 +16,18 @@ return {
   config = function(_, opts)
     require('tokyonight').setup(opts)
     vim.cmd [[colorscheme tokyonight]]
+    set_hl("TreesitterContextBottom", {
+      underline = true,
+      sp = TokyoNight.bg_highlight
+    })
+
+    set_hl("TreesitterContext", {
+      bg = TokyoNight.bg_dark,
+    })
+
+    set_hl("TreesitterContextLineNumber", {
+      bg = TokyoNight.bg_dark,
+      fg = TokyoNight.fg,
+    })
   end
 }
