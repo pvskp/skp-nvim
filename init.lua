@@ -45,7 +45,7 @@ spec(false, 'languages.markdown.render-markdown')
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
-spec(true, 'mini.files') -- minitree (best tree plugin)
+spec(false, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
@@ -66,6 +66,7 @@ spec(true, 'eyeliner')            -- quick jump with f, F, t, T
 spec(true, 'which-key')
 spec(true, 'codesnap')
 spec(true, 'neogen')
+spec(true, 'nvim-tree')
 spec(true, 'quicker')
 spec(true, 'emoji')
 spec(true, 'ccc')
