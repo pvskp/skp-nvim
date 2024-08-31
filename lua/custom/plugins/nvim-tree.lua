@@ -9,6 +9,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
+    local api = require "nvim-tree.api"
     require("nvim-tree").setup {
       hijack_cursor = true,
       diagnostics = {
@@ -30,7 +31,7 @@ return {
       ui = {
         confirm = {
           remove = true,
-          trash = false,
+          trash = true,
           default_yes = true,
         }
       },
@@ -38,7 +39,6 @@ return {
         local function opts(desc)
           return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
         end
-        local api = require "nvim-tree.api"
         -- default mappings
         api.config.mappings.default_on_attach(bufnr)
 
@@ -60,6 +60,18 @@ return {
         vim.keymap.set('n', 'H', api.tree.collapse_all, opts('Collapse all'))
       end
     }
+
+    vim.api.nvim_create_autocmd({ "BufEnter" }, {
+      group = vim.api.nvim_create_augroup("Nvim-Tree-auto-find-file", {}),
+      callback = function()
+        api.tree.find_file({
+          open = false,
+          focus = false,
+        })
+      end
+
+    })
+
     -- vim.keymap.set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>', {})
   end,
 }
