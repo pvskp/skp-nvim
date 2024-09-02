@@ -46,6 +46,7 @@ spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
 spec(false, 'mini.files') -- minitree (best tree plugin)
+spec(true, 'mini.indentscope')
 
 --<< Git integrations >>--
 
@@ -64,6 +65,7 @@ spec(true, 'surround')            -- surround text with quotes, brackets, etc
 spec(true, 'hop')                 -- jump to any word in the screen
 spec(true, 'eyeliner')            -- quick jump with f, F, t, T
 spec(true, 'which-key')
+spec(true, 'scriptease')
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'nvim-tree')
@@ -74,6 +76,7 @@ spec(true, 'w3m')
 spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
+spec(true, 'ibl')
 
 --<< AI >>--
 

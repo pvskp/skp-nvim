@@ -1,6 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  tag = 'v0.9.2',
+  -- tag = 'v0.9.2',
   event = { 'BufReadPost' },
   build = ':TSUpdate',
   lazy = vim.fn.argc(-1) == 0,
@@ -12,7 +12,7 @@ return {
     {
       {
         'nvim-treesitter/nvim-treesitter-textobjects',
-        commit = "34867c6",
+        -- commit = "34867c6",
       },
       {
         'nvim-treesitter/nvim-treesitter-context',
