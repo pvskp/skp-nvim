@@ -20,8 +20,28 @@ return {
         'rafamadriz/friendly-snippets',
       },
       config = function()
+        local luasnip = require "luasnip"
+        luasnip.filetype_extend("javascriptreact", { "html" })
+        luasnip.filetype_extend("typescriptreact", { "html" })
         require('luasnip.loaders.from_snipmate').lazy_load()
         require('luasnip.loaders.from_vscode').lazy_load()
+
+        vim.keymap.set("n", "<Esc>", require('luasnip').unlink_current)
+
+        -- -- this one ends up snippet session on exiting the insert mode
+        -- vim.api.nvim_create_autocmd('ModeChanged', {
+        --   pattern = '*',
+        --   callback = function()
+        --     if ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        --         and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        --         and not require('luasnip').session.jump_active
+        --     then
+        --       require('luasnip').unlink_current()
+        --     end
+        --   end
+        -- })
+
+        ---
       end,
     },
     'saadparwaiz1/cmp_luasnip',
