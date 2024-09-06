@@ -50,8 +50,8 @@ spec(true, 'mini.indentscope')
 
 --<< Git integrations >>--
 
-spec(false, 'git.gitsigns') -- show git signs on columnsign
-spec(true, 'git.fugitive')  -- git integration
+spec(true, 'git.gitsigns') -- show git signs on columnsign
+spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
 spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
