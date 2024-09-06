@@ -46,7 +46,7 @@ spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
 spec(false, 'mini.files') -- minitree (best tree plugin)
-spec(true, 'mini.indentscope')
+spec(false, 'mini.indentscope')
 
 --<< Git integrations >>--
 
