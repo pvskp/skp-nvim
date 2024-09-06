@@ -1,6 +1,10 @@
 return {
   'echasnovski/mini.indentscope',
-  lazy = false,
+  -- ft = {
+  --   "typescriptreact",
+  --   "javascriptreact",
+  --   "html",
+  -- },
   version = '*',
   config = function()
     require('mini.indentscope').setup(
