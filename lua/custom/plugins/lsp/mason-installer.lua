@@ -1,17 +1,23 @@
 return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  lazy = false,
   config = function()
     require('mason-tool-installer').setup {
       ensure_installed = {
+        -- Golang
         'goimports',
-        'golangci-lint',
         'gopls',
+        -- Python
         'pyright',
+        -- lua
+        'lua_ls',
         'stylua',
-        'prettier',
+        -- devops
         'terraformls',
         'helm-ls',
+        -- others
+        'prettier',
         'json-lsp',
       },
     }
