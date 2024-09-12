@@ -80,7 +80,7 @@ spec(true, 'ibl')
 
 --<< AI >>--
 
-spec(true, 'ai.codeium')
+spec(false, 'ai.codeium')
 spec(false, 'ai.copilot')
 
 --<< UI >>--
