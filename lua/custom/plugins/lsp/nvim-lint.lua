@@ -12,7 +12,7 @@ return {
       typescript = { 'eslint_d' },
       -- json = { 'jsonlint' },
       -- lua = { 'luacheck' },
-      go = { 'golangcilint' },
+      -- go = { 'golangcilint' },
       -- terraform = { 'tflint', 'tfsec' },
       -- python = { 'ruff' },
       -- cpp = { "cpplint" },

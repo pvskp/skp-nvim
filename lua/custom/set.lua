@@ -80,18 +80,18 @@ local options = {
 
 local globals = {
   netrw_banner = 0,
-  clipboard = {
-    name = 'xsel',
-    copy = {
-      ['+'] = 'xsel --input --clipboard',
-      ['*'] = 'xsel --input --primary',
-    },
-    paste = {
-      ['+'] = 'xsel --output --clipboard',
-      ['*'] = 'xsel --output --primary',
-    },
-    cache_enabled = 0,
-  }
+  -- clipboard = {
+  --   name = 'xsel',
+  --   copy = {
+  --     ['+'] = 'xsel --input --clipboard',
+  --     ['*'] = 'xsel --input --primary',
+  --   },
+  --   paste = {
+  --     ['+'] = 'xsel --output --clipboard',
+  --     ['*'] = 'xsel --output --primary',
+  --   },
+  --   cache_enabled = 0,
+  -- }
 }
 
 for k, v in pairs(options) do
