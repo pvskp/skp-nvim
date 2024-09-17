@@ -15,11 +15,12 @@ require 'custom.colors'
 -- require 'custom.habamax'
 
 spec(false, 'colorscheme.rose-pine')
-spec(true, 'colorscheme.tokyo-night')
+spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
+spec(true, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
 
@@ -85,7 +86,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(true, 'ui.lualine')          -- statusline
+spec(false, 'ui.lualine')         -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.alpha')            -- start dashboard
