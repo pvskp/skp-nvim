@@ -177,6 +177,28 @@ return {
           on_attach = on_attach,
         }
       end,
+      ['lua_ls'] = function()
+        lspconfig.lua_ls.setup {
+          capabilities = capabilities,
+          on_attach = on_attach,
+          settings = { -- custom settings for lua
+            Lua = {
+              -- make the language server recognize "vim" global
+              hint = { enable = true },
+              diagnostics = {
+                globals = { 'vim' },
+              },
+              workspace = {
+                -- make language server aware of runtime files
+                library = {
+                  [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+                  [vim.fn.stdpath 'config' .. '/lua'] = true,
+                },
+              },
+            },
+          },
+        }
+      end,
       ['gopls'] = function()
         lspconfig.gopls.setup {
           on_attach = on_attach,
