@@ -3,7 +3,19 @@ return {
   version = "*",
   lazy = false,
   keys = {
-    { "<c-e>", "<cmd>NvimTreeToggle<CR>", desc = "  Toggle File Explorer" }
+    {
+      "<c-e>",
+      function()
+        local api = require "nvim-tree.api"
+        vim.keymap.set('n', '<C-e>', function()
+          api.tree.toggle({
+            find_file = true,
+            focus = true
+          })
+        end)
+      end,
+      desc = "  Toggle File Explorer"
+    }
   },
   dependencies = {
     "nvim-tree/nvim-web-devicons",
@@ -43,7 +55,12 @@ return {
         api.config.mappings.default_on_attach(bufnr)
 
         -- custom mappings
-        vim.keymap.set('n', '<C-e>', api.tree.toggle, opts('Toggle tree'))
+        vim.keymap.set('n', '<C-e>', function()
+          api.tree.toggle({
+            find_file = true,
+            focus = true
+          })
+        end, opts('Toggle tree'))
 
         vim.keymap.set('n', 'y', api.fs.copy.node, opts('Copy'))
 

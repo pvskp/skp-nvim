@@ -43,13 +43,13 @@ return {
     -- vim.cmd([[colorscheme base16-black-metal-venom]])
     -- vim.cmd([[colorscheme base16-black-metal]])
     -- vim.cmd([[colorscheme base16-brewer]])
-    -- vim.cmd [[colorscheme base16-bright]]
+    vim.cmd [[colorscheme base16-bright]]
     -- vim.cmd([[colorscheme base16-brogrammer]])
     -- vim.cmd([[colorscheme base16-brushtrees-dark]])
     -- vim.cmd([[colorscheme base16-brushtrees]])
     -- vim.cmd([[colorscheme base16-chalk]])
     -- vim.cmd([[colorscheme base16-circus]])
-    vim.cmd [[colorscheme base16-classic-dark]]
+    -- vim.cmd [[colorscheme base16-classic-dark]]
     -- vim.cmd [[colorscheme base16-classic-light]]
     -- vim.cmd([[colorscheme base16-codeschool]])
     -- vim.cmd([[colorscheme base16-cupcake]])
@@ -138,5 +138,6 @@ return {
     -- vim.cmd([[colorscheme base16-woodland]])
     -- vim.cmd([[colorscheme base16-xcode-dusk]])
     -- vim.cmd([[colorscheme base16-zenburn]])
+    set_hl("CursorLineNr", { bg = nil, fg = "yellow" })
   end,
 }
