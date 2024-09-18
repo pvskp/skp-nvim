@@ -28,8 +28,8 @@ local toggle_maximized = function()
   end
 end
 
-vim.keymap.set('n', '<C-w>m', toggle_maximized)
-vim.keymap.set('n', '<M-m>', toggle_maximized)
+-- vim.keymap.set('n', '<C-w>m', toggle_maximized)
+-- vim.keymap.set('n', '<M-m>', toggle_maximized)
 
 -- Window and buffer close
 -- map('n', 'Q', '<c-w>q', { silent = true })

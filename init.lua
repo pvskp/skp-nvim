@@ -16,11 +16,11 @@ require 'custom.colors'
 
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.tokyo-night')
-spec(false, 'colorscheme.onedark')
+spec(true, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
-spec(true, 'colorscheme.midnight')
+spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
 
