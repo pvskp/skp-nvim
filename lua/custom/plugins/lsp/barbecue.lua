@@ -10,7 +10,7 @@ return {
   },
   opts = {
     theme = {
-      normal = { bg = TokyoNight.bg_dark }
+      -- normal = { bg = TokyoNight.bg_dark }
     }
   },
   config = function(_, opts)
