@@ -67,6 +67,7 @@ spec(true, 'hop')                 -- jump to any word in the screen
 spec(true, 'eyeliner')            -- quick jump with f, F, t, T
 spec(true, 'which-key')
 spec(true, 'scriptease')
+spec(true, 'vim-zoom')
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'nvim-tree')
