@@ -8,14 +8,14 @@ return {
       keywords = { italic = true },
       functions = {},
       variables = {},
-      sidebars = "dark",  -- style for sidebars, see below
-      floats = "dark",    -- style for floating windows
+      sidebars = "dark", -- style for sidebars, see below
+      floats = "dark",   -- style for floating windows
     },
-    dim_inactive = false, -- dims inactive windows
+    dim_inactive = true, -- dims inactive windows
   },
   config = function(_, opts)
     require('tokyonight').setup(opts)
-    vim.cmd [[colorscheme tokyonight]]
+    vim.cmd("colorscheme tokyonight-night")
     set_hl("TreesitterContextBottom", {
       underline = true,
       sp = TokyoNight.bg_highlight
