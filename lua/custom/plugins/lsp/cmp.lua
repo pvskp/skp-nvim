@@ -61,7 +61,7 @@ return {
       },
       preselect = cmp.PreselectMode.None,
       experimental = {
-        ghost_text = true,
+        ghost_text = false,
       },
       completion = {
         completeopt = 'menu,preview,noinsert',
@@ -83,6 +83,7 @@ return {
             sources = {
               -- { name = "nvim_lsp_signature_help" },
               { name = 'nvim_lsp' },
+              { name = 'otter' },
             },
           },
         },
@@ -127,6 +128,7 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources {
         -- { name = 'nvim_lsp_signature_help' },
+        { name = 'otter' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- snippets
         {

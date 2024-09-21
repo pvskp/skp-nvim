@@ -19,6 +19,7 @@ require('lazy').setup {
   install = {
     colorscheme = {
       'default',
+      'tokyonight-night',
       'catppuccin',
       'adwaita',
       'habamax',
