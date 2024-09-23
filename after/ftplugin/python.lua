@@ -57,4 +57,5 @@ end
 
 vim.api.nvim_create_user_command('RunPythonScript', run_python_script, {})
 
-vim.keymap.set('n', '<C-Space>', '<cmd>RunPythonScript<CR>', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, "n", "<C-Space>", "<cmd>RunPythonScript<CR>", { noremap = true })
+-- vim.keymap.set('n', '<C-Space>', '<cmd>RunPythonScript<CR>', { noremap = true })
