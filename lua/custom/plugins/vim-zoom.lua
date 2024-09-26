@@ -3,6 +3,6 @@ return {
   -- lazy = false,
   event = "VeryLazy",
   config = function()
-    vim.cmd('set statusline+=%{zoom#statusline()}')
+    vim.cmd('set statusline+=%t\\ %{zoom#statusline()}')
   end
 }
