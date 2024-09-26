@@ -26,7 +26,7 @@ return {
         require('luasnip.loaders.from_snipmate').lazy_load()
         require('luasnip.loaders.from_vscode').lazy_load()
 
-        vim.keymap.set("n", "<Esc>", require('luasnip').unlink_current)
+        -- vim.keymap.set("n", "<Esc>", require('luasnip').unlink_current)
 
         -- -- this one ends up snippet session on exiting the insert mode
         -- vim.api.nvim_create_autocmd('ModeChanged', {

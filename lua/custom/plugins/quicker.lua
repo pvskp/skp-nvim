@@ -1,5 +1,5 @@
 return {
-  'stevearc/quicker.nvim',
+  'stevearc/quicker.nvim', -- prettier quickfix list
   event = "VeryLazy",
   opts = {},
 }
