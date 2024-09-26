@@ -76,7 +76,7 @@ spec(true, 'slime')
 spec(true, 'quicker')
 spec(true, 'emoji')
 spec(true, 'ccc')
-spec(true, 'w3m')
+spec(false, 'w3m')
 spec(true, 'bigfile')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
@@ -94,7 +94,7 @@ spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.alpha')            -- start dashboard
 spec(true, 'ui.devicons')
-spec(false, 'ui.noice')
+spec(true, 'ui.noice')
 
 -- Loads all with lazy
 require 'custom.lazy'
