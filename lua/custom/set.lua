@@ -1,7 +1,8 @@
 local options = {
   --< General Settings >
   compatible = false,  -- Disable Vi compatibility
-  title = false,       -- Do not show the title of the window
+  title = true,        -- Do not show the title of the window
+  titlestring = 'filename',
   background = 'dark', -- Use a dark background
   cmdheight = 1,       -- Height of the command line
 
