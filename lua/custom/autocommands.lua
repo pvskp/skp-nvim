@@ -15,19 +15,6 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
   pattern = '*.tfvars',
   command = 'set filetype=terraform',
 })
-
-vim.api.nvim_create_autocmd({ 'TermOpen' }, {
-  group = vim.api.nvim_create_augroup('TermAutoCMD', { clear = true }),
-  pattern = '*',
-  command = 'startinsert',
-})
-
-vim.api.nvim_create_autocmd({ 'TermClose' }, {
-  group = vim.api.nvim_create_augroup('TermAutoCMD', { clear = true }),
-  pattern = '*',
-  command = '',
-})
-
 -- vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 --   group = vim.api.nvim_create_augroup('AnsibleFiletype', { clear = true }),
 --   pattern = '*.yaml.ansible',
@@ -120,7 +107,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.server_capabilities.documentHighlightProvider then
       local highlight_augroup =
-        vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+          vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_augroup,
