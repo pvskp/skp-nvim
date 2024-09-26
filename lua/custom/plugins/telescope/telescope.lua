@@ -1,24 +1,3 @@
-Telescope_ivy_options = {}
-
-local function default_theme(prompt_title)
-  return {
-
-    -- winblend = 20,
-    width = 0.8,
-    show_line = false,
-    prompt_prefix = prompt_title .. '> ',
-    prompt_title = '',
-    results_title = '',
-    preview_title = '',
-    borderchars = {
-      ---
-      prompt = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
-      results = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
-      preview = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
-    },
-  }
-end
-
 ---@param preview_title boolean
 ---@return table theme
 local function theme(preview_title)
@@ -41,66 +20,6 @@ local function theme(preview_title)
   }
 end
 
-local _live_grep_in_glob = function(glob_pattern)
-  require('telescope.builtin').live_grep {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--glob=' .. (glob_pattern or ''),
-    },
-  }
-end
-
-local live_grep_in_glob = function()
-  vim.ui.input({ prompt = 'Glob: ', completion = 'file', default = '**/*.' }, _live_grep_in_glob)
-end
-
-vim.api.nvim_create_user_command('GrepInGlob', live_grep_in_glob, {})
-
--- local better_ivy = require("custom.plugins.telescope.better_ivy").get_better_ivy
-
-function Telescope_find_files()
-  -- require('telescope.builtin').find_files(better_ivy({}, "find files> "))
-  require('telescope.builtin').find_files {
-    results_title = false,
-    prompt_prefix = 'find files> ',
-  }
-end
-
-function Telescope_git_files()
-  -- require('telescope.builtin').git_files(better_ivy({}, "git files> "))
-  require('telescope.builtin').git_files {
-    results_title = false,
-    preview_title = false,
-    prompt_title = false,
-    prompt_prefix = 'git files> ',
-  }
-end
-
-function Telescope_live_grep()
-  -- require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
-  require('telescope.builtin').live_grep {
-    results_title = false,
-    prompt_prefix = 'live grep> ',
-  }
-end
-
-function Telescope_colorscheme()
-  -- require('telescope.builtin').live_grep(better_ivy({}, "grep files> "))
-  require('telescope.builtin').colorscheme()
-end
-
-function Telescope_projects()
-  require('telescope').load_extension 'projects'
-
-  require('telescope').extensions.projects.projects(theme(false))
-end
-
 return {
   'nvim-telescope/telescope.nvim',
   version = '0.1.8',
@@ -108,32 +27,49 @@ return {
   keys = {
     {
       '<leader>fe',
-      Telescope_find_files,
+      function()
+        require('telescope.builtin').find_files(require('telescope.themes').get_ivy {
+          results_title = false,
+          prompt_prefix = 'find files> ',
+        })
+      end,
       desc = 'Find [all] files',
     },
     {
       '<leader>fh',
       function()
-        require('telescope.builtin').highlights {
+        require('telescope.builtin').highlights(require('telescope.themes').get_ivy {
           results_title = false,
           prompt_prefix = 'hl> ',
-        }
+        })
       end,
       desc = 'Find [all] files',
     },
     {
       '<leader>ff',
-      Telescope_git_files,
+      function()
+        require('telescope.builtin').git_files(require('telescope.themes').get_ivy {
+          results_title = false,
+          preview_title = false,
+          prompt_title = false,
+          prompt_prefix = 'git files> ',
+        })
+      end,
       desc = 'Git files',
     },
     {
       '<leader>p',
-      Telescope_projects,
+      function()
+        require('telescope').load_extension 'projects'
+        require('telescope').extensions.projects.projects(theme(false))
+      end,
       desc = 'Go to project',
     },
     {
       '<leader>fc',
-      Telescope_colorscheme,
+      function()
+        require('telescope.builtin').colorscheme()
+      end,
       desc = 'List colorschemes',
     },
 
@@ -158,7 +94,12 @@ return {
 
     {
       '<leader>gg',
-      Telescope_live_grep,
+      function()
+        require('telescope.builtin').live_grep(require('telescope.themes').get_ivy {
+          results_title = false,
+          prompt_prefix = 'live grep> ',
+        })
+      end,
       desc = '  Grep Files',
     },
 
@@ -293,17 +234,5 @@ return {
 
     require('telescope').load_extension 'ui-select'
     require('telescope').load_extension 'git_worktree'
-    -- local ext = require('telescope').extensions
-    -- vim.keymap.set('n', '<leader>w', ext.git_worktree.git_worktrees, {})
-    -- vim.keymap.set('n', '<leader>,', ext.git_worktree.create_git_worktree, {})
-
-    -- vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = "NormalFloat" })
-    -- vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = "NormalFloat" })
-    -- vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = "NormalFloat" })
-    -- vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { link = "NormalFloat" })
-    -- vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = "NormalFloat" })
-
-    -- vim.api.nvim_set_hl(0, 'TelescopeSelection', {})
-    -- vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', { fg = Symbols.telescope.selection_caret.color })
   end,
 }
