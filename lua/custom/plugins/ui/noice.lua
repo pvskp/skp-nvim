@@ -76,7 +76,7 @@ return {
         render = 'default',
         stages = 'fade_in_slide_out',
         minimum_width = 30,
-        max_width = 30,
+        max_width = 50,
         top_down = false,
       },
     },
@@ -87,8 +87,8 @@ return {
     }
 
     require('noice').setup(opts)
-    vim.cmd 'highlight NotifyINFOBorder guifg=#334de6'
-    vim.cmd 'highlight NotifyINFOTitle  guifg=#3380e6'
-    vim.cmd 'highlight NotifyINFOIcon   guifg=#3380e6'
+    vim.cmd('highlight NotifyINFOBorder guifg=#334de6')
+    vim.cmd('highlight NotifyINFOTitle  guifg=#3380e6')
+    vim.cmd('highlight NotifyINFOIcon   guifg=#3380e6')
   end,
 }
