@@ -29,12 +29,6 @@ vim.api.nvim_create_autocmd('VimLeave', {
   command = 'set guicursor=a:ver90',
 })
 
-vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
-  callback = function()
-    vim.cmd 'set formatoptions-=cro'
-  end,
-})
-
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = {
     'netrw',
