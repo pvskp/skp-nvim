@@ -5,5 +5,6 @@ snippet ma "main function"
 
 snippet er "err != nil"
   if err != nil {
+    log.Fatal(err)
     ${1}
   }
