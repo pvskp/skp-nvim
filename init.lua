@@ -14,8 +14,8 @@ require 'custom.colors'
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
-spec(false, 'colorscheme.rose-pine')
-spec(true, 'colorscheme.tokyo-night')
+spec(true, 'colorscheme.rose-pine')
+spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
@@ -94,7 +94,7 @@ spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.alpha')            -- start dashboard
 spec(true, 'ui.devicons')
-spec(true, 'ui.noice')
+spec(false, 'ui.noice')
 
 -- Loads all with lazy
 require 'custom.lazy'
