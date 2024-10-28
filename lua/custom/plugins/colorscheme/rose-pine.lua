@@ -33,7 +33,7 @@ return {
     vim.cmd [[colorscheme rose-pine]]
 
     set_hl("StatusLine", { fg = "#ffffff", bg = "#907aa9" })
-    set_hl("TreesitterContextBottom", { underline = true, sp = "#907aa9" })
+    -- set_hl("TreesitterContextBottom", { underline = true, sp = "#907aa9" })
     set_hl("htmlLink", { underline = false })
     set_hl("@markup.link.label.tsx", { fg = Rosepine.love, underline = false })
   end,

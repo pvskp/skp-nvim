@@ -1,7 +1,8 @@
 return {
   "utilyre/barbecue.nvim",
   name = "barbecue",
-  ft = { "yaml", "json" },
+  event = { "LspAttach" },
+  -- ft = { "yaml", "json" },
   cmd = { "Barbecue" },
   version = "*",
   dependencies = {
@@ -10,8 +11,13 @@ return {
   },
   opts = {
     theme = {
-      -- normal = { bg = TokyoNight.bg_dark }
-    }
+      -- normal = { bg = "#26233A" }
+    },
+    symbols = {
+      modified = "●",
+      ellipsis = "…",
+      separator = "󰔰",
+    },
   },
   config = function(_, opts)
     require("barbecue").setup(opts)
