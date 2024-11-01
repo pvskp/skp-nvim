@@ -28,10 +28,11 @@ spec(false, 'colorscheme.adwaita')
 --<< LSP related >>--
 
 spec(true, 'lsp.treesiter')
-spec(true, 'lsp.barbecue')
+spec(false, 'lsp.barbecue')
+spec(true, 'lsp.dropbar')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.lazydev')   -- offers completion to neovim functions
-spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
+spec(false, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.mason-installer')
 spec(true, 'lsp.conform') -- formatter
@@ -90,7 +91,7 @@ spec(false, 'ai.copilot')
 
 --<< UI >>--
 
-spec(false, 'ui.lualine')         -- statusline
+spec(true, 'ui.lualine')          -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.alpha')            -- start dashboard

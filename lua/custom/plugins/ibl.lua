@@ -5,6 +5,8 @@ return {
     "typescriptreact",
     "javascriptreact",
     "html",
+    "python",
+    "lua",
   },
   main = "ibl",
   opts = {

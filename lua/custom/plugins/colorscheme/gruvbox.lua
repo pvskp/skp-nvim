@@ -78,16 +78,46 @@ return {
     inverse = true, -- invert background for search, diffs, statuslines and errors
     contrast = "",  -- can be "hard", "soft" or empty string
     palette_overrides = {},
-    overrides = {},
+    overrides = {
+      DiagnosticSignOk = {
+        bg = nil,
+        fg = "#b8bb26"
+      },
+      DiagnosticSignHint = {
+        bg = nil,
+        fg = "#8EC07C"
+      },
+      DiagnosticSignInfo = {
+        bg = nil,
+        fg = "#83a598"
+      },
+      DiagnosticSignWarn = {
+        bg = nil,
+        fg = "#fabd2f",
+      },
+      DiagnosticSignError = {
+        bg = nil,
+        fg = "#fb4934"
+      },
+      barbecue_normal = {
+        bg = "#7c6f64"
+      },
+      TreesitterContextLineNumber = {
+        bg = Gruvbox.dark3,
+        fg = Gruvbox.light0_hard,
+
+      },
+
+      LspReferenceRead = {
+        bg = Gruvbox.dark2,
+        fg = Gruvbox.bright_yellow
+      }
+    },
     dim_inactive = false,
     transparent_mode = false,
   },
   config = function(_, opts)
     require("gruvbox").setup(opts)
     vim.cmd("colorscheme gruvbox")
-    set_hl("TreesitterContextLineNumber", {
-      bg = Gruvbox.dark3,
-      fg = Gruvbox.light0_hard,
-    })
   end
 }
