@@ -27,10 +27,10 @@ local options = {
 
   --< Display >
   number = true, -- Show line numbers
-  relativenumber = true, -- Show relative line numbers
+  relativenumber = false, -- Show relative line numbers
   numberwidth = 2, -- Set the width of the number column to 2
   cursorline = true, -- Highlight the current line
-  cursorlineopt = 'line', -- Highlight the current line number
+  cursorlineopt = 'number', -- Highlight the current line number
   cursorcolumn = false, -- Do not highlight the column of the cursor
   signcolumn = 'yes', -- Always show the sign column
   wrap = false, -- Do not wrap lines
@@ -72,7 +72,7 @@ local options = {
   updatetime = 250, -- Faster completion (default is 4000ms)
 
   --< Miscellaneous >
-  virtualedit = 'all',                                                    -- Allow cursor to move anywhere
+  virtualedit = 'none',                                                   -- Allow cursor to move anywhere
   clipboard = 'unnamedplus',                                              -- Use the system clipboard
   autochdir = false,                                                      -- Do not change the current working directory automatically
   statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column

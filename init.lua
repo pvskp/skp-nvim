@@ -15,11 +15,11 @@ require 'custom.colors'
 -- require 'custom.habamax'
 
 spec(false, 'colorscheme.rose-pine')
-spec(true, 'colorscheme.gruvbox')
+spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
-spec(false, 'colorscheme.catppuccin')
+spec(true, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
@@ -29,10 +29,10 @@ spec(false, 'colorscheme.adwaita')
 
 spec(true, 'lsp.treesiter')
 spec(false, 'lsp.barbecue')
-spec(true, 'lsp.dropbar')
+spec(false, 'lsp.dropbar')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.lazydev')   -- offers completion to neovim functions
-spec(false, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
+spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.mason-installer')
 spec(true, 'lsp.conform') -- formatter
