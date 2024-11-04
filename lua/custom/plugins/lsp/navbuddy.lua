@@ -3,7 +3,7 @@ return {
   event = 'LspAttach',
   -- lazy = false,
   keys = {
-    { '<leader>n', ':Navbuddy<CR>', desc = 'Navbuddy' },
+    {'<leader>n', ':Navbuddy<CR>', desc = 'Navbuddy', silent = true},
   },
   dependencies = {
     'SmiteshP/nvim-navic',

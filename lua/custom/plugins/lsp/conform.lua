@@ -1,6 +1,20 @@
 return {
   'stevearc/conform.nvim',
   event = { 'BufWrite', 'BufWritePre' },
+  keys = {
+    {
+      "<leader>fm", function()
+      local conform = require("conform")
+      conform.format({
+          lsp_format = "fallback"
+        },
+        function()
+          vim.notify("Buffer was successfully formatted", 2)
+        end
+      )
+    end
+    }
+  },
   cmd = 'Conform',
   opts = {
     formatters_by_ft = {
@@ -20,17 +34,17 @@ return {
       zsh = { 'beautysh' },
     },
 
-    format_on_save = {
-      -- I recommend these options. See :help conform.format for details.
-      lsp_fallback = true,
-      timeout_ms = 1000,
-      quiet = true,
-      callback = function(err, _)
-        if err ~= nil then
-          vim.notify 'Failed to format file. See :ConformInfo for more information.'
-        end
-      end,
-    },
+    -- format_on_save = {
+    --   -- I recommend these options. See :help conform.format for details.
+    --   lsp_fallback = true,
+    --   timeout_ms = 1000,
+    --   quiet = true,
+    --   callback = function(err, _)
+    --     if err ~= nil then
+    --       vim.notify 'Failed to format file. See :ConformInfo for more information.'
+    --     end
+    --   end,
+    -- },
   },
   config = function(_, opts)
     require('conform').setup(opts)
