@@ -199,6 +199,15 @@ return {
           },
         }
       end,
+      ['ruff'] = function()
+        lspconfig.ruff.setup {
+          init_options = {
+            settings = {
+              configurationPreference = "filesystemFirst"
+            }
+          }
+        }
+      end,
       ['gopls'] = function()
         lspconfig.gopls.setup {
           on_attach = on_attach,
