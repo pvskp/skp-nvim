@@ -1,6 +1,5 @@
 return {
-  -- ft = { "quarto" },
-  lazy = false,
+  ft = { "quarto" },
   "quarto-dev/quarto-nvim",
   dependencies = {
     "jmbuhr/otter.nvim",
