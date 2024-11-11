@@ -30,6 +30,7 @@ return {
       yaml = { 'prettier' },
       helm = { 'prettier' },
       cpp = { 'clang-format' },
+      go = { 'goimports', 'gopls' },
       terraform = { 'terraform_fmt' },
       zsh = { 'beautysh' },
     },
