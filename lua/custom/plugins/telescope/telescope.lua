@@ -20,6 +20,54 @@ local function theme(preview_title)
   }
 end
 
+function Telescope_find_files()
+  require('telescope.builtin').find_files(require('telescope.themes').get_ivy {
+    results_title = false,
+    prompt_prefix = 'find files> ',
+  })
+end
+
+function Telescope_find_git_files()
+  require('telescope.builtin').git_files(require('telescope.themes').get_ivy {
+    results_title = false,
+    preview_title = false,
+    prompt_title = false,
+    prompt_prefix = 'git files> ',
+  })
+end
+
+function Telescope_find_highlights()
+  require('telescope.builtin').highlights(require('telescope.themes').get_ivy {
+    results_title = false,
+    prompt_prefix = 'hl> ',
+  })
+end
+
+function Telescope_live_grep()
+  require('telescope.builtin').live_grep(require('telescope.themes').get_ivy {
+    results_title = false,
+    prompt_prefix = 'live grep> ',
+  })
+end
+
+function Telescope_help_files()
+  require('telescope.builtin').help_tags {
+    prompt_prefix = "help tags> "
+  }
+end
+
+function Telescope_grep_string()
+  require('telescope.builtin').grep_string {
+    results_title = false,
+    prompt_prefix = 'grep string> ',
+  }
+end
+
+function Telescope_find_projects()
+  require('telescope').load_extension 'projects'
+  require('telescope').extensions.projects.projects(theme(false))
+end
+
 return {
   'nvim-telescope/telescope.nvim',
   version = '0.1.8',
@@ -27,42 +75,22 @@ return {
   keys = {
     {
       '<leader>fe',
-      function()
-        require('telescope.builtin').find_files(require('telescope.themes').get_ivy {
-          results_title = false,
-          prompt_prefix = 'find files> ',
-        })
-      end,
+      Telescope_find_files,
       desc = 'Find [all] files',
     },
     {
       '<leader>fh',
-      function()
-        require('telescope.builtin').highlights(require('telescope.themes').get_ivy {
-          results_title = false,
-          prompt_prefix = 'hl> ',
-        })
-      end,
+      Telescope_find_highlights,
       desc = 'Find [all] files',
     },
     {
       '<leader>ff',
-      function()
-        require('telescope.builtin').git_files(require('telescope.themes').get_ivy {
-          results_title = false,
-          preview_title = false,
-          prompt_title = false,
-          prompt_prefix = 'git files> ',
-        })
-      end,
+      Telescope_find_git_files,
       desc = 'Git files',
     },
     {
       '<leader>p',
-      function()
-        require('telescope').load_extension 'projects'
-        require('telescope').extensions.projects.projects(theme(false))
-      end,
+      Telescope_find_projects,
       desc = 'Go to project',
     },
     {
@@ -94,33 +122,19 @@ return {
 
     {
       '<leader>gg',
-      function()
-        require('telescope.builtin').live_grep(require('telescope.themes').get_ivy {
-          results_title = false,
-          prompt_prefix = 'live grep> ',
-        })
-      end,
       desc = '  Grep Files',
+      Telescope_live_grep
     },
 
     {
       '<leader>h',
-      function()
-        require('telescope.builtin').help_tags {
-          prompt_prefix = "help tags> "
-        }
-      end,
       desc = 'Help Tags',
+      Telescope_help_files
     },
 
     {
       '<leader>sw',
-      function()
-        require('telescope.builtin').grep_string {
-          results_title = false,
-          prompt_prefix = 'grep string> ',
-        }
-      end,
+      Telescope_grep_string,
       desc = 'Search Word',
     },
 
