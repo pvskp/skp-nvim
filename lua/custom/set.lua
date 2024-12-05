@@ -33,6 +33,7 @@ local options = {
   cursorlineopt = 'number', -- Highlight the current line number
   cursorcolumn = false, -- Do not highlight the column of the cursor
   signcolumn = 'yes', -- Always show the sign column
+  colorcolumn = "80",
   wrap = false, -- Do not wrap lines
   linebreak = true, -- Wrap lines at convenient points
   showbreak = '-', -- String to show at the beginning of wrapped lines
