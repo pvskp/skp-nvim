@@ -28,7 +28,7 @@ spec(false, 'colorscheme.adwaita')
 --<< LSP related >>--
 
 spec(true, 'lsp.treesiter')
-spec(false, 'lsp.barbecue')
+spec(true, 'lsp.barbecue')
 spec(false, 'lsp.dropbar')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.lazydev')   -- offers completion to neovim functions
