@@ -16,7 +16,7 @@ return {
       '<leader>ss',
       function()
         vim.cmd 'SessionSave'
-        vim.notify '[auto-session] Session saved.'
+        -- vim.notify '[auto-session] Session saved.'
       end,
       desc = 'Save Session',
     },
@@ -24,7 +24,7 @@ return {
   opts = {
     log_level = 'error',
     auto_restore_enabled = false,
-    auto_save_enabled = true,
+    auto_save_enabled = false,
     auto_session_suppress_dirs = { '~/' },
   },
 }

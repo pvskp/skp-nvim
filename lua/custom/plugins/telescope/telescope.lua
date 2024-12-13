@@ -203,11 +203,11 @@ return {
                   vim.api.nvim_chan_send(term, d .. "\r\n")
                 end
               end
-              vim.fn.jobstart({
-                "catimg",
-                -- "chafa,"
-                filepath, -- Terminal image viewer command
-              }, { on_stdout = send_output, stdout_buffered = true, pty = true })
+              -- vim.fn.jobstart({
+              --   "catimg",
+              --   -- "chafa,"
+              --   filepath, -- Terminal image viewer command
+              -- }, { on_stdout = send_output, stdout_buffered = true, pty = true })
             else
               require("telescope.previewers.utils").set_preview_message(
                 bufnr,

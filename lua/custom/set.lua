@@ -33,7 +33,7 @@ local options = {
   cursorlineopt = 'number', -- Highlight the current line number
   cursorcolumn = false, -- Do not highlight the column of the cursor
   signcolumn = 'yes', -- Always show the sign column
-  colorcolumn = "80",
+  colorcolumn = "100",
   wrap = false, -- Do not wrap lines
   linebreak = true, -- Wrap lines at convenient points
   showbreak = '-', -- String to show at the beginning of wrapped lines
@@ -76,7 +76,7 @@ local options = {
   virtualedit = 'none',                                                   -- Allow cursor to move anywhere
   clipboard = 'unnamedplus',                                              -- Use the system clipboard
   autochdir = false,                                                      -- Do not change the current working directory automatically
-  statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column
+  -- statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column
   showmode = true,                                                        -- Show the current mode in the command line
 }
 
