@@ -8,7 +8,7 @@ require 'custom.window'
 require 'custom.tabs'
 require 'custom.netrw'
 require 'custom.commandline'
-require 'custom.terminal'
+-- require 'custom.terminal'
 require 'custom.set'
 require 'custom.colors'
 -- require 'custom.default-colorscheme'
@@ -66,7 +66,7 @@ spec(true, 'tmux')                -- tmux integration
 spec(true, 'telescope.telescope') -- fuzzy finder
 spec(true, 'surround')            -- surround text with quotes, brackets, etc
 spec(true, 'hop')                 -- jump to any word in the screen
-spec(true, 'eyeliner')            -- quick jump with f, F, t, T
+spec(false, 'eyeliner')            -- quick jump with f, F, t, T
 spec(true, 'which-key')
 spec(true, 'scriptease')
 spec(true, 'vim-zoom')
@@ -79,9 +79,10 @@ spec(true, 'quicker')
 spec(true, 'emoji')
 spec(true, 'ccc')
 spec(false, 'w3m')
-spec(true, 'bigfile')
+spec(false, 'bigfile') --NOTE disabled for snacks.nvim
 spec(true, 'autopairs')
 spec(true, 'auto-session')
+spec(false, 'persistence')
 spec(true, 'ibl')
 
 --<< AI >>--
@@ -94,9 +95,12 @@ spec(false, 'ai.copilot')
 spec(true, 'ui.lualine')          -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
-spec(true, 'ui.alpha')            -- start dashboard
+spec(false, 'ui.alpha')            -- start dashboard #NOTE disabled for snacks.nvim
 spec(true, 'ui.devicons')
 spec(false, 'ui.noice')
+
+--<< Snacks >>--
+spec(true, 'snacks')
 
 -- Loads all with lazy
 require 'custom.lazy'

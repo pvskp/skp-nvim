@@ -15,6 +15,8 @@ map('n', '<C-e>', ':Explore! 15<CR>', { silent = true, noremap = true })
 -- Copy line from cursor position
 map('n', 'Y', 'v$y')
 
+map('n', ',', '@@')
+
 map({ 'i', 'n' }, '<C-c>', '<Esc>')
 
 -- General movement mappings
