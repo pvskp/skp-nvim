@@ -16,7 +16,7 @@ return {
     symbols = {
       modified = "●",
       ellipsis = "…",
-      separator = "󰔰",
+      separator = ">",
     },
   },
   config = function(_, opts)

@@ -3,7 +3,8 @@ return {
   version = '*',
   event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
-    'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
+    -- 'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
+    "saghen/blink.cmp", -- needed for lsp capabilities
     {
       'williamboman/mason.nvim',
       version = '*',
@@ -136,7 +137,13 @@ return {
 
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    --
+    capabilities = vim.tbl_deep_extend(
+      'force',
+      capabilities,
+      require('blink.cmp').get_lsp_capabilities(capabilities)
+    )
 
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
