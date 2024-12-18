@@ -37,6 +37,7 @@ spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.mason-installer')
 spec(true, 'lsp.conform') -- formatter
 spec(true, 'lsp.cmp')     -- completion
+spec(false, 'lsp.blink')     -- completion
 
 --<< Language specific >>--
 
@@ -56,7 +57,6 @@ spec(false, 'mini.indentscope')
 spec(true, 'git.gitsigns') -- show git signs on columnsign
 spec(true, 'git.fugitive') -- git integration
 spec(true, 'git.conflict')
-spec(true, 'git.gitmoji')
 spec(true, 'git.neogit')
 
 --<< General >>--
@@ -76,7 +76,6 @@ spec(false, 'nvim-tree')
 spec(true, 'quarto')
 spec(true, 'slime')
 spec(true, 'quicker')
-spec(true, 'emoji')
 spec(true, 'ccc')
 spec(false, 'w3m')
 spec(false, 'bigfile') --NOTE disabled for snacks.nvim
