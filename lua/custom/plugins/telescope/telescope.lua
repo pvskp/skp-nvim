@@ -101,18 +101,37 @@ return {
       desc = 'List colorschemes',
     },
 
+    -- {
+    --   '<leader><space>',
+    --   function()
+    --     require('telescope.builtin').buffers {
+    --       ignore_current_buffer = false,
+    --       -- sorting_strategy = 'ascending',
+    --       sort_lastused = true,
+    --       -- prompt_title = false,
+    --       results_title = false,
+    --       layout_config = {
+    --         width = 0.5,
+    --         height = 0.5,
+    --         prompt_position = 'bottom',
+    --       },
+    --     }
+    --   end,
+    --   {},
+    -- },
+
     {
       '<leader><space>',
       function()
-        require('telescope.builtin').buffers {
+        require('telescope.builtin').marks {
           ignore_current_buffer = false,
           -- sorting_strategy = 'ascending',
           sort_lastused = true,
           -- prompt_title = false,
           results_title = false,
           layout_config = {
-            width = 0.5,
-            height = 0.5,
+            width = 0.9,
+            height = 0.9,
             prompt_position = 'bottom',
           },
         }

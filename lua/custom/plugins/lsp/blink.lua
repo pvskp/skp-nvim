@@ -9,8 +9,8 @@ return {
         local luasnip = require("luasnip")
         luasnip.filetype_extend("javascriptreact", { "html" })
         luasnip.filetype_extend("typescriptreact", { "html" })
-        require('luasnip.loaders.from_snipmate').lazy_load()
         require('luasnip.loaders.from_vscode').lazy_load()
+        require("luasnip.loaders.from_snipmate").lazy_load()
       end
     },
     'rafamadriz/friendly-snippets',
@@ -29,13 +29,32 @@ return {
     },
     sources = {
       default = { 'lsp', 'path', 'luasnip', 'buffer' },
+      providers = {
+        lsp = {
+          async = true,
+          -- async = function()
+          --   local clients = vim.lsp.get_clients({ bufnr = 0 })
+          --   for _, client in ipairs(clients) do
+          --     if client.name == 'marksman' then
+          --       return true
+          --       local
+          --     end
+          --     return false
+          --   end
+          -- end
+        }
+      },
     },
     windows = {
       documentation = {
         auto_show = true,
       },
     },
-    keymap = { preset = 'enter' },
+    keymap = {
+      preset = 'enter',
+      ['<C-l>'] = {'snippet_forward', 'fallback'},
+      ['<C-h>'] = {'snippet_backward', 'fallback'},
+    },
     completion = { accept = { auto_brackets = { enabled = true } } },
     signature = { enabled = true },
     opts_extend = { "sources.default" }
