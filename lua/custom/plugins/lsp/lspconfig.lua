@@ -210,7 +210,9 @@ return {
         lspconfig.ruff.setup {
           init_options = {
             settings = {
-              configurationPreference = "filesystemFirst"
+              configurationPreference = "filesystemFirst",
+              fixAll = true,
+              organizeImports = true
             }
           }
         }
