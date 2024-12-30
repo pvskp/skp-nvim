@@ -267,5 +267,14 @@ return {
 
     require('telescope').load_extension 'ui-select'
     require('telescope').load_extension 'git_worktree'
+
+    vim.keymap.set("n", "<space>ep", function()
+      local data_path = vim.fn.stdpath("data")
+      if type(data_path) == "string" then
+        require('telescope.builtin').find_files {
+          cwd = vim.fs.joinpath(data_path, "lazy")
+        }
+      end
+    end)
   end,
 }
