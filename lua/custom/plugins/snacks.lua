@@ -6,10 +6,7 @@ return {
     "rmagatti/auto-session",
   },
   keys = {
-    { ",st",
-      function()
-        require("snacks").terminal.toggle()
-      end, }
+    -- { ",st", function() require("snacks").terminal.toggle() end, }
   },
   opts = {
     -- your configuration comes here
@@ -56,7 +53,7 @@ return {
     input = { enabled = true },
     notifier = {
       enabled = true,
-      level = vim.log.levels.WARN
+      -- level = vim.log.levels.WARN
     },
     quickfile = { enabled = true },
     scope = { enabled = false },
