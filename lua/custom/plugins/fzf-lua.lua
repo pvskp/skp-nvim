@@ -82,7 +82,7 @@ return {
       "n",
       "<leader>ff",
       function()
-        fzf_lua.files({ resume = true })
+        fzf_lua.files({ resume = false })
       end,
       { desc = "Search Files" }
     )
