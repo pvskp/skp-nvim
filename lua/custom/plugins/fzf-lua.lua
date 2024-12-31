@@ -15,6 +15,9 @@ return {
     local fzf_lua = require("fzf-lua")
     local actions = fzf_lua.actions
     fzf_lua.setup({
+      files = {
+        cmd = "fd --type file",
+      },
       fzf_colors = {
         ["gutter"] = "-1",
         ["pointer"] = "blue",
@@ -24,7 +27,7 @@ return {
         builtin = {
           -- neovim `:tmap` mappings for the fzf win
           -- true,        -- uncomment to inherit all the below in your custom config
-          ["<M-Esc>"]    = "hide",  -- hide fzf-lua, `:FzfLua resume` to continue
+          ["<M-Esc>"]    = "hide", -- hide fzf-lua, `:FzfLua resume` to continue
           ["<F1>"]       = "toggle-help",
           ["<F2>"]       = "toggle-fullscreen",
           -- Only valid with the 'builtin' previewer
