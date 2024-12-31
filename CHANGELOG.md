@@ -43,3 +43,56 @@ All notable changes to this project will be documented in this file. See [commit
 * remove command with warning ([044920d](https://github.com/pvskp/skp-nvim/commit/044920d6a22c5adda5cd7d5885e86878e8244766))
 * **telescope:** not previewing .tsx files ([99344df](https://github.com/pvskp/skp-nvim/commit/99344df88f8d0e7909c1c46063ad950aacc84e77))
 * **treesitter:** disables html parser because of memory leak ([cc6946f](https://github.com/pvskp/skp-nvim/commit/cc6946ffee57cd361a9f6aa42c0e545f2fbd655a))
+
+## v1.2.0 (2024-12-31)
+
+### Feat
+
+- **colorscheme**: uses onedark colorscheme
+- **fzf-lua**: removes resume=true on file picker
+- **fzf-lua**: uses fdfind instead of find on file picker
+- **fzf-lua**: change fzf-lua current line colors
+
+### Fix
+
+- **completion**: disable Dynge/gitmoji.nvim telescope integration
+
+## v1.1.0 (2024-12-30)
+
+### Feat
+
+- **seach**: use fzf-lua instead of telescope
+- **telescope**: adds <leader>ep keybind
+- **lspconfig**: more functionalities on ruff
+- **color**: uses catppuccin-frappe
+- **blink.cmp**: install blink.cmp but do not use it yet
+- **cmp-path**: uses my fork of cmp-path
+- **barbecue**: uses barbecue
+- add colurcolumn
+- **treessitter**: disables ts-context
+- install gruvbox
+- create command to list snips
+- add sane config to nvim-tree
+- add eslint_d as js/ts linter
+- add barbecue.nvim
+- add tokyo-night colorscheme
+- **html**: adds ftplugin for html
+- add rosepine colors table
+- adds outline
+- add quicker.nvim
+- add global set_hl
+- better shell script execution
+- format `sh` files with beautysh
+- creates command to remove ANSI chars
+- **filemanager**: replace mini.files by oil
+- **ui**: Replace 'statuscol' by simpler solution
+
+### Fix
+
+- **alpha**: keybinds not working on dashboard
+- remove command with warning
+- **treesitter**: disables html parser because of memory leak
+- **telescope**: not previewing .tsx files
+- helm_ls config on mason
+- colors
+- disables eyeliner on Neogit
