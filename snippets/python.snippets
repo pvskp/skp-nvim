@@ -1,2 +1,14 @@
 snippet pa "from pathlib import Path"
   from pathlib import Path
+
+snippet fun "Declare a new function"
+  def ${1}(${2}) -> ${3}:
+    ${4}
+
+snippet met "Declare a new class method"
+  def ${1}(self, ${2}) -> ${3}:
+    ${4}
+
+snippet init "Declare a __init__() method"
+  def __init__(self, ${1}) -> ${2}:
+    ${3}

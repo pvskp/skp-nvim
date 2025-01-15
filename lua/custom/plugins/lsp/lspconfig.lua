@@ -206,6 +206,11 @@ return {
           },
         }
       end,
+      ["taplo"] = function()
+        lspconfig.taplo.setup {
+          cmd = { "taplo", "lsp", "stdio" }
+        }
+      end,
       ['ruff'] = function()
         lspconfig.ruff.setup {
           init_options = {

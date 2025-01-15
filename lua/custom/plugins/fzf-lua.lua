@@ -16,7 +16,7 @@ return {
     local actions = fzf_lua.actions
     fzf_lua.setup({
       files = {
-        cmd = "fd --type file",
+        cmd = "fd --type file --hidden --exclude .git/",
       },
       fzf_colors = {
         ["gutter"] = "-1",
@@ -109,5 +109,23 @@ return {
       { desc = "Search Workspace symbols" })
     set("n", "<leader>sw", fzf_lua.grep_cword, { desc = "Search word under cursor" })
     -- set("n", "<leader>la", fzf_lua.lsp_code_actions, { desc = "List available code actions" })
+
+
+
+    local fzf_conflicted_files = function(opts)
+      opts = opts or {}
+      opts.prompt = "Conflict Files> "
+      opts.fn_transform = function(x)
+        return fzf_lua.utils.ansi_codes.magenta(x)
+      end
+      opts.actions = {
+        ['default'] = function(selected)
+          vim.cmd("edit " .. selected[1])
+        end
+      }
+      fzf_lua.fzf_exec("git diff --name-only --diff-filter=U", opts)
+    end
+
+    vim.api.nvim_create_user_command('Conflicts', fzf_conflicted_files, {})
   end
 }
