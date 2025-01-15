@@ -14,10 +14,10 @@ require 'custom.colors'
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
-spec(false, 'colorscheme.rose-pine')
+spec(true, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.tokyo-night')
-spec(true, 'colorscheme.onedark')
+spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
