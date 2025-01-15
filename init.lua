@@ -89,6 +89,7 @@ spec(true, 'ibl')
 
 spec(false, 'ai.codeium')
 spec(false, 'ai.copilot')
+spec(true, 'ai.avante')
 
 --<< UI >>--
 
