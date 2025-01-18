@@ -121,7 +121,20 @@ return {
       opts.actions = {
         ['default'] = function(selected)
           vim.cmd("edit " .. selected[1])
-        end
+        end,
+        ["ctrl-q"] = actions.file_sel_to_qf,
+      }
+
+      opts.keymap = {
+        builtin = {
+          ["<C-f>"] = "preview-page-down",
+          ["<C-b>"] = "preview-page-up",
+        }
+      }
+
+      opts.previewer = "builtin"
+      opts.fzf_opts = {
+        ["--multi"] = true,
       }
       fzf_lua.fzf_exec("git diff --name-only --diff-filter=U", opts)
     end

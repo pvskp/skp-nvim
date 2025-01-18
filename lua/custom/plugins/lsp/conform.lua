@@ -22,7 +22,7 @@ return {
       sh = { 'beautysh' },
       bash = { 'beautysh' },
       -- python = { 'autoflake', 'isort', 'black' },
-      python = { 'ruff_format' },
+      python = { 'ruff' },
       javascript = { 'prettier' },
       json = { 'prettier' },
       html = { 'prettier' },
@@ -35,17 +35,17 @@ return {
       zsh = { 'beautysh' },
     },
 
-    -- format_on_save = {
-    --   -- I recommend these options. See :help conform.format for details.
-    --   lsp_fallback = true,
-    --   timeout_ms = 1000,
-    --   quiet = true,
-    --   callback = function(err, _)
-    --     if err ~= nil then
-    --       vim.notify 'Failed to format file. See :ConformInfo for more information.'
-    --     end
-    --   end,
-    -- },
+    format_on_save = {
+      -- I recommend these options. See :help conform.format for details.
+      lsp_fallback = true,
+      timeout_ms = 1000,
+      quiet = true,
+      callback = function(err, _)
+        if err ~= nil then
+          vim.notify 'Failed to format file. See :ConformInfo for more information.'
+        end
+      end,
+    },
   },
   config = function(_, opts)
     require('conform').setup(opts)
