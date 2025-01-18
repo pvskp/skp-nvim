@@ -3,10 +3,6 @@ return {
   name = 'rose-pine',
   priority = 1000,
   lazy = false,
-  init = function()
-    vim.opt.laststatus = 2 -- Or 3 for global statusline
-    vim.opt.statusline = " %f %m %= %y %p%% "
-  end,
   opts = {
     variant = 'moon',      -- auto, main, moon, or dawn
     dark_variant = 'moon', -- main, moon, or dawn
@@ -24,7 +20,8 @@ return {
       Comment = { italic = true },
       StatusLine = { fg = "love", bg = "love", blend = 10 },
       StatusLineNC = { fg = "subtle", bg = "surface" },
-
+      ["@markup.link.label.tsx"] = { fg = "love", underline = false },
+      htmlLink = { underline = false },
       -- VertSplit = { fg = "muted", bg = "muted" },
     },
 
@@ -38,12 +35,5 @@ return {
   config = function(_, opts)
     require('rose-pine').setup(opts)
     vim.cmd [[colorscheme rose-pine]]
-
-    -- set_hl("StatusLine", { fg = "#ffffff", bg = "#907aa9" })
-    -- set_hl("TreesitterContextBottom", { underline = true, sp = "#907aa9" })
-    set_hl("htmlLink", { underline = false })
-    set_hl("@markup.link.label.tsx", { fg = Rosepine.love, underline = false })
   end,
 }
-
---- TreesitterContextBottom xxx cterm=underline gui=underline guisp=NvimDarkGrey3
