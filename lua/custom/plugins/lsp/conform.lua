@@ -8,8 +8,11 @@ return {
       conform.format({
           lsp_format = "fallback"
         },
-        function()
-          vim.notify("Buffer was successfully formatted", 2)
+        -- @param err nil|err
+        function(err, did_edit)
+          if did_edit and err == nil then
+            vim.notify("Buffer was successfully formatted", 2)
+          end
         end
       )
     end

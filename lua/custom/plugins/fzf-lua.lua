@@ -21,7 +21,7 @@ return {
       fzf_colors = {
         ["gutter"] = "-1",
         ["pointer"] = "blue",
-        ["current-bg"] = "blue",
+        -- ["current-bg"] = "blue",
       },
       keymap = {
         builtin = {
