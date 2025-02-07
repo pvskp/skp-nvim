@@ -22,6 +22,7 @@ return {
       StatusLineNC = { fg = "subtle", bg = "surface" },
       ["@markup.link.label.tsx"] = { fg = "love", underline = false },
       htmlLink = { underline = false },
+      CursorLineNr = { fg = "love" },
       -- VertSplit = { fg = "muted", bg = "muted" },
     },
 

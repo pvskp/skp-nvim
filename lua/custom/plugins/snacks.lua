@@ -56,7 +56,7 @@ return {
     input = { enabled = true },
     notifier = {
       enabled = true,
-      level = vim.log.levels.INFO
+      level = vim.log.levels.WARN
     },
     quickfile = { enabled = true },
     scope = { enabled = false },

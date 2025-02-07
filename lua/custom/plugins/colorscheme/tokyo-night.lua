@@ -11,6 +11,16 @@ return {
       sidebars = "dark", -- style for sidebars, see below
       floats = "dark",   -- style for floating windows
     },
+      on_highlights = function(hl, c)
+        hl.StatusLine = {
+          bg = c.purple,
+          fg = "#ffffff",
+        }
+        hl.StatusLineMode = {
+          bg = c.dark3,
+          fg = "#ffffff",
+        }
+      end,
     dim_inactive = true, -- dims inactive windows
   },
   config = function(_, opts)
