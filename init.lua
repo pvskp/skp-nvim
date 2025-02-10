@@ -15,9 +15,9 @@ require 'custom.colors'
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
-spec(false, 'colorscheme.rose-pine')
+spec(true, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.gruvbox')
-spec(true, 'colorscheme.tokyo-night')
+spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
@@ -70,7 +70,7 @@ spec(true, 'surround')             -- surround text with quotes, brackets, etc
 spec(true, 'hop')                  -- jump to any word in the screen
 spec(false, 'eyeliner')            -- quick jump with f, F, t, T
 spec(true, 'which-key')
-spec(true, 'scriptease')
+-- spec(true, 'scriptease')
 spec(true, 'vim-zoom')
 spec(true, 'codesnap')
 spec(true, 'neogen')
