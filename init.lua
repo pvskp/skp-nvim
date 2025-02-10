@@ -64,7 +64,6 @@ spec(true, 'undotree')             -- show undo tree
 spec(true, 'tmux')                 -- tmux integration
 spec(true, 'surround')             -- surround text with quotes, brackets, etc
 spec(true, 'hop')                  -- jump to any word in the screen
-spec(false, 'eyeliner')            -- quick jump with f, F, t, T
 spec(true, 'which-key')
 -- spec(true, 'scriptease')
 spec(true, 'vim-zoom')
@@ -88,9 +87,7 @@ spec(true, 'ai.avante')
 
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
-spec(false, 'ui.alpha')           -- start dashboard #NOTE disabled for snacks.nvim
 spec(true, 'ui.devicons')
-spec(false, 'ui.noice')
 
 --<< Snacks >>--
 spec(true, 'snacks')
