@@ -80,11 +80,8 @@ spec(true, 'slime')
 spec(true, 'quicker')
 spec(true, 'ccc')
 spec(false, 'w3m')
-spec(false, 'bigfile') --NOTE disabled for snacks.nvim
 spec(true, 'autopairs')
 spec(true, 'auto-session')
-spec(false, 'persistence')
-spec(false, 'ibl') -- indent animation
 
 --<< AI >>--
 
