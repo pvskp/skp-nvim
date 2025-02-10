@@ -30,7 +30,6 @@ spec(false, 'colorscheme.adwaita')
 
 spec(true, 'lsp.treesiter')
 spec(true, 'lsp.barbecue')
-spec(false, 'lsp.dropbar')
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.lazydev')   -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
@@ -51,7 +50,6 @@ spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
 spec(false, 'mini.files') -- minitree (best tree plugin)
-spec(false, 'mini.indentscope')
 
 --<< Git integrations >>--
 
@@ -72,7 +70,6 @@ spec(true, 'which-key')
 spec(true, 'vim-zoom')
 spec(true, 'codesnap')
 spec(true, 'neogen')
-spec(false, 'nvim-tree')
 spec(true, 'quarto')
 spec(true, 'slime')
 spec(true, 'quicker')
