@@ -16,6 +16,7 @@ return {
     { "<leader>sw", function() Snacks.picker.grep_word() end,                                  desc = "Visual selection or word", mode = { "n", "x" } },
     { "<leader>h",  function() Snacks.picker.help() end,                                       desc = "Help Pages" },
     { "<leader>sp", function() Snacks.picker.lazy() end,                                       desc = "Search for Plugin Spec" },
+    { "<leader>fc", function() Snacks.picker.commands() end,                                   desc = "Commands" },
 
     -- git
     { "<leader>gl", function() Snacks.picker.git_log() end,                                    desc = "Git Log" },
@@ -114,10 +115,12 @@ return {
     scope = { enabled = false },
     scroll = { enabled = false },
     statuscolumn = { enabled = true },
+    gitbrowse = { enabled = true },
     words = { enabled = true },
   },
   config = function(_, opts)
     Snacks.setup(opts)
     vim.api.nvim_create_user_command('NotificationHistory', Snacks.notifier.show_history, {})
+    vim.api.nvim_create_user_command('GitBrowser', function() Snacks.gitbrowse() end, {})
   end
 }

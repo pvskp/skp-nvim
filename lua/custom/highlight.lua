@@ -6,6 +6,10 @@
 
 -- vim.cmd 'highlight! link FloatBorder NormalFloat'
 
+-- vim.api.nvim_set_hl(0, "Visual", {
+--   bg = "#283457"
+-- })
+
 -- vim.api.nvim_set_hl(0, 'FloatBorder', {
 --   fg = Get_highlight_bg("NormalFloat"),
 --   bg = Get_highlight_bg("NormalFloat")

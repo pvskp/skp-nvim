@@ -6,7 +6,8 @@
         "spec",
         "_execute_shell_script",
         "nord",
-        "set_hl"
+        "set_hl",
+        "Snacks"
     ],
     "diagnostics.disable": [
         "unused-local"
