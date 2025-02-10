@@ -6,10 +6,24 @@ return {
     "rmagatti/auto-session",
   },
   keys = {
-    { ",st",
-      function()
-        require("snacks").terminal.toggle()
-      end, }
+    { ",st",        function() require("snacks").terminal.toggle() end,                        desc = "Open terminal" },
+    { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end,                     desc = "Find files" },
+    { "<leader>:",  function() Snacks.picker.command_history() end,                            desc = "Command History" },
+    { "<leader>gg", function() Snacks.picker.grep() end,                                       desc = "Grep" },
+    { "<C-e>",      function() Snacks.explorer() end,                                          desc = "File Explorer" },
+    { "<leader>fp", function() Snacks.picker.projects({ dev = { "~/Documents/repos/" } }) end, desc = "Projects" },
+    { "<leader>fb", function() Snacks.picker.buffers() end,                                    desc = "Buffers" },
+    { "<leader>sw", function() Snacks.picker.grep_word() end,                                  desc = "Visual selection or word", mode = { "n", "x" } },
+    { "<leader>h",  function() Snacks.picker.help() end,                                       desc = "Help Pages" },
+    { "<leader>sp", function() Snacks.picker.lazy() end,                                       desc = "Search for Plugin Spec" },
+
+    -- git
+    { "<leader>gl", function() Snacks.picker.git_log() end,                                    desc = "Git Log" },
+
+    -- lsp
+    { "<leader>ws", function() Snacks.picker.lsp_workspace_symbols() end,                      desc = "LSP Workspace Symbols" },
+    { "gr",         function() Snacks.picker.lsp_references() end,                             desc = "References",               nowait = true },
+    { "gd",         function() Snacks.picker.lsp_definitions() end,                            desc = "Goto Definition" },
   },
   opts = {
     -- your configuration comes here
@@ -52,11 +66,49 @@ return {
         -- },
       },
     },
-    indent = { enabled = true },
-    input = { enabled = true },
+    indent = {
+      enabled = true,
+      animate = {
+        enabled = false,
+      },
+    },
+    explorer = {
+      replace_netrw = true, -- Replace netrw with the snacks explorer
+    },
+    input = {
+      enabled = true,
+      win = {
+        style = {
+          keys = {
+            n_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "n", expr = true },
+            i_esc = { "<esc>", { "cmp_close", "cancel" }, mode = "i", expr = true },
+            i_cr = { "<cr>", { "cmp_accept", "confirm" }, mode = "i", expr = true },
+            i_tab = { "<tab>", { "cmp_select_next", "cmp" }, mode = "i", expr = true },
+            i_ctrl_w = { "<c-w>", "<c-s-w>", mode = "i", expr = true },
+            i_up = { "<up>", { "hist_up" }, mode = { "i", "n" } },
+            i_down = { "<down>", { "hist_down" }, mode = { "i", "n" } },
+            q = "cancel",
+          },
+        }
+      },
+    },
     notifier = {
       enabled = true,
       level = vim.log.levels.WARN
+    },
+    picker = {
+      enabled = true,
+      layout = {
+        -- preset = "ivy",
+      },
+      win = {
+        input = {
+          keys = {
+            ["<Esc>"] = { "close", mode = { "n", "i" } },
+          }
+        }
+      },
+
     },
     quickfile = { enabled = true },
     scope = { enabled = false },
@@ -65,8 +117,7 @@ return {
     words = { enabled = true },
   },
   config = function(_, opts)
-    local snacks = require("snacks")
-    snacks.setup(opts)
-    vim.api.nvim_create_user_command('NotificationHistory', snacks.notifier.show_history, {})
+    Snacks.setup(opts)
+    vim.api.nvim_create_user_command('NotificationHistory', Snacks.notifier.show_history, {})
   end
 }

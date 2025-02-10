@@ -50,7 +50,7 @@ spec(false, 'languages.markdown.render-markdown')
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
-spec(true, 'mini.files') -- minitree (best tree plugin)
+spec(false, 'mini.files') -- minitree (best tree plugin)
 spec(false, 'mini.indentscope')
 
 --<< Git integrations >>--
@@ -65,7 +65,7 @@ spec(true, 'git.neogit')
 spec(true, 'undotree')             -- show undo tree
 spec(true, 'tmux')                 -- tmux integration
 spec(false, 'telescope.telescope') -- fuzzy finder
-spec(true, 'fzf-lua')              -- fuzzy finder
+spec(false, 'fzf-lua')              -- fuzzy finder
 spec(true, 'surround')             -- surround text with quotes, brackets, etc
 spec(true, 'hop')                  -- jump to any word in the screen
 spec(false, 'eyeliner')            -- quick jump with f, F, t, T
@@ -84,7 +84,7 @@ spec(false, 'bigfile') --NOTE disabled for snacks.nvim
 spec(true, 'autopairs')
 spec(true, 'auto-session')
 spec(false, 'persistence')
-spec(true, 'ibl')
+spec(false, 'ibl') -- indent animation
 
 --<< AI >>--
 
