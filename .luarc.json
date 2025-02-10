@@ -3,6 +3,7 @@
         "vim",
         "spec",
         "_execute_shell_script",
-        "set_hl"
+        "set_hl",
+        "Snacks"
     ]
 }
