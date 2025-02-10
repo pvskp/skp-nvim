@@ -68,18 +68,18 @@ return {
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
 
-      keymap.set(
-        'n',
-        '<leader>.',
-        '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
-        { desc = '[T]oggle inlay_hint', silent = true }
-      )
+      -- keymap.set(
+      --   'n',
+      --   '<leader>.',
+      --   '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
+      --   { desc = '[T]oggle inlay_hint', silent = true }
+      -- )
 
-      opts.desc = 'Go to declaration'
-      keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
+      -- opts.desc = 'Go to declaration'
+      -- keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
 
-      opts.desc = 'Go to definition'
-      keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- go to declaration
+      -- opts.desc = 'Go to definition'
+      -- keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- go to declaration
 
       opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gv', function()
