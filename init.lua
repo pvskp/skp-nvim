@@ -64,7 +64,6 @@ spec(true, 'git.neogit')
 
 spec(true, 'undotree')             -- show undo tree
 spec(true, 'tmux')                 -- tmux integration
-spec(false, 'telescope.telescope') -- fuzzy finder
 spec(true, 'surround')             -- surround text with quotes, brackets, etc
 spec(true, 'hop')                  -- jump to any word in the screen
 spec(false, 'eyeliner')            -- quick jump with f, F, t, T
