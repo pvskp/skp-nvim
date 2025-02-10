@@ -86,7 +86,6 @@ spec(true, 'ai.avante')
 
 --<< UI >>--
 
-spec(false, 'ui.lualine')         -- statusline
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(false, 'ui.alpha')           -- start dashboard #NOTE disabled for snacks.nvim
