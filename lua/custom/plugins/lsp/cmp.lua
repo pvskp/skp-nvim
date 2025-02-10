@@ -129,14 +129,14 @@ return {
             },
           },
         },
-        ['<C-x>'] = cmp.mapping.complete {
-          config = {
-            sources = {
-              { name = 'copilot' },
-              { name = 'codeium' },
-            },
-          },
-        },
+        -- ['<C-x>'] = cmp.mapping.complete {
+        --   config = {
+        --     sources = {
+        --       { name = 'copilot' },
+        --       { name = 'codeium' },
+        --     },
+        --   },
+        -- },
         ['<C-v>'] = cmp.mapping.complete {
           config = {
             sources = {
