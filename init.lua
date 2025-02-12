@@ -15,9 +15,9 @@ require 'custom.colors'
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
-spec(true, 'colorscheme.rose-pine')
+spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.gruvbox')
-spec(false, 'colorscheme.tokyo-night')
+spec(true, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.catppuccin')
@@ -49,7 +49,7 @@ spec(false, 'languages.markdown.render-markdown')
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
-spec(false, 'mini.files') -- minitree (best tree plugin)
+spec(true, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
