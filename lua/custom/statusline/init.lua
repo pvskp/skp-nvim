@@ -1,13 +1,12 @@
-require("custom.statusline.highlights")
+-- require("custom.statusline.highlights")
+require("custom.statusline.themes.tokyo-night")
 
 local statusline_time = require("custom.statusline.time")
 local git = require("custom.statusline.git")
-
 local filetype_to_extension = require("custom.statusline.filetypes")
 local extension_to_icon = require("custom.statusline.icon_by_file_extension")
 
 statusline_time.setup()
-
 
 ---@diagnostic disable: param-type-mismatch
 local modes = {
@@ -52,7 +51,11 @@ end
 function Statusline.filename()
   local extension = filetype_to_extension[vim.bo.filetype]
   if extension ~= nil then
-    local icon = extension_to_icon[extension].icon
+    local icon_t = extension_to_icon[extension]
+    local icon = ""
+    if icon_t ~= nil then
+      icon = icon_t.icon
+    end
     return string.format(" %s  %%f ", icon)
   end
   return " %f "
@@ -94,8 +97,10 @@ end
 
 function Statusline.right()
   return table.concat({
-    "",
+    "%#StatuslineSeparator#",
+    "",
     "%#StatuslineMode#",
+    " ",
     Statusline.time()
   })
 end
@@ -104,9 +109,11 @@ function Statusline.left()
   return table.concat({
     "%#StatuslineMode#",
     Statusline.mode(),
+    "%#IconBranch#",
     Statusline.branch(),
+    "%#StatuslineSeparator#",
+    "",
     "%#Statusline#",
-    "",
   })
 end
 
@@ -128,7 +135,8 @@ function Statusline.active()
 end
 
 function Statusline.setup()
-  vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+
+  vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "TermLeave", "TermClose" }, {
     pattern = "*",
     command = "setlocal statusline=%!v:lua.Statusline.active()"
   })
@@ -137,19 +145,9 @@ function Statusline.setup()
     pattern = "*",
     command = "setlocal statusline=%!v:lua.Statusline.inactive()"
   })
+
   return Statusline.active()
 end
-
-function Statusline.aa()
-  return "Hello world!"
-end
-
--- local timer = vim.uv.new_timer()
--- timer:start(0, 1000, function()
---   vim.schedule(function ()
---     vim.opt.statusline = "%!v:lua.Statusline.setup()"
---   end)
--- end)
 
 vim.opt.laststatus = 2
 vim.opt.statusline = "%!v:lua.Statusline.setup()"

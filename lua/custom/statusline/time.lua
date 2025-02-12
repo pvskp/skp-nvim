@@ -4,7 +4,6 @@ local date_format = "%H:%M:%S"
 
 local dynamic_time = os.date(date_format)
 
-
 function M.get_time()
   return dynamic_time
 end
