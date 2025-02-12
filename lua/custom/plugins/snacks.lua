@@ -10,7 +10,7 @@ return {
     { "<leader>ff", function() Snacks.picker.files({ hidden = true }) end,                     desc = "Find files" },
     { "<leader>:",  function() Snacks.picker.command_history() end,                            desc = "Command History" },
     { "<leader>gg", function() Snacks.picker.grep() end,                                       desc = "Grep" },
-    { "<C-e>",      function() Snacks.explorer() end,                                          desc = "File Explorer" },
+    -- { "<C-e>",      function() Snacks.explorer() end,                                          desc = "File Explorer" },
     { "<leader>fp", function() Snacks.picker.projects({ dev = { "~/Documents/repos/" } }) end, desc = "Projects" },
     { "<leader>fb", function() Snacks.picker.buffers() end,                                    desc = "Buffers" },
     { "<leader>sw", function() Snacks.picker.grep_word() end,                                  desc = "Visual selection or word", mode = { "n", "x" } },
@@ -27,9 +27,6 @@ return {
     { "gd",         function() Snacks.picker.lsp_definitions() end,                            desc = "Goto Definition" },
   },
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
     bigfile = { enabled = true },
     dashboard = {
       enabled = true,
@@ -74,7 +71,7 @@ return {
       },
     },
     explorer = {
-      replace_netrw = true, -- Replace netrw with the snacks explorer
+      replace_netrw = false, -- Replace netrw with the snacks explorer
     },
     input = {
       enabled = true,
