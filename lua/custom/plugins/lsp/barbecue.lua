@@ -11,7 +11,7 @@ return {
   },
   opts = {
     theme = {
-      -- normal = { bg = "#26233A" }
+      normal = { bg = "#16161E" }
     },
     symbols = {
       modified = "●",
