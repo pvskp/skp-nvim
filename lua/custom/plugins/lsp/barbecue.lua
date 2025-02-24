@@ -17,11 +17,11 @@ return {
       theme = {
         normal = { bg = tsctx.bg }
       },
-      symbols = {
-        modified = "●",
-        ellipsis = "…",
-        separator = ">",
-      },
+      -- symbols = {
+      --   modified = "●",
+      --   ellipsis = "…",
+      --   separator = ">",
+      -- },
     }
     require("barbecue").setup(opts)
   end

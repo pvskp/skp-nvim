@@ -24,6 +24,7 @@ return {
       hl.TreesitterContextBottom = { underline = true, sp = c.bg_highlight }
       hl.TreesitterContext = { bg = c.bg_dark }
       hl.TreesitterContextLineNumber = { bg = c.bg_dark, fg = c.fg }
+      hl.NormalFloat = { bg = c.bg_dark }
     end,
     dim_inactive = true, -- dims inactive windows
   },
