@@ -26,18 +26,19 @@ spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
 
+spec(true, 'treesiter')
+spec(true, 'conform') -- formatter
+spec(true, 'lazydev') -- offers completion to neovim functions
+
 --<< LSP related >>--
 
-spec(true, 'lsp.treesiter')
 spec(true, 'lsp.barbecue')
 spec(true, 'lsp.nvim-lint') -- linting
-spec(true, 'lsp.lazydev')   -- offers completion to neovim functions
 spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.mason-installer')
-spec(true, 'lsp.conform') -- formatter
-spec(true, 'lsp.cmp')     -- completion
-spec(false, 'lsp.blink')  -- completion
+spec(true, 'lsp.cmp')    -- completion
+spec(false, 'lsp.blink') -- completion
 
 --<< Language specific >>--
 
@@ -60,10 +61,10 @@ spec(true, 'git.neogit')
 
 --<< General >>--
 
-spec(true, 'undotree')             -- show undo tree
-spec(true, 'tmux')                 -- tmux integration
-spec(true, 'surround')             -- surround text with quotes, brackets, etc
-spec(true, 'hop')                  -- jump to any word in the screen
+spec(true, 'undotree') -- show undo tree
+spec(true, 'tmux')     -- tmux integration
+spec(true, 'surround') -- surround text with quotes, brackets, etc
+spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'which-key')
 -- spec(true, 'scriptease')
 spec(true, 'vim-zoom')

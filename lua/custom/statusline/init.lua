@@ -56,7 +56,7 @@ function Statusline.filename()
     if icon_t ~= nil then
       icon = icon_t.icon
     end
-    return string.format(" %s  %%f ", icon)
+    return string.format(" %s %%f ", icon)
   end
   return " %f "
 end
