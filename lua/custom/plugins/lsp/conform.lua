@@ -10,8 +10,12 @@ return {
         },
         -- @param err nil|err
         function(err, did_edit)
+          P(err)
+          print(did_edit)
           if did_edit and err == nil then
             vim.notify("Buffer was successfully formatted", 2)
+          elseif err ~= nil then
+            vim.notify("Failed to format buffer: " .. err, vim.log.levels.ERROR)
           end
         end
       )
@@ -25,7 +29,7 @@ return {
       sh = { 'beautysh' },
       bash = { 'beautysh' },
       -- python = { 'autoflake', 'isort', 'black' },
-      python = { 'ruff' },
+      python = { 'ruff_format', 'ruff_fix' },
       javascript = { 'prettier' },
       json = { 'prettier' },
       html = { 'prettier' },
