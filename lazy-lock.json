@@ -51,6 +51,7 @@
   "quicker.nvim": { "branch": "master", "commit": "5e272a7b88892c4313f25b09a11e2ae5ebc68ba5" },
   "snacks.nvim": { "branch": "main", "commit": "d416302d4d26b696ae394a06cf47d559bc2075b4" },
   "tmux.nvim": { "branch": "main", "commit": "307bad95a1274f7288aaee09694c25c8cbcd6f1a" },
+  "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "tokyonight.nvim": { "branch": "main", "commit": "84ea0b5f4651afdf50ececaf6f110fe9d9dc9458" },
   "undotree": { "branch": "master", "commit": "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f" },
   "vim-fugitive": { "branch": "master", "commit": "b068eaf1e6cbe35d1ac100d435cd7f7b74a5c87d" },
