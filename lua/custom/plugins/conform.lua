@@ -55,8 +55,10 @@ return {
   config = function(_, opts)
     require('conform').setup(opts)
 
+    local conform_personal = vim.api.nvim_create_augroup("ConformPersonal", { clear = true })
     -- Use this instead format_on_save so I can exclude specific files
     vim.api.nvim_create_autocmd("BufWritePre", {
+      group = conform_personal,
       pattern = "*",
       callback = function(ctx)
         -- require("conform").format({ bufnr = ctx.buf })
