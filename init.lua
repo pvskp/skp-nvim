@@ -77,6 +77,7 @@ spec(true, 'ccc')
 spec(false, 'w3m')
 spec(true, 'autopairs')
 spec(true, 'auto-session')
+spec(true, 'todo-comments')
 
 --<< AI >>--
 
