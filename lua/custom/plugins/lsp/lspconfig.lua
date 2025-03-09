@@ -28,8 +28,6 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    -- setupLspSignature()
-
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
       -- border = Borders.simple,
     })
@@ -80,6 +78,11 @@ return {
 
       -- opts.desc = 'Go to definition'
       -- keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- go to declaration
+
+      opts.desc = "Toggle inlay hint"
+      keymap.set('n', '<leader>.', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end)
 
       opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gv', function()
@@ -173,8 +176,21 @@ return {
       },
     }
 
-    lspconfig.pyright.setup {
+    lspconfig.basedpyright.setup {
       capabilities = capabilities,
+      settings = {
+        basedpyright = {
+          disableOrganizeImports = true,
+          reportMissingImports = true,
+          analysis = {
+            autoSearchPaths = true,
+            typeCheckingMode = "recommended",
+            autoImportCompletions = true,
+            useLibraryCodeForTypes = true,
+            diagnosticMode = 'workspace',
+          },
+        },
+      },
       on_attach = on_attach,
     }
 
