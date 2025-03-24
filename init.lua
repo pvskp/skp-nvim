@@ -68,7 +68,7 @@ spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(true, 'hop')      -- jump to any word in the screen
 spec(true, 'which-key')
 -- spec(true, 'scriptease')
-spec(true, 'vim-zoom')
+spec(false, 'vim-zoom')
 spec(true, 'codesnap')
 spec(true, 'neogen')
 spec(true, 'quarto')
