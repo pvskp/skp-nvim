@@ -176,10 +176,10 @@ return {
       },
     }
 
-    lspconfig.basedpyright.setup {
+    lspconfig.pyright.setup {
       capabilities = capabilities,
       settings = {
-        basedpyright = {
+        pyright = {
           disableOrganizeImports = true,
           reportMissingImports = true,
           analysis = {
@@ -193,6 +193,24 @@ return {
       },
       on_attach = on_attach,
     }
+
+    -- lspconfig.basedpyright.setup {
+    --   capabilities = capabilities,
+    --   settings = {
+    --     basedpyright = {
+    --       disableOrganizeImports = true,
+    --       reportMissingImports = true,
+    --       analysis = {
+    --         autoSearchPaths = true,
+    --         typeCheckingMode = "recommended",
+    --         autoImportCompletions = true,
+    --         useLibraryCodeForTypes = true,
+    --         diagnosticMode = 'workspace',
+    --       },
+    --     },
+    --   },
+    --   on_attach = on_attach,
+    -- }
 
     mason_lspconfig.setup_handlers {
       function(server_name) -- default handler

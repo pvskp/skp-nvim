@@ -9,7 +9,7 @@ return {
         'goimports',
         'gopls',
         -- Python
-        'basedpyright',
+        'pyright',
         -- lua
         'lua_ls',
         'stylua',
