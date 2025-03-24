@@ -6,6 +6,12 @@ local opts = { silent = true, noremap = false }
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- horizontal scroll
+map('n', '<Left>', 'z2h')
+map('n', '<Right>', 'z2l')
+
+map('n', '<S-ScrollWheelDown>', 'z3h')
+map('n', '<S-ScrollWheelUp>', 'z3l')
 -- Disable space key
 map('n', '<Space>', '<Nop>', { silent = true, remap = false })
 
