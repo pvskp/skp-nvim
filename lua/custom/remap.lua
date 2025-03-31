@@ -141,4 +141,32 @@ map('n', '<leader>6', '<cmd>tabn 6<CR>')
 map('n', '<leader>7', '<cmd>tabn 7<CR>')
 map('n', '<leader>8', '<cmd>tabn 8<CR>')
 map('n', '<leader>9', '<cmd>tabn 9<CR>')
-map('n', '<c-w>m', '<cmd>tabnew %<CR>')
+-- map('n', '<c-w>m', '<cmd>tabnew %<CR>')
+map('n', '<c-w>m', function()
+  -- if have less than 2 window, do not open a new tab
+  local windows = vim.api.nvim_tabpage_list_wins(0)
+  if #windows < 2 then
+    return
+  end
+
+  -- count how many common windows (focusable) we have
+  -- this helps to avoid things like ts-context and nvim-navic to be counted
+  -- as a window
+  local count = 0
+  for _, win_id in ipairs(windows) do
+    local config = vim.api.nvim_win_get_config(win_id)
+    if config.relative == "" then
+      count = count + 1
+    end
+  end
+
+  -- if it's only one, do not open a new tab
+  if count < 2 then
+    return
+  end
+
+  -- open a new tab
+  local pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd("tabnew %")
+  vim.api.nvim_win_set_cursor(0, pos)
+end)
