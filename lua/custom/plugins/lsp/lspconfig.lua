@@ -28,13 +28,6 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-      -- border = Borders.simple,
-    })
-    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      -- border = Borders.simple,
-    })
-
     vim.diagnostic.config {
       virtual_text = false,
       underline = true,
@@ -45,14 +38,24 @@ return {
 
     local signs = Symbols.diagnostics
 
-    for type, icon in pairs(signs) do
-      local hl = 'DiagnosticSign' .. type
-      vim.fn.sign_define(hl, {
-        text = icon,
-        texthl = hl,
-        numhl = '',
-      })
-    end
+    -- for type, icon in pairs(signs) do
+    -- local hl = 'DiagnosticSign' .. type
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = " ",
+          [vim.diagnostic.severity.WARN] = " ",
+          [vim.diagnostic.severity.INFO] = " ",
+          [vim.diagnostic.severity.HINT] = " "
+        }
+      }
+    })
+    --   vim.fn.sign_define(hl, {
+    --     text = icon,
+    --     texthl = hl,
+    --     numhl = '',
+    --   })
+    -- end
 
     local mason_lspconfig = require 'mason-lspconfig'
     local lspconfig = require 'lspconfig'
@@ -80,12 +83,22 @@ return {
       -- keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- go to declaration
 
       opts.desc = "Toggle inlay hint"
-      keymap.set('n', '<leader>.', function()
+      keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end)
 
-      opts.desc = 'Go to declaration in vertical split'
-      keymap.set('n', 'gv', function()
+      keymap.set('n', '<leader>ll', function()
+        local new_config = not vim.diagnostic.config().virtual_lines
+        vim.diagnostic.config({ virtual_lines = new_config })
+      end, { desc = 'Toggle diagnostic virtual_lines' })
+
+      opts.desc = "Toggle inlay hint"
+      keymap.set('n', '<leader>li', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end)
+
+      -- opts.desc = 'Go to declaration in vertical split'
+      keymap.set('n', 'gV', function()
         vim.cmd 'vsplit'
         vim.lsp.buf.definition()
       end, opts)
@@ -109,22 +122,30 @@ return {
       keymap.set('n', '<leader>lf', vim.lsp.buf.format, opts)
 
       opts.desc = 'Show LSP signature'
-      vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
+      vim.keymap.set('i', '<C-k>', function()
+        vim.lsp.buf.signature_help({ border = "solid" })
+      end, opts)
 
       opts.desc = 'Show line diagnostics'
       keymap.set('n', 'gl', vim.diagnostic.open_float, opts) -- show diagnostics for line
 
       opts.desc = 'Go to previous diagnostic'
-      keymap.set('n', '[d', vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+      keymap.set('n', '[d', function()
+        vim.diagnostic.jump({ count = -1, float = true })
+      end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = 'Go to next diagnostic'
-      keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+      keymap.set('n', ']d', function ()
+        vim.diagnostic.jump({ count = 1, float = true })
+      end, opts) -- jump to next diagnostic in buffer
 
       opts.desc = 'Opens quickfix list with diagnostics'
       vim.keymap.set('n', '<leader>oq', vim.diagnostic.setloclist, opts)
 
       opts.desc = 'Show documentation for what is under cursor'
-      keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+      keymap.set('n', 'K', function()
+        vim.lsp.buf.hover({ border = "solid" })
+      end, opts) -- show documentation for what is under cursor
 
       -- opts.desc = 'Restart LSP'
       -- keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts)
@@ -193,24 +214,6 @@ return {
       },
       on_attach = on_attach,
     }
-
-    -- lspconfig.basedpyright.setup {
-    --   capabilities = capabilities,
-    --   settings = {
-    --     basedpyright = {
-    --       disableOrganizeImports = true,
-    --       reportMissingImports = true,
-    --       analysis = {
-    --         autoSearchPaths = true,
-    --         typeCheckingMode = "recommended",
-    --         autoImportCompletions = true,
-    --         useLibraryCodeForTypes = true,
-    --         diagnosticMode = 'workspace',
-    --       },
-    --     },
-    --   },
-    --   on_attach = on_attach,
-    -- }
 
     mason_lspconfig.setup_handlers {
       function(server_name) -- default handler
