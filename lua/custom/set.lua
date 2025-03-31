@@ -78,7 +78,8 @@ local options = {
   autochdir = false,                                                      -- Do not change the current working directory automatically
   -- statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column
   showmode = true,                                                        -- Show the current mode in the command line
-  tabclose = "left"
+  tabclose = "left",
+  -- winborder = "solid",
 }
 
 local globals = {
