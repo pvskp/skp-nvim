@@ -7,7 +7,7 @@ require 'custom.remap'
 require 'custom.window'
 require 'custom.tabs'
 require 'custom.netrw'
-require 'custom.statusline'
+-- require 'custom.statusline'
 require 'custom.commandline'
 -- require 'custom.terminal'
 require 'custom.set'
@@ -18,10 +18,11 @@ require 'custom.colors'
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.tokyo-night')
-spec(true, 'colorscheme.vscode')
+spec(false, 'colorscheme.vscode')
+spec(false, 'colorscheme.kanagawa')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
-spec(false, 'colorscheme.catppuccin')
+spec(true, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
@@ -77,12 +78,13 @@ spec(true, 'quicker')
 spec(true, 'ccc')
 spec(false, 'w3m')
 spec(true, 'autopairs')
+spec(true, 'hawtkeys')
 spec(true, 'auto-session')
 spec(true, 'todo-comments')
 
 --<< AI >>--
 
-spec(false, 'ai.codeium')
+spec(true, 'ai.codeium')
 spec(false, 'ai.copilot')
 spec(true, 'ai.avante')
 
