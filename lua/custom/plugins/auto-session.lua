@@ -8,7 +8,7 @@ return {
       '<leader>sr',
       function()
         vim.cmd 'SessionRestore'
-        vim.notify('[auto-session] Session restored.', vim.log.levels.WARN)
+        -- vim.notify('[auto-session] Session restored.', vim.log.levels.WARN)
       end,
       desc = 'Restore Session',
     },
@@ -16,7 +16,7 @@ return {
       '<leader>ss',
       function()
         vim.cmd 'SessionSave'
-        vim.notify('[auto-session] Session saved.', vim.log.levels.WARN)
+        -- vim.notify('[auto-session] Session saved.', vim.log.levels.WARN)
       end,
       desc = 'Save Session',
     },
