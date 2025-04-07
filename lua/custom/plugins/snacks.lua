@@ -17,6 +17,7 @@ return {
     { "<leader>h",  function() Snacks.picker.help() end,                                       desc = "Help Pages" },
     { "<leader>sp", function() Snacks.picker.lazy() end,                                       desc = "Search for Plugin Spec" },
     { "<leader>fc", function() Snacks.picker.commands() end,                                   desc = "Commands" },
+    { "<leader>hd", function() Snacks.notifier.hide() end,                                     desc = "Hide notifications" },
 
     -- git
     { "<leader>gl", function() Snacks.picker.git_log() end,                                    desc = "Git Log" },
@@ -92,7 +93,7 @@ return {
     },
     notifier = {
       enabled = true,
-      level = vim.log.levels.WARN
+      -- level = vim.log.levels.WARN
     },
     picker = {
       enabled = true,
