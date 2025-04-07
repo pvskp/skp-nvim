@@ -74,6 +74,6 @@ return {
   config = function(_, opts)
     require('onedark').setup(opts)
     require('onedark').load()
-    set_highlights()
+    -- set_highlights()
   end,
 }
