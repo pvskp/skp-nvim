@@ -11,17 +11,11 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
   },
   config = function(_, opts)
-    local tsctx = vim.api.nvim_get_hl(0, { name = "TreesitterContext" })
-
+    local tsctx = Get_hl_through_links("TreesitterContext")
     opts = {
       theme = {
         normal = { bg = tsctx.bg }
       },
-      -- symbols = {
-      --   modified = "●",
-      --   ellipsis = "…",
-      --   separator = ">",
-      -- },
     }
     require("barbecue").setup(opts)
   end
