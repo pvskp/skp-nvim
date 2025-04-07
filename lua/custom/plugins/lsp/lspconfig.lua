@@ -69,19 +69,6 @@ return {
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
 
-      -- keymap.set(
-      --   'n',
-      --   '<leader>.',
-      --   '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
-      --   { desc = '[T]oggle inlay_hint', silent = true }
-      -- )
-
-      -- opts.desc = 'Go to declaration'
-      -- keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
-
-      -- opts.desc = 'Go to definition'
-      -- keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- go to declaration
-
       opts.desc = "Toggle inlay hint"
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
@@ -89,6 +76,11 @@ return {
 
       keymap.set('n', '<leader>ll', function()
         local new_config = not vim.diagnostic.config().virtual_lines
+        if new_config then
+          vim.notify("Virtual lines ON", vim.log.levels.INFO)
+        else
+          vim.notify("Virtual lines OFF", vim.log.levels.INFO)
+        end
         vim.diagnostic.config({ virtual_lines = new_config })
       end, { desc = 'Toggle diagnostic virtual_lines' })
 
