@@ -129,14 +129,14 @@ return {
             },
           },
         },
-        -- ['<C-x>'] = cmp.mapping.complete {
-        --   config = {
-        --     sources = {
-        --       { name = 'copilot' },
-        --       { name = 'codeium' },
-        --     },
-        --   },
-        -- },
+        ['<C-x>'] = cmp.mapping.complete {
+          config = {
+            sources = {
+              { name = 'copilot' },
+              { name = 'codeium' },
+            },
+          },
+        },
         ['<C-v>'] = cmp.mapping.complete {
           config = {
             sources = {
@@ -176,13 +176,14 @@ return {
         { name = 'otter' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- snippets
-        {
-          name = 'copilot',
-          keyword_length = 0,
-          entry_filter = function()
-            return false
-          end,
-        },
+        -- { name = 'codeium' },
+        -- {
+        --   name = 'copilot',
+        --   keyword_length = 0,
+        --   entry_filter = function()
+        --     return false
+        --   end,
+        -- },
       },
 
       -- configure lspkind for vs-code like pictograms in completion menu
