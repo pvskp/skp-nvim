@@ -130,7 +130,7 @@ end
 
 --- Get the attributes from a highlight group recursively through links
 ---@param hl_name string
-function Get_hl_recursive(hl_name)
+function Get_hl_through_links(hl_name)
   local hl = vim.api.nvim_get_hl(0, { name = hl_name })
   while hl.link ~= nil do
     hl = vim.api.nvim_get_hl(0, { name = hl.link })
