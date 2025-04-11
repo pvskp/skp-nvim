@@ -22,7 +22,7 @@ spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.kanagawa')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.nord')
-spec(true, 'colorscheme.catppuccin')
+spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
@@ -93,6 +93,7 @@ spec(true, 'ai.avante')
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
+spec(true, 'ui.statusline')
 
 --<< Snacks >>--
 spec(true, 'snacks')
