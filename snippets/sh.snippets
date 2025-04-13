@@ -1,0 +1,4 @@
+snippet ifmain "Checks if script was called from cmdline"
+  if [[ "${BASH_SOURCE[0]}" == "\${0}" ]]; then
+      main
+  fi
