@@ -7,7 +7,8 @@
         "_execute_shell_script",
         "nord",
         "set_hl",
-        "Snacks"
+        "Snacks",
+        "MiniStatusline"
     ],
     "diagnostics.disable": [
         "unused-local"
