@@ -86,7 +86,9 @@ spec(true, 'todo-comments')
 
 spec(true, 'ai.codeium')
 spec(false, 'ai.copilot')
+spec(false, 'ai.copilot-vim')
 spec(true, 'ai.avante')
+spec(true, 'ai.mcphub')
 
 --<< UI >>--
 
