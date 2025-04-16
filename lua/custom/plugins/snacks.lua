@@ -92,7 +92,7 @@ return {
       },
     },
     notifier = {
-      enabled = true,
+      enabled = false,
       -- level = vim.log.levels.WARN
     },
     picker = {
