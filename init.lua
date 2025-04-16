@@ -88,6 +88,7 @@ spec(true, 'ai.codeium')
 spec(false, 'ai.copilot')
 spec(false, 'ai.copilot-vim')
 spec(true, 'ai.avante')
+spec(true, 'ai.copilot-chat')
 spec(true, 'ai.mcphub')
 
 --<< UI >>--

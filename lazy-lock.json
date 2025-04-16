@@ -1,4 +1,5 @@
 {
+  "CopilotChat.nvim": { "branch": "main", "commit": "a89f5f1162b04a0962e5f4c3cdf248a81e7e53cb" },
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
   "auto-session": { "branch": "main", "commit": "095b0b54d40c8cc7fe37f2ae4d948ec3069bb1c2" },
   "avante.nvim": { "branch": "main", "commit": "54a1df28b67a97e0f05ad33808bea6c1abae7ea9" },
@@ -11,6 +12,8 @@
   "codeium.nvim": { "branch": "main", "commit": "9569c9095a70370849345c861cdb2b06c4cadac7" },
   "codesnap.nvim": { "branch": "main", "commit": "da475d35a9be9a0670f8145a8b13ff8aa9356108" },
   "conform.nvim": { "branch": "master", "commit": "eebc724d12c5579d733d1f801386e0ceb909d001" },
+  "copilot.lua": { "branch": "master", "commit": "25791ddb143c8855f2c3b46bedad3cad73bb9fb7" },
+  "copilot.vim": { "branch": "release", "commit": "250f24cc485aede5d0069e8765542c3787448d8d" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "emoji.nvim": { "branch": "main", "commit": "fd52e62b0f616f8cfe088c428efd5c24e463220d" },
