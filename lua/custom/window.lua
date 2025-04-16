@@ -1,13 +1,13 @@
 --- Resize Neovim split when the system window is resized
-vim.api.nvim_create_autocmd('VimResized', {
-  callback = function()
-    local ok, maximized = pcall(vim.api.nvim_buf_get_var, 0, 'maximized')
-    if not ok or not maximized then
-      vim.cmd 'vertical wincmd ='
-      vim.cmd 'horizontal wincmd ='
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('VimResized', {
+--   callback = function()
+--     local ok, maximized = pcall(vim.api.nvim_buf_get_var, 0, 'maximized')
+--     if not ok or not maximized then
+--       vim.cmd 'vertical wincmd ='
+--       vim.cmd 'horizontal wincmd ='
+--     end
+--   end,
+-- })
 
 vim.keymap.set('n', '<M-j>', '<C-w>j')
 vim.keymap.set('n', '<M-k>', '<C-w>k')

@@ -11,12 +11,16 @@ return {
     "hrsh7th/nvim-cmp",            -- autocompletion for avante commands and mentions
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "ravitemer/mcphub.nvim",
+    "zbirenbaum/copilot.lua",
   },
   opts = {
-    provider = "openai",
-    openai = {
-      model = "gpt-4.1-nano"
+    provider = "copilot",
+    copilot = {
+      model = "gpt-4.1",
     },
+    -- openai = {
+    --   model = "gpt-4.1"
+    -- },
     hints = { enabled = false },
     system_prompt = function()
       local hub = require("mcphub").get_hub_instance()
@@ -27,18 +31,6 @@ return {
         require("mcphub.extensions.avante").mcp_tool(),
       }
     end,
-    disabled_tools = {
-      "list_files",
-      "search_files",
-      "read_file",
-      "create_file",
-      "rename_file",
-      "delete_file",
-      "create_dir",
-      "rename_dir",
-      "delete_dir",
-      "bash",
-    },
     windows = {
       ---@type "right" | "left" | "top" | "bottom"
       position = "right", -- the position of the sidebar
@@ -66,4 +58,14 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("avante").setup(opts)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "Avante*",
+      callback = function()
+        vim.keymap.set("n", "<Esc><Esc>", "<cmd>AvanteToggle<CR>", { buffer = true })
+        vim.keymap.set("n", "<leader>aa", "<cmd>AvanteToggle<CR>", { buffer = true })
+      end,
+    })
+  end
 }
