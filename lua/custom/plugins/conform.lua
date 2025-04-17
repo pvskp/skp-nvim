@@ -23,7 +23,7 @@ return {
   cmd = 'Conform',
   opts = {
     formatters_by_ft = {
-      -- lua = { 'stylua' },
+      lua = { 'stylua' },
       sh = { 'beautysh' },
       bash = { 'beautysh' },
       -- python = { 'autoflake', 'isort', 'black' },
