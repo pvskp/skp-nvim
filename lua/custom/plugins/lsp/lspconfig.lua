@@ -127,7 +127,7 @@ return {
       end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = 'Go to next diagnostic'
-      keymap.set('n', ']d', function ()
+      keymap.set('n', ']d', function()
         vim.diagnostic.jump({ count = 1, float = true })
       end, opts) -- jump to next diagnostic in buffer
 
@@ -169,26 +169,6 @@ return {
     }
 
     -- Setup lua language server separately so it works on arm
-    lspconfig.lua_ls.setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = { -- custom settings for lua
-        Lua = {
-          -- make the language server recognize "vim" global
-          hint = { enable = true },
-          diagnostics = {
-            globals = { 'vim' },
-          },
-          workspace = {
-            -- make language server aware of runtime files
-            library = {
-              [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-              [vim.fn.stdpath 'config' .. '/lua'] = true,
-            },
-          },
-        },
-      },
-    }
 
     lspconfig.pyright.setup {
       capabilities = capabilities,
@@ -226,13 +206,13 @@ return {
               diagnostics = {
                 globals = { 'vim' },
               },
-              workspace = {
-                -- make language server aware of runtime files
-                library = {
-                  [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-                  [vim.fn.stdpath 'config' .. '/lua'] = true,
-                },
-              },
+              -- workspace = {
+              --   -- make language server aware of runtime files
+              --   library = {
+              --     [vim.fn.expand '$VIMRUNTIME/lua'] = true,
+              --     [vim.fn.stdpath 'config' .. '/lua'] = true,
+              --   },
+              -- },
             },
           },
         }
