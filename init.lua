@@ -36,10 +36,10 @@ spec(true, 'lazydev') -- offers completion to neovim functions
 
 spec(true, 'lsp.barbecue')
 spec(true, 'lsp.nvim-lint') -- linting
-spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
+spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.mason-installer')
-spec(false, 'lsp.cmp')    -- completion
+spec(false, 'lsp.cmp') -- completion
 spec(true, 'lsp.blink') -- completion
 
 --<< Language specific >>--
@@ -52,7 +52,7 @@ spec(false, 'languages.markdown.render-markdown')
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
-spec(true, 'mini.files') -- minitree (best tree plugin)
+spec(false, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
@@ -64,9 +64,9 @@ spec(true, 'git.neogit')
 --<< General >>--
 
 spec(true, 'undotree') -- show undo tree
-spec(true, 'tmux')     -- tmux integration
+spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
-spec(true, 'hop')      -- jump to any word in the screen
+spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'which-key')
 -- spec(true, 'scriptease')
 spec(false, 'vim-zoom')
@@ -81,6 +81,7 @@ spec(true, 'autopairs')
 spec(true, 'hawtkeys')
 spec(true, 'auto-session')
 spec(true, 'todo-comments')
+spec(true, 'oil')
 
 --<< AI >>--
 
@@ -94,7 +95,7 @@ spec(true, 'ai.mcphub')
 --<< UI >>--
 
 spec(true, 'ui.highlight-colors') -- color preview
-spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
+spec(true, 'ui.dressing') -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
 spec(true, 'ui.statusline')
 

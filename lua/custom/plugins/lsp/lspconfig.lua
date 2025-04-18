@@ -1,10 +1,10 @@
 return {
   'neovim/nvim-lspconfig',
   version = '*',
-  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   dependencies = {
     -- 'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
-    "saghen/blink.cmp", -- needed for lsp capabilities
+    'saghen/blink.cmp', -- needed for lsp capabilities
     {
       'williamboman/mason.nvim',
       version = '*',
@@ -40,16 +40,16 @@ return {
 
     -- for type, icon in pairs(signs) do
     -- local hl = 'DiagnosticSign' .. type
-    vim.diagnostic.config({
+    vim.diagnostic.config {
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
-          [vim.diagnostic.severity.INFO] = " ",
-          [vim.diagnostic.severity.HINT] = " "
-        }
-      }
-    })
+          [vim.diagnostic.severity.ERROR] = ' ',
+          [vim.diagnostic.severity.WARN] = ' ',
+          [vim.diagnostic.severity.INFO] = ' ',
+          [vim.diagnostic.severity.HINT] = ' ',
+        },
+      },
+    }
     --   vim.fn.sign_define(hl, {
     --     text = icon,
     --     texthl = hl,
@@ -61,6 +61,7 @@ return {
     local lspconfig = require 'lspconfig'
 
     mason_lspconfig.setup {
+      ensure_installed = {},
       automatic_installation = false, -- not the same as ensure_installed
     }
 
@@ -69,7 +70,7 @@ return {
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
 
-      opts.desc = "Toggle inlay hint"
+      opts.desc = 'Toggle inlay hint'
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end)
@@ -77,14 +78,14 @@ return {
       keymap.set('n', '<leader>ll', function()
         local new_config = not vim.diagnostic.config().virtual_lines
         if new_config then
-          vim.notify("Virtual lines ON", vim.log.levels.INFO)
+          vim.notify('Virtual lines ON', vim.log.levels.INFO)
         else
-          vim.notify("Virtual lines OFF", vim.log.levels.INFO)
+          vim.notify('Virtual lines OFF', vim.log.levels.INFO)
         end
-        vim.diagnostic.config({ virtual_lines = new_config })
+        vim.diagnostic.config { virtual_lines = new_config }
       end, { desc = 'Toggle diagnostic virtual_lines' })
 
-      opts.desc = "Toggle inlay hint"
+      opts.desc = 'Toggle inlay hint'
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end)
@@ -115,7 +116,7 @@ return {
 
       opts.desc = 'Show LSP signature'
       vim.keymap.set('i', '<C-k>', function()
-        vim.lsp.buf.signature_help({ border = "solid" })
+        vim.lsp.buf.signature_help { border = 'solid' }
       end, opts)
 
       opts.desc = 'Show line diagnostics'
@@ -123,12 +124,12 @@ return {
 
       opts.desc = 'Go to previous diagnostic'
       keymap.set('n', '[d', function()
-        vim.diagnostic.jump({ count = -1, float = true })
+        vim.diagnostic.jump { count = -1, float = true }
       end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = 'Go to next diagnostic'
       keymap.set('n', ']d', function()
-        vim.diagnostic.jump({ count = 1, float = true })
+        vim.diagnostic.jump { count = 1, float = true }
       end, opts) -- jump to next diagnostic in buffer
 
       opts.desc = 'Opens quickfix list with diagnostics'
@@ -136,7 +137,7 @@ return {
 
       opts.desc = 'Show documentation for what is under cursor'
       keymap.set('n', 'K', function()
-        vim.lsp.buf.hover({ border = "solid" })
+        vim.lsp.buf.hover { border = 'solid' }
       end, opts) -- show documentation for what is under cursor
 
       -- opts.desc = 'Restart LSP'
@@ -151,9 +152,9 @@ return {
       -- vim.highlight.priorities.treesitter = 201
     end
 
-
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require("blink.cmp").get_lsp_capabilities())
+    capabilities =
+      vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
     -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
     --
 
@@ -178,7 +179,7 @@ return {
           reportMissingImports = true,
           analysis = {
             autoSearchPaths = true,
-            typeCheckingMode = "recommended",
+            typeCheckingMode = 'recommended',
             autoImportCompletions = true,
             useLibraryCodeForTypes = true,
             diagnosticMode = 'workspace',
@@ -217,20 +218,20 @@ return {
           },
         }
       end,
-      ["taplo"] = function()
+      ['taplo'] = function()
         lspconfig.taplo.setup {
-          cmd = { "taplo", "lsp", "stdio" }
+          cmd = { 'taplo', 'lsp', 'stdio' },
         }
       end,
       ['ruff'] = function()
         lspconfig.ruff.setup {
           init_options = {
             settings = {
-              configurationPreference = "filesystemFirst",
+              configurationPreference = 'filesystemFirst',
               fixAll = true,
-              organizeImports = true
-            }
-          }
+              organizeImports = true,
+            },
+          },
         }
       end,
       ['gopls'] = function()
@@ -265,16 +266,16 @@ return {
             css = {
               validate = true,
               lint = {
-                unknownAtRules = 'ignore'
-              }
+                unknownAtRules = 'ignore',
+              },
             },
             scss = {
               validate = true,
               lint = {
-                unknownAtRules = 'ignore'
-              }
-            }
-          }
+                unknownAtRules = 'ignore',
+              },
+            },
+          },
         }
       end,
       ['helm_ls'] = function()
@@ -283,29 +284,29 @@ return {
           capabilities = capabilities,
           settings = {
             ['helm-ls'] = {
-              logLevel = "info",
+              logLevel = 'info',
               valuesFiles = {
-                mainValuesFile = "values.yaml",
-                lintOverlayValuesFile = "values.lint.yaml",
-                additionalValuesFilesGlobPattern = "values*.yaml"
+                mainValuesFile = 'values.yaml',
+                lintOverlayValuesFile = 'values.lint.yaml',
+                additionalValuesFilesGlobPattern = 'values*.yaml',
               },
               yamlls = {
                 enabled = true,
-                enabledForFilesGlob = "*.{yaml,yml}",
+                enabledForFilesGlob = '*.{yaml,yml}',
                 diagnosticsLimit = 0,
                 showDiagnosticsDirectly = false,
-                path = "yaml-language-server",
+                path = 'yaml-language-server',
                 config = {
                   schemas = {
-                    kubernetes = "templates/**",
+                    kubernetes = 'templates/**',
                   },
                   completion = true,
                   hover = true,
                   -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
-                }
-              }
-            }
-          }
+                },
+              },
+            },
+          },
         }
       end,
     }

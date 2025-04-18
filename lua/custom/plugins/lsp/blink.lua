@@ -1,7 +1,14 @@
 return {
   'saghen/blink.cmp',
   lazy = false,
+  -- event = { 'InsertEnter' },
   dependencies = {
+    {
+      'saghen/blink.compat',
+      version = '*',
+      lazy = true,
+      opts = {},
+    },
     'rafamadriz/friendly-snippets',
     {
       'L3MON4D3/LuaSnip',
@@ -15,6 +22,7 @@ return {
     'Kaiser-Yang/blink-cmp-avante',
     'xzbdmw/colorful-menu.nvim',
     'folke/lazydev.nvim',
+    'amarakon/nvim-cmp-fonts',
   },
   opts_extend = { 'sources.default' },
   version = '1.*',
@@ -25,7 +33,31 @@ return {
       preset = 'enter',
       ['<C-l>'] = { 'snippet_forward' },
       ['<C-h>'] = { 'snippet_backward' },
-      -- ['<Tab>'] = { 'accept' }
+      ['<C-d>'] = {
+        function(cmp)
+          cmp.show({ providers = { 'fonts' } })
+        end,
+      },
+      ['<c-space>'] = {
+        function(cmp)
+          cmp.show({ providers = { 'lsp', 'snippets' } })
+        end,
+      },
+      ['<c-v>'] = {
+        function(cmp)
+          cmp.show({ providers = { 'buffer' } })
+        end,
+      },
+      ['<c-e>'] = {
+        function(cmp)
+          cmp.show({ providers = { 'emoji' } })
+        end,
+      },
+      ['<c-f>'] = {
+        function(cmp)
+          cmp.show({ providers = { 'nerdfont' } })
+        end,
+      },
     },
     appearance = {
       nerd_font_variant = 'mono',
@@ -65,9 +97,9 @@ return {
         'avante',
         'lsp',
         'path',
-        'buffer',
-        'nerdfont',
-        'emoji',
+        -- 'buffer',
+        -- 'nerdfont',
+        -- 'emoji',
       },
       providers = {
         lazydev = {
@@ -96,6 +128,14 @@ return {
           module = 'blink-cmp-avante',
           name = 'Avante',
           opts = {},
+        },
+        fonts = {
+          name = 'fonts',
+          module = 'blink.compat.source',
+          score_offset = -1,
+          opts = {
+            cmp_name = 'fonts',
+          },
         },
       },
     },
