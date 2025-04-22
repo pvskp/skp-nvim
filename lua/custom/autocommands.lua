@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     local event = vim.v.event
     if event.operator == 'y' and event.regtype ~= '' then
-      vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300, on_visual = false }
+      vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 300, on_visual = false })
     end
   end,
 })
@@ -19,6 +19,14 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 --   group = vim.api.nvim_create_augroup('AnsibleFiletype', { clear = true }),
 --   pattern = '*.yaml.ansible',
 --   command = 'set filetype=ansible',
+-- })
+
+-- vim.api.nvim_create_autocmd('CmdwinEnter', {
+--   group = vim.api.nvim_create_augroup('mariasolos/execute_cmd_and_stay', { clear = true }),
+--   desc = 'Execute command and stay in the command-line window',
+--   callback = function(args)
+--     vim.keymap.set({ 'n', 'i' }, '<CR>', '<cr>q:', { buffer = args.buf })
+--   end,
 -- })
 
 -- Fix cursor
@@ -46,10 +54,10 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     '',
   },
   callback = function()
-    vim.cmd [[
+    vim.cmd([[
       nnoremap <silent> <buffer> q :bd<CR>
       set nobuflisted
-    ]]
+    ]])
   end,
 })
 
@@ -69,10 +77,10 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   group = ansible_filetype_group,
   pattern = '*.ansible.yaml',
   callback = function()
-    vim.cmd 'set filetype=ansible'
+    vim.cmd('set filetype=ansible')
 
-    vim.cmd 'LspStart ansiblels'
-    vim.cmd 'LspStart yamlls'
+    vim.cmd('LspStart ansiblels')
+    vim.cmd('LspStart yamlls')
     -- vim.cmd 'set filetype=ansible'
     -- pcall(vim.lsp.start, {
     --   name = 'ansiblels',
@@ -86,7 +94,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function()
     local save = vim.fn.winsaveview()
-    vim.cmd [[ %s/\s\+$//e ]]
+    vim.cmd([[ %s/\s\+$//e ]])
     vim.fn.winrestview(save)
   end,
 })
@@ -101,7 +109,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.server_capabilities.documentHighlightProvider then
       local highlight_augroup =
-          vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+        vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_augroup,

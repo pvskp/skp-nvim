@@ -28,19 +28,19 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    vim.diagnostic.config {
+    vim.diagnostic.config({
       virtual_text = false,
       underline = true,
       float = {
         -- border = Borders.simple,
       },
-    }
+    })
 
     local signs = Symbols.diagnostics
 
     -- for type, icon in pairs(signs) do
     -- local hl = 'DiagnosticSign' .. type
-    vim.diagnostic.config {
+    vim.diagnostic.config({
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = ' ',
@@ -49,7 +49,7 @@ return {
           [vim.diagnostic.severity.HINT] = ' ',
         },
       },
-    }
+    })
     --   vim.fn.sign_define(hl, {
     --     text = icon,
     --     texthl = hl,
@@ -57,23 +57,18 @@ return {
     --   })
     -- end
 
-    local mason_lspconfig = require 'mason-lspconfig'
-    local lspconfig = require 'lspconfig'
+    local mason_lspconfig = require('mason-lspconfig')
+    local lspconfig = require('lspconfig')
 
-    mason_lspconfig.setup {
+    mason_lspconfig.setup({
       ensure_installed = {},
       automatic_installation = false, -- not the same as ensure_installed
-    }
+    })
 
     local keymap = vim.keymap -- for conciseness
     local opts = { noremap = true, silent = true }
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
-
-      opts.desc = 'Toggle inlay hint'
-      keymap.set('n', '<leader>li', function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      end)
 
       keymap.set('n', '<leader>ll', function()
         local new_config = not vim.diagnostic.config().virtual_lines
@@ -82,23 +77,23 @@ return {
         else
           vim.notify('Virtual lines OFF', vim.log.levels.INFO)
         end
-        vim.diagnostic.config { virtual_lines = new_config }
+        vim.diagnostic.config({ virtual_lines = new_config })
       end, { desc = 'Toggle diagnostic virtual_lines' })
 
       opts.desc = 'Toggle inlay hint'
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      end)
+      end, { desc = opts.desc })
 
       -- opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gV', function()
-        vim.cmd 'vsplit'
+        vim.cmd('vsplit')
         vim.lsp.buf.definition()
       end, opts)
 
       opts.desc = 'Go to declaration in horizontal split'
       keymap.set('n', 'gh', function()
-        vim.cmd 'split'
+        vim.cmd('split')
         vim.lsp.buf.definition()
       end, opts)
 
@@ -116,7 +111,7 @@ return {
 
       opts.desc = 'Show LSP signature'
       vim.keymap.set('i', '<C-k>', function()
-        vim.lsp.buf.signature_help { border = 'solid' }
+        vim.lsp.buf.signature_help({ border = 'solid' })
       end, opts)
 
       opts.desc = 'Show line diagnostics'
@@ -124,12 +119,12 @@ return {
 
       opts.desc = 'Go to previous diagnostic'
       keymap.set('n', '[d', function()
-        vim.diagnostic.jump { count = -1, float = true }
+        vim.diagnostic.jump({ count = -1, float = true })
       end, opts) -- jump to previous diagnostic in buffer
 
       opts.desc = 'Go to next diagnostic'
       keymap.set('n', ']d', function()
-        vim.diagnostic.jump { count = 1, float = true }
+        vim.diagnostic.jump({ count = 1, float = true })
       end, opts) -- jump to next diagnostic in buffer
 
       opts.desc = 'Opens quickfix list with diagnostics'
@@ -137,7 +132,7 @@ return {
 
       opts.desc = 'Show documentation for what is under cursor'
       keymap.set('n', 'K', function()
-        vim.lsp.buf.hover { border = 'solid' }
+        vim.lsp.buf.hover({ border = 'solid' })
       end, opts) -- show documentation for what is under cursor
 
       -- opts.desc = 'Restart LSP'
@@ -171,7 +166,7 @@ return {
 
     -- Setup lua language server separately so it works on arm
 
-    lspconfig.pyright.setup {
+    lspconfig.pyright.setup({
       capabilities = capabilities,
       settings = {
         pyright = {
@@ -187,17 +182,17 @@ return {
         },
       },
       on_attach = on_attach,
-    }
+    })
 
-    mason_lspconfig.setup_handlers {
+    mason_lspconfig.setup_handlers({
       function(server_name) -- default handler
-        lspconfig[server_name].setup {
+        lspconfig[server_name].setup({
           capabilities = capabilities,
           on_attach = on_attach,
-        }
+        })
       end,
       ['lua_ls'] = function()
-        lspconfig.lua_ls.setup {
+        lspconfig.lua_ls.setup({
           capabilities = capabilities,
           on_attach = on_attach,
           settings = { -- custom settings for lua
@@ -216,15 +211,15 @@ return {
               -- },
             },
           },
-        }
+        })
       end,
       ['taplo'] = function()
-        lspconfig.taplo.setup {
+        lspconfig.taplo.setup({
           cmd = { 'taplo', 'lsp', 'stdio' },
-        }
+        })
       end,
       ['ruff'] = function()
-        lspconfig.ruff.setup {
+        lspconfig.ruff.setup({
           init_options = {
             settings = {
               configurationPreference = 'filesystemFirst',
@@ -232,10 +227,10 @@ return {
               organizeImports = true,
             },
           },
-        }
+        })
       end,
       ['gopls'] = function()
-        lspconfig.gopls.setup {
+        lspconfig.gopls.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           cmd = { 'gopls' },
@@ -246,20 +241,20 @@ return {
               },
             },
           },
-        }
+        })
       end,
       ['clangd'] = function()
-        lspconfig.clangd.setup {
+        lspconfig.clangd.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           cmd = {
             'clangd',
             '--offset-encoding=utf-16',
           },
-        }
+        })
       end,
       ['cssls'] = function()
-        lspconfig.cssls.setup {
+        lspconfig.cssls.setup({
           on_attach = on_attach(),
           capabilities = capabilities,
           settings = {
@@ -276,10 +271,10 @@ return {
               },
             },
           },
-        }
+        })
       end,
       ['helm_ls'] = function()
-        lspconfig.helm_ls.setup {
+        lspconfig.helm_ls.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           settings = {
@@ -307,8 +302,8 @@ return {
               },
             },
           },
-        }
+        })
       end,
-    }
+    })
   end,
 }

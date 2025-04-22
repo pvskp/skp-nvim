@@ -1,17 +1,17 @@
-require 'custom'
+require('custom')
 
-require 'custom.autocommands'
-require 'custom.commands'
-require 'custom.globals'
-require 'custom.remap'
-require 'custom.window'
-require 'custom.tabs'
-require 'custom.netrw'
+require('custom.autocommands')
+require('custom.commands')
+require('custom.globals')
+require('custom.remap')
+require('custom.window')
+require('custom.tabs')
+require('custom.netrw')
 -- require 'custom.statusline'
-require 'custom.commandline'
+require('custom.commandline')
 -- require 'custom.terminal'
-require 'custom.set'
-require 'custom.colors'
+require('custom.set')
+require('custom.colors')
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
@@ -45,7 +45,7 @@ spec(true, 'lsp.blink') -- completion
 --<< Language specific >>--
 
 spec(true, 'languages.helm')
-spec(false, 'languages.markdown.render-markdown')
+spec(true, 'languages.markdown.render-markdown')
 
 --<< Mini library >>--
 
@@ -71,6 +71,7 @@ spec(true, 'which-key')
 -- spec(true, 'scriptease')
 spec(false, 'vim-zoom')
 spec(true, 'codesnap')
+spec(true, 'debugger')
 spec(true, 'neogen')
 spec(true, 'quarto')
 spec(true, 'slime')
@@ -103,5 +104,5 @@ spec(true, 'ui.statusline')
 spec(true, 'snacks')
 
 -- Loads all with lazy
-require 'custom.lazy'
-require 'custom.highlight' -- required to be loaded after lazy
+require('custom.lazy')
+require('custom.highlight') -- required to be loaded after lazy
