@@ -61,6 +61,7 @@ return {
     local lspconfig = require('lspconfig')
 
     mason_lspconfig.setup({
+      ensure_installed = {},
       automatic_installation = false, -- not the same as ensure_installed
     })
 
@@ -68,11 +69,6 @@ return {
     local opts = { noremap = true, silent = true }
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
-
-      opts.desc = 'Toggle inlay hint'
-      keymap.set('n', '<leader>li', function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      end)
 
       keymap.set('n', '<leader>ll', function()
         local new_config = not vim.diagnostic.config().virtual_lines
@@ -87,7 +83,7 @@ return {
       opts.desc = 'Toggle inlay hint'
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      end)
+      end, { desc = opts.desc })
 
       -- opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gV', function()
@@ -152,7 +148,8 @@ return {
     end
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
+    capabilities =
+      vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
     -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
     --
 

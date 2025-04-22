@@ -21,6 +21,14 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 --   command = 'set filetype=ansible',
 -- })
 
+-- vim.api.nvim_create_autocmd('CmdwinEnter', {
+--   group = vim.api.nvim_create_augroup('mariasolos/execute_cmd_and_stay', { clear = true }),
+--   desc = 'Execute command and stay in the command-line window',
+--   callback = function(args)
+--     vim.keymap.set({ 'n', 'i' }, '<CR>', '<cr>q:', { buffer = args.buf })
+--   end,
+-- })
+
 -- Fix cursor
 local cursor_reset = vim.api.nvim_create_augroup('CursorReset', { clear = true })
 vim.api.nvim_create_autocmd('VimLeave', {
@@ -100,7 +108,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- When you move your cursor, the highlights will be cleared (the second autocommand).
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.server_capabilities.documentHighlightProvider then
-      local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+      local highlight_augroup =
+        vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_augroup,

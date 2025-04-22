@@ -45,7 +45,7 @@ spec(true, 'lsp.blink') -- completion
 --<< Language specific >>--
 
 spec(true, 'languages.helm')
-spec(false, 'languages.markdown.render-markdown')
+spec(true, 'languages.markdown.render-markdown')
 
 --<< Mini library >>--
 
@@ -72,6 +72,7 @@ spec(true, 'which-key')
 -- spec(true, 'scriptease')
 spec(false, 'vim-zoom')
 spec(true, 'codesnap')
+spec(true, 'debugger')
 spec(true, 'neogen')
 spec(true, 'quarto')
 spec(true, 'slime')
@@ -82,6 +83,7 @@ spec(true, 'autopairs')
 spec(true, 'hawtkeys')
 spec(true, 'auto-session')
 spec(true, 'todo-comments')
+spec(true, 'oil')
 
 --<< AI >>--
 

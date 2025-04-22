@@ -16,11 +16,8 @@ return {
   opts = {
     provider = 'copilot',
     copilot = {
-      model = 'gpt-4.1',
+      model = 'claude-3.7-sonnet',
     },
-    -- openai = {
-    --   model = "gpt-4.1"
-    -- },
     hints = { enabled = false },
     system_prompt = function()
       local hub = require('mcphub').get_hub_instance()
@@ -68,5 +65,8 @@ return {
         vim.keymap.set('n', '<leader>aa', '<cmd>AvanteToggle<CR>', { buffer = true })
       end,
     })
+  end,
+  init = function()
+    vim.opt.laststatus = 3
   end,
 }
