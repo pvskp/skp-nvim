@@ -1,3 +1,19 @@
+local custom_layout = {
+  -- preset = "ivy",
+  layout = {
+    width = 0.999,
+    height = 0.999,
+    box = 'horizontal',
+    {
+      box = 'vertical',
+      border = 'single',
+      { win = 'input', height = 1, border = 'single' },
+      { win = 'list', border = 'none' },
+    },
+    { win = 'preview', border = 'single', width = 0.5 },
+  },
+}
+
 return {
   'folke/snacks.nvim',
   priority = 1000,
@@ -5,126 +21,33 @@ return {
   dependencies = {
     'rmagatti/auto-session',
   },
+  -- stylua: ignore start
   keys = {
-    {
-      ',st',
-      function()
-        require('snacks').terminal.toggle()
-      end,
-      desc = 'Open terminal',
-    },
-    {
-      '<leader>ff',
-      function()
-        Snacks.picker.files { hidden = true }
-      end,
-      desc = 'Find files',
-    },
-    {
-      '<leader>:',
-      function()
-        Snacks.picker.command_history()
-      end,
-      desc = 'Command History',
-    },
-    {
-      '<leader>gg',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
-    },
-    -- {
-    --   '<C-e>',
-    --   function()
-    --     Snacks.explorer()
-    --   end,
-    --   desc = 'File Explorer',
-    -- },
-    {
-      '<leader>fp',
-      function()
-        Snacks.picker.projects { dev = { '~/Documents/repos/' } }
-      end,
-      desc = 'Projects',
-    },
-    {
-      '<leader>fb',
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = 'Buffers',
-    },
-    {
-      '<leader>sw',
-      function()
-        Snacks.picker.grep_word()
-      end,
-      desc = 'Visual selection or word',
-      mode = { 'n', 'x' },
-    },
-    {
-      '<leader>h',
-      function()
-        Snacks.picker.help()
-      end,
-      desc = 'Help Pages',
-    },
-    {
-      '<leader>sp',
-      function()
-        Snacks.picker.lazy()
-      end,
-      desc = 'Search for Plugin Spec',
-    },
-    {
-      '<leader>fc',
-      function()
-        Snacks.picker.commands()
-      end,
-      desc = 'Commands',
-    },
-    {
-      '<leader>hd',
-      function()
-        Snacks.notifier.hide()
-      end,
-      desc = 'Hide notifications',
-    },
+    {',st',        function() require('snacks').terminal.toggle() end, desc = 'Open terminal',},
+    {'<leader>ff', function() Snacks.picker.files ({
+      layout = custom_layout,
+      hidden = true
+    }) end, desc = 'Find files',},
+    {'<leader>:',  function() Snacks.picker.command_history() end, desc = 'Command History',},
+    {'<leader>gg', function() Snacks.picker.grep({ layout = custom_layout, }) end, desc = 'Grep',},
+    {'<leader>fp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = 'Projects',},
+    {'<leader>fb', function() Snacks.picker.buffers({ layout = custom_layout, }) end, desc = 'Buffers',},
+    {'<leader>sw', function() Snacks.picker.grep_word({ layout = custom_layout, }) end, desc = 'Visual selection or word', mode = { 'n', 'x' },},
+    {'<leader>h',  function() Snacks.picker.help({ layout = custom_layout, }) end, desc = 'Help Pages',},
+  -- stylua: ignore end
+    {'<leader>sp', function() Snacks.picker.lazy({ layout = custom_layout, }) end, desc = 'Search for Plugin Spec',},
+    {'<leader>fc', function() Snacks.picker.commands({ layout = custom_layout, }) end, desc = 'Commands',},
+    {'<leader>hd', function() Snacks.notifier.hide() end, desc = 'Hide notifications',},
 
     -- git
-    {
-      '<leader>gl',
-      function()
-        Snacks.picker.git_log()
-      end,
-      desc = 'Git Log',
-    },
+    {'<leader>gl', function() Snacks.picker.git_log({ layout = custom_layout, }) end, desc = 'Git Log',},
 
     -- lsp
-    {
-      '<leader>ws',
-      function()
-        Snacks.picker.lsp_workspace_symbols()
-      end,
-      desc = 'LSP Workspace Symbols',
-    },
-    {
-      'gr',
-      function()
-        Snacks.picker.lsp_references()
-      end,
-      desc = 'References',
-      nowait = true,
-    },
-    {
-      'gd',
-      function()
-        Snacks.picker.lsp_definitions()
-      end,
-      desc = 'Goto Definition',
-    },
+    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = 'LSP Workspace Symbols',},
+    {'gr',         function() Snacks.picker.lsp_references({ layout = custom_layout, }) end, desc = 'References', nowait = true,},
+    {'gd',         function() Snacks.picker.lsp_definitions({ layout = custom_layout, }) end, desc = 'Goto Definition',},
   },
+  -- stylua: ignore end
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
@@ -222,21 +145,6 @@ return {
     },
     picker = {
       enabled = true,
-      layout = {
-        -- preset = "ivy",
-        layout = {
-          width = 0.999,
-          height = 0.999,
-          box = 'horizontal',
-          {
-            box = 'vertical',
-            border = 'single',
-            { win = 'input', height = 1, border = 'single' },
-            { win = 'list', border = 'none' },
-          },
-          { win = 'preview', border = 'single', width = 0.5 },
-        },
-      },
       win = {
         input = {
           keys = {
