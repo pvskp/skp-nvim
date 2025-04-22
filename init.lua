@@ -1,17 +1,17 @@
-require 'custom'
+require('custom')
 
-require 'custom.autocommands'
-require 'custom.commands'
-require 'custom.globals'
-require 'custom.remap'
-require 'custom.window'
-require 'custom.tabs'
-require 'custom.netrw'
+require('custom.autocommands')
+require('custom.commands')
+require('custom.globals')
+require('custom.remap')
+require('custom.window')
+require('custom.tabs')
+require('custom.netrw')
 -- require 'custom.statusline'
-require 'custom.commandline'
+require('custom.commandline')
 -- require 'custom.terminal'
-require 'custom.set'
-require 'custom.colors'
+require('custom.set')
+require('custom.colors')
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
@@ -36,10 +36,10 @@ spec(true, 'lazydev') -- offers completion to neovim functions
 
 spec(true, 'lsp.barbecue')
 spec(true, 'lsp.nvim-lint') -- linting
-spec(true, 'lsp.navbuddy')  -- allow to navigate between symbols in a easier way
+spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.mason-installer')
-spec(false, 'lsp.cmp')    -- completion
+spec(false, 'lsp.cmp') -- completion
 spec(true, 'lsp.blink') -- completion
 
 --<< Language specific >>--
@@ -52,7 +52,7 @@ spec(false, 'languages.markdown.render-markdown')
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
-spec(true, 'mini.files') -- minitree (best tree plugin)
+spec(false, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
@@ -63,10 +63,11 @@ spec(true, 'git.neogit')
 
 --<< General >>--
 
+spec(true, 'oil')
 spec(true, 'undotree') -- show undo tree
-spec(true, 'tmux')     -- tmux integration
+spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
-spec(true, 'hop')      -- jump to any word in the screen
+spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'which-key')
 -- spec(true, 'scriptease')
 spec(false, 'vim-zoom')
@@ -84,7 +85,7 @@ spec(true, 'todo-comments')
 
 --<< AI >>--
 
-spec(true, 'ai.codeium')
+spec(false, 'ai.codeium')
 spec(false, 'ai.copilot')
 spec(false, 'ai.copilot-vim')
 spec(true, 'ai.avante')
@@ -94,13 +95,17 @@ spec(true, 'ai.mcphub')
 --<< UI >>--
 
 spec(true, 'ui.highlight-colors') -- color preview
-spec(true, 'ui.dressing')         -- offers better ui for some neovim commands
+spec(true, 'ui.dressing') -- offers better ui for some neovim commands
 spec(true, 'ui.devicons')
 spec(true, 'ui.statusline')
 
 --<< Snacks >>--
 spec(true, 'snacks')
 
+-- vim.api.nvim_create_user_command('Hello', function()
+--   vim.cmd 'Ex'
+-- end, {})
+
 -- Loads all with lazy
-require 'custom.lazy'
-require 'custom.highlight' -- required to be loaded after lazy
+require('custom.lazy')
+require('custom.highlight') -- required to be loaded after lazy

@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     local event = vim.v.event
     if event.operator == 'y' and event.regtype ~= '' then
-      vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300, on_visual = false }
+      vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 300, on_visual = false })
     end
   end,
 })
@@ -46,10 +46,10 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     '',
   },
   callback = function()
-    vim.cmd [[
+    vim.cmd([[
       nnoremap <silent> <buffer> q :bd<CR>
       set nobuflisted
-    ]]
+    ]])
   end,
 })
 
@@ -69,10 +69,10 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   group = ansible_filetype_group,
   pattern = '*.ansible.yaml',
   callback = function()
-    vim.cmd 'set filetype=ansible'
+    vim.cmd('set filetype=ansible')
 
-    vim.cmd 'LspStart ansiblels'
-    vim.cmd 'LspStart yamlls'
+    vim.cmd('LspStart ansiblels')
+    vim.cmd('LspStart yamlls')
     -- vim.cmd 'set filetype=ansible'
     -- pcall(vim.lsp.start, {
     --   name = 'ansiblels',
@@ -86,7 +86,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function()
     local save = vim.fn.winsaveview()
-    vim.cmd [[ %s/\s\+$//e ]]
+    vim.cmd([[ %s/\s\+$//e ]])
     vim.fn.winrestview(save)
   end,
 })
@@ -100,8 +100,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- When you move your cursor, the highlights will be cleared (the second autocommand).
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.server_capabilities.documentHighlightProvider then
-      local highlight_augroup =
-          vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+      local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = highlight_augroup,
@@ -114,5 +113,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         callback = vim.lsp.buf.clear_references,
       })
     end
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = '*.json',
+  callback = function(args)
+    vim.keymap.set('n', '<C-space>', ':%!jq<CR>', { buffer = args.buf, desc = 'Format JSON with jq' })
   end,
 })

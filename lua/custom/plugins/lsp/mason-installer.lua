@@ -1,9 +1,9 @@
 return {
-  "WhoIsSethDaniel/mason-tool-installer.nvim",
-  -- event = "VeryLazy",
-  lazy = false,
+  'WhoIsSethDaniel/mason-tool-installer.nvim',
+  event = 'VeryLazy',
+  -- lazy = false,
   config = function()
-    require('mason-tool-installer').setup {
+    require('mason-tool-installer').setup({
       ensure_installed = {
         -- Golang
         'goimports',
@@ -20,6 +20,6 @@ return {
         'prettier',
         'json-lsp',
       },
-    }
-  end
+    })
+  end,
 }
