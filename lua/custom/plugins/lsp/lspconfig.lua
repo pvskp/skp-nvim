@@ -1,21 +1,21 @@
 return {
   'neovim/nvim-lspconfig',
   version = '*',
-  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   dependencies = {
     -- 'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
-    "saghen/blink.cmp", -- needed for lsp capabilities
+    'saghen/blink.cmp', -- needed for lsp capabilities
     {
       'williamboman/mason.nvim',
       version = '*',
       opts = {
         ui = {
           border = Borders.simple,
-          icons = {
-            package_installed = '✅',
-            package_pending = '🔶',
-            package_uninstalled = '❌',
-          },
+          -- icons = {
+          --   package_installed = '✅',
+          --   package_pending = '🔶',
+          --   package_uninstalled = '❌',
+          -- },
           -- icons = {
           --   package_installed = "✓",
           --   package_pending = "➜",
@@ -28,13 +28,13 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    vim.diagnostic.config {
+    vim.diagnostic.config({
       virtual_text = false,
       underline = true,
       float = {
         -- border = Borders.simple,
       },
-    }
+    })
 
     local signs = Symbols.diagnostics
 
@@ -43,12 +43,12 @@ return {
     vim.diagnostic.config({
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
-          [vim.diagnostic.severity.INFO] = " ",
-          [vim.diagnostic.severity.HINT] = " "
-        }
-      }
+          [vim.diagnostic.severity.ERROR] = ' ',
+          [vim.diagnostic.severity.WARN] = ' ',
+          [vim.diagnostic.severity.INFO] = ' ',
+          [vim.diagnostic.severity.HINT] = ' ',
+        },
+      },
     })
     --   vim.fn.sign_define(hl, {
     --     text = icon,
@@ -57,19 +57,19 @@ return {
     --   })
     -- end
 
-    local mason_lspconfig = require 'mason-lspconfig'
-    local lspconfig = require 'lspconfig'
+    local mason_lspconfig = require('mason-lspconfig')
+    local lspconfig = require('lspconfig')
 
-    mason_lspconfig.setup {
+    mason_lspconfig.setup({
       automatic_installation = false, -- not the same as ensure_installed
-    }
+    })
 
     local keymap = vim.keymap -- for conciseness
     local opts = { noremap = true, silent = true }
     local set_keymaps = function(bufnr)
       opts.buffer = bufnr
 
-      opts.desc = "Toggle inlay hint"
+      opts.desc = 'Toggle inlay hint'
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end)
@@ -77,27 +77,27 @@ return {
       keymap.set('n', '<leader>ll', function()
         local new_config = not vim.diagnostic.config().virtual_lines
         if new_config then
-          vim.notify("Virtual lines ON", vim.log.levels.INFO)
+          vim.notify('Virtual lines ON', vim.log.levels.INFO)
         else
-          vim.notify("Virtual lines OFF", vim.log.levels.INFO)
+          vim.notify('Virtual lines OFF', vim.log.levels.INFO)
         end
         vim.diagnostic.config({ virtual_lines = new_config })
       end, { desc = 'Toggle diagnostic virtual_lines' })
 
-      opts.desc = "Toggle inlay hint"
+      opts.desc = 'Toggle inlay hint'
       keymap.set('n', '<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end)
 
       -- opts.desc = 'Go to declaration in vertical split'
       keymap.set('n', 'gV', function()
-        vim.cmd 'vsplit'
+        vim.cmd('vsplit')
         vim.lsp.buf.definition()
       end, opts)
 
       opts.desc = 'Go to declaration in horizontal split'
       keymap.set('n', 'gh', function()
-        vim.cmd 'split'
+        vim.cmd('split')
         vim.lsp.buf.definition()
       end, opts)
 
@@ -115,7 +115,7 @@ return {
 
       opts.desc = 'Show LSP signature'
       vim.keymap.set('i', '<C-k>', function()
-        vim.lsp.buf.signature_help({ border = "solid" })
+        vim.lsp.buf.signature_help({ border = 'solid' })
       end, opts)
 
       opts.desc = 'Show line diagnostics'
@@ -136,7 +136,7 @@ return {
 
       opts.desc = 'Show documentation for what is under cursor'
       keymap.set('n', 'K', function()
-        vim.lsp.buf.hover({ border = "solid" })
+        vim.lsp.buf.hover({ border = 'solid' })
       end, opts) -- show documentation for what is under cursor
 
       -- opts.desc = 'Restart LSP'
@@ -151,9 +151,8 @@ return {
       -- vim.highlight.priorities.treesitter = 201
     end
 
-
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require("blink.cmp").get_lsp_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
     -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
     --
 
@@ -170,7 +169,7 @@ return {
 
     -- Setup lua language server separately so it works on arm
 
-    lspconfig.pyright.setup {
+    lspconfig.pyright.setup({
       capabilities = capabilities,
       settings = {
         pyright = {
@@ -178,7 +177,7 @@ return {
           reportMissingImports = true,
           analysis = {
             autoSearchPaths = true,
-            typeCheckingMode = "recommended",
+            typeCheckingMode = 'recommended',
             autoImportCompletions = true,
             useLibraryCodeForTypes = true,
             diagnosticMode = 'workspace',
@@ -186,17 +185,17 @@ return {
         },
       },
       on_attach = on_attach,
-    }
+    })
 
-    mason_lspconfig.setup_handlers {
+    mason_lspconfig.setup_handlers({
       function(server_name) -- default handler
-        lspconfig[server_name].setup {
+        lspconfig[server_name].setup({
           capabilities = capabilities,
           on_attach = on_attach,
-        }
+        })
       end,
       ['lua_ls'] = function()
-        lspconfig.lua_ls.setup {
+        lspconfig.lua_ls.setup({
           capabilities = capabilities,
           on_attach = on_attach,
           settings = { -- custom settings for lua
@@ -215,26 +214,26 @@ return {
               -- },
             },
           },
-        }
+        })
       end,
-      ["taplo"] = function()
-        lspconfig.taplo.setup {
-          cmd = { "taplo", "lsp", "stdio" }
-        }
+      ['taplo'] = function()
+        lspconfig.taplo.setup({
+          cmd = { 'taplo', 'lsp', 'stdio' },
+        })
       end,
       ['ruff'] = function()
-        lspconfig.ruff.setup {
+        lspconfig.ruff.setup({
           init_options = {
             settings = {
-              configurationPreference = "filesystemFirst",
+              configurationPreference = 'filesystemFirst',
               fixAll = true,
-              organizeImports = true
-            }
-          }
-        }
+              organizeImports = true,
+            },
+          },
+        })
       end,
       ['gopls'] = function()
-        lspconfig.gopls.setup {
+        lspconfig.gopls.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           cmd = { 'gopls' },
@@ -245,69 +244,69 @@ return {
               },
             },
           },
-        }
+        })
       end,
       ['clangd'] = function()
-        lspconfig.clangd.setup {
+        lspconfig.clangd.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           cmd = {
             'clangd',
             '--offset-encoding=utf-16',
           },
-        }
+        })
       end,
       ['cssls'] = function()
-        lspconfig.cssls.setup {
+        lspconfig.cssls.setup({
           on_attach = on_attach(),
           capabilities = capabilities,
           settings = {
             css = {
               validate = true,
               lint = {
-                unknownAtRules = 'ignore'
-              }
+                unknownAtRules = 'ignore',
+              },
             },
             scss = {
               validate = true,
               lint = {
-                unknownAtRules = 'ignore'
-              }
-            }
-          }
-        }
+                unknownAtRules = 'ignore',
+              },
+            },
+          },
+        })
       end,
       ['helm_ls'] = function()
-        lspconfig.helm_ls.setup {
+        lspconfig.helm_ls.setup({
           on_attach = on_attach,
           capabilities = capabilities,
           settings = {
             ['helm-ls'] = {
-              logLevel = "info",
+              logLevel = 'info',
               valuesFiles = {
-                mainValuesFile = "values.yaml",
-                lintOverlayValuesFile = "values.lint.yaml",
-                additionalValuesFilesGlobPattern = "values*.yaml"
+                mainValuesFile = 'values.yaml',
+                lintOverlayValuesFile = 'values.lint.yaml',
+                additionalValuesFilesGlobPattern = 'values*.yaml',
               },
               yamlls = {
                 enabled = true,
-                enabledForFilesGlob = "*.{yaml,yml}",
+                enabledForFilesGlob = '*.{yaml,yml}',
                 diagnosticsLimit = 0,
                 showDiagnosticsDirectly = false,
-                path = "yaml-language-server",
+                path = 'yaml-language-server',
                 config = {
                   schemas = {
-                    kubernetes = "templates/**",
+                    kubernetes = 'templates/**',
                   },
                   completion = true,
                   hover = true,
                   -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
-                }
-              }
-            }
-          }
-        }
+                },
+              },
+            },
+          },
+        })
       end,
-    }
+    })
   end,
 }
