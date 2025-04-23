@@ -63,6 +63,7 @@ return {
       callback = function()
         vim.keymap.set('n', '<Esc><Esc>', '<cmd>AvanteToggle<CR>', { buffer = true })
         vim.keymap.set('n', '<leader>aa', '<cmd>AvanteToggle<CR>', { buffer = true })
+        vim.keymap.set('n', 'q', 'q', { buffer = true })
       end,
     })
   end,

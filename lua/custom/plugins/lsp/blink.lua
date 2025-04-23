@@ -84,6 +84,9 @@ return {
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 0,
+        window = {
+          max_width = 20,
+        },
       },
       ghost_text = { enabled = true },
     },

@@ -11,6 +11,7 @@
         "MiniStatusline"
     ],
     "diagnostics.disable": [
-        "unused-local"
+        "unused-local",
+        "missing-fields"
     ]
 }
