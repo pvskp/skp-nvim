@@ -1,18 +1,17 @@
 return {
   'aserowy/tmux.nvim',
   event = 'VeryLazy',
-  init = function()
-    local opts = { silent = true }
-    vim.keymap.set('n', '<M-h>', [[<cmd>lua require("tmux").move_left()<cr>]], opts)
-    vim.keymap.set('n', '<M-j>', [[<cmd>lua require("tmux").move_bottom()<cr>]], opts)
-    vim.keymap.set('n', '<M-k>', [[<cmd>lua require("tmux").move_top()<cr>]], opts)
-    vim.keymap.set('n', '<M-l>', [[<cmd>lua require("tmux").move_right()<cr>]], opts)
 
-    vim.keymap.set('n', '<M-Left>', [[<cmd>lua require("tmux").resize_left()<cr>]], opts)
-    vim.keymap.set('n', '<M-Down>', [[<cmd>lua require("tmux").resize_bottom()<cr>]], opts)
-    vim.keymap.set('n', '<M-Up>', [[<cmd>lua require("tmux").resize_top()<cr>]], opts)
-    vim.keymap.set('n', '<M-Right>', [[<cmd>lua require("tmux").resize_right()<cr>]], opts)
-  end,
+  -- stylua: ignore start
+  keys = {
+    {'<M-Left>', function() require('tmux').resize_left('3') end, silent = true},
+    {'<M-Right>', function() require('tmux').resize_right('3') end, silent = true},
+    {'<M-Down>', function() require('tmux').resize_bottom('3') end, silent = true},
+    {'<M-Up>', function() require('tmux').resize_top('3') end, silent = true},
+  },
+  -- stylua: ignore end
+
+  ---@module "tmux"
   opts = {
     copy_sync = {
       -- enables copy sync. by default, all registers are synchronized.
