@@ -11,6 +11,23 @@ return {
     },
     'rafamadriz/friendly-snippets',
     {
+      'giuxtaposition/blink-cmp-copilot',
+
+      dependencies = {
+        {
+          'zbirenbaum/copilot.lua',
+          cmd = 'Copilot',
+          event = 'InsertEnter',
+          config = function()
+            require('copilot').setup({
+              suggestion = { enabled = false },
+              panel = { enabled = false },
+            })
+          end,
+        },
+      },
+    },
+    {
       'L3MON4D3/LuaSnip',
       version = 'v2.*',
       config = function()
@@ -100,11 +117,18 @@ return {
         'avante',
         'lsp',
         'path',
+        'copilot',
         -- 'buffer',
         -- 'nerdfont',
         -- 'emoji',
       },
       providers = {
+        copilot = {
+          name = 'copilot',
+          module = 'blink-cmp-copilot',
+          score_offset = 100,
+          async = true,
+        },
         lazydev = {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',

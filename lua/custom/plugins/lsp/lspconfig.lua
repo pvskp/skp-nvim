@@ -114,6 +114,9 @@ return {
         vim.lsp.buf.signature_help({ border = 'solid' })
       end, opts)
 
+      opts.desc = 'Go to references'
+      keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- show diagnostics for line
+
       opts.desc = 'Show line diagnostics'
       keymap.set('n', 'gl', vim.diagnostic.open_float, opts) -- show diagnostics for line
 
@@ -148,8 +151,7 @@ return {
     end
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities =
-      vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
     -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
     --
 
