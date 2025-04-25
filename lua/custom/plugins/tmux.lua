@@ -4,6 +4,11 @@ return {
 
   -- stylua: ignore start
   keys = {
+    {'<M-h>', function() require('tmux').move_left() end, silent = true},
+    {'<M-l>', function() require('tmux').move_right() end, silent = true},
+    {'<M-j>', function() require('tmux').move_bottom() end, silent = true},
+    {'<M-k>', function() require('tmux').move_top() end, silent = true},
+
     {'<M-Left>', function() require('tmux').resize_left('3') end, silent = true},
     {'<M-Right>', function() require('tmux').resize_right('3') end, silent = true},
     {'<M-Down>', function() require('tmux').resize_bottom('3') end, silent = true},
