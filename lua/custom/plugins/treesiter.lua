@@ -1,6 +1,5 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  tag = 'v0.9.3',
   event = { 'BufReadPost' },
   build = ':TSUpdate',
   lazy = vim.fn.argc(-1) == 0,
@@ -10,10 +9,7 @@ return {
   end,
   dependencies = {
     {
-      {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        -- commit = "34867c6",
-      },
+      { 'nvim-treesitter/nvim-treesitter-textobjects' },
       {
         'nvim-treesitter/nvim-treesitter-context',
         opts = {

@@ -1,6 +1,7 @@
 return {
   'mfussenegger/nvim-dap',
-  lazy = false,
+  event = { 'LspAttach' },
+
   -- stylua: ignore start
   keys = {
     { '<F5>',      function() require('dap').continue()          end },
@@ -10,6 +11,7 @@ return {
     { '<leader>b', function() require('dap').toggle_breakpoint() end },
   },
   -- stylua: ignore end
+
   dependencies = {
     { 'rcarriga/nvim-dap-ui', config = true },
     'nvim-neotest/nvim-nio',
