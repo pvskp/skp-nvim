@@ -15,7 +15,7 @@ require('custom.colors')
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
-spec(true, 'colorscheme.rose-pine')
+spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.vscode')
@@ -26,6 +26,7 @@ spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.ayu')
+spec(true, 'colorscheme.moonfly')
 spec(false, 'colorscheme.adwaita')
 
 spec(true, 'treesiter')
