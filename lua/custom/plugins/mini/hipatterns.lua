@@ -4,45 +4,26 @@ return {
   -- lazy = false,
   version = false,
   config = function()
-    local hipatterns = require 'mini.hipatterns'
+    local hipatterns = require('mini.hipatterns')
 
-    vim.api.nvim_set_hl(
-      0,
-      'TrueHighlighGroup',
-      { fg = "green", bg = 'None', bold = true, italic = false }
-    )
+    -- vim.api.nvim_set_hl(
+    --   0,
+    --   'TrueHighlighGroup',
+    --   { fg = "green", bg = 'None', bold = true, italic = false }
+    -- )
+    --
+    -- vim.api.nvim_set_hl(
+    --   0,
+    --   'FalseHighlighGroup',
+    --   { fg = "red", bg = 'None', bold = true, italic = false }
+    -- )
 
-    vim.api.nvim_set_hl(
-      0,
-      'FalseHighlighGroup',
-      { fg = "red", bg = 'None', bold = true, italic = false }
-    )
+    vim.api.nvim_set_hl(0, 'MiniHipatternsFixme', { fg = 'Black', bg = 'NvimLightRed', bold = true, italic = false })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsHack', { fg = 'Black', bg = 'NvimLightYellow', bold = true, italic = false })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsTodo', { fg = 'Black', bg = 'NvimLightCyan', bold = true, italic = false })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsNote', { fg = 'Black', bg = 'NvimLightBlue', bold = true, italic = false })
 
-    vim.api.nvim_set_hl(
-      0,
-      'MiniHipatternsFixme',
-      { fg = 'Black', bg = 'NvimLightRed', bold = true, italic = false }
-    )
-
-    vim.api.nvim_set_hl(
-      0,
-      'MiniHipatternsHack',
-      { fg = 'Black', bg = 'NvimLightYellow', bold = true, italic = false }
-    )
-
-    vim.api.nvim_set_hl(
-      0,
-      'MiniHipatternsTodo',
-      { fg = 'Black', bg = 'NvimLightCyan', bold = true, italic = false }
-    )
-
-    vim.api.nvim_set_hl(
-      0,
-      'MiniHipatternsNote',
-      { fg = 'Black', bg = 'NvimLightBlue', bold = true, italic = false }
-    )
-
-    hipatterns.setup {
+    hipatterns.setup({
       highlighters = {
         -- fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
         -- hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
@@ -53,6 +34,6 @@ return {
         -- Highlight hex color strings (`#rrggbb`) using that color
         hex_color = hipatterns.gen_highlighter.hex_color(),
       },
-    }
+    })
   end,
 }

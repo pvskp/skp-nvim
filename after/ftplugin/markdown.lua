@@ -16,7 +16,7 @@ opts.desc = 'Align table'
 vim.keymap.set('v', '<leader>f', ':! tr -s \' \' | column -t -s \'|\' -o \'|\'<CR>', opts)
 
 opts.desc = 'Toggle checkbox'
-vim.keymap.set('n', '<leader>x', function()
+vim.keymap.set('n', '<C-space>', function()
   local current_line_text = vim.api.nvim_get_current_line()
   local pattern_empty = '%- %[ %]'
   local pattern_filled = '%- %[x%]'
