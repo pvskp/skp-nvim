@@ -24,7 +24,7 @@ return {
         },
       },
     },
-    'williamboman/mason-lspconfig.nvim',
+    { 'williamboman/mason-lspconfig.nvim', version = 'v1.32.0' },
     'nvim-lua/plenary.nvim',
   },
   config = function()
