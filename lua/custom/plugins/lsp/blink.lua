@@ -125,6 +125,9 @@ return {
         -- 'nerdfont',
         -- 'emoji',
       },
+      per_filetype = {
+        codecompanion = { 'codecompanion' },
+      },
       providers = {
         copilot = {
           name = 'copilot',
@@ -136,6 +139,12 @@ return {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
           score_offset = 100,
+        },
+        lsp = {
+          score_offset = 22,
+        },
+        path = {
+          score_offset = 21,
         },
         snippets = {
           score_offset = 20,
