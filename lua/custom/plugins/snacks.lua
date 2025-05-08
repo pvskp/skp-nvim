@@ -43,7 +43,7 @@ return {
     {'<leader>gl', function() Snacks.picker.git_log({ layout = custom_layout, }) end, desc = 'Git Log',},
 
     -- lsp
-    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = 'LSP Workspace Symbols',},
+    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = 'Search for LSP Workspace Symbols',},
     {'gr',         function() Snacks.picker.lsp_references({ layout = custom_layout, }) end, desc = 'References', nowait = true,},
     {'gd',         function() Snacks.picker.lsp_definitions({ layout = custom_layout, }) end, desc = 'Goto Definition',},
   },
