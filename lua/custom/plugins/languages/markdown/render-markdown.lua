@@ -5,6 +5,7 @@ return {
   ft = {
     'markdown',
     'Avante',
+    'codecompanion',
     'help',
   },
   dependencies = {
