@@ -58,7 +58,7 @@ return {
           cmp.show({ providers = { 'fonts' } })
         end,
       },
-      ['<c-space>'] = {
+      ['<C-Space>'] = {
         function(cmp)
           cmp.show({ providers = { 'lsp', 'snippets' } })
         end,

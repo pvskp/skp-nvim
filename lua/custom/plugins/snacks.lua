@@ -156,7 +156,16 @@ return {
     quickfile = { enabled = true },
     scope = { enabled = false },
     scroll = { enabled = false },
-    statuscolumn = { enabled = true },
+    ---@class snacks.statuscolumn.Config
+    statuscolumn = {
+      enabled = true,
+      left = { 'mark', 'sign' }, -- priority of signs on the left (high to low)
+      right = { 'fold', 'git' }, -- priority of signs on the right (high to low)
+      folds = {
+        open = true, -- show open fold icons
+        git_hl = true, -- use Git Signs hl for fold icons
+      },
+    },
     gitbrowse = { enabled = true },
     words = { enabled = true },
   },

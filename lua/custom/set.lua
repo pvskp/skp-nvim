@@ -1,15 +1,15 @@
 local options = {
   --< General Settings >
-  compatible = false,  -- Disable Vi compatibility
-  title = true,        -- Do not show the title of the window
+  compatible = false, -- Disable Vi compatibility
+  title = true, -- Do not show the title of the window
   titlestring = 'filename',
   background = 'dark', -- Use a dark background
-  cmdheight = 1,       -- Height of the command line
+  cmdheight = 1, -- Height of the command line
 
   --< Search >
-  ignorecase = true,    -- Ignore case in search patterns
-  smartcase = true,     -- Use smart case for search patterns
-  hlsearch = false,     -- Do not highlight all matches on previous search pattern
+  ignorecase = true, -- Ignore case in search patterns
+  smartcase = true, -- Use smart case for search patterns
+  hlsearch = false, -- Do not highlight all matches on previous search pattern
   inccommand = 'split', -- Show incremental command results in a split window
 
   --< Listchars >
@@ -33,7 +33,7 @@ local options = {
   cursorlineopt = 'number', -- Highlight the current line number
   cursorcolumn = false, -- Do not highlight the column of the cursor
   signcolumn = 'yes', -- Always show the sign column
-  colorcolumn = "100",
+  colorcolumn = '100',
   wrap = false, -- Do not wrap lines
   linebreak = true, -- Wrap lines at convenient points
   showbreak = '-', -- String to show at the beginning of wrapped lines
@@ -42,43 +42,43 @@ local options = {
   fillchars = { vert = '│', eob = ' ' }, -- Characters used to fill the window
 
   --< Tabulation and Indentation >
-  expandtab = true,   -- Convert tabs to spaces
-  tabstop = 2,        -- Number of spaces that a tab counts for
-  shiftwidth = 2,     -- Number of spaces inserted for each indentation
+  expandtab = true, -- Convert tabs to spaces
+  tabstop = 2, -- Number of spaces that a tab counts for
+  shiftwidth = 2, -- Number of spaces inserted for each indentation
   smartindent = true, -- Make indenting smarter again
 
   --< Splits >
-  splitbelow = true,  -- Horizontal splits will be below
-  splitright = true,  -- Vertical splits will be to the right
+  splitbelow = true, -- Horizontal splits will be below
+  splitright = true, -- Vertical splits will be to the right
   equalalways = true, -- Equalize window sizes when adding/removing windows
 
   --< Wildmenu >
-  wildmenu = true,       -- Enable command-line completion menu
+  wildmenu = true, -- Enable command-line completion menu
   wildignorecase = true, -- Ignore case in command-line completion
   -- wildmode = 'list:longest,list:full', -- Command-line completion modeset
   -- wildoptions = 'pum',                 -- Use popup menu for command-line completion
 
   --< Folds >
   foldmethod = 'indent', -- Fold based on indent levels
-  foldlevelstart = 99,   -- Open all folds by default
-  foldlevel = 0,
-  foldenable = false,    -- Enable folding by default
+  foldlevelstart = 99, -- Open all folds by default
+  foldlevel = 99,
+  foldenable = false, -- Enable folding by default
 
   --< Files and Backups >
   swapfile = false, -- Do not use swapfile
-  undofile = true,  -- Save undo history to an undo file
+  undofile = true, -- Save undo history to an undo file
 
   --< Performance >
   timeoutlen = 300, -- Time to wait for a mapped sequence to complete (milliseconds)
   updatetime = 250, -- Faster completion (default is 4000ms)
 
   --< Miscellaneous >
-  virtualedit = 'none',                                                   -- Allow cursor to move anywhere
-  clipboard = 'unnamedplus',                                              -- Use the system clipboard
-  autochdir = false,                                                      -- Do not change the current working directory automatically
+  virtualedit = 'none', -- Allow cursor to move anywhere
+  clipboard = 'unnamedplus', -- Use the system clipboard
+  autochdir = false, -- Do not change the current working directory automatically
   -- statuscolumn = [[%!v:lua.require'custom.statuscolumn'.statuscolumn()]], -- Custom status column
-  showmode = true,                                                        -- Show the current mode in the command line
-  tabclose = "left",
+  showmode = true, -- Show the current mode in the command line
+  tabclose = 'left',
   -- winborder = "solid",
 }
 
@@ -106,11 +106,11 @@ for k, v in pairs(globals) do
   vim.g[k] = v
 end
 
-vim.filetype.add {
+vim.filetype.add({
   extension = {
     tf = 'terraform',
   },
-}
+})
 
 -- Sets quickfixtextfunc
 local fn = vim.fn
@@ -166,16 +166,8 @@ function _G.qftf(info)
 end
 
 if vim.g.neovide then
-  vim.keymap.set(
-    { 'n', 'v' },
-    '<C-+>',
-    ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>'
-  )
-  vim.keymap.set(
-    { 'n', 'v' },
-    '<C-->',
-    ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>'
-  )
+  vim.keymap.set({ 'n', 'v' }, '<C-+>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>')
+  vim.keymap.set({ 'n', 'v' }, '<C-->', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>')
   vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 

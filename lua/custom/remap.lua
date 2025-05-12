@@ -163,3 +163,6 @@ map('n', '<c-w>m', function()
   vim.cmd('tabnew %')
   vim.api.nvim_win_set_cursor(0, pos)
 end, { desc = 'Zoom window into a tab' })
+
+vim.keymap.set('n', 'H', 'zc', { desc = 'Closes fold' })
+vim.keymap.set('n', 'L', 'zo', { desc = 'Opens fold' })

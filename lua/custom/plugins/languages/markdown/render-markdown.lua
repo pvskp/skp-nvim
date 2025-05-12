@@ -15,7 +15,7 @@ return {
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {
-    file_types = { 'markdown', 'Avante', 'help' },
+    file_types = { 'markdown', 'Avante', 'help', 'codecompanion' },
     sign = {
       enabled = false,
     },
