@@ -15,7 +15,8 @@ local options = {
   --< Listchars >
   list = true, -- Show some invisible characters (tabs, spaces, eol, etc.)
   listchars = {
-    tab = '· ',
+    -- tab = '· ',
+    tab = '   ',
     -- space = '·',
     -- multispace = '·',
     -- eol = '↲'
