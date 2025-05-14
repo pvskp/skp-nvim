@@ -12,6 +12,7 @@ map('n', '<Right>', 'z2l')
 
 map('n', '<S-ScrollWheelDown>', 'z3h')
 map('n', '<S-ScrollWheelUp>', 'z3l')
+
 -- Disable space key
 map('n', '<Space>', '<Nop>', { silent = true, remap = false })
 
@@ -20,28 +21,19 @@ map('n', '<C-e>', ':Explore! 15<CR>', { silent = true, noremap = true })
 
 -- Copy line from cursor position
 map('n', 'Y', 'v$y')
-
 map('n', ',', '@@')
 
+-- Map <C-c> to <Esc>
 map({ 'i', 'n' }, '<C-c>', '<Esc>')
 
 -- General movement mappings
-map({ 'n', 'v' }, '<leader><leader>', 'g_')
+map({ 'n', 'v' }, '<leader><leader>', 'g_', { desc = 'Go to the end of the line' })
 map({ 'n', 'v' }, '<C-j>', '%')
 map('i', '<C-j>', '<Esc>]}a')
 
--- Buffer navigation
-map('n', '<S-l>', ':bnext<CR>', opts)
-map('n', '<S-h>', ':bprevious<CR>', opts)
-map('n', '<leader>x', ':bdelete!<CR>', opts)
-map('n', '<Tab>', '<C-6>', opts)
+map('n', '<Tab>', '<C-6>', { silent = true, noremap = false, desc = 'Go to previous buffer' })
 
 -- Neovide specific mappings
-if vim.g.neovide then
-  vim.keymap.set({ 'n', 'v' }, '<C-+>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>')
-  vim.keymap.set({ 'n', 'v' }, '<C-->', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>')
-  vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
-end
 
 -- Find mode
 map('n', '<leader>ff', ':find *')
@@ -63,7 +55,7 @@ map({ 'n', 'v' }, '<leader>;', function()
   if new_word ~= old_word and new_word ~= '' then
     vim.cmd(':%s/\\<' .. old_word .. '\\>/' .. new_word .. '/g')
   end
-end, {})
+end, { desc = 'Find and replace current word' })
 
 map('n', '<M-=>', '<C-w>=')
 map('n', '<C-s>', ':w<CR>', opts)
@@ -88,20 +80,9 @@ map('v', '<M-k>', ':m \'<-2<CR>gv=gv')
 map('v', '>', '>gv')
 map('v', '<', '<gv')
 
--- Tab key mappings
-map('n', '<M-a>c', function()
-  vim.cmd('tabnew')
-  vim.cmd('term')
-end)
-map('n', '<M-1>', '1gt')
-map('n', '<M-2>', '2gt')
-map('n', '<M-3>', '3gt')
-map('n', '<M-4>', '4gt')
-map('n', '<M-5>', '5gt')
-map('n', '<M-6>', '6gt')
-map('n', '<M-7>', '7gt')
-map('n', '<M-8>', '8gt')
-map('n', '<M-9>', '9gt')
+if os.getenv('TMUX') == nil then
+  require('custom.remap.no_tmux')
+end
 
 -- Copy entire file
 map('n', '<C-y>', ':%y+<CR>', { silent = true })
@@ -112,8 +93,8 @@ map('n', '-', function()
 end, {})
 
 -- Comment line
-vim.api.nvim_set_keymap('n', '<leader>c', 'gcc', opts)
-vim.api.nvim_set_keymap('v', '<leader>c', 'gc', opts)
+vim.api.nvim_set_keymap('n', '<leader>c', 'gcc', { desc = 'Toggle comment line' })
+vim.api.nvim_set_keymap('v', '<leader>c', 'gc', { desc = 'Toggle comment lines' })
 
 -- Toggle true/false
 opts.desc = 'Toggle true/false'
@@ -125,15 +106,8 @@ map('n', '<leader>]', '1z=', { desc = 'Accepts first spell fix' })
 map('n', '<leader>[', '1z=', { desc = 'Accepts first spell fix' })
 
 -- Tabs
-map('n', '<leader>1', '<cmd>tabn 1<CR>', { desc = 'Go to tab 1' })
-map('n', '<leader>2', '<cmd>tabn 2<CR>', { desc = 'Go to tab 2' })
-map('n', '<leader>3', '<cmd>tabn 3<CR>', { desc = 'Go to tab 3' })
-map('n', '<leader>4', '<cmd>tabn 4<CR>', { desc = 'Go to tab 4' })
-map('n', '<leader>5', '<cmd>tabn 5<CR>', { desc = 'Go to tab 5' })
-map('n', '<leader>6', '<cmd>tabn 6<CR>', { desc = 'Go to tab 6' })
-map('n', '<leader>7', '<cmd>tabn 7<CR>', { desc = 'Go to tab 7' })
-map('n', '<leader>8', '<cmd>tabn 8<CR>', { desc = 'Go to tab 8' })
-map('n', '<leader>9', '<cmd>tabn 9<CR>', { desc = 'Go to tab 9' })
+require('custom.remap.tabs')
+
 -- map('n', '<c-w>m', '<cmd>tabnew %<CR>')
 map('n', '<c-w>m', function()
   -- if have less than 2 window, do not open a new tab

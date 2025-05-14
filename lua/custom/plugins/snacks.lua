@@ -23,29 +23,34 @@ return {
   },
   -- stylua: ignore start
   keys = {
-    {',st',        function() require('snacks').terminal.toggle() end, desc = 'Open terminal',},
+    {',st',        function() require('snacks').terminal.toggle() end, desc = '[Snacks] Open terminal',},
     {'<leader>ff', function() Snacks.picker.files ({
       layout = custom_layout,
       hidden = true
-    }) end, desc = 'Find files',},
-    {'<leader>:',  function() Snacks.picker.command_history() end, desc = 'Command History',},
-    {'<leader>gg', function() Snacks.picker.grep({ layout = custom_layout, }) end, desc = 'Grep',},
-    {'<leader>fp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = 'Projects',},
-    {'<leader>fb', function() Snacks.picker.buffers({ layout = custom_layout, }) end, desc = 'Buffers',},
-    {'<leader>sw', function() Snacks.picker.grep_word({ layout = custom_layout, }) end, desc = 'Visual selection or word', mode = { 'n', 'x' },},
-    {'<leader>h',  function() Snacks.picker.help({ layout = custom_layout, }) end, desc = 'Help Pages',},
+    }) end, desc = '[Snacks] Find files',},
+    {'<leader>fh', function() Snacks.picker.highlights ({
+      layout = custom_layout,
+      hidden = true
+    }) end, desc = '[Snacks] Find highlights',},
+    {'<leader>:',  function() Snacks.picker.command_history() end, desc = '[Snacks] Command History',},
+    {'<leader>gg', function() Snacks.picker.grep({ layout = custom_layout, }) end, desc = '[Snacks] Grep',},
+    {'<leader>fp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = '[Snacks] Projects',},
+    {'<leader>fb', function() Snacks.picker.buffers({ layout = custom_layout, }) end, desc = '[Snacks] Buffers',},
+    {'<leader>sw', function() Snacks.picker.grep_word({ layout = custom_layout, }) end, desc = '[Snacks] Visual selection or word', mode = { 'n', 'x' },},
+    {'<leader>h',  function() Snacks.picker.help({ layout = custom_layout, }) end, desc = '[Snacks] Help Pages',},
   -- stylua: ignore end
-    {'<leader>sp', function() Snacks.picker.lazy({ layout = custom_layout, }) end, desc = 'Search for Plugin Spec',},
-    {'<leader>fc', function() Snacks.picker.commands({ layout = custom_layout, }) end, desc = 'Commands',},
-    {'<leader>hd', function() Snacks.notifier.hide() end, desc = 'Hide notifications',},
+    {'<leader>sp', function() Snacks.picker.lazy({ layout = custom_layout, }) end, desc = '[Snacks] Search for Plugin Spec',},
+    {'<leader>fc', function() Snacks.picker.commands({ layout = custom_layout, }) end, desc = '[Snacks] Commands',},
+    {'<leader>hd', function() Snacks.notifier.hide() end, desc = '[Snacks] Hide notifications',},
+    { "<leader>e", function() Snacks.explorer() end, desc = "[Snacks] Explorer Snacks", },
 
     -- git
-    {'<leader>gl', function() Snacks.picker.git_log({ layout = custom_layout, }) end, desc = 'Git Log',},
+    {'<leader>gl', function() Snacks.picker.git_log({ layout = custom_layout, }) end, desc = '[Snacks] Git Log',},
 
     -- lsp
-    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = 'Search for LSP Workspace Symbols',},
-    {'gr',         function() Snacks.picker.lsp_references({ layout = custom_layout, }) end, desc = 'References', nowait = true,},
-    {'gd',         function() Snacks.picker.lsp_definitions({ layout = custom_layout, }) end, desc = 'Goto Definition',},
+    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = '[Snacks] Search for LSP Workspace Symbols',},
+    {'gr',         function() Snacks.picker.lsp_references({ layout = custom_layout, }) end, desc = '[Snacks] References', nowait = true,},
+    {'gd',         function() Snacks.picker.lsp_definitions({ layout = custom_layout, }) end, desc = '[Snacks] Goto Definition',},
   },
   -- stylua: ignore end
   ---@type snacks.Config

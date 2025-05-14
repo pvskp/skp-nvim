@@ -26,7 +26,8 @@ return {
     delay = 1,
   },
   config = function(_, opts)
-    vim.api.nvim_set_hl(0, 'WhichKeyBorder', { link = 'NormalFloat' })
     require('which-key').setup(opts)
+    vim.api.nvim_set_hl(0, 'WhichKeyBorder', { link = 'NormalFloat' })
+    vim.api.nvim_set_hl(0, 'WhichKeyTitle', { link = 'NormalFloat' })
   end,
 }

@@ -20,6 +20,7 @@ return {
           end
         )
       end,
+      desc = '[Conform] Format with conform',
     },
   },
   cmd = 'Conform',
