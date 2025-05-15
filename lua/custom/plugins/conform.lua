@@ -2,26 +2,26 @@ return {
   'stevearc/conform.nvim',
   event = { 'BufWrite', 'BufWritePre' },
   keys = {
-    {
-      '<leader>fm',
-      function()
-        local conform = require('conform')
-        conform.format(
-          {
-            lsp_format = 'fallback',
-          },
-          -- @param err nil|err
-          function(err, did_edit)
-            if did_edit and err == nil then
-              vim.notify('Buffer was successfully formatted', 2)
-            elseif err ~= nil then
-              vim.notify('Failed to format buffer: ' .. err, vim.log.levels.ERROR)
-            end
-          end
-        )
-      end,
-      desc = '[Conform] Format with conform',
-    },
+    -- {
+    --   '<leader>fm',
+    --   function()
+    --     local conform = require('conform')
+    --     conform.format(
+    --       {
+    --         lsp_format = 'fallback',
+    --       },
+    --       -- @param err nil|err
+    --       function(err, did_edit)
+    --         if did_edit and err == nil then
+    --           vim.notify('Buffer was successfully formatted', 2)
+    --         elseif err ~= nil then
+    --           vim.notify('Failed to format buffer: ' .. err, vim.log.levels.ERROR)
+    --         end
+    --       end
+    --     )
+    --   end,
+    --   desc = '[Conform] Format with conform',
+    -- },
   },
   cmd = 'Conform',
   opts = {

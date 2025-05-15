@@ -83,7 +83,17 @@ return {
       nerd_font_variant = 'mono',
     },
 
-    cmdline = { enabled = true },
+    cmdline = {
+      enabled = true,
+      keymap = {
+        ['<Tab>'] = { 'accept' },
+      },
+      completion = {
+        menu = {
+          auto_show = true,
+        },
+      },
+    },
     snippets = { preset = 'luasnip' },
     completion = {
       menu = {

@@ -8,7 +8,7 @@ return {
   ---@module 'onedark'
   opts = {
     -- Main options --
-    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false, -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -39,6 +39,10 @@ return {
     highlights = {
       ['TrueHighlighGroup'] = { fg = '$green' },
       ['FalseHighlighGroup'] = { fg = '$red' },
+      ['TreesitterContextLineNumber'] = { bg = '$bg1' },
+      ['DiffAdd'] = { bg = '$green', fg = '#ffffff' },
+      ['DiffChange'] = { bg = '$yellow', fg = '#ffffff' },
+      ['DiffDeleted'] = { bg = '$red', fg = '#ffffff' },
       ['@string'] = { fg = '$yellow' },
     }, -- Override highlight groups
 
@@ -53,5 +57,6 @@ return {
     require('onedark').setup(opts)
     require('onedark').load()
     vim.api.nvim_set_hl(0, '@boolean', { bold = true })
+    vim.api.nvim_set_hl(0, 'TreesitterContextBottom', { underline = true, sp = '#455574' })
   end,
 }

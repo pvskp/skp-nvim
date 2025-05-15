@@ -24,24 +24,23 @@ return {
   -- stylua: ignore start
   keys = {
     {',st',        function() require('snacks').terminal.toggle() end, desc = '[Snacks] Open terminal',},
-    {'<leader>ff', function() Snacks.picker.files ({
+    {'<leader>f', function() Snacks.picker.files ({
       layout = custom_layout,
       hidden = true
     }) end, desc = '[Snacks] Find files',},
-    {'<leader>fh', function() Snacks.picker.highlights ({
+    {'<leader>sh', function() Snacks.picker.highlights ({
       layout = custom_layout,
       hidden = true
     }) end, desc = '[Snacks] Find highlights',},
     {'<leader>:',  function() Snacks.picker.command_history() end, desc = '[Snacks] Command History',},
     {'<leader>gg', function() Snacks.picker.grep({ layout = custom_layout, }) end, desc = '[Snacks] Grep',},
-    {'<leader>fp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = '[Snacks] Projects',},
-    {'<leader>fb', function() Snacks.picker.buffers({ layout = custom_layout, }) end, desc = '[Snacks] Buffers',},
+    {'<leader>sp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = '[Snacks] Projects',},
+    {'<leader>sb', function() Snacks.picker.buffers({ layout = custom_layout, }) end, desc = '[Snacks] Buffers',},
     {'<leader>sw', function() Snacks.picker.grep_word({ layout = custom_layout, }) end, desc = '[Snacks] Visual selection or word', mode = { 'n', 'x' },},
     {'<leader>h',  function() Snacks.picker.help({ layout = custom_layout, }) end, desc = '[Snacks] Help Pages',},
-  -- stylua: ignore end
-    {'<leader>sp', function() Snacks.picker.lazy({ layout = custom_layout, }) end, desc = '[Snacks] Search for Plugin Spec',},
-    {'<leader>fc', function() Snacks.picker.commands({ layout = custom_layout, }) end, desc = '[Snacks] Commands',},
-    {'<leader>hd', function() Snacks.notifier.hide() end, desc = '[Snacks] Hide notifications',},
+    {'<leader>sp', function() Snacks.picker.explorer({  cwd = "~/.local/share/nvim/lazy/" }) end, desc = '[Snacks] Search for Plugin Spec',},
+    {'<leader>sc', function() Snacks.picker.commands({ layout = custom_layout, }) end, desc = '[Snacks] Commands',},
+    -- {'<leader>hd', function() Snacks.notifier.hide() end, desc = '[Snacks] Hide notifications',},
     { "<leader>e", function() Snacks.explorer() end, desc = "[Snacks] Explorer Snacks", },
 
     -- git
@@ -61,19 +60,9 @@ return {
       preset = {
         pick = 'telescope.nvim',
         keys = {
-          {
-            icon = ' ',
-            key = 'f',
-            desc = 'Find File',
-            action = ':lua Snacks.dashboard.pick(\'files\')',
-          },
+          { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.dashboard.pick(\'files\')' },
           { icon = ' ', key = 'n', desc = 'New File', action = ':ene | startinsert' },
-          {
-            icon = ' ',
-            key = 'g',
-            desc = 'Find Text',
-            action = ':lua Snacks.dashboard.pick(\'live_grep\')',
-          },
+          { icon = ' ', key = 'g', desc = 'Find Text', action = ':lua Snacks.dashboard.pick(\'live_grep\')' },
           {
             icon = ' ',
             key = 'c',
@@ -81,32 +70,14 @@ return {
             action = ':lua Snacks.dashboard.pick(\'files\', {cwd = vim.fn.stdpath(\'config\')})',
           },
           { icon = ' ', key = 'r', desc = 'Restore Session', action = ':SessionRestore' },
-          {
-            icon = ' ',
-            key = 's',
-            desc = 'Recent Files',
-            action = ':lua Snacks.dashboard.pick(\'oldfiles\')',
-          },
-          {
-            icon = '󰒲 ',
-            key = 'L',
-            desc = 'Lazy',
-            action = ':Lazy',
-            enabled = package.loaded.lazy ~= nil,
-          },
+          { icon = ' ', key = 's', desc = 'Recent Files', action = ':lua Snacks.dashboard.pick(\'oldfiles\')' },
+          { icon = '󰒲 ', key = 'L', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
           { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
         },
       },
       sections = {
-        {
-          section = 'header',
-        },
-        {
-          section = 'keys',
-          gap = 1,
-          padding = 1,
-          height = 100,
-        },
+        { section = 'header' },
+        { section = 'keys', gap = 1, padding = 1, height = 100 },
         { section = 'startup' },
         -- {
         --   section = "terminal",
@@ -120,9 +91,7 @@ return {
     },
     indent = {
       enabled = false,
-      animate = {
-        enabled = false,
-      },
+      animate = { enabled = false },
     },
     explorer = {
       replace_netrw = false, -- Replace netrw with the snacks explorer
@@ -152,8 +121,70 @@ return {
       enabled = true,
       win = {
         input = {
-          keys = {
-            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+          keys = { ['<Esc>'] = { 'close', mode = { 'n', 'i' } } },
+        },
+      },
+      sources = {
+        explorer = {
+          finder = 'explorer',
+          sort = { fields = { 'sort' } },
+          supports_live = true,
+          tree = true,
+          watch = true,
+          diagnostics = true,
+          diagnostics_open = false,
+          git_status = true,
+          git_status_open = false,
+          git_untracked = true,
+          follow_file = true,
+          focus = 'list',
+          auto_close = false,
+          jump = { close = false },
+          layout = { preset = 'sidebar', preview = false },
+          -- to show the explorer to the right, add the below to
+          -- your config under `opts.picker.sources.explorer`
+          -- layout = { layout = { position = "right" } },
+          formatters = {
+            file = { filename_only = true },
+            severity = { pos = 'right' },
+          },
+          matcher = { sort_empty = false, fuzzy = false },
+          config = function(opts)
+            return require('snacks.picker.source.explorer').setup(opts)
+          end,
+          win = {
+            list = {
+              keys = {
+                ['<BS>'] = 'explorer_up',
+                ['l'] = 'confirm',
+                ['h'] = 'explorer_close', -- close directory
+                ['a'] = 'explorer_add',
+                ['d'] = 'explorer_del',
+                ['r'] = 'explorer_rename',
+                ['c'] = 'explorer_copy',
+                ['m'] = 'explorer_move',
+                ['o'] = 'explorer_open', -- open with system application
+                ['P'] = 'toggle_preview',
+                ['y'] = { 'explorer_yank', mode = { 'n', 'x' } },
+                ['p'] = 'explorer_paste',
+                ['u'] = 'explorer_update',
+                ['<c-c>'] = 'tcd',
+                ['<leader>/'] = 'picker_grep',
+                ['<c-t>'] = 'terminal',
+                ['.'] = 'explorer_focus',
+                ['I'] = 'toggle_ignored',
+                ['H'] = 'toggle_hidden',
+                ['Z'] = 'explorer_close_all',
+                [']g'] = 'explorer_git_next',
+                ['[g'] = 'explorer_git_prev',
+                [']d'] = 'explorer_diagnostic_next',
+                ['[d'] = 'explorer_diagnostic_prev',
+                [']w'] = 'explorer_warn_next',
+                ['[w'] = 'explorer_warn_prev',
+                [']e'] = 'explorer_error_next',
+                ['[e'] = 'explorer_error_prev',
+              },
+            },
           },
         },
       },
@@ -166,10 +197,7 @@ return {
       enabled = true,
       left = { 'mark', 'sign' }, -- priority of signs on the left (high to low)
       right = { 'fold', 'git' }, -- priority of signs on the right (high to low)
-      folds = {
-        open = true, -- show open fold icons
-        git_hl = true, -- use Git Signs hl for fold icons
-      },
+      folds = { open = true, git_hl = true },
     },
     gitbrowse = { enabled = true },
     words = { enabled = true },

@@ -1,5 +1,4 @@
 -- Key mappings for general functionality
-local map = vim.keymap.set
 local opts = { silent = true, noremap = false }
 
 -- Leader key settings
@@ -7,48 +6,54 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- horizontal scroll
-map('n', '<Left>', 'z2h')
-map('n', '<Right>', 'z2l')
+vim.keymap.set('n', '<Left>', 'z2h', { desc = 'Scroll left slightly' })
+vim.keymap.set('n', '<Right>', 'z2l', { desc = 'Scroll right slightly' })
 
-map('n', '<S-ScrollWheelDown>', 'z3h')
-map('n', '<S-ScrollWheelUp>', 'z3l')
+vim.keymap.set('n', '<S-ScrollWheelDown>', 'z3h', { desc = 'Scroll left with shift+wheel' })
+vim.keymap.set('n', '<S-ScrollWheelUp>', 'z3l', { desc = 'Scroll right with shift+wheel' })
 
 -- Disable space key
-map('n', '<Space>', '<Nop>', { silent = true, remap = false })
+vim.keymap.set('n', '<Space>', '<Nop>', { silent = true, remap = false, desc = 'Space' })
 
 -- File explorer
-map('n', '<C-e>', ':Explore! 15<CR>', { silent = true, noremap = true })
+vim.keymap.set(
+  'n',
+  '<C-e>',
+  ':Explore! 15<CR>',
+  { silent = true, noremap = true, desc = 'Open file explorer with 15 lines height' }
+)
 
 -- Copy line from cursor position
-map('n', 'Y', 'v$y')
-map('n', ',', '@@')
+vim.keymap.set('n', 'Y', 'v$y', { desc = 'Yank from cursor to end of line' })
+vim.keymap.set('n', ',', '@@', { desc = 'Repeat last macro' })
 
 -- Map <C-c> to <Esc>
-map({ 'i', 'n' }, '<C-c>', '<Esc>')
+vim.keymap.set({ 'i', 'n' }, '<C-c>', '<Esc>', { desc = 'Exit to normal mode' })
 
 -- General movement mappings
-map({ 'n', 'v' }, '<leader><leader>', 'g_', { desc = 'Go to the end of the line' })
-map({ 'n', 'v' }, '<C-j>', '%')
-map('i', '<C-j>', '<Esc>]}a')
+vim.keymap.set({ 'n', 'v' }, '<leader><leader>', 'g_', { desc = 'Go to the end of the line' })
+vim.keymap.set({ 'n', 'v' }, '<C-j>', '%', { desc = 'Jump to matching bracket' })
+vim.keymap.set('i', '<C-j>', '<Esc>]}a', { desc = 'Jump to next closing bracket in insert mode' })
 
-map('n', '<Tab>', '<C-6>', { silent = true, noremap = false, desc = 'Go to previous buffer' })
+vim.keymap.set('n', '<Tab>', '<C-6>', { silent = true, noremap = false, desc = 'Go to previous buffer' })
 
 -- Neovide specific mappings
+-- Note: Actual Neovide mappings might be in a separate file
 
 -- Find mode
-map('n', '<leader>ff', ':find *')
+vim.keymap.set('n', '<leader>f', ':find *', { desc = 'Find files in current directory' })
 
 -- Search in directory
-map('n', '<leader>gg', function()
+vim.keymap.set('n', '<leader>gg', function()
   local ok, pattern = pcall(vim.fn.input, 'Enter search pattern: ')
   if ok and pattern ~= '' then
     vim.cmd('silent! grep! ' .. pattern .. ' * 2> /dev/null')
     vim.cmd('copen')
   end
-end, opts)
+end, { desc = 'Search pattern in current directory', silent = true, noremap = false })
 
 -- Find and replace current word
-map({ 'n', 'v' }, '<leader>;', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>;', function()
   local old_word = vim.fn.expand('<cword>')
   local new_word = vim.fn.input('Replace ' .. old_word .. ' by? ', old_word)
 
@@ -57,59 +62,58 @@ map({ 'n', 'v' }, '<leader>;', function()
   end
 end, { desc = 'Find and replace current word' })
 
-map('n', '<M-=>', '<C-w>=')
-map('n', '<C-s>', ':w<CR>', opts)
+vim.keymap.set('n', '<M-=>', '<C-w>=', { desc = 'Make all windows equal size' })
+vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save current buffer', silent = true, noremap = false })
 
 -- Window and buffer close
 -- map('n', 'Q', '<c-w>q', { silent = true })
-map('n', 'Q', function()
+vim.keymap.set('n', 'Q', function()
   local buff_info = vim.fn.getbufinfo({ buflisted = 1 })
   if #buff_info > 1 then
     vim.api.nvim_buf_delete(0, { force = true, unload = false })
     return
   end
   vim.cmd('quit')
-end, { silent = true })
+end, { silent = true, desc = 'Close buffer or quit if last buffer' })
 
-map('n', '<C-q>', ':qa!<CR>', { silent = true })
+vim.keymap.set('n', '<C-q>', ':qa!<CR>', { silent = true, desc = 'Force quit all' })
 
 -- Visual mode mappings
-map('v', '<leader>y', ':CopyCodeBlock<CR>', opts)
-map('v', '<M-j>', ':m \'>+1<CR>gv=gv')
-map('v', '<M-k>', ':m \'<-2<CR>gv=gv')
-map('v', '>', '>gv')
-map('v', '<', '<gv')
+vim.keymap.set('v', '<leader>y', ':CopyCodeBlock<CR>', { desc = 'Copy code block', silent = true, noremap = false })
+vim.keymap.set('v', '<M-j>', ':m \'>+1<CR>gv=gv', { desc = 'Move selected lines down' })
+vim.keymap.set('v', '<M-k>', ':m \'<-2<CR>gv=gv', { desc = 'Move selected lines up' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent and maintain selection' })
+vim.keymap.set('v', '<', '<gv', { desc = 'Outdent and maintain selection' })
 
+-- Load non-tmux specific keymaps when not in tmux session
 if os.getenv('TMUX') == nil then
   require('custom.remap.no_tmux')
 end
 
 -- Copy entire file
-map('n', '<C-y>', ':%y+<CR>', { silent = true })
+vim.keymap.set('n', '<C-y>', ':%y+<CR>', { silent = true, desc = 'Copy entire file to clipboard' })
 
 -- Folding
-map('n', '-', function()
+vim.keymap.set('n', '-', function()
   pcall(vim.cmd.foldclose)
-end, {})
+end, { desc = 'Close current fold' })
 
 -- Comment line
 vim.api.nvim_set_keymap('n', '<leader>c', 'gcc', { desc = 'Toggle comment line' })
 vim.api.nvim_set_keymap('v', '<leader>c', 'gc', { desc = 'Toggle comment lines' })
 
--- Toggle true/false
-opts.desc = 'Toggle true/false'
-map({ 'n', 'v' }, ',t', ':lua ToggleTrueFalse()<CR>', opts)
+vim.keymap.set({ 'n', 'v' }, ',t', ':lua ToggleTrueFalse()<CR>', { desc = 'Toggle true/false' })
 
 -- Spell check correction
-map('n', '<leader>q', '1z=', { desc = 'Accepts first spell fix' })
-map('n', '<leader>]', '1z=', { desc = 'Accepts first spell fix' })
-map('n', '<leader>[', '1z=', { desc = 'Accepts first spell fix' })
+vim.keymap.set('n', '<leader>q', '1z=', { desc = 'Accepts first spell fix' })
+vim.keymap.set('n', '<leader>]', '1z=', { desc = 'Accepts first spell fix' })
+vim.keymap.set('n', '<leader>[', '1z=', { desc = 'Accepts first spell fix' })
 
 -- Tabs
 require('custom.remap.tabs')
 
 -- map('n', '<c-w>m', '<cmd>tabnew %<CR>')
-map('n', '<c-w>m', function()
+vim.keymap.set('n', '<c-w>m', function()
   -- if have less than 2 window, do not open a new tab
   local windows = vim.api.nvim_tabpage_list_wins(0)
   if #windows < 2 then
@@ -140,3 +144,10 @@ end, { desc = 'Zoom window into a tab' })
 
 vim.keymap.set('n', 'H', 'zc', { desc = 'Closes fold' })
 vim.keymap.set('n', 'L', 'zo', { desc = 'Opens fold' })
+
+-- vim.keymap.set('c', '<Tab>', function()
+--   if vim.fn.pumvisible() == 1 then
+--     return '<c-y>'
+--   end
+--   return '<cr>'
+-- end, { expr = true })
