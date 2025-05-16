@@ -48,6 +48,7 @@ spec(false, 'lsp.cmp') -- completion
 
 spec(true, 'languages.helm')
 spec(true, 'languages.markdown.render-markdown')
+spec(true, 'languages.markdown.preview')
 
 --<< Mini library >>--
 

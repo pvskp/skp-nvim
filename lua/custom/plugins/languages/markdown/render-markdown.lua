@@ -12,6 +12,9 @@ return {
     'nvim-treesitter/nvim-treesitter', -- Mandatory
     'nvim-tree/nvim-web-devicons',
   },
+  keys = {
+    { '<leader>v', '<CMD>RenderMarkdown toggle<CR>', desc = '[markdown] Toggle conceal' },
+  },
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {

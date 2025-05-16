@@ -44,6 +44,12 @@ return {
       ['DiffChange'] = { bg = '$yellow', fg = '#ffffff' },
       ['DiffDeleted'] = { bg = '$red', fg = '#ffffff' },
       ['@string'] = { fg = '$yellow' },
+      ['RenderMarkdownH1Bg'] = { fg = '$green', bg = '$bg1' },
+      ['RenderMarkdownH2Bg'] = { fg = '$yellow', bg = '$bg1' },
+      ['RenderMarkdownH3Bg'] = { fg = '$orange', bg = '$bg1' },
+      ['RenderMarkdownH4Bg'] = { fg = '$red', bg = '$bg1' },
+      ['RenderMarkdownH5Bg'] = { fg = '$purple', bg = '$bg1' },
+      ['RenderMarkdownH6Bg'] = { fg = '$orange', bg = '$bg1' },
     }, -- Override highlight groups
 
     -- Plugins Config --

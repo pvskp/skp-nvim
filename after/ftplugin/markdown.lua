@@ -5,17 +5,20 @@ for k, v in pairs({
   tabstop = 2,
   expandtab = true,
   wrap = false,
-  conceallevel = 2,
+  concealcursor = 'ncv', -- hide original markdown chars
+  conceallevel = 3, -- hide original markdown chars
+  textwidth = 80,
 }) do
   vim.opt_local[k] = v
 end
 
-local opts = { silent = false, noremap = true }
+vim.keymap.set(
+  'v',
+  '<leader>f',
+  ':! tr -s \' \' | column -t -s \'|\' -o \'|\'<CR>',
+  { desc = '[Markdown] format table' }
+)
 
-opts.desc = 'Align table'
-vim.keymap.set('v', '<leader>f', ':! tr -s \' \' | column -t -s \'|\' -o \'|\'<CR>', opts)
-
-opts.desc = 'Toggle checkbox'
 vim.keymap.set('n', '<C-space>', function()
   local current_line_text = vim.api.nvim_get_current_line()
   local pattern_empty = '%- %[ %]'
@@ -25,4 +28,4 @@ vim.keymap.set('n', '<C-space>', function()
   elseif string.find(current_line_text, pattern_filled) then
     vim.cmd('s/\\[x\\]/\\[ \\]')
   end
-end, opts)
+end, { desc = '[markdown] Toggle checkbox' })
