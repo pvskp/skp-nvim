@@ -13,8 +13,8 @@ local options = {
   inccommand = 'split', -- Show incremental command results in a split window
 
   --<Appearance >
-  concealcursor = 'ncv', -- hide original markdown chars
-  conceallevel = 3, -- hide original markdown chars
+  -- concealcursor = 'ncv', -- hide original markdown chars
+  -- conceallevel = 3, -- hide original markdown chars
 
   --< Listchars >
   list = true, -- Show some invisible characters (tabs, spaces, eol, etc.)
