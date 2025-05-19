@@ -25,7 +25,7 @@ vim.keymap.set(
 
 -- Copy line from cursor position
 vim.keymap.set('n', 'Y', 'v$y', { desc = 'Yank from cursor to end of line' })
-vim.keymap.set('n', ',', '@@', { desc = 'Repeat last macro' })
+-- vim.keymap.set('n', ',', '@@', { desc = 'Repeat last macro' })
 
 -- Map <C-c> to <Esc>
 vim.keymap.set({ 'i', 'n' }, '<C-c>', '<Esc>', { desc = 'Exit to normal mode' })

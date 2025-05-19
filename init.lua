@@ -76,6 +76,7 @@ spec(true, 'neogen')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'debugger')
 spec(true, 'ccc')
+spec(true, 'yazi')
 spec(true, 'auto-session')
 spec(false, 'w3m')
 spec(false, 'vim-zoom')

@@ -13,7 +13,21 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   keys = {
-    { '<leader>v', '<CMD>RenderMarkdown toggle<CR>', desc = '[markdown] Toggle conceal' },
+    {
+      '<leader>v',
+      function()
+        if vim.opt.concealcursor ~= '' or vim.opt.conceallevel ~= 0 then
+          vim.opt.concealcursor = ''
+          vim.opt.conceallevel = 0
+        else
+          vim.opt.concealcursor = 'nvc'
+          vim.opt.conceallevel = 3
+        end
+
+        vim.cmd('RenderMarkdown toggle')
+      end,
+      desc = '[markdown] Toggle conceal',
+    },
   },
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
