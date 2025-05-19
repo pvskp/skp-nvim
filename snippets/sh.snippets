@@ -14,3 +14,15 @@ snippet tpl "Basic shell script template"
   if [[ "${BASH_SOURCE[0]}" == "\${0}" ]]; then
       main
   fi
+
+snippet btn "i3Blocks Button parsing"
+	case "\${BLOCK_BUTTON}" in
+			"\${LEFT_CLICK}")
+					;;
+			"\${RIGHT_CLICK}")
+					;;
+			"\${SCROLL_UP}")
+					;;
+			"\${SCROLL_DOWN}")
+					;;
+	esac
