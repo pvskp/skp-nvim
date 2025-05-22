@@ -1,11 +1,17 @@
 return {
   'neovim/nvim-lspconfig',
-  -- version = '*',
+  version = '*',
+  -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   lazy = false,
   dependencies = {
+    -- 'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
     'saghen/blink.cmp', -- needed for lsp capabilities
-    'mason-org/mason.nvim',
-    { 'mason-org/mason-lspconfig.nvim' },
+    {
+      'mason-org/mason.nvim',
+      version = '*',
+      opts = {},
+    },
+    { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
     vim.diagnostic.config({
@@ -25,8 +31,6 @@ return {
       },
     })
 
-    local lspconfig = require('lspconfig')
-
     vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       group = vim.api.nvim_create_augroup('LspAttach', {}),
       callback = function(args)
@@ -43,113 +47,94 @@ return {
       lineFoldingOnly = true,
     }
 
-    -- vim.lsp.config('pyright', {
-    --   settings = {
-    --     ['pyright'] = {
-    --       disableOrganizeImports = true,
-    --       reportMissingImports = true,
-    --       analysis = {
-    --         autoSearchPaths = true,
-    --         typeCheckingMode = 'recommended',
-    --         autoImportCompletions = true,
-    --         useLibraryCodeForTypes = true,
-    --         diagnosticMode = 'workspace',
-    --       },
-    --     },
-    --   },
-    -- })
-    --
-    -- vim.lsp.config('gopls', {
-    --   settings = {
-    --     ['gopls'] = {
-    --       gopls = {
-    --         analyses = {
-    --           fillstruct = true,
-    --         },
-    --       },
-    --     },
-    --   },
-    -- })
-    --
-    -- vim.lsp.config('ruff', {
-    --   settings = {
-    --     ['ruff'] = {
-    --       init_options = {
-    --         settings = {
-    --           configurationPreference = 'filesystemFirst',
-    --           fixAll = true,
-    --           organizeImports = true,
-    --         },
-    --       },
-    --     },
-    --   },
-    -- })
-    --
-    -- vim.lsp.config('helm_ls', {
-    --   settings = {
-    --     ['helm_ls'] = {
-    --       ['helm-ls'] = {
-    --         logLevel = 'info',
-    --         valuesFiles = {
-    --           mainValuesFile = 'values.yaml',
-    --           lintOverlayValuesFile = 'values.lint.yaml',
-    --           additionalValuesFilesGlobPattern = 'values*.yaml',
-    --         },
-    --         yamlls = {
-    --           enabled = true,
-    --           enabledForFilesGlob = '*.{yaml,yml}',
-    --           diagnosticsLimit = 0,
-    --           showDiagnosticsDirectly = false,
-    --           path = 'yaml-language-server',
-    --           config = {
-    --             schemas = {
-    --               kubernetes = 'templates/**',
-    --             },
-    --             completion = true,
-    --             hover = true,
-    --             -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
-    --           },
-    --         },
-    --       },
-    --     },
-    --   },
-    -- })
-
     local servers = {
+      lua_ls = {},
+      jsonls = {},
+
       pyright = {
-        disableOrganizeImports = true,
-        reportMissingImports = true,
-        analysis = {
-          autoSearchPaths = true,
-          typeCheckingMode = 'recommended',
-          autoImportCompletions = true,
-          useLibraryCodeForTypes = true,
-          diagnosticMode = 'workspace',
+        settings = {
+          ['pyright'] = {
+            disableOrganizeImports = true,
+            reportMissingImports = true,
+            analysis = {
+              autoSearchPaths = true,
+              typeCheckingMode = 'recommended',
+              autoImportCompletions = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = 'workspace',
+            },
+          },
         },
       },
+
       gopls = {
-        gopls = {
-          analyses = {
-            fillstruct = true,
+        settings = {
+          ['gopls'] = {
+            gopls = {
+              analyses = {
+                fillstruct = true,
+              },
+            },
+          },
+        },
+      },
+
+      ruff = {
+        settings = {
+          ['ruff'] = {
+            init_options = {
+              settings = {
+                configurationPreference = 'filesystemFirst',
+                fixAll = true,
+                organizeImports = true,
+              },
+            },
+          },
+        },
+      },
+
+      helm_ls = {
+        settings = {
+          ['helm_ls'] = {
+            ['helm-ls'] = {
+              logLevel = 'info',
+              valuesFiles = {
+                mainValuesFile = 'values.yaml',
+                lintOverlayValuesFile = 'values.lint.yaml',
+                additionalValuesFilesGlobPattern = 'values*.yaml',
+              },
+              yamlls = {
+                enabled = true,
+                enabledForFilesGlob = '*.{yaml,yml}',
+                diagnosticsLimit = 0,
+                showDiagnosticsDirectly = false,
+                path = 'yaml-language-server',
+                config = {
+                  schemas = {
+                    kubernetes = 'templates/**',
+                  },
+                  completion = true,
+                  hover = true,
+                  -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
+                },
+              },
+            },
           },
         },
       },
     }
 
-    require('mason').setup()
-    require('mason-lspconfig').setup({
-      ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-      automatic_installation = false,
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
-      },
+    for k, v in pairs(servers) do
+      vim.lsp.config(k, v)
+    end
+
+    vim.lsp.config('*', {
+      capabilities = capabilities,
     })
+
+    vim.lsp.enable(vim.tbl_keys(servers or {}))
+
+    require('mason').setup()
+    local lspconfig = require('lspconfig')
   end,
 }

@@ -5,7 +5,6 @@ local options = {
   titlestring = 'filename',
   background = 'dark', -- Use a dark background
   cmdheight = 1, -- Height of the command line
-
   --< Search >
   ignorecase = true, -- Ignore case in search patterns
   smartcase = true, -- Use smart case for search patterns

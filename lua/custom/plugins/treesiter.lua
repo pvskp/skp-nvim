@@ -2,7 +2,6 @@ return {
   'nvim-treesitter/nvim-treesitter',
   event = { 'BufReadPost' },
   build = ':TSUpdate',
-  lazy = vim.fn.argc(-1) == 0,
   init = function()
     vim.opt.foldmethod = 'expr'
     vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'

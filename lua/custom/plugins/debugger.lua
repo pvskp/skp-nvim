@@ -1,7 +1,5 @@
 return {
   'mfussenegger/nvim-dap',
-  event = { 'LspAttach' },
-
   -- stylua: ignore start
   keys = {
     { '<F5>',      function() require('dap').continue()          end, desc = "[nvim-dap] Continue"},
