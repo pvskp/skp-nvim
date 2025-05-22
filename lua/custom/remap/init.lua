@@ -155,6 +155,8 @@ vim.keymap.set('n', '<leader>v', function()
   end
 end, { desc = 'Toggle conceal' })
 
+vim.keymap.set('n', 'q:', 'q:?', { desc = 'Opens command history with search' })
+
 -- vim.keymap.set('c', '<Tab>', function()
 --   if vim.fn.pumvisible() == 1 then
 --     return '<c-y>'
