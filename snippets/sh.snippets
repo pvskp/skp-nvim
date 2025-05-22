@@ -29,3 +29,14 @@ snippet btn "i3Blocks Button parsing"
 
 snippet so "Source in script dir"
 	source "\$(dirname "\${BASH_SOURCE[0]}")/${1}"
+
+
+snippet dk "DESKTOP_SESSION parsing"
+	case "\${DESKTOP_SESSION}" in
+			"hyprland")
+					;;
+			"i3")
+					;;
+			*)
+					;;
+	esac
