@@ -11,6 +11,7 @@ return {
     },
     {
       'giuxtaposition/blink-cmp-copilot',
+      enabled = false,
 
       dependencies = {
         {
@@ -130,7 +131,7 @@ return {
         'avante',
         'lsp',
         'path',
-        'copilot',
+        -- 'copilot',
         -- 'buffer',
         -- 'nerdfont',
         -- 'emoji',
