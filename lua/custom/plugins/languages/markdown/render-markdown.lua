@@ -36,6 +36,10 @@ return {
     sign = {
       enabled = false,
     },
+    heading = {
+      icons = { '󰲡 ', '󰲣 ', '󰲧 ', '󰲥 ', '󰲩 ', '󰲫 ' },
+      position = 'inline',
+    },
     anti_conceal = {
       -- This enables hiding any added text on the line the cursor is on.
       enabled = false,
