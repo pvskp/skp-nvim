@@ -175,4 +175,5 @@ if vim.g.neovide then
   vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 
+-- vim.g.python3_host_prog = '/usr/bin/python'
 -- vim.o.qftf = '{info -> v:lua._G.qftf(info)}'

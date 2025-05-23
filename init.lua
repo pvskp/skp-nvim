@@ -11,7 +11,7 @@ require('custom.netrw')
 require('custom.commandline')
 -- require 'custom.terminal'
 require('custom.set')
-require('custom.colors')
+-- require('custom.colors')
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
@@ -75,7 +75,8 @@ spec(true, 'neogen')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'debugger')
 spec(true, 'ccc')
-spec(true, 'yazi')
+spec(false, 'yazi')
+spec(true, 'ranger')
 spec(true, 'auto-session')
 spec(false, 'w3m')
 spec(false, 'vim-zoom')

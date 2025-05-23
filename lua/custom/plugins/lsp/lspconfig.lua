@@ -50,6 +50,7 @@ return {
     local servers = {
       lua_ls = {},
       jsonls = {},
+      bashls = {},
 
       pyright = {
         settings = {
