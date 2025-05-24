@@ -1,21 +1,12 @@
 return {
   'stevearc/oil.nvim',
   keys = {
-    {
-      '<C-e>',
-      '<CMD>Oil<CR>',
-      -- function()
-      --   require('oil').open(nil, {
-      --     preview = {
-      --       vertical = true,
-      --     },
-      --   }, nil)
-      -- end,
-    },
+    { '=', '<CMD>Oil<CR>' },
   },
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
+    default_file_explorer = false,
     skip_confirm_for_simple_edits = true,
     win_options = {
       number = false,

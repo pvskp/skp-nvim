@@ -1,31 +1,42 @@
+local ranger_hide_barbecue = function()
+  vim.cmd('Barbecue hide')
+  vim.cmd('Ranger')
+end
+
 return {
-  'kelly-lin/ranger.nvim',
+  'francoiscabrol/ranger.vim',
   lazy = false,
   keys = {
-    {
-      '<leader>e',
-      function()
-        require('ranger-nvim').open(true)
-      end,
-    },
+    { '<leader>e', ranger_hide_barbecue },
+    { '<C-e>', ranger_hide_barbecue },
+  },
+  dependencies = {
+    'rbgrouleff/bclose.vim',
   },
   init = function()
-    vim.api.nvim_create_autocmd('FileType', {
-      pattern = 'ranger',
-      group = vim.api.nvim_create_augroup('ranger-toggle', {}),
+    vim.g.ranger_map_keys = false
+    vim.g.ranger_replace_netrw = 1
+
+    vim.api.nvim_create_autocmd({ 'TermClose' }, {
+      pattern = 'term://*ranger*',
+      callback = function()
+        vim.api.nvim_input('<CR>')
+      end,
+    })
+
+    vim.api.nvim_create_autocmd({ 'TermOpen' }, {
+      pattern = 'term://*ranger*',
       callback = function(args)
-        vim.keymap.set('t', '<leader>e', ':q!', { buffer = args.buf })
+        vim.api.nvim_set_option_value('number', false, { buf = args.buf })
+        vim.api.nvim_set_option_value('filetype', 'ranger', { buf = args.buf })
+      end,
+    })
+
+    vim.api.nvim_create_autocmd({ 'TermLeave' }, {
+      pattern = 'term://*ranger*',
+      callback = function(args)
+        vim.cmd('Barbecue show')
       end,
     })
   end,
-  opts = {
-    replace_netrw = true,
-    ui = {
-      border = 'single',
-      height = 0.8,
-      width = 0.8,
-      x = 0.5,
-      y = 0.5,
-    },
-  },
 }

@@ -68,17 +68,7 @@ return {
         },
       },
 
-      gopls = {
-        settings = {
-          ['gopls'] = {
-            gopls = {
-              analyses = {
-                fillstruct = true,
-              },
-            },
-          },
-        },
-      },
+      gopls = {},
 
       ruff = {
         settings = {

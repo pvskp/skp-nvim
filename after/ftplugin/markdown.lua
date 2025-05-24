@@ -5,9 +5,9 @@ for k, v in pairs({
   tabstop = 2,
   expandtab = true,
   wrap = false,
-  concealcursor = 'ncv', -- hide original markdown chars
-  conceallevel = 3, -- hide original markdown chars
-  textwidth = 80,
+  -- concealcursor = 'ncv', -- hide original markdown chars
+  -- conceallevel = 3, -- hide original markdown chars
+  -- textwidth = 80,
 }) do
   vim.opt_local[k] = v
 end

@@ -14,6 +14,8 @@ return {
     local barbecue = require('barbecue')
     local tsctx = Get_hl_through_links('TreesitterContext')
     opts = {
+      exclude_filetypes = { 'netrw', 'toggleterm', 'ranger', 'terminal' },
+
       theme = {
         normal = { bg = tsctx.bg },
       },
