@@ -16,6 +16,7 @@ require('custom.set')
 -- require 'custom.habamax'
 
 spec(true, 'colorscheme.onedark')
+spec(false, 'colorscheme.pywal')
 spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.rose-pine')
