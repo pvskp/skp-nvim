@@ -54,7 +54,7 @@ spec(true, 'languages.markdown.preview')
 spec(true, 'mini.splitjoin')
 spec(true, 'mini.ai')
 spec(true, 'mini.hipatterns')
-spec(false, 'mini.files') -- minitree (best tree plugin)
+spec(true, 'mini.files') -- minitree (best tree plugin)
 
 --<< Git integrations >>--
 
@@ -70,13 +70,13 @@ spec(true, 'undotree') -- show undo tree
 spec(true, 'todo-comments')
 spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
-spec(true, 'oil')
+spec(false, 'oil')
 spec(true, 'neogen')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'debugger')
 spec(true, 'ccc')
 spec(false, 'yazi')
-spec(true, 'ranger')
+spec(false, 'ranger')
 spec(true, 'auto-session')
 spec(false, 'w3m')
 spec(false, 'vim-zoom')

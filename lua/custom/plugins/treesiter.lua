@@ -27,10 +27,10 @@ return {
         },
         config = function(_, opts)
           require('treesitter-context').setup(opts)
-          vim.api.nvim_create_autocmd('Filetype', {
-            pattern = { 'markdown' },
-            command = 'TSContextDisable',
-          })
+          -- vim.api.nvim_create_autocmd('Filetype', {
+          --   pattern = { 'markdown' },
+          --   command = 'TSContextDisable',
+          -- })
         end,
       },
     },

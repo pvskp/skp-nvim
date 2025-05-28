@@ -19,6 +19,8 @@ return {
   },
   opts = {
     provider = 'copilot',
+    ---@alias Mode "agentic" | "legacy"
+    mode = 'legacy', -- The default mode for interaction. "agentic" uses tools to automatically generate code, "legacy" uses the old planning method to generate code.
     copilot = {
       model = 'claude-3.7-sonnet',
     },
