@@ -13,6 +13,15 @@ snippet init "Declare a __init__() method"
   def __init__(self, ${1}) -> ${2}:
     ${3}
 
+snippet lt "LeetCode template"
+  class Solution:
+      def $1(self, $2) -> $3: ...
+
+  s = Solution()
+
+  print(s.$1())
+
+
 snippet vjudge "vjudge template"
 	from typing import List, Tuple
 

@@ -27,7 +27,6 @@ return {
     vim.api.nvim_create_autocmd({ 'TermOpen' }, {
       pattern = 'term://*ranger*',
       callback = function(args)
-        vim.api.nvim_set_option_value('number', false, { buf = args.buf })
         vim.api.nvim_set_option_value('filetype', 'ranger', { buf = args.buf })
       end,
     })
