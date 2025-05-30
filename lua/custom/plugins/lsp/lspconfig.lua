@@ -84,6 +84,8 @@ return {
         },
       },
 
+      yamlls = {},
+
       helm_ls = {
         settings = {
           ['helm_ls'] = {
