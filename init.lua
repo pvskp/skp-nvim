@@ -86,7 +86,7 @@ spec(false, 'quicker')
 spec(false, 'quarto')
 spec(false, 'hawtkeys')
 spec(false, 'codesnap')
-spec(false, 'autopairs')
+spec(true, 'autopairs')
 
 --<< AI >>--
 

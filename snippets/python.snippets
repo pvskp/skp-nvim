@@ -15,11 +15,16 @@ snippet init "Declare a __init__() method"
 
 snippet lt "LeetCode template"
   class Solution:
-      def $1(self, $2) -> $3: ...
+      def $1(self, $2) -> $3:
 
+        $4
+
+        return
+
+  t1 = []
   s = Solution()
 
-  print(s.$1())
+  print(s.$1(t1))
 
 
 snippet vjudge "vjudge template"
