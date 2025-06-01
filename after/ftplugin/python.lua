@@ -35,27 +35,24 @@ local function run_python_script()
     output_buffer = vim.api.nvim_create_buf(false, true)
   end
 
-  vim.cmd 'vsplit'
+  vim.cmd('vsplit')
   vim.api.nvim_set_current_buf(output_buffer)
   vim.api.nvim_set_current_win(curr_window)
   vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, {
     'Running script...',
   })
 
-  vim.fn.jobstart({ 'python3', vim.fn.expand '%', '2>&1' }, {
-    stdout_buffered = true,
-    stderr_buffered = true,
-    on_stdout = function(_, data)
-      vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, data)
-    end,
-    -- on_stderr = function(_, data, _)
-    --   table.insert(data, 1, "**Error running script**")
-    --   vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, data)
-    -- end,
-  })
+  local obj = vim.system({ 'python3', vim.fn.expand('%') }, { text = true }):wait()
+
+  if obj.stderr ~= '' then
+    vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, vim.split(obj.stderr, '\n'))
+    return
+  end
+
+  vim.api.nvim_buf_set_lines(output_buffer, 0, -1, false, vim.split(obj.stdout, '\n'))
 end
 
 vim.api.nvim_create_user_command('RunPythonScript', run_python_script, {})
 
-vim.api.nvim_buf_set_keymap(0, "n", "<C-Space>", "<cmd>RunPythonScript<CR>", { noremap = true })
--- vim.keymap.set('n', '<C-Space>', '<cmd>RunPythonScript<CR>', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'n', '<C-k>', '<cmd>RunPythonScript<CR>', { noremap = true })
+-- vim.keymap.set('n', '<C-space>', run_python_script, { noremap = true })

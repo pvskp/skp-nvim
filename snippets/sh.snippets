@@ -8,11 +8,11 @@ snippet tpl "Basic shell script template"
   set -e
 
   main() {
-
+    $1
   }
 
   if [[ "${BASH_SOURCE[0]}" == "\${0}" ]]; then
-      main
+      main "\${@}"
   fi
 
 snippet btn "i3Blocks Button parsing"
