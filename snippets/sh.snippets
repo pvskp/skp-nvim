@@ -12,7 +12,7 @@ snippet tpl "Basic shell script template"
   }
 
   if [[ "${BASH_SOURCE[0]}" == "\${0}" ]]; then
-      main
+      main "\$@"
   fi
 
 snippet btn "i3Blocks Button parsing"

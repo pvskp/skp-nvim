@@ -40,6 +40,7 @@ return {
       cpp = { 'clang-format' },
       go = { 'goimports', 'gopls' },
       terraform = { 'terraform_fmt' },
+      ['terraform-vars'] = { 'terraform_fmt' },
       zsh = { 'beautysh' },
       sql = { 'sql_formatter' },
     },
