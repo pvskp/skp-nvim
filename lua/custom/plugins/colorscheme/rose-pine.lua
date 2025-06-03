@@ -23,6 +23,8 @@ return {
       TreesitterContext = { bg = 'base' },
       TreesitterContextLineNumber = { bg = 'base' },
       Comment = { italic = true },
+      TrueHighlighGroup = { fg = 'foam' },
+      FalseHighlighGroup = { fg = 'love' },
       StatusLine = { fg = 'love', bg = 'love', blend = 10 },
       StatusLineNC = { fg = 'subtle', bg = 'surface' },
       ['@markup.link.label.tsx'] = { fg = 'love', underline = false },
@@ -47,5 +49,6 @@ return {
   config = function(_, opts)
     require('rose-pine').setup(opts)
     vim.cmd([[colorscheme rose-pine]])
+    vim.api.nvim_set_hl(0, 'TreesitterContextBottom', { underline = true, sp = '#1f1d2e' })
   end,
 }
