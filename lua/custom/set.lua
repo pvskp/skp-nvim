@@ -34,8 +34,8 @@ local options = {
   relativenumber = false, -- Show relative line numbers
   numberwidth = 2, -- Set the width of the number column to 2
   cursorline = true, -- Highlight the current line
-  -- cursorlineopt = 'number', -- Highlight the current line number
-  cursorlineopt = 'both',
+  cursorlineopt = 'number', -- Highlight the current line number
+  -- cursorlineopt = 'both',
   cursorcolumn = false, -- Do not highlight the column of the cursor
   signcolumn = 'yes', -- Always show the sign column
   -- colorcolumn = '100',
@@ -175,6 +175,9 @@ if vim.g.neovide then
   vim.keymap.set({ 'n', 'v' }, '<C-->', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>')
   vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
+
+---@diagnostic disable-next-line: duplicate-set-field
+vim.deprecate = function() end
 
 -- vim.g.python3_host_prog = '/usr/bin/python'
 -- vim.o.qftf = '{info -> v:lua._G.qftf(info)}'

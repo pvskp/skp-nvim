@@ -15,11 +15,11 @@ require('custom.set')
 -- require 'custom.default-colorscheme'
 -- require 'custom.habamax'
 
-spec(true, 'colorscheme.onedark')
+spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.pywal')
 spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.tokyo-night')
-spec(false, 'colorscheme.rose-pine')
+spec(true, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.moonfly')
 spec(false, 'colorscheme.midnight')

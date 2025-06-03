@@ -36,8 +36,11 @@ function M.setup(bufnr)
   opts.desc = 'See available code actions'
   keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
+  -- opts.desc = 'Restart neovim'
+  -- keymap.set('n', '<leader>rr', '<cmd>restart<cr>', opts)
+
   opts.desc = 'Smart rename'
-  keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts) -- smart rename
+  keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts) -- smart rename
 
   opts.desc = 'Show line diagnostics'
   keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts) -- show diagnostics for line

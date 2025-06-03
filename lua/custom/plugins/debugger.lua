@@ -21,6 +21,8 @@ return {
     },
   },
   config = function()
+    vim.api.nvim_set_hl(0, 'DapBreakpointHl', { fg = 'red' })
+    vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpointHl' })
     local dap = require('dap')
     local dapui = require('dapui')
 

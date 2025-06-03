@@ -7,10 +7,19 @@ return {
     {'<leader>ss', function() vim.cmd('SessionSave') end, desc = 'Save Session',},
   },
   -- stylua: ignore end
+  ---@module 'auto-session'
+  ---@type AutoSession.Config
   opts = {
     log_level = 'error',
-    auto_restore_enabled = false,
-    auto_save_enabled = false,
+    enabled = true,
+    auto_save = true,
+    auto_restore = true,
+    auto_restore_last_session = false,
     auto_session_suppress_dirs = { '~/' },
   },
+  init = function()
+    vim.keymap.set('n', '<leader>rr', function()
+      vim.cmd('restart')
+    end, { desc = 'Restart neovim' })
+  end,
 }
