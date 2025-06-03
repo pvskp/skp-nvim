@@ -71,7 +71,7 @@ spec(true, 'undotree') -- show undo tree
 spec(true, 'todo-comments')
 spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
-spec(false, 'oil')
+spec(true, 'oil')
 spec(true, 'neogen')
 spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'debugger')
@@ -81,6 +81,7 @@ spec(false, 'ranger')
 spec(true, 'auto-session')
 spec(false, 'w3m')
 spec(false, 'vim-zoom')
+spec(true, 'image')
 spec(false, 'slime')
 spec(false, 'quicker')
 spec(false, 'quarto')
