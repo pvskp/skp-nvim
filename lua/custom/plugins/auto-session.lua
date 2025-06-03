@@ -14,7 +14,7 @@ return {
     enabled = true,
     auto_save = true,
     auto_restore = true,
-    auto_restore_last_session = true,
+    auto_restore_last_session = false,
     auto_session_suppress_dirs = { '~/' },
   },
   init = function()
