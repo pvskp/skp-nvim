@@ -5,9 +5,15 @@ return {
   ---@module "kanagawa"
   ---@type KanagawaConfig
   opts = {
+    ---@param colors KanagawaColors
+    ---@return table
     overrides = function(colors)
+      local palette_colors = colors.palette
       return {
-        Normal = { bg = 'none' },
+        -- Normal = { bg = 'none' },
+        TrueHighlighGroup = { fg = palette_colors.dragonGreen },
+        FalseHighlighGroup = { fg = palette_colors.dragonRed },
+        LspReferenceText = { undercurl = false, underline = false },
       }
     end,
   },
