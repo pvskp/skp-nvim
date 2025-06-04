@@ -109,6 +109,8 @@ vim.keymap.set('n', '<leader>q', '1z=', { desc = 'Accepts first spell fix' })
 vim.keymap.set('n', '<leader>]', '1z=', { desc = 'Accepts first spell fix' })
 vim.keymap.set('n', '<leader>[', '1z=', { desc = 'Accepts first spell fix' })
 
+vim.keymap.set('n', '<leader>rr', '<cmd>restart<cr>', { desc = 'Restart neovim' })
+
 -- Tabs
 require('custom.remap.tabs')
 

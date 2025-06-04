@@ -17,9 +17,4 @@ return {
     auto_restore_last_session = false,
     auto_session_suppress_dirs = { '~/' },
   },
-  init = function()
-    vim.keymap.set('n', '<leader>rr', function()
-      vim.cmd('restart')
-    end, { desc = 'Restart neovim' })
-  end,
 }
