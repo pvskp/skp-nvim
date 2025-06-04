@@ -163,3 +163,5 @@ vim.keymap.set('n', 'q:', 'q:?', { desc = 'Opens command history with search' })
 --   end
 --   return '<cr>'
 -- end, { expr = true })
+--
+require('custom.remap.toggle')
