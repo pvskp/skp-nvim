@@ -50,6 +50,9 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    enabled = function()
+      return not vim.tbl_contains({ 'minifiles' }, vim.bo.filetype)
+    end,
     keymap = {
       preset = 'enter',
       ['<C-l>'] = { 'snippet_forward' },
@@ -61,7 +64,7 @@ return {
       },
       ['<C-Space>'] = {
         function(cmp)
-          cmp.show({ providers = { 'lsp', 'snippets' } })
+          cmp.show({ providers = { 'lsp', 'snippets', 'lazydev' } })
         end,
       },
       ['<c-v>'] = {
@@ -97,7 +100,13 @@ return {
     },
     snippets = { preset = 'luasnip' },
     completion = {
+      trigger = {
+        show_on_keyword = true,
+        show_on_trigger_character = true,
+        show_on_blocked_trigger_characters = {},
+      },
       menu = {
+        auto_show = true,
         draw = {
           columns = { { 'kind_icon' }, { 'label', gap = 1 } },
           components = {
