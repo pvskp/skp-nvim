@@ -19,11 +19,14 @@ return {
   },
   opts = {
     provider = 'copilot',
-    ---@alias Mode "agentic" | "legacy"
-    mode = 'legacy', -- The default mode for interaction. "agentic" uses tools to automatically generate code, "legacy" uses the old planning method to generate code.
-    copilot = {
-      model = 'claude-3.7-sonnet',
+    providers = {
+      copilot = {
+        -- model = 'claude-3.7-sonnet',
+        model = 'gpt-4.1',
+      },
     },
+    ---@alias Mode "agentic" | "legacy"
+    mode = 'agentic', -- The default mode for interaction. "agentic" uses tools to automatically generate code, "legacy" uses the old planning method to generate code.
     hints = { enabled = false },
     system_prompt = function()
       local hub = require('mcphub').get_hub_instance()
