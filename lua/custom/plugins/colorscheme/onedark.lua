@@ -37,8 +37,8 @@ return {
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {
-      ['Normal'] = { bg = 'none' },
-      ['EndOfBuffer'] = { bg = 'none' },
+      -- ['Normal'] = { bg = 'none' },
+      -- ['EndOfBuffer'] = { bg = 'none' },
       ['TrueHighlighGroup'] = { fg = '$green' },
       ['FalseHighlighGroup'] = { fg = '$red' },
       ['SnacksPickerBorder'] = { fg = '$cyan', bg = '$bg0' },
