@@ -1,4 +1,6 @@
 ---@module 'codecompanion'
+---@module "lazy"
+---@type LazyPluginSpec
 return {
   'olimorris/codecompanion.nvim',
   lazy = false,
@@ -6,7 +8,12 @@ return {
   keys = {
     {
       '<leader>aa',
-      '<cmd>CodeCompanionChat<CR>',
+      '<cmd>CodeCompanionChat toggle<CR>',
+    },
+    {
+      '<leader>ae',
+      '<cmd>CodeCompanionActions<CR>',
+      mode = { 'n', 'v' },
     },
   },
   dependencies = {
@@ -16,23 +23,24 @@ return {
   },
   config = function()
     require('codecompanion').setup({
-      adapters = {
-        coppilot = function()
-          return require('codecompanion.adapters').extend('copilot', {
-            name = 'copilot-claude',
-            schema = {
-              model = {
-                default = 'claude-3-7-sonnet',
-              },
-            },
-          })
-        end,
-        strategies = {
-          chat = {
-            adapter = 'copilot-claude',
+      strategies = {
+        chat = {
+          adapter = {
+            name = 'copilot',
+            model = 'claude-3.7-sonnet',
           },
-          inline = {
-            adapter = 'copilot-claude',
+        },
+      },
+      display = {
+        action_palette = {
+          provider = 'snacks',
+        },
+        chat = {
+          window = {
+            layout = 'horizontal', -- float|vertical|horizontal|buffer
+            position = 'bottom',
+            height = 0.5,
+            width = 0.45,
           },
         },
       },

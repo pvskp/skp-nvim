@@ -94,11 +94,11 @@ spec(true, 'autopairs')
 
 spec(true, 'ai.mcphub')
 spec(true, 'ai.copilot-chat')
-spec(true, 'ai.avante')
+spec(false, 'ai.avante')
 spec(false, 'ai.copilot-vim')
 spec(false, 'ai.copilot')
 spec(false, 'ai.codeium')
-spec(false, 'ai.codecompanion')
+spec(true, 'ai.codecompanion')
 
 --<< UI >>--
 
