@@ -4,6 +4,7 @@
 return {
   'olimorris/codecompanion.nvim',
   lazy = false,
+  version = '*',
   cmd = { 'CodeCompanionChat' },
   keys = {
     {
@@ -19,6 +20,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
+    { 'echasnovski/mini.diff', version = '*' },
     'ravitemer/mcphub.nvim',
   },
   config = function()
@@ -35,6 +37,9 @@ return {
         action_palette = {
           provider = 'snacks',
         },
+        diff = {
+          provider = 'mini_diff',
+        },
         chat = {
           window = {
             layout = 'horizontal', -- float|vertical|horizontal|buffer
@@ -50,7 +55,7 @@ return {
           opts = {
             make_vars = true,
             make_slash_commands = true,
-            show_result_in_chat = false,
+            show_result_in_chat = true,
           },
         },
       },
