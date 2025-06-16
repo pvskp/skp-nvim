@@ -14,6 +14,21 @@ return {
         TrueHighlighGroup = { fg = palette_colors.dragonGreen },
         FalseHighlighGroup = { fg = palette_colors.dragonRed },
         LspReferenceText = { undercurl = false, underline = false },
+
+        -- rendermarkdown
+        RenderMarkdownH1Bg = { fg = palette_colors.autumnGreen, bg = nil, bold = true },
+        RenderMarkdownH2Bg = { fg = palette_colors.crystalBlue, bg = nil, bold = true },
+        RenderMarkdownH3Bg = { fg = palette_colors.autumnRed, bg = nil, bold = true },
+        RenderMarkdownDash = { fg = palette_colors.dragonGray, bg = nil },
+
+        --- Cursorline
+        LineNr = { bg = palette_colors.sumiInk3 },
+        CursorLineNr = { bg = palette_colors.sumiInk3 },
+
+        --- Git signs
+        GitSignsAdd = { bg = palette_colors.sumiInk3 },
+        GitSignsChange = { bg = palette_colors.sumiInk3 },
+        GitSignsDelete = { bg = palette_colors.sumiInk3 },
       }
     end,
   },
