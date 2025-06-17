@@ -50,14 +50,16 @@ function M.setup(bufnr)
 
   opts.desc = 'Show LSP signature'
   vim.keymap.set('i', '<C-k>', function()
-    vim.lsp.buf.signature_help({ border = 'solid' })
+    -- vim.lsp.buf.signature_help({ border = 'solid' })
   end, opts)
 
   opts.desc = 'Go to references'
   keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- show diagnostics for line
 
   opts.desc = 'Show line diagnostics'
-  keymap.set('n', 'gl', vim.diagnostic.open_float, opts) -- show diagnostics for line
+  keymap.set('n', 'gl', function()
+    vim.diagnostic.open_float({ border = 'single' })
+  end, opts) -- show diagnostics for line
 
   opts.desc = 'Go to previous diagnostic'
   keymap.set('n', '[d', function()
@@ -74,7 +76,7 @@ function M.setup(bufnr)
 
   opts.desc = 'Show documentation for what is under cursor'
   keymap.set('n', 'K', function()
-    vim.lsp.buf.hover({ border = 'solid' })
+    vim.lsp.buf.hover({ border = 'single' })
   end, opts) -- show documentation for what is under cursor
 end
 

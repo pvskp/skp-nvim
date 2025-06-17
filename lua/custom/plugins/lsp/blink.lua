@@ -74,12 +74,7 @@ return {
       },
       ['<c-e>'] = {
         function(cmp)
-          cmp.show({ providers = { 'emoji' } })
-        end,
-      },
-      ['<c-f>'] = {
-        function(cmp)
-          cmp.show({ providers = { 'nerdfont' } })
+          cmp.show({ providers = { 'emoji', 'nerdfont' } })
         end,
       },
     },
@@ -106,7 +101,9 @@ return {
         show_on_blocked_trigger_characters = {},
       },
       menu = {
+        border = 'single',
         auto_show = true,
+        scrollbar = false,
         draw = {
           columns = { { 'kind_icon' }, { 'label', gap = 1 } },
           components = {
@@ -125,7 +122,8 @@ return {
         auto_show = true,
         auto_show_delay_ms = 0,
         window = {
-          max_width = 20,
+          border = 'single',
+          max_width = 50,
         },
       },
       ghost_text = { enabled = true },

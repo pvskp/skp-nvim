@@ -6,7 +6,7 @@ return {
   ft = 'alpha',
   init = function()
     vim.api.nvim_create_user_command('OpenFileManager', function()
-      vim.cmd 'lua MiniFiles.open()'
+      vim.cmd('lua MiniFiles.open()')
     end, {})
   end,
   keys = {
@@ -49,7 +49,7 @@ return {
     },
   },
   config = function(_, opts)
-    local MiniFiles = require 'mini.files'
+    local MiniFiles = require('mini.files')
     MiniFiles.setup(opts)
     vim.api.nvim_create_autocmd('User', {
       pattern = 'MiniFilesWindowOpen',
@@ -90,8 +90,17 @@ return {
       end,
     })
 
-    -- vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
     -- set_hl('MiniFilesNormal', { bg = nil })
-    -- set_hl('MiniFilesBorder', { bg = nil })
+    set_hl('MiniFilesBorder', { bg = nil })
+    set_hl('MiniFilesTitle', { bg = nil })
+
+    if vim.g.colors_name == 'kanagawa' then
+      local colors = require('kanagawa.colors').setup()
+      local pallete = colors.palette
+      set_hl('MiniFilesTitleFocused', {
+        fg = pallete.oniViolet,
+        bg = 'none',
+      })
+    end
   end,
 }
