@@ -32,6 +32,8 @@ return {
       layout = custom_layout,
       hidden = true
     }) end, desc = '[Snacks] Find highlights',},
+    { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
+
     {'<leader>:',  function() Snacks.picker.command_history() end, desc = '[Snacks] Command History',},
     {'<leader>gg', function() Snacks.picker.grep({ layout = custom_layout, }) end, desc = '[Snacks] Grep',},
     -- {'<leader>sp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = '[Snacks] Projects',},

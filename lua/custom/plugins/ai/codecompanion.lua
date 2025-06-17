@@ -13,7 +13,7 @@ return {
     },
     {
       '<leader>ae',
-      '<cmd>CodeCompanionActions<CR>',
+      ':CodeCompanion ',
       mode = { 'n', 'v' },
     },
   },

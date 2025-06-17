@@ -106,6 +106,7 @@ spec(true, 'ai.codecompanion')
 spec(true, 'ui.statusline')
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.devicons')
+spec(true, 'ui.ibl')
 spec(false, 'ui.dressing') -- offers better ui for some neovim commands
 
 --<< Snacks >>--

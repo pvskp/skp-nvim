@@ -4,8 +4,14 @@ return {
   event = 'UIEnter',
   -- lazy = false,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    signs = false,
+    colors = {
+      error = { 'DiagnosticError', 'ErrorMsg' },
+      warning = { 'DiagnosticWarn', 'WarningMsg' },
+      info = { 'DiagnosticInfo' },
+      hint = { 'DiagnosticHint' },
+      default = { 'Identifier' },
+      test = { 'Identifier' },
+    },
   },
 }

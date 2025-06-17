@@ -103,6 +103,7 @@ return {
       menu = {
         border = 'single',
         auto_show = true,
+        max_height = 20,
         scrollbar = false,
         draw = {
           columns = { { 'kind_icon' }, { 'label', gap = 1 } },
@@ -123,7 +124,7 @@ return {
         auto_show_delay_ms = 0,
         window = {
           border = 'single',
-          max_width = 50,
+          max_width = 100,
         },
       },
       ghost_text = { enabled = true },

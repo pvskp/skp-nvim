@@ -18,7 +18,7 @@ return {
         LspReferenceText = { undercurl = false, underline = false },
 
         --- Native
-        NormalFloat = { fg = border_color, bg = 'none' },
+        NormalFloat = { bg = 'none' },
         FloatBorder = { bg = 'none' },
         Pmenu = { bg = 'none' },
 
@@ -49,6 +49,7 @@ return {
         BlinkCmpMenuBorder = { fg = border_color, bg = 'none' },
 
         SnacksPickerFile = { fg = text_fg },
+        SnacksPickerDir = { fg = palette_colors.autumnYellow },
       }
     end,
   },
