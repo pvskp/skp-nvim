@@ -50,11 +50,17 @@ return {
 
         SnacksPickerFile = { fg = text_fg },
         SnacksPickerDir = { fg = palette_colors.autumnYellow },
+
+        --- Treesitter Context
+        TreesitterContext = { bg = 'none' },
+        TreesitterContextLineNumber = { bg = 'none' },
+        TreesitterContextBottom = { underline = true, sp = palette_colors.sumiInk5 },
       }
     end,
   },
   config = function(_, opts)
     require('kanagawa').setup(opts)
     vim.cmd.colorscheme('kanagawa')
+    -- vim.cmd.colorscheme('kanagawa-lotus')
   end,
 }
