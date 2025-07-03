@@ -36,9 +36,6 @@ return {
       virtual_text = false,
       underline = true,
       float = {},
-    })
-
-    vim.diagnostic.config({
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = ' ',

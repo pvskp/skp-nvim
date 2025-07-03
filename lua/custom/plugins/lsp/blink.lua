@@ -198,7 +198,10 @@ return {
       },
     },
 
-    signature = { enabled = true },
+    signature = {
+      enabled = true,
+      window = { border = 'single' },
+    },
     fuzzy = { implementation = 'prefer_rust_with_warning' },
   },
 }
