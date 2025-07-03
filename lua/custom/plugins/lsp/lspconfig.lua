@@ -84,6 +84,8 @@ return {
       },
 
       gopls = {},
+      cssls = {},
+      css_variables = {},
 
       ruff = {
         settings = {
