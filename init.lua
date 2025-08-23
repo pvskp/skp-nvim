@@ -94,7 +94,7 @@ spec(true, 'autopairs')
 
 --<< AI >>--
 
-spec(true, 'ai.mcphub')
+spec(false, 'ai.mcphub')
 spec(true, 'ai.copilot-chat')
 spec(false, 'ai.avante')
 spec(false, 'ai.copilot-vim')
