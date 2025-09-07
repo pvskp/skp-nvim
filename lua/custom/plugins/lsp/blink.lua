@@ -2,6 +2,7 @@ return {
   'saghen/blink.cmp',
   -- lazy = false,
   event = { 'InsertEnter' },
+  build = 'cargo build --release',
   dependencies = {
     {
       'saghen/blink.compat',
@@ -38,7 +39,7 @@ return {
         require('luasnip.loaders.from_vscode').lazy_load()
       end,
     },
-    'MahanRahmati/blink-nerdfont.nvim',
+    -- 'MahanRahmati/blink-nerdfont.nvim',
     'moyiz/blink-emoji.nvim',
     'Kaiser-Yang/blink-cmp-avante',
     'xzbdmw/colorful-menu.nvim',

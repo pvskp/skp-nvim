@@ -2,11 +2,19 @@ return {
   'mfussenegger/nvim-dap',
   -- stylua: ignore start
   keys = {
-    { '<F5>',      function() require('dap').continue()          end, desc = "[nvim-dap] Continue"},
-    { '<F10>',     function() require('dap').step_over()         end, desc = "[nvim-dap] Step over"},
-    { '<F11>',     function() require('dap').step_into()         end, desc = "[nvim-dap] Step into"},
-    { '<F12>',     function() require('dap').step_out()          end, desc = "[nvim-dap] Step out"},
-    { '<leader>b', function() require('dap').toggle_breakpoint() end, desc = "[nvim-dap] Toggle breakpoint"},
+    { '<F5>', function() require('dap').continue() end, desc = '[nvim-dap] Continue', },
+    {
+      '<F6>',
+      function()
+        require('dap').terminate()
+        require('dapui').close()
+      end,
+      desc = '[nvim-dap] Continue',
+    },
+    { '<F10>', function() require('dap').step_over() end, desc = '[nvim-dap] Step over', },
+    { '<F11>', function() require('dap').step_into() end, desc = '[nvim-dap] Step into', },
+    { '<F12>', function() require('dap').step_out() end, desc = '[nvim-dap] Step out', },
+    { '<leader>b', function() require('dap').toggle_breakpoint() end, desc = '[nvim-dap] Toggle breakpoint', },
   },
   -- stylua: ignore end
 
@@ -17,6 +25,12 @@ return {
       'mfussenegger/nvim-dap-python',
       config = function()
         require('dap-python').setup('python3')
+      end,
+    },
+    {
+      'leoluz/nvim-dap-go',
+      config = function()
+        require('dap-go').setup()
       end,
     },
   },
