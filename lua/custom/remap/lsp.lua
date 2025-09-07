@@ -53,8 +53,59 @@ function M.setup(bufnr)
     -- vim.lsp.buf.signature_help({ border = 'solid' })
   end, opts)
 
-  opts.desc = 'Go to references'
-  keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- show diagnostics for line
+  -- -- Go to implementations excluding files with "mock" or "fake" in the path
+  -- local function goto_filtered_implementations()
+  --   local params = vim.lsp.util.make_position_params()
+  --   vim.lsp.buf_request(0, 'textDocument/implementation', params, function(err, result, ctx)
+  --     if err then
+  --       vim.notify('LSP implementation error: ' .. (err.message or tostring(err)), vim.log.levels.ERROR)
+  --       return
+  --     end
+  --     if not result or (type(result) == 'table' and vim.tbl_isempty(result)) then
+  --       vim.notify('No implementations found', vim.log.levels.WARN)
+  --       return
+  --     end
+  --
+  --     if not vim.tbl_islist(result) then
+  --       result = { result }
+  --     end
+  --
+  --     local filtered = {}
+  --     for _, loc in ipairs(result) do
+  --       local uri = loc.uri or loc.targetUri
+  --       local path = uri and vim.uri_to_fname(uri) or ''
+  --       local lower = string.lower(path)
+  --       if not lower:match('mock') and not lower:match('fake') then
+  --         table.insert(filtered, loc)
+  --       end
+  --     end
+  --
+  --     if #filtered == 0 then
+  --       vim.notify('No implementations after filter (excluding mock/fake)', vim.log.levels.WARN)
+  --       return
+  --     end
+  --
+  --     local client = ctx and ctx.client_id and vim.lsp.get_client_by_id(ctx.client_id) or nil
+  --     local encoding = (client and client.offset_encoding) or 'utf-16'
+  --
+  --     if #filtered == 1 then
+  --       vim.lsp.util.jump_to_location(filtered[1], encoding, true)
+  --       return
+  --     end
+  --
+  --     local items = vim.lsp.util.locations_to_items(filtered, encoding)
+  --     vim.fn.setqflist({}, ' ', { title = 'Implementations (filtered)', items = items })
+  --     vim.cmd('copen')
+  --   end)
+  -- end
+  --
+
+  -- Let Snack handle this
+  -- opts.desc = 'Go to implementations'
+  -- keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  --
+  -- opts.desc = 'Go to references'
+  -- keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- show diagnostics for line
 
   opts.desc = 'Show line diagnostics'
   keymap.set('n', 'gl', function()

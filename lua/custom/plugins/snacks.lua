@@ -51,6 +51,7 @@ return {
     -- lsp
     {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = '[Snacks] Search for LSP Workspace Symbols',},
     {'gr',         function() Snacks.picker.lsp_references({ layout = custom_layout, }) end, desc = '[Snacks] References', nowait = true,},
+    {'gi',         function() Snacks.picker.lsp_implementations({ layout = custom_layout, }) end, desc = '[Snacks] Implementations', nowait = true,},
     {'gd',         function() Snacks.picker.lsp_definitions({ layout = custom_layout, }) end, desc = '[Snacks] Goto Definition',},
   },
   -- stylua: ignore end

@@ -12,6 +12,8 @@ vim.keymap.set('n', '<Right>', 'z2l', { desc = 'Scroll right slightly' })
 vim.keymap.set('n', '<S-ScrollWheelDown>', 'z3h', { desc = 'Scroll left with shift+wheel' })
 vim.keymap.set('n', '<S-ScrollWheelUp>', 'z3l', { desc = 'Scroll right with shift+wheel' })
 
+vim.keymap.set('n', '<c-b>', '', { desc = 'Scroll right with shift+wheel' })
+
 -- Disable space key
 vim.keymap.set('n', '<Space>', '<Nop>', { silent = true, remap = false, desc = 'Space' })
 

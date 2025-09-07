@@ -66,6 +66,7 @@ return {
       lua_ls = {},
       jsonls = {},
       bashls = {},
+      clangd = {},
 
       pyright = {
         settings = {
@@ -83,7 +84,15 @@ return {
         },
       },
 
-      gopls = {},
+      gopls = {
+        settings = {
+          gopls = {
+            analyses = {
+              fillstruct = true,
+            },
+          },
+        },
+      },
       cssls = {},
       css_variables = {},
 
