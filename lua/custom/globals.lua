@@ -14,10 +14,7 @@ end
 
 function ToggleTrueFalse()
   local line = vim.api.nvim_get_current_line()
-  local new_line = line
-      :gsub('true', 'TOGGLE_PLACEHOLDER')
-      :gsub('false', 'true')
-      :gsub('TOGGLE_PLACEHOLDER', 'false')
+  local new_line = line:gsub('true', 'TOGGLE_PLACEHOLDER'):gsub('false', 'true'):gsub('TOGGLE_PLACEHOLDER', 'false')
   vim.api.nvim_set_current_line(new_line)
 end
 
@@ -93,9 +90,7 @@ USE_DEVICONS = true
 -- Função para converter um valor hexadecimal para RGB
 local function hex_to_rgb(hex)
   hex = hex:gsub('#', '')
-  return tonumber('0x' .. hex:sub(1, 2)),
-      tonumber('0x' .. hex:sub(3, 4)),
-      tonumber('0x' .. hex:sub(5, 6))
+  return tonumber('0x' .. hex:sub(1, 2)), tonumber('0x' .. hex:sub(3, 4)), tonumber('0x' .. hex:sub(5, 6))
 end
 
 -- Função para converter um valor RGB para hexadecimal
@@ -106,7 +101,7 @@ end
 -- Função para clarear uma cor
 function Lighten_color(hex, factor)
   if hex == nil then
-    vim.notify 'Hex is nil'
+    vim.notify('Hex is nil')
     return hex
   end
   factor = factor or 1.2 -- Define o fator padrão como 1.2 se não for especificado
@@ -156,4 +151,39 @@ local function define_borders(border)
   return r
 end
 
-Borders = define_borders 'single' -- single / double / rounded
+function Dark_a_color(original_color, step)
+  -- O valor de 256^2 (65536) e 256 são usados nas conversões.
+  local BASE_QUAD = 65536 -- 256 * 256
+  local BASE_SIMPLES = 256
+
+  -- 1. CONVERTER DECIMAL PARA RGB
+
+  -- O 'math.floor' garante que pegamos apenas a parte inteira (o valor do componente).
+  local R = math.floor(original_color / BASE_QUAD)
+  local rest = original_color % BASE_QUAD
+
+  local G = math.floor(rest / BASE_SIMPLES)
+  local B = rest % BASE_SIMPLES
+
+  -- Print opcional para ver o RGB antes de escurecer
+  -- print(string.format("RGB Original: (%d, %d, %d)", R, G, B))
+
+  -- 2. ESCURECER (Diminuir R, G, B)
+
+  -- Subtrai o passo e garante que o valor mínimo seja 0 (preto),
+  -- pois uma cor não pode ter um valor negativo.
+  local R_novo = math.max(0, R - step)
+  local G_novo = math.max(0, G - step)
+  local B_novo = math.max(0, B - step)
+
+  -- Print opcional para ver o RGB depois de escurecer
+  -- print(string.format("RGB Escurecido: (%d, %d, %d)", R_novo, G_novo, B_novo))
+
+  -- 3. CONVERTER RGB DE VOLTA PARA DECIMAL
+
+  local new_decimal = (R_novo * BASE_QUAD) + (G_novo * BASE_SIMPLES) + B_novo
+
+  return new_decimal
+end
+
+Borders = define_borders('single') -- single / double / rounded
