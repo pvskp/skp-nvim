@@ -1,5 +1,5 @@
 return {
-  "folke/tokyonight.nvim",
+  'folke/tokyonight.nvim',
   lazy = false,
   priority = 1000,
   opts = {
@@ -8,8 +8,8 @@ return {
       keywords = { italic = true },
       functions = {},
       variables = {},
-      sidebars = "dark", -- style for sidebars, see below
-      floats = "light",  -- style for floating windows
+      sidebars = 'dark', -- style for sidebars, see below
+      floats = 'light', -- style for floating windows
     },
     on_highlights = function(hl, c)
       local statusline_bg = c.bg_dark
@@ -28,8 +28,8 @@ return {
     end,
     dim_inactive = true, -- dims inactive windows
   },
-  config = function(_, opts)
-    require('tokyonight').setup(opts)
-    vim.cmd("colorscheme tokyonight-moon")
-  end
+  -- config = function(_, opts)
+  --   require('tokyonight').setup(opts)
+  --   vim.cmd("colorscheme tokyonight-moon")
+  -- end
 }

@@ -6,8 +6,8 @@ return {
   config = function()
     local hipatterns = require('mini.hipatterns')
 
-    -- vim.api.nvim_set_hl(0, 'TrueHighlighGroup', { fg = 'green', bg = 'None', bold = true, italic = false })
-    -- vim.api.nvim_set_hl(0, 'FalseHighlighGroup', { fg = 'red', bg = 'None', bold = true, italic = false })
+    vim.api.nvim_set_hl(0, 'TrueHighlighGroup', { fg = 'green', bg = 'None', bold = true, italic = false })
+    vim.api.nvim_set_hl(0, 'FalseHighlighGroup', { fg = 'red', bg = 'None', bold = true, italic = false })
 
     vim.api.nvim_set_hl(0, 'MiniHipatternsFixme', { fg = 'Black', bg = 'NvimLightRed', bold = true, italic = false })
     vim.api.nvim_set_hl(0, 'MiniHipatternsHack', { fg = 'Black', bg = 'NvimLightYellow', bold = true, italic = false })

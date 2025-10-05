@@ -5,19 +5,6 @@ end
 
 LAZY_PLUGIN_SPEC = {}
 
---- Set the highlight colors for a highlight group
----@param hl_group_name string
----@param colors table
-function set_hl(hl_group_name, colors)
-  vim.api.nvim_set_hl(0, hl_group_name, colors)
-end
-
-function ToggleTrueFalse()
-  local line = vim.api.nvim_get_current_line()
-  local new_line = line:gsub('true', 'TOGGLE_PLACEHOLDER'):gsub('false', 'true'):gsub('TOGGLE_PLACEHOLDER', 'false')
-  vim.api.nvim_set_current_line(new_line)
-end
-
 --- Adds a plugin to the LazySpec
 --- @param active boolean
 --- @param plugin_relative_path string
@@ -29,6 +16,19 @@ spec = function(active, plugin_relative_path)
   end
   local plugins = 'custom.plugins.'
   table.insert(LAZY_PLUGIN_SPEC, { import = plugins .. plugin_relative_path })
+end
+
+--- Set the highlight colors for a highlight group
+---@param hl_group_name string
+---@param colors table
+function set_hl(hl_group_name, colors)
+  vim.api.nvim_set_hl(0, hl_group_name, colors)
+end
+
+function ToggleTrueFalse()
+  local line = vim.api.nvim_get_current_line()
+  local new_line = line:gsub('true', 'TOGGLE_PLACEHOLDER'):gsub('false', 'true'):gsub('TOGGLE_PLACEHOLDER', 'false')
+  vim.api.nvim_set_current_line(new_line)
 end
 
 --- Formats a color code into hex

@@ -18,7 +18,7 @@ require('custom.set')
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.pywal')
 spec(false, 'colorscheme.vscode')
-spec(false, 'colorscheme.tokyo-night')
+spec(true, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.moonfly')
@@ -41,7 +41,7 @@ spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.blink') -- completion
-spec(true, 'lsp.barbecue')
+spec(true, 'lsp.dropbar')
 spec(false, 'lsp.cmp') -- completion
 
 --<< Language specific >>--
@@ -119,5 +119,22 @@ spec(true, 'snacks')
 -- end, {})
 
 -- Loads all with lazy
+spec(true, 'current-theme.theme.neovim') -- sync theme with system
 require('custom.lazy')
+
+local theme = require('custom.plugins.current-theme.theme.neovim')
+if #theme < 2 then
+  print(theme)
+  if theme['opts'] ~= nil then
+    local colorscheme = require('custom.plugins.current-theme.theme.neovim')[1].opts.colorscheme
+    print(type(colorscheme()))
+    vim.cmd.colorscheme(colorscheme)
+  elseif theme[1].opts ~= nil then
+    if type(theme[1].opts.colorscheme) == 'function' then
+      theme[1].opts.colorscheme()
+    end
+  end
+else
+  vim.cmd.colorscheme(require('custom.plugins.current-theme.theme.neovim')[2].opts.colorscheme)
+end
 require('custom.highlight') -- required to be loaded after lazy

@@ -1,36 +1,28 @@
--- vim.cmd 'highlight! NormalFloat guibg=NONE'
--- vim.cmd 'highlight! FloatBorder guibg=NONE'
+local normal_hl = vim.api.nvim_get_hl(0, { name = 'Normal' })
+local darker = Dark_a_color(normal_hl.bg, 6)
+vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = darker })
+vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { bg = darker })
 
--- vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
--- vim.cmd 'highlight! link LazyGitBorder TelescopeResultsBorder'
+vim.api.nvim_set_hl(0, 'WinBar', { bg = darker })
 
--- vim.cmd 'highlight! link FloatBorder NormalFloat'
+-- transparent background
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Folded', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'WhichKeyFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'SnacksPickerInputBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'TreesitterContextBottom', { underline = true, sp = 'gray' })
 
--- vim.api.nvim_set_hl(0, "Visual", {
---   bg = "#283457"
--- })
-
--- vim.api.nvim_set_hl(0, 'FloatBorder', {
---   fg = Get_highlight_bg("NormalFloat"),
---   bg = Get_highlight_bg("NormalFloat")
--- })
-
--- vim.cmd 'highlight! link TelescopeNormal NormalFloat'
--- vim.cmd 'highlight! link TelescopeBorder NormalFloat'
-
--- vim.cmd 'highlight TelescopeNormal guibg=NONE'
--- vim.cmd 'highlight TelescopeTitle guibg=NONE'
--- vim.cmd 'highlight TelescopePromptBorder guibg=NONE'
--- vim.cmd 'highlight TelescopeSelection guibg=NONE'
--- vim.cmd 'highlight TelescopePromptTitle guibg=NONE'
-
--- vim.cmd 'highlight! link LazyGitFloat TelescopeResultsBorder'
-
--- vim.cmd 'highlight! MiniFilesDirectory guibg=NONE'
--- vim.cmd 'highlight! MiniFilesNormal guibg=NONE'
-
--- vim.cmd 'highlight! link MiniFilesBorder TelescopeResultsBorder'
-
--- vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', {
---   fg = Symbols.telescope.prompt_prefix.color,
--- })
+-- TreesitterContext = { bg = 'none' },
+-- TreesitterContextLineNumber = { bg = 'none' }
