@@ -121,20 +121,5 @@ spec(true, 'snacks')
 -- Loads all with lazy
 spec(true, 'current-theme.theme.neovim') -- sync theme with system
 require('custom.lazy')
-
-local theme = require('custom.plugins.current-theme.theme.neovim')
-if #theme < 2 then
-  print(theme)
-  if theme['opts'] ~= nil then
-    local colorscheme = require('custom.plugins.current-theme.theme.neovim')[1].opts.colorscheme
-    print(type(colorscheme()))
-    vim.cmd.colorscheme(colorscheme)
-  elseif theme[1].opts ~= nil then
-    if type(theme[1].opts.colorscheme) == 'function' then
-      theme[1].opts.colorscheme()
-    end
-  end
-else
-  vim.cmd.colorscheme(require('custom.plugins.current-theme.theme.neovim')[2].opts.colorscheme)
-end
+require('config.theme') -- load system theme
 require('custom.highlight') -- required to be loaded after lazy
