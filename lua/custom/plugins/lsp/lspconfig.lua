@@ -50,7 +50,7 @@ return {
     vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       group = vim.api.nvim_create_augroup('LspAttach', {}),
       callback = function(args)
-        local lsp_keymaps = require('custom.remap.lsp')
+        local lsp_keymaps = require('config.remap.lsp')
         lsp_keymaps.setup(args.buf)
       end,
     })

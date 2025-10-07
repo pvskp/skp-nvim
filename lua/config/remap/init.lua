@@ -89,7 +89,7 @@ vim.keymap.set('v', '<', '<gv', { desc = 'Outdent and maintain selection' })
 
 -- Load non-tmux specific keymaps when not in tmux session
 if os.getenv('TMUX') == nil then
-  require('custom.remap.no_tmux')
+  require('config.remap.no_tmux')
 end
 
 -- Copy entire file
@@ -114,7 +114,7 @@ vim.keymap.set('n', '<leader>[', '1z=', { desc = 'Accepts first spell fix' })
 vim.keymap.set('n', '<leader>rr', '<cmd>restart<cr>', { desc = 'Restart neovim' })
 
 -- Tabs
-require('custom.remap.tabs')
+require('config.remap.tabs')
 
 -- map('n', '<c-w>m', '<cmd>tabnew %<CR>')
 vim.keymap.set('n', '<c-w>m', function()
@@ -168,4 +168,4 @@ vim.keymap.set('n', 'q:', 'q:?', { desc = 'Opens command history with search' })
 --   return '<cr>'
 -- end, { expr = true })
 --
-require('custom.remap.toggle')
+require('config.remap.toggle')

@@ -1,19 +1,19 @@
 require('custom')
 
-require('custom.autocommands')
-require('custom.commands')
-require('custom.globals')
-require('custom.remap')
-require('custom.window')
-require('custom.tabs')
-require('custom.netrw')
--- require 'custom.statusline'
-require('custom.commandline')
--- require 'custom.terminal'
-require('custom.set')
--- require('custom.colors')
--- require 'custom.default-colorscheme'
--- require 'custom.habamax'
+require('config.autocommands')
+require('config.commands')
+require('config.globals')
+require('config.remap')
+require('config.window')
+require('config.tabs')
+require('config.netrw')
+-- require 'config.statusline'
+require('config.commandline')
+-- require 'config.terminal'
+require('config.set')
+-- require('config.colors')
+-- require 'config.default-colorscheme'
+-- require 'config.habamax'
 
 spec(false, 'colorscheme.onedark')
 spec(false, 'colorscheme.pywal')
@@ -122,4 +122,4 @@ spec(true, 'snacks')
 spec(true, 'current-theme.theme.neovim') -- sync theme with system
 require('custom.lazy')
 require('config.theme') -- load system theme
-require('custom.highlight') -- required to be loaded after lazy
+require('config.highlight') -- required to be loaded after lazy
