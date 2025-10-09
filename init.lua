@@ -101,7 +101,8 @@ spec(false, 'ai.avante')
 spec(false, 'ai.copilot-vim')
 spec(false, 'ai.copilot')
 spec(false, 'ai.codeium')
-spec(true, 'ai.codecompanion')
+spec(false, 'ai.codecompanion')
+spec(true, 'ai.sidekick')
 
 --<< UI >>--
 
