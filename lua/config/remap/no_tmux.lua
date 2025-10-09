@@ -5,4 +5,4 @@ vim.keymap.set('n', '<M-a>c', function()
   vim.cmd('term')
 end, { desc = 'Open terminal on new tab' })
 
-require('custom.window')
+require('config.window')
