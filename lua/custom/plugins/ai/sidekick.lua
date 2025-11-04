@@ -16,7 +16,7 @@ return {
           hide_ctrl_dot = { "<c-.>", "hide"      , mode = "nt" }, -- hide the terminal window in terminal mode
           hide_ctrl_z   = { "<c-z>", "hide"      , mode = "nt" }, -- hide the terminal window in terminal mode
           prompt        = { "<c-p>", "prompt"    , mode = "t"  }, -- insert prompt or context
-          stopinsert    = { "<Esc>", "stopinsert", mode = "t"  }, -- enter normal mode
+          stopinsert    = { "<esc>", "stopinsert", mode = "t"  }, -- enter normal mode
         },
       },
     },
@@ -27,7 +27,7 @@ return {
       "<leader>aa",
       function() require("sidekick.cli").toggle() end,
       desc = "Sidekick Toggle CLI",
-      mode = { "n", "t", "i", "x" },
+      mode = { "n", "t", "x" },
     },
     {
       "<leader>as",
@@ -58,6 +58,12 @@ return {
       function() require("sidekick.cli").prompt() end,
       mode = { "n", "x" },
       desc = "Sidekick Select Prompt",
+    },
+    {
+      "<leader><Tab>",
+      function() require("sidekick.cli").focus() end,
+      mode = { "x", "v", "n" },
+      desc = "Switch Focus",
     },
   },
 }

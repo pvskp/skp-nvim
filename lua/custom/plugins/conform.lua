@@ -37,7 +37,7 @@ return {
       css = { 'prettier' },
       yaml = { 'prettier' },
       helm = { 'prettier' },
-      toml = { 'taplo' },
+      -- toml = { 'taplo' },
       cpp = { 'clang-format' },
       go = { 'goimports', 'gopls' },
       terraform = { 'terraform_fmt' },

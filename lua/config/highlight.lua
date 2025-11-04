@@ -1,14 +1,16 @@
 local normal_hl = vim.api.nvim_get_hl(0, { name = 'Normal' })
 local darker = Dark_a_color(normal_hl.bg, 6)
+
 vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = darker })
 vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { bg = darker })
 
 vim.api.nvim_set_hl(0, 'WinBar', { bg = darker })
 
 -- transparent background
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = darker })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = darker })
+vim.api.nvim_set_hl(0, 'WinSeparator', { bg = darker, fg = darker })
 vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
