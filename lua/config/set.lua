@@ -10,6 +10,7 @@ local options = {
   smartcase = true, -- Use smart case for search patterns
   hlsearch = false, -- Do not highlight all matches on previous search pattern
   inccommand = 'split', -- Show incremental command results in a split window
+  laststatus = 3,
 
   --<Appearance >
   -- concealcursor = 'ncv', -- hide original markdown chars

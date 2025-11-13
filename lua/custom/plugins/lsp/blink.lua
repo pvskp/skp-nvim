@@ -1,8 +1,9 @@
 return {
   'saghen/blink.cmp',
   -- lazy = false,
+  version = '1.*',
   event = { 'InsertEnter' },
-  build = 'cargo build --release',
+  -- build = 'cargo build --release',
   dependencies = {
     {
       'saghen/blink.compat',
@@ -47,7 +48,6 @@ return {
     'amarakon/nvim-cmp-fonts',
   },
   opts_extend = { 'sources.default' },
-  version = '1.*',
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
@@ -205,4 +205,18 @@ return {
     },
     fuzzy = { implementation = 'prefer_rust_with_warning' },
   },
+  config = function(_, opts)
+    require('blink.cmp').setup(opts)
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
+
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+
+    vim.lsp.config('*', {
+      capabilities = capabilities,
+    })
+  end,
 }

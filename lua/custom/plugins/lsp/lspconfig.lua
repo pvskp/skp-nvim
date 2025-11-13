@@ -4,8 +4,6 @@ return {
   -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   lazy = false,
   dependencies = {
-    -- 'hrsh7th/cmp-nvim-lsp', -- needed for lsp capabilities
-    'saghen/blink.cmp', -- needed for lsp capabilities
     {
       'mason-org/mason.nvim',
       version = '*',
@@ -13,7 +11,6 @@ return {
     },
     {
       'j-hui/fidget.nvim',
-      version = 'v1.6.1',
       opts = {
         notification = {
           window = {
@@ -55,15 +52,8 @@ return {
       end,
     })
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
-
-    capabilities.textDocument.foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    }
-
     local servers = {
+
       lua_ls = {},
       jsonls = {},
       bashls = {},
@@ -147,10 +137,6 @@ return {
     for k, v in pairs(servers) do
       vim.lsp.config(k, v)
     end
-
-    vim.lsp.config('*', {
-      capabilities = capabilities,
-    })
 
     vim.lsp.enable(vim.tbl_keys(servers or {}))
 

@@ -3,8 +3,8 @@ return {
   lazy = false,
   -- stylua: ignore start
   keys = {
-    {'<leader>sr', function() vim.cmd('SessionRestore') end, desc = 'Restore Session',},
-    {'<leader>ss', function() vim.cmd('SessionSave') end, desc = 'Save Session',},
+    {'<leader>sr', function() vim.cmd('AutoSession restore') end, desc = 'Restore Session',},
+    {'<leader>ss', function() vim.cmd('AutoSession save') end, desc = 'Save Session',},
   },
   -- stylua: ignore end
   ---@module 'auto-session'

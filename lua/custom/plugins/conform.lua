@@ -43,6 +43,7 @@ return {
       terraform = { 'terraform_fmt' },
       ['terraform-vars'] = { 'terraform_fmt' },
       zsh = { 'beautysh' },
+      c = { 'clang-format' },
       sql = { 'sql_formatter' },
     },
 

@@ -15,18 +15,18 @@ require('config.set')
 -- require 'config.default-colorscheme'
 -- require 'config.habamax'
 
-spec(false, 'colorscheme.onedark')
-spec(false, 'colorscheme.pywal')
+spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.vscode')
-spec(true, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.rose-pine')
-spec(false, 'colorscheme.nord')
+spec(false, 'colorscheme.pywal')
+spec(false, 'colorscheme.onedark')
+spec(true, 'colorscheme.nord')
 spec(false, 'colorscheme.moonfly')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.kanagawa')
 spec(false, 'colorscheme.gruvbox')
 spec(false, 'colorscheme.fluoromachine')
-spec(true, 'colorscheme.catppuccin')
+spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
@@ -46,8 +46,8 @@ spec(false, 'lsp.cmp') -- completion
 
 --<< Language specific >>--
 
-spec(true, 'languages.helm')
-spec(true, 'languages.markdown.render-markdown')
+spec(false, 'languages.helm')
+spec(false, 'languages.markdown.render-markdown')
 spec(false, 'languages.markdown.preview')
 
 --<< Mini library >>--
@@ -71,38 +71,39 @@ spec(true, 'undotree') -- show undo tree
 spec(true, 'todo-comments')
 spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
-spec(true, 'oil')
+spec(false, 'oil')
+spec(true, 'neotest')
 spec(true, 'neogen')
 spec(true, 'hop') -- jump to any word in the screen
+spec(true, 'harpoon')
 spec(true, 'debugger')
 spec(true, 'ccc')
-spec(false, 'yazi')
-spec(false, 'ranger')
 spec(true, 'auto-session')
-spec(true, 'harpoon')
+spec(true, 'autopairs')
+spec(true, 'tpipeline')
+spec(false, 'yazi')
 spec(false, 'w3m')
 spec(false, 'vim-zoom')
-spec(false, 'image')
-spec(false, 'neo-tree')
-spec(true, 'minty')
 spec(false, 'slime')
+spec(false, 'ranger')
 spec(false, 'quicker')
 spec(false, 'quarto')
-spec(true, 'neotest')
+spec(false, 'neo-tree')
+spec(false, 'minty')
+spec(false, 'image')
 spec(false, 'hawtkeys')
 spec(false, 'codesnap')
-spec(true, 'autopairs')
 
 --<< AI >>--
 
+spec(true, 'ai.sidekick')
 spec(false, 'ai.mcphub')
-spec(true, 'ai.copilot-chat')
-spec(false, 'ai.avante')
 spec(false, 'ai.copilot-vim')
+spec(false, 'ai.copilot-chat')
 spec(false, 'ai.copilot')
 spec(false, 'ai.codeium')
 spec(false, 'ai.codecompanion')
-spec(true, 'ai.sidekick')
+spec(false, 'ai.avante')
 
 --<< UI >>--
 
@@ -120,7 +121,7 @@ spec(true, 'snacks')
 -- end, {})
 
 -- Loads all with lazy
-spec(true, 'current-theme.theme.neovim') -- sync theme with system
+-- spec(true, 'current-theme.theme.neovim') -- sync theme with system
 require('custom.lazy')
-require('config.theme') -- load system theme
+-- require('config.theme') -- load system theme
 require('config.highlight') -- required to be loaded after lazy

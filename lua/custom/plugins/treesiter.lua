@@ -1,6 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  event = { 'BufReadPost' },
+  lazy = false,
+  branch = 'main',
   build = ':TSUpdate',
   init = function()
     vim.opt.foldmethod = 'expr'
@@ -8,7 +9,6 @@ return {
   end,
   dependencies = {
     {
-      { 'nvim-treesitter/nvim-treesitter-textobjects' },
       {
         'nvim-treesitter/nvim-treesitter-context',
         opts = {
@@ -25,116 +25,20 @@ return {
           zindex = 20, -- The Z-index of the context window
           on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
         },
-        config = function(_, opts)
-          require('treesitter-context').setup(opts)
-          -- vim.api.nvim_create_autocmd('Filetype', {
-          --   pattern = { 'markdown' },
-          --   command = 'TSContextDisable',
-          -- })
-        end,
       },
     },
   },
-  opts = {
-    ensure_installed = {
-      'lua',
-      'vim',
-      'vimdoc',
-      'query',
-      'markdown',
-      'python',
-      'markdown_inline',
-      'gitcommit',
-      'gitignore',
-      'git_config',
-      'git_rebase',
-      'diff',
-    },
-    sync_install = false,
-    auto_install = true,
-    ignore_install = {
-      'html',
-    },
+  config = function()
+    local treesitter = require('nvim-treesitter')
 
-    highlight = {
-      enable = true,
-      -- disable = { 'markdown', 'vimdoc', 'help', 'gitcommit', 'diff' },
-      disable = { 'html' },
-      additional_vim_regex_highlighting = false,
-      indent = {
-        enable = true,
-        -- disable = {},
-      },
-    },
-    textobjects = {
-      -- disable = { "javascript" },
-      select = {
-        enable = true,
-        lookahead = true,
-
-        keymaps = {
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = { query = '@class.inner', desc = 'Select inner part of a class region' },
-          ['as'] = { query = '@scope', query_group = 'locals', desc = 'Select language scope' },
-        },
-        selection_modes = {
-          ['@parameter.outer'] = 'v', -- charwise
-          ['@function.outer'] = 'V', -- linewise
-          ['@class.outer'] = 'V', -- blockwise
-        },
-        include_surrounding_whitespace = true,
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<C-l>'] = '@parameter.inner',
-        },
-        swap_previous = {
-          ['<C-h>'] = '@parameter.inner',
-        },
-      },
-      move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = {
-          [']m'] = '@function.outer',
-          [']]'] = { query = '@class.outer', desc = 'Next class start' },
-          [']o'] = '@loop.*',
-          -- [']s'] = { query = '@scope', query_group = 'locals', desc = 'Next scope' },
-          -- [']z'] = { query = '@fold', query_group = 'folds', desc = 'Next fold' },
-        },
-        goto_next_end = {
-          [']M'] = '@function.outer',
-          [']['] = '@class.outer',
-        },
-        goto_previous_start = {
-          ['[m'] = '@function.outer',
-          ['[['] = '@class.outer',
-        },
-        goto_previous_end = {
-          ['[M'] = '@function.outer',
-          ['[]'] = '@class.outer',
-        },
-      },
-    },
-  },
-
-  -- config = function(_, opts)
-  --   require('nvim-treesitter.configs').setup(opts)
-  --
-  --   local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-  --   parser_config.gotmpl = {
-  --     install_info = {
-  --       url = 'https://github.com/ngalaiko/tree-sitter-go-template',
-  --       files = { 'src/parser.c' },
-  --     },
-  --     filetype = 'gotmpl',
-  --     used_by = { 'gohtmltmpl', 'gotexttmpl', 'gotmpl', 'yaml' },
-  --   }
-  --
-  --   vim.treesitter.language.register('yaml', 'ansible')
-  --   -- vim.treesitter.language.register('yaml', 'helm')
-  -- end,
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = treesitter.get_available(),
+      callback = function()
+        vim.treesitter.start()
+        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        vim.opt.foldmethod = 'expr'
+        vim.bo.indentexpr = 'v:lua.require\'nvim-treesitter\'.indentexpr()'
+      end,
+    })
+  end,
 }
