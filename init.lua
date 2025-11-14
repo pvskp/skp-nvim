@@ -69,6 +69,7 @@ spec(false, 'git.neogit')
 spec(true, 'which-key')
 spec(true, 'undotree') -- show undo tree
 spec(true, 'todo-comments')
+spec(true, 'neo-tree')
 spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(false, 'oil')

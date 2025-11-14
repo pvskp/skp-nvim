@@ -32,7 +32,7 @@ return {
     local treesitter = require('nvim-treesitter')
 
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = treesitter.get_available(),
+      pattern = treesitter.get_installed(),
       callback = function()
         vim.treesitter.start()
         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
