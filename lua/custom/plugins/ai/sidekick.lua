@@ -5,7 +5,7 @@ return {
     cli = {
       mux = {
         backend = 'tmux',
-        enabled = false,
+        enabled = true,
       },
       win = {
         --- CLI Tool Keymaps (default mode is `t`)
@@ -62,7 +62,7 @@ return {
     {
       "<leader><Tab>",
       function() require("sidekick.cli").focus() end,
-      mode = { "x", "v", "n" },
+      mode = { "x", "v", "n", "t" },
       desc = "Switch Focus",
     },
   },

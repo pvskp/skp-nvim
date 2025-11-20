@@ -20,7 +20,7 @@ spec(false, 'colorscheme.vscode')
 spec(false, 'colorscheme.rose-pine')
 spec(false, 'colorscheme.pywal')
 spec(false, 'colorscheme.onedark')
-spec(true, 'colorscheme.nord')
+spec(false, 'colorscheme.nord')
 spec(false, 'colorscheme.moonfly')
 spec(false, 'colorscheme.midnight')
 spec(false, 'colorscheme.kanagawa')
@@ -30,6 +30,8 @@ spec(false, 'colorscheme.catppuccin')
 spec(false, 'colorscheme.base16')
 spec(false, 'colorscheme.ayu')
 spec(false, 'colorscheme.adwaita')
+spec(false, 'colorscheme.kecleon')
+spec(true, 'colorscheme.omarchy')
 
 spec(true, 'treesiter')
 spec(true, 'conform') -- formatter
@@ -40,6 +42,7 @@ spec(true, 'lazydev') -- offers completion to neovim functions
 spec(true, 'lsp.nvim-lint') -- linting
 spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
+spec(true, 'lsp.trouble')
 spec(true, 'lsp.blink') -- completion
 spec(true, 'lsp.dropbar')
 spec(false, 'lsp.cmp') -- completion

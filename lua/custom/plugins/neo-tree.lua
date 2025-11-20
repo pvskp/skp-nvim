@@ -3,11 +3,23 @@ return {
   branch = 'v3.x',
   keys = {
     { '<leader>e', '<cmd>Neotree toggle<cr>' },
+    -- { '<leader>e', '<cmd>Neotree toggle position=current<cr>' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
+    {
+      's1n7ax/nvim-window-picker',
+      name = 'window-picker',
+      event = 'VeryLazy',
+      version = '2.*',
+      config = function()
+        require('window-picker').setup({
+          hint = 'floating-big-letter',
+        })
+      end,
+    },
   },
   lazy = false, -- neo-tree will lazily load itself
   ---@module "neo-tree"
@@ -15,6 +27,11 @@ return {
   opts = {
     popup_border_style = 'rounded',
     use_popups_for_input = true,
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+      },
+    },
     window = {
       mappings = {
         ['<space>'] = 'expand_all_subnodes',
