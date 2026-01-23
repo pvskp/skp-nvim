@@ -1,16 +1,19 @@
-for k, v in pairs({
-  -- spell = true,
-  -- spelllang = 'pt_br,en',
-  shiftwidth = 2,
-  tabstop = 2,
-  expandtab = true,
-  wrap = false,
-  -- concealcursor = 'ncv', -- hide original markdown chars
-  -- conceallevel = 3, -- hide original markdown chars
-  -- textwidth = 80,
-}) do
-  vim.opt_local[k] = v
-end
+-- for k, v in pairs({
+--   -- spell = true,
+--   -- spelllang = 'pt_br,en',
+--   shiftwidth = 2,
+--   tabstop = 2,
+--   expandtab = true,
+--   wrap = false,
+--   -- concealcursor = 'ncv', -- hide original markdown chars
+--   -- conceallevel = 3, -- hide original markdown chars
+--   -- textwidth = 80,
+-- }) do
+--   vim.opt[k] = v
+-- end
+
+vim.o.wrap = false
+vim.o.conceallevel = 0
 
 vim.keymap.set(
   'v',
