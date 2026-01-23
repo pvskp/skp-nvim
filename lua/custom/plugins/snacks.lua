@@ -1,16 +1,35 @@
-local custom_layout = {
-  -- preset = "ivy",
+local picker_layout = {
+  fullscreen = true,
+  row = -1,
+  box = 'vertical',
+  { win = 'preview', height = 0.7, enabled = false },
+  {
+    height = 0.3,
+    box = 'vertical',
+    { win = 'input', height = 1 },
+    { win = 'list' },
+  },
+}
+
+local general_picker_config = {
+  --- @type snacks.picker.layout.Config
   layout = {
-    width = 0.999,
-    height = 0.999,
-    box = 'horizontal',
-    {
-      box = 'vertical',
-      border = 'single',
-      { win = 'input', height = 1, border = 'single' },
-      { win = 'list', border = 'none' },
+    layout = picker_layout,
+  },
+}
+
+--- @type snacks.picker.Config
+local file_picker_config = {
+  layout = {
+    hidden = { 'preview' },
+    layout = picker_layout,
+  },
+  win = {
+    input = {
+      keys = {
+        ['<c-e>'] = { 'toggle_preview', mode = { 'i', 'n' } },
+      },
     },
-    { win = 'preview', border = 'single', width = 0.5 },
   },
 }
 
@@ -24,35 +43,29 @@ return {
   -- stylua: ignore start
   keys = {
     {',st',        function() require('snacks').terminal.toggle() end, desc = '[Snacks] Open terminal',},
-    {'<leader>f', function() Snacks.picker.files ({
-      layout = custom_layout,
-      hidden = true
-    }) end, desc = '[Snacks] Find files',},
-    {'<leader>sh', function() Snacks.picker.highlights ({
-      layout = custom_layout,
-      hidden = true
-    }) end, desc = '[Snacks] Find highlights',},
+     {'<leader>f', function() Snacks.picker.files (file_picker_config) end, desc = '[Snacks] Find files',},
+    {'<leader>sh', function() Snacks.picker.highlights () end, desc = '[Snacks] Find highlights',},
     { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
 
     {'<leader>:',  function() Snacks.picker.command_history() end, desc = '[Snacks] Command History',},
-    {'<leader>gg', function() Snacks.picker.grep({ layout = custom_layout, }) end, desc = '[Snacks] Grep',},
+    {'<leader>gg', function() Snacks.picker.grep(general_picker_config) end, desc = '[Snacks] Grep',},
     -- {'<leader>sp', function() Snacks.picker.projects { dev = { '~/Documents/repos/' } } end, desc = '[Snacks] Projects',},
-    {'<leader>sb', function() Snacks.picker.buffers({ layout = custom_layout, }) end, desc = '[Snacks] Buffers',},
-    {'<leader>sw', function() Snacks.picker.grep_word({ layout = custom_layout, }) end, desc = '[Snacks] Visual selection or word', mode = { 'n', 'x' },},
-    {'<leader>h',  function() Snacks.picker.help({ layout = custom_layout, }) end, desc = '[Snacks] Help Pages',},
+    {'<leader>sb', function() Snacks.picker.buffers(general_picker_config) end, desc = '[Snacks] Buffers',},
+    {'<leader>sw', function() Snacks.picker.grep_word(general_picker_config) end, desc = '[Snacks] Visual selection or word', mode = { 'n', 'x' },},
+    {'<leader>h',  function() Snacks.picker.help(general_picker_config) end, desc = '[Snacks] Help Pages',},
     {'<leader>sp', function() Snacks.picker.files({  cwd = "~/.local/share/nvim/lazy/" }) end, desc = '[Snacks] Search for Plugin Spec',},
-    {'<leader>sc', function() Snacks.picker.commands({ layout = custom_layout, }) end, desc = '[Snacks] Commands',},
+    {'<leader>sc', function() Snacks.picker.commands(general_picker_config) end, desc = '[Snacks] Commands',},
     -- {'<leader>hd', function() Snacks.notifier.hide() end, desc = '[Snacks] Hide notifications',},
     -- { "<leader>e", function() Snacks.explorer() end, desc = "[Snacks] Explorer Snacks", },
 
     -- git
-    {'<leader>gl', function() Snacks.picker.git_log({ layout = custom_layout, }) end, desc = '[Snacks] Git Log',},
+    {'<leader>gl', function() Snacks.picker.git_log(general_picker_config) end, desc = '[Snacks] Git Log',},
 
     -- lsp
-    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols({ layout = custom_layout, }) end, desc = '[Snacks] Search for LSP Workspace Symbols',},
-    {'gr',         function() Snacks.picker.lsp_references({ layout = custom_layout, }) end, desc = '[Snacks] References', nowait = true,},
-    {'gi',         function() Snacks.picker.lsp_implementations({ layout = custom_layout, }) end, desc = '[Snacks] Implementations', nowait = true,},
-    {'gd',         function() Snacks.picker.lsp_definitions({ layout = custom_layout, }) end, desc = '[Snacks] Goto Definition',},
+    {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols(general_picker_config) end, desc = '[Snacks] Search for LSP Workspace Symbols',},
+    {'gr',         function() Snacks.picker.lsp_references(general_picker_config) end, desc = '[Snacks] References', nowait = true,},
+    {'gi',         function() Snacks.picker.lsp_implementations(general_picker_config) end, desc = '[Snacks] Implementations', nowait = true,},
+    {'gd',         function() Snacks.picker.lsp_definitions(general_picker_config) end, desc = '[Snacks] Goto Definition',},
   },
   -- stylua: ignore end
   ---@type snacks.Config
@@ -82,14 +95,6 @@ return {
         { section = 'header' },
         { section = 'keys', gap = 1, padding = 1, height = 100 },
         { section = 'startup' },
-        -- {
-        --   section = "terminal",
-        --   cmd = "krabby name umbreon --no-title",
-        --   -- random = 10,
-        --   pane = 2,
-        --   indent = 4,
-        --   height = 30,
-        -- },
       },
     },
     indent = {
@@ -100,21 +105,9 @@ return {
       enabled = false,
       replace_netrw = false, -- Replace netrw with the snacks explorer
     },
-    input = {
-      enabled = true,
-      win = {
-        style = {
-          keys = {
-            n_esc = { '<esc>', { 'cmp_close', 'cancel' }, mode = 'n', expr = true },
-            i_esc = { '<esc>', { 'cmp_close', 'cancel' }, mode = 'i', expr = true },
-            i_cr = { '<cr>', { 'cmp_accept', 'confirm' }, mode = 'i', expr = true },
-            i_tab = { '<tab>', { 'cmp_select_next', 'cmp' }, mode = 'i', expr = true },
-            i_ctrl_w = { '<c-w>', '<c-s-w>', mode = 'i', expr = true },
-            i_up = { '<up>', { 'hist_up' }, mode = { 'i', 'n' } },
-            i_down = { '<down>', { 'hist_down' }, mode = { 'i', 'n' } },
-            q = 'cancel',
-          },
-        },
+    win = {
+      input = {
+        keys = { ['<Esc>'] = { 'close', mode = { 'n', 'i' } } },
       },
     },
     notifier = {
@@ -128,74 +121,6 @@ return {
           keys = { ['<Esc>'] = { 'close', mode = { 'n', 'i' } } },
         },
       },
-      -- sources = {
-      --   explorer = {
-      --     finder = 'explorer',
-      --     sort = { fields = { 'sort' } },
-      --     supports_live = true,
-      --     tree = true,
-      --     watch = true,
-      --     diagnostics = true,
-      --     diagnostics_open = false,
-      --     git_status = true,
-      --     git_status_open = false,
-      --     git_untracked = true,
-      --     follow_file = true,
-      --     -- focus = 'list',
-      --     auto_close = false,
-      --     jump = { close = false },
-      --     layout = { preset = 'sidebar', preview = false },
-      --     -- to show the explorer to the right, add the below to
-      --     -- your config under `opts.picker.sources.explorer`
-      --     -- layout = { layout = { position = "right" } },
-      --     formatters = {
-      --       file = { filename_only = true },
-      --       severity = { pos = 'right' },
-      --     },
-      --     matcher = { sort_empty = false, fuzzy = true },
-      --     config = function(opts)
-      --       return require('snacks.picker.source.explorer').setup(opts)
-      --     end,
-      --     win = {
-      --       input = {
-      --         keys = { ['<Esc>'] = { '', mode = { 'n', 'i' } } },
-      --       },
-      --       list = {
-      --         keys = {
-      --           ['<Esc>'] = '',
-      --           ['<BS>'] = 'explorer_up',
-      --           ['l'] = 'confirm',
-      --           ['h'] = 'explorer_close', -- close directory
-      --           ['a'] = 'explorer_add',
-      --           ['d'] = 'explorer_del',
-      --           ['r'] = 'explorer_rename',
-      --           ['c'] = 'explorer_copy',
-      --           ['m'] = 'explorer_move',
-      --           ['o'] = 'explorer_open', -- open with system application
-      --           ['P'] = 'toggle_preview',
-      --           ['y'] = { 'explorer_yank', mode = { 'n', 'x' } },
-      --           ['p'] = 'explorer_paste',
-      --           ['u'] = 'explorer_update',
-      --           ['<c-c>'] = 'tcd',
-      --           ['<leader>/'] = 'picker_grep',
-      --           ['<c-t>'] = 'terminal',
-      --           ['.'] = 'explorer_focus',
-      --           ['I'] = 'toggle_ignored',
-      --           ['H'] = 'toggle_hidden',
-      --           ['Z'] = 'explorer_close_all',
-      --           [']g'] = 'explorer_git_next',
-      --           ['[g'] = 'explorer_git_prev',
-      --           [']d'] = 'explorer_diagnostic_next',
-      --           ['[d'] = 'explorer_diagnostic_prev',
-      --           [']w'] = 'explorer_warn_next',
-      --           ['[w'] = 'explorer_warn_prev',
-      --           [']e'] = 'explorer_error_next',
-      --           ['[e'] = 'explorer_error_prev',
-      --         },
-      --       },
-      --     },
-      --   },
-      -- },
     },
     quickfile = { enabled = false }, -- couldn't note the difference using this
     scope = { enabled = false },
