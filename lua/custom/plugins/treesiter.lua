@@ -31,8 +31,15 @@ return {
   config = function()
     local treesitter = require('nvim-treesitter')
 
+    local enabled_languages = {
+      'go',
+      'python',
+      'lua',
+      'http',
+    }
+
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = treesitter.get_installed(),
+      pattern = enabled_languages,
       callback = function()
         vim.treesitter.start()
         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
