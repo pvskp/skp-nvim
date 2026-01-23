@@ -11,6 +11,7 @@ require('config.netrw')
 require('config.commandline')
 -- require 'config.terminal'
 require('config.set')
+require('config.highlight') -- required to be loaded after lazy
 -- require('config.colors')
 -- require 'config.default-colorscheme'
 -- require 'config.habamax'
@@ -72,7 +73,7 @@ spec(false, 'git.neogit')
 spec(true, 'which-key')
 spec(true, 'undotree') -- show undo tree
 spec(true, 'todo-comments')
-spec(true, 'neo-tree')
+spec(false, 'neo-tree')
 spec(true, 'tmux') -- tmux integration
 spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(false, 'oil')
@@ -85,6 +86,9 @@ spec(true, 'ccc')
 spec(true, 'auto-session')
 spec(true, 'autopairs')
 spec(true, 'tpipeline')
+spec(true, 'weather')
+spec(true, 'vimwiki')
+spec(true, 'kulala')
 spec(false, 'yazi')
 spec(false, 'w3m')
 spec(false, 'vim-zoom')
@@ -128,4 +132,3 @@ spec(true, 'snacks')
 -- spec(true, 'current-theme.theme.neovim') -- sync theme with system
 require('custom.lazy')
 -- require('config.theme') -- load system theme
-require('config.highlight') -- required to be loaded after lazy
