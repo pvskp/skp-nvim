@@ -13,7 +13,7 @@ return {
     log_level = 'error',
     enabled = true,
     auto_save = true,
-    auto_restore = true,
+    auto_restore = false,
     auto_restore_last_session = false,
     auto_session_suppress_dirs = { '~/' },
   },

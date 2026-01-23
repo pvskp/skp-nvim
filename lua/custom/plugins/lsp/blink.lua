@@ -42,7 +42,6 @@ return {
     },
     -- 'MahanRahmati/blink-nerdfont.nvim',
     'moyiz/blink-emoji.nvim',
-    'Kaiser-Yang/blink-cmp-avante',
     'xzbdmw/colorful-menu.nvim',
     'folke/lazydev.nvim',
     'amarakon/nvim-cmp-fonts',
@@ -63,7 +62,7 @@ return {
           cmp.show({ providers = { 'fonts' } })
         end,
       },
-      ['<C-Space>'] = {
+      ['<c-s>'] = {
         function(cmp)
           cmp.show({ providers = { 'lsp', 'snippets', 'lazydev' } })
         end,
@@ -128,7 +127,9 @@ return {
           max_width = 100,
         },
       },
-      ghost_text = { enabled = true },
+      ghost_text = {
+        enabled = true,
+      },
     },
 
     -- Default list of enabled providers defined so that you can extend it
@@ -136,9 +137,8 @@ return {
     sources = {
       default = {
         'lazydev',
-        'snippets',
-        'avante',
         'lsp',
+        'snippets',
         'path',
         -- 'copilot',
         -- 'buffer',
@@ -182,11 +182,6 @@ return {
           opts = {
             insert = true,
           },
-        },
-        avante = {
-          module = 'blink-cmp-avante',
-          name = 'Avante',
-          opts = {},
         },
         fonts = {
           name = 'fonts',

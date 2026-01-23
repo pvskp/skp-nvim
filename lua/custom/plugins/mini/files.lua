@@ -37,7 +37,7 @@ return {
     -- General options
     options = {
       permanent_delete = true,
-      use_as_default_explorer = false,
+      use_as_default_explorer = true,
     },
 
     windows = {
@@ -89,18 +89,5 @@ return {
         map_split(buf_id, '<C-v>', 'belowright vertical')
       end,
     })
-
-    -- set_hl('MiniFilesNormal', { bg = nil })
-    set_hl('MiniFilesBorder', { bg = nil })
-    set_hl('MiniFilesTitle', { bg = nil })
-
-    if vim.g.colors_name == 'kanagawa' then
-      local colors = require('kanagawa.colors').setup()
-      local pallete = colors.palette
-      set_hl('MiniFilesTitleFocused', {
-        fg = pallete.oniViolet,
-        bg = 'none',
-      })
-    end
   end,
 }

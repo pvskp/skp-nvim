@@ -28,8 +28,8 @@ return {
     end,
     dim_inactive = true, -- dims inactive windows
   },
-  -- config = function(_, opts)
-  --   require('tokyonight').setup(opts)
-  --   vim.cmd("colorscheme tokyonight-moon")
-  -- end
+  config = function(_, opts)
+    require('tokyonight').setup(opts)
+    vim.cmd('colorscheme tokyonight-moon')
+  end,
 }
