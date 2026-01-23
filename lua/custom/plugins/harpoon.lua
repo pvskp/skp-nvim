@@ -1,14 +1,19 @@
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',
-  -- lazy = false,
+  lazy = false,
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function(_, _)
     local harpoon = require('harpoon')
     harpoon:setup()
 
     -- stylua: ignore start
-    vim.keymap.set('n', '<leader>ja', function() harpoon:list():add() end)
+    vim.keymap.set('n', '<leader>ja', function()
+      harpoon:list():add()
+      local filename = vim.fn.expand("%")
+      vim.print("[harpoon] " .. filename .. " added to the harpoon list")
+
+    end)
     vim.keymap.set('n', '<leader>jj', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
     vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
