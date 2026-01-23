@@ -150,7 +150,7 @@ vim.keymap.set('n', 'H', 'zc', { desc = 'Closes fold' })
 vim.keymap.set('n', 'L', 'zo', { desc = 'Opens fold' })
 
 vim.keymap.set('n', '<leader>v', function()
-  if vim.opt.conceallevel == 0 then
+  if vim.api.nvim_get_option_value('conceallevel', {}) == 0 then
     vim.opt.conceallevel = 3
     vim.opt.concealcursor = 'ncv'
   else
@@ -160,6 +160,10 @@ vim.keymap.set('n', '<leader>v', function()
 end, { desc = 'Toggle conceal' })
 
 vim.keymap.set('n', 'q:', 'q:?', { desc = 'Opens command history with search' })
+
+vim.keymap.set('n', '<leader>F', function()
+  print(vim.fn.expand('%'))
+end, { desc = 'Prints current file relative path' })
 
 -- vim.keymap.set('c', '<Tab>', function()
 --   if vim.fn.pumvisible() == 1 then

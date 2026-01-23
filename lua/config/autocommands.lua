@@ -63,10 +63,10 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-  pattern = '*.md',
-  command = 'set wrap',
-})
+-- vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+--   pattern = '*.md',
+--   command = 'set wrap',
+-- })
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   pattern = 'kitty.conf',

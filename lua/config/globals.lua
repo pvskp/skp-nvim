@@ -114,13 +114,18 @@ function Lighten_color(hex, factor)
   return rgb_to_hex(r, g, b)
 end
 
-function Get_highlight_fg(name)
+function Fg(name)
   local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
   if hl and hl.fg then
     return string.format('#%06x', hl.fg)
   else
     return nil
   end
+end
+
+function Bg(name)
+  local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+  return hl.bg
 end
 
 --- Get the attributes from a highlight group recursively through links
