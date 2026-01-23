@@ -6,6 +6,11 @@ return {
       mux = {
         backend = 'tmux',
         enabled = true,
+        -- terminal: new sessions will be created for each CLI tool and shown in a Neovim terminal
+        -- window: when run inside a terminal multiplexer, new sessions will be created in a new tab
+        -- split: when run inside a terminal multiplexer, new sessions will be created in a new split
+        -- NOTE: zellij only supports `terminal`
+        create = 'window', ---@type "terminal"|"window"|"split"
       },
       win = {
         --- CLI Tool Keymaps (default mode is `t`)
