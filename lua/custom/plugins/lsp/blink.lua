@@ -101,7 +101,7 @@ return {
         show_on_blocked_trigger_characters = {},
       },
       menu = {
-        border = 'single',
+        border = 'none',
         auto_show = true,
         max_height = 20,
         scrollbar = false,
@@ -123,7 +123,7 @@ return {
         auto_show = true,
         auto_show_delay_ms = 0,
         window = {
-          border = 'single',
+          border = 'solid',
           max_width = 100,
         },
       },

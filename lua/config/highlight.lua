@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = darker })
     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = darker })
     vim.api.nvim_set_hl(0, 'WinSeparator', { bg = darker, fg = darker })
-    vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+    -- vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'Terminal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'FoldColumn', { bg = 'none' })
@@ -30,10 +30,15 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
     vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = 'none' })
 
+    --- snacks
     vim.api.nvim_set_hl(0, 'SnacksPickerPreview', {})
     -- vim.api.nvim_set_hl(0, 'SnacksPickerInputBorder', { bg = darker3, fg = darker3 })
     vim.api.nvim_set_hl(0, 'SnacksPickerInput', { bg = darker3 })
     vim.api.nvim_set_hl(0, 'SnacksPickerList', { bg = darker2 })
+
+    --- blink
+
+    -- vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { link = 'Pmenu' })
 
     vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
 

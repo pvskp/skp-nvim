@@ -1,8 +1,15 @@
+--- @type snacks.layout.Box
 local picker_layout = {
   fullscreen = true,
   row = -1,
   box = 'vertical',
-  { win = 'preview', height = 0.7, enabled = false },
+  {
+    win = 'preview',
+    height = 0.7,
+    enabled = false,
+    border = 'solid',
+    wo = { number = false },
+  },
   {
     height = 0.3,
     box = 'vertical',
