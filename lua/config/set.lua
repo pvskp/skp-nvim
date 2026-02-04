@@ -11,6 +11,7 @@ local options = {
   hlsearch = false, -- Do not highlight all matches on previous search pattern
   inccommand = 'split', -- Show incremental command results in a split window
   laststatus = 3,
+  winborder = 'solid',
 
   --<Appearance >
   -- concealcursor = 'ncv', -- hide original markdown chars
@@ -52,6 +53,7 @@ local options = {
   tabstop = 2, -- Number of spaces that a tab counts for
   shiftwidth = 2, -- Number of spaces inserted for each indentation
   smartindent = true, -- Make indenting smarter again
+  autoindent = true,
 
   --< Splits >
   splitbelow = true, -- Horizontal splits will be below

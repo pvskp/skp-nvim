@@ -7,21 +7,32 @@ local picker_layout = {
     win = 'preview',
     height = 0.7,
     enabled = false,
-    border = 'solid',
+    border = 'none',
     wo = { number = false },
   },
   {
-    height = 0.3,
+    height = 0.29,
     box = 'vertical',
     { win = 'input', height = 1 },
     { win = 'list' },
   },
 }
 
+local shared_keys = {
+  ['<c-e>'] = { 'toggle_preview', mode = { 'i', 'n' } },
+  ['<c-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
+  ['<c-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
+}
+
 local general_picker_config = {
   --- @type snacks.picker.layout.Config
   layout = {
     layout = picker_layout,
+  },
+  win = {
+    input = {
+      keys = shared_keys,
+    },
   },
 }
 
@@ -33,9 +44,7 @@ local file_picker_config = {
   },
   win = {
     input = {
-      keys = {
-        ['<c-e>'] = { 'toggle_preview', mode = { 'i', 'n' } },
-      },
+      keys = shared_keys,
     },
   },
 }
@@ -67,6 +76,9 @@ return {
 
     -- git
     {'<leader>gl', function() Snacks.picker.git_log(general_picker_config) end, desc = '[Snacks] Git Log',},
+    { "<leader>gL", function() Snacks.picker.git_log_line(
+      vim.tbl_extend('keep', general_picker_config, {})
+    ) end, desc = "Git Log Line" },
 
     -- lsp
     {'<leader>ws', function() Snacks.picker.lsp_workspace_symbols(general_picker_config) end, desc = '[Snacks] Search for LSP Workspace Symbols',},
@@ -121,7 +133,33 @@ return {
       enabled = false,
       -- level = vim.log.levels.WARN
     },
+    dim = {
+      enabled = false,
+    },
     picker = {
+      -- layout = {
+      --   layout = {
+      --     backdrop = false,
+      --     box = 'horizontal',
+      --     width = 0.8,
+      --     min_width = 120,
+      --     height = 0.8,
+      --     {
+      --       box = 'vertical',
+      --       border = true,
+      --       title = '{title} {live} {flags}',
+      --       { win = 'input', height = 1, border = 'none' },
+      --       { win = 'list', border = 'none' },
+      --     },
+      --     { win = 'preview', title = '{preview}', border = true, width = 0.5 },
+      --   },
+      -- },
+      previewers = {
+        diff = {
+          style = 'terminal',
+          cmd = 'diff-so-fancy',
+        },
+      },
       enabled = true,
       win = {
         input = {

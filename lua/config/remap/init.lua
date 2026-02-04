@@ -5,6 +5,10 @@ local opts = { silent = true, noremap = false }
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.keymap.set("n", "<leader>R", function()
+	vim.cmd(":mksession! Session.vim | restart source Session.vim")
+end, { desc = "Restart Neovim" })
+
 -- horizontal scroll
 vim.keymap.set('n', '<Left>', 'z2h', { desc = 'Scroll left slightly' })
 vim.keymap.set('n', '<Right>', 'z2l', { desc = 'Scroll right slightly' })

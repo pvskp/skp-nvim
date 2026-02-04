@@ -10,12 +10,10 @@ return {
   ---@type wk.Opts
   opts = {
     preset = 'helix',
+    show_help = false,
     ---@type wk.Win.opts
     win = {
-
-      -- border = "none",
-      -- row = 50,
-      border = 'single',
+      border = vim.o.winborder,
       width = 50,
     },
 

@@ -9,6 +9,7 @@ return {
       version = '*',
       opts = {},
     },
+    'mason-org/mason-lspconfig.nvim',
     {
       'j-hui/fidget.nvim',
       opts = {
@@ -141,6 +142,14 @@ return {
     vim.lsp.enable(vim.tbl_keys(servers or {}))
 
     require('mason').setup()
-    local lspconfig = require('lspconfig')
+
+    require('mason-lspconfig').setup({
+      ensure_installed = {
+        'stylua',
+        'lua_ls',
+        'bashls',
+      },
+      automatic_enable = true,
+    })
   end,
 }

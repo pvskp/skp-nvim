@@ -6,9 +6,10 @@ local function get_colorscheme()
     local theme = chunk()
 
     if #theme == 1 then
-      if theme[1].config then
+      if theme['config'] ~= nil then
         return theme
       end
+
       theme[1].opts.colorscheme()
       return {}
     end
