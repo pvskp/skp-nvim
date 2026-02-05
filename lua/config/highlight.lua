@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
     local darker = Dark_a_color(normal_hl.bg, 6)
     local darker2 = Dark_a_color(darker, 6)
     local darker3 = Dark_a_color(darker2, 6)
+    local darker4 = Dark_a_color(darker3, 6)
 
     vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = darker })
     vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { bg = darker })
@@ -33,10 +34,15 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
 
     --- snacks
     vim.api.nvim_set_hl(0, 'SnacksPickerPreview', {})
-    -- vim.api.nvim_set_hl(0, 'SnacksPickerInputBorder', { bg = darker3, fg = darker3 })
-    vim.api.nvim_set_hl(0, 'SnacksPickerInput', { bg = darker3 })
+    vim.api.nvim_set_hl(0, 'SnacksPickerInputBorder', { bg = darker3, fg = darker3 })
+    vim.api.nvim_set_hl(0, 'SnacksPickerInput', { bg = darker4 })
     -- vim.api.nvim_set_hl(0, 'SnacksPickerInputBorder', { bg = darker2 })
     vim.api.nvim_set_hl(0, 'SnacksPickerList', { bg = darker2 })
+    vim.api.nvim_set_hl(0, 'SnacksPickerBorder', { link = 'SnacksPickerList' })
+    vim.api.nvim_set_hl(0, 'SnacksPickerPreview', { bg = darker3 })
+    vim.api.nvim_set_hl(0, 'SnacksPickerPreviewBorder', { bg = darker3 })
+    vim.api.nvim_set_hl(0, 'SnacksPickerInputTitle', { bg = 'red' })
+    vim.api.nvim_set_hl(0, 'SnacksPickerBoxTitle', { bg = 'red' })
 
     --- blink
 

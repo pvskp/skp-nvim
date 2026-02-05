@@ -3,18 +3,38 @@ local picker_layout = {
   fullscreen = true,
   row = -1,
   box = 'vertical',
+  backdrop = false,
   {
     win = 'preview',
-    height = 0.7,
+    height = 0.69,
     enabled = false,
     border = 'none',
     wo = { number = false },
   },
   {
-    height = 0.29,
+    height = 0.30,
     box = 'vertical',
     { win = 'input', height = 1 },
     { win = 'list' },
+  },
+}
+
+local default_layout = {
+  layout = {
+    layout = {
+      box = 'horizontal',
+      width = 0.8,
+      min_width = 120,
+      height = 0.8,
+      {
+        box = 'vertical',
+        border = true,
+        title = '{title} {live} {flags}',
+        { win = 'input', height = 1, border = 'top_bottom' },
+        { win = 'list', border = 'none' },
+      },
+      { win = 'preview', title = '{preview}', border = true, width = 0.5 },
+    },
   },
 }
 
@@ -60,7 +80,7 @@ return {
   keys = {
     {',st',        function() require('snacks').terminal.toggle() end, desc = '[Snacks] Open terminal',},
      {'<leader>f', function() Snacks.picker.files (file_picker_config) end, desc = '[Snacks] Find files',},
-    {'<leader>sh', function() Snacks.picker.highlights () end, desc = '[Snacks] Find highlights',},
+    {'<leader>sh', function() Snacks.picker.highlights (default_layout) end, desc = '[Snacks] Find highlights',},
     { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
 
     {'<leader>:',  function() Snacks.picker.command_history() end, desc = '[Snacks] Command History',},
@@ -137,23 +157,6 @@ return {
       enabled = false,
     },
     picker = {
-      -- layout = {
-      --   layout = {
-      --     backdrop = false,
-      --     box = 'horizontal',
-      --     width = 0.8,
-      --     min_width = 120,
-      --     height = 0.8,
-      --     {
-      --       box = 'vertical',
-      --       border = true,
-      --       title = '{title} {live} {flags}',
-      --       { win = 'input', height = 1, border = 'none' },
-      --       { win = 'list', border = 'none' },
-      --     },
-      --     { win = 'preview', title = '{preview}', border = true, width = 0.5 },
-      --   },
-      -- },
       previewers = {
         diff = {
           style = 'terminal',
