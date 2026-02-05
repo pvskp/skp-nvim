@@ -1,3 +1,4 @@
+---
 ---@module 'codecompanion'
 ---@module "lazy"
 ---@type LazyPluginSpec
@@ -18,7 +19,11 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'ravitemer/mcphub.nvim',
     'zbirenbaum/copilot.lua',
+    'j-hui/fidget.nvim',
   },
+  init = function()
+    require('custom.plugins.ai.figet-codecompanion'):init()
+  end,
   config = function()
     require('codecompanion').setup({
       interactions = {
