@@ -1,4 +1,3 @@
----
 ---@module 'codecompanion'
 ---@module "lazy"
 ---@type LazyPluginSpec
@@ -26,16 +25,13 @@ return {
   end,
   config = function()
     require('codecompanion').setup({
+      display = {
+        diff = { enabled = false },
+      },
       interactions = {
-        chat = {
-          adapter = 'opencode',
-        },
-        inline = {
-          adapter = 'copilot',
-        },
-        cmd = {
-          adapter = 'opencode',
-        },
+        chat = { adapter = 'opencode' },
+        inline = { adapter = 'copilot' },
+        cmd = { adapter = 'opencode' },
       },
     })
   end,
