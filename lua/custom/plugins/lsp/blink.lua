@@ -83,7 +83,7 @@ return {
     },
 
     cmdline = {
-      enabled = true,
+      enabled = false,
       keymap = {
         ['<Tab>'] = { 'accept' },
       },

@@ -7,14 +7,11 @@ require('config.remap')
 require('config.window')
 require('config.tabs')
 require('config.netrw')
--- require 'config.statusline'
 require('config.commandline')
 -- require 'config.terminal'
 require('config.set')
 require('config.highlight') -- required to be loaded after lazy
--- require('config.colors')
 -- require 'config.default-colorscheme'
--- require 'config.habamax'
 
 spec(false, 'colorscheme.tokyo-night')
 spec(false, 'colorscheme.vscode')
@@ -46,7 +43,6 @@ spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.trouble')
 spec(true, 'lsp.blink') -- completion
 spec(true, 'lsp.dropbar')
-spec(false, 'lsp.cmp') -- completion
 
 --<< Language specific >>--
 
@@ -79,7 +75,6 @@ spec(true, 'surround') -- surround text with quotes, brackets, etc
 spec(false, 'oil')
 spec(true, 'neotest')
 spec(true, 'neogen')
-spec(true, 'hop') -- jump to any word in the screen
 spec(true, 'harpoon')
 spec(true, 'debugger')
 spec(true, 'ccc')
@@ -89,17 +84,8 @@ spec(true, 'tpipeline')
 spec(true, 'weather')
 spec(true, 'vimwiki')
 spec(true, 'kulala')
-spec(false, 'yazi')
-spec(false, 'w3m')
-spec(false, 'vim-zoom')
-spec(false, 'slime')
 spec(false, 'ranger')
 spec(false, 'quicker')
-spec(false, 'quarto')
-spec(false, 'neo-tree')
-spec(false, 'minty')
-spec(false, 'image')
-spec(false, 'hawtkeys')
 spec(false, 'codesnap')
 
 --<< AI >>--
@@ -118,15 +104,10 @@ spec(false, 'ai.avante')
 spec(true, 'ui.statusline')
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.devicons')
-spec(false, 'ui.ibl')
 spec(false, 'ui.dressing') -- offers better ui for some neovim commands
 
 --<< Snacks >>--
 spec(true, 'snacks')
-
--- vim.api.nvim_create_user_command('Hello', function()
---   vim.cmd 'Ex'
--- end, {})
 
 -- Loads all with lazy
 -- spec(true, 'current-theme.theme.neovim') -- sync theme with system
