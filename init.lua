@@ -10,7 +10,6 @@ require('config.netrw')
 require('config.commandline')
 -- require 'config.terminal'
 require('config.set')
-require('config.highlight') -- required to be loaded after lazy
 -- require 'config.default-colorscheme'
 
 spec(false, 'colorscheme.tokyo-night')
@@ -42,7 +41,7 @@ spec(true, 'lsp.navbuddy') -- allow to navigate between symbols in a easier way
 spec(true, 'lsp.lspconfig')
 spec(true, 'lsp.trouble')
 spec(true, 'lsp.blink') -- completion
-spec(true, 'lsp.dropbar')
+spec(false, 'lsp.dropbar')
 
 --<< Language specific >>--
 
@@ -79,8 +78,9 @@ spec(true, 'harpoon')
 spec(true, 'debugger')
 spec(true, 'ccc')
 spec(true, 'auto-session')
+spec(true, 'marcador')
 spec(true, 'autopairs')
-spec(true, 'tpipeline')
+spec(false, 'tpipeline')
 spec(true, 'weather')
 spec(true, 'vimwiki')
 spec(true, 'kulala')
@@ -111,5 +111,6 @@ spec(true, 'snacks')
 
 -- Loads all with lazy
 -- spec(true, 'current-theme.theme.neovim') -- sync theme with system
+require('config.highlight') -- required to be loaded after lazy
 require('custom.lazy')
 -- require('config.theme') -- load system theme

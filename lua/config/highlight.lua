@@ -65,7 +65,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
 
     -- vim.api.nvim_set_hl(0, 'LspReferenceWrite', { force = true, underline = false })
 
-    vim.api.nvim_set_hl(0, 'String', { fg = Fg('diffChanged'), italic = true })
+    -- vim.api.nvim_set_hl(0, 'String', { fg = Fg('diffChanged'), italic = true })
 
     vim.api.nvim_set_hl(0, '@variable.kulala_http', {
       fg = vim.g.terminal_color_10,
