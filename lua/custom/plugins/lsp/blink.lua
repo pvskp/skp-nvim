@@ -147,6 +147,7 @@ return {
       },
       per_filetype = {
         codecompanion = { 'codecompanion' },
+        vimwiki = {},
       },
       providers = {
         copilot = {

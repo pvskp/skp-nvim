@@ -9,7 +9,7 @@ return {
     vim.g.vimwiki_ext2syntax = vim.empty_dict()
     vim.g.vimwiki_list = {
       {
-        path = '~/personal-sync/wiki/',
+        path = '~/Documents/repos/mywiki/',
         -- syntax = 'markdown',
         -- ext = '.md',
       },
