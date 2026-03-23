@@ -1,0 +1,1 @@
+EventMiniLoaded = "MiniLoaded"
