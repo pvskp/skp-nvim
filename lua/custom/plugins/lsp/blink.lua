@@ -3,7 +3,7 @@ return {
   -- lazy = false,
   version = '1.*',
   event = { 'InsertEnter' },
-  -- build = 'cargo build --release',
+  build = 'cargo build --release',
   dependencies = {
     {
       'saghen/blink.compat',

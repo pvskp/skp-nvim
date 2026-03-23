@@ -8,6 +8,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
     local darker4 = Dark_a_color(darker3, 6)
 
     vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = darker })
+    vim.api.nvim_set_hl(0, 'TreesitterContextBottom', { bg = darker, underline = false })
     vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { bg = darker })
 
     vim.api.nvim_set_hl(0, 'WinBar', { bg = darker })
@@ -15,7 +16,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
     -- transparent background
     -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = darker2 })
-    vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'NormalFloat' })
+    vim.api.nvim_set_hl(0, 'FloatBorder', { fg = Fg('NormalFloat'), bg = 'none' })
     -- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = darker })
     vim.api.nvim_set_hl(0, 'WinSeparator', { bg = darker, fg = darker })
     -- vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
@@ -44,11 +45,14 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'BufEnter' }, {
     vim.api.nvim_set_hl(0, 'SnacksPickerInputTitle', { bg = 'red' })
     vim.api.nvim_set_hl(0, 'SnacksPickerBoxTitle', { bg = 'red' })
 
+    --- vimwiki
+    -- vim.api.nvim_set_hl(0, 'VimwikiLink', { bold = true })
+    vim.api.nvim_set_hl(0, 'SnacksPickerInputTitle', { bg = 'red' })
+
     --- blink
 
     -- vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { link = 'Pmenu' })
-
-    vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
+    -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
 
     vim.api.nvim_set_hl(0, 'GitSignsAdd', { force = true, fg = Fg('GitSignsAdd'), bg = 'none' })
     vim.api.nvim_set_hl(0, 'GitSignsDelete', { force = true, fg = Fg('GitSignsDelete'), bg = 'none' })

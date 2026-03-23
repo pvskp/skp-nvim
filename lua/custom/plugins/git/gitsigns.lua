@@ -15,7 +15,7 @@ return {
       untracked = { text = '▌' },
     },
 
-    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+    signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
     numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -52,4 +52,22 @@ return {
       col = 1,
     },
   },
+
+  init = function()
+    -- vim.o.signcolumn = 'no'
+  end,
+  config = function(_, opts)
+    local gitsigns = require('gitsigns')
+    gitsigns.setup(opts)
+
+    vim.keymap.set('n', '<leader>gt', function()
+      if vim.o.signcolumn == 'no' then
+        vim.o.signcolumn = 'yes'
+        gitsigns.toggle_signs(true)
+      else
+        vim.o.signcolumn = 'no'
+        gitsigns.toggle_signs(false)
+      end
+    end, { desc = 'Toggle signcolumn and gitsigns' })
+  end,
 }

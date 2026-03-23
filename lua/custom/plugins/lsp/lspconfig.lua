@@ -17,7 +17,7 @@ return {
           window = {
             normal_hl = 'none', -- Base highlight group in the notification window
             winblend = 0, -- Background color opacity in the notification window
-            border = 'none', -- Border around the notification window
+            border = 'single', -- Border around the notification window
             zindex = 45, -- Stacking priority of the notification window
             max_width = 0, -- Maximum width of the notification window
             max_height = 0, -- Maximum height of the notification window
@@ -32,7 +32,7 @@ return {
   },
   config = function()
     vim.diagnostic.config({
-      virtual_text = false,
+      virtual_text = true,
       underline = true,
       float = {},
       signs = {

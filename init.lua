@@ -96,12 +96,12 @@ spec(false, 'ai.copilot-vim')
 spec(false, 'ai.copilot-chat')
 spec(false, 'ai.copilot')
 spec(false, 'ai.codeium')
-spec(true, 'ai.codecompanion')
+spec(false, 'ai.codecompanion')
 spec(false, 'ai.avante')
 
 --<< UI >>--
 
-spec(true, 'ui.statusline')
+spec(false, 'ui.statusline')
 spec(true, 'ui.highlight-colors') -- color preview
 spec(true, 'ui.devicons')
 spec(false, 'ui.dressing') -- offers better ui for some neovim commands

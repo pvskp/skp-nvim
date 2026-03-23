@@ -10,8 +10,13 @@ return {
     vim.g.vimwiki_list = {
       {
         path = '~/Documents/repos/mywiki/',
-        -- syntax = 'markdown',
-        -- ext = '.md',
+        nested_syntaxes = {
+          python = 'python',
+          ['c++'] = 'cpp',
+          go = 'go',
+          bash = 'bash',
+          sh = 'sh',
+        },
       },
     }
 
@@ -22,11 +27,24 @@ return {
       end,
     })
 
-    -- vim.api.nvim_create_autocmd('FileType', {
-    --   pattern = 'vimwiki',
-    --   callback = function(args)
-    --     vim.api.nvim_set_option_value('wrap', false, { scope = 'local' })
-    --   end,
-    -- })
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'vimwiki',
+      callback = function(args)
+        vim.api.nvim_set_option_value('wrap', false, { scope = 'local' })
+        vim.api.nvim_set_option_value('textwidth', 80, { scope = 'local' })
+        vim.api.nvim_set_option_value('colorcolumn', '81', { scope = 'local' })
+
+        -- vim.o.wrap = false
+        -- vim.o.textwidth = 80
+        -- vim.o.colorcolumn = '81'
+
+        -- ESSENCIAL: Ativa a quebra automática de texto (t) e em comentários (c)
+        -- 't' -> Auto-wrap usando textwidth
+        -- 'q' -> Permite formatar parágrafos com 'gq'
+        -- 'j' -> Remove caracteres de comentário ao juntar linhas, se aplicável
+        -- vim.opt_local.formatoptions = vim.opt_local.formatoptions + { t = true, q = true, j = true }
+        vim.opt_local.formatoptions = 'tcqj'
+      end,
+    })
   end,
 }

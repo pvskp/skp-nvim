@@ -35,43 +35,47 @@ return {
       operators = {},
     },
     color_overrides = {},
-    custom_highlights = {},
-    integrations = {
-      cmp = true,
-      gitsigns = true,
-      telescope = {
-        enabled = true,
-        -- style = "nvchad"
-      },
-      nvimtree = true,
-      treesitter = true,
-      notify = false,
-      native_lsp = {
-        enabled = true,
-        virtual_text = {
-          errors = { 'italic' },
-          hints = { 'italic' },
-          warnings = { 'italic' },
-          information = { 'italic' },
-          ok = { 'italic' },
-        },
-        underlines = {
-          errors = { 'undercurl' },
-          hints = { 'undercurl' },
-          warnings = { 'undercurl' },
-          information = { 'undercurl' },
-          ok = { 'undercurl' },
-        },
-        inlay_hints = {
-          background = true,
-        },
-      },
-      mini = {
-        enabled = true,
-        indentscope_color = '',
-      },
-      -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    custom_highlights = function(colors)
+      return {
+        VimwikiLink = { fg = colors.flamingo, bold = true },
+      }
+    end,
+  },
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    telescope = {
+      enabled = true,
+      -- style = "nvchad"
     },
+    nvimtree = true,
+    treesitter = true,
+    notify = false,
+    native_lsp = {
+      enabled = true,
+      virtual_text = {
+        errors = { 'italic' },
+        hints = { 'italic' },
+        warnings = { 'italic' },
+        information = { 'italic' },
+        ok = { 'italic' },
+      },
+      underlines = {
+        errors = { 'undercurl' },
+        hints = { 'undercurl' },
+        warnings = { 'undercurl' },
+        information = { 'undercurl' },
+        ok = { 'undercurl' },
+      },
+      inlay_hints = {
+        background = true,
+      },
+    },
+    mini = {
+      enabled = true,
+      indentscope_color = '',
+    },
+    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
   config = function(_, opts)
     require('catppuccin').setup(opts)
