@@ -31,6 +31,9 @@ miniclue.setup({
     { mode = 'n', keys = '<C-w>' },
     { mode = 'n', keys = '<leader>e' },
     { mode = 'n', keys = 'z' },
+
+    { mode = 'n', keys = ']' },
+    { mode = 'n', keys = '[' },
   },
   clues = {
     { mode = 'n', keys = '<leader>eh', postkeys = '<leader>e' },
@@ -38,6 +41,15 @@ miniclue.setup({
     { mode = 'n', keys = '<leader>eq', postkeys = '<leader>e' },
 
     { mode = 'n', keys = '<C-w>q',     postkeys = '<C-w>' },
+
+    { mode = 'n', keys = ']b',         postkeys = ']' },
+    { mode = 'n', keys = '[b',         postkeys = '[' },
+    { mode = 'n', keys = '[w',         postkeys = '[' },
+    { mode = 'n', keys = ']w',         postkeys = ']' },
+    { mode = 'n', keys = '[d',         postkeys = '[' },
+    { mode = 'n', keys = ']d',         postkeys = ']' },
+    { mode = 'n', keys = '[D',         postkeys = '[' },
+    { mode = 'n', keys = ']D',         postkeys = ']' },
 
     miniclue.gen_clues.z(),
     miniclue.gen_clues.windows({
