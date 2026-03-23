@@ -98,6 +98,7 @@ require("mini.files").setup({
   },
   mappings = {
     go_in       = '',
+    synchronize = '<CR>',
     go_out      = '',
     go_in_plus  = 'l',
     go_out_plus = 'h',
