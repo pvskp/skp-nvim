@@ -116,6 +116,12 @@ hipatterns.setup({
     todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
     note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
 
+    ['false'] = { pattern = '%f[%w]()false()%f[%W]', group = 'diffRemoved' },
+    ['true']  = { pattern = '%f[%w]()true()%f[%W]', group = 'diffAdded' },
+
+    ['False'] = { pattern = '%f[%w]()False()%f[%W]', group = 'diffRemoved' },
+    ['True']  = { pattern = '%f[%w]()True()%f[%W]', group = 'diffAdded' },
+
     -- Highlight hex color strings (`#rrggbb`) using that color
     hex_color = hipatterns.gen_highlighter.hex_color(),
   },
