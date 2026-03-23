@@ -10,6 +10,7 @@ require("mini.misc").setup()
 require("mini.tabline").setup()
 require("mini.trailspace").setup()
 require("mini.bracketed").setup()
+require("mini.pairs").setup()
 
 local miniclue = require('mini.clue')
 
