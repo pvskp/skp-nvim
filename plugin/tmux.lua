@@ -4,7 +4,14 @@ vim.pack.add({
 
 local opts = { silent = true }
 
-require('tmux').setup()
+require('tmux').setup({
+  copy_sync = {
+    enable = false
+  },
+  navigation = {
+    enable_default_keybindings = false
+  }
+})
 
 Map('n', '<M-h>', function() require('tmux').move_left() end, opts)
 Map('n', '<M-l>', function() require('tmux').move_right() end, opts)

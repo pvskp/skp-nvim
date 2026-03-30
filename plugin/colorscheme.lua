@@ -1,4 +1,5 @@
 vim.pack.add({ Gh('nvim-mini/mini.nvim') })
+vim.o.termguicolors = true
 vim.cmd.colorscheme('catppuccin')
 
 vim.api.nvim_set_hl(0, 'Title', { fg = Fg('Title'), bold = true })

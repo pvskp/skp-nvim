@@ -20,6 +20,18 @@ Map("n", "<leader>eq", "<cmd>bdelete<cr>", { desc = "Close buffer" })
 
 Map("n", "q:", "q:?", { desc = "Opens command history with search" })
 
+Map('n', '<leader>rr', function ()
+  MiniSessions.read('Session.vm')
+end, {desc = 'Reload session'})
+
+Map('n', '<leader>rs', function ()
+  MiniSessions.write('Session.vm')
+end, {desc = 'Write session'})
+
+Map('n', '<leader>F', function()
+  print(vim.fn.expand('%'))
+end, { desc = 'Prints current file relative path' })
+
 Map("n", "<leader>cf", function()
 	require("conform").format({ lsp_format = "fallback" }, function(err, did_edit)
 		if err ~= nil then
