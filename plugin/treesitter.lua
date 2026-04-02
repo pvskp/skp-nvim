@@ -15,6 +15,7 @@ vim.pack.add({
 local ensure_install = {
   'go',
   'lua',
+  'python',
   'bash',
   'zsh',
 }
