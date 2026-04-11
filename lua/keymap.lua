@@ -5,11 +5,18 @@ vim.g.maplocalleader = " "
 
 Map("n", "<c-e>", "<cmd>Explore<cr>", { desc = "Open Explorer" })
 Map("n", "<c-s>", "<cmd>w<cr>", { desc = "Open Explorer" })
-Map("n", "<c-q>", "<cmd>qall<cr>", { desc = "Close all" })
+Map("n", "<c-q>", "<cmd>qall!<cr>", { desc = "Close all" })
 Map({ "n", "v" }, "<c-j>", "%", { desc = "Go to next matching", noremap = true })
 Map({ "n", "v" }, "<space><space>", "g_", { desc = "Go to the end of line", noremap = true })
 Map("n", "<tab>", "<c-6>", { desc = "Go to last buffer" })
-Map("n", "<leader>R", "<cmd>mksession! Session.vim | restart source Session.vim<cr>", { desc = "Restart Neovim" })
+
+-- Map("n", "<leader>R", "<cmd>mksession! Session.vim | restart source Session.vim<cr>", { desc = "Restart Neovim" })
+
+vim.keymap.set('n', '<leader>R', function()
+  local session = vim.fn.stdpath('state') .. '/restart_session.vim'
+  vim.cmd('mksession! ' .. vim.fn.fnameescape(session))
+  vim.cmd('restart source ' .. vim.fn.fnameescape(session))
+end, { desc = 'Restart Neovim' })
 
 Map("n", "H", "zc", { desc = "Close fold" })
 Map("n", "L", "zO", { desc = "Open fold" })
@@ -18,19 +25,23 @@ Map("n", "<leader>eh", "<cmd>bprev<cr>", { desc = "Go to previous buffer" })
 Map("n", "<leader>el", "<cmd>bnext<cr>", { desc = "Go to next buffer" })
 Map("n", "<leader>eq", "<cmd>bdelete<cr>", { desc = "Close buffer" })
 
+Map("n", "<leader>nj", "]]", { desc = "Go to previous function/method", remap = true })
+Map("n", "<leader>nk", "[[", { desc = "Go to next function/method", remap = true })
+Map("n", "<leader>nq", "", { desc = "Stop search", remap = false })
+
 Map("n", "q:", "q:?", { desc = "Opens command history with search" })
 
-Map('n', '<leader>rr', function ()
-  MiniSessions.read('Session.vm')
-end, {desc = 'Reload session'})
+Map("n", "<leader>rr", function()
+	MiniSessions.read("Session.vm")
+end, { desc = "Reload session" })
 
-Map('n', '<leader>rs', function ()
-  MiniSessions.write('Session.vm')
-end, {desc = 'Write session'})
+Map("n", "<leader>rs", function()
+	MiniSessions.write("Session.vm")
+end, { desc = "Write session" })
 
-Map('n', '<leader>F', function()
-  print(vim.fn.expand('%'))
-end, { desc = 'Prints current file relative path' })
+Map("n", "<leader>F", function()
+	print(vim.fn.expand("%"))
+end, { desc = "Prints current file relative path" })
 
 Map("n", "<leader>cf", function()
 	require("conform").format({ lsp_format = "fallback" }, function(err, did_edit)
