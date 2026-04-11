@@ -28,17 +28,26 @@ miniclue.setup({
 	triggers = {
 		{ mode = "n", keys = "<C-w>" },
 		{ mode = "n", keys = "<leader>e" },
+		{ mode = "n", keys = "<leader>n" },
+
 		{ mode = "n", keys = "z" },
 
-		{ mode = "n", keys = "]" },
-		{ mode = "n", keys = "[" },
+		-- { mode = "n", keys = "]" },
+		-- { mode = "n", keys = "[" },
 	},
 	clues = {
+
 		{ mode = "n", keys = "<leader>eh", postkeys = "<leader>e" },
 		{ mode = "n", keys = "<leader>el", postkeys = "<leader>e" },
 		{ mode = "n", keys = "<leader>eq", postkeys = "<leader>e" },
 
+		{ mode = "n", keys = "<leader>nj", postkeys = "<leader>n" },
+		{ mode = "n", keys = "<leader>nk", postkeys = "<leader>n" },
+
 		{ mode = "n", keys = "<C-w>q", postkeys = "<C-w>" },
+
+		{ mode = "n", keys = "]]", postkeys = "]" },
+		{ mode = "n", keys = "[[", postkeys = "[" },
 
 		{ mode = "n", keys = "]b", postkeys = "]" },
 		{ mode = "n", keys = "[b", postkeys = "[" },
