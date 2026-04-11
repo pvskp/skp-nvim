@@ -35,6 +35,8 @@ opt.fillchars = {
 o.cursorline = true
 o.cursorlineopt = "number"
 
+o.cmdheight = 0
+
 -------------
 --- Split ---
 -------------
@@ -106,3 +108,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --     end
 --   end,
 -- })
+
+require('vim._core.ui2').enable({
+  enable = true,
+})
