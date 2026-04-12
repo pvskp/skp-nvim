@@ -27,6 +27,7 @@ miniclue.setup({
 	},
 	triggers = {
 		{ mode = "n", keys = "<C-w>" },
+		{ mode = "n", keys = "g" },
 		{ mode = "n", keys = "<leader>e" },
 		{ mode = "n", keys = "<leader>n" },
 

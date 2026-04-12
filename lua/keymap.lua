@@ -10,13 +10,13 @@ Map({ "n", "v" }, "<c-j>", "%", { desc = "Go to next matching", noremap = true }
 Map({ "n", "v" }, "<space><space>", "g_", { desc = "Go to the end of line", noremap = true })
 Map("n", "<tab>", "<c-6>", { desc = "Go to last buffer" })
 
--- Map("n", "<leader>R", "<cmd>mksession! Session.vim | restart source Session.vim<cr>", { desc = "Restart Neovim" })
+Map("n", "<leader>q", "1z=", { desc = "Accepts first spell fix" })
 
-vim.keymap.set('n', '<leader>R', function()
-  local session = vim.fn.stdpath('state') .. '/restart_session.vim'
-  vim.cmd('mksession! ' .. vim.fn.fnameescape(session))
-  vim.cmd('restart source ' .. vim.fn.fnameescape(session))
-end, { desc = 'Restart Neovim' })
+vim.keymap.set("n", "<leader>R", function()
+	local session = vim.fn.stdpath("state") .. "/restart_session.vim"
+	vim.cmd("mksession! " .. vim.fn.fnameescape(session))
+	vim.cmd("restart source " .. vim.fn.fnameescape(session))
+end, { desc = "Restart Neovim" })
 
 Map("n", "H", "zc", { desc = "Close fold" })
 Map("n", "L", "zO", { desc = "Open fold" })
