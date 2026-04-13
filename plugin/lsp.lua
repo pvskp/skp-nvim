@@ -36,6 +36,8 @@ require("mason-lspconfig").setup({
 	},
 })
 
+-- vim.lsp.codelens.enable(true)
+
 -- vim.lsp.enable({
 --   "lua_ls",
 --   "gopls",
