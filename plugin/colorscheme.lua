@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = "background",
 	-- once = true,
 	callback = function()
-		vim.api.nvim_set_hl(0, "Normal", { bg = 'none' })
+		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 
 		vim.api.nvim_set_hl(0, "Title", { fg = Fg("Title"), bold = true })
 		vim.api.nvim_set_hl(0, "FloatBorder", { fg = Bg("NormalFloat"), bg = Bg("NormalFloat") })
@@ -34,6 +34,15 @@ vim.api.nvim_create_autocmd("OptionSet", {
 			fg = Fg("NvimString"),
 			bg = Bg("NormalFloat"),
 			bold = true,
+		})
+
+		vim.api.nvim_set_hl(0, "SpellBad", {
+			fg = "#cdd6f4",
+			bg = "#89556b",
+		})
+
+		vim.api.nvim_set_hl(0, "@string.special.url", {
+			link = "Directory",
 		})
 	end,
 })
