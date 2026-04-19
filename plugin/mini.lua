@@ -21,13 +21,12 @@ miniclue.setup({
 		-- scroll_down = '',
 		-- scroll_up = '',
 		config = {
-			width = "auto",
+			width = 30,
 			height = 10,
 		},
 	},
 	triggers = {
 		{ mode = "n", keys = "<C-w>" },
-		{ mode = "n", keys = "g" },
 		{ mode = "n", keys = "<leader>e" },
 		{ mode = "n", keys = "<leader>n" },
 
@@ -116,48 +115,48 @@ require("mini.files").setup({
 ------------------
 --- HiPatterns ---
 ------------------
-local hipatterns = require("mini.hipatterns")
-hipatterns.setup({
-	highlighters = {
-		-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
-		fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-		hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-		todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-		note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-
-		["false"] = { pattern = "%f[%w]()false()%f[%W]", group = "diffRemoved" },
-		["true"] = { pattern = "%f[%w]()true()%f[%W]", group = "diffAdded" },
-
-		["False"] = { pattern = "%f[%w]()False()%f[%W]", group = "diffRemoved" },
-		["True"] = { pattern = "%f[%w]()True()%f[%W]", group = "diffAdded" },
-
-		-- Highlight hex color strings (`#rrggbb`) using that color
-		hex_color = hipatterns.gen_highlighter.hex_color(),
-	},
-})
+-- local hipatterns = require("mini.hipatterns")
+-- hipatterns.setup({
+-- 	highlighters = {
+-- 		-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+-- 		fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+-- 		hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+-- 		todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+-- 		note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+--
+-- 		["false"] = { pattern = "%f[%w]()false()%f[%W]", group = "diffRemoved" },
+-- 		["true"] = { pattern = "%f[%w]()true()%f[%W]", group = "diffAdded" },
+--
+-- 		["False"] = { pattern = "%f[%w]()False()%f[%W]", group = "diffRemoved" },
+-- 		["True"] = { pattern = "%f[%w]()True()%f[%W]", group = "diffAdded" },
+--
+-- 		-- Highlight hex color strings (`#rrggbb`) using that color
+-- 		hex_color = hipatterns.gen_highlighter.hex_color(),
+-- 	},
+-- })
 
 ------------
 --- Pick ---
 ------------
 
-require("mini.extra").setup()
+-- require("mini.extra").setup()
 
-require("mini.pick").setup({
-	mappings = {
-		refine = "<C-g>",
-		move_start = "",
-	},
-	window = {
-		prompt_prefix = "󰩷 ",
-		config = function()
-			return {
-				border = "solid",
-				width = vim.o.columns + 1,
-				height = math.floor(0.2 * vim.o.lines),
-			}
-		end,
-	},
-})
+-- require("mini.pick").setup({
+-- 	mappings = {
+-- 		refine = "<C-g>",
+-- 		move_start = "",
+-- 	},
+-- 	window = {
+-- 		prompt_prefix = "󰩷 ",
+-- 		config = function()
+-- 			return {
+-- 				border = "solid",
+-- 				width = vim.o.columns + 1,
+-- 				height = math.floor(0.2 * vim.o.lines),
+-- 			}
+-- 		end,
+-- 	},
+-- })
 
 ------------------
 --- Trailspace ---

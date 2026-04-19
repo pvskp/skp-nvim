@@ -4,6 +4,7 @@ vim.pack.add({
 
 require("sidekick").setup({
   cli = {
+    picker = "fzf-lua",
     mux = {
       backend = "tmux",
       enabled = true,
