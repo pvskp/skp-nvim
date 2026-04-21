@@ -5,10 +5,12 @@ vim.pack.add({
 local fzf = require("fzf-lua")
 
 ---@module "fzf-lua"
----@type fzf-lua.Config|{}
+---@type fzf-lua.Config
 ---@diagnostic disable: missing-fields
 fzf.setup({
 	"ivy",
+	fzf_colors = { true, },
+  fzf_opts = { ['--gutter'] = ' ', },
 	ui_select = function(fzf_opts, _)
 		---@type fzf-lua.Config
 		local select_opts = {

@@ -20,10 +20,16 @@ local ensure_install = {
   'zsh',
 }
 
+local ensure_enabled = vim.tbl_extend(
+  'force',
+  vim.fn.deepcopy(ensure_install),
+  {'http'}
+)
+
 require('nvim-treesitter').install(ensure_install)
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = ensure_install,
+  pattern = ensure_enabled,
   callback = function()
     vim.treesitter.start()
     vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
