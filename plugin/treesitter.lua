@@ -20,8 +20,7 @@ local ensure_install = {
   'zsh',
 }
 
-local ensure_enabled = vim.tbl_extend(
-  'force',
+local ensure_enabled = vim.list_extend(
   vim.fn.deepcopy(ensure_install),
   {'http'}
 )
