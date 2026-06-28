@@ -15,9 +15,9 @@ Map("n", "<c-y>", "<cmd>%y<CR>", { desc = "Copy all file" })
 Map("n", "<leader>q", "1z=", { desc = "Accepts first spell fix" })
 
 vim.keymap.set("n", "<leader>R", function()
-	local session = vim.fn.stdpath("state") .. "/restart_session.vim"
-	vim.cmd("mksession! " .. vim.fn.fnameescape(session))
-	vim.cmd("restart source " .. vim.fn.fnameescape(session))
+  local session = vim.fn.stdpath("state") .. "/restart_session.vim"
+  vim.cmd("mksession! " .. vim.fn.fnameescape(session))
+  vim.cmd("restart source " .. vim.fn.fnameescape(session))
 end, { desc = "Restart Neovim" })
 
 Map("n", "H", "zc", { desc = "Close fold" })
@@ -34,162 +34,185 @@ Map("n", "<leader>nq", "", { desc = "Stop search", remap = false })
 Map("n", "q:", "q:?", { desc = "Opens command history with search" })
 
 Map("n", "<leader>rr", function()
-	MiniSessions.read("Session.vm")
+  MiniSessions.read("Session.vm")
 end, { desc = "Reload session" })
 
 Map("n", "<leader>rs", function()
-	MiniSessions.write("Session.vm")
+  MiniSessions.write("Session.vm")
 end, { desc = "Write session" })
 
 Map("n", "<leader>F", function()
-	print(vim.fn.expand("%"))
+  print(vim.fn.expand("%"))
 end, { desc = "Prints current file relative path" })
 
+-- Copy selection as agent reference: @filepath#Lstart-end
+-- Must be global so :lua can access it after exiting visual mode (which sets '< and '>)
+_G.CopyAgentRef = function()
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local buf_path = vim.api.nvim_buf_get_name(0)
+  local rel_path = vim.fn.fnamemodify(buf_path, ':.')
+  local ref = '@' .. rel_path .. '#L' .. start_line .. '-' .. end_line
+  vim.fn.setreg('+', ref)
+  vim.notify(ref, vim.log.levels.INFO)
+end
+
+Map('v', '<leader>ay', ':lua CopyAgentRef()<CR>',
+  { desc = 'Copy selection as @file#Lstart-end agent reference', silent = true })
+
+Map('n', '<leader>aF', function()
+  local buf_path = vim.api.nvim_buf_get_name(0)
+  local rel_path = vim.fn.fnamemodify(buf_path, ':.')
+  local ref = '@' .. rel_path
+  vim.fn.setreg('+', ref)
+  vim.notify(ref, vim.log.levels.INFO)
+end, { desc = 'Copy file name as reference', silent = true })
+
 Map("n", "<leader>cf", function()
-	require("conform").format({ lsp_format = "fallback" }, function(err, did_edit)
-		if err ~= nil then
-			vim.notify("Failed to format", vim.log.levels.ERROR)
-			return
-		end
+  require("conform").format({ lsp_format = "fallback" }, function(err, did_edit)
+    if err ~= nil then
+      vim.notify("Failed to format", vim.log.levels.ERROR)
+      return
+    end
 
-		if not did_edit then
-			vim.notify("Nothing to do", vim.log.levels.INFO)
-			return
-		end
+    if not did_edit then
+      vim.notify("Nothing to do", vim.log.levels.INFO)
+      return
+    end
 
-		vim.notify("Code Formated", vim.log.levels.INFO)
-	end)
+    vim.notify("Code Formated", vim.log.levels.INFO)
+  end)
 end, { desc = "Opens command history with search" })
 
 local opts = {}
 opts.desc = "Toggle Git Overlay"
 Map("n", "<c-g>", function()
-	MiniDiff.toggle_overlay(0)
+  MiniDiff.toggle_overlay(0)
 end, opts)
 
 --- Mini keymaps
 vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		if MiniMisc then
-			Map("n", "<c-w>z", MiniMisc.zoom, { desc = "Zoom window" })
-		end
+  callback = function()
+    if MiniMisc then
+      Map("n", "<c-w>z", MiniMisc.zoom, { desc = "Zoom window" })
+    end
 
-		if MiniFiles then
-			Map("n", "<c-e>", function()
-				MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
-			end, { desc = "Pick files" })
-		end
+    if MiniFiles then
+      Map("n", "<c-e>", function()
+        MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+      end, { desc = "Pick files" })
+    end
 
-		--- fzf-lua mappings
-		local ok, fzf = pcall(require, "fzf-lua")
-		if ok then
-			Map("n", "<leader>f", function()
-				fzf.files()
-			end, { desc = "Pick files" })
-			Map("n", "<leader>h", function()
-				fzf.help_tags()
-			end, { desc = "Pick help" })
-			Map("n", "<leader>sh", function()
-				fzf.highlights()
-			end, { desc = "Pick highlight groups" })
-			Map("n", "<leader>sb", function()
-				fzf.buffers()
-			end, { desc = "Pick buffers" })
-			Map("n", "<leader>g", function()
-				fzf.live_grep()
-			end, { desc = "Live Grep" })
-			Map({ "n", "v" }, "<leader>sw", function()
-				fzf.grep_cword()
-			end, { desc = "Search for word under cursor" })
-		end
-	end,
+    --- fzf-lua mappings
+    local ok, fzf = pcall(require, "fzf-lua")
+    if ok then
+      Map("n", "<leader>f", function()
+        fzf.files()
+      end, { desc = "Pick files" })
+      Map("n", "<leader>h", function()
+        fzf.help_tags()
+      end, { desc = "Pick help" })
+      Map("n", "<leader>sh", function()
+        fzf.highlights()
+      end, { desc = "Pick highlight groups" })
+      Map("n", "<leader>sb", function()
+        fzf.buffers()
+      end, { desc = "Pick buffers" })
+      Map("n", "<leader>g", function()
+        fzf.live_grep()
+      end, { desc = "Live Grep" })
+      Map({ "n", "v" }, "<leader>sw", function()
+        fzf.grep_cword()
+      end, { desc = "Search for word under cursor" })
+    end
+  end,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(args)
-		local lsp_map_opts = { buffer = args.buf }
+  callback = function(args)
+    local lsp_map_opts = { buffer = args.buf }
 
-		local float_window_config = {
-			max_height = 15,
-			max_width = 80,
-			border = "solid",
-		}
+    local float_window_config = {
+      max_height = 15,
+      max_width = 80,
+      border = "solid",
+    }
 
-		local definition_func = vim.lsp.buf.definition
-		local references_func = vim.lsp.buf.references
-		local implementation_func = vim.lsp.buf.implementation
+    local definition_func = vim.lsp.buf.definition
+    local references_func = vim.lsp.buf.references
+    local implementation_func = vim.lsp.buf.implementation
 
-		local fzf_available, fzf = pcall(require, "fzf-lua")
+    local fzf_available, fzf = pcall(require, "fzf-lua")
 
-		local lsp_picker_opts = {
-			file_ignore_patterns = {
-				"_test%.go$",
-				"_autogenerated%.go$",
-			},
-		}
+    local lsp_picker_opts = {
+      file_ignore_patterns = {
+        "_test%.go$",
+        "_autogenerated%.go$",
+      },
+    }
 
-		if fzf_available and fzf then
-			definition_func = function()
-				fzf.lsp_definitions(lsp_picker_opts)
-			end
-			references_func = function()
-				fzf.lsp_references(lsp_picker_opts)
-			end
-			implementation_func = function()
-				fzf.lsp_implementations(lsp_picker_opts)
-			end
-		end
+    if fzf_available and fzf then
+      definition_func = function()
+        fzf.lsp_definitions(lsp_picker_opts)
+      end
+      references_func = function()
+        fzf.lsp_references(lsp_picker_opts)
+      end
+      implementation_func = function()
+        fzf.lsp_implementations(lsp_picker_opts)
+      end
+    end
 
-		lsp_map_opts.desc = "Go to definition"
-		Map("n", "gd", definition_func, lsp_map_opts)
+    lsp_map_opts.desc = "Go to definition"
+    Map("n", "gd", definition_func, lsp_map_opts)
 
-		lsp_map_opts.desc = "Go to references"
-		Map("n", "gr", references_func, lsp_map_opts)
+    lsp_map_opts.desc = "Go to references"
+    Map("n", "gr", references_func, lsp_map_opts)
 
-		lsp_map_opts.desc = "Go to implementation"
-		Map("n", "gi", implementation_func, lsp_map_opts)
+    lsp_map_opts.desc = "Go to implementation"
+    Map("n", "gi", implementation_func, lsp_map_opts)
 
-		lsp_map_opts.desc = "Digraph"
-		Map("i", "<C-l>", "<C-k>", lsp_map_opts)
+    lsp_map_opts.desc = "Digraph"
+    Map("i", "<C-l>", "<C-k>", lsp_map_opts)
 
-		lsp_map_opts.desc = "Show signature help"
-		Map("i", "<C-k>", function()
-			vim.lsp.buf.signature_help(float_window_config)
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "Show signature help"
+    Map("i", "<C-k>", function()
+      vim.lsp.buf.signature_help(float_window_config)
+    end, lsp_map_opts)
 
-		lsp_map_opts.desc = "Show line diagnostics"
-		Map("n", "gl", function()
-			vim.diagnostic.open_float(float_window_config)
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "Show line diagnostics"
+    Map("n", "gl", function()
+      vim.diagnostic.open_float(float_window_config)
+    end, lsp_map_opts)
 
-		lsp_map_opts.desc = "LSP rename"
-		Map("n", "<leader>rn", function()
-			vim.lsp.buf.rename()
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "LSP rename"
+    Map("n", "<leader>rn", function()
+      vim.lsp.buf.rename()
+    end, lsp_map_opts)
 
-		lsp_map_opts.desc = "Code Actions"
-		Map("n", "<leader>la", function()
-			vim.lsp.buf.code_action()
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "Code Actions"
+    Map("n", "<leader>la", function()
+      vim.lsp.buf.code_action()
+    end, lsp_map_opts)
 
-		lsp_map_opts.desc = "Open definition on vertical split"
-		Map("n", "gV", function()
-			vim.cmd.vsplit()
-			vim.lsp.buf.definition()
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "Open definition on vertical split"
+    Map("n", "gV", function()
+      vim.cmd.vsplit()
+      vim.lsp.buf.definition()
+    end, lsp_map_opts)
 
-		lsp_map_opts.desc = "Open definition on horizontal split"
-		Map("n", "gS", function()
-			vim.lsp.buf.definition()
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "Open definition on horizontal split"
+    Map("n", "gS", function()
+      vim.lsp.buf.definition()
+    end, lsp_map_opts)
 
-		lsp_map_opts.desc = "LSP Hover"
-		Map("n", "K", function()
-			vim.lsp.buf.hover(float_window_config)
-		end, lsp_map_opts)
+    lsp_map_opts.desc = "LSP Hover"
+    Map("n", "K", function()
+      vim.lsp.buf.hover(float_window_config)
+    end, lsp_map_opts)
 
-		--- trouble
-		lsp_map_opts.desc = "Open Trouble window"
-		Map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", lsp_map_opts)
-	end,
+    --- trouble
+    lsp_map_opts.desc = "Open Trouble window"
+    Map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", lsp_map_opts)
+  end,
 })
