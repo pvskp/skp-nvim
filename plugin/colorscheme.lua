@@ -13,7 +13,15 @@
 -- 	end,
 -- })
 
-vim.cmd.colorscheme("retrobox")
+-- vim.cmd.colorscheme("retrobox")
+
+vim.pack.add({
+  Gh("folke/tokyonight.nvim")
+})
+
+require("tokyonight")
+
+vim.cmd.colorscheme("tokyonight")
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
