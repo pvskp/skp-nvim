@@ -9,7 +9,8 @@ vim.api.nvim_create_autocmd('PackChanged', {
 })
 
 vim.pack.add({
-  Gh('nvim-treesitter/nvim-treesitter')
+  Gh('nvim-treesitter/nvim-treesitter'),
+  Gh('nvim-treesitter/nvim-treesitter-context')
 })
 
 local ensure_install = {
