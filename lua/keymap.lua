@@ -60,9 +60,9 @@ end
 Map('v', '<leader>ay', ':lua CopyAgentRef()<CR>',
   { desc = 'Copy selection as @file#Lstart-end agent reference', silent = true })
 
-Map('n', '<leader>aF', function()
+Map('n', '<leader>af', function()
   local buf_path = vim.api.nvim_buf_get_name(0)
-  local rel_path = vim.fn.fnamemodify(buf_path, ':.')
+  local rel_path = vim.fn.fnamemodify(buf_path, ':p')
   local ref = '@' .. rel_path
   vim.fn.setreg('+', ref)
   vim.notify(ref, vim.log.levels.INFO)
