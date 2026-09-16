@@ -3,6 +3,7 @@ require("utils")
 vim.pack.add({
 	{ src = Gh("saghen/blink.cmp"), version = vim.version.range("1.x") },
 	Gh("rafamadriz/friendly-snippets"),
+	Gh("pvskp/blink-cmp-fonts"),
 })
 
 require("blink.cmp").setup({
@@ -15,6 +16,18 @@ require("blink.cmp").setup({
 			function(cmp)
 				cmp.show({ providers = { "buffer" } })
 			end,
+		},
+		["<C-f>"] = {
+			function(cmp)
+				-- keep the super-tab behavior of scrolling docs when the menu is open
+				if cmp.is_menu_visible() then
+					return false
+				end
+				cmp.show({ providers = { "fonts" } })
+				return true
+			end,
+			"scroll_documentation_down",
+			"fallback",
 		},
 		["<C-s>"] = {
 			function(cmp)
@@ -55,10 +68,20 @@ require("blink.cmp").setup({
 			vimwiki = { "buffer", "path" },
 		},
 		providers = {
+      skills = {
+        name = "Skills",
+        module = "blink-cmp-skills",
+        score_offset = 100,
+      },
 			lazydev = {
 				name = "LazyDev",
 				module = "lazydev.integrations.blink",
 				score_offset = 100,
+			},
+			fonts = {
+				name = "Fonts",
+				module = "blink-cmp-fonts",
+				async = true,
 			},
 		},
 	},
