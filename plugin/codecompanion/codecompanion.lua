@@ -4,10 +4,23 @@ vim.pack.add({
 	Gh("nvim-treesitter/nvim-treesitter"),
 })
 
+local prompt = table.concat(
+  vim.fn.readfile(vim.fn.stdpath("config") .. "/plugin/codecompanion/prompt.txt"),
+  "\n"
+)
+
 require("codecompanion").setup({
+  display = {
+    -- chat = {
+    --   show_reasoning = false,
+    -- },
+  },
 	interactions = {
 		chat = {
-			adapter = "openrouter",
+			adapter = "deepseek",
+      opts = {
+        system_prompt = prompt,
+      }
 		},
 		cmd = {
 			adapter = "openrouter",
