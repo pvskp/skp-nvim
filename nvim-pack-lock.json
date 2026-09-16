@@ -4,6 +4,10 @@
       "rev": "548380b6ef9f45d877215657bca55f5ca2ca4f1a",
       "src": "https://github.com/afonsofrancof/OSC11.nvim"
     },
+    "blink-cmp-fonts": {
+      "rev": "cb0be3d8ffa5dc688d182719c969dbec1fa6700c",
+      "src": "https://github.com/pvskp/blink-cmp-fonts"
+    },
     "blink.cmp": {
       "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
       "src": "https://github.com/saghen/blink.cmp",
@@ -29,6 +33,10 @@
       "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "guh.nvim": {
+      "rev": "943779f7cdb0acee203985ad531fb53ff95d9c8e",
+      "src": "https://github.com/justinmk/guh.nvim"
+    },
     "lazydev.nvim": {
       "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
       "src": "https://github.com/folke/lazydev.nvim"
@@ -45,6 +53,10 @@
     "mini.nvim": {
       "rev": "adeaeac8622b966273bb161977bff1293dd44565",
       "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "nightfox.nvim": {
+      "rev": "4dacd3f0185a2227bdf3b6c0975a8f0bf87cac9a",
+      "src": "https://github.com/EdenEast/nightfox.nvim"
     },
     "nvim-lspconfig": {
       "rev": "e057806776c8bed91971338d96a78a0f6a313dae",
